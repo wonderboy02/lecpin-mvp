@@ -11,6 +11,14 @@ export function getDriver(): Driver {
     const username = process.env.NEO4J_USERNAME;
     const password = process.env.NEO4J_PASSWORD;
 
+    // 디버깅: 환경변수 로깅
+    console.log('Neo4j 연결 설정:', {
+      uri: uri || 'undefined',
+      username: username || 'undefined',
+      hasPassword: !!password,
+      nodeEnv: process.env.NODE_ENV,
+    });
+
     if (!uri || !username || !password) {
       throw new Error(
         'Neo4j 환경변수가 설정되지 않았습니다. .env.local 파일을 확인하세요.'
@@ -22,6 +30,8 @@ export function getDriver(): Driver {
     const config = isProduction
       ? { encrypted: false }
       : {}; // 로컬 개발에서는 기본 설정 사용
+
+    console.log('Neo4j 드라이버 설정:', { isProduction, config });
 
     driver = neo4j.driver(uri, neo4j.auth.basic(username, password), config);
   }

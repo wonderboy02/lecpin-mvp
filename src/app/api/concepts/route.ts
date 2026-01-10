@@ -9,7 +9,7 @@ export async function GET() {
       RETURN c.name as name,
              c.description as description,
              c.is_learned as is_learned,
-             size((c)-[:RELATED_TO]-()) as degree
+             COUNT { (c)-[:RELATED_TO]-() } as degree
       ORDER BY degree DESC
     `);
 
@@ -17,7 +17,7 @@ export async function GET() {
       name: record.get('name'),
       description: record.get('description'),
       is_learned: record.get('is_learned') || false,
-      degree: record.get('degree'),
+      degree: record.get('degree').toInt(),
     }));
 
     return NextResponse.json({ concepts });

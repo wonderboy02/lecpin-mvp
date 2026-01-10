@@ -47,7 +47,8 @@ export async function verifyConnection(): Promise<boolean> {
   const session = getSession();
   try {
     const result = await session.run('RETURN 1 as num');
-    return result.records[0].get('num') === 1;
+    const num = result.records[0].get('num');
+    return num && num.toInt() === 1;
   } catch (error) {
     console.error('Neo4j 연결 실패:', error);
     return false;

@@ -15,9 +15,7 @@ export interface ExtractionResult {
  * @param text 강의 텍스트
  * @returns 추출된 개념과 관계
  */
-export async function extractConcepts(
-  text: string
-): Promise<ExtractionResult> {
+export async function extractConcepts(text: string): Promise<ExtractionResult> {
   try {
     const response = await openai.chat.completions.create({
       model: 'gpt-4o-mini',

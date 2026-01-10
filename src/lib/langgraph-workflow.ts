@@ -2,7 +2,11 @@ import { ChatOpenAI } from '@langchain/openai';
 import { StateGraph, END } from '@langchain/langgraph';
 import { getHighCentralityConcepts } from './graph-ingestion';
 import { generateEmbedding } from './embeddings';
-import { searchSimilarConcepts } from './vector-index';
+import {
+  searchSimilarConcepts,
+  vectorIndexExists,
+  createVectorIndex,
+} from './vector-index';
 
 /**
  * LangGraph State 정의
@@ -27,6 +31,9 @@ async function generateQuestions(
   const llm = new ChatOpenAI({
     modelName: 'gpt-4o-mini',
     temperature: 0.7,
+    modelKwargs: {
+      response_format: { type: 'json_object' },
+    },
   });
 
   console.log('문제 생성 시작...');
@@ -50,12 +57,20 @@ ${conceptsWithDesc}
 2. 단순 암기가 아닌 응용/분석 문제로 구성
 3. 문제는 구체적이고 명확해야 함
 
-JSON 배열로 반환:
-["문제1", "문제2", "문제3"]
+JSON 형식으로 반환:
+{
+  "questions": ["문제1", "문제2", "문제3"]
+}
   `.trim();
 
   const response = await llm.invoke(prompt);
-  const questions = JSON.parse(response.content as string);
+
+  // markdown 코드 블록 제거
+  let content = response.content as string;
+  content = content.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
+
+  const parsed = JSON.parse(content);
+  const questions = parsed.questions || parsed;
 
   console.log(`문제 생성 완료: ${questions.length}개`);
 
@@ -156,9 +171,7 @@ async function solveWithLearnerDB(
     // 학습한 개념이 없는 경우
     if (relevantConcepts.length === 0) {
       answers.push('답: 모름\n참고한 개념: 없음');
-      console.log(
-        `문제 ${i + 1}/${state.questions.length} - 학습한 개념 없음`
-      );
+      console.log(`문제 ${i + 1}/${state.questions.length} - 학습한 개념 없음`);
       continue;
     }
 
@@ -205,6 +218,9 @@ async function evaluateResults(
   const llm = new ChatOpenAI({
     modelName: 'gpt-4o-mini',
     temperature: 0,
+    modelKwargs: {
+      response_format: { type: 'json_object' },
+    },
   });
 
   console.log('채점 시작...');
@@ -238,7 +254,12 @@ JSON 형식:
     `.trim();
 
     const response = await llm.invoke(prompt);
-    evaluations.push(JSON.parse(response.content as string));
+
+    // markdown 코드 블록 제거
+    let content = response.content as string;
+    content = content.replace(/```json\s*/g, '').replace(/```\s*/g, '').trim();
+
+    evaluations.push(JSON.parse(content));
     console.log(`문제 ${i + 1}/${state.questions.length} 채점 완료`);
   }
 
@@ -293,10 +314,15 @@ export function createWorkflow() {
   workflow.addNode('evaluate', evaluateResults);
 
   // 엣지 추가 (선형 워크플로우)
+  // @ts-expect-error - LangGraph 타입 추론 이슈, 런타임에는 정상 동작
   workflow.addEdge('__start__', 'generate_questions');
+  // @ts-expect-error - LangGraph 타입 추론 이슈, 런타임에는 정상 동작
   workflow.addEdge('generate_questions', 'solve_with_full_db');
+  // @ts-expect-error - LangGraph 타입 추론 이슈, 런타임에는 정상 동작
   workflow.addEdge('solve_with_full_db', 'solve_with_learner_db');
+  // @ts-expect-error - LangGraph 타입 추론 이슈, 런타임에는 정상 동작
   workflow.addEdge('solve_with_learner_db', 'evaluate');
+  // @ts-expect-error - LangGraph 타입 추론 이슈, 런타임에는 정상 동작
   workflow.addEdge('evaluate', END);
 
   return workflow.compile();
@@ -307,6 +333,18 @@ export function createWorkflow() {
  */
 export async function runWorkflow() {
   console.log('=== K-Audit 워크플로우 시작 ===');
+
+  // 벡터 인덱스 확인 및 생성
+  console.log('벡터 인덱스 확인 중...');
+  const indexExists = await vectorIndexExists();
+
+  if (!indexExists) {
+    console.log('벡터 인덱스가 없습니다. 생성 중...');
+    await createVectorIndex();
+    console.log('벡터 인덱스 생성 완료');
+  } else {
+    console.log('벡터 인덱스 확인 완료');
+  }
 
   const app = createWorkflow();
 

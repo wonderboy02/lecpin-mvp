@@ -1,4 +1,5 @@
 import { getSession } from './neo4j';
+import neo4j from 'neo4j-driver';
 
 /**
  * GraphRAG를 위한 지식 그래프 생성
@@ -57,9 +58,7 @@ export async function upsertConcept(concept: ConceptNode): Promise<void> {
 /**
  * Concept 간의 관계를 생성합니다
  */
-export async function createRelation(
-  relation: ConceptRelation
-): Promise<void> {
+export async function createRelation(relation: ConceptRelation): Promise<void> {
   const session = getSession();
   try {
     await session.run(
@@ -113,11 +112,11 @@ export async function getHighCentralityConcepts(
       RETURN c.name as name,
              c.description as description,
              c.is_learned as is_learned,
-             size((c)-[:RELATED_TO]-()) as degree
+             COUNT { (c)-[:RELATED_TO]-() } as degree
       ORDER BY degree DESC
       LIMIT $limit
       `,
-      { limit }
+      { limit: neo4j.int(limit) }
     );
 
     return result.records.map((record) => ({
@@ -165,13 +164,26 @@ export async function ingestLectureText(text: string): Promise<{
 }> {
   // 동적 import를 사용하여 순환 의존성 방지
   const { extractConcepts } = await import('./concept-extractor');
-  const { generateEmbeddings, conceptToEmbeddingText } = await import(
-    './embeddings'
+  const { generateEmbeddings, conceptToEmbeddingText } =
+    await import('./embeddings');
+  const { vectorIndexExists, createVectorIndex } = await import(
+    './vector-index'
   );
+
+  // 벡터 인덱스 확인 및 생성
+  console.log('0. 벡터 인덱스 확인 중...');
+  const indexExists = await vectorIndexExists();
+  if (!indexExists) {
+    console.log('벡터 인덱스가 없습니다. 생성 중...');
+    await createVectorIndex();
+    console.log('벡터 인덱스 생성 완료');
+  }
 
   console.log('1. 개념 추출 시작...');
   const { concepts, relations } = await extractConcepts(text);
-  console.log(`추출 완료: ${concepts.length}개 개념, ${relations.length}개 관계`);
+  console.log(
+    `추출 완료: ${concepts.length}개 개념, ${relations.length}개 관계`
+  );
 
   if (concepts.length === 0) {
     throw new Error('추출된 개념이 없습니다');

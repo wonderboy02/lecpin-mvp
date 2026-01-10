@@ -1,5 +1,6 @@
 import { getSession } from './neo4j';
 import { ConceptNode } from './graph-ingestion';
+import neo4j from 'neo4j-driver';
 
 /**
  * Neo4j에 벡터 인덱스를 생성합니다 (3072차원)
@@ -54,7 +55,7 @@ export async function searchSimilarConcepts(
     `;
 
     const result = await session.run(query, {
-      limit,
+      limit: neo4j.int(limit),
       embedding: queryEmbedding,
       learnedOnly,
     });
@@ -87,7 +88,7 @@ export async function vectorIndexExists(): Promise<boolean> {
     `);
 
     const count = result.records[0]?.get('count');
-    return count > 0;
+    return count && count.toInt() > 0;
   } catch (error) {
     console.error('벡터 인덱스 확인 실패:', error);
     return false;

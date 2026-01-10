@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "fetch-youtube": "tsx scripts/youtube/download-playlist.ts"
+    "fetch-youtube": "tsx scripts/youtube/download-playlist.ts",
+    "process-transcripts": "tsx scripts/youtube/process-transcripts.ts"
   },
   "dependencies": {
     "@langchain/core": "^0.3.26",

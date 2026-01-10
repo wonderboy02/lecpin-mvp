@@ -53,6 +53,7 @@ Railway에서 Neo4j를 띄우는 방법은 두 가지입니다:
    NEO4J_dbms_security_procedures_unrestricted=apoc.*,gds.*
    RAILWAY_RUN_UID=0
    ```
+
    - `RAILWAY_RUN_UID=0`: Volume 권한 문제 방지
 6. **Networking** 탭에서:
    - Private Networking 활성화
@@ -142,6 +143,7 @@ npm run dev
 ```
 
 로컬 환경변수 (`.env.local`):
+
 ```bash
 NEO4J_URI=bolt://localhost:7687
 NEO4J_USERNAME=neo4j
@@ -158,6 +160,7 @@ OPENAI_API_KEY=sk-your-api-key
 **원인**: Volume이 설정되지 않음
 
 **해결**:
+
 1. Neo4j 서비스에 Volume 추가 (Mount Path: `/data`)
 2. 서비스 재배포
 
@@ -176,11 +179,13 @@ OPENAI_API_KEY=sk-your-api-key
 ### 벡터 인덱스 생성 실패
 
 Neo4j Community Edition은 벡터 인덱스를 지원하지 않습니다.
+
 - **해결 방법**: Neo4j Aura 무료 티어 사용 또는 Enterprise Edition 사용
 - **대안**: 벡터 검색 없이 일반 그래프 쿼리만 사용
 
 ### 메모리 부족
 
 Railway 무료 티어는 메모리가 제한적입니다.
+
 - Neo4j 메모리 설정 조정: `NEO4J_dbms_memory_heap_max__size=512m`
 - 또는 Railway Pro 플랜 사용

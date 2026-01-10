@@ -29,9 +29,7 @@ export async function generateEmbedding(text: string): Promise<number[]> {
  * @param texts 임베딩할 텍스트 배열
  * @returns 3072차원 임베딩 벡터 배열
  */
-export async function generateEmbeddings(
-  texts: string[]
-): Promise<number[][]> {
+export async function generateEmbeddings(texts: string[]): Promise<number[][]> {
   if (texts.length === 0) {
     return [];
   }

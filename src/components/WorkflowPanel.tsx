@@ -86,52 +86,48 @@ function ResultsDashboard({ result }: { result: any }) {
             score={result.learnerScore}
             color="green"
           />
-          <ScoreCard
-            label="점수 차이"
-            score={result.scoreGap}
-            color="red"
-          />
+          <ScoreCard label="점수 차이" score={result.scoreGap} color="red" />
         </div>
 
         {/* 문제별 상세 */}
         <div>
           <h3 className="text-xl font-semibold mb-3">문제별 분석</h3>
-          {result.results.evaluations.map((eval: any, idx: number) => (
+          {result.results.evaluations.map((evaluation: any, idx: number) => (
             <div key={idx} className="mb-4 p-4 border rounded">
               <div className="font-semibold mb-2">
-                문제 {eval.questionId}: {result.questions[idx]}
+                문제 {evaluation.questionId}: {result.questions[idx]}
               </div>
 
               <div className="grid grid-cols-2 gap-4 text-sm mb-2">
                 <div className="p-3 bg-blue-50 rounded">
                   <div className="font-medium mb-1">
-                    전체 DB 답변 ({eval.baseScore}점)
+                    전체 DB 답변 ({evaluation.baseScore}점)
                   </div>
                   <div className="text-gray-700 whitespace-pre-wrap">
                     {result.baseAnswers[idx]}
                   </div>
                   <div className="text-xs text-gray-500 mt-2">
-                    {eval.baseReasoning}
+                    {evaluation.baseReasoning}
                   </div>
                 </div>
 
                 <div className="p-3 bg-green-50 rounded">
                   <div className="font-medium mb-1">
-                    학습자 답변 ({eval.learnerScore}점)
+                    학습자 답변 ({evaluation.learnerScore}점)
                   </div>
                   <div className="text-gray-700 whitespace-pre-wrap">
                     {result.learnerAnswers[idx]}
                   </div>
                   <div className="text-xs text-gray-500 mt-2">
-                    {eval.learnerReasoning}
+                    {evaluation.learnerReasoning}
                   </div>
                 </div>
               </div>
 
-              {eval.knowledgeGap && eval.knowledgeGap.length > 0 && (
+              {evaluation.knowledgeGap && evaluation.knowledgeGap.length > 0 && (
                 <div className="mt-2 p-2 bg-yellow-50 border border-yellow-200 rounded text-sm">
                   <span className="font-medium">부족한 개념:</span>{' '}
-                  {eval.knowledgeGap.join(', ')}
+                  {evaluation.knowledgeGap.join(', ')}
                 </div>
               )}
             </div>
@@ -144,7 +140,8 @@ function ResultsDashboard({ result }: { result: any }) {
             <h4 className="font-semibold mb-2">📝 종합 분석</h4>
             <div className="space-y-1 text-sm">
               <p>
-                전체 지식 기반 평균: {result.results.summary.baseScore.toFixed(1)}점
+                전체 지식 기반 평균:{' '}
+                {result.results.summary.baseScore.toFixed(1)}점
               </p>
               <p>
                 학습자 평균: {result.results.summary.learnerScore.toFixed(1)}점
@@ -154,7 +151,8 @@ function ResultsDashboard({ result }: { result: any }) {
               </p>
               {result.results.summary.knowledgeGaps.length > 0 && (
                 <p className="text-yellow-700">
-                  지식 격차 영역: {result.results.summary.knowledgeGaps.join(', ')}
+                  지식 격차 영역:{' '}
+                  {result.results.summary.knowledgeGaps.join(', ')}
                 </p>
               )}
             </div>

@@ -58,7 +58,8 @@ export function ConceptsPanel() {
       <div className="bg-white p-6 rounded-lg shadow">
         <h2 className="text-2xl font-semibold mb-4">학습 진행 상황</h2>
         <p className="text-gray-600">
-          생성된 개념이 없습니다. "1. 강의 입력" 탭에서 강의 텍스트를 입력하세요.
+          생성된 개념이 없습니다. &quot;1. 강의 입력&quot; 탭에서 강의 텍스트를
+          입력하세요.
         </p>
       </div>
     );
@@ -100,7 +101,7 @@ export function ConceptsPanel() {
 
       <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded">
         <p className="text-sm text-blue-700">
-          💡 팁: 학습한 개념을 체크한 후 "3. 워크플로우 실행" 탭에서 분석을
+          💡 팁: 학습한 개념을 체크한 후 &quot;3. 워크플로우 실행&quot; 탭에서 분석을
           시작하세요.
         </p>
       </div>

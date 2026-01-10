@@ -39,6 +39,7 @@ cp .env.example .env
 ```
 
 `.env` 파일 내용 확인:
+
 ```bash
 # Neo4j (Docker Compose 개발 환경)
 NEO4J_URI=bolt://localhost:7687
@@ -120,6 +121,7 @@ Railway에서 Next.js와 Neo4j를 모두 배포합니다.
 ### 간단 요약
 
 1. **Next.js 앱 배포**
+
    ```bash
    railway login
    railway init
@@ -131,6 +133,7 @@ Railway에서 Next.js와 Neo4j를 모두 배포합니다.
    - 또는 New → Docker Image → `neo4j:5.15-community`
 
 3. **환경변수 설정**
+
    ```bash
    NEO4J_URI=bolt://neo4j.railway.internal:7687
    NEO4J_USERNAME=neo4j
@@ -144,11 +147,13 @@ Railway에서 Next.js와 Neo4j를 모두 배포합니다.
 ## 개발 로드맵
 
 ### Phase 1: Foundation ✅
+
 - [x] Next.js + Neo4j 연동
 - [x] Graph Ingestion 파이프라인
 - [x] Vector Search RAG 구현 준비
 
 ### Phase 2: MVP Core (진행 중)
+
 - [ ] Multi-Agent Workflow (LangGraph)
 - [ ] 문제 생성 노드
 - [ ] 전체 DB / 학습자 DB 솔버
@@ -156,6 +161,7 @@ Railway에서 Next.js와 Neo4j를 모두 배포합니다.
 - [ ] UI 개발
 
 ### Phase 3: Optimization (선택)
+
 - [ ] Auditor Agent 추가
 - [ ] GraphRAG 검색 알고리즘 고도화
 - [ ] 성능 튜닝

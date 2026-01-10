@@ -1,9 +1,9 @@
 # list of languages for which language servers are started
 languages:
-- typescript
+  - typescript
 
 # the encoding used by text files in the project
-encoding: "utf-8"
+encoding: 'utf-8'
 
 # whether to use the project's gitignore file to ignore files
 ignore_all_files_in_gitignore: true
@@ -18,7 +18,7 @@ read_only: false
 excluded_tools: []
 
 # initial prompt for the project
-initial_prompt: ""
+initial_prompt: ''
 
-project_name: "lecpin-mvp"
+project_name: 'lecpin-mvp'
 included_optional_tools: []

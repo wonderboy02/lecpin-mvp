@@ -5,8 +5,8 @@ services:
     image: neo4j:5.15-community
     container_name: lecpin-neo4j-dev
     ports:
-      - "7474:7474"  # HTTP
-      - "7687:7687"  # Bolt
+      - '7474:7474' # HTTP
+      - '7687:7687' # Bolt
     environment:
       - NEO4J_AUTH=neo4j/localpassword123
       - NEO4J_PLUGINS=["apoc", "graph-data-science"]
@@ -21,7 +21,8 @@ services:
       - neo4j_plugins_dev:/plugins
       - ./scripts/neo4j-init:/docker-entrypoint-initdb.d
     healthcheck:
-      test: ["CMD-SHELL", "cypher-shell -u neo4j -p localpassword123 'RETURN 1'"]
+      test:
+        ['CMD-SHELL', "cypher-shell -u neo4j -p localpassword123 'RETURN 1'"]
       interval: 10s
       timeout: 5s
       retries: 5

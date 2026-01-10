@@ -3,13 +3,13 @@ import { getSession } from '@/lib/neo4j';
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { name: string } }
+  { params }: { params: Promise<{ name: string }> }
 ) {
+  const session = getSession();
   try {
-    const conceptName = decodeURIComponent(params.name);
+    const { name } = await params;
+    const conceptName = decodeURIComponent(name);
     const { learned } = await request.json();
-
-    const session = getSession();
 
     if (learned) {
       // 학습 완료 표시
@@ -32,8 +32,6 @@ export async function PATCH(
       );
     }
 
-    await session.close();
-
     return NextResponse.json({ success: true });
   } catch (error: any) {
     console.error('학습 상태 업데이트 오류:', error);
@@ -44,5 +42,7 @@ export async function PATCH(
       },
       { status: 500 }
     );
+  } finally {
+    await session.close();
   }
 }

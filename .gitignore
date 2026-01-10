@@ -58,3 +58,6 @@ neo4j/
 # Logs
 logs/
 *.log
+
+#nul
+nul

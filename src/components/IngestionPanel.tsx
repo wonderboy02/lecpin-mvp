@@ -65,9 +65,11 @@ Linux Kernel은 운영체제의 핵심 구성요소입니다. Kernel은 프로�
             ✓ 그래프 생성 완료!
           </div>
           <p className="text-green-700">생성된 개념: {result.conceptCount}개</p>
-          <p className="text-green-700">생성된 관계: {result.relationCount}개</p>
+          <p className="text-green-700">
+            생성된 관계: {result.relationCount}개
+          </p>
           <p className="text-sm text-green-600 mt-2">
-            다음 단계: "2. 학습 진행" 탭에서 학습한 개념을 표시하세요.
+            다음 단계: &quot;2. 학습 진행&quot; 탭에서 학습한 개념을 표시하세요.
           </p>
         </div>
       )}

@@ -36,6 +36,9 @@ ENV LANGCHAIN_PROJECT=${LANGCHAIN_PROJECT}
 # Build Next.js
 RUN npm run build
 
+# public 폴더가 없으면 생성 (COPY 에러 방지)
+RUN mkdir -p public
+
 # Production image, copy all the files and run next
 FROM base AS runner
 WORKDIR /app

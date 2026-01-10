@@ -1,0 +1,11035 @@
+1
+00:00:12,799 --> 00:00:16,790
+
+good morning everybody
+
+2
+00:00:16,790 --> 00:00:16,800
+good morning everybody
+ 
+
+3
+00:00:16,800 --> 00:00:19,269
+good morning everybody
+my name is jason kuh i'm going to be
+
+4
+00:00:19,269 --> 00:00:19,279
+my name is jason kuh i'm going to be
+ 
+
+5
+00:00:19,279 --> 00:00:19,830
+my name is jason kuh i'm going to be
+teaching
+
+6
+00:00:19,830 --> 00:00:19,840
+teaching
+ 
+
+7
+00:00:19,840 --> 00:00:22,390
+teaching
+uh this class in uh introduction to
+
+8
+00:00:22,390 --> 00:00:22,400
+uh this class in uh introduction to
+ 
+
+9
+00:00:22,400 --> 00:00:23,670
+uh this class in uh introduction to
+algorithms with
+
+10
+00:00:23,670 --> 00:00:23,680
+algorithms with
+ 
+
+11
+00:00:23,680 --> 00:00:26,310
+algorithms with
+uh two other instructors here uh faculty
+
+12
+00:00:26,310 --> 00:00:26,320
+uh two other instructors here uh faculty
+ 
+
+13
+00:00:26,320 --> 00:00:26,870
+uh two other instructors here uh faculty
+in the
+
+14
+00:00:26,870 --> 00:00:26,880
+in the
+ 
+
+15
+00:00:26,880 --> 00:00:29,189
+in the
+department uh eric domain and justin
+
+16
+00:00:29,189 --> 00:00:29,199
+department uh eric domain and justin
+ 
+
+17
+00:00:29,199 --> 00:00:30,550
+department uh eric domain and justin
+solomon
+
+18
+00:00:30,550 --> 00:00:30,560
+solomon
+ 
+
+19
+00:00:30,560 --> 00:00:34,229
+solomon
+uh they're excellent people and so
+
+20
+00:00:34,229 --> 00:00:34,239
+uh they're excellent people and so
+ 
+
+21
+00:00:34,239 --> 00:00:37,510
+uh they're excellent people and so
+uh they will be working on uh teaching
+
+22
+00:00:37,510 --> 00:00:37,520
+uh they will be working on uh teaching
+ 
+
+23
+00:00:37,520 --> 00:00:38,709
+uh they will be working on uh teaching
+this class
+
+24
+00:00:38,709 --> 00:00:38,719
+this class
+ 
+
+25
+00:00:38,719 --> 00:00:40,549
+this class
+with me i will be teaching the first
+
+26
+00:00:40,549 --> 00:00:40,559
+with me i will be teaching the first
+ 
+
+27
+00:00:40,559 --> 00:00:42,310
+with me i will be teaching the first
+lecture and we'll have
+
+28
+00:00:42,310 --> 00:00:42,320
+lecture and we'll have
+ 
+
+29
+00:00:42,320 --> 00:00:44,869
+lecture and we'll have
+uh each of them teach one of the next
+
+30
+00:00:44,869 --> 00:00:44,879
+uh each of them teach one of the next
+ 
+
+31
+00:00:44,879 --> 00:00:46,470
+uh each of them teach one of the next
+two lectures
+
+32
+00:00:46,470 --> 00:00:46,480
+two lectures
+ 
+
+33
+00:00:46,480 --> 00:00:49,750
+two lectures
+and then we'll go from there yeah so uh
+
+34
+00:00:49,750 --> 00:00:49,760
+and then we'll go from there yeah so uh
+ 
+
+35
+00:00:49,760 --> 00:00:53,189
+and then we'll go from there yeah so uh
+that's this is intro to algorithms
+
+36
+00:00:53,189 --> 00:00:53,199
+that's this is intro to algorithms
+ 
+
+37
+00:00:53,199 --> 00:00:54,709
+that's this is intro to algorithms
+okay so we're going to start talking
+
+38
+00:00:54,709 --> 00:00:54,719
+okay so we're going to start talking
+ 
+
+39
+00:00:54,719 --> 00:00:57,029
+okay so we're going to start talking
+about this uh course content now what is
+
+40
+00:00:57,029 --> 00:00:57,039
+about this uh course content now what is
+ 
+
+41
+00:00:57,039 --> 00:00:57,750
+about this uh course content now what is
+this course about
+
+42
+00:00:57,750 --> 00:00:57,760
+this course about
+ 
+
+43
+00:00:57,760 --> 00:01:00,069
+this course about
+it's about algorithms right introduction
+
+44
+00:01:00,069 --> 00:01:00,079
+it's about algorithms right introduction
+ 
+
+45
+00:01:00,079 --> 00:01:01,430
+it's about algorithms right introduction
+algorithms really what the course is
+
+46
+00:01:01,430 --> 00:01:01,440
+algorithms really what the course is
+ 
+
+47
+00:01:01,440 --> 00:01:02,229
+algorithms really what the course is
+about is
+
+48
+00:01:02,229 --> 00:01:02,239
+about is
+ 
+
+49
+00:01:02,239 --> 00:01:04,950
+about is
+teaching you to solve computational
+
+50
+00:01:04,950 --> 00:01:04,960
+teaching you to solve computational
+ 
+
+51
+00:01:04,960 --> 00:01:06,149
+teaching you to solve computational
+problems
+
+52
+00:01:06,149 --> 00:01:06,159
+problems
+ 
+
+53
+00:01:06,159 --> 00:01:08,390
+problems
+but it's more than that it's not just
+
+54
+00:01:08,390 --> 00:01:08,400
+but it's more than that it's not just
+ 
+
+55
+00:01:08,400 --> 00:01:09,670
+but it's more than that it's not just
+about teaching you to solve
+
+56
+00:01:09,670 --> 00:01:09,680
+about teaching you to solve
+ 
+
+57
+00:01:09,680 --> 00:01:12,870
+about teaching you to solve
+computational problems so solve
+
+58
+00:01:12,870 --> 00:01:12,880
+computational problems so solve
+ 
+
+59
+00:01:12,880 --> 00:01:16,630
+computational problems so solve
+goal
+
+60
+00:01:16,630 --> 00:01:16,640
+
+ 
+
+61
+00:01:16,640 --> 00:01:19,670
+
+one solve
+
+62
+00:01:19,670 --> 00:01:19,680
+one solve
+ 
+
+63
+00:01:19,680 --> 00:01:23,590
+one solve
+computational
+
+64
+00:01:23,590 --> 00:01:23,600
+
+ 
+
+65
+00:01:23,600 --> 00:01:26,950
+
+problems but it's more than that
+
+66
+00:01:26,950 --> 00:01:26,960
+problems but it's more than that
+ 
+
+67
+00:01:26,960 --> 00:01:30,390
+problems but it's more than that
+it's also about communicating
+
+68
+00:01:30,390 --> 00:01:30,400
+it's also about communicating
+ 
+
+69
+00:01:30,400 --> 00:01:33,270
+it's also about communicating
+those solutions to others and being able
+
+70
+00:01:33,270 --> 00:01:33,280
+those solutions to others and being able
+ 
+
+71
+00:01:33,280 --> 00:01:35,590
+those solutions to others and being able
+to communicate that your
+
+72
+00:01:35,590 --> 00:01:35,600
+to communicate that your
+ 
+
+73
+00:01:35,600 --> 00:01:37,990
+to communicate that your
+way of solving the problem is correct
+
+74
+00:01:37,990 --> 00:01:38,000
+way of solving the problem is correct
+ 
+
+75
+00:01:38,000 --> 00:01:39,350
+way of solving the problem is correct
+and efficient
+
+76
+00:01:39,350 --> 00:01:39,360
+and efficient
+ 
+
+77
+00:01:39,360 --> 00:01:43,190
+and efficient
+okay so it's about
+
+78
+00:01:43,190 --> 00:01:43,200
+
+ 
+
+79
+00:01:43,200 --> 00:01:46,630
+
+two more things uh
+
+80
+00:01:46,630 --> 00:01:46,640
+two more things uh
+ 
+
+81
+00:01:46,640 --> 00:01:53,270
+two more things uh
+prove correctness
+
+82
+00:01:53,270 --> 00:01:53,280
+
+ 
+
+83
+00:01:53,280 --> 00:01:58,950
+
+argue efficiency
+
+84
+00:01:58,950 --> 00:01:58,960
+
+ 
+
+85
+00:01:58,960 --> 00:02:03,709
+
+and in general it's about
+
+86
+00:02:03,709 --> 00:02:03,719
+and in general it's about
+ 
+
+87
+00:02:03,719 --> 00:02:08,229
+and in general it's about
+communication communication
+
+88
+00:02:08,229 --> 00:02:08,239
+communication communication
+ 
+
+89
+00:02:08,239 --> 00:02:10,790
+communication communication
+i can't spell by the way uh
+
+90
+00:02:10,790 --> 00:02:10,800
+i can't spell by the way uh
+ 
+
+91
+00:02:10,800 --> 00:02:12,790
+i can't spell by the way uh
+communication of these ideas
+
+92
+00:02:12,790 --> 00:02:12,800
+communication of these ideas
+ 
+
+93
+00:02:12,800 --> 00:02:14,390
+communication of these ideas
+and you'll find that over the course of
+
+94
+00:02:14,390 --> 00:02:14,400
+and you'll find that over the course of
+ 
+
+95
+00:02:14,400 --> 00:02:16,309
+and you'll find that over the course of
+this class you'll be doing a lot more
+
+96
+00:02:16,309 --> 00:02:16,319
+this class you'll be doing a lot more
+ 
+
+97
+00:02:16,319 --> 00:02:17,270
+this class you'll be doing a lot more
+writing
+
+98
+00:02:17,270 --> 00:02:17,280
+writing
+ 
+
+99
+00:02:17,280 --> 00:02:18,710
+writing
+than you do in a lot of your other
+
+100
+00:02:18,710 --> 00:02:18,720
+than you do in a lot of your other
+ 
+
+101
+00:02:18,720 --> 00:02:20,790
+than you do in a lot of your other
+courses it really should maybe be a
+
+102
+00:02:20,790 --> 00:02:20,800
+courses it really should maybe be a
+ 
+
+103
+00:02:20,800 --> 00:02:23,510
+courses it really should maybe be a
+ci kind of class because you'll be doing
+
+104
+00:02:23,510 --> 00:02:23,520
+ci kind of class because you'll be doing
+ 
+
+105
+00:02:23,520 --> 00:02:25,030
+ci kind of class because you'll be doing
+a lot more writing than you will be
+
+106
+00:02:25,030 --> 00:02:25,040
+a lot more writing than you will be
+ 
+
+107
+00:02:25,040 --> 00:02:25,510
+a lot more writing than you will be
+coding
+
+108
+00:02:25,510 --> 00:02:25,520
+coding
+ 
+
+109
+00:02:25,520 --> 00:02:28,390
+coding
+for sure so it's really imp of course
+
+110
+00:02:28,390 --> 00:02:28,400
+for sure so it's really imp of course
+ 
+
+111
+00:02:28,400 --> 00:02:30,470
+for sure so it's really imp of course
+solving the the computational problem is
+
+112
+00:02:30,470 --> 00:02:30,480
+solving the the computational problem is
+ 
+
+113
+00:02:30,480 --> 00:02:31,270
+solving the the computational problem is
+important
+
+114
+00:02:31,270 --> 00:02:31,280
+important
+ 
+
+115
+00:02:31,280 --> 00:02:32,790
+important
+but really the thing that you're getting
+
+116
+00:02:32,790 --> 00:02:32,800
+but really the thing that you're getting
+ 
+
+117
+00:02:32,800 --> 00:02:34,390
+but really the thing that you're getting
+out of this class and other theory
+
+118
+00:02:34,390 --> 00:02:34,400
+out of this class and other theory
+ 
+
+119
+00:02:34,400 --> 00:02:35,030
+out of this class and other theory
+classes
+
+120
+00:02:35,030 --> 00:02:35,040
+classes
+ 
+
+121
+00:02:35,040 --> 00:02:38,070
+classes
+that you're not getting in other
+
+122
+00:02:38,070 --> 00:02:38,080
+that you're not getting in other
+ 
+
+123
+00:02:38,080 --> 00:02:41,430
+that you're not getting in other
+classes in this department is that we
+
+124
+00:02:41,430 --> 00:02:41,440
+classes in this department is that we
+ 
+
+125
+00:02:41,440 --> 00:02:43,030
+classes in this department is that we
+really concentrate on being able to
+
+126
+00:02:43,030 --> 00:02:43,040
+really concentrate on being able to
+ 
+
+127
+00:02:43,040 --> 00:02:44,390
+really concentrate on being able to
+prove that the things you're doing are
+
+128
+00:02:44,390 --> 00:02:44,400
+prove that the things you're doing are
+ 
+
+129
+00:02:44,400 --> 00:02:45,350
+prove that the things you're doing are
+correct
+
+130
+00:02:45,350 --> 00:02:45,360
+correct
+ 
+
+131
+00:02:45,360 --> 00:02:47,670
+correct
+and better than other things and being
+
+132
+00:02:47,670 --> 00:02:47,680
+and better than other things and being
+ 
+
+133
+00:02:47,680 --> 00:02:49,270
+and better than other things and being
+able to communicate those ideas to
+
+134
+00:02:49,270 --> 00:02:49,280
+able to communicate those ideas to
+ 
+
+135
+00:02:49,280 --> 00:02:50,150
+able to communicate those ideas to
+others
+
+136
+00:02:50,150 --> 00:02:50,160
+others
+ 
+
+137
+00:02:50,160 --> 00:02:52,949
+others
+and not just to a computer right to
+
+138
+00:02:52,949 --> 00:02:52,959
+and not just to a computer right to
+ 
+
+139
+00:02:52,959 --> 00:02:54,470
+and not just to a computer right to
+other people convince them that it's
+
+140
+00:02:54,470 --> 00:02:54,480
+other people convince them that it's
+ 
+
+141
+00:02:54,480 --> 00:02:55,430
+other people convince them that it's
+correct
+
+142
+00:02:55,430 --> 00:02:55,440
+correct
+ 
+
+143
+00:02:55,440 --> 00:02:59,110
+correct
+okay so that's what this class is about
+
+144
+00:02:59,110 --> 00:02:59,120
+okay so that's what this class is about
+ 
+
+145
+00:02:59,120 --> 00:03:01,270
+okay so that's what this class is about
+so what do we what do i mean when i say
+
+146
+00:03:01,270 --> 00:03:01,280
+so what do we what do i mean when i say
+ 
+
+147
+00:03:01,280 --> 00:03:02,470
+so what do we what do i mean when i say
+solve a
+
+148
+00:03:02,470 --> 00:03:02,480
+solve a
+ 
+
+149
+00:03:02,480 --> 00:03:05,990
+solve a
+computational problem what is a problem
+
+150
+00:03:05,990 --> 00:03:06,000
+computational problem what is a problem
+ 
+
+151
+00:03:06,000 --> 00:03:09,030
+computational problem what is a problem
+what is an algorithm right i know
+
+152
+00:03:09,030 --> 00:03:09,040
+what is an algorithm right i know
+ 
+
+153
+00:03:09,040 --> 00:03:10,550
+what is an algorithm right i know
+people make fun of me because i start
+
+154
+00:03:10,550 --> 00:03:10,560
+people make fun of me because i start
+ 
+
+155
+00:03:10,560 --> 00:03:12,149
+people make fun of me because i start
+with this question but
+
+156
+00:03:12,149 --> 00:03:12,159
+with this question but
+ 
+
+157
+00:03:12,159 --> 00:03:13,910
+with this question but
+i mean anyone want to answer that
+
+158
+00:03:13,910 --> 00:03:13,920
+i mean anyone want to answer that
+ 
+
+159
+00:03:13,920 --> 00:03:17,509
+i mean anyone want to answer that
+question
+
+160
+00:03:17,509 --> 00:03:17,519
+
+ 
+
+161
+00:03:17,519 --> 00:03:22,390
+
+no what's a problem computationally
+
+162
+00:03:22,390 --> 00:03:22,400
+no what's a problem computationally
+ 
+
+163
+00:03:22,400 --> 00:03:25,270
+no what's a problem computationally
+no okay so it's not such a stupid
+
+164
+00:03:25,270 --> 00:03:25,280
+no okay so it's not such a stupid
+ 
+
+165
+00:03:25,280 --> 00:03:27,589
+no okay so it's not such a stupid
+question yeah
+
+166
+00:03:27,589 --> 00:03:27,599
+question yeah
+ 
+
+167
+00:03:27,599 --> 00:03:30,149
+question yeah
+something you want to compute okay yes
+
+168
+00:03:30,149 --> 00:03:30,159
+something you want to compute okay yes
+ 
+
+169
+00:03:30,159 --> 00:03:31,430
+something you want to compute okay yes
+that's that's true
+
+170
+00:03:31,430 --> 00:03:31,440
+that's that's true
+ 
+
+171
+00:03:31,440 --> 00:03:33,350
+that's that's true
+right but kind of a little bit more
+
+172
+00:03:33,350 --> 00:03:33,360
+right but kind of a little bit more
+ 
+
+173
+00:03:33,360 --> 00:03:35,589
+right but kind of a little bit more
+abstractly what i'm going to think of
+
+174
+00:03:35,589 --> 00:03:35,599
+abstractly what i'm going to think of
+ 
+
+175
+00:03:35,599 --> 00:03:38,949
+abstractly what i'm going to think of
+a computational problem being
+
+176
+00:03:38,949 --> 00:03:38,959
+a computational problem being
+ 
+
+177
+00:03:38,959 --> 00:03:41,110
+a computational problem being
+and this is where uh kind of your
+
+178
+00:03:41,110 --> 00:03:41,120
+and this is where uh kind of your
+ 
+
+179
+00:03:41,120 --> 00:03:42,869
+and this is where uh kind of your
+prerequisite and discrete mathematics
+
+180
+00:03:42,869 --> 00:03:42,879
+prerequisite and discrete mathematics
+ 
+
+181
+00:03:42,879 --> 00:03:44,149
+prerequisite and discrete mathematics
+should come in
+
+182
+00:03:44,149 --> 00:03:44,159
+should come in
+ 
+
+183
+00:03:44,159 --> 00:03:47,589
+should come in
+right it's a problem is kind of
+
+184
+00:03:47,589 --> 00:03:47,599
+right it's a problem is kind of
+ 
+
+185
+00:03:47,599 --> 00:03:51,110
+right it's a problem is kind of
+you've got a set of inputs inputs
+
+186
+00:03:51,110 --> 00:03:51,120
+you've got a set of inputs inputs
+ 
+
+187
+00:03:51,120 --> 00:03:54,390
+you've got a set of inputs inputs
+okay maybe i have uh one two three
+
+188
+00:03:54,390 --> 00:03:54,400
+okay maybe i have uh one two three
+ 
+
+189
+00:03:54,400 --> 00:03:57,910
+okay maybe i have uh one two three
+four five possible inputs i could have
+
+190
+00:03:57,910 --> 00:03:57,920
+four five possible inputs i could have
+ 
+
+191
+00:03:57,920 --> 00:03:59,270
+four five possible inputs i could have
+to my algorithm
+
+192
+00:03:59,270 --> 00:03:59,280
+to my algorithm
+ 
+
+193
+00:03:59,280 --> 00:04:02,949
+to my algorithm
+okay then i have a space of outputs okay
+
+194
+00:04:02,949 --> 00:04:02,959
+okay then i have a space of outputs okay
+ 
+
+195
+00:04:02,959 --> 00:04:06,070
+okay then i have a space of outputs okay
+outputs
+
+196
+00:04:06,070 --> 00:04:06,080
+
+ 
+
+197
+00:04:06,080 --> 00:04:08,630
+
+and maybe i don't know maybe i have more
+
+198
+00:04:08,630 --> 00:04:08,640
+and maybe i don't know maybe i have more
+ 
+
+199
+00:04:08,640 --> 00:04:10,309
+and maybe i don't know maybe i have more
+of them than i do inputs but these are
+
+200
+00:04:10,309 --> 00:04:10,319
+of them than i do inputs but these are
+ 
+
+201
+00:04:10,319 --> 00:04:10,710
+of them than i do inputs but these are
+the
+
+202
+00:04:10,710 --> 00:04:10,720
+the
+ 
+
+203
+00:04:10,720 --> 00:04:14,630
+the
+possible outputs to my my problem
+
+204
+00:04:14,630 --> 00:04:14,640
+possible outputs to my my problem
+ 
+
+205
+00:04:14,640 --> 00:04:17,830
+possible outputs to my my problem
+and what a problem is is a binary
+
+206
+00:04:17,830 --> 00:04:17,840
+and what a problem is is a binary
+ 
+
+207
+00:04:17,840 --> 00:04:19,349
+and what a problem is is a binary
+relation between these inputs and
+
+208
+00:04:19,349 --> 00:04:19,359
+relation between these inputs and
+ 
+
+209
+00:04:19,359 --> 00:04:20,949
+relation between these inputs and
+outputs essentially for each
+
+210
+00:04:20,949 --> 00:04:20,959
+outputs essentially for each
+ 
+
+211
+00:04:20,959 --> 00:04:24,390
+outputs essentially for each
+input i specify which of these outputs
+
+212
+00:04:24,390 --> 00:04:24,400
+input i specify which of these outputs
+ 
+
+213
+00:04:24,400 --> 00:04:27,670
+input i specify which of these outputs
+is correct right it doesn't necessarily
+
+214
+00:04:27,670 --> 00:04:27,680
+is correct right it doesn't necessarily
+ 
+
+215
+00:04:27,680 --> 00:04:29,110
+is correct right it doesn't necessarily
+have to be one
+
+216
+00:04:29,110 --> 00:04:29,120
+have to be one
+ 
+
+217
+00:04:29,120 --> 00:04:32,230
+have to be one
+right if i say give me the index
+
+218
+00:04:32,230 --> 00:04:32,240
+right if i say give me the index
+ 
+
+219
+00:04:32,240 --> 00:04:35,350
+right if i say give me the index
+in an array containing the value five
+
+220
+00:04:35,350 --> 00:04:35,360
+in an array containing the value five
+ 
+
+221
+00:04:35,360 --> 00:04:36,950
+in an array containing the value five
+there could be multiple fives in that
+
+222
+00:04:36,950 --> 00:04:36,960
+there could be multiple fives in that
+ 
+
+223
+00:04:36,960 --> 00:04:39,189
+there could be multiple fives in that
+array and so any of those indices would
+
+224
+00:04:39,189 --> 00:04:39,199
+array and so any of those indices would
+ 
+
+225
+00:04:39,199 --> 00:04:39,749
+array and so any of those indices would
+be
+
+226
+00:04:39,749 --> 00:04:39,759
+be
+ 
+
+227
+00:04:39,759 --> 00:04:43,189
+be
+correct so uh maybe this guy maps to
+
+228
+00:04:43,189 --> 00:04:43,199
+correct so uh maybe this guy maps to
+ 
+
+229
+00:04:43,199 --> 00:04:46,070
+correct so uh maybe this guy maps to
+that output and maybe this guy maps to i
+
+230
+00:04:46,070 --> 00:04:46,080
+that output and maybe this guy maps to i
+ 
+
+231
+00:04:46,080 --> 00:04:48,070
+that output and maybe this guy maps to i
+don't know two or three outputs
+
+232
+00:04:48,070 --> 00:04:48,080
+don't know two or three outputs
+ 
+
+233
+00:04:48,080 --> 00:04:52,150
+don't know two or three outputs
+right this input goes to one
+
+234
+00:04:52,150 --> 00:04:52,160
+right this input goes to one
+ 
+
+235
+00:04:52,160 --> 00:04:54,790
+right this input goes to one
+two i don't know there's a there's some
+
+236
+00:04:54,790 --> 00:04:54,800
+two i don't know there's a there's some
+ 
+
+237
+00:04:54,800 --> 00:04:56,390
+two i don't know there's a there's some
+kind of mapping here these edges
+
+238
+00:04:56,390 --> 00:04:56,400
+kind of mapping here these edges
+ 
+
+239
+00:04:56,400 --> 00:04:58,469
+kind of mapping here these edges
+represent a binary relation
+
+240
+00:04:58,469 --> 00:04:58,479
+represent a binary relation
+ 
+
+241
+00:04:58,479 --> 00:05:01,029
+represent a binary relation
+it's kind of a graph a bipartite graph
+
+242
+00:05:01,029 --> 00:05:01,039
+it's kind of a graph a bipartite graph
+ 
+
+243
+00:05:01,039 --> 00:05:01,990
+it's kind of a graph a bipartite graph
+between these
+
+244
+00:05:01,990 --> 00:05:02,000
+between these
+ 
+
+245
+00:05:02,000 --> 00:05:03,670
+between these
+inputs and outputs and these are
+
+246
+00:05:03,670 --> 00:05:03,680
+inputs and outputs and these are
+ 
+
+247
+00:05:03,680 --> 00:05:05,510
+inputs and outputs and these are
+specifying which of these outputs are
+
+248
+00:05:05,510 --> 00:05:05,520
+specifying which of these outputs are
+ 
+
+249
+00:05:05,520 --> 00:05:07,590
+specifying which of these outputs are
+correct for these inputs
+
+250
+00:05:07,590 --> 00:05:07,600
+correct for these inputs
+ 
+
+251
+00:05:07,600 --> 00:05:09,670
+correct for these inputs
+all right that's really the formal
+
+252
+00:05:09,670 --> 00:05:09,680
+all right that's really the formal
+ 
+
+253
+00:05:09,680 --> 00:05:10,870
+all right that's really the formal
+definition of
+
+254
+00:05:10,870 --> 00:05:10,880
+definition of
+ 
+
+255
+00:05:10,880 --> 00:05:13,830
+definition of
+what a problem is now generally if i
+
+256
+00:05:13,830 --> 00:05:13,840
+what a problem is now generally if i
+ 
+
+257
+00:05:13,840 --> 00:05:14,310
+what a problem is now generally if i
+have a
+
+258
+00:05:14,310 --> 00:05:14,320
+have a
+ 
+
+259
+00:05:14,320 --> 00:05:17,590
+have a
+problem and a computational problem
+
+260
+00:05:17,590 --> 00:05:17,600
+problem and a computational problem
+ 
+
+261
+00:05:17,600 --> 00:05:19,909
+problem and a computational problem
+i'm not going to specify the problem to
+
+262
+00:05:19,909 --> 00:05:19,919
+i'm not going to specify the problem to
+ 
+
+263
+00:05:19,919 --> 00:05:21,029
+i'm not going to specify the problem to
+you by saying
+
+264
+00:05:21,029 --> 00:05:21,039
+you by saying
+ 
+
+265
+00:05:21,039 --> 00:05:24,390
+you by saying
+okay for input 1 the correct answer
+
+266
+00:05:24,390 --> 00:05:24,400
+okay for input 1 the correct answer
+ 
+
+267
+00:05:24,400 --> 00:05:27,189
+okay for input 1 the correct answer
+is 0. and for input 2 the correct answer
+
+268
+00:05:27,189 --> 00:05:27,199
+is 0. and for input 2 the correct answer
+ 
+
+269
+00:05:27,199 --> 00:05:27,670
+is 0. and for input 2 the correct answer
+is 3
+
+270
+00:05:27,670 --> 00:05:27,680
+is 3
+ 
+
+271
+00:05:27,680 --> 00:05:29,189
+is 3
+and so on and so forth that would take
+
+272
+00:05:29,189 --> 00:05:29,199
+and so on and so forth that would take
+ 
+
+273
+00:05:29,199 --> 00:05:31,749
+and so on and so forth that would take
+forever right usually what we do
+
+274
+00:05:31,749 --> 00:05:31,759
+forever right usually what we do
+ 
+
+275
+00:05:31,759 --> 00:05:34,469
+forever right usually what we do
+when defining a problem is specify some
+
+276
+00:05:34,469 --> 00:05:34,479
+when defining a problem is specify some
+ 
+
+277
+00:05:34,479 --> 00:05:35,590
+when defining a problem is specify some
+kind of predicate
+
+278
+00:05:35,590 --> 00:05:35,600
+kind of predicate
+ 
+
+279
+00:05:35,600 --> 00:05:38,629
+kind of predicate
+saying that oh we can check
+
+280
+00:05:38,629 --> 00:05:38,639
+saying that oh we can check
+ 
+
+281
+00:05:38,639 --> 00:05:40,390
+saying that oh we can check
+if i give you an input and an output i
+
+282
+00:05:40,390 --> 00:05:40,400
+if i give you an input and an output i
+ 
+
+283
+00:05:40,400 --> 00:05:41,670
+if i give you an input and an output i
+can check whether that
+
+284
+00:05:41,670 --> 00:05:41,680
+can check whether that
+ 
+
+285
+00:05:41,680 --> 00:05:43,590
+can check whether that
+output is correct or not that's usually
+
+286
+00:05:43,590 --> 00:05:43,600
+output is correct or not that's usually
+ 
+
+287
+00:05:43,600 --> 00:05:44,710
+output is correct or not that's usually
+how we define
+
+288
+00:05:44,710 --> 00:05:44,720
+how we define
+ 
+
+289
+00:05:44,720 --> 00:05:48,790
+how we define
+a problem is if i
+
+290
+00:05:48,790 --> 00:05:48,800
+a problem is if i
+ 
+
+291
+00:05:48,800 --> 00:05:51,110
+a problem is if i
+i'm checking for whether this index
+
+292
+00:05:51,110 --> 00:05:51,120
+i'm checking for whether this index
+ 
+
+293
+00:05:51,120 --> 00:05:52,629
+i'm checking for whether this index
+contains a five i can just
+
+294
+00:05:52,629 --> 00:05:52,639
+contains a five i can just
+ 
+
+295
+00:05:52,639 --> 00:05:54,629
+contains a five i can just
+go to that array look at index five and
+
+296
+00:05:54,629 --> 00:05:54,639
+go to that array look at index five and
+ 
+
+297
+00:05:54,639 --> 00:05:56,870
+go to that array look at index five and
+say or that the index you gave me
+
+298
+00:05:56,870 --> 00:05:56,880
+say or that the index you gave me
+ 
+
+299
+00:05:56,880 --> 00:05:59,430
+say or that the index you gave me
+and see if it equals five right so
+
+300
+00:05:59,430 --> 00:05:59,440
+and see if it equals five right so
+ 
+
+301
+00:05:59,440 --> 00:06:01,189
+and see if it equals five right so
+usually we're putting it in terms of
+
+302
+00:06:01,189 --> 00:06:01,199
+usually we're putting it in terms of
+ 
+
+303
+00:06:01,199 --> 00:06:03,350
+usually we're putting it in terms of
+predicates because in general we don't
+
+304
+00:06:03,350 --> 00:06:03,360
+predicates because in general we don't
+ 
+
+305
+00:06:03,360 --> 00:06:05,590
+predicates because in general we don't
+really want to talk about
+
+306
+00:06:05,590 --> 00:06:05,600
+really want to talk about
+ 
+
+307
+00:06:05,600 --> 00:06:08,230
+really want to talk about
+small instances of problems so let's say
+
+308
+00:06:08,230 --> 00:06:08,240
+small instances of problems so let's say
+ 
+
+309
+00:06:08,240 --> 00:06:09,590
+small instances of problems so let's say
+i had the problem
+
+310
+00:06:09,590 --> 00:06:09,600
+i had the problem
+ 
+
+311
+00:06:09,600 --> 00:06:13,749
+i had the problem
+of among the students in this classroom
+
+312
+00:06:13,749 --> 00:06:13,759
+of among the students in this classroom
+ 
+
+313
+00:06:13,759 --> 00:06:15,189
+of among the students in this classroom
+do any pair of you have the same
+
+314
+00:06:15,189 --> 00:06:15,199
+do any pair of you have the same
+ 
+
+315
+00:06:15,199 --> 00:06:17,270
+do any pair of you have the same
+birthday okay
+
+316
+00:06:17,270 --> 00:06:17,280
+birthday okay
+ 
+
+317
+00:06:17,280 --> 00:06:19,749
+birthday okay
+all right well probably if there's more
+
+318
+00:06:19,749 --> 00:06:19,759
+all right well probably if there's more
+ 
+
+319
+00:06:19,759 --> 00:06:21,350
+all right well probably if there's more
+than 365 of you
+
+320
+00:06:21,350 --> 00:06:21,360
+than 365 of you
+ 
+
+321
+00:06:21,360 --> 00:06:24,790
+than 365 of you
+the answer is yes right right that by
+
+322
+00:06:24,790 --> 00:06:24,800
+the answer is yes right right that by
+ 
+
+323
+00:06:24,800 --> 00:06:26,629
+the answer is yes right right that by
+what pigeonhole principle right
+
+324
+00:06:26,629 --> 00:06:26,639
+what pigeonhole principle right
+ 
+
+325
+00:06:26,639 --> 00:06:28,710
+what pigeonhole principle right
+two of you must have the same birthday
+
+326
+00:06:28,710 --> 00:06:28,720
+two of you must have the same birthday
+ 
+
+327
+00:06:28,720 --> 00:06:29,909
+two of you must have the same birthday
+right but
+
+328
+00:06:29,909 --> 00:06:29,919
+right but
+ 
+
+329
+00:06:29,919 --> 00:06:32,230
+right but
+so let's let's generalize it a little
+
+330
+00:06:32,230 --> 00:06:32,240
+so let's let's generalize it a little
+ 
+
+331
+00:06:32,240 --> 00:06:33,510
+so let's let's generalize it a little
+bit say that
+
+332
+00:06:33,510 --> 00:06:33,520
+bit say that
+ 
+
+333
+00:06:33,520 --> 00:06:36,790
+bit say that
+i don't know i need a bigger space of
+
+334
+00:06:36,790 --> 00:06:36,800
+i don't know i need a bigger space of
+ 
+
+335
+00:06:36,800 --> 00:06:38,150
+i don't know i need a bigger space of
+birthdays for this question to be
+
+336
+00:06:38,150 --> 00:06:38,160
+birthdays for this question to be
+ 
+
+337
+00:06:38,160 --> 00:06:38,870
+birthdays for this question to be
+interesting
+
+338
+00:06:38,870 --> 00:06:38,880
+interesting
+ 
+
+339
+00:06:38,880 --> 00:06:41,430
+interesting
+maybe i tack on the year maybe i tack on
+
+340
+00:06:41,430 --> 00:06:41,440
+maybe i tack on the year maybe i tack on
+ 
+
+341
+00:06:41,440 --> 00:06:43,270
+maybe i tack on the year maybe i tack on
+the hour
+
+342
+00:06:43,270 --> 00:06:43,280
+the hour
+ 
+
+343
+00:06:43,280 --> 00:06:45,830
+the hour
+that you were born and that's a bigger
+
+344
+00:06:45,830 --> 00:06:45,840
+that you were born and that's a bigger
+ 
+
+345
+00:06:45,840 --> 00:06:47,189
+that you were born and that's a bigger
+space of inputs and i wouldn't
+
+346
+00:06:47,189 --> 00:06:47,199
+space of inputs and i wouldn't
+ 
+
+347
+00:06:47,199 --> 00:06:48,070
+space of inputs and i wouldn't
+necessarily
+
+348
+00:06:48,070 --> 00:06:48,080
+necessarily
+ 
+
+349
+00:06:48,080 --> 00:06:51,189
+necessarily
+expect that two of you would be born in
+
+350
+00:06:51,189 --> 00:06:51,199
+expect that two of you would be born in
+ 
+
+351
+00:06:51,199 --> 00:06:53,110
+expect that two of you would be born in
+the same year on the same day in the
+
+352
+00:06:53,110 --> 00:06:53,120
+the same year on the same day in the
+ 
+
+353
+00:06:53,120 --> 00:06:54,070
+the same year on the same day in the
+same hour
+
+354
+00:06:54,070 --> 00:06:54,080
+same hour
+ 
+
+355
+00:06:54,080 --> 00:06:55,990
+same hour
+right that would be a little less likely
+
+356
+00:06:55,990 --> 00:06:56,000
+right that would be a little less likely
+ 
+
+357
+00:06:56,000 --> 00:06:58,550
+right that would be a little less likely
+in fact as long as that space is larger
+
+358
+00:06:58,550 --> 00:06:58,560
+in fact as long as that space is larger
+ 
+
+359
+00:06:58,560 --> 00:06:59,909
+in fact as long as that space is larger
+than something like
+
+360
+00:06:59,909 --> 00:06:59,919
+than something like
+ 
+
+361
+00:06:59,919 --> 00:07:02,950
+than something like
+the square of the number of you
+
+362
+00:07:02,950 --> 00:07:02,960
+the square of the number of you
+ 
+
+363
+00:07:02,960 --> 00:07:06,230
+the square of the number of you
+right then i'm less likely than
+
+364
+00:07:06,230 --> 00:07:06,240
+right then i'm less likely than
+ 
+
+365
+00:07:06,240 --> 00:07:09,670
+right then i'm less likely than
+then than even to uh
+
+366
+00:07:09,670 --> 00:07:09,680
+then than even to uh
+ 
+
+367
+00:07:09,680 --> 00:07:13,110
+then than even to uh
+to have a pair of you that that's a
+
+368
+00:07:13,110 --> 00:07:13,120
+to have a pair of you that that's a
+ 
+
+369
+00:07:13,120 --> 00:07:15,990
+to have a pair of you that that's a
+kind of a birthday problem you may have
+
+370
+00:07:15,990 --> 00:07:16,000
+kind of a birthday problem you may have
+ 
+
+371
+00:07:16,000 --> 00:07:16,870
+kind of a birthday problem you may have
+seen
+
+372
+00:07:16,870 --> 00:07:16,880
+seen
+ 
+
+373
+00:07:16,880 --> 00:07:19,909
+seen
+in uh 0-4-2
+
+374
+00:07:19,909 --> 00:07:19,919
+in uh 0-4-2
+ 
+
+375
+00:07:19,919 --> 00:07:22,950
+in uh 0-4-2
+potentially right but in general i don't
+
+376
+00:07:22,950 --> 00:07:22,960
+potentially right but in general i don't
+ 
+
+377
+00:07:22,960 --> 00:07:24,469
+potentially right but in general i don't
+i don't i'm not going to mess with
+
+378
+00:07:24,469 --> 00:07:24,479
+i don't i'm not going to mess with
+ 
+
+379
+00:07:24,479 --> 00:07:25,990
+i don't i'm not going to mess with
+probability so much here
+
+380
+00:07:25,990 --> 00:07:26,000
+probability so much here
+ 
+
+381
+00:07:26,000 --> 00:07:28,629
+probability so much here
+i want a deterministic algorithm right a
+
+382
+00:07:28,629 --> 00:07:28,639
+i want a deterministic algorithm right a
+ 
+
+383
+00:07:28,639 --> 00:07:29,990
+i want a deterministic algorithm right a
+way of checking
+
+384
+00:07:29,990 --> 00:07:30,000
+way of checking
+ 
+
+385
+00:07:30,000 --> 00:07:32,230
+way of checking
+whether two of you have the same birth
+
+386
+00:07:32,230 --> 00:07:32,240
+whether two of you have the same birth
+ 
+
+387
+00:07:32,240 --> 00:07:33,670
+whether two of you have the same birth
+time let's say
+
+388
+00:07:33,670 --> 00:07:33,680
+time let's say
+ 
+
+389
+00:07:33,680 --> 00:07:36,870
+time let's say
+okay so uh in general in this class
+
+390
+00:07:36,870 --> 00:07:36,880
+okay so uh in general in this class
+ 
+
+391
+00:07:36,880 --> 00:07:38,950
+okay so uh in general in this class
+we're not going to concentrate on
+
+392
+00:07:38,950 --> 00:07:38,960
+we're not going to concentrate on
+ 
+
+393
+00:07:38,960 --> 00:07:42,230
+we're not going to concentrate on
+input such as is there
+
+394
+00:07:42,230 --> 00:07:42,240
+input such as is there
+ 
+
+395
+00:07:42,240 --> 00:07:44,390
+input such as is there
+a pair of you in this class that have
+
+396
+00:07:44,390 --> 00:07:44,400
+a pair of you in this class that have
+ 
+
+397
+00:07:44,400 --> 00:07:45,350
+a pair of you in this class that have
+the same birthday
+
+398
+00:07:45,350 --> 00:07:45,360
+the same birthday
+ 
+
+399
+00:07:45,360 --> 00:07:47,830
+the same birthday
+that's kind of boring right uh i i could
+
+400
+00:07:47,830 --> 00:07:47,840
+that's kind of boring right uh i i could
+ 
+
+401
+00:07:47,840 --> 00:07:48,790
+that's kind of boring right uh i i could
+just say
+
+402
+00:07:48,790 --> 00:07:48,800
+just say
+ 
+
+403
+00:07:48,800 --> 00:07:51,909
+just say
+well uh i i could do a lot of different
+
+404
+00:07:51,909 --> 00:07:51,919
+well uh i i could do a lot of different
+ 
+
+405
+00:07:51,919 --> 00:07:52,710
+well uh i i could do a lot of different
+things but
+
+406
+00:07:52,710 --> 00:07:52,720
+things but
+ 
+
+407
+00:07:52,720 --> 00:07:54,869
+things but
+what we we do in this class this is
+
+408
+00:07:54,869 --> 00:07:54,879
+what we we do in this class this is
+ 
+
+409
+00:07:54,879 --> 00:07:56,550
+what we we do in this class this is
+first a fixed
+
+410
+00:07:56,550 --> 00:07:56,560
+first a fixed
+ 
+
+411
+00:07:56,560 --> 00:07:59,670
+first a fixed
+classroom of you i want to make
+
+412
+00:07:59,670 --> 00:07:59,680
+classroom of you i want to make
+ 
+
+413
+00:07:59,680 --> 00:08:01,510
+classroom of you i want to make
+algorithms that are general to
+
+414
+00:08:01,510 --> 00:08:01,520
+algorithms that are general to
+ 
+
+415
+00:08:01,520 --> 00:08:04,070
+algorithms that are general to
+any classroom right to go to your
+
+416
+00:08:04,070 --> 00:08:04,080
+any classroom right to go to your
+ 
+
+417
+00:08:04,080 --> 00:08:05,589
+any classroom right to go to your
+recitation i want an algorithm that will
+
+418
+00:08:05,589 --> 00:08:05,599
+recitation i want an algorithm that will
+ 
+
+419
+00:08:05,599 --> 00:08:07,029
+recitation i want an algorithm that will
+apply to your recitation
+
+420
+00:08:07,029 --> 00:08:07,039
+apply to your recitation
+ 
+
+421
+00:08:07,039 --> 00:08:08,869
+apply to your recitation
+an algorithm that not only applies to
+
+422
+00:08:08,869 --> 00:08:08,879
+an algorithm that not only applies to
+ 
+
+423
+00:08:08,879 --> 00:08:10,790
+an algorithm that not only applies to
+this classroom but also the machine
+
+424
+00:08:10,790 --> 00:08:10,800
+this classroom but also the machine
+ 
+
+425
+00:08:10,800 --> 00:08:12,309
+this classroom but also the machine
+learning class before you
+
+426
+00:08:12,309 --> 00:08:12,319
+learning class before you
+ 
+
+427
+00:08:12,319 --> 00:08:14,550
+learning class before you
+right i want an algorithm that can
+
+428
+00:08:14,550 --> 00:08:14,560
+right i want an algorithm that can
+ 
+
+429
+00:08:14,560 --> 00:08:16,550
+right i want an algorithm that can
+change
+
+430
+00:08:16,550 --> 00:08:16,560
+change
+ 
+
+431
+00:08:16,560 --> 00:08:20,710
+change
+its it can accept an arbitrarily sized
+
+432
+00:08:20,710 --> 00:08:20,720
+its it can accept an arbitrarily sized
+ 
+
+433
+00:08:20,720 --> 00:08:21,430
+its it can accept an arbitrarily sized
+input
+
+434
+00:08:21,430 --> 00:08:21,440
+input
+ 
+
+435
+00:08:21,440 --> 00:08:23,909
+input
+right here we have a class of maybe 300
+
+436
+00:08:23,909 --> 00:08:23,919
+right here we have a class of maybe 300
+ 
+
+437
+00:08:23,919 --> 00:08:25,589
+right here we have a class of maybe 300
+400 students
+
+438
+00:08:25,589 --> 00:08:25,599
+400 students
+ 
+
+439
+00:08:25,599 --> 00:08:27,270
+400 students
+right but i want my algorithm to work
+
+440
+00:08:27,270 --> 00:08:27,280
+right but i want my algorithm to work
+ 
+
+441
+00:08:27,280 --> 00:08:29,029
+right but i want my algorithm to work
+for a billion students
+
+442
+00:08:29,029 --> 00:08:29,039
+for a billion students
+ 
+
+443
+00:08:29,039 --> 00:08:30,950
+for a billion students
+right like maybe i'm trying to check if
+
+444
+00:08:30,950 --> 00:08:30,960
+right like maybe i'm trying to check if
+ 
+
+445
+00:08:30,960 --> 00:08:32,630
+right like maybe i'm trying to check if
+there's a match of something
+
+446
+00:08:32,630 --> 00:08:32,640
+there's a match of something
+ 
+
+447
+00:08:32,640 --> 00:08:34,469
+there's a match of something
+in the facebook database or something
+
+448
+00:08:34,469 --> 00:08:34,479
+in the facebook database or something
+ 
+
+449
+00:08:34,479 --> 00:08:35,829
+in the facebook database or something
+like that right
+
+450
+00:08:35,829 --> 00:08:35,839
+like that right
+ 
+
+451
+00:08:35,839 --> 00:08:39,269
+like that right
+okay so in general uh
+
+452
+00:08:39,269 --> 00:08:39,279
+okay so in general uh
+ 
+
+453
+00:08:39,279 --> 00:08:44,790
+okay so in general uh
+we are looking for general
+
+454
+00:08:44,790 --> 00:08:44,800
+
+ 
+
+455
+00:08:44,800 --> 00:08:47,910
+
+problems
+
+456
+00:08:47,910 --> 00:08:47,920
+
+ 
+
+457
+00:08:47,920 --> 00:08:50,970
+
+that have arbitrarily
+
+458
+00:08:50,970 --> 00:08:50,980
+that have arbitrarily
+ 
+
+459
+00:08:50,980 --> 00:08:52,870
+that have arbitrarily
+[Music]
+
+460
+00:08:52,870 --> 00:08:52,880
+[Music]
+ 
+
+461
+00:08:52,880 --> 00:08:56,389
+[Music]
+sized inputs right so
+
+462
+00:08:56,389 --> 00:08:56,399
+sized inputs right so
+ 
+
+463
+00:08:56,399 --> 00:08:59,430
+sized inputs right so
+these these inputs could grow very large
+
+464
+00:08:59,430 --> 00:08:59,440
+these these inputs could grow very large
+ 
+
+465
+00:08:59,440 --> 00:09:01,190
+these these inputs could grow very large
+but we want a kind of a fixed
+
+466
+00:09:01,190 --> 00:09:01,200
+but we want a kind of a fixed
+ 
+
+467
+00:09:01,200 --> 00:09:04,389
+but we want a kind of a fixed
+size algorithm to solve those problems
+
+468
+00:09:04,389 --> 00:09:04,399
+size algorithm to solve those problems
+ 
+
+469
+00:09:04,399 --> 00:09:19,190
+size algorithm to solve those problems
+okay so what is an algorithm then
+
+470
+00:09:19,190 --> 00:09:19,200
+
+ 
+
+471
+00:09:19,200 --> 00:09:22,470
+
+i really can't spell i told you okay
+
+472
+00:09:22,470 --> 00:09:22,480
+i really can't spell i told you okay
+ 
+
+473
+00:09:22,480 --> 00:09:25,509
+i really can't spell i told you okay
+i didn't lie to you um so an
+
+474
+00:09:25,509 --> 00:09:25,519
+i didn't lie to you um so an
+ 
+
+475
+00:09:25,519 --> 00:09:26,949
+i didn't lie to you um so an
+algorithm is a little different than a
+
+476
+00:09:26,949 --> 00:09:26,959
+algorithm is a little different than a
+ 
+
+477
+00:09:26,959 --> 00:09:29,030
+algorithm is a little different than a
+problem of problem
+
+478
+00:09:29,030 --> 00:09:29,040
+problem of problem
+ 
+
+479
+00:09:29,040 --> 00:09:32,150
+problem of problem
+specification i can state to you what
+
+480
+00:09:32,150 --> 00:09:32,160
+specification i can state to you what
+ 
+
+481
+00:09:32,160 --> 00:09:33,030
+specification i can state to you what
+this graph
+
+482
+00:09:33,030 --> 00:09:33,040
+this graph
+ 
+
+483
+00:09:33,040 --> 00:09:35,269
+this graph
+or i can tell you what this graph looks
+
+484
+00:09:35,269 --> 00:09:35,279
+or i can tell you what this graph looks
+ 
+
+485
+00:09:35,279 --> 00:09:36,790
+or i can tell you what this graph looks
+like an algorithm is really
+
+486
+00:09:36,790 --> 00:09:36,800
+like an algorithm is really
+ 
+
+487
+00:09:36,800 --> 00:09:38,310
+like an algorithm is really
+i don't know what the outputs are i
+
+488
+00:09:38,310 --> 00:09:38,320
+i don't know what the outputs are i
+ 
+
+489
+00:09:38,320 --> 00:09:40,150
+i don't know what the outputs are i
+don't know what these edges are
+
+490
+00:09:40,150 --> 00:09:40,160
+don't know what these edges are
+ 
+
+491
+00:09:40,160 --> 00:09:42,389
+don't know what these edges are
+but i want to i want a fixed size kind
+
+492
+00:09:42,389 --> 00:09:42,399
+but i want to i want a fixed size kind
+ 
+
+493
+00:09:42,399 --> 00:09:43,269
+but i want to i want a fixed size kind
+of
+
+494
+00:09:43,269 --> 00:09:43,279
+of
+ 
+
+495
+00:09:43,279 --> 00:09:45,750
+of
+machine or procedure that if i give it
+
+496
+00:09:45,750 --> 00:09:45,760
+machine or procedure that if i give it
+ 
+
+497
+00:09:45,760 --> 00:09:47,350
+machine or procedure that if i give it
+an input
+
+498
+00:09:47,350 --> 00:09:47,360
+an input
+ 
+
+499
+00:09:47,360 --> 00:09:50,310
+an input
+it will generate an output and if it
+
+500
+00:09:50,310 --> 00:09:50,320
+it will generate an output and if it
+ 
+
+501
+00:09:50,320 --> 00:09:51,829
+it will generate an output and if it
+generates an output it better be one of
+
+502
+00:09:51,829 --> 00:09:51,839
+generates an output it better be one of
+ 
+
+503
+00:09:51,839 --> 00:09:53,670
+generates an output it better be one of
+these correct outputs
+
+504
+00:09:53,670 --> 00:09:53,680
+these correct outputs
+ 
+
+505
+00:09:53,680 --> 00:09:57,269
+these correct outputs
+right so if i have an algorithm that
+
+506
+00:09:57,269 --> 00:09:57,279
+right so if i have an algorithm that
+ 
+
+507
+00:09:57,279 --> 00:09:58,630
+right so if i have an algorithm that
+takes in this input
+
+508
+00:09:58,630 --> 00:09:58,640
+takes in this input
+ 
+
+509
+00:09:58,640 --> 00:10:01,110
+takes in this input
+i really want it to output this output
+
+510
+00:10:01,110 --> 00:10:01,120
+i really want it to output this output
+ 
+
+511
+00:10:01,120 --> 00:10:03,030
+i really want it to output this output
+or else it's not a correct algorithm
+
+512
+00:10:03,030 --> 00:10:03,040
+or else it's not a correct algorithm
+ 
+
+513
+00:10:03,040 --> 00:10:05,350
+or else it's not a correct algorithm
+similarly if for this one it could
+
+514
+00:10:05,350 --> 00:10:05,360
+similarly if for this one it could
+ 
+
+515
+00:10:05,360 --> 00:10:07,509
+similarly if for this one it could
+output any of these three
+
+516
+00:10:07,509 --> 00:10:07,519
+output any of these three
+ 
+
+517
+00:10:07,519 --> 00:10:11,030
+output any of these three
+outputs but if it outputs this guy
+
+518
+00:10:11,030 --> 00:10:11,040
+outputs but if it outputs this guy
+ 
+
+519
+00:10:11,040 --> 00:10:13,190
+outputs but if it outputs this guy
+for this input that would not be a
+
+520
+00:10:13,190 --> 00:10:13,200
+for this input that would not be a
+ 
+
+521
+00:10:13,200 --> 00:10:14,630
+for this input that would not be a
+correct algorithm right
+
+522
+00:10:14,630 --> 00:10:14,640
+correct algorithm right
+ 
+
+523
+00:10:14,640 --> 00:10:17,750
+correct algorithm right
+and so generally what we want is a an
+
+524
+00:10:17,750 --> 00:10:17,760
+and so generally what we want is a an
+ 
+
+525
+00:10:17,760 --> 00:10:19,350
+and so generally what we want is a an
+algorithm is a function it takes
+
+526
+00:10:19,350 --> 00:10:19,360
+algorithm is a function it takes
+ 
+
+527
+00:10:19,360 --> 00:10:22,230
+algorithm is a function it takes
+inputs to outputs right an algorithm is
+
+528
+00:10:22,230 --> 00:10:22,240
+inputs to outputs right an algorithm is
+ 
+
+529
+00:10:22,240 --> 00:10:24,470
+inputs to outputs right an algorithm is
+some kind of function
+
+530
+00:10:24,470 --> 00:10:24,480
+some kind of function
+ 
+
+531
+00:10:24,480 --> 00:10:27,030
+some kind of function
+right that takes these inputs maps it to
+
+532
+00:10:27,030 --> 00:10:27,040
+right that takes these inputs maps it to
+ 
+
+533
+00:10:27,040 --> 00:10:28,550
+right that takes these inputs maps it to
+a single output
+
+534
+00:10:28,550 --> 00:10:28,560
+a single output
+ 
+
+535
+00:10:28,560 --> 00:10:30,470
+a single output
+and that output better be correct based
+
+536
+00:10:30,470 --> 00:10:30,480
+and that output better be correct based
+ 
+
+537
+00:10:30,480 --> 00:10:32,389
+and that output better be correct based
+on our problem okay
+
+538
+00:10:32,389 --> 00:10:32,399
+on our problem okay
+ 
+
+539
+00:10:32,399 --> 00:10:35,509
+on our problem okay
+so that's what our algorithm is uh
+
+540
+00:10:35,509 --> 00:10:35,519
+so that's what our algorithm is uh
+ 
+
+541
+00:10:35,519 --> 00:10:37,590
+so that's what our algorithm is uh
+it solves the problem if it returns a
+
+542
+00:10:37,590 --> 00:10:37,600
+it solves the problem if it returns a
+ 
+
+543
+00:10:37,600 --> 00:10:39,110
+it solves the problem if it returns a
+correct output for every
+
+544
+00:10:39,110 --> 00:10:39,120
+correct output for every
+ 
+
+545
+00:10:39,120 --> 00:10:42,389
+correct output for every
+uh problem input that is in our domain
+
+546
+00:10:42,389 --> 00:10:42,399
+uh problem input that is in our domain
+ 
+
+547
+00:10:42,399 --> 00:10:46,470
+uh problem input that is in our domain
+okay and the example for uh
+
+548
+00:10:46,470 --> 00:10:46,480
+okay and the example for uh
+ 
+
+549
+00:10:46,480 --> 00:10:48,630
+okay and the example for uh
+does anyone have a possible algorithm
+
+550
+00:10:48,630 --> 00:10:48,640
+does anyone have a possible algorithm
+ 
+
+551
+00:10:48,640 --> 00:10:50,790
+does anyone have a possible algorithm
+for checking whether any two of you have
+
+552
+00:10:50,790 --> 00:10:50,800
+for checking whether any two of you have
+ 
+
+553
+00:10:50,800 --> 00:10:52,310
+for checking whether any two of you have
+the same birth time
+
+554
+00:10:52,310 --> 00:10:52,320
+the same birth time
+ 
+
+555
+00:10:52,320 --> 00:10:57,430
+the same birth time
+as specified before
+
+556
+00:10:57,430 --> 00:10:57,440
+
+ 
+
+557
+00:10:57,440 --> 00:11:00,389
+
+i'm going to let someone else have a try
+
+558
+00:11:00,389 --> 00:11:00,399
+i'm going to let someone else have a try
+ 
+
+559
+00:11:00,399 --> 00:11:01,030
+i'm going to let someone else have a try
+sure
+
+560
+00:11:01,030 --> 00:11:01,040
+sure
+ 
+
+561
+00:11:01,040 --> 00:11:05,910
+sure
+just ask everyone one by one
+
+562
+00:11:05,910 --> 00:11:05,920
+
+ 
+
+563
+00:11:05,920 --> 00:11:08,790
+
+ah great so uh what your colleague has
+
+564
+00:11:08,790 --> 00:11:08,800
+ah great so uh what your colleague has
+ 
+
+565
+00:11:08,800 --> 00:11:10,470
+ah great so uh what your colleague has
+said is a great algorithm
+
+566
+00:11:10,470 --> 00:11:10,480
+said is a great algorithm
+ 
+
+567
+00:11:10,480 --> 00:11:11,829
+said is a great algorithm
+well essentially what it's going to do
+
+568
+00:11:11,829 --> 00:11:11,839
+well essentially what it's going to do
+ 
+
+569
+00:11:11,839 --> 00:11:13,350
+well essentially what it's going to do
+is i'm going to enter i'm going to put
+
+570
+00:11:13,350 --> 00:11:13,360
+is i'm going to enter i'm going to put
+ 
+
+571
+00:11:13,360 --> 00:11:15,190
+is i'm going to enter i'm going to put
+you guys in some order
+
+572
+00:11:15,190 --> 00:11:15,200
+you guys in some order
+ 
+
+573
+00:11:15,200 --> 00:11:16,630
+you guys in some order
+okay i'm going to give each of you a
+
+574
+00:11:16,630 --> 00:11:16,640
+okay i'm going to give each of you a
+ 
+
+575
+00:11:16,640 --> 00:11:19,269
+okay i'm going to give each of you a
+number one through however
+
+576
+00:11:19,269 --> 00:11:19,279
+number one through however
+ 
+
+577
+00:11:19,279 --> 00:11:21,110
+number one through however
+many number of students there are in
+
+578
+00:11:21,110 --> 00:11:21,120
+many number of students there are in
+ 
+
+579
+00:11:21,120 --> 00:11:22,790
+many number of students there are in
+this class and i'm going to interview
+
+580
+00:11:22,790 --> 00:11:22,800
+this class and i'm going to interview
+ 
+
+581
+00:11:22,800 --> 00:11:23,990
+this class and i'm going to interview
+you one by one
+
+582
+00:11:23,990 --> 00:11:24,000
+you one by one
+ 
+
+583
+00:11:24,000 --> 00:11:25,030
+you one by one
+right i'm going to say what's your
+
+584
+00:11:25,030 --> 00:11:25,040
+right i'm going to say what's your
+ 
+
+585
+00:11:25,040 --> 00:11:27,670
+right i'm going to say what's your
+birthday anytime we'll write it down
+
+586
+00:11:27,670 --> 00:11:27,680
+birthday anytime we'll write it down
+ 
+
+587
+00:11:27,680 --> 00:11:29,430
+birthday anytime we'll write it down
+right i'm going to put in in some kind
+
+588
+00:11:29,430 --> 00:11:29,440
+right i'm going to put in in some kind
+ 
+
+589
+00:11:29,440 --> 00:11:31,030
+right i'm going to put in in some kind
+of record okay
+
+590
+00:11:31,030 --> 00:11:31,040
+of record okay
+ 
+
+591
+00:11:31,040 --> 00:11:33,990
+of record okay
+and then as i keep interviewing you i'm
+
+592
+00:11:33,990 --> 00:11:34,000
+and then as i keep interviewing you i'm
+ 
+
+593
+00:11:34,000 --> 00:11:34,949
+and then as i keep interviewing you i'm
+going to
+
+594
+00:11:34,949 --> 00:11:34,959
+going to
+ 
+
+595
+00:11:34,959 --> 00:11:36,230
+going to
+find out your birthday i'm going to
+
+596
+00:11:36,230 --> 00:11:36,240
+find out your birthday i'm going to
+ 
+
+597
+00:11:36,240 --> 00:11:37,910
+find out your birthday i'm going to
+check the record i'm going to look
+
+598
+00:11:37,910 --> 00:11:37,920
+check the record i'm going to look
+ 
+
+599
+00:11:37,920 --> 00:11:39,509
+check the record i'm going to look
+through all the birthdays in the record
+
+600
+00:11:39,509 --> 00:11:39,519
+through all the birthdays in the record
+ 
+
+601
+00:11:39,519 --> 00:11:42,790
+through all the birthdays in the record
+if i find a match right then i return
+
+602
+00:11:42,790 --> 00:11:42,800
+if i find a match right then i return
+ 
+
+603
+00:11:42,800 --> 00:11:45,670
+if i find a match right then i return
+yay i found a pair and i can stop
+
+604
+00:11:45,670 --> 00:11:45,680
+yay i found a pair and i can stop
+ 
+
+605
+00:11:45,680 --> 00:11:47,110
+yay i found a pair and i can stop
+otherwise if i get through the record
+
+606
+00:11:47,110 --> 00:11:47,120
+otherwise if i get through the record
+ 
+
+607
+00:11:47,120 --> 00:11:48,710
+otherwise if i get through the record
+list i
+
+608
+00:11:48,710 --> 00:11:48,720
+list i
+ 
+
+609
+00:11:48,720 --> 00:11:50,790
+list i
+don't and i don't find a match i just
+
+610
+00:11:50,790 --> 00:11:50,800
+don't and i don't find a match i just
+ 
+
+611
+00:11:50,800 --> 00:11:52,389
+don't and i don't find a match i just
+stick you at the end of the record
+
+612
+00:11:52,389 --> 00:11:52,399
+stick you at the end of the record
+ 
+
+613
+00:11:52,399 --> 00:11:54,710
+stick you at the end of the record
+right i add you to the record and then i
+
+614
+00:11:54,710 --> 00:11:54,720
+right i add you to the record and then i
+ 
+
+615
+00:11:54,720 --> 00:11:56,310
+right i add you to the record and then i
+move on to the next person i keep doing
+
+616
+00:11:56,310 --> 00:11:56,320
+move on to the next person i keep doing
+ 
+
+617
+00:11:56,320 --> 00:11:57,430
+move on to the next person i keep doing
+this okay so that's
+
+618
+00:11:57,430 --> 00:11:57,440
+this okay so that's
+ 
+
+619
+00:11:57,440 --> 00:11:59,030
+this okay so that's
+that's a proposed algorithm for this
+
+620
+00:11:59,030 --> 00:11:59,040
+that's a proposed algorithm for this
+ 
+
+621
+00:11:59,040 --> 00:12:01,910
+that's a proposed algorithm for this
+birthday problem
+
+622
+00:12:01,910 --> 00:12:01,920
+
+ 
+
+623
+00:12:01,920 --> 00:12:06,550
+
+for birthday
+
+624
+00:12:06,550 --> 00:12:06,560
+for birthday
+ 
+
+625
+00:12:06,560 --> 00:12:11,750
+for birthday
+problem what's the algorithm here
+
+626
+00:12:11,750 --> 00:12:11,760
+problem what's the algorithm here
+ 
+
+627
+00:12:11,760 --> 00:12:20,389
+problem what's the algorithm here
+maintain a record
+
+628
+00:12:20,389 --> 00:12:20,399
+
+ 
+
+629
+00:12:20,399 --> 00:12:23,509
+
+interview
+
+630
+00:12:23,509 --> 00:12:23,519
+
+ 
+
+631
+00:12:23,519 --> 00:12:28,150
+
+students students
+
+632
+00:12:28,150 --> 00:12:28,160
+students students
+ 
+
+633
+00:12:28,160 --> 00:12:33,750
+students students
+in some order
+
+634
+00:12:33,750 --> 00:12:33,760
+
+ 
+
+635
+00:12:33,760 --> 00:12:35,269
+
+and what does interviewing a student
+
+636
+00:12:35,269 --> 00:12:35,279
+and what does interviewing a student
+ 
+
+637
+00:12:35,279 --> 00:12:38,790
+and what does interviewing a student
+mean it means two things it means
+
+638
+00:12:38,790 --> 00:12:38,800
+mean it means two things it means
+ 
+
+639
+00:12:38,800 --> 00:12:43,470
+mean it means two things it means
+check if
+
+640
+00:12:43,470 --> 00:12:43,480
+
+ 
+
+641
+00:12:43,480 --> 00:12:46,710
+
+birthday in
+
+642
+00:12:46,710 --> 00:12:46,720
+birthday in
+ 
+
+643
+00:12:46,720 --> 00:12:53,269
+birthday in
+record and if it is return a pair
+
+644
+00:12:53,269 --> 00:12:53,279
+record and if it is return a pair
+ 
+
+645
+00:12:53,279 --> 00:12:56,470
+record and if it is return a pair
+so return
+
+646
+00:12:56,470 --> 00:12:56,480
+so return
+ 
+
+647
+00:12:56,480 --> 00:13:00,470
+so return
+pair otherwise
+
+648
+00:13:00,470 --> 00:13:00,480
+pair otherwise
+ 
+
+649
+00:13:00,480 --> 00:13:04,310
+pair otherwise
+add a
+
+650
+00:13:04,310 --> 00:13:04,320
+add a
+ 
+
+651
+00:13:04,320 --> 00:13:07,910
+add a
+new student
+
+652
+00:13:07,910 --> 00:13:07,920
+
+ 
+
+653
+00:13:07,920 --> 00:13:11,430
+
+to record
+
+654
+00:13:11,430 --> 00:13:11,440
+
+ 
+
+655
+00:13:11,440 --> 00:13:13,750
+
+and then at the very end if i go through
+
+656
+00:13:13,750 --> 00:13:13,760
+and then at the very end if i go through
+ 
+
+657
+00:13:13,760 --> 00:13:15,430
+and then at the very end if i go through
+everybody and i haven't found a match
+
+658
+00:13:15,430 --> 00:13:15,440
+everybody and i haven't found a match
+ 
+
+659
+00:13:15,440 --> 00:13:16,069
+everybody and i haven't found a match
+yet
+
+660
+00:13:16,069 --> 00:13:16,079
+yet
+ 
+
+661
+00:13:16,079 --> 00:13:18,829
+yet
+i'm going to return that there is none
+
+662
+00:13:18,829 --> 00:13:18,839
+i'm going to return that there is none
+ 
+
+663
+00:13:18,839 --> 00:13:22,790
+i'm going to return that there is none
+right
+
+664
+00:13:22,790 --> 00:13:22,800
+
+ 
+
+665
+00:13:22,800 --> 00:13:24,150
+
+okay so that's a statement of an
+
+666
+00:13:24,150 --> 00:13:24,160
+okay so that's a statement of an
+ 
+
+667
+00:13:24,160 --> 00:13:25,910
+okay so that's a statement of an
+algorithm that's kind of the level of
+
+668
+00:13:25,910 --> 00:13:25,920
+algorithm that's kind of the level of
+ 
+
+669
+00:13:25,920 --> 00:13:28,389
+algorithm that's kind of the level of
+description that will be looking for you
+
+670
+00:13:28,389 --> 00:13:28,399
+description that will be looking for you
+ 
+
+671
+00:13:28,399 --> 00:13:32,389
+description that will be looking for you
+in the theory parts of this theory
+
+672
+00:13:32,389 --> 00:13:32,399
+in the theory parts of this theory
+ 
+
+673
+00:13:32,399 --> 00:13:33,670
+in the theory parts of this theory
+questions that we ask you on your
+
+674
+00:13:33,670 --> 00:13:33,680
+questions that we ask you on your
+ 
+
+675
+00:13:33,680 --> 00:13:35,190
+questions that we ask you on your
+problem sets right it's a verbal
+
+676
+00:13:35,190 --> 00:13:35,200
+problem sets right it's a verbal
+ 
+
+677
+00:13:35,200 --> 00:13:37,110
+problem sets right it's a verbal
+description in words
+
+678
+00:13:37,110 --> 00:13:37,120
+description in words
+ 
+
+679
+00:13:37,120 --> 00:13:40,710
+description in words
+that you know it's maybe not enough for
+
+680
+00:13:40,710 --> 00:13:40,720
+that you know it's maybe not enough for
+ 
+
+681
+00:13:40,720 --> 00:13:42,389
+that you know it's maybe not enough for
+a computer to know what to do
+
+682
+00:13:42,389 --> 00:13:42,399
+a computer to know what to do
+ 
+
+683
+00:13:42,399 --> 00:13:45,030
+a computer to know what to do
+but if you said this algorithm to any of
+
+684
+00:13:45,030 --> 00:13:45,040
+but if you said this algorithm to any of
+ 
+
+685
+00:13:45,040 --> 00:13:45,910
+but if you said this algorithm to any of
+your
+
+686
+00:13:45,910 --> 00:13:45,920
+your
+ 
+
+687
+00:13:45,920 --> 00:13:48,389
+your
+your friends in this class right they
+
+688
+00:13:48,389 --> 00:13:48,399
+your friends in this class right they
+ 
+
+689
+00:13:48,399 --> 00:13:49,110
+your friends in this class right they
+would at least
+
+690
+00:13:49,110 --> 00:13:49,120
+would at least
+ 
+
+691
+00:13:49,120 --> 00:13:50,870
+would at least
+understand what it is that you're doing
+
+692
+00:13:50,870 --> 00:13:50,880
+understand what it is that you're doing
+ 
+
+693
+00:13:50,880 --> 00:13:53,430
+understand what it is that you're doing
+yeah does an algorithm have to be a pure
+
+694
+00:13:53,430 --> 00:13:53,440
+yeah does an algorithm have to be a pure
+ 
+
+695
+00:13:53,440 --> 00:13:53,990
+yeah does an algorithm have to be a pure
+function
+
+696
+00:13:53,990 --> 00:13:54,000
+function
+ 
+
+697
+00:13:54,000 --> 00:13:57,590
+function
+mathematical pure function in the does a
+
+698
+00:13:57,590 --> 00:13:57,600
+mathematical pure function in the does a
+ 
+
+699
+00:13:57,600 --> 00:13:59,269
+mathematical pure function in the does a
+an algorithm have to be a pure function
+
+700
+00:13:59,269 --> 00:13:59,279
+an algorithm have to be a pure function
+ 
+
+701
+00:13:59,279 --> 00:14:00,790
+an algorithm have to be a pure function
+in the mathematical sense
+
+702
+00:14:00,790 --> 00:14:00,800
+in the mathematical sense
+ 
+
+703
+00:14:00,800 --> 00:14:03,430
+in the mathematical sense
+uh as in it needs to map to a single
+
+704
+00:14:03,430 --> 00:14:03,440
+uh as in it needs to map to a single
+ 
+
+705
+00:14:03,440 --> 00:14:11,829
+uh as in it needs to map to a single
+output
+
+706
+00:14:11,829 --> 00:14:11,839
+
+ 
+
+707
+00:14:11,839 --> 00:14:14,389
+
+so we're talking about kind of a
+
+708
+00:14:14,389 --> 00:14:14,399
+so we're talking about kind of a
+ 
+
+709
+00:14:14,399 --> 00:14:16,230
+so we're talking about kind of a
+functional programming definition
+
+710
+00:14:16,230 --> 00:14:16,240
+functional programming definition
+ 
+
+711
+00:14:16,240 --> 00:14:19,990
+functional programming definition
+of uh of a of a of a function right this
+
+712
+00:14:19,990 --> 00:14:20,000
+of uh of a of a of a function right this
+ 
+
+713
+00:14:20,000 --> 00:14:20,230
+of uh of a of a of a function right this
+is
+
+714
+00:14:20,230 --> 00:14:20,240
+is
+ 
+
+715
+00:14:20,240 --> 00:14:23,910
+is
+um i am talking about the mathematical
+
+716
+00:14:23,910 --> 00:14:23,920
+um i am talking about the mathematical
+ 
+
+717
+00:14:23,920 --> 00:14:27,189
+um i am talking about the mathematical
+i have a binary relation and this thing
+
+718
+00:14:27,189 --> 00:14:27,199
+i have a binary relation and this thing
+ 
+
+719
+00:14:27,199 --> 00:14:30,470
+i have a binary relation and this thing
+has an output for every input and
+
+720
+00:14:30,470 --> 00:14:30,480
+has an output for every input and
+ 
+
+721
+00:14:30,480 --> 00:14:32,629
+has an output for every input and
+there is exactly one output to every
+
+722
+00:14:32,629 --> 00:14:32,639
+there is exactly one output to every
+ 
+
+723
+00:14:32,639 --> 00:14:33,509
+there is exactly one output to every
+input that's
+
+724
+00:14:33,509 --> 00:14:33,519
+input that's
+ 
+
+725
+00:14:33,519 --> 00:14:35,269
+input that's
+that's the mathematical definition of
+
+726
+00:14:35,269 --> 00:14:35,279
+that's the mathematical definition of
+ 
+
+727
+00:14:35,279 --> 00:14:36,550
+that's the mathematical definition of
+function that i'm using
+
+728
+00:14:36,550 --> 00:14:36,560
+function that i'm using
+ 
+
+729
+00:14:36,560 --> 00:14:40,150
+function that i'm using
+for when i'm defining an algorithm yeah
+
+730
+00:14:40,150 --> 00:14:40,160
+for when i'm defining an algorithm yeah
+ 
+
+731
+00:14:40,160 --> 00:14:44,230
+for when i'm defining an algorithm yeah
+so basically is an algorithm like uh
+
+732
+00:14:44,230 --> 00:14:44,240
+so basically is an algorithm like uh
+ 
+
+733
+00:14:44,240 --> 00:14:46,870
+so basically is an algorithm like uh
+like a plan yeah an algorithm is a
+
+734
+00:14:46,870 --> 00:14:46,880
+like a plan yeah an algorithm is a
+ 
+
+735
+00:14:46,880 --> 00:14:48,069
+like a plan yeah an algorithm is a
+procedure
+
+736
+00:14:48,069 --> 00:14:48,079
+procedure
+ 
+
+737
+00:14:48,079 --> 00:14:50,470
+procedure
+that somehow i can do whatever i want
+
+738
+00:14:50,470 --> 00:14:50,480
+that somehow i can do whatever i want
+ 
+
+739
+00:14:50,480 --> 00:14:52,150
+that somehow i can do whatever i want
+but i have to take one of these inputs
+
+740
+00:14:52,150 --> 00:14:52,160
+but i have to take one of these inputs
+ 
+
+741
+00:14:52,160 --> 00:14:53,670
+but i have to take one of these inputs
+and i have to produce an output and at
+
+742
+00:14:53,670 --> 00:14:53,680
+and i have to produce an output and at
+ 
+
+743
+00:14:53,680 --> 00:14:56,069
+and i have to produce an output and at
+the end it better be correct
+
+744
+00:14:56,069 --> 00:14:56,079
+the end it better be correct
+ 
+
+745
+00:14:56,079 --> 00:14:57,590
+the end it better be correct
+right so it's just a procedure you can
+
+746
+00:14:57,590 --> 00:14:57,600
+right so it's just a procedure you can
+ 
+
+747
+00:14:57,600 --> 00:14:59,189
+right so it's just a procedure you can
+think of it as like
+
+748
+00:14:59,189 --> 00:14:59,199
+think of it as like
+ 
+
+749
+00:14:59,199 --> 00:15:01,509
+think of it as like
+a recipe you can think of it it's just
+
+750
+00:15:01,509 --> 00:15:01,519
+a recipe you can think of it it's just
+ 
+
+751
+00:15:01,519 --> 00:15:03,670
+a recipe you can think of it it's just
+some kind of procedure right it's a
+
+752
+00:15:03,670 --> 00:15:03,680
+some kind of procedure right it's a
+ 
+
+753
+00:15:03,680 --> 00:15:05,430
+some kind of procedure right it's a
+a sequence of things that you should do
+
+754
+00:15:05,430 --> 00:15:05,440
+a sequence of things that you should do
+ 
+
+755
+00:15:05,440 --> 00:15:07,189
+a sequence of things that you should do
+and then at the end you will return an
+
+756
+00:15:07,189 --> 00:15:07,199
+and then at the end you will return an
+ 
+
+757
+00:15:07,199 --> 00:15:08,230
+and then at the end you will return an
+output
+
+758
+00:15:08,230 --> 00:15:08,240
+output
+ 
+
+759
+00:15:08,240 --> 00:15:11,829
+output
+okay so here's a possible algorithm for
+
+760
+00:15:11,829 --> 00:15:11,839
+okay so here's a possible algorithm for
+ 
+
+761
+00:15:11,839 --> 00:15:14,150
+okay so here's a possible algorithm for
+solving this birthday problem
+
+762
+00:15:14,150 --> 00:15:14,160
+solving this birthday problem
+ 
+
+763
+00:15:14,160 --> 00:15:17,590
+solving this birthday problem
+okay now i've given you
+
+764
+00:15:17,590 --> 00:15:17,600
+okay now i've given you
+ 
+
+765
+00:15:17,600 --> 00:15:21,110
+okay now i've given you
+what i argue to you or i'm asserting to
+
+766
+00:15:21,110 --> 00:15:21,120
+what i argue to you or i'm asserting to
+ 
+
+767
+00:15:21,120 --> 00:15:21,670
+what i argue to you or i'm asserting to
+you
+
+768
+00:15:21,670 --> 00:15:21,680
+you
+ 
+
+769
+00:15:21,680 --> 00:15:24,150
+you
+is a solution to this birthday problem
+
+770
+00:15:24,150 --> 00:15:24,160
+is a solution to this birthday problem
+ 
+
+771
+00:15:24,160 --> 00:15:25,590
+is a solution to this birthday problem
+and maybe you guys
+
+772
+00:15:25,590 --> 00:15:25,600
+and maybe you guys
+ 
+
+773
+00:15:25,600 --> 00:15:27,269
+and maybe you guys
+agree with me and maybe some of you
+
+774
+00:15:27,269 --> 00:15:27,279
+agree with me and maybe some of you
+ 
+
+775
+00:15:27,279 --> 00:15:28,790
+agree with me and maybe some of you
+don't right
+
+776
+00:15:28,790 --> 00:15:28,800
+don't right
+ 
+
+777
+00:15:28,800 --> 00:15:31,749
+don't right
+so how do i convince you that this is
+
+778
+00:15:31,749 --> 00:15:31,759
+so how do i convince you that this is
+ 
+
+779
+00:15:31,759 --> 00:15:32,790
+so how do i convince you that this is
+correct
+
+780
+00:15:32,790 --> 00:15:32,800
+correct
+ 
+
+781
+00:15:32,800 --> 00:15:37,189
+correct
+right well if i had
+
+782
+00:15:37,189 --> 00:15:37,199
+right well if i had
+ 
+
+783
+00:15:37,199 --> 00:15:39,189
+right well if i had
+you know if i was just running this
+
+784
+00:15:39,189 --> 00:15:39,199
+you know if i was just running this
+ 
+
+785
+00:15:39,199 --> 00:15:40,949
+you know if i was just running this
+algorithm
+
+786
+00:15:40,949 --> 00:15:40,959
+algorithm
+ 
+
+787
+00:15:40,959 --> 00:15:43,110
+algorithm
+on say the four students in the front
+
+788
+00:15:43,110 --> 00:15:43,120
+on say the four students in the front
+ 
+
+789
+00:15:43,120 --> 00:15:44,310
+on say the four students in the front
+row here
+
+790
+00:15:44,310 --> 00:15:44,320
+row here
+ 
+
+791
+00:15:44,320 --> 00:15:46,550
+row here
+right i could argue it pretty well to
+
+792
+00:15:46,550 --> 00:15:46,560
+right i could argue it pretty well to
+ 
+
+793
+00:15:46,560 --> 00:15:47,350
+right i could argue it pretty well to
+you i could
+
+794
+00:15:47,350 --> 00:15:47,360
+you i could
+ 
+
+795
+00:15:47,360 --> 00:15:51,110
+you i could
+go through every you know
+
+796
+00:15:51,110 --> 00:15:51,120
+go through every you know
+ 
+
+797
+00:15:51,120 --> 00:15:53,749
+go through every you know
+i could assign these for people
+
+798
+00:15:53,749 --> 00:15:53,759
+i could assign these for people
+ 
+
+799
+00:15:53,759 --> 00:15:56,069
+i could assign these for people
+birthdays in various combinations of
+
+800
+00:15:56,069 --> 00:15:56,079
+birthdays in various combinations of
+ 
+
+801
+00:15:56,079 --> 00:15:58,870
+birthdays in various combinations of
+either their none of them have the same
+
+802
+00:15:58,870 --> 00:15:58,880
+either their none of them have the same
+ 
+
+803
+00:15:58,880 --> 00:15:59,829
+either their none of them have the same
+birthday
+
+804
+00:15:59,829 --> 00:15:59,839
+birthday
+ 
+
+805
+00:15:59,839 --> 00:16:01,430
+birthday
+some two of them have the same birthday
+
+806
+00:16:01,430 --> 00:16:01,440
+some two of them have the same birthday
+ 
+
+807
+00:16:01,440 --> 00:16:03,350
+some two of them have the same birthday
+i could try all possibilities and
+
+808
+00:16:03,350 --> 00:16:03,360
+i could try all possibilities and
+ 
+
+809
+00:16:03,360 --> 00:16:04,949
+i could try all possibilities and
+i could go through lots of different
+
+810
+00:16:04,949 --> 00:16:04,959
+i could go through lots of different
+ 
+
+811
+00:16:04,959 --> 00:16:06,629
+i could go through lots of different
+possibilities i had to check that this
+
+812
+00:16:06,629 --> 00:16:06,639
+possibilities i had to check that this
+ 
+
+813
+00:16:06,639 --> 00:16:08,069
+possibilities i had to check that this
+algorithm returns the right
+
+814
+00:16:08,069 --> 00:16:08,079
+algorithm returns the right
+ 
+
+815
+00:16:08,079 --> 00:16:10,949
+algorithm returns the right
+answer in all such cases right but when
+
+816
+00:16:10,949 --> 00:16:10,959
+answer in all such cases right but when
+ 
+
+817
+00:16:10,959 --> 00:16:11,670
+answer in all such cases right but when
+i have
+
+818
+00:16:11,670 --> 00:16:11,680
+i have
+ 
+
+819
+00:16:11,680 --> 00:16:14,150
+i have
+i don't know 300 of you that's going to
+
+820
+00:16:14,150 --> 00:16:14,160
+i don't know 300 of you that's going to
+ 
+
+821
+00:16:14,160 --> 00:16:15,590
+i don't know 300 of you that's going to
+be a little bit more difficult to argue
+
+822
+00:16:15,590 --> 00:16:15,600
+be a little bit more difficult to argue
+ 
+
+823
+00:16:15,600 --> 00:16:17,829
+be a little bit more difficult to argue
+and so if i want to argue something
+
+824
+00:16:17,829 --> 00:16:17,839
+and so if i want to argue something
+ 
+
+825
+00:16:17,839 --> 00:16:19,590
+and so if i want to argue something
+is correct in mathematics i want to
+
+826
+00:16:19,590 --> 00:16:19,600
+is correct in mathematics i want to
+ 
+
+827
+00:16:19,600 --> 00:16:20,949
+is correct in mathematics i want to
+prove something to you
+
+828
+00:16:20,949 --> 00:16:20,959
+prove something to you
+ 
+
+829
+00:16:20,959 --> 00:16:23,590
+prove something to you
+for some large value what kind of
+
+830
+00:16:23,590 --> 00:16:23,600
+for some large value what kind of
+ 
+
+831
+00:16:23,600 --> 00:16:25,509
+for some large value what kind of
+technique do i use to prove such things
+
+832
+00:16:25,509 --> 00:16:25,519
+technique do i use to prove such things
+ 
+
+833
+00:16:25,519 --> 00:16:29,030
+technique do i use to prove such things
+yeah induction right and in general
+
+834
+00:16:29,030 --> 00:16:29,040
+yeah induction right and in general
+ 
+
+835
+00:16:29,040 --> 00:16:31,829
+yeah induction right and in general
+what what we do in this class what we do
+
+836
+00:16:31,829 --> 00:16:31,839
+what what we do in this class what we do
+ 
+
+837
+00:16:31,839 --> 00:16:34,629
+what what we do in this class what we do
+is as a computer scientist is we write a
+
+838
+00:16:34,629 --> 00:16:34,639
+is as a computer scientist is we write a
+ 
+
+839
+00:16:34,639 --> 00:16:39,350
+is as a computer scientist is we write a
+constant sized piece of code right
+
+840
+00:16:39,350 --> 00:16:39,360
+constant sized piece of code right
+ 
+
+841
+00:16:39,360 --> 00:16:42,870
+constant sized piece of code right
+that can take on any arbitrarily large
+
+842
+00:16:42,870 --> 00:16:42,880
+that can take on any arbitrarily large
+ 
+
+843
+00:16:42,880 --> 00:16:44,069
+that can take on any arbitrarily large
+size input
+
+844
+00:16:44,069 --> 00:16:44,079
+size input
+ 
+
+845
+00:16:44,079 --> 00:16:46,310
+size input
+right if it's if the input can be
+
+846
+00:16:46,310 --> 00:16:46,320
+right if it's if the input can be
+ 
+
+847
+00:16:46,320 --> 00:16:47,910
+right if it's if the input can be
+arbitrarily large but our
+
+848
+00:16:47,910 --> 00:16:47,920
+arbitrarily large but our
+ 
+
+849
+00:16:47,920 --> 00:16:51,590
+arbitrarily large but our
+code is small then that code needs to
+
+850
+00:16:51,590 --> 00:16:51,600
+code is small then that code needs to
+ 
+
+851
+00:16:51,600 --> 00:16:53,189
+code is small then that code needs to
+loop or recurse or
+
+852
+00:16:53,189 --> 00:16:53,199
+loop or recurse or
+ 
+
+853
+00:16:53,199 --> 00:16:55,749
+loop or recurse or
+repeat some of these lines of code in
+
+854
+00:16:55,749 --> 00:16:55,759
+repeat some of these lines of code in
+ 
+
+855
+00:16:55,759 --> 00:16:57,430
+repeat some of these lines of code in
+order to just read that
+
+856
+00:16:57,430 --> 00:16:57,440
+order to just read that
+ 
+
+857
+00:16:57,440 --> 00:17:00,870
+order to just read that
+output right and so that's another way
+
+858
+00:17:00,870 --> 00:17:00,880
+output right and so that's another way
+ 
+
+859
+00:17:00,880 --> 00:17:01,350
+output right and so that's another way
+you can
+
+860
+00:17:01,350 --> 00:17:01,360
+you can
+ 
+
+861
+00:17:01,360 --> 00:17:02,790
+you can
+arrive at this conclusion that we're
+
+862
+00:17:02,790 --> 00:17:02,800
+arrive at this conclusion that we're
+ 
+
+863
+00:17:02,800 --> 00:17:04,949
+arrive at this conclusion that we're
+going to probably need to use recursion
+
+864
+00:17:04,949 --> 00:17:04,959
+going to probably need to use recursion
+ 
+
+865
+00:17:04,959 --> 00:17:06,230
+going to probably need to use recursion
+induction
+
+866
+00:17:06,230 --> 00:17:06,240
+induction
+ 
+
+867
+00:17:06,240 --> 00:17:08,069
+induction
+and that's part of the reason why we ask
+
+868
+00:17:08,069 --> 00:17:08,079
+and that's part of the reason why we ask
+ 
+
+869
+00:17:08,079 --> 00:17:09,270
+and that's part of the reason why we ask
+you to take
+
+870
+00:17:09,270 --> 00:17:09,280
+you to take
+ 
+
+871
+00:17:09,280 --> 00:17:12,710
+you to take
+a course on proofs and and inductive
+
+872
+00:17:12,710 --> 00:17:12,720
+a course on proofs and and inductive
+ 
+
+873
+00:17:12,720 --> 00:17:14,949
+a course on proofs and and inductive
+reasoning and discrete mathematics
+
+874
+00:17:14,949 --> 00:17:14,959
+reasoning and discrete mathematics
+ 
+
+875
+00:17:14,959 --> 00:17:16,069
+reasoning and discrete mathematics
+before this class
+
+876
+00:17:16,069 --> 00:17:16,079
+before this class
+ 
+
+877
+00:17:16,079 --> 00:17:18,069
+before this class
+okay so how do we prove that this thing
+
+878
+00:17:18,069 --> 00:17:18,079
+okay so how do we prove that this thing
+ 
+
+879
+00:17:18,079 --> 00:17:29,350
+okay so how do we prove that this thing
+is correct
+
+880
+00:17:29,350 --> 00:17:29,360
+
+ 
+
+881
+00:17:29,360 --> 00:17:30,870
+
+we got to use induction so how can we
+
+882
+00:17:30,870 --> 00:17:30,880
+we got to use induction so how can we
+ 
+
+883
+00:17:30,880 --> 00:17:38,470
+we got to use induction so how can we
+set up this induction
+
+884
+00:17:38,470 --> 00:17:38,480
+
+ 
+
+885
+00:17:38,480 --> 00:17:42,150
+
+what do i need for an inductive proof
+
+886
+00:17:42,150 --> 00:17:42,160
+
+ 
+
+887
+00:17:42,160 --> 00:17:46,870
+
+sure base case we need a base case
+
+888
+00:17:46,870 --> 00:17:46,880
+sure base case we need a base case
+ 
+
+889
+00:17:46,880 --> 00:17:50,070
+sure base case we need a base case
+uh we need some kind of uh
+
+890
+00:17:50,070 --> 00:17:50,080
+uh we need some kind of uh
+ 
+
+891
+00:17:50,080 --> 00:17:51,750
+uh we need some kind of uh
+a predicate yeah but we need some kind
+
+892
+00:17:51,750 --> 00:17:51,760
+a predicate yeah but we need some kind
+ 
+
+893
+00:17:51,760 --> 00:17:53,750
+a predicate yeah but we need some kind
+of statement of a hypothesis of
+
+894
+00:17:53,750 --> 00:17:53,760
+of statement of a hypothesis of
+ 
+
+895
+00:17:53,760 --> 00:17:55,750
+of statement of a hypothesis of
+something that should be maintained
+
+896
+00:17:55,750 --> 00:17:55,760
+something that should be maintained
+ 
+
+897
+00:17:55,760 --> 00:17:57,350
+something that should be maintained
+right and then we need to
+
+898
+00:17:57,350 --> 00:17:57,360
+right and then we need to
+ 
+
+899
+00:17:57,360 --> 00:17:59,110
+right and then we need to
+have an inductive step which basically
+
+900
+00:17:59,110 --> 00:17:59,120
+have an inductive step which basically
+ 
+
+901
+00:17:59,120 --> 00:18:01,830
+have an inductive step which basically
+says i take a small value of this thing
+
+902
+00:18:01,830 --> 00:18:01,840
+says i take a small value of this thing
+ 
+
+903
+00:18:01,840 --> 00:18:04,549
+says i take a small value of this thing
+i use the inductive hypothesis and i
+
+904
+00:18:04,549 --> 00:18:04,559
+i use the inductive hypothesis and i
+ 
+
+905
+00:18:04,559 --> 00:18:05,430
+i use the inductive hypothesis and i
+argue it for
+
+906
+00:18:05,430 --> 00:18:05,440
+argue it for
+ 
+
+907
+00:18:05,440 --> 00:18:09,029
+argue it for
+a larger value of my well-ordered set
+
+908
+00:18:09,029 --> 00:18:09,039
+a larger value of my well-ordered set
+ 
+
+909
+00:18:09,039 --> 00:18:10,150
+a larger value of my well-ordered set
+that i'm inducting over
+
+910
+00:18:10,150 --> 00:18:10,160
+that i'm inducting over
+ 
+
+911
+00:18:10,160 --> 00:18:13,350
+that i'm inducting over
+right okay so in uh
+
+912
+00:18:13,350 --> 00:18:13,360
+right okay so in uh
+ 
+
+913
+00:18:13,360 --> 00:18:14,950
+right okay so in uh
+for this algorithm if we're going to try
+
+914
+00:18:14,950 --> 00:18:14,960
+for this algorithm if we're going to try
+ 
+
+915
+00:18:14,960 --> 00:18:16,710
+for this algorithm if we're going to try
+to prove correctness
+
+916
+00:18:16,710 --> 00:18:16,720
+to prove correctness
+ 
+
+917
+00:18:16,720 --> 00:18:19,270
+to prove correctness
+what i'm going to do is i'm going to
+
+918
+00:18:19,270 --> 00:18:19,280
+what i'm going to do is i'm going to
+ 
+
+919
+00:18:19,280 --> 00:18:20,710
+what i'm going to do is i'm going to
+what do i want to prove for this thing
+
+920
+00:18:20,710 --> 00:18:20,720
+what do i want to prove for this thing
+ 
+
+921
+00:18:20,720 --> 00:18:22,150
+what do i want to prove for this thing
+that at the end of
+
+922
+00:18:22,150 --> 00:18:22,160
+that at the end of
+ 
+
+923
+00:18:22,160 --> 00:18:25,190
+that at the end of
+interviewing all of you that my
+
+924
+00:18:25,190 --> 00:18:25,200
+interviewing all of you that my
+ 
+
+925
+00:18:25,200 --> 00:18:26,549
+interviewing all of you that my
+algorithm has either already
+
+926
+00:18:26,549 --> 00:18:26,559
+algorithm has either already
+ 
+
+927
+00:18:26,559 --> 00:18:30,710
+algorithm has either already
+it has returned with a pair that match
+
+928
+00:18:30,710 --> 00:18:30,720
+it has returned with a pair that match
+ 
+
+929
+00:18:30,720 --> 00:18:34,070
+it has returned with a pair that match
+or if we're in a case where there wasn't
+
+930
+00:18:34,070 --> 00:18:34,080
+or if we're in a case where there wasn't
+ 
+
+931
+00:18:34,080 --> 00:18:34,789
+or if we're in a case where there wasn't
+a mat
+
+932
+00:18:34,789 --> 00:18:34,799
+a mat
+ 
+
+933
+00:18:34,799 --> 00:18:36,549
+a mat
+it wasn't a pair somewhere in my set
+
+934
+00:18:36,549 --> 00:18:36,559
+it wasn't a pair somewhere in my set
+ 
+
+935
+00:18:36,559 --> 00:18:38,310
+it wasn't a pair somewhere in my set
+that it returned none right
+
+936
+00:18:38,310 --> 00:18:38,320
+that it returned none right
+ 
+
+937
+00:18:38,320 --> 00:18:41,510
+that it returned none right
+that would be correct right so how can i
+
+938
+00:18:41,510 --> 00:18:41,520
+that would be correct right so how can i
+ 
+
+939
+00:18:41,520 --> 00:18:43,350
+that would be correct right so how can i
+generalize that concept
+
+940
+00:18:43,350 --> 00:18:43,360
+generalize that concept
+ 
+
+941
+00:18:43,360 --> 00:18:46,310
+generalize that concept
+to make it something i can induct on
+
+942
+00:18:46,310 --> 00:18:46,320
+to make it something i can induct on
+ 
+
+943
+00:18:46,320 --> 00:18:46,950
+to make it something i can induct on
+right
+
+944
+00:18:46,950 --> 00:18:46,960
+right
+ 
+
+945
+00:18:46,960 --> 00:18:49,830
+right
+what i'm going to do is i'm going to say
+
+946
+00:18:49,830 --> 00:18:49,840
+what i'm going to do is i'm going to say
+ 
+
+947
+00:18:49,840 --> 00:18:51,350
+what i'm going to do is i'm going to say
+let's say after i've interviewed the
+
+948
+00:18:51,350 --> 00:18:51,360
+let's say after i've interviewed the
+ 
+
+949
+00:18:51,360 --> 00:18:52,630
+let's say after i've interviewed the
+first
+
+950
+00:18:52,630 --> 00:18:52,640
+first
+ 
+
+951
+00:18:52,640 --> 00:18:57,270
+first
+k students right
+
+952
+00:18:57,270 --> 00:18:57,280
+k students right
+ 
+
+953
+00:18:57,280 --> 00:18:59,590
+k students right
+if there was a match in those first k
+
+954
+00:18:59,590 --> 00:18:59,600
+if there was a match in those first k
+ 
+
+955
+00:18:59,600 --> 00:19:00,630
+if there was a match in those first k
+students
+
+956
+00:19:00,630 --> 00:19:00,640
+students
+ 
+
+957
+00:19:00,640 --> 00:19:02,150
+students
+i want to be sure that i ever returned a
+
+958
+00:19:02,150 --> 00:19:02,160
+i want to be sure that i ever returned a
+ 
+
+959
+00:19:02,160 --> 00:19:05,029
+i want to be sure that i ever returned a
+pair right
+
+960
+00:19:05,029 --> 00:19:05,039
+pair right
+ 
+
+961
+00:19:05,039 --> 00:19:08,710
+pair right
+because if after i interview all of you
+
+962
+00:19:08,710 --> 00:19:08,720
+because if after i interview all of you
+ 
+
+963
+00:19:08,720 --> 00:19:10,950
+because if after i interview all of you
+i've maintained that property
+
+964
+00:19:10,950 --> 00:19:10,960
+i've maintained that property
+ 
+
+965
+00:19:10,960 --> 00:19:12,789
+i've maintained that property
+then i'll be sure at the end of the
+
+966
+00:19:12,789 --> 00:19:12,799
+then i'll be sure at the end of the
+ 
+
+967
+00:19:12,799 --> 00:19:14,310
+then i'll be sure at the end of the
+process i will have
+
+968
+00:19:14,310 --> 00:19:14,320
+process i will have
+ 
+
+969
+00:19:14,320 --> 00:19:16,549
+process i will have
+returned a pair if one exists so here's
+
+970
+00:19:16,549 --> 00:19:16,559
+returned a pair if one exists so here's
+ 
+
+971
+00:19:16,559 --> 00:19:26,230
+returned a pair if one exists so here's
+going to be my inductive hypothesis
+
+972
+00:19:26,230 --> 00:19:26,240
+
+ 
+
+973
+00:19:26,240 --> 00:19:30,310
+
+sis okay if
+
+974
+00:19:30,310 --> 00:19:30,320
+sis okay if
+ 
+
+975
+00:19:30,320 --> 00:19:33,350
+sis okay if
+first k
+
+976
+00:19:33,350 --> 00:19:33,360
+first k
+ 
+
+977
+00:19:33,360 --> 00:19:38,549
+first k
+students
+
+978
+00:19:38,549 --> 00:19:38,559
+
+ 
+
+979
+00:19:38,559 --> 00:19:48,390
+
+contain a match
+
+980
+00:19:48,390 --> 00:19:48,400
+
+ 
+
+981
+00:19:48,400 --> 00:19:54,950
+
+algorithm returns a match
+
+982
+00:19:54,950 --> 00:19:54,960
+
+ 
+
+983
+00:19:54,960 --> 00:20:01,510
+
+before interviewing
+
+984
+00:20:01,510 --> 00:20:01,520
+
+ 
+
+985
+00:20:01,520 --> 00:20:04,870
+
+say student
+
+986
+00:20:04,870 --> 00:20:04,880
+
+ 
+
+987
+00:20:04,880 --> 00:20:08,710
+
+k plus 1. okay so that's going to be my
+
+988
+00:20:08,710 --> 00:20:08,720
+k plus 1. okay so that's going to be my
+ 
+
+989
+00:20:08,720 --> 00:20:12,390
+k plus 1. okay so that's going to be my
+inductive hypothesis now if there's
+
+990
+00:20:12,390 --> 00:20:12,400
+inductive hypothesis now if there's
+ 
+
+991
+00:20:12,400 --> 00:20:15,430
+inductive hypothesis now if there's
+n students in this class right
+
+992
+00:20:15,430 --> 00:20:15,440
+n students in this class right
+ 
+
+993
+00:20:15,440 --> 00:20:17,990
+n students in this class right
+and at the end of my thing i'm trying to
+
+994
+00:20:17,990 --> 00:20:18,000
+and at the end of my thing i'm trying to
+ 
+
+995
+00:20:18,000 --> 00:20:18,470
+and at the end of my thing i'm trying to
+interview
+
+996
+00:20:18,470 --> 00:20:18,480
+interview
+ 
+
+997
+00:20:18,480 --> 00:20:20,470
+interview
+student n plus one oh student n plus one
+
+998
+00:20:20,470 --> 00:20:20,480
+student n plus one oh student n plus one
+ 
+
+999
+00:20:20,480 --> 00:20:21,830
+student n plus one oh student n plus one
+is not there
+
+1000
+00:20:21,830 --> 00:20:21,840
+is not there
+ 
+
+1001
+00:20:21,840 --> 00:20:25,430
+is not there
+if i have maintained this
+
+1002
+00:20:25,430 --> 00:20:25,440
+if i have maintained this
+ 
+
+1003
+00:20:25,440 --> 00:20:28,630
+if i have maintained this
+then if i replace k with n then i will
+
+1004
+00:20:28,630 --> 00:20:28,640
+then if i replace k with n then i will
+ 
+
+1005
+00:20:28,640 --> 00:20:30,310
+then if i replace k with n then i will
+have returned a match
+
+1006
+00:20:30,310 --> 00:20:30,320
+have returned a match
+ 
+
+1007
+00:20:30,320 --> 00:20:32,470
+have returned a match
+before interviewing the last student or
+
+1008
+00:20:32,470 --> 00:20:32,480
+before interviewing the last student or
+ 
+
+1009
+00:20:32,480 --> 00:20:33,750
+before interviewing the last student or
+the
+
+1010
+00:20:33,750 --> 00:20:33,760
+the
+ 
+
+1011
+00:20:33,760 --> 00:20:36,070
+the
+when i have no more students left and
+
+1012
+00:20:36,070 --> 00:20:36,080
+when i have no more students left and
+ 
+
+1013
+00:20:36,080 --> 00:20:38,149
+when i have no more students left and
+then this algorithm returns none
+
+1014
+00:20:38,149 --> 00:20:38,159
+then this algorithm returns none
+ 
+
+1015
+00:20:38,159 --> 00:20:41,990
+then this algorithm returns none
+as it should right okay
+
+1016
+00:20:41,990 --> 00:20:42,000
+as it should right okay
+ 
+
+1017
+00:20:42,000 --> 00:20:45,190
+as it should right okay
+so this inductive hypothesis sets up a
+
+1018
+00:20:45,190 --> 00:20:45,200
+so this inductive hypothesis sets up a
+ 
+
+1019
+00:20:45,200 --> 00:20:45,909
+so this inductive hypothesis sets up a
+nice
+
+1020
+00:20:45,909 --> 00:20:45,919
+nice
+ 
+
+1021
+00:20:45,919 --> 00:20:48,549
+nice
+variable to induct on right this k i can
+
+1022
+00:20:48,549 --> 00:20:48,559
+variable to induct on right this k i can
+ 
+
+1023
+00:20:48,559 --> 00:20:50,149
+variable to induct on right this k i can
+have increasing
+
+1024
+00:20:50,149 --> 00:20:50,159
+have increasing
+ 
+
+1025
+00:20:50,159 --> 00:20:52,950
+have increasing
+up to n starting at some base case so
+
+1026
+00:20:52,950 --> 00:20:52,960
+up to n starting at some base case so
+ 
+
+1027
+00:20:52,960 --> 00:21:00,630
+up to n starting at some base case so
+what's my base case here
+
+1028
+00:21:00,630 --> 00:21:00,640
+
+ 
+
+1029
+00:21:00,640 --> 00:21:04,710
+
+my base case is the easiest thing i can
+
+1030
+00:21:04,710 --> 00:21:04,720
+my base case is the easiest thing i can
+ 
+
+1031
+00:21:04,720 --> 00:21:05,270
+my base case is the easiest thing i can
+do
+
+1032
+00:21:05,270 --> 00:21:05,280
+do
+ 
+
+1033
+00:21:05,280 --> 00:21:08,950
+do
+sure two that's an easy thing i could do
+
+1034
+00:21:08,950 --> 00:21:08,960
+sure two that's an easy thing i could do
+ 
+
+1035
+00:21:08,960 --> 00:21:10,470
+sure two that's an easy thing i could do
+i could check those possibilities but
+
+1036
+00:21:10,470 --> 00:21:10,480
+i could check those possibilities but
+ 
+
+1037
+00:21:10,480 --> 00:21:11,590
+i could check those possibilities but
+there's an even easier
+
+1038
+00:21:11,590 --> 00:21:11,600
+there's an even easier
+ 
+
+1039
+00:21:11,600 --> 00:21:14,230
+there's an even easier
+base case yeah there's an even easier
+
+1040
+00:21:14,230 --> 00:21:14,240
+base case yeah there's an even easier
+ 
+
+1041
+00:21:14,240 --> 00:21:15,669
+base case yeah there's an even easier
+base case than one
+
+1042
+00:21:15,669 --> 00:21:15,679
+base case than one
+ 
+
+1043
+00:21:15,679 --> 00:21:19,270
+base case than one
+zero right after interviewing
+
+1044
+00:21:19,270 --> 00:21:19,280
+zero right after interviewing
+ 
+
+1045
+00:21:19,280 --> 00:21:20,950
+zero right after interviewing
+zero students i haven't done any work
+
+1046
+00:21:20,950 --> 00:21:20,960
+zero students i haven't done any work
+ 
+
+1047
+00:21:20,960 --> 00:21:22,870
+zero students i haven't done any work
+right certainly the first
+
+1048
+00:21:22,870 --> 00:21:22,880
+right certainly the first
+ 
+
+1049
+00:21:22,880 --> 00:21:27,350
+right certainly the first
+zero can't have a match right
+
+1050
+00:21:27,350 --> 00:21:27,360
+zero can't have a match right
+ 
+
+1051
+00:21:27,360 --> 00:21:30,630
+zero can't have a match right
+and so this predicate this
+
+1052
+00:21:30,630 --> 00:21:30,640
+and so this predicate this
+ 
+
+1053
+00:21:30,640 --> 00:21:34,549
+and so this predicate this
+inductive hypothesis is true
+
+1054
+00:21:34,549 --> 00:21:34,559
+inductive hypothesis is true
+ 
+
+1055
+00:21:34,559 --> 00:21:37,190
+inductive hypothesis is true
+just because this uh initial predicate
+
+1056
+00:21:37,190 --> 00:21:37,200
+just because this uh initial predicate
+ 
+
+1057
+00:21:37,200 --> 00:21:38,070
+just because this uh initial predicate
+is false
+
+1058
+00:21:38,070 --> 00:21:38,080
+is false
+ 
+
+1059
+00:21:38,080 --> 00:21:41,510
+is false
+right so i can say you know base case
+
+1060
+00:21:41,510 --> 00:21:41,520
+right so i can say you know base case
+ 
+
+1061
+00:21:41,520 --> 00:21:44,710
+right so i can say you know base case
+zero check definitely this predicate
+
+1062
+00:21:44,710 --> 00:21:44,720
+zero check definitely this predicate
+ 
+
+1063
+00:21:44,720 --> 00:21:46,549
+zero check definitely this predicate
+holds for that
+
+1064
+00:21:46,549 --> 00:21:46,559
+holds for that
+ 
+
+1065
+00:21:46,559 --> 00:21:51,270
+holds for that
+okay now we get to go for the
+
+1066
+00:21:51,270 --> 00:21:51,280
+okay now we get to go for the
+ 
+
+1067
+00:21:51,280 --> 00:21:56,830
+okay now we get to go for the
+uh the meat of this thing right
+
+1068
+00:21:56,830 --> 00:21:56,840
+
+ 
+
+1069
+00:21:56,840 --> 00:22:01,029
+
+assume the inductive hypothesis
+
+1070
+00:22:01,029 --> 00:22:01,039
+assume the inductive hypothesis
+ 
+
+1071
+00:22:01,039 --> 00:22:05,190
+assume the inductive hypothesis
+true for k equals say
+
+1072
+00:22:05,190 --> 00:22:05,200
+true for k equals say
+ 
+
+1073
+00:22:05,200 --> 00:22:09,270
+true for k equals say
+some k prime okay and we're considering
+
+1074
+00:22:09,270 --> 00:22:09,280
+some k prime okay and we're considering
+ 
+
+1075
+00:22:09,280 --> 00:22:15,110
+some k prime okay and we're considering
+k prime plus one right
+
+1076
+00:22:15,110 --> 00:22:15,120
+
+ 
+
+1077
+00:22:15,120 --> 00:22:17,909
+
+then we have two cases one of the nice
+
+1078
+00:22:17,909 --> 00:22:17,919
+then we have two cases one of the nice
+ 
+
+1079
+00:22:17,919 --> 00:22:19,909
+then we have two cases one of the nice
+things about induction is that it
+
+1080
+00:22:19,909 --> 00:22:19,919
+things about induction is that it
+ 
+
+1081
+00:22:19,919 --> 00:22:23,590
+things about induction is that it
+isolates our our problem to not consider
+
+1082
+00:22:23,590 --> 00:22:23,600
+isolates our our problem to not consider
+ 
+
+1083
+00:22:23,600 --> 00:22:25,830
+isolates our our problem to not consider
+everything all at once but break it down
+
+1084
+00:22:25,830 --> 00:22:25,840
+everything all at once but break it down
+ 
+
+1085
+00:22:25,840 --> 00:22:26,870
+everything all at once but break it down
+into
+
+1086
+00:22:26,870 --> 00:22:26,880
+into
+ 
+
+1087
+00:22:26,880 --> 00:22:29,430
+into
+a smaller interface so i can do less
+
+1088
+00:22:29,430 --> 00:22:29,440
+a smaller interface so i can do less
+ 
+
+1089
+00:22:29,440 --> 00:22:30,710
+a smaller interface so i can do less
+work at each step
+
+1090
+00:22:30,710 --> 00:22:30,720
+work at each step
+ 
+
+1091
+00:22:30,720 --> 00:22:34,870
+work at each step
+right so there are two cases
+
+1092
+00:22:34,870 --> 00:22:34,880
+
+ 
+
+1093
+00:22:34,880 --> 00:22:40,149
+
+either the first k
+
+1094
+00:22:40,149 --> 00:22:40,159
+either the first k
+ 
+
+1095
+00:22:40,159 --> 00:22:44,230
+either the first k
+already had a match right
+
+1096
+00:22:44,230 --> 00:22:44,240
+already had a match right
+ 
+
+1097
+00:22:44,240 --> 00:22:45,669
+already had a match right
+in which case by our inductive
+
+1098
+00:22:45,669 --> 00:22:45,679
+in which case by our inductive
+ 
+
+1099
+00:22:45,679 --> 00:22:47,350
+in which case by our inductive
+hypothesis we've already returned the
+
+1100
+00:22:47,350 --> 00:22:47,360
+hypothesis we've already returned the
+ 
+
+1101
+00:22:47,360 --> 00:22:48,149
+hypothesis we've already returned the
+correct answer
+
+1102
+00:22:48,149 --> 00:22:48,159
+correct answer
+ 
+
+1103
+00:22:48,159 --> 00:22:52,310
+correct answer
+right the other case is
+
+1104
+00:22:52,310 --> 00:22:52,320
+right the other case is
+ 
+
+1105
+00:22:52,320 --> 00:22:55,029
+right the other case is
+the it doesn't have a match and we
+
+1106
+00:22:55,029 --> 00:22:55,039
+the it doesn't have a match and we
+ 
+
+1107
+00:22:55,039 --> 00:22:55,830
+the it doesn't have a match and we
+interview
+
+1108
+00:22:55,830 --> 00:22:55,840
+interview
+ 
+
+1109
+00:22:55,840 --> 00:22:59,270
+interview
+the k plus one student the k prime plus
+
+1110
+00:22:59,270 --> 00:22:59,280
+the k plus one student the k prime plus
+ 
+
+1111
+00:22:59,280 --> 00:22:59,590
+the k plus one student the k prime plus
+one
+
+1112
+00:22:59,590 --> 00:22:59,600
+one
+ 
+
+1113
+00:22:59,600 --> 00:23:02,789
+one
+student if there is
+
+1114
+00:23:02,789 --> 00:23:02,799
+student if there is
+ 
+
+1115
+00:23:02,799 --> 00:23:05,669
+student if there is
+a match in the first k prime plus one
+
+1116
+00:23:05,669 --> 00:23:05,679
+a match in the first k prime plus one
+ 
+
+1117
+00:23:05,679 --> 00:23:06,710
+a match in the first k prime plus one
+students
+
+1118
+00:23:06,710 --> 00:23:06,720
+students
+ 
+
+1119
+00:23:06,720 --> 00:23:09,909
+students
+then it will include k plus k prime plus
+
+1120
+00:23:09,909 --> 00:23:09,919
+then it will include k plus k prime plus
+ 
+
+1121
+00:23:09,919 --> 00:23:12,070
+then it will include k plus k prime plus
+1 the student k prime plus 1
+
+1122
+00:23:12,070 --> 00:23:12,080
+1 the student k prime plus 1
+ 
+
+1123
+00:23:12,080 --> 00:23:14,470
+1 the student k prime plus 1
+because you know otherwise there would
+
+1124
+00:23:14,470 --> 00:23:14,480
+because you know otherwise there would
+ 
+
+1125
+00:23:14,480 --> 00:23:15,750
+because you know otherwise there would
+have been a match in in the things
+
+1126
+00:23:15,750 --> 00:23:15,760
+have been a match in in the things
+ 
+
+1127
+00:23:15,760 --> 00:23:16,710
+have been a match in in the things
+before it
+
+1128
+00:23:16,710 --> 00:23:16,720
+before it
+ 
+
+1129
+00:23:16,720 --> 00:23:20,870
+before it
+right so there are two cases if
+
+1130
+00:23:20,870 --> 00:23:20,880
+right so there are two cases if
+ 
+
+1131
+00:23:20,880 --> 00:23:25,029
+right so there are two cases if
+k contains
+
+1132
+00:23:25,029 --> 00:23:25,039
+
+ 
+
+1133
+00:23:25,039 --> 00:23:28,390
+
+match k prime if first k
+
+1134
+00:23:28,390 --> 00:23:28,400
+match k prime if first k
+ 
+
+1135
+00:23:28,400 --> 00:23:34,830
+match k prime if first k
+contains match already
+
+1136
+00:23:34,830 --> 00:23:34,840
+
+ 
+
+1137
+00:23:34,840 --> 00:23:36,070
+
+returned
+
+1138
+00:23:36,070 --> 00:23:36,080
+returned
+ 
+
+1139
+00:23:36,080 --> 00:23:39,909
+returned
+turn turn it by
+
+1140
+00:23:39,909 --> 00:23:39,919
+turn turn it by
+ 
+
+1141
+00:23:39,919 --> 00:23:42,950
+turn turn it by
+induction
+
+1142
+00:23:42,950 --> 00:23:42,960
+
+ 
+
+1143
+00:23:42,960 --> 00:23:48,149
+
+right else
+
+1144
+00:23:48,149 --> 00:23:48,159
+
+ 
+
+1145
+00:23:48,159 --> 00:23:51,590
+
+if k prime plus one students contains
+
+1146
+00:23:51,590 --> 00:23:51,600
+if k prime plus one students contains
+ 
+
+1147
+00:23:51,600 --> 00:23:56,870
+if k prime plus one students contains
+match
+
+1148
+00:23:56,870 --> 00:23:56,880
+
+ 
+
+1149
+00:23:56,880 --> 00:23:58,789
+
+the algorithm checks all of the
+
+1150
+00:23:58,789 --> 00:23:58,799
+the algorithm checks all of the
+ 
+
+1151
+00:23:58,799 --> 00:24:00,390
+the algorithm checks all of the
+possibilities
+
+1152
+00:24:00,390 --> 00:24:00,400
+possibilities
+ 
+
+1153
+00:24:00,400 --> 00:24:05,510
+possibilities
+k prime checks cape against
+
+1154
+00:24:05,510 --> 00:24:05,520
+k prime checks cape against
+ 
+
+1155
+00:24:05,520 --> 00:24:10,070
+k prime checks cape against
+against all students
+
+1156
+00:24:10,070 --> 00:24:10,080
+against all students
+ 
+
+1157
+00:24:10,080 --> 00:24:12,630
+against all students
+essentially by brute force it's a case
+
+1158
+00:24:12,630 --> 00:24:12,640
+essentially by brute force it's a case
+ 
+
+1159
+00:24:12,640 --> 00:24:13,430
+essentially by brute force it's a case
+analysis i
+
+1160
+00:24:13,430 --> 00:24:13,440
+analysis i
+ 
+
+1161
+00:24:13,440 --> 00:24:15,750
+analysis i
+check all of the possible possibilities
+
+1162
+00:24:15,750 --> 00:24:15,760
+check all of the possible possibilities
+ 
+
+1163
+00:24:15,760 --> 00:24:17,510
+check all of the possible possibilities
+right this
+
+1164
+00:24:17,510 --> 00:24:17,520
+right this
+ 
+
+1165
+00:24:17,520 --> 00:24:19,430
+right this
+check if birthday is in record i haven't
+
+1166
+00:24:19,430 --> 00:24:19,440
+check if birthday is in record i haven't
+ 
+
+1167
+00:24:19,440 --> 00:24:20,710
+check if birthday is in record i haven't
+told you how to do that
+
+1168
+00:24:20,710 --> 00:24:20,720
+told you how to do that
+ 
+
+1169
+00:24:20,720 --> 00:24:24,630
+told you how to do that
+yet but if i'm able to do that
+
+1170
+00:24:24,630 --> 00:24:24,640
+yet but if i'm able to do that
+ 
+
+1171
+00:24:24,640 --> 00:24:26,230
+yet but if i'm able to do that
+i'm going to check if it's in the record
+
+1172
+00:24:26,230 --> 00:24:26,240
+i'm going to check if it's in the record
+ 
+
+1173
+00:24:26,240 --> 00:24:27,750
+i'm going to check if it's in the record
+if it's in the record
+
+1174
+00:24:27,750 --> 00:24:27,760
+if it's in the record
+ 
+
+1175
+00:24:27,760 --> 00:24:29,190
+if it's in the record
+then there will be a match and i can
+
+1176
+00:24:29,190 --> 00:24:29,200
+then there will be a match and i can
+ 
+
+1177
+00:24:29,200 --> 00:24:32,630
+then there will be a match and i can
+return it otherwise
+
+1178
+00:24:32,630 --> 00:24:32,640
+return it otherwise
+ 
+
+1179
+00:24:32,640 --> 00:24:36,470
+return it otherwise
+i have uh
+
+1180
+00:24:36,470 --> 00:24:36,480
+i have uh
+ 
+
+1181
+00:24:36,480 --> 00:24:38,870
+i have uh
+re-established the inductive high policy
+
+1182
+00:24:38,870 --> 00:24:38,880
+re-established the inductive high policy
+ 
+
+1183
+00:24:38,880 --> 00:24:40,070
+re-established the inductive high policy
+hypothesis for the
+
+1184
+00:24:40,070 --> 00:24:40,080
+hypothesis for the
+ 
+
+1185
+00:24:40,080 --> 00:24:42,549
+hypothesis for the
+k prime plus one students does that make
+
+1186
+00:24:42,549 --> 00:24:42,559
+k prime plus one students does that make
+ 
+
+1187
+00:24:42,559 --> 00:24:43,110
+k prime plus one students does that make
+sense
+
+1188
+00:24:43,110 --> 00:24:43,120
+sense
+ 
+
+1189
+00:24:43,120 --> 00:24:50,070
+sense
+guys yeah okay so
+
+1190
+00:24:50,070 --> 00:24:50,080
+
+ 
+
+1191
+00:24:50,080 --> 00:24:52,470
+
+that's how we prove correctness this is
+
+1192
+00:24:52,470 --> 00:24:52,480
+that's how we prove correctness this is
+ 
+
+1193
+00:24:52,480 --> 00:24:54,390
+that's how we prove correctness this is
+a little bit more formal than
+
+1194
+00:24:54,390 --> 00:24:54,400
+a little bit more formal than
+ 
+
+1195
+00:24:54,400 --> 00:24:56,710
+a little bit more formal than
+we would ask you to do in this class all
+
+1196
+00:24:56,710 --> 00:24:56,720
+we would ask you to do in this class all
+ 
+
+1197
+00:24:56,720 --> 00:24:58,630
+we would ask you to do in this class all
+the time but it's definitely
+
+1198
+00:24:58,630 --> 00:24:58,640
+the time but it's definitely
+ 
+
+1199
+00:24:58,640 --> 00:25:01,110
+the time but it's definitely
+sufficient you know for the levels of
+
+1200
+00:25:01,110 --> 00:25:01,120
+sufficient you know for the levels of
+ 
+
+1201
+00:25:01,120 --> 00:25:01,990
+sufficient you know for the levels of
+arguments
+
+1202
+00:25:01,990 --> 00:25:02,000
+arguments
+ 
+
+1203
+00:25:02,000 --> 00:25:04,310
+arguments
+that we'll ask you to do the bar that
+
+1204
+00:25:04,310 --> 00:25:04,320
+that we'll ask you to do the bar that
+ 
+
+1205
+00:25:04,320 --> 00:25:05,590
+that we'll ask you to do the bar that
+we're usually trying to set
+
+1206
+00:25:05,590 --> 00:25:05,600
+we're usually trying to set
+ 
+
+1207
+00:25:05,600 --> 00:25:09,669
+we're usually trying to set
+is if you communicated to someone else
+
+1208
+00:25:09,669 --> 00:25:09,679
+is if you communicated to someone else
+ 
+
+1209
+00:25:09,679 --> 00:25:11,430
+is if you communicated to someone else
+taking this class what your algorithm
+
+1210
+00:25:11,430 --> 00:25:11,440
+taking this class what your algorithm
+ 
+
+1211
+00:25:11,440 --> 00:25:12,630
+taking this class what your algorithm
+was
+
+1212
+00:25:12,630 --> 00:25:12,640
+was
+ 
+
+1213
+00:25:12,640 --> 00:25:14,149
+was
+they would be able to code it up and
+
+1214
+00:25:14,149 --> 00:25:14,159
+they would be able to code it up and
+ 
+
+1215
+00:25:14,159 --> 00:25:16,310
+they would be able to code it up and
+tell a stupid computer how to do that
+
+1216
+00:25:16,310 --> 00:25:16,320
+tell a stupid computer how to do that
+ 
+
+1217
+00:25:16,320 --> 00:25:17,350
+tell a stupid computer how to do that
+thing
+
+1218
+00:25:17,350 --> 00:25:17,360
+thing
+ 
+
+1219
+00:25:17,360 --> 00:25:22,230
+thing
+okay so
+
+1220
+00:25:22,230 --> 00:25:22,240
+
+ 
+
+1221
+00:25:22,240 --> 00:25:26,390
+
+any any questions on induction
+
+1222
+00:25:26,390 --> 00:25:26,400
+
+ 
+
+1223
+00:25:26,400 --> 00:25:27,750
+
+you're going to be using it throughout
+
+1224
+00:25:27,750 --> 00:25:27,760
+you're going to be using it throughout
+ 
+
+1225
+00:25:27,760 --> 00:25:29,750
+you're going to be using it throughout
+this class and so if you're
+
+1226
+00:25:29,750 --> 00:25:29,760
+this class and so if you're
+ 
+
+1227
+00:25:29,760 --> 00:25:32,070
+this class and so if you're
+unfamiliar with this line of argument
+
+1228
+00:25:32,070 --> 00:25:32,080
+unfamiliar with this line of argument
+ 
+
+1229
+00:25:32,080 --> 00:25:33,190
+unfamiliar with this line of argument
+then you should
+
+1230
+00:25:33,190 --> 00:25:33,200
+then you should
+ 
+
+1231
+00:25:33,200 --> 00:25:34,950
+then you should
+go review some of that that would be
+
+1232
+00:25:34,950 --> 00:25:34,960
+go review some of that that would be
+ 
+
+1233
+00:25:34,960 --> 00:25:36,390
+go review some of that that would be
+good okay
+
+1234
+00:25:36,390 --> 00:25:36,400
+good okay
+ 
+
+1235
+00:25:36,400 --> 00:25:39,430
+good okay
+so that's correctness being able to
+
+1236
+00:25:39,430 --> 00:25:39,440
+so that's correctness being able to
+ 
+
+1237
+00:25:39,440 --> 00:25:42,390
+so that's correctness being able to
+communicate that the problem the
+
+1238
+00:25:42,390 --> 00:25:42,400
+communicate that the problem the
+ 
+
+1239
+00:25:42,400 --> 00:25:44,310
+communicate that the problem the
+algorithm we stated was
+
+1240
+00:25:44,310 --> 00:25:44,320
+algorithm we stated was
+ 
+
+1241
+00:25:44,320 --> 00:25:46,630
+algorithm we stated was
+correct now we want to argue that it's
+
+1242
+00:25:46,630 --> 00:25:46,640
+correct now we want to argue that it's
+ 
+
+1243
+00:25:46,640 --> 00:25:47,750
+correct now we want to argue that it's
+efficient
+
+1244
+00:25:47,750 --> 00:25:47,760
+efficient
+ 
+
+1245
+00:25:47,760 --> 00:25:59,430
+efficient
+right what does efficiency mean
+
+1246
+00:25:59,430 --> 00:25:59,440
+
+ 
+
+1247
+00:25:59,440 --> 00:26:02,630
+
+efficiency just means not only
+
+1248
+00:26:02,630 --> 00:26:02,640
+efficiency just means not only
+ 
+
+1249
+00:26:02,640 --> 00:26:06,630
+efficiency just means not only
+how fast does this algorithm run but
+
+1250
+00:26:06,630 --> 00:26:06,640
+how fast does this algorithm run but
+ 
+
+1251
+00:26:06,640 --> 00:26:08,789
+how fast does this algorithm run but
+how fast does it compare to other
+
+1252
+00:26:08,789 --> 00:26:08,799
+how fast does it compare to other
+ 
+
+1253
+00:26:08,799 --> 00:26:10,070
+how fast does it compare to other
+possible ways of approaching this
+
+1254
+00:26:10,070 --> 00:26:10,080
+possible ways of approaching this
+ 
+
+1255
+00:26:10,080 --> 00:26:11,029
+possible ways of approaching this
+problem
+
+1256
+00:26:11,029 --> 00:26:11,039
+problem
+ 
+
+1257
+00:26:11,039 --> 00:26:14,870
+problem
+right so how could we measure how fast
+
+1258
+00:26:14,870 --> 00:26:14,880
+right so how could we measure how fast
+ 
+
+1259
+00:26:14,880 --> 00:26:15,750
+right so how could we measure how fast
+an algorithm
+
+1260
+00:26:15,750 --> 00:26:15,760
+an algorithm
+ 
+
+1261
+00:26:15,760 --> 00:26:19,830
+an algorithm
+runs this is
+
+1262
+00:26:19,830 --> 00:26:19,840
+runs this is
+ 
+
+1263
+00:26:19,840 --> 00:26:23,669
+runs this is
+kind of a silly question yeah
+
+1264
+00:26:23,669 --> 00:26:23,679
+
+ 
+
+1265
+00:26:23,679 --> 00:26:25,669
+
+yeah just well i mean just record the
+
+1266
+00:26:25,669 --> 00:26:25,679
+yeah just well i mean just record the
+ 
+
+1267
+00:26:25,679 --> 00:26:26,710
+yeah just well i mean just record the
+time it takes for a
+
+1268
+00:26:26,710 --> 00:26:26,720
+time it takes for a
+ 
+
+1269
+00:26:26,720 --> 00:26:29,269
+time it takes for a
+computer to do this thing right now
+
+1270
+00:26:29,269 --> 00:26:29,279
+computer to do this thing right now
+ 
+
+1271
+00:26:29,279 --> 00:26:31,269
+computer to do this thing right now
+there's a problem with just re
+
+1272
+00:26:31,269 --> 00:26:31,279
+there's a problem with just re
+ 
+
+1273
+00:26:31,279 --> 00:26:33,269
+there's a problem with just re
+coding up an algorithm telling a
+
+1274
+00:26:33,269 --> 00:26:33,279
+coding up an algorithm telling a
+ 
+
+1275
+00:26:33,279 --> 00:26:34,789
+coding up an algorithm telling a
+computer what to do
+
+1276
+00:26:34,789 --> 00:26:34,799
+computer what to do
+ 
+
+1277
+00:26:34,799 --> 00:26:39,029
+computer what to do
+and timing how long it takes why
+
+1278
+00:26:39,029 --> 00:26:39,039
+and timing how long it takes why
+ 
+
+1279
+00:26:39,039 --> 00:26:43,510
+and timing how long it takes why
+yeah it would depend on the size of your
+
+1280
+00:26:43,510 --> 00:26:43,520
+yeah it would depend on the size of your
+ 
+
+1281
+00:26:43,520 --> 00:26:45,669
+yeah it would depend on the size of your
+data set okay we expect that but there's
+
+1282
+00:26:45,669 --> 00:26:45,679
+data set okay we expect that but there's
+ 
+
+1283
+00:26:45,679 --> 00:26:46,149
+data set okay we expect that but there's
+a
+
+1284
+00:26:46,149 --> 00:26:46,159
+a
+ 
+
+1285
+00:26:46,159 --> 00:26:49,990
+a
+bigger problem there yeah
+
+1286
+00:26:49,990 --> 00:26:50,000
+bigger problem there yeah
+ 
+
+1287
+00:26:50,000 --> 00:26:51,750
+bigger problem there yeah
+it depends on the strength of your
+
+1288
+00:26:51,750 --> 00:26:51,760
+it depends on the strength of your
+ 
+
+1289
+00:26:51,760 --> 00:26:53,269
+it depends on the strength of your
+computer right
+
+1290
+00:26:53,269 --> 00:26:53,279
+computer right
+ 
+
+1291
+00:26:53,279 --> 00:26:56,870
+computer right
+so i would expect that um you know
+
+1292
+00:26:56,870 --> 00:26:56,880
+so i would expect that um you know
+ 
+
+1293
+00:26:56,880 --> 00:26:58,549
+so i would expect that um you know
+if i had a watch calculator and i
+
+1294
+00:26:58,549 --> 00:26:58,559
+if i had a watch calculator and i
+ 
+
+1295
+00:26:58,559 --> 00:27:00,789
+if i had a watch calculator and i
+programmed it to do something
+
+1296
+00:27:00,789 --> 00:27:00,799
+programmed it to do something
+ 
+
+1297
+00:27:00,799 --> 00:27:04,630
+programmed it to do something
+right that might take a lot longer
+
+1298
+00:27:04,630 --> 00:27:04,640
+right that might take a lot longer
+ 
+
+1299
+00:27:04,640 --> 00:27:07,830
+right that might take a lot longer
+to solve a problem than if i asked
+
+1300
+00:27:07,830 --> 00:27:07,840
+to solve a problem than if i asked
+ 
+
+1301
+00:27:07,840 --> 00:27:10,870
+to solve a problem than if i asked
+you know ibm's research computer
+
+1302
+00:27:10,870 --> 00:27:10,880
+you know ibm's research computer
+ 
+
+1303
+00:27:10,880 --> 00:27:14,070
+you know ibm's research computer
+right to solve the same problem using
+
+1304
+00:27:14,070 --> 00:27:14,080
+right to solve the same problem using
+ 
+
+1305
+00:27:14,080 --> 00:27:15,750
+right to solve the same problem using
+the same algorithm even with the same
+
+1306
+00:27:15,750 --> 00:27:15,760
+the same algorithm even with the same
+ 
+
+1307
+00:27:15,760 --> 00:27:16,390
+the same algorithm even with the same
+code
+
+1308
+00:27:16,390 --> 00:27:16,400
+code
+ 
+
+1309
+00:27:16,400 --> 00:27:19,750
+code
+right because its underlying operations
+
+1310
+00:27:19,750 --> 00:27:19,760
+right because its underlying operations
+ 
+
+1311
+00:27:19,760 --> 00:27:22,710
+right because its underlying operations
+are much faster right how it runs is
+
+1312
+00:27:22,710 --> 00:27:22,720
+are much faster right how it runs is
+ 
+
+1313
+00:27:22,720 --> 00:27:24,789
+are much faster right how it runs is
+much faster
+
+1314
+00:27:24,789 --> 00:27:24,799
+much faster
+ 
+
+1315
+00:27:24,799 --> 00:27:26,470
+much faster
+so i don't want to count how long it
+
+1316
+00:27:26,470 --> 00:27:26,480
+so i don't want to count how long it
+ 
+
+1317
+00:27:26,480 --> 00:27:27,830
+so i don't want to count how long it
+would take on a real machine
+
+1318
+00:27:27,830 --> 00:27:27,840
+would take on a real machine
+ 
+
+1319
+00:27:27,840 --> 00:27:30,070
+would take on a real machine
+i kind of want to abstract the time it
+
+1320
+00:27:30,070 --> 00:27:30,080
+i kind of want to abstract the time it
+ 
+
+1321
+00:27:30,080 --> 00:27:31,510
+i kind of want to abstract the time it
+takes the machine to do stuff
+
+1322
+00:27:31,510 --> 00:27:31,520
+takes the machine to do stuff
+ 
+
+1323
+00:27:31,520 --> 00:27:33,430
+takes the machine to do stuff
+out of the picture what i kind of want
+
+1324
+00:27:33,430 --> 00:27:33,440
+out of the picture what i kind of want
+ 
+
+1325
+00:27:33,440 --> 00:27:34,950
+out of the picture what i kind of want
+to say is
+
+1326
+00:27:34,950 --> 00:27:34,960
+to say is
+ 
+
+1327
+00:27:34,960 --> 00:27:36,470
+to say is
+let's assume that each kind of
+
+1328
+00:27:36,470 --> 00:27:36,480
+let's assume that each kind of
+ 
+
+1329
+00:27:36,480 --> 00:27:38,470
+let's assume that each kind of
+fundamental operation that the computer
+
+1330
+00:27:38,470 --> 00:27:38,480
+fundamental operation that the computer
+ 
+
+1331
+00:27:38,480 --> 00:27:39,350
+fundamental operation that the computer
+can do
+
+1332
+00:27:39,350 --> 00:27:39,360
+can do
+ 
+
+1333
+00:27:39,360 --> 00:27:42,870
+can do
+takes some fixed amount of time okay
+
+1334
+00:27:42,870 --> 00:27:42,880
+takes some fixed amount of time okay
+ 
+
+1335
+00:27:42,880 --> 00:27:44,950
+takes some fixed amount of time okay
+how many of those kinds of fixed
+
+1336
+00:27:44,950 --> 00:27:44,960
+how many of those kinds of fixed
+ 
+
+1337
+00:27:44,960 --> 00:27:46,470
+how many of those kinds of fixed
+operations
+
+1338
+00:27:46,470 --> 00:27:46,480
+operations
+ 
+
+1339
+00:27:46,480 --> 00:27:48,630
+operations
+does the algorithm need to perform to be
+
+1340
+00:27:48,630 --> 00:27:48,640
+does the algorithm need to perform to be
+ 
+
+1341
+00:27:48,640 --> 00:27:51,110
+does the algorithm need to perform to be
+able to solve this problem
+
+1342
+00:27:51,110 --> 00:27:51,120
+able to solve this problem
+ 
+
+1343
+00:27:51,120 --> 00:27:56,470
+able to solve this problem
+right so here we don't
+
+1344
+00:27:56,470 --> 00:27:56,480
+
+ 
+
+1345
+00:27:56,480 --> 00:28:02,310
+
+don't measure time
+
+1346
+00:28:02,310 --> 00:28:02,320
+don't measure time
+ 
+
+1347
+00:28:02,320 --> 00:28:05,510
+don't measure time
+instead
+
+1348
+00:28:05,510 --> 00:28:05,520
+
+ 
+
+1349
+00:28:05,520 --> 00:28:09,990
+
+count kind of fundamental operations
+
+1350
+00:28:09,990 --> 00:28:10,000
+count kind of fundamental operations
+ 
+
+1351
+00:28:10,000 --> 00:28:12,230
+count kind of fundamental operations
+okay we'll get to what some of those
+
+1352
+00:28:12,230 --> 00:28:12,240
+okay we'll get to what some of those
+ 
+
+1353
+00:28:12,240 --> 00:28:14,950
+okay we'll get to what some of those
+fundamental operations are in a second
+
+1354
+00:28:14,950 --> 00:28:14,960
+fundamental operations are in a second
+ 
+
+1355
+00:28:14,960 --> 00:28:17,990
+fundamental operations are in a second
+but the idea is
+
+1356
+00:28:17,990 --> 00:28:18,000
+but the idea is
+ 
+
+1357
+00:28:18,000 --> 00:28:19,830
+but the idea is
+we want a measure of how well an
+
+1358
+00:28:19,830 --> 00:28:19,840
+we want a measure of how well an
+ 
+
+1359
+00:28:19,840 --> 00:28:21,269
+we want a measure of how well an
+algorithm
+
+1360
+00:28:21,269 --> 00:28:21,279
+algorithm
+ 
+
+1361
+00:28:21,279 --> 00:28:23,269
+algorithm
+uh performs not necessarily an
+
+1362
+00:28:23,269 --> 00:28:23,279
+uh performs not necessarily an
+ 
+
+1363
+00:28:23,279 --> 00:28:25,590
+uh performs not necessarily an
+implementation of that algorithm
+
+1364
+00:28:25,590 --> 00:28:25,600
+implementation of that algorithm
+ 
+
+1365
+00:28:25,600 --> 00:28:27,990
+implementation of that algorithm
+right kind of an abstract notion of how
+
+1366
+00:28:27,990 --> 00:28:28,000
+right kind of an abstract notion of how
+ 
+
+1367
+00:28:28,000 --> 00:28:29,510
+right kind of an abstract notion of how
+well this algorithm does
+
+1368
+00:28:29,510 --> 00:28:29,520
+well this algorithm does
+ 
+
+1369
+00:28:29,520 --> 00:28:32,789
+well this algorithm does
+and so what we're going to use to
+
+1370
+00:28:32,789 --> 00:28:32,799
+and so what we're going to use to
+ 
+
+1371
+00:28:32,799 --> 00:28:34,070
+and so what we're going to use to
+measure
+
+1372
+00:28:34,070 --> 00:28:34,080
+measure
+ 
+
+1373
+00:28:34,080 --> 00:28:37,110
+measure
+time or efficiency right
+
+1374
+00:28:37,110 --> 00:28:37,120
+time or efficiency right
+ 
+
+1375
+00:28:37,120 --> 00:28:39,830
+time or efficiency right
+is something called asymptotic analysis
+
+1376
+00:28:39,830 --> 00:28:39,840
+is something called asymptotic analysis
+ 
+
+1377
+00:28:39,840 --> 00:28:40,789
+is something called asymptotic analysis
+anyone
+
+1378
+00:28:40,789 --> 00:28:40,799
+anyone
+ 
+
+1379
+00:28:40,799 --> 00:28:42,789
+anyone
+here understand what asymptotic analysis
+
+1380
+00:28:42,789 --> 00:28:42,799
+here understand what asymptotic analysis
+ 
+
+1381
+00:28:42,799 --> 00:28:44,789
+here understand what asymptotic analysis
+is probably since it's in
+
+1382
+00:28:44,789 --> 00:28:44,799
+is probably since it's in
+ 
+
+1383
+00:28:44,799 --> 00:28:47,909
+is probably since it's in
+both of your prerequisites i think
+
+1384
+00:28:47,909 --> 00:28:47,919
+both of your prerequisites i think
+ 
+
+1385
+00:28:47,919 --> 00:28:51,029
+both of your prerequisites i think
+uh but we will go through a a formal
+
+1386
+00:28:51,029 --> 00:28:51,039
+uh but we will go through a a formal
+ 
+
+1387
+00:28:51,039 --> 00:28:52,310
+uh but we will go through a a formal
+definition of
+
+1388
+00:28:52,310 --> 00:28:52,320
+definition of
+ 
+
+1389
+00:28:52,320 --> 00:28:55,669
+definition of
+uh asymptotic notation in uh recitation
+
+1390
+00:28:55,669 --> 00:28:55,679
+uh asymptotic notation in uh recitation
+ 
+
+1391
+00:28:55,679 --> 00:28:56,470
+uh asymptotic notation in uh recitation
+tomorrow
+
+1392
+00:28:56,470 --> 00:28:56,480
+tomorrow
+ 
+
+1393
+00:28:56,480 --> 00:28:58,470
+tomorrow
+and you'll get a lot of practice in
+
+1394
+00:28:58,470 --> 00:28:58,480
+and you'll get a lot of practice in
+ 
+
+1395
+00:28:58,480 --> 00:28:59,990
+and you'll get a lot of practice in
+comparing functions using
+
+1396
+00:28:59,990 --> 00:29:00,000
+comparing functions using
+ 
+
+1397
+00:29:00,000 --> 00:29:02,549
+comparing functions using
+an asymptotic analysis but just to give
+
+1398
+00:29:02,549 --> 00:29:02,559
+an asymptotic analysis but just to give
+ 
+
+1399
+00:29:02,559 --> 00:29:05,190
+an asymptotic analysis but just to give
+you an idea
+
+1400
+00:29:05,190 --> 00:29:05,200
+you an idea
+ 
+
+1401
+00:29:05,200 --> 00:29:08,630
+you an idea
+right the idea here is we don't measure
+
+1402
+00:29:08,630 --> 00:29:08,640
+right the idea here is we don't measure
+ 
+
+1403
+00:29:08,640 --> 00:29:10,389
+right the idea here is we don't measure
+time we instead measure ops
+
+1404
+00:29:10,389 --> 00:29:10,399
+time we instead measure ops
+ 
+
+1405
+00:29:10,399 --> 00:29:12,230
+time we instead measure ops
+and like your colleague over here was
+
+1406
+00:29:12,230 --> 00:29:12,240
+and like your colleague over here was
+ 
+
+1407
+00:29:12,240 --> 00:29:18,310
+and like your colleague over here was
+saying before we expect
+
+1408
+00:29:18,310 --> 00:29:18,320
+
+ 
+
+1409
+00:29:18,320 --> 00:29:21,350
+
+uh performance
+
+1410
+00:29:21,350 --> 00:29:21,360
+uh performance
+ 
+
+1411
+00:29:21,360 --> 00:29:22,950
+uh performance
+i'm going to use performance instead of
+
+1412
+00:29:22,950 --> 00:29:22,960
+i'm going to use performance instead of
+ 
+
+1413
+00:29:22,960 --> 00:29:29,029
+i'm going to use performance instead of
+time here we expect that to depend
+
+1414
+00:29:29,029 --> 00:29:29,039
+
+ 
+
+1415
+00:29:29,039 --> 00:29:32,070
+
+on size of
+
+1416
+00:29:32,070 --> 00:29:32,080
+on size of
+ 
+
+1417
+00:29:32,080 --> 00:29:36,470
+on size of
+our input right if we're trying to
+
+1418
+00:29:36,470 --> 00:29:36,480
+our input right if we're trying to
+ 
+
+1419
+00:29:36,480 --> 00:29:39,510
+our input right if we're trying to
+run an algorithm to find a birthday
+
+1420
+00:29:39,510 --> 00:29:39,520
+run an algorithm to find a birthday
+ 
+
+1421
+00:29:39,520 --> 00:29:42,549
+run an algorithm to find a birthday
+uh in this section
+
+1422
+00:29:42,549 --> 00:29:42,559
+uh in this section
+ 
+
+1423
+00:29:42,559 --> 00:29:44,950
+uh in this section
+we expect the algorithm to run in a
+
+1424
+00:29:44,950 --> 00:29:44,960
+we expect the algorithm to run in a
+ 
+
+1425
+00:29:44,960 --> 00:29:46,870
+we expect the algorithm to run in a
+shorter amount of time than if i were to
+
+1426
+00:29:46,870 --> 00:29:46,880
+shorter amount of time than if i were to
+ 
+
+1427
+00:29:46,880 --> 00:29:50,549
+shorter amount of time than if i were to
+run the algorithm on all of you right
+
+1428
+00:29:50,549 --> 00:29:50,559
+run the algorithm on all of you right
+ 
+
+1429
+00:29:50,559 --> 00:29:53,269
+run the algorithm on all of you right
+so we expect it to perform differently
+
+1430
+00:29:53,269 --> 00:29:53,279
+so we expect it to perform differently
+ 
+
+1431
+00:29:53,279 --> 00:29:54,870
+so we expect it to perform differently
+depending on the size of the input
+
+1432
+00:29:54,870 --> 00:29:54,880
+depending on the size of the input
+ 
+
+1433
+00:29:54,880 --> 00:29:58,549
+depending on the size of the input
+and how differently uh is how we measure
+
+1434
+00:29:58,549 --> 00:29:58,559
+and how differently uh is how we measure
+ 
+
+1435
+00:29:58,559 --> 00:30:01,110
+and how differently uh is how we measure
+performance uh relative that input
+
+1436
+00:30:01,110 --> 00:30:01,120
+performance uh relative that input
+ 
+
+1437
+00:30:01,120 --> 00:30:01,909
+performance uh relative that input
+usually we use
+
+1438
+00:30:01,909 --> 00:30:01,919
+usually we use
+ 
+
+1439
+00:30:01,919 --> 00:30:05,110
+usually we use
+n as a variable for what the size of our
+
+1440
+00:30:05,110 --> 00:30:05,120
+n as a variable for what the size of our
+ 
+
+1441
+00:30:05,120 --> 00:30:06,389
+n as a variable for what the size of our
+input is
+
+1442
+00:30:06,389 --> 00:30:06,399
+input is
+ 
+
+1443
+00:30:06,399 --> 00:30:08,149
+input is
+right but that's not always the case so
+
+1444
+00:30:08,149 --> 00:30:08,159
+right but that's not always the case so
+ 
+
+1445
+00:30:08,159 --> 00:30:09,750
+right but that's not always the case so
+for example if we have a
+
+1446
+00:30:09,750 --> 00:30:09,760
+for example if we have a
+ 
+
+1447
+00:30:09,760 --> 00:30:13,190
+for example if we have a
+an array that i give you an n by n ray
+
+1448
+00:30:13,190 --> 00:30:13,200
+an array that i give you an n by n ray
+ 
+
+1449
+00:30:13,200 --> 00:30:16,070
+an array that i give you an n by n ray
+right that we're going to say n but
+
+1450
+00:30:16,070 --> 00:30:16,080
+right that we're going to say n but
+ 
+
+1451
+00:30:16,080 --> 00:30:19,350
+right that we're going to say n but
+what's the size of our input how much
+
+1452
+00:30:19,350 --> 00:30:19,360
+what's the size of our input how much
+ 
+
+1453
+00:30:19,360 --> 00:30:21,110
+what's the size of our input how much
+information do i need to convey to you
+
+1454
+00:30:21,110 --> 00:30:21,120
+information do i need to convey to you
+ 
+
+1455
+00:30:21,120 --> 00:30:22,950
+information do i need to convey to you
+to give you that information
+
+1456
+00:30:22,950 --> 00:30:22,960
+to give you that information
+ 
+
+1457
+00:30:22,960 --> 00:30:24,870
+to give you that information
+it's n squared right so that's the size
+
+1458
+00:30:24,870 --> 00:30:24,880
+it's n squared right so that's the size
+ 
+
+1459
+00:30:24,880 --> 00:30:25,990
+it's n squared right so that's the size
+of our input in that
+
+1460
+00:30:25,990 --> 00:30:26,000
+of our input in that
+ 
+
+1461
+00:30:26,000 --> 00:30:28,710
+of our input in that
+that context right or if i give you a
+
+1462
+00:30:28,710 --> 00:30:28,720
+that context right or if i give you a
+ 
+
+1463
+00:30:28,720 --> 00:30:30,870
+that context right or if i give you a
+graph it's usually the number of
+
+1464
+00:30:30,870 --> 00:30:30,880
+graph it's usually the number of
+ 
+
+1465
+00:30:30,880 --> 00:30:32,789
+graph it's usually the number of
+vertices plus the number of edges that's
+
+1466
+00:30:32,789 --> 00:30:32,799
+vertices plus the number of edges that's
+ 
+
+1467
+00:30:32,799 --> 00:30:35,190
+vertices plus the number of edges that's
+how big how much space i would need to
+
+1468
+00:30:35,190 --> 00:30:35,200
+how big how much space i would need to
+ 
+
+1469
+00:30:35,200 --> 00:30:36,389
+how big how much space i would need to
+convey to you
+
+1470
+00:30:36,389 --> 00:30:36,399
+convey to you
+ 
+
+1471
+00:30:36,399 --> 00:30:40,310
+convey to you
+that graph that information okay so you
+
+1472
+00:30:40,310 --> 00:30:40,320
+that graph that information okay so you
+ 
+
+1473
+00:30:40,320 --> 00:30:44,310
+that graph that information okay so you
+we compare how fast an algorithm is
+
+1474
+00:30:44,310 --> 00:30:44,320
+we compare how fast an algorithm is
+ 
+
+1475
+00:30:44,320 --> 00:30:46,710
+we compare how fast an algorithm is
+with respect to the size of the input
+
+1476
+00:30:46,710 --> 00:30:46,720
+with respect to the size of the input
+ 
+
+1477
+00:30:46,720 --> 00:30:47,430
+with respect to the size of the input
+right
+
+1478
+00:30:47,430 --> 00:30:47,440
+right
+ 
+
+1479
+00:30:47,440 --> 00:30:50,710
+right
+and if that
+
+1480
+00:30:50,710 --> 00:30:50,720
+
+ 
+
+1481
+00:30:50,720 --> 00:30:54,310
+
+we'll use the asymptotic notation
+
+1482
+00:30:54,310 --> 00:30:54,320
+we'll use the asymptotic notation
+ 
+
+1483
+00:30:54,320 --> 00:30:56,950
+we'll use the asymptotic notation
+we have big o notation which corresponds
+
+1484
+00:30:56,950 --> 00:30:56,960
+we have big o notation which corresponds
+ 
+
+1485
+00:30:56,960 --> 00:31:04,549
+we have big o notation which corresponds
+to upper bounds
+
+1486
+00:31:04,549 --> 00:31:04,559
+to upper bounds
+ 
+
+1487
+00:31:04,559 --> 00:31:08,470
+to upper bounds
+we'll have omega which corresponds to
+
+1488
+00:31:08,470 --> 00:31:08,480
+we'll have omega which corresponds to
+ 
+
+1489
+00:31:08,480 --> 00:31:12,789
+we'll have omega which corresponds to
+lower bounds
+
+1490
+00:31:12,789 --> 00:31:12,799
+
+ 
+
+1491
+00:31:12,799 --> 00:31:16,310
+
+and we have theta which corresponds to
+
+1492
+00:31:16,310 --> 00:31:16,320
+and we have theta which corresponds to
+ 
+
+1493
+00:31:16,320 --> 00:31:19,909
+and we have theta which corresponds to
+both right this thing is tight it
+
+1494
+00:31:19,909 --> 00:31:19,919
+both right this thing is tight it
+ 
+
+1495
+00:31:19,919 --> 00:31:21,990
+both right this thing is tight it
+is bounded from above and below by a
+
+1496
+00:31:21,990 --> 00:31:22,000
+is bounded from above and below by a
+ 
+
+1497
+00:31:22,000 --> 00:31:23,669
+is bounded from above and below by a
+function of this form
+
+1498
+00:31:23,669 --> 00:31:23,679
+function of this form
+ 
+
+1499
+00:31:23,679 --> 00:31:29,750
+function of this form
+okay
+
+1500
+00:31:29,750 --> 00:31:29,760
+
+ 
+
+1501
+00:31:29,760 --> 00:31:33,430
+
+now we have a couple common ways
+
+1502
+00:31:33,430 --> 00:31:33,440
+now we have a couple common ways
+ 
+
+1503
+00:31:33,440 --> 00:31:38,070
+now we have a couple common ways
+a com a couple common functions
+
+1504
+00:31:38,070 --> 00:31:38,080
+
+ 
+
+1505
+00:31:38,080 --> 00:31:42,389
+
+that algorithms their running time
+
+1506
+00:31:42,389 --> 00:31:42,399
+
+ 
+
+1507
+00:31:42,399 --> 00:31:45,269
+
+we have a couple common functions that
+
+1508
+00:31:45,269 --> 00:31:45,279
+we have a couple common functions that
+ 
+
+1509
+00:31:45,279 --> 00:31:46,149
+we have a couple common functions that
+uh relate
+
+1510
+00:31:46,149 --> 00:31:46,159
+uh relate
+ 
+
+1511
+00:31:46,159 --> 00:31:48,630
+uh relate
+an algorithm's input size to its
+
+1512
+00:31:48,630 --> 00:31:48,640
+an algorithm's input size to its
+ 
+
+1513
+00:31:48,640 --> 00:31:49,590
+an algorithm's input size to its
+performance
+
+1514
+00:31:49,590 --> 00:31:49,600
+performance
+ 
+
+1515
+00:31:49,600 --> 00:31:51,029
+performance
+some some things that we saw all the
+
+1516
+00:31:51,029 --> 00:31:51,039
+some some things that we saw all the
+ 
+
+1517
+00:31:51,039 --> 00:31:53,110
+some some things that we saw all the
+time does it can anyone give me some of
+
+1518
+00:31:53,110 --> 00:31:53,120
+time does it can anyone give me some of
+ 
+
+1519
+00:31:53,120 --> 00:31:55,830
+time does it can anyone give me some of
+those
+
+1520
+00:31:55,830 --> 00:31:55,840
+
+ 
+
+1521
+00:31:55,840 --> 00:31:59,669
+
+say again sorry sorry so like
+
+1522
+00:31:59,669 --> 00:31:59,679
+say again sorry sorry so like
+ 
+
+1523
+00:31:59,679 --> 00:32:03,269
+say again sorry sorry so like
+a function i'm not
+
+1524
+00:32:03,269 --> 00:32:03,279
+a function i'm not
+ 
+
+1525
+00:32:03,279 --> 00:32:06,149
+a function i'm not
+asking this question well but has anyone
+
+1526
+00:32:06,149 --> 00:32:06,159
+asking this question well but has anyone
+ 
+
+1527
+00:32:06,159 --> 00:32:07,509
+asking this question well but has anyone
+heard of a
+
+1528
+00:32:07,509 --> 00:32:07,519
+heard of a
+ 
+
+1529
+00:32:07,519 --> 00:32:10,870
+heard of a
+linear algorithm a linear time algorithm
+
+1530
+00:32:10,870 --> 00:32:10,880
+linear algorithm a linear time algorithm
+ 
+
+1531
+00:32:10,880 --> 00:32:13,590
+linear algorithm a linear time algorithm
+right that's basically saying that the
+
+1532
+00:32:13,590 --> 00:32:13,600
+right that's basically saying that the
+ 
+
+1533
+00:32:13,600 --> 00:32:14,070
+right that's basically saying that the
+side
+
+1534
+00:32:14,070 --> 00:32:14,080
+side
+ 
+
+1535
+00:32:14,080 --> 00:32:15,590
+side
+the running time of my algorithm the
+
+1536
+00:32:15,590 --> 00:32:15,600
+the running time of my algorithm the
+ 
+
+1537
+00:32:15,600 --> 00:32:17,350
+the running time of my algorithm the
+performance of my algorithm
+
+1538
+00:32:17,350 --> 00:32:17,360
+performance of my algorithm
+ 
+
+1539
+00:32:17,360 --> 00:32:19,350
+performance of my algorithm
+is linear with respect to the size of my
+
+1540
+00:32:19,350 --> 00:32:19,360
+is linear with respect to the size of my
+ 
+
+1541
+00:32:19,360 --> 00:32:20,470
+is linear with respect to the size of my
+input right
+
+1542
+00:32:20,470 --> 00:32:20,480
+input right
+ 
+
+1543
+00:32:20,480 --> 00:32:25,110
+input right
+yeah say it again
+
+1544
+00:32:25,110 --> 00:32:25,120
+
+ 
+
+1545
+00:32:25,120 --> 00:32:27,590
+
+like putting something in a list okay so
+
+1546
+00:32:27,590 --> 00:32:27,600
+like putting something in a list okay so
+ 
+
+1547
+00:32:27,600 --> 00:32:28,470
+like putting something in a list okay so
+that's
+
+1548
+00:32:28,470 --> 00:32:28,480
+that's
+ 
+
+1549
+00:32:28,480 --> 00:32:30,789
+that's
+there's there's a lot behind that
+
+1550
+00:32:30,789 --> 00:32:30,799
+there's there's a lot behind that
+ 
+
+1551
+00:32:30,799 --> 00:32:32,870
+there's there's a lot behind that
+question that we'll go into later
+
+1552
+00:32:32,870 --> 00:32:32,880
+question that we'll go into later
+ 
+
+1553
+00:32:32,880 --> 00:32:35,590
+question that we'll go into later
+uh this week uh but that's an example of
+
+1554
+00:32:35,590 --> 00:32:35,600
+uh this week uh but that's an example of
+ 
+
+1555
+00:32:35,600 --> 00:32:37,509
+uh this week uh but that's an example of
+if i do it in a silly way
+
+1556
+00:32:37,509 --> 00:32:37,519
+if i do it in a silly way
+ 
+
+1557
+00:32:37,519 --> 00:32:38,870
+if i do it in a silly way
+i stick something in the middle of a
+
+1558
+00:32:38,870 --> 00:32:38,880
+i stick something in the middle of a
+ 
+
+1559
+00:32:38,880 --> 00:32:41,029
+i stick something in the middle of a
+list and i have to move everything
+
+1560
+00:32:41,029 --> 00:32:41,039
+list and i have to move everything
+ 
+
+1561
+00:32:41,039 --> 00:32:42,549
+list and i have to move everything
+that's an operation that could take
+
+1562
+00:32:42,549 --> 00:32:42,559
+that's an operation that could take
+ 
+
+1563
+00:32:42,559 --> 00:32:44,549
+that's an operation that could take
+linear time right
+
+1564
+00:32:44,549 --> 00:32:44,559
+linear time right
+ 
+
+1565
+00:32:44,559 --> 00:32:48,149
+linear time right
+okay so uh linear time is is a type of
+
+1566
+00:32:48,149 --> 00:32:48,159
+okay so uh linear time is is a type of
+ 
+
+1567
+00:32:48,159 --> 00:32:48,630
+okay so uh linear time is is a type of
+function
+
+1568
+00:32:48,630 --> 00:32:48,640
+function
+ 
+
+1569
+00:32:48,640 --> 00:32:50,470
+function
+we've got a number of these i'm going to
+
+1570
+00:32:50,470 --> 00:32:50,480
+we've got a number of these i'm going to
+ 
+
+1571
+00:32:50,480 --> 00:32:52,789
+we've got a number of these i'm going to
+start with uh
+
+1572
+00:32:52,789 --> 00:32:52,799
+start with uh
+ 
+
+1573
+00:32:52,799 --> 00:32:54,630
+start with uh
+this one does anyone know what this one
+
+1574
+00:32:54,630 --> 00:32:54,640
+this one does anyone know what this one
+ 
+
+1575
+00:32:54,640 --> 00:32:56,789
+this one does anyone know what this one
+is constant time
+
+1576
+00:32:56,789 --> 00:32:56,799
+is constant time
+ 
+
+1577
+00:32:56,799 --> 00:32:59,110
+is constant time
+okay basically no matter how i change
+
+1578
+00:32:59,110 --> 00:32:59,120
+okay basically no matter how i change
+ 
+
+1579
+00:32:59,120 --> 00:33:00,789
+okay basically no matter how i change
+the input
+
+1580
+00:33:00,789 --> 00:33:00,799
+the input
+ 
+
+1581
+00:33:00,799 --> 00:33:03,269
+the input
+the amount of time this running time the
+
+1582
+00:33:03,269 --> 00:33:03,279
+the amount of time this running time the
+ 
+
+1583
+00:33:03,279 --> 00:33:05,669
+the amount of time this running time the
+the performance of my algorithm takes
+
+1584
+00:33:05,669 --> 00:33:05,679
+the performance of my algorithm takes
+ 
+
+1585
+00:33:05,679 --> 00:33:07,669
+the performance of my algorithm takes
+it doesn't really depend on that okay
+
+1586
+00:33:07,669 --> 00:33:07,679
+it doesn't really depend on that okay
+ 
+
+1587
+00:33:07,679 --> 00:33:10,470
+it doesn't really depend on that okay
+the next one up is
+
+1588
+00:33:10,470 --> 00:33:10,480
+the next one up is
+ 
+
+1589
+00:33:10,480 --> 00:33:13,909
+the next one up is
+something like this this is logarithmic
+
+1590
+00:33:13,909 --> 00:33:13,919
+something like this this is logarithmic
+ 
+
+1591
+00:33:13,919 --> 00:33:15,029
+something like this this is logarithmic
+time
+
+1592
+00:33:15,029 --> 00:33:15,039
+time
+ 
+
+1593
+00:33:15,039 --> 00:33:18,549
+time
+okay we have
+
+1594
+00:33:18,549 --> 00:33:18,559
+okay we have
+ 
+
+1595
+00:33:18,559 --> 00:33:22,549
+okay we have
+theta n which is linear
+
+1596
+00:33:22,549 --> 00:33:22,559
+
+ 
+
+1597
+00:33:22,559 --> 00:33:25,590
+
+and log n right
+
+1598
+00:33:25,590 --> 00:33:25,600
+and log n right
+ 
+
+1599
+00:33:25,600 --> 00:33:27,590
+and log n right
+sometimes we call this log linear but we
+
+1600
+00:33:27,590 --> 00:33:27,600
+sometimes we call this log linear but we
+ 
+
+1601
+00:33:27,600 --> 00:33:29,750
+sometimes we call this log linear but we
+usually just say n log n
+
+1602
+00:33:29,750 --> 00:33:29,760
+usually just say n log n
+ 
+
+1603
+00:33:29,760 --> 00:33:32,870
+usually just say n log n
+okay we have a quadratic running time in
+
+1604
+00:33:32,870 --> 00:33:32,880
+okay we have a quadratic running time in
+ 
+
+1605
+00:33:32,880 --> 00:33:33,430
+okay we have a quadratic running time in
+general
+
+1606
+00:33:33,430 --> 00:33:33,440
+general
+ 
+
+1607
+00:33:33,440 --> 00:33:36,830
+general
+if i have a constant power up here
+
+1608
+00:33:36,830 --> 00:33:36,840
+if i have a constant power up here
+ 
+
+1609
+00:33:36,840 --> 00:33:40,630
+if i have a constant power up here
+right it's n to the c
+
+1610
+00:33:40,630 --> 00:33:40,640
+right it's n to the c
+ 
+
+1611
+00:33:40,640 --> 00:33:42,950
+right it's n to the c
+for some constant this is what we call
+
+1612
+00:33:42,950 --> 00:33:42,960
+for some constant this is what we call
+ 
+
+1613
+00:33:42,960 --> 00:33:44,149
+for some constant this is what we call
+polynomial time
+
+1614
+00:33:44,149 --> 00:33:44,159
+polynomial time
+ 
+
+1615
+00:33:44,159 --> 00:33:46,310
+polynomial time
+right we're as long as c is some
+
+1616
+00:33:46,310 --> 00:33:46,320
+right we're as long as c is some
+ 
+
+1617
+00:33:46,320 --> 00:33:48,389
+right we're as long as c is some
+constant
+
+1618
+00:33:48,389 --> 00:33:48,399
+constant
+ 
+
+1619
+00:33:48,399 --> 00:33:51,669
+constant
+and this right here is what we mean by
+
+1620
+00:33:51,669 --> 00:33:51,679
+and this right here is what we mean by
+ 
+
+1621
+00:33:51,679 --> 00:33:54,789
+and this right here is what we mean by
+efficient in this class usually right in
+
+1622
+00:33:54,789 --> 00:33:54,799
+efficient in this class usually right in
+ 
+
+1623
+00:33:54,799 --> 00:33:56,870
+efficient in this class usually right in
+other classes right when you have big
+
+1624
+00:33:56,870 --> 00:33:56,880
+other classes right when you have big
+ 
+
+1625
+00:33:56,880 --> 00:33:58,470
+other classes right when you have big
+data sets maybe this is
+
+1626
+00:33:58,470 --> 00:33:58,480
+data sets maybe this is
+ 
+
+1627
+00:33:58,480 --> 00:34:00,789
+data sets maybe this is
+efficient right but in this class
+
+1628
+00:34:00,789 --> 00:34:00,799
+efficient right but in this class
+ 
+
+1629
+00:34:00,799 --> 00:34:02,310
+efficient right but in this class
+generally what we mean
+
+1630
+00:34:02,310 --> 00:34:02,320
+generally what we mean
+ 
+
+1631
+00:34:02,320 --> 00:34:05,669
+generally what we mean
+is polynomial and as you get down this
+
+1632
+00:34:05,669 --> 00:34:05,679
+is polynomial and as you get down this
+ 
+
+1633
+00:34:05,679 --> 00:34:06,470
+is polynomial and as you get down this
+thing these are
+
+1634
+00:34:06,470 --> 00:34:06,480
+thing these are
+ 
+
+1635
+00:34:06,480 --> 00:34:09,750
+thing these are
+things are more and more efficient okay
+
+1636
+00:34:09,750 --> 00:34:09,760
+things are more and more efficient okay
+ 
+
+1637
+00:34:09,760 --> 00:34:11,190
+things are more and more efficient okay
+there's one class i'm going to talk to
+
+1638
+00:34:11,190 --> 00:34:11,200
+there's one class i'm going to talk to
+ 
+
+1639
+00:34:11,200 --> 00:34:13,109
+there's one class i'm going to talk to
+you about over here
+
+1640
+00:34:13,109 --> 00:34:13,119
+you about over here
+ 
+
+1641
+00:34:13,119 --> 00:34:16,470
+you about over here
+which is something like uh
+
+1642
+00:34:16,470 --> 00:34:16,480
+which is something like uh
+ 
+
+1643
+00:34:16,480 --> 00:34:19,510
+which is something like uh
+let's do this 2 to the theta
+
+1644
+00:34:19,510 --> 00:34:19,520
+let's do this 2 to the theta
+ 
+
+1645
+00:34:19,520 --> 00:34:23,430
+let's do this 2 to the theta
+of n right exponential time
+
+1646
+00:34:23,430 --> 00:34:23,440
+of n right exponential time
+ 
+
+1647
+00:34:23,440 --> 00:34:27,430
+of n right exponential time
+this is some constant to a function of n
+
+1648
+00:34:27,430 --> 00:34:27,440
+this is some constant to a function of n
+ 
+
+1649
+00:34:27,440 --> 00:34:30,470
+this is some constant to a function of n
+that's say super linear
+
+1650
+00:34:30,470 --> 00:34:30,480
+that's say super linear
+ 
+
+1651
+00:34:30,480 --> 00:34:33,589
+that's say super linear
+uh that's going to be uh
+
+1652
+00:34:33,589 --> 00:34:33,599
+uh that's going to be uh
+ 
+
+1653
+00:34:33,599 --> 00:34:35,430
+uh that's going to be uh
+you know pretty bad why is it pretty bad
+
+1654
+00:34:35,430 --> 00:34:35,440
+you know pretty bad why is it pretty bad
+ 
+
+1655
+00:34:35,440 --> 00:34:40,149
+you know pretty bad why is it pretty bad
+if i were to plot some of these things
+
+1656
+00:34:40,149 --> 00:34:40,159
+
+ 
+
+1657
+00:34:40,159 --> 00:34:43,510
+
+as a function of n right let's say
+
+1658
+00:34:43,510 --> 00:34:43,520
+as a function of n right let's say
+ 
+
+1659
+00:34:43,520 --> 00:34:47,030
+as a function of n right let's say
+i plot values of up to a thousand on
+
+1660
+00:34:47,030 --> 00:34:47,040
+i plot values of up to a thousand on
+ 
+
+1661
+00:34:47,040 --> 00:34:50,790
+i plot values of up to a thousand on
+on my n scale here okay
+
+1662
+00:34:50,790 --> 00:34:50,800
+on my n scale here okay
+ 
+
+1663
+00:34:50,800 --> 00:34:52,710
+on my n scale here okay
+what does constant look like maybe this
+
+1664
+00:34:52,710 --> 00:34:52,720
+what does constant look like maybe this
+ 
+
+1665
+00:34:52,720 --> 00:34:56,629
+what does constant look like maybe this
+is a thousand up here too
+
+1666
+00:34:56,629 --> 00:34:56,639
+
+ 
+
+1667
+00:34:56,639 --> 00:34:58,710
+
+what does a constant look like looks
+
+1668
+00:34:58,710 --> 00:34:58,720
+what does a constant look like looks
+ 
+
+1669
+00:34:58,720 --> 00:34:59,750
+what does a constant look like looks
+like a line
+
+1670
+00:34:59,750 --> 00:34:59,760
+like a line
+ 
+
+1671
+00:34:59,760 --> 00:35:02,310
+like a line
+right it looks like a line over here
+
+1672
+00:35:02,310 --> 00:35:02,320
+right it looks like a line over here
+ 
+
+1673
+00:35:02,320 --> 00:35:04,710
+right it looks like a line over here
+somewhere it could be as high as i want
+
+1674
+00:35:04,710 --> 00:35:04,720
+somewhere it could be as high as i want
+ 
+
+1675
+00:35:04,720 --> 00:35:06,710
+somewhere it could be as high as i want
+but eventually anything that's an
+
+1676
+00:35:06,710 --> 00:35:06,720
+but eventually anything that's an
+ 
+
+1677
+00:35:06,720 --> 00:35:08,069
+but eventually anything that's an
+increasing function
+
+1678
+00:35:08,069 --> 00:35:08,079
+increasing function
+ 
+
+1679
+00:35:08,079 --> 00:35:11,349
+increasing function
+will get bigger than this right and on
+
+1680
+00:35:11,349 --> 00:35:11,359
+will get bigger than this right and on
+ 
+
+1681
+00:35:11,359 --> 00:35:12,550
+will get bigger than this right and on
+this scale if i
+
+1682
+00:35:12,550 --> 00:35:12,560
+this scale if i
+ 
+
+1683
+00:35:12,560 --> 00:35:15,430
+this scale if i
+use log base 2 or some reasonable small
+
+1684
+00:35:15,430 --> 00:35:15,440
+use log base 2 or some reasonable small
+ 
+
+1685
+00:35:15,440 --> 00:35:16,790
+use log base 2 or some reasonable small
+constant
+
+1686
+00:35:16,790 --> 00:35:16,800
+constant
+ 
+
+1687
+00:35:16,800 --> 00:35:20,390
+constant
+what does log look like well let's let's
+
+1688
+00:35:20,390 --> 00:35:20,400
+what does log look like well let's let's
+ 
+
+1689
+00:35:20,400 --> 00:35:21,829
+what does log look like well let's let's
+do an easier one what does linear look
+
+1690
+00:35:21,829 --> 00:35:21,839
+do an easier one what does linear look
+ 
+
+1691
+00:35:21,839 --> 00:35:23,109
+do an easier one what does linear look
+like
+
+1692
+00:35:23,109 --> 00:35:23,119
+like
+ 
+
+1693
+00:35:23,119 --> 00:35:26,390
+like
+yeah this right that's what i saw a lot
+
+1694
+00:35:26,390 --> 00:35:26,400
+yeah this right that's what i saw a lot
+ 
+
+1695
+00:35:26,400 --> 00:35:27,589
+yeah this right that's what i saw a lot
+of you doing
+
+1696
+00:35:27,589 --> 00:35:27,599
+of you doing
+ 
+
+1697
+00:35:27,599 --> 00:35:31,030
+of you doing
+okay that's linear that's the kind of
+
+1698
+00:35:31,030 --> 00:35:31,040
+okay that's linear that's the kind of
+ 
+
+1699
+00:35:31,040 --> 00:35:32,790
+okay that's linear that's the kind of
+base that we're comparing everything
+
+1700
+00:35:32,790 --> 00:35:32,800
+base that we're comparing everything
+ 
+
+1701
+00:35:32,800 --> 00:35:36,550
+base that we're comparing everything
+against what does log look like
+
+1702
+00:35:36,550 --> 00:35:36,560
+against what does log look like
+ 
+
+1703
+00:35:36,560 --> 00:35:40,390
+against what does log look like
+like this okay but on at this scale
+
+1704
+00:35:40,390 --> 00:35:40,400
+like this okay but on at this scale
+ 
+
+1705
+00:35:40,400 --> 00:35:43,430
+like this okay but on at this scale
+right at this scale
+
+1706
+00:35:43,430 --> 00:35:43,440
+right at this scale
+ 
+
+1707
+00:35:43,440 --> 00:35:47,109
+right at this scale
+really it's much closer to constant
+
+1708
+00:35:47,109 --> 00:35:47,119
+really it's much closer to constant
+ 
+
+1709
+00:35:47,119 --> 00:35:50,150
+really it's much closer to constant
+than linear and actually as n gets much
+
+1710
+00:35:50,150 --> 00:35:50,160
+than linear and actually as n gets much
+ 
+
+1711
+00:35:50,160 --> 00:35:51,430
+than linear and actually as n gets much
+much larger
+
+1712
+00:35:51,430 --> 00:35:51,440
+much larger
+ 
+
+1713
+00:35:51,440 --> 00:35:53,030
+much larger
+this almost looks like a straight line
+
+1714
+00:35:53,030 --> 00:35:53,040
+this almost looks like a straight line
+ 
+
+1715
+00:35:53,040 --> 00:35:55,190
+this almost looks like a straight line
+it almost looks like a constant
+
+1716
+00:35:55,190 --> 00:35:55,200
+it almost looks like a constant
+ 
+
+1717
+00:35:55,200 --> 00:35:58,150
+it almost looks like a constant
+so log is almost just as good as
+
+1718
+00:35:58,150 --> 00:35:58,160
+so log is almost just as good as
+ 
+
+1719
+00:35:58,160 --> 00:35:58,950
+so log is almost just as good as
+constant
+
+1720
+00:35:58,950 --> 00:35:58,960
+constant
+ 
+
+1721
+00:35:58,960 --> 00:36:03,589
+constant
+right what does exponential look like
+
+1722
+00:36:03,589 --> 00:36:03,599
+
+ 
+
+1723
+00:36:03,599 --> 00:36:05,910
+
+it's the exact inverse of this thing
+
+1724
+00:36:05,910 --> 00:36:05,920
+it's the exact inverse of this thing
+ 
+
+1725
+00:36:05,920 --> 00:36:07,190
+it's the exact inverse of this thing
+right
+
+1726
+00:36:07,190 --> 00:36:07,200
+right
+ 
+
+1727
+00:36:07,200 --> 00:36:09,990
+right
+right it's almost an exact straight line
+
+1728
+00:36:09,990 --> 00:36:10,000
+right it's almost an exact straight line
+ 
+
+1729
+00:36:10,000 --> 00:36:11,030
+right it's almost an exact straight line
+going up
+
+1730
+00:36:11,030 --> 00:36:11,040
+going up
+ 
+
+1731
+00:36:11,040 --> 00:36:14,390
+going up
+right so this is crap
+
+1732
+00:36:14,390 --> 00:36:14,400
+right so this is crap
+ 
+
+1733
+00:36:14,400 --> 00:36:17,430
+right so this is crap
+this is really good almost anything in
+
+1734
+00:36:17,430 --> 00:36:17,440
+this is really good almost anything in
+ 
+
+1735
+00:36:17,440 --> 00:36:19,430
+this is really good almost anything in
+this region over here is
+
+1736
+00:36:19,430 --> 00:36:19,440
+this region over here is
+ 
+
+1737
+00:36:19,440 --> 00:36:21,349
+this region over here is
+better right at least i'm gaining
+
+1738
+00:36:21,349 --> 00:36:21,359
+better right at least i'm gaining
+ 
+
+1739
+00:36:21,359 --> 00:36:24,470
+better right at least i'm gaining
+something
+
+1740
+00:36:24,470 --> 00:36:24,480
+
+ 
+
+1741
+00:36:24,480 --> 00:36:27,510
+
+uh i i'm not i'm i'm able to not go
+
+1742
+00:36:27,510 --> 00:36:27,520
+uh i i'm not i'm i'm able to not go
+ 
+
+1743
+00:36:27,520 --> 00:36:31,430
+uh i i'm not i'm i'm able to not go
+up too high relative to my input size so
+
+1744
+00:36:31,430 --> 00:36:31,440
+up too high relative to my input size so
+ 
+
+1745
+00:36:31,440 --> 00:36:33,109
+up too high relative to my input size so
+quadratic i don't know something like
+
+1746
+00:36:33,109 --> 00:36:33,119
+quadratic i don't know something like
+ 
+
+1747
+00:36:33,119 --> 00:36:33,430
+quadratic i don't know something like
+this
+
+1748
+00:36:33,430 --> 00:36:33,440
+this
+ 
+
+1749
+00:36:33,440 --> 00:36:35,430
+this
+and n log n is something like this and
+
+1750
+00:36:35,430 --> 00:36:35,440
+and n log n is something like this and
+ 
+
+1751
+00:36:35,440 --> 00:36:37,510
+and n log n is something like this and
+log n after a long time
+
+1752
+00:36:37,510 --> 00:36:37,520
+log n after a long time
+ 
+
+1753
+00:36:37,520 --> 00:36:39,910
+log n after a long time
+really starts just looking linear with a
+
+1754
+00:36:39,910 --> 00:36:39,920
+really starts just looking linear with a
+ 
+
+1755
+00:36:39,920 --> 00:36:41,349
+really starts just looking linear with a
+a constant multiplied
+
+1756
+00:36:41,349 --> 00:36:41,359
+a constant multiplied
+ 
+
+1757
+00:36:41,359 --> 00:36:45,109
+a constant multiplied
+in front of it right okay so
+
+1758
+00:36:45,109 --> 00:36:45,119
+in front of it right okay so
+ 
+
+1759
+00:36:45,119 --> 00:36:48,150
+in front of it right okay so
+these things good that thing bad okay
+
+1760
+00:36:48,150 --> 00:36:48,160
+these things good that thing bad okay
+ 
+
+1761
+00:36:48,160 --> 00:36:50,790
+these things good that thing bad okay
+that's what that's trying to convey all
+
+1762
+00:36:50,790 --> 00:36:50,800
+that's what that's trying to convey all
+ 
+
+1763
+00:36:50,800 --> 00:36:51,670
+that's what that's trying to convey all
+right
+
+1764
+00:36:51,670 --> 00:36:51,680
+right
+ 
+
+1765
+00:36:51,680 --> 00:36:55,190
+right
+so how do we measure these things if
+
+1766
+00:36:55,190 --> 00:36:55,200
+so how do we measure these things if
+ 
+
+1767
+00:36:55,200 --> 00:36:57,109
+so how do we measure these things if
+if i don't know what my fundamental
+
+1768
+00:36:57,109 --> 00:36:57,119
+if i don't know what my fundamental
+ 
+
+1769
+00:36:57,119 --> 00:36:59,990
+if i don't know what my fundamental
+operations are that my computer can
+
+1770
+00:36:59,990 --> 00:37:00,000
+operations are that my computer can
+ 
+
+1771
+00:37:00,000 --> 00:37:03,670
+operations are that my computer can
+can can use right so we need to define
+
+1772
+00:37:03,670 --> 00:37:03,680
+can can use right so we need to define
+ 
+
+1773
+00:37:03,680 --> 00:37:12,630
+can can use right so we need to define
+some kind of model of computation
+
+1774
+00:37:12,630 --> 00:37:12,640
+
+ 
+
+1775
+00:37:12,640 --> 00:37:15,030
+
+for what our computer is allowed to do
+
+1776
+00:37:15,030 --> 00:37:15,040
+for what our computer is allowed to do
+ 
+
+1777
+00:37:15,040 --> 00:37:17,109
+for what our computer is allowed to do
+in constant time in a fixed amount of
+
+1778
+00:37:17,109 --> 00:37:17,119
+in constant time in a fixed amount of
+ 
+
+1779
+00:37:17,119 --> 00:37:17,910
+in constant time in a fixed amount of
+time
+
+1780
+00:37:17,910 --> 00:37:17,920
+time
+ 
+
+1781
+00:37:17,920 --> 00:37:21,030
+time
+right
+
+1782
+00:37:21,030 --> 00:37:21,040
+
+ 
+
+1783
+00:37:21,040 --> 00:37:23,190
+
+in general what we use in this class is
+
+1784
+00:37:23,190 --> 00:37:23,200
+in general what we use in this class is
+ 
+
+1785
+00:37:23,200 --> 00:37:25,190
+in general what we use in this class is
+is a machine called a word ram
+
+1786
+00:37:25,190 --> 00:37:25,200
+is a machine called a word ram
+ 
+
+1787
+00:37:25,200 --> 00:37:27,750
+is a machine called a word ram
+which we you know use for its
+
+1788
+00:37:27,750 --> 00:37:27,760
+which we you know use for its
+ 
+
+1789
+00:37:27,760 --> 00:37:28,630
+which we you know use for its
+theoretical
+
+1790
+00:37:28,630 --> 00:37:28,640
+theoretical
+ 
+
+1791
+00:37:28,640 --> 00:37:32,710
+theoretical
+brevity all right word ram
+
+1792
+00:37:32,710 --> 00:37:32,720
+brevity all right word ram
+ 
+
+1793
+00:37:32,720 --> 00:37:35,990
+brevity all right word ram
+it's kind of a loaded term
+
+1794
+00:37:35,990 --> 00:37:36,000
+it's kind of a loaded term
+ 
+
+1795
+00:37:36,000 --> 00:37:39,030
+it's kind of a loaded term
+what do these things mean it means i
+
+1796
+00:37:39,030 --> 00:37:39,040
+what do these things mean it means i
+ 
+
+1797
+00:37:39,040 --> 00:37:40,310
+what do these things mean it means i
+have
+
+1798
+00:37:40,310 --> 00:37:40,320
+have
+ 
+
+1799
+00:37:40,320 --> 00:37:42,310
+have
+what can some does someone know what ram
+
+1800
+00:37:42,310 --> 00:37:42,320
+what can some does someone know what ram
+ 
+
+1801
+00:37:42,320 --> 00:37:45,270
+what can some does someone know what ram
+means
+
+1802
+00:37:45,270 --> 00:37:45,280
+
+ 
+
+1803
+00:37:45,280 --> 00:37:47,430
+
+random access memory right it means that
+
+1804
+00:37:47,430 --> 00:37:47,440
+random access memory right it means that
+ 
+
+1805
+00:37:47,440 --> 00:37:48,390
+random access memory right it means that
+i can
+
+1806
+00:37:48,390 --> 00:37:48,400
+i can
+ 
+
+1807
+00:37:48,400 --> 00:37:51,750
+i can
+randomly access different places in
+
+1808
+00:37:51,750 --> 00:37:51,760
+randomly access different places in
+ 
+
+1809
+00:37:51,760 --> 00:37:53,030
+randomly access different places in
+memory
+
+1810
+00:37:53,030 --> 00:37:53,040
+memory
+ 
+
+1811
+00:37:53,040 --> 00:37:54,790
+memory
+in constant time that's that's the
+
+1812
+00:37:54,790 --> 00:37:54,800
+in constant time that's that's the
+ 
+
+1813
+00:37:54,800 --> 00:37:56,069
+in constant time that's that's the
+assumption of
+
+1814
+00:37:56,069 --> 00:37:56,079
+assumption of
+ 
+
+1815
+00:37:56,079 --> 00:37:58,470
+assumption of
+random access memory basically what our
+
+1816
+00:37:58,470 --> 00:37:58,480
+random access memory basically what our
+ 
+
+1817
+00:37:58,480 --> 00:38:00,069
+random access memory basically what our
+model of a computer is is you have
+
+1818
+00:38:00,069 --> 00:38:00,079
+model of a computer is is you have
+ 
+
+1819
+00:38:00,079 --> 00:38:01,870
+model of a computer is is you have
+memory
+
+1820
+00:38:01,870 --> 00:38:01,880
+memory
+ 
+
+1821
+00:38:01,880 --> 00:38:04,790
+memory
+memory which is essentially just a
+
+1822
+00:38:04,790 --> 00:38:04,800
+memory which is essentially just a
+ 
+
+1823
+00:38:04,800 --> 00:38:06,470
+memory which is essentially just a
+string of bits
+
+1824
+00:38:06,470 --> 00:38:06,480
+string of bits
+ 
+
+1825
+00:38:06,480 --> 00:38:09,030
+string of bits
+it's just a bunch of ones and zeros
+
+1826
+00:38:09,030 --> 00:38:09,040
+it's just a bunch of ones and zeros
+ 
+
+1827
+00:38:09,040 --> 00:38:10,550
+it's just a bunch of ones and zeros
+right
+
+1828
+00:38:10,550 --> 00:38:10,560
+right
+ 
+
+1829
+00:38:10,560 --> 00:38:14,150
+right
+and we have a computer like a cpu right
+
+1830
+00:38:14,150 --> 00:38:14,160
+and we have a computer like a cpu right
+ 
+
+1831
+00:38:14,160 --> 00:38:17,589
+and we have a computer like a cpu right
+which is really small it can basically
+
+1832
+00:38:17,589 --> 00:38:17,599
+which is really small it can basically
+ 
+
+1833
+00:38:17,599 --> 00:38:19,670
+which is really small it can basically
+hold a small amount of information but
+
+1834
+00:38:19,670 --> 00:38:19,680
+hold a small amount of information but
+ 
+
+1835
+00:38:19,680 --> 00:38:20,550
+hold a small amount of information but
+it can
+
+1836
+00:38:20,550 --> 00:38:20,560
+it can
+ 
+
+1837
+00:38:20,560 --> 00:38:22,950
+it can
+change that information right it can
+
+1838
+00:38:22,950 --> 00:38:22,960
+change that information right it can
+ 
+
+1839
+00:38:22,960 --> 00:38:24,630
+change that information right it can
+operate on that information
+
+1840
+00:38:24,630 --> 00:38:24,640
+operate on that information
+ 
+
+1841
+00:38:24,640 --> 00:38:26,630
+operate on that information
+and it also has instructions to randomly
+
+1842
+00:38:26,630 --> 00:38:26,640
+and it also has instructions to randomly
+ 
+
+1843
+00:38:26,640 --> 00:38:28,310
+and it also has instructions to randomly
+access different places in memory bring
+
+1844
+00:38:28,310 --> 00:38:28,320
+access different places in memory bring
+ 
+
+1845
+00:38:28,320 --> 00:38:30,829
+access different places in memory bring
+it into the cpu act on it and read it
+
+1846
+00:38:30,829 --> 00:38:30,839
+it into the cpu act on it and read it
+ 
+
+1847
+00:38:30,839 --> 00:38:32,150
+it into the cpu act on it and read it
+back
+
+1848
+00:38:32,150 --> 00:38:32,160
+back
+ 
+
+1849
+00:38:32,160 --> 00:38:35,349
+back
+that makes sense but in general
+
+1850
+00:38:35,349 --> 00:38:35,359
+that makes sense but in general
+ 
+
+1851
+00:38:35,359 --> 00:38:38,630
+that makes sense but in general
+we don't have an address for every bit
+
+1852
+00:38:38,630 --> 00:38:38,640
+we don't have an address for every bit
+ 
+
+1853
+00:38:38,640 --> 00:38:43,430
+we don't have an address for every bit
+in memory every zero and one in memory
+
+1854
+00:38:43,430 --> 00:38:43,440
+
+ 
+
+1855
+00:38:43,440 --> 00:38:45,910
+
+we actually does anyone know how modern
+
+1856
+00:38:45,910 --> 00:38:45,920
+we actually does anyone know how modern
+ 
+
+1857
+00:38:45,920 --> 00:38:54,550
+we actually does anyone know how modern
+computers are addressed
+
+1858
+00:38:54,550 --> 00:38:54,560
+
+ 
+
+1859
+00:38:54,560 --> 00:38:57,589
+
+okay so so we're gonna get there
+
+1860
+00:38:57,589 --> 00:38:57,599
+okay so so we're gonna get there
+ 
+
+1861
+00:38:57,599 --> 00:38:58,230
+okay so so we're gonna get there
+actually
+
+1862
+00:38:58,230 --> 00:38:58,240
+actually
+ 
+
+1863
+00:38:58,240 --> 00:38:59,910
+actually
+what a modern computer is addressed in
+
+1864
+00:38:59,910 --> 00:38:59,920
+what a modern computer is addressed in
+ 
+
+1865
+00:38:59,920 --> 00:39:01,829
+what a modern computer is addressed in
+is bytes okay
+
+1866
+00:39:01,829 --> 00:39:01,839
+is bytes okay
+ 
+
+1867
+00:39:01,839 --> 00:39:03,990
+is bytes okay
+collections of eight bits so there's an
+
+1868
+00:39:03,990 --> 00:39:04,000
+collections of eight bits so there's an
+ 
+
+1869
+00:39:04,000 --> 00:39:05,109
+collections of eight bits so there's an
+address
+
+1870
+00:39:05,109 --> 00:39:05,119
+address
+ 
+
+1871
+00:39:05,119 --> 00:39:07,109
+address
+i have for every eight bits in memory
+
+1872
+00:39:07,109 --> 00:39:07,119
+i have for every eight bits in memory
+ 
+
+1873
+00:39:07,119 --> 00:39:09,030
+i have for every eight bits in memory
+consecutive eight bits in memory and so
+
+1874
+00:39:09,030 --> 00:39:09,040
+consecutive eight bits in memory and so
+ 
+
+1875
+00:39:09,040 --> 00:39:10,550
+consecutive eight bits in memory and so
+if i want to pull something in into the
+
+1876
+00:39:10,550 --> 00:39:10,560
+if i want to pull something in into the
+ 
+
+1877
+00:39:10,560 --> 00:39:12,710
+if i want to pull something in into the
+cpu i give it an address it'll take
+
+1878
+00:39:12,710 --> 00:39:12,720
+cpu i give it an address it'll take
+ 
+
+1879
+00:39:12,720 --> 00:39:16,310
+cpu i give it an address it'll take
+some chunk right and bring it into the
+
+1880
+00:39:16,310 --> 00:39:16,320
+some chunk right and bring it into the
+ 
+
+1881
+00:39:16,320 --> 00:39:18,230
+some chunk right and bring it into the
+the cpu operate it on it and spit it
+
+1882
+00:39:18,230 --> 00:39:18,240
+the cpu operate it on it and spit it
+ 
+
+1883
+00:39:18,240 --> 00:39:19,670
+the cpu operate it on it and spit it
+back okay
+
+1884
+00:39:19,670 --> 00:39:19,680
+back okay
+ 
+
+1885
+00:39:19,680 --> 00:39:23,109
+back okay
+how big is that chunk
+
+1886
+00:39:23,109 --> 00:39:23,119
+
+ 
+
+1887
+00:39:23,119 --> 00:39:25,430
+
+this goes to the the answer that you
+
+1888
+00:39:25,430 --> 00:39:25,440
+this goes to the the answer that you
+ 
+
+1889
+00:39:25,440 --> 00:39:26,230
+this goes to the the answer that you
+were
+
+1890
+00:39:26,230 --> 00:39:26,240
+were
+ 
+
+1891
+00:39:26,240 --> 00:39:29,829
+were
+asking which or saying which is
+
+1892
+00:39:29,829 --> 00:39:29,839
+asking which or saying which is
+ 
+
+1893
+00:39:29,839 --> 00:39:32,069
+asking which or saying which is
+it's some sequence of some fixed number
+
+1894
+00:39:32,069 --> 00:39:32,079
+it's some sequence of some fixed number
+ 
+
+1895
+00:39:32,079 --> 00:39:33,349
+it's some sequence of some fixed number
+of bits
+
+1896
+00:39:33,349 --> 00:39:33,359
+of bits
+ 
+
+1897
+00:39:33,359 --> 00:39:37,030
+of bits
+which we call a word okay a word is
+
+1898
+00:39:37,030 --> 00:39:37,040
+which we call a word okay a word is
+ 
+
+1899
+00:39:37,040 --> 00:39:40,550
+which we call a word okay a word is
+how how big of a chunk that the the cpu
+
+1900
+00:39:40,550 --> 00:39:40,560
+how how big of a chunk that the the cpu
+ 
+
+1901
+00:39:40,560 --> 00:39:42,470
+how how big of a chunk that the the cpu
+can take in from memory at a time and
+
+1902
+00:39:42,470 --> 00:39:42,480
+can take in from memory at a time and
+ 
+
+1903
+00:39:42,480 --> 00:39:43,349
+can take in from memory at a time and
+operate on
+
+1904
+00:39:43,349 --> 00:39:43,359
+operate on
+ 
+
+1905
+00:39:43,359 --> 00:39:46,230
+operate on
+okay in your computers how big is that
+
+1906
+00:39:46,230 --> 00:39:46,240
+okay in your computers how big is that
+ 
+
+1907
+00:39:46,240 --> 00:39:48,150
+okay in your computers how big is that
+word size
+
+1908
+00:39:48,150 --> 00:39:48,160
+word size
+ 
+
+1909
+00:39:48,160 --> 00:39:51,589
+word size
+64 bits right that's how much i can
+
+1910
+00:39:51,589 --> 00:39:51,599
+64 bits right that's how much i can
+ 
+
+1911
+00:39:51,599 --> 00:39:52,550
+64 bits right that's how much i can
+operate on a time
+
+1912
+00:39:52,550 --> 00:39:52,560
+operate on a time
+ 
+
+1913
+00:39:52,560 --> 00:39:54,310
+operate on a time
+when i was growing up when i was your
+
+1914
+00:39:54,310 --> 00:39:54,320
+when i was growing up when i was your
+ 
+
+1915
+00:39:54,320 --> 00:39:56,310
+when i was growing up when i was your
+age okay
+
+1916
+00:39:56,310 --> 00:39:56,320
+age okay
+ 
+
+1917
+00:39:56,320 --> 00:39:59,510
+age okay
+my word size was 32 bits
+
+1918
+00:39:59,510 --> 00:39:59,520
+my word size was 32 bits
+ 
+
+1919
+00:39:59,520 --> 00:40:02,150
+my word size was 32 bits
+and that actually was a problem for my
+
+1920
+00:40:02,150 --> 00:40:02,160
+and that actually was a problem for my
+ 
+
+1921
+00:40:02,160 --> 00:40:03,349
+and that actually was a problem for my
+computer
+
+1922
+00:40:03,349 --> 00:40:03,359
+computer
+ 
+
+1923
+00:40:03,359 --> 00:40:06,870
+computer
+because
+
+1924
+00:40:06,870 --> 00:40:06,880
+
+ 
+
+1925
+00:40:06,880 --> 00:40:08,950
+
+in order for me to be able to read to
+
+1926
+00:40:08,950 --> 00:40:08,960
+in order for me to be able to read to
+ 
+
+1927
+00:40:08,960 --> 00:40:12,069
+in order for me to be able to read to
+address in memory
+
+1928
+00:40:12,069 --> 00:40:12,079
+
+ 
+
+1929
+00:40:12,079 --> 00:40:14,309
+
+i need to be able to store that address
+
+1930
+00:40:14,309 --> 00:40:14,319
+i need to be able to store that address
+ 
+
+1931
+00:40:14,319 --> 00:40:16,550
+i need to be able to store that address
+in my cpu in a word
+
+1932
+00:40:16,550 --> 00:40:16,560
+in my cpu in a word
+ 
+
+1933
+00:40:16,560 --> 00:40:21,349
+in my cpu in a word
+right but if i have 32 bits
+
+1934
+00:40:21,349 --> 00:40:21,359
+right but if i have 32 bits
+ 
+
+1935
+00:40:21,359 --> 00:40:23,510
+right but if i have 32 bits
+how many different addresses can i
+
+1936
+00:40:23,510 --> 00:40:23,520
+how many different addresses can i
+ 
+
+1937
+00:40:23,520 --> 00:40:24,550
+how many different addresses can i
+address
+
+1938
+00:40:24,550 --> 00:40:24,560
+address
+ 
+
+1939
+00:40:24,560 --> 00:40:26,390
+address
+i have a limitation on the memory
+
+1940
+00:40:26,390 --> 00:40:26,400
+i have a limitation on the memory
+ 
+
+1941
+00:40:26,400 --> 00:40:28,710
+i have a limitation on the memory
+addresses i can address right
+
+1942
+00:40:28,710 --> 00:40:28,720
+addresses i can address right
+ 
+
+1943
+00:40:28,720 --> 00:40:30,309
+addresses i can address right
+so how many different memory addresses
+
+1944
+00:40:30,309 --> 00:40:30,319
+so how many different memory addresses
+ 
+
+1945
+00:40:30,319 --> 00:40:33,030
+so how many different memory addresses
+can i address with 32 bits
+
+1946
+00:40:33,030 --> 00:40:33,040
+can i address with 32 bits
+ 
+
+1947
+00:40:33,040 --> 00:40:35,910
+can i address with 32 bits
+2 to the 32 right that makes sense well
+
+1948
+00:40:35,910 --> 00:40:35,920
+2 to the 32 right that makes sense well
+ 
+
+1949
+00:40:35,920 --> 00:40:37,270
+2 to the 32 right that makes sense well
+if you do that
+
+1950
+00:40:37,270 --> 00:40:37,280
+if you do that
+ 
+
+1951
+00:40:37,280 --> 00:40:40,309
+if you do that
+calculation out how big of a hard disk
+
+1952
+00:40:40,309 --> 00:40:40,319
+calculation out how big of a hard disk
+ 
+
+1953
+00:40:40,319 --> 00:40:42,069
+calculation out how big of a hard disk
+can i have to access
+
+1954
+00:40:42,069 --> 00:40:42,079
+can i have to access
+ 
+
+1955
+00:40:42,079 --> 00:40:45,670
+can i have to access
+it's about four gigabytes right so
+
+1956
+00:40:45,670 --> 00:40:45,680
+it's about four gigabytes right so
+ 
+
+1957
+00:40:45,680 --> 00:40:48,309
+it's about four gigabytes right so
+when i in my day all hard drives were
+
+1958
+00:40:48,309 --> 00:40:48,319
+when i in my day all hard drives were
+ 
+
+1959
+00:40:48,319 --> 00:40:49,589
+when i in my day all hard drives were
+limited to
+
+1960
+00:40:49,589 --> 00:40:49,599
+limited to
+ 
+
+1961
+00:40:49,599 --> 00:40:51,510
+limited to
+you know being partitioned even if you
+
+1962
+00:40:51,510 --> 00:40:51,520
+you know being partitioned even if you
+ 
+
+1963
+00:40:51,520 --> 00:40:52,630
+you know being partitioned even if you
+had a bigger
+
+1964
+00:40:52,630 --> 00:40:52,640
+had a bigger
+ 
+
+1965
+00:40:52,640 --> 00:40:54,790
+had a bigger
+than four gigabyte hard drive i had to
+
+1966
+00:40:54,790 --> 00:40:54,800
+than four gigabyte hard drive i had to
+ 
+
+1967
+00:40:54,800 --> 00:40:56,630
+than four gigabyte hard drive i had to
+partition it into these four gigabyte
+
+1968
+00:40:56,630 --> 00:40:56,640
+partition it into these four gigabyte
+ 
+
+1969
+00:40:56,640 --> 00:40:57,510
+partition it into these four gigabyte
+chunks which
+
+1970
+00:40:57,510 --> 00:40:57,520
+chunks which
+ 
+
+1971
+00:40:57,520 --> 00:41:00,309
+chunks which
+you know the the computer could then
+
+1972
+00:41:00,309 --> 00:41:00,319
+you know the the computer could then
+ 
+
+1973
+00:41:00,319 --> 00:41:01,430
+you know the the computer could then
+read on to
+
+1974
+00:41:01,430 --> 00:41:01,440
+read on to
+ 
+
+1975
+00:41:01,440 --> 00:41:06,550
+read on to
+right that was very limiting actually
+
+1976
+00:41:06,550 --> 00:41:06,560
+right that was very limiting actually
+ 
+
+1977
+00:41:06,560 --> 00:41:13,109
+right that was very limiting actually
+that's a restriction with 64 bits
+
+1978
+00:41:13,109 --> 00:41:13,119
+
+ 
+
+1979
+00:41:13,119 --> 00:41:14,950
+
+what's my limitation on memory that i
+
+1980
+00:41:14,950 --> 00:41:14,960
+what's my limitation on memory that i
+ 
+
+1981
+00:41:14,960 --> 00:41:16,630
+what's my limitation on memory that i
+can address
+
+1982
+00:41:16,630 --> 00:41:16,640
+can address
+ 
+
+1983
+00:41:16,640 --> 00:41:19,109
+can address
+byte addressable turns out to be
+
+1984
+00:41:19,109 --> 00:41:19,119
+byte addressable turns out to be
+ 
+
+1985
+00:41:19,119 --> 00:41:20,150
+byte addressable turns out to be
+something like uh
+
+1986
+00:41:20,150 --> 00:41:20,160
+something like uh
+ 
+
+1987
+00:41:20,160 --> 00:41:24,630
+something like uh
+20 exabytes to put this in context
+
+1988
+00:41:24,630 --> 00:41:24,640
+20 exabytes to put this in context
+ 
+
+1989
+00:41:24,640 --> 00:41:27,430
+20 exabytes to put this in context
+all data that google stores on their
+
+1990
+00:41:27,430 --> 00:41:27,440
+all data that google stores on their
+ 
+
+1991
+00:41:27,440 --> 00:41:28,390
+all data that google stores on their
+servers
+
+1992
+00:41:28,390 --> 00:41:28,400
+servers
+ 
+
+1993
+00:41:28,400 --> 00:41:30,870
+servers
+on all drives throughout the world it's
+
+1994
+00:41:30,870 --> 00:41:30,880
+on all drives throughout the world it's
+ 
+
+1995
+00:41:30,880 --> 00:41:32,710
+on all drives throughout the world it's
+about 10
+
+1996
+00:41:32,710 --> 00:41:32,720
+about 10
+ 
+
+1997
+00:41:32,720 --> 00:41:34,470
+about 10
+right so we're not going to run out of
+
+1998
+00:41:34,470 --> 00:41:34,480
+right so we're not going to run out of
+ 
+
+1999
+00:41:34,480 --> 00:41:36,230
+right so we're not going to run out of
+this limitation
+
+2000
+00:41:36,230 --> 00:41:36,240
+this limitation
+ 
+
+2001
+00:41:36,240 --> 00:41:39,510
+this limitation
+very soon right so what do we got we've
+
+2002
+00:41:39,510 --> 00:41:39,520
+very soon right so what do we got we've
+ 
+
+2003
+00:41:39,520 --> 00:41:40,630
+very soon right so what do we got we've
+got a cpu
+
+2004
+00:41:40,630 --> 00:41:40,640
+got a cpu
+ 
+
+2005
+00:41:40,640 --> 00:41:42,710
+got a cpu
+it can address memory what are the
+
+2006
+00:41:42,710 --> 00:41:42,720
+it can address memory what are the
+ 
+
+2007
+00:41:42,720 --> 00:41:43,990
+it can address memory what are the
+operations i can do
+
+2008
+00:41:43,990 --> 00:41:44,000
+operations i can do
+ 
+
+2009
+00:41:44,000 --> 00:41:48,309
+operations i can do
+in this cpu
+
+2010
+00:41:48,309 --> 00:41:48,319
+in this cpu
+ 
+
+2011
+00:41:48,319 --> 00:41:50,950
+in this cpu
+i have binary operations i can compare
+
+2012
+00:41:50,950 --> 00:41:50,960
+i have binary operations i can compare
+ 
+
+2013
+00:41:50,960 --> 00:41:53,829
+i have binary operations i can compare
+two words in memory
+
+2014
+00:41:53,829 --> 00:41:53,839
+two words in memory
+ 
+
+2015
+00:41:53,839 --> 00:42:00,829
+two words in memory
+and i can either do you know integer
+
+2016
+00:42:00,829 --> 00:42:00,839
+
+ 
+
+2017
+00:42:00,839 --> 00:42:03,190
+
+arithmetic
+
+2018
+00:42:03,190 --> 00:42:03,200
+arithmetic
+ 
+
+2019
+00:42:03,200 --> 00:42:08,630
+arithmetic
+kind of logical operations
+
+2020
+00:42:08,630 --> 00:42:08,640
+
+ 
+
+2021
+00:42:08,640 --> 00:42:11,589
+
+bitwise operations but we're not going
+
+2022
+00:42:11,589 --> 00:42:11,599
+bitwise operations but we're not going
+ 
+
+2023
+00:42:11,599 --> 00:42:14,710
+bitwise operations but we're not going
+to use those so much in this class
+
+2024
+00:42:14,710 --> 00:42:14,720
+to use those so much in this class
+ 
+
+2025
+00:42:14,720 --> 00:42:17,910
+to use those so much in this class
+and i can read and write from an address
+
+2026
+00:42:17,910 --> 00:42:17,920
+and i can read and write from an address
+ 
+
+2027
+00:42:17,920 --> 00:42:19,670
+and i can read and write from an address
+in memory a word
+
+2028
+00:42:19,670 --> 00:42:19,680
+in memory a word
+ 
+
+2029
+00:42:19,680 --> 00:42:22,950
+in memory a word
+in constant time those are the
+
+2030
+00:42:22,950 --> 00:42:22,960
+in constant time those are the
+ 
+
+2031
+00:42:22,960 --> 00:42:25,190
+in constant time those are the
+operations that i have available to me
+
+2032
+00:42:25,190 --> 00:42:25,200
+operations that i have available to me
+ 
+
+2033
+00:42:25,200 --> 00:42:26,390
+operations that i have available to me
+on most cpus
+
+2034
+00:42:26,390 --> 00:42:26,400
+on most cpus
+ 
+
+2035
+00:42:26,400 --> 00:42:27,990
+on most cpus
+some cpus give you a little bit more
+
+2036
+00:42:27,990 --> 00:42:28,000
+some cpus give you a little bit more
+ 
+
+2037
+00:42:28,000 --> 00:42:30,069
+some cpus give you a little bit more
+power but this is generally
+
+2038
+00:42:30,069 --> 00:42:30,079
+power but this is generally
+ 
+
+2039
+00:42:30,079 --> 00:42:32,069
+power but this is generally
+what we analyze algorithms with respect
+
+2040
+00:42:32,069 --> 00:42:32,079
+what we analyze algorithms with respect
+ 
+
+2041
+00:42:32,079 --> 00:42:36,470
+what we analyze algorithms with respect
+to okay
+
+2042
+00:42:36,470 --> 00:42:36,480
+
+ 
+
+2043
+00:42:36,480 --> 00:42:38,950
+
+but you'll notice that my cpu is only
+
+2044
+00:42:38,950 --> 00:42:38,960
+but you'll notice that my cpu is only
+ 
+
+2045
+00:42:38,960 --> 00:42:40,950
+but you'll notice that my cpu is only
+built to operate on a constant amount of
+
+2046
+00:42:40,950 --> 00:42:40,960
+built to operate on a constant amount of
+ 
+
+2047
+00:42:40,960 --> 00:42:42,150
+built to operate on a constant amount of
+information at once
+
+2048
+00:42:42,150 --> 00:42:42,160
+information at once
+ 
+
+2049
+00:42:42,160 --> 00:42:45,750
+information at once
+generally two words in memory
+
+2050
+00:42:45,750 --> 00:42:45,760
+generally two words in memory
+ 
+
+2051
+00:42:45,760 --> 00:42:48,470
+generally two words in memory
+an operation produces a third one and i
+
+2052
+00:42:48,470 --> 00:42:48,480
+an operation produces a third one and i
+ 
+
+2053
+00:42:48,480 --> 00:42:51,589
+an operation produces a third one and i
+spit it out right
+
+2054
+00:42:51,589 --> 00:42:51,599
+
+ 
+
+2055
+00:42:51,599 --> 00:42:53,349
+
+it takes a constant amount of time to
+
+2056
+00:42:53,349 --> 00:42:53,359
+it takes a constant amount of time to
+ 
+
+2057
+00:42:53,359 --> 00:42:54,870
+it takes a constant amount of time to
+operate on a constant amount of memory
+
+2058
+00:42:54,870 --> 00:42:54,880
+operate on a constant amount of memory
+ 
+
+2059
+00:42:54,880 --> 00:42:56,630
+operate on a constant amount of memory
+if i want to operate on a linear amount
+
+2060
+00:42:56,630 --> 00:42:56,640
+if i want to operate on a linear amount
+ 
+
+2061
+00:42:56,640 --> 00:42:59,109
+if i want to operate on a linear amount
+of memory
+
+2062
+00:42:59,109 --> 00:42:59,119
+of memory
+ 
+
+2063
+00:42:59,119 --> 00:43:01,109
+of memory
+end things how long is that going to
+
+2064
+00:43:01,109 --> 00:43:01,119
+end things how long is that going to
+ 
+
+2065
+00:43:01,119 --> 00:43:02,390
+end things how long is that going to
+take
+
+2066
+00:43:02,390 --> 00:43:02,400
+take
+ 
+
+2067
+00:43:02,400 --> 00:43:05,190
+take
+right if i just want to read everything
+
+2068
+00:43:05,190 --> 00:43:05,200
+right if i just want to read everything
+ 
+
+2069
+00:43:05,200 --> 00:43:06,470
+right if i just want to read everything
+in that thing it's going to take me
+
+2070
+00:43:06,470 --> 00:43:06,480
+in that thing it's going to take me
+ 
+
+2071
+00:43:06,480 --> 00:43:08,550
+in that thing it's going to take me
+linear time right because i have to read
+
+2072
+00:43:08,550 --> 00:43:08,560
+linear time right because i have to read
+ 
+
+2073
+00:43:08,560 --> 00:43:12,309
+linear time right because i have to read
+every part of that thing okay
+
+2074
+00:43:12,309 --> 00:43:12,319
+every part of that thing okay
+ 
+
+2075
+00:43:12,319 --> 00:43:14,870
+every part of that thing okay
+so in general what we're going to do for
+
+2076
+00:43:14,870 --> 00:43:14,880
+so in general what we're going to do for
+ 
+
+2077
+00:43:14,880 --> 00:43:15,510
+so in general what we're going to do for
+the first
+
+2078
+00:43:15,510 --> 00:43:15,520
+the first
+ 
+
+2079
+00:43:15,520 --> 00:43:18,630
+the first
+half of this class mostly first eight
+
+2080
+00:43:18,630 --> 00:43:18,640
+half of this class mostly first eight
+ 
+
+2081
+00:43:18,640 --> 00:43:19,829
+half of this class mostly first eight
+lectures anyway
+
+2082
+00:43:19,829 --> 00:43:19,839
+lectures anyway
+ 
+
+2083
+00:43:19,839 --> 00:43:27,589
+lectures anyway
+is talk about data structures
+
+2084
+00:43:27,589 --> 00:43:27,599
+is talk about data structures
+ 
+
+2085
+00:43:27,599 --> 00:43:30,309
+is talk about data structures
+and it's going to be concerned about not
+
+2086
+00:43:30,309 --> 00:43:30,319
+and it's going to be concerned about not
+ 
+
+2087
+00:43:30,319 --> 00:43:32,309
+and it's going to be concerned about not
+operating on constant amount of data at
+
+2088
+00:43:32,309 --> 00:43:32,319
+operating on constant amount of data at
+ 
+
+2089
+00:43:32,319 --> 00:43:34,309
+operating on constant amount of data at
+a time like our cpu is
+
+2090
+00:43:34,309 --> 00:43:34,319
+a time like our cpu is
+ 
+
+2091
+00:43:34,319 --> 00:43:37,829
+a time like our cpu is
+uh doing but instead what it's going to
+
+2092
+00:43:37,829 --> 00:43:37,839
+uh doing but instead what it's going to
+ 
+
+2093
+00:43:37,839 --> 00:43:39,349
+uh doing but instead what it's going to
+do is operate
+
+2094
+00:43:39,349 --> 00:43:39,359
+do is operate
+ 
+
+2095
+00:43:39,359 --> 00:43:42,069
+do is operate
+on store a large amount of data and
+
+2096
+00:43:42,069 --> 00:43:42,079
+on store a large amount of data and
+ 
+
+2097
+00:43:42,079 --> 00:43:43,910
+on store a large amount of data and
+support different operations on that
+
+2098
+00:43:43,910 --> 00:43:43,920
+support different operations on that
+ 
+
+2099
+00:43:43,920 --> 00:43:44,630
+support different operations on that
+data
+
+2100
+00:43:44,630 --> 00:43:44,640
+data
+ 
+
+2101
+00:43:44,640 --> 00:43:47,670
+data
+okay so if i had a record that i want to
+
+2102
+00:43:47,670 --> 00:43:47,680
+okay so if i had a record that i want to
+ 
+
+2103
+00:43:47,680 --> 00:43:49,270
+okay so if i had a record that i want to
+maintain to store those birthdays that
+
+2104
+00:43:49,270 --> 00:43:49,280
+maintain to store those birthdays that
+ 
+
+2105
+00:43:49,280 --> 00:43:52,390
+maintain to store those birthdays that
+we had before
+
+2106
+00:43:52,390 --> 00:43:52,400
+
+ 
+
+2107
+00:43:52,400 --> 00:43:54,470
+
+i might use something like a static
+
+2108
+00:43:54,470 --> 00:43:54,480
+i might use something like a static
+ 
+
+2109
+00:43:54,480 --> 00:43:55,670
+i might use something like a static
+array
+
+2110
+00:43:55,670 --> 00:43:55,680
+array
+ 
+
+2111
+00:43:55,680 --> 00:43:58,470
+array
+right which you guys maybe are not
+
+2112
+00:43:58,470 --> 00:43:58,480
+right which you guys maybe are not
+ 
+
+2113
+00:43:58,480 --> 00:43:59,589
+right which you guys maybe are not
+familiar with
+
+2114
+00:43:59,589 --> 00:43:59,599
+familiar with
+ 
+
+2115
+00:43:59,599 --> 00:44:01,510
+familiar with
+if you have been working in python as
+
+2116
+00:44:01,510 --> 00:44:01,520
+if you have been working in python as
+ 
+
+2117
+00:44:01,520 --> 00:44:03,190
+if you have been working in python as
+your only programming language
+
+2118
+00:44:03,190 --> 00:44:03,200
+your only programming language
+ 
+
+2119
+00:44:03,200 --> 00:44:05,670
+your only programming language
+okay python has a lot of really
+
+2120
+00:44:05,670 --> 00:44:05,680
+okay python has a lot of really
+ 
+
+2121
+00:44:05,680 --> 00:44:07,510
+okay python has a lot of really
+interesting data structures like a list
+
+2122
+00:44:07,510 --> 00:44:07,520
+interesting data structures like a list
+ 
+
+2123
+00:44:07,520 --> 00:44:09,190
+interesting data structures like a list
+and a set and a dictionary and all these
+
+2124
+00:44:09,190 --> 00:44:09,200
+and a set and a dictionary and all these
+ 
+
+2125
+00:44:09,200 --> 00:44:10,710
+and a set and a dictionary and all these
+kinds of things
+
+2126
+00:44:10,710 --> 00:44:10,720
+kinds of things
+ 
+
+2127
+00:44:10,720 --> 00:44:13,670
+kinds of things
+that are actually not in this model
+
+2128
+00:44:13,670 --> 00:44:13,680
+that are actually not in this model
+ 
+
+2129
+00:44:13,680 --> 00:44:14,550
+that are actually not in this model
+there's actually
+
+2130
+00:44:14,550 --> 00:44:14,560
+there's actually
+ 
+
+2131
+00:44:14,560 --> 00:44:17,030
+there's actually
+a lot of code between you and the
+
+2132
+00:44:17,030 --> 00:44:17,040
+a lot of code between you and the
+ 
+
+2133
+00:44:17,040 --> 00:44:18,069
+a lot of code between you and the
+computer
+
+2134
+00:44:18,069 --> 00:44:18,079
+computer
+ 
+
+2135
+00:44:18,079 --> 00:44:20,470
+computer
+and it's not always clear how much time
+
+2136
+00:44:20,470 --> 00:44:20,480
+and it's not always clear how much time
+ 
+
+2137
+00:44:20,480 --> 00:44:21,270
+and it's not always clear how much time
+that
+
+2138
+00:44:21,270 --> 00:44:21,280
+that
+ 
+
+2139
+00:44:21,280 --> 00:44:24,790
+that
+interface is taking right and so we're
+
+2140
+00:44:24,790 --> 00:44:24,800
+interface is taking right and so we're
+ 
+
+2141
+00:44:24,800 --> 00:44:25,270
+interface is taking right and so we're
+going to do
+
+2142
+00:44:25,270 --> 00:44:25,280
+going to do
+ 
+
+2143
+00:44:25,280 --> 00:44:28,390
+going to do
+starting on thursday is talk about
+
+2144
+00:44:28,390 --> 00:44:28,400
+starting on thursday is talk about
+ 
+
+2145
+00:44:28,400 --> 00:44:32,069
+starting on thursday is talk about
+ways of storing a non-constant amount of
+
+2146
+00:44:32,069 --> 00:44:32,079
+ways of storing a non-constant amount of
+ 
+
+2147
+00:44:32,079 --> 00:44:33,910
+ways of storing a non-constant amount of
+information to make operations on that
+
+2148
+00:44:33,910 --> 00:44:33,920
+information to make operations on that
+ 
+
+2149
+00:44:33,920 --> 00:44:35,270
+information to make operations on that
+information faster
+
+2150
+00:44:35,270 --> 00:44:35,280
+information faster
+ 
+
+2151
+00:44:35,280 --> 00:44:38,630
+information faster
+so just before you go i just want to
+
+2152
+00:44:38,630 --> 00:44:38,640
+so just before you go i just want to
+ 
+
+2153
+00:44:38,640 --> 00:44:40,309
+so just before you go i just want to
+give you a quick
+
+2154
+00:44:40,309 --> 00:44:40,319
+give you a quick
+ 
+
+2155
+00:44:40,319 --> 00:44:43,270
+give you a quick
+overview of the class to solve an
+
+2156
+00:44:43,270 --> 00:44:43,280
+overview of the class to solve an
+ 
+
+2157
+00:44:43,280 --> 00:44:44,630
+overview of the class to solve an
+algorithms class in
+
+2158
+00:44:44,630 --> 00:44:44,640
+algorithms class in
+ 
+
+2159
+00:44:44,640 --> 00:44:46,069
+algorithms class in
+algorithm problem in this class we
+
+2160
+00:44:46,069 --> 00:44:46,079
+algorithm problem in this class we
+ 
+
+2161
+00:44:46,079 --> 00:44:48,829
+algorithm problem in this class we
+essentially have two different
+
+2162
+00:44:48,829 --> 00:44:48,839
+essentially have two different
+ 
+
+2163
+00:44:48,839 --> 00:44:51,589
+essentially have two different
+strategies we can either reduce just to
+
+2164
+00:44:51,589 --> 00:44:51,599
+strategies we can either reduce just to
+ 
+
+2165
+00:44:51,599 --> 00:44:52,470
+strategies we can either reduce just to
+using
+
+2166
+00:44:52,470 --> 00:44:52,480
+using
+ 
+
+2167
+00:44:52,480 --> 00:44:54,309
+using
+the solution to a problem we know how to
+
+2168
+00:44:54,309 --> 00:44:54,319
+the solution to a problem we know how to
+ 
+
+2169
+00:44:54,319 --> 00:44:55,510
+the solution to a problem we know how to
+solve
+
+2170
+00:44:55,510 --> 00:44:55,520
+solve
+ 
+
+2171
+00:44:55,520 --> 00:44:57,589
+solve
+or we can design our own algorithm which
+
+2172
+00:44:57,589 --> 00:44:57,599
+or we can design our own algorithm which
+ 
+
+2173
+00:44:57,599 --> 00:45:00,390
+or we can design our own algorithm which
+is going to be recursive in nature
+
+2174
+00:45:00,390 --> 00:45:00,400
+is going to be recursive in nature
+ 
+
+2175
+00:45:00,400 --> 00:45:01,670
+is going to be recursive in nature
+we're going to either put stuff in the
+
+2176
+00:45:01,670 --> 00:45:01,680
+we're going to either put stuff in the
+ 
+
+2177
+00:45:01,680 --> 00:45:03,670
+we're going to either put stuff in the
+data structure and solve a sorting
+
+2178
+00:45:03,670 --> 00:45:03,680
+data structure and solve a sorting
+ 
+
+2179
+00:45:03,680 --> 00:45:04,470
+data structure and solve a sorting
+problem
+
+2180
+00:45:04,470 --> 00:45:04,480
+problem
+ 
+
+2181
+00:45:04,480 --> 00:45:07,510
+problem
+or search in a graph and then to design
+
+2182
+00:45:07,510 --> 00:45:07,520
+or search in a graph and then to design
+ 
+
+2183
+00:45:07,520 --> 00:45:08,790
+or search in a graph and then to design
+a recursive algorithm
+
+2184
+00:45:08,790 --> 00:45:08,800
+a recursive algorithm
+ 
+
+2185
+00:45:08,800 --> 00:45:11,430
+a recursive algorithm
+we have various design paradigms this is
+
+2186
+00:45:11,430 --> 00:45:11,440
+we have various design paradigms this is
+ 
+
+2187
+00:45:11,440 --> 00:45:12,710
+we have various design paradigms this is
+all in your notes
+
+2188
+00:45:12,710 --> 00:45:12,720
+all in your notes
+ 
+
+2189
+00:45:12,720 --> 00:45:14,470
+all in your notes
+but this is essentially the structure of
+
+2190
+00:45:14,470 --> 00:45:14,480
+but this is essentially the structure of
+ 
+
+2191
+00:45:14,480 --> 00:45:16,069
+but this is essentially the structure of
+the class we're going to spend
+
+2192
+00:45:16,069 --> 00:45:16,079
+the class we're going to spend
+ 
+
+2193
+00:45:16,079 --> 00:45:18,790
+the class we're going to spend
+quiz 1 the first to eight lectures on
+
+2194
+00:45:18,790 --> 00:45:18,800
+quiz 1 the first to eight lectures on
+ 
+
+2195
+00:45:18,800 --> 00:45:20,390
+quiz 1 the first to eight lectures on
+data structures
+
+2196
+00:45:20,390 --> 00:45:20,400
+data structures
+ 
+
+2197
+00:45:20,400 --> 00:45:23,430
+data structures
+and sorting second quiz will be on
+
+2198
+00:45:23,430 --> 00:45:23,440
+and sorting second quiz will be on
+ 
+
+2199
+00:45:23,440 --> 00:45:25,990
+and sorting second quiz will be on
+shortest paths algorithms and graphs
+
+2200
+00:45:25,990 --> 00:45:26,000
+shortest paths algorithms and graphs
+ 
+
+2201
+00:45:26,000 --> 00:45:27,750
+shortest paths algorithms and graphs
+and then the last one will be on dynamic
+
+2202
+00:45:27,750 --> 00:45:27,760
+and then the last one will be on dynamic
+ 
+
+2203
+00:45:27,760 --> 00:45:29,190
+and then the last one will be on dynamic
+programming okay
+
+2204
+00:45:29,190 --> 00:45:29,200
+programming okay
+ 
+
+2205
+00:45:29,200 --> 00:45:30,870
+programming okay
+that's the end of the first lecture
+
+2206
+00:45:30,870 --> 00:45:30,880
+that's the end of the first lecture
+ 
+
+2207
+00:45:30,880 --> 00:45:33,839
+that's the end of the first lecture
+thanks for coming
+

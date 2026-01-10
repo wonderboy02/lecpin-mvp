@@ -1,0 +1,11735 @@
+1
+00:00:12,480 --> 00:00:14,230
+
+welcome everybody to
+
+2
+00:00:14,230 --> 00:00:14,240
+welcome everybody to
+ 
+
+3
+00:00:14,240 --> 00:00:18,150
+welcome everybody to
+our lecture 14 of 6006 this is our last
+
+4
+00:00:18,150 --> 00:00:18,160
+our lecture 14 of 6006 this is our last
+ 
+
+5
+00:00:18,160 --> 00:00:18,710
+our lecture 14 of 6006 this is our last
+lecture
+
+6
+00:00:18,710 --> 00:00:18,720
+lecture
+ 
+
+7
+00:00:18,720 --> 00:00:22,390
+lecture
+on uh graph algorithms in particular
+
+8
+00:00:22,390 --> 00:00:22,400
+on uh graph algorithms in particular
+ 
+
+9
+00:00:22,400 --> 00:00:25,830
+on uh graph algorithms in particular
+the last lecture we'll have on weighted
+
+10
+00:00:25,830 --> 00:00:25,840
+the last lecture we'll have on weighted
+ 
+
+11
+00:00:25,840 --> 00:00:28,870
+the last lecture we'll have on weighted
+shortest paths uh but we're going to
+
+12
+00:00:28,870 --> 00:00:28,880
+shortest paths uh but we're going to
+ 
+
+13
+00:00:28,880 --> 00:00:31,269
+shortest paths uh but we're going to
+talk about a slightly different problem
+
+14
+00:00:31,269 --> 00:00:31,279
+talk about a slightly different problem
+ 
+
+15
+00:00:31,279 --> 00:00:34,549
+talk about a slightly different problem
+today uh different than
+
+16
+00:00:34,549 --> 00:00:34,559
+today uh different than
+ 
+
+17
+00:00:34,559 --> 00:00:36,069
+today uh different than
+single source shortest paths we're going
+
+18
+00:00:36,069 --> 00:00:36,079
+single source shortest paths we're going
+ 
+
+19
+00:00:36,079 --> 00:00:38,229
+single source shortest paths we're going
+to be talking about all pairs shortest
+
+20
+00:00:38,229 --> 00:00:38,239
+to be talking about all pairs shortest
+ 
+
+21
+00:00:38,239 --> 00:00:39,190
+to be talking about all pairs shortest
+paths
+
+22
+00:00:39,190 --> 00:00:39,200
+paths
+ 
+
+23
+00:00:39,200 --> 00:00:42,310
+paths
+okay but first let's review
+
+24
+00:00:42,310 --> 00:00:42,320
+okay but first let's review
+ 
+
+25
+00:00:42,320 --> 00:00:44,069
+okay but first let's review
+our single source shortest paths
+
+26
+00:00:44,069 --> 00:00:44,079
+our single source shortest paths
+ 
+
+27
+00:00:44,079 --> 00:00:46,310
+our single source shortest paths
+algorithms we had
+
+28
+00:00:46,310 --> 00:00:46,320
+algorithms we had
+ 
+
+29
+00:00:46,320 --> 00:00:50,150
+algorithms we had
+bfs dag relaxation dijkstra which we saw
+
+30
+00:00:50,150 --> 00:00:50,160
+bfs dag relaxation dijkstra which we saw
+ 
+
+31
+00:00:50,160 --> 00:00:51,510
+bfs dag relaxation dijkstra which we saw
+last time which
+
+32
+00:00:51,510 --> 00:00:51,520
+last time which
+ 
+
+33
+00:00:51,520 --> 00:00:54,150
+last time which
+you know gets pretty close to linear
+
+34
+00:00:54,150 --> 00:00:54,160
+you know gets pretty close to linear
+ 
+
+35
+00:00:54,160 --> 00:00:54,549
+you know gets pretty close to linear
+right
+
+36
+00:00:54,549 --> 00:00:54,559
+right
+ 
+
+37
+00:00:54,559 --> 00:00:57,990
+right
+v log v plus e is pretty
+
+38
+00:00:57,990 --> 00:00:58,000
+v log v plus e is pretty
+ 
+
+39
+00:00:58,000 --> 00:01:00,150
+v log v plus e is pretty
+close to linear it's much closer to
+
+40
+00:01:00,150 --> 00:01:00,160
+close to linear it's much closer to
+ 
+
+41
+00:01:00,160 --> 00:01:02,310
+close to linear it's much closer to
+linear than the general algorithm
+
+42
+00:01:02,310 --> 00:01:02,320
+linear than the general algorithm
+ 
+
+43
+00:01:02,320 --> 00:01:04,149
+linear than the general algorithm
+algorithm we have for solving single
+
+44
+00:01:04,149 --> 00:01:04,159
+algorithm we have for solving single
+ 
+
+45
+00:01:04,159 --> 00:01:05,830
+algorithm we have for solving single
+source shortest paths
+
+46
+00:01:05,830 --> 00:01:05,840
+source shortest paths
+ 
+
+47
+00:01:05,840 --> 00:01:07,910
+source shortest paths
+namely bellman ford which is a little
+
+48
+00:01:07,910 --> 00:01:07,920
+namely bellman ford which is a little
+ 
+
+49
+00:01:07,920 --> 00:01:09,750
+namely bellman ford which is a little
+bit more like quadratic this is like the
+
+50
+00:01:09,750 --> 00:01:09,760
+bit more like quadratic this is like the
+ 
+
+51
+00:01:09,760 --> 00:01:11,109
+bit more like quadratic this is like the
+difference between
+
+52
+00:01:11,109 --> 00:01:11,119
+difference between
+ 
+
+53
+00:01:11,119 --> 00:01:12,870
+difference between
+for sparse graphs this is like the
+
+54
+00:01:12,870 --> 00:01:12,880
+for sparse graphs this is like the
+ 
+
+55
+00:01:12,880 --> 00:01:14,149
+for sparse graphs this is like the
+difference between
+
+56
+00:01:14,149 --> 00:01:14,159
+difference between
+ 
+
+57
+00:01:14,159 --> 00:01:17,510
+difference between
+sorting using insertion sort and
+
+58
+00:01:17,510 --> 00:01:17,520
+sorting using insertion sort and
+ 
+
+59
+00:01:17,520 --> 00:01:20,630
+sorting using insertion sort and
+n squared and merge sort in
+
+60
+00:01:20,630 --> 00:01:20,640
+n squared and merge sort in
+ 
+
+61
+00:01:20,640 --> 00:01:22,550
+n squared and merge sort in
+n log n for example right we're going to
+
+62
+00:01:22,550 --> 00:01:22,560
+n log n for example right we're going to
+ 
+
+63
+00:01:22,560 --> 00:01:24,630
+n log n for example right we're going to
+get a actually quite a big bonus
+
+64
+00:01:24,630 --> 00:01:24,640
+get a actually quite a big bonus
+ 
+
+65
+00:01:24,640 --> 00:01:27,910
+get a actually quite a big bonus
+for large input sizes by using dijkstra
+
+66
+00:01:27,910 --> 00:01:27,920
+for large input sizes by using dijkstra
+ 
+
+67
+00:01:27,920 --> 00:01:29,270
+for large input sizes by using dijkstra
+when we can
+
+68
+00:01:29,270 --> 00:01:29,280
+when we can
+ 
+
+69
+00:01:29,280 --> 00:01:32,069
+when we can
+okay today we're going to be focusing on
+
+70
+00:01:32,069 --> 00:01:32,079
+okay today we're going to be focusing on
+ 
+
+71
+00:01:32,079 --> 00:01:33,749
+okay today we're going to be focusing on
+this new problem called all pair
+
+72
+00:01:33,749 --> 00:01:33,759
+this new problem called all pair
+ 
+
+73
+00:01:33,759 --> 00:01:35,030
+this new problem called all pair
+shortest paths
+
+74
+00:01:35,030 --> 00:01:35,040
+shortest paths
+ 
+
+75
+00:01:35,040 --> 00:01:37,830
+shortest paths
+it's not really complicated instead of
+
+76
+00:01:37,830 --> 00:01:37,840
+it's not really complicated instead of
+ 
+
+77
+00:01:37,840 --> 00:01:39,670
+it's not really complicated instead of
+having a single source
+
+78
+00:01:39,670 --> 00:01:39,680
+having a single source
+ 
+
+79
+00:01:39,680 --> 00:01:41,990
+having a single source
+we are essentially wanting to give in an
+
+80
+00:01:41,990 --> 00:01:42,000
+we are essentially wanting to give in an
+ 
+
+81
+00:01:42,000 --> 00:01:45,510
+we are essentially wanting to give in an
+input
+
+82
+00:01:45,510 --> 00:01:45,520
+
+ 
+
+83
+00:01:45,520 --> 00:01:53,190
+
+is our weighted graph
+
+84
+00:01:53,190 --> 00:01:53,200
+
+ 
+
+85
+00:01:53,200 --> 00:01:56,230
+
+where we've got a graph v
+
+86
+00:01:56,230 --> 00:01:56,240
+where we've got a graph v
+ 
+
+87
+00:01:56,240 --> 00:02:00,389
+where we've got a graph v
+e and we've got a weight function
+
+88
+00:02:00,389 --> 00:02:00,399
+e and we've got a weight function
+ 
+
+89
+00:02:00,399 --> 00:02:05,429
+e and we've got a weight function
+from the edges to the integers
+
+90
+00:02:05,429 --> 00:02:05,439
+from the edges to the integers
+ 
+
+91
+00:02:05,439 --> 00:02:08,469
+from the edges to the integers
+right this is our general weighted graph
+
+92
+00:02:08,469 --> 00:02:08,479
+right this is our general weighted graph
+ 
+
+93
+00:02:08,479 --> 00:02:13,510
+right this is our general weighted graph
+we want our output to be something like
+
+94
+00:02:13,510 --> 00:02:13,520
+
+ 
+
+95
+00:02:13,520 --> 00:02:18,550
+
+the shortest path distance from u to v
+
+96
+00:02:18,550 --> 00:02:18,560
+the shortest path distance from u to v
+ 
+
+97
+00:02:18,560 --> 00:02:22,869
+the shortest path distance from u to v
+for every u and v
+
+98
+00:02:22,869 --> 00:02:22,879
+for every u and v
+ 
+
+99
+00:02:22,879 --> 00:02:25,990
+for every u and v
+in our vertex set right
+
+100
+00:02:25,990 --> 00:02:26,000
+in our vertex set right
+ 
+
+101
+00:02:26,000 --> 00:02:30,470
+in our vertex set right
+that's what we want to return now
+
+102
+00:02:30,470 --> 00:02:30,480
+
+ 
+
+103
+00:02:30,480 --> 00:02:33,589
+
+there's one caveat here that if if
+
+104
+00:02:33,589 --> 00:02:33,599
+there's one caveat here that if if
+ 
+
+105
+00:02:33,599 --> 00:02:35,270
+there's one caveat here that if if
+there's a negative weight cycle in our
+
+106
+00:02:35,270 --> 00:02:35,280
+there's a negative weight cycle in our
+ 
+
+107
+00:02:35,280 --> 00:02:36,070
+there's a negative weight cycle in our
+graph
+
+108
+00:02:36,070 --> 00:02:36,080
+graph
+ 
+
+109
+00:02:36,080 --> 00:02:39,190
+graph
+in other words if any of these
+
+110
+00:02:39,190 --> 00:02:39,200
+in other words if any of these
+ 
+
+111
+00:02:39,200 --> 00:02:43,589
+in other words if any of these
+delta uvs is minus infinity
+
+112
+00:02:43,589 --> 00:02:43,599
+delta uvs is minus infinity
+ 
+
+113
+00:02:43,599 --> 00:02:45,430
+delta uvs is minus infinity
+there's a negative weight cycle in our
+
+114
+00:02:45,430 --> 00:02:45,440
+there's a negative weight cycle in our
+ 
+
+115
+00:02:45,440 --> 00:02:47,750
+there's a negative weight cycle in our
+graph
+
+116
+00:02:47,750 --> 00:02:47,760
+graph
+ 
+
+117
+00:02:47,760 --> 00:02:50,790
+graph
+so unless
+
+118
+00:02:50,790 --> 00:02:50,800
+so unless
+ 
+
+119
+00:02:50,800 --> 00:02:54,390
+so unless
+i guess or
+
+120
+00:02:54,390 --> 00:02:54,400
+i guess or
+ 
+
+121
+00:02:54,400 --> 00:02:59,270
+i guess or
+abort if
+
+122
+00:02:59,270 --> 00:02:59,280
+abort if
+ 
+
+123
+00:02:59,280 --> 00:03:04,790
+abort if
+g contains
+
+124
+00:03:04,790 --> 00:03:04,800
+g contains
+ 
+
+125
+00:03:04,800 --> 00:03:09,270
+g contains
+a negative weight
+
+126
+00:03:09,270 --> 00:03:09,280
+
+ 
+
+127
+00:03:09,280 --> 00:03:13,190
+
+cycle okay so
+
+128
+00:03:13,190 --> 00:03:13,200
+cycle okay so
+ 
+
+129
+00:03:13,200 --> 00:03:14,949
+cycle okay so
+we're not actually going to worry about
+
+130
+00:03:14,949 --> 00:03:14,959
+we're not actually going to worry about
+ 
+
+131
+00:03:14,959 --> 00:03:16,710
+we're not actually going to worry about
+negative weight cycles
+
+132
+00:03:16,710 --> 00:03:16,720
+negative weight cycles
+ 
+
+133
+00:03:16,720 --> 00:03:20,229
+negative weight cycles
+in today's class if we have a graph it
+
+134
+00:03:20,229 --> 00:03:20,239
+in today's class if we have a graph it
+ 
+
+135
+00:03:20,239 --> 00:03:21,910
+in today's class if we have a graph it
+could have negative weights right these
+
+136
+00:03:21,910 --> 00:03:21,920
+could have negative weights right these
+ 
+
+137
+00:03:21,920 --> 00:03:22,309
+could have negative weights right these
+are
+
+138
+00:03:22,309 --> 00:03:22,319
+are
+ 
+
+139
+00:03:22,319 --> 00:03:25,350
+are
+any integers could include negative
+
+140
+00:03:25,350 --> 00:03:25,360
+any integers could include negative
+ 
+
+141
+00:03:25,360 --> 00:03:28,390
+any integers could include negative
+weight edges
+
+142
+00:03:28,390 --> 00:03:28,400
+
+ 
+
+143
+00:03:28,400 --> 00:03:32,229
+
+but as long as all of our path distances
+
+144
+00:03:32,229 --> 00:03:32,239
+but as long as all of our path distances
+ 
+
+145
+00:03:32,239 --> 00:03:35,270
+but as long as all of our path distances
+are you know bounded
+
+146
+00:03:35,270 --> 00:03:35,280
+are you know bounded
+ 
+
+147
+00:03:35,280 --> 00:03:39,190
+are you know bounded
+from below none of them are
+
+148
+00:03:39,190 --> 00:03:39,200
+from below none of them are
+ 
+
+149
+00:03:39,200 --> 00:03:41,190
+from below none of them are
+negative infinity we don't have any
+
+150
+00:03:41,190 --> 00:03:41,200
+negative infinity we don't have any
+ 
+
+151
+00:03:41,200 --> 00:03:42,710
+negative infinity we don't have any
+negative weight cycles
+
+152
+00:03:42,710 --> 00:03:42,720
+negative weight cycles
+ 
+
+153
+00:03:42,720 --> 00:03:44,949
+negative weight cycles
+then i want you to output all of the
+
+154
+00:03:44,949 --> 00:03:44,959
+then i want you to output all of the
+ 
+
+155
+00:03:44,959 --> 00:03:46,789
+then i want you to output all of the
+shortest path distances now
+
+156
+00:03:46,789 --> 00:03:46,799
+shortest path distances now
+ 
+
+157
+00:03:46,799 --> 00:03:49,990
+shortest path distances now
+in particular this output could any of
+
+158
+00:03:49,990 --> 00:03:50,000
+in particular this output could any of
+ 
+
+159
+00:03:50,000 --> 00:03:51,030
+in particular this output could any of
+these outputs
+
+160
+00:03:51,030 --> 00:03:51,040
+these outputs
+ 
+
+161
+00:03:51,040 --> 00:03:54,470
+these outputs
+needs to have size theta of v
+
+162
+00:03:54,470 --> 00:03:54,480
+needs to have size theta of v
+ 
+
+163
+00:03:54,480 --> 00:03:57,509
+needs to have size theta of v
+squared right because for
+
+164
+00:03:57,509 --> 00:03:57,519
+squared right because for
+ 
+
+165
+00:03:57,519 --> 00:03:59,429
+squared right because for
+every pair of vertices i need to return
+
+166
+00:03:59,429 --> 00:03:59,439
+every pair of vertices i need to return
+ 
+
+167
+00:03:59,439 --> 00:04:00,869
+every pair of vertices i need to return
+to you a number
+
+168
+00:04:00,869 --> 00:04:00,879
+to you a number
+ 
+
+169
+00:04:00,879 --> 00:04:03,429
+to you a number
+or infinity or minus infinity or
+
+170
+00:04:03,429 --> 00:04:03,439
+or infinity or minus infinity or
+ 
+
+171
+00:04:03,439 --> 00:04:04,869
+or infinity or minus infinity or
+something like that but we are not
+
+172
+00:04:04,869 --> 00:04:04,879
+something like that but we are not
+ 
+
+173
+00:04:04,879 --> 00:04:06,149
+something like that but we are not
+dealing with the case with minus
+
+174
+00:04:06,149 --> 00:04:06,159
+dealing with the case with minus
+ 
+
+175
+00:04:06,159 --> 00:04:07,110
+dealing with the case with minus
+infinity
+
+176
+00:04:07,110 --> 00:04:07,120
+infinity
+ 
+
+177
+00:04:07,120 --> 00:04:11,190
+infinity
+the output could have size
+
+178
+00:04:11,190 --> 00:04:11,200
+the output could have size
+ 
+
+179
+00:04:11,200 --> 00:04:13,910
+the output could have size
+this is a theta here it does have size v
+
+180
+00:04:13,910 --> 00:04:13,920
+this is a theta here it does have size v
+ 
+
+181
+00:04:13,920 --> 00:04:15,750
+this is a theta here it does have size v
+squared
+
+182
+00:04:15,750 --> 00:04:15,760
+squared
+ 
+
+183
+00:04:15,760 --> 00:04:18,789
+squared
+right but in particular it's at least v
+
+184
+00:04:18,789 --> 00:04:18,799
+right but in particular it's at least v
+ 
+
+185
+00:04:18,799 --> 00:04:20,789
+right but in particular it's at least v
+squared
+
+186
+00:04:20,789 --> 00:04:20,799
+squared
+ 
+
+187
+00:04:20,799 --> 00:04:24,469
+squared
+because i need to give a number for each
+
+188
+00:04:24,469 --> 00:04:24,479
+because i need to give a number for each
+ 
+
+189
+00:04:24,479 --> 00:04:25,909
+because i need to give a number for each
+pair of vertices
+
+190
+00:04:25,909 --> 00:04:25,919
+pair of vertices
+ 
+
+191
+00:04:25,919 --> 00:04:30,230
+pair of vertices
+and so we couldn't hope for linear time
+
+192
+00:04:30,230 --> 00:04:30,240
+and so we couldn't hope for linear time
+ 
+
+193
+00:04:30,240 --> 00:04:31,990
+and so we couldn't hope for linear time
+in the size of this graph for this
+
+194
+00:04:31,990 --> 00:04:32,000
+in the size of this graph for this
+ 
+
+195
+00:04:32,000 --> 00:04:33,430
+in the size of this graph for this
+problem right
+
+196
+00:04:33,430 --> 00:04:33,440
+problem right
+ 
+
+197
+00:04:33,440 --> 00:04:35,510
+problem right
+single source tortoise paths for certain
+
+198
+00:04:35,510 --> 00:04:35,520
+single source tortoise paths for certain
+ 
+
+199
+00:04:35,520 --> 00:04:36,950
+single source tortoise paths for certain
+versions of the problem
+
+200
+00:04:36,950 --> 00:04:36,960
+versions of the problem
+ 
+
+201
+00:04:36,960 --> 00:04:38,870
+versions of the problem
+we need to read the graph and so we need
+
+202
+00:04:38,870 --> 00:04:38,880
+we need to read the graph and so we need
+ 
+
+203
+00:04:38,880 --> 00:04:41,350
+we need to read the graph and so we need
+to use linear time
+
+204
+00:04:41,350 --> 00:04:41,360
+to use linear time
+ 
+
+205
+00:04:41,360 --> 00:04:43,189
+to use linear time
+but in this problem our output has
+
+206
+00:04:43,189 --> 00:04:43,199
+but in this problem our output has
+ 
+
+207
+00:04:43,199 --> 00:04:45,830
+but in this problem our output has
+quadratic size in the number of vertices
+
+208
+00:04:45,830 --> 00:04:45,840
+quadratic size in the number of vertices
+ 
+
+209
+00:04:45,840 --> 00:04:48,150
+quadratic size in the number of vertices
+so in a sense we can't do better than
+
+210
+00:04:48,150 --> 00:04:48,160
+so in a sense we can't do better than
+ 
+
+211
+00:04:48,160 --> 00:04:49,189
+so in a sense we can't do better than
+this
+
+212
+00:04:49,189 --> 00:04:49,199
+this
+ 
+
+213
+00:04:49,199 --> 00:04:51,990
+this
+right we can't do better than quadratic
+
+214
+00:04:51,990 --> 00:04:52,000
+right we can't do better than quadratic
+ 
+
+215
+00:04:52,000 --> 00:04:54,710
+right we can't do better than quadratic
+and it actually
+
+216
+00:04:54,710 --> 00:04:54,720
+and it actually
+ 
+
+217
+00:04:54,720 --> 00:04:56,950
+and it actually
+what's one way we could solve all pairs
+
+218
+00:04:56,950 --> 00:04:56,960
+what's one way we could solve all pairs
+ 
+
+219
+00:04:56,960 --> 00:04:58,150
+what's one way we could solve all pairs
+shortest paths
+
+220
+00:04:58,150 --> 00:04:58,160
+shortest paths
+ 
+
+221
+00:04:58,160 --> 00:04:59,830
+shortest paths
+by using stuff we've already done in
+
+222
+00:04:59,830 --> 00:04:59,840
+by using stuff we've already done in
+ 
+
+223
+00:04:59,840 --> 00:05:01,909
+by using stuff we've already done in
+this class
+
+224
+00:05:01,909 --> 00:05:01,919
+this class
+ 
+
+225
+00:05:01,919 --> 00:05:03,510
+this class
+that's why i put this slide up here
+
+226
+00:05:03,510 --> 00:05:03,520
+that's why i put this slide up here
+ 
+
+227
+00:05:03,520 --> 00:05:05,830
+that's why i put this slide up here
+right yeah we could just
+
+228
+00:05:05,830 --> 00:05:05,840
+right yeah we could just
+ 
+
+229
+00:05:05,840 --> 00:05:07,909
+right yeah we could just
+solve a single source shortest paths
+
+230
+00:05:07,909 --> 00:05:07,919
+solve a single source shortest paths
+ 
+
+231
+00:05:07,919 --> 00:05:09,189
+solve a single source shortest paths
+algorithm
+
+232
+00:05:09,189 --> 00:05:09,199
+algorithm
+ 
+
+233
+00:05:09,199 --> 00:05:12,070
+algorithm
+from every vertex in my graph you know
+
+234
+00:05:12,070 --> 00:05:12,080
+from every vertex in my graph you know
+ 
+
+235
+00:05:12,080 --> 00:05:12,629
+from every vertex in my graph you know
+that's
+
+236
+00:05:12,629 --> 00:05:12,639
+that's
+ 
+
+237
+00:05:12,639 --> 00:05:14,950
+that's
+seems like a stupid thing to do right
+
+238
+00:05:14,950 --> 00:05:14,960
+seems like a stupid thing to do right
+ 
+
+239
+00:05:14,960 --> 00:05:17,590
+seems like a stupid thing to do right
+it's almost brute force on the vertices
+
+240
+00:05:17,590 --> 00:05:17,600
+it's almost brute force on the vertices
+ 
+
+241
+00:05:17,600 --> 00:05:19,110
+it's almost brute force on the vertices
+but it's certainly a way we could solve
+
+242
+00:05:19,110 --> 00:05:19,120
+but it's certainly a way we could solve
+ 
+
+243
+00:05:19,120 --> 00:05:21,670
+but it's certainly a way we could solve
+this problem in polynomial time
+
+244
+00:05:21,670 --> 00:05:21,680
+this problem in polynomial time
+ 
+
+245
+00:05:21,680 --> 00:05:27,990
+this problem in polynomial time
+right and we could definitely solve it
+
+246
+00:05:27,990 --> 00:05:28,000
+
+ 
+
+247
+00:05:28,000 --> 00:05:32,790
+
+in order
+
+248
+00:05:32,790 --> 00:05:32,800
+in order
+ 
+
+249
+00:05:32,800 --> 00:05:37,510
+in order
+v squared e time
+
+250
+00:05:37,510 --> 00:05:37,520
+
+ 
+
+251
+00:05:37,520 --> 00:05:40,150
+
+using bellman ford right we just take
+
+252
+00:05:40,150 --> 00:05:40,160
+using bellman ford right we just take
+ 
+
+253
+00:05:40,160 --> 00:05:40,629
+using bellman ford right we just take
+the
+
+254
+00:05:40,629 --> 00:05:40,639
+the
+ 
+
+255
+00:05:40,639 --> 00:05:45,510
+the
+steps of bellman ford and deal with
+
+256
+00:05:45,510 --> 00:05:45,520
+steps of bellman ford and deal with
+ 
+
+257
+00:05:45,520 --> 00:05:48,070
+steps of bellman ford and deal with
+a graph on any set of vertices right we
+
+258
+00:05:48,070 --> 00:05:48,080
+a graph on any set of vertices right we
+ 
+
+259
+00:05:48,080 --> 00:05:50,950
+a graph on any set of vertices right we
+can do better than this
+
+260
+00:05:50,950 --> 00:05:50,960
+can do better than this
+ 
+
+261
+00:05:50,960 --> 00:05:54,230
+can do better than this
+we can do better than this for graphs
+
+262
+00:05:54,230 --> 00:05:54,240
+we can do better than this for graphs
+ 
+
+263
+00:05:54,240 --> 00:05:56,469
+we can do better than this for graphs
+that are special in some way right we
+
+264
+00:05:56,469 --> 00:05:56,479
+that are special in some way right we
+ 
+
+265
+00:05:56,479 --> 00:05:58,309
+that are special in some way right we
+can do
+
+266
+00:05:58,309 --> 00:05:58,319
+can do
+ 
+
+267
+00:05:58,319 --> 00:06:02,070
+can do
+v times v plus e v times linear
+
+268
+00:06:02,070 --> 00:06:02,080
+v times v plus e v times linear
+ 
+
+269
+00:06:02,080 --> 00:06:04,870
+v times v plus e v times linear
+if our weights are positive and bounded
+
+270
+00:06:04,870 --> 00:06:04,880
+if our weights are positive and bounded
+ 
+
+271
+00:06:04,880 --> 00:06:06,070
+if our weights are positive and bounded
+we can use bfs
+
+272
+00:06:06,070 --> 00:06:06,080
+we can use bfs
+ 
+
+273
+00:06:06,080 --> 00:06:08,390
+we can use bfs
+v times or if our graph doesn't have
+
+274
+00:06:08,390 --> 00:06:08,400
+v times or if our graph doesn't have
+ 
+
+275
+00:06:08,400 --> 00:06:10,550
+v times or if our graph doesn't have
+cycles we could use dag relaxation v
+
+276
+00:06:10,550 --> 00:06:10,560
+cycles we could use dag relaxation v
+ 
+
+277
+00:06:10,560 --> 00:06:12,790
+cycles we could use dag relaxation v
+times or if our graph had non-negative
+
+278
+00:06:12,790 --> 00:06:12,800
+times or if our graph had non-negative
+ 
+
+279
+00:06:12,800 --> 00:06:15,350
+times or if our graph had non-negative
+edge weights we could get
+
+280
+00:06:15,350 --> 00:06:15,360
+edge weights we could get
+ 
+
+281
+00:06:15,360 --> 00:06:18,830
+edge weights we could get
+basically v squared log v plus v times
+
+282
+00:06:18,830 --> 00:06:18,840
+basically v squared log v plus v times
+ 
+
+283
+00:06:18,840 --> 00:06:22,469
+basically v squared log v plus v times
+e right and that's actually not bad
+
+284
+00:06:22,469 --> 00:06:22,479
+e right and that's actually not bad
+ 
+
+285
+00:06:22,479 --> 00:06:26,469
+e right and that's actually not bad
+in sparse graphs
+
+286
+00:06:26,469 --> 00:06:26,479
+
+ 
+
+287
+00:06:26,479 --> 00:06:36,390
+
+this is what bellman ford would give us
+
+288
+00:06:36,390 --> 00:06:36,400
+
+ 
+
+289
+00:06:36,400 --> 00:06:39,830
+
+but if we had dijkstra's for example
+
+290
+00:06:39,830 --> 00:06:39,840
+but if we had dijkstra's for example
+ 
+
+291
+00:06:39,840 --> 00:06:42,790
+but if we had dijkstra's for example
+if we had all positive net edge weights
+
+292
+00:06:42,790 --> 00:06:42,800
+if we had all positive net edge weights
+ 
+
+293
+00:06:42,800 --> 00:06:43,189
+if we had all positive net edge weights
+or
+
+294
+00:06:43,189 --> 00:06:43,199
+or
+ 
+
+295
+00:06:43,199 --> 00:06:46,150
+or
+non-negatives sorry we could get v
+
+296
+00:06:46,150 --> 00:06:46,160
+non-negatives sorry we could get v
+ 
+
+297
+00:06:46,160 --> 00:06:47,670
+non-negatives sorry we could get v
+squared
+
+298
+00:06:47,670 --> 00:06:47,680
+squared
+ 
+
+299
+00:06:47,680 --> 00:06:50,790
+squared
+log v plus
+
+300
+00:06:50,790 --> 00:06:50,800
+log v plus
+ 
+
+301
+00:06:50,800 --> 00:06:54,629
+log v plus
+v v e
+
+302
+00:06:54,629 --> 00:06:54,639
+v v e
+ 
+
+303
+00:06:54,639 --> 00:06:58,150
+v v e
+time this is v
+
+304
+00:06:58,150 --> 00:06:58,160
+time this is v
+ 
+
+305
+00:06:58,160 --> 00:07:08,309
+time this is v
+times dijkstra
+
+306
+00:07:08,309 --> 00:07:08,319
+
+ 
+
+307
+00:07:08,319 --> 00:07:10,469
+
+okay so how do these running times
+
+308
+00:07:10,469 --> 00:07:10,479
+okay so how do these running times
+ 
+
+309
+00:07:10,479 --> 00:07:12,070
+okay so how do these running times
+compare this is v times bellman ford
+
+310
+00:07:12,070 --> 00:07:12,080
+compare this is v times bellman ford
+ 
+
+311
+00:07:12,080 --> 00:07:12,629
+compare this is v times bellman ford
+this is v
+
+312
+00:07:12,629 --> 00:07:12,639
+this is v
+ 
+
+313
+00:07:12,639 --> 00:07:15,589
+this is v
+times dijkstra in a spot let's let's
+
+314
+00:07:15,589 --> 00:07:15,599
+times dijkstra in a spot let's let's
+ 
+
+315
+00:07:15,599 --> 00:07:16,550
+times dijkstra in a spot let's let's
+just
+
+316
+00:07:16,550 --> 00:07:16,560
+just
+ 
+
+317
+00:07:16,560 --> 00:07:20,150
+just
+get a feel for this separation here if
+
+318
+00:07:20,150 --> 00:07:20,160
+get a feel for this separation here if
+ 
+
+319
+00:07:20,160 --> 00:07:22,790
+get a feel for this separation here if
+if we had a sparse graph where v is
+
+320
+00:07:22,790 --> 00:07:22,800
+if we had a sparse graph where v is
+ 
+
+321
+00:07:22,800 --> 00:07:25,189
+if we had a sparse graph where v is
+upper bounded by the number of vertices
+
+322
+00:07:25,189 --> 00:07:25,199
+upper bounded by the number of vertices
+ 
+
+323
+00:07:25,199 --> 00:07:29,270
+upper bounded by the number of vertices
+this one looks like v squared log v
+
+324
+00:07:29,270 --> 00:07:29,280
+this one looks like v squared log v
+ 
+
+325
+00:07:29,280 --> 00:07:33,830
+this one looks like v squared log v
+this one looks like v cubed
+
+326
+00:07:33,830 --> 00:07:33,840
+this one looks like v cubed
+ 
+
+327
+00:07:33,840 --> 00:07:36,550
+this one looks like v cubed
+and we need to spend at least v squared
+
+328
+00:07:36,550 --> 00:07:36,560
+and we need to spend at least v squared
+ 
+
+329
+00:07:36,560 --> 00:07:37,749
+and we need to spend at least v squared
+time
+
+330
+00:07:37,749 --> 00:07:37,759
+time
+ 
+
+331
+00:07:37,759 --> 00:07:40,870
+time
+right so actually this is really close
+
+332
+00:07:40,870 --> 00:07:40,880
+right so actually this is really close
+ 
+
+333
+00:07:40,880 --> 00:07:43,189
+right so actually this is really close
+to linear in the size of the graph just
+
+334
+00:07:43,189 --> 00:07:43,199
+to linear in the size of the graph just
+ 
+
+335
+00:07:43,199 --> 00:07:44,550
+to linear in the size of the graph just
+off by a log factor
+
+336
+00:07:44,550 --> 00:07:44,560
+off by a log factor
+ 
+
+337
+00:07:44,560 --> 00:07:47,589
+off by a log factor
+just like sorting would entail
+
+338
+00:07:47,589 --> 00:07:47,599
+just like sorting would entail
+ 
+
+339
+00:07:47,599 --> 00:07:51,350
+just like sorting would entail
+and this one
+
+340
+00:07:51,350 --> 00:07:51,360
+
+ 
+
+341
+00:07:51,360 --> 00:07:54,629
+
+would have a linear factor right
+
+342
+00:07:54,629 --> 00:07:54,639
+would have a linear factor right
+ 
+
+343
+00:07:54,639 --> 00:07:56,629
+would have a linear factor right
+in the sparse graph this would be a a
+
+344
+00:07:56,629 --> 00:07:56,639
+in the sparse graph this would be a a
+ 
+
+345
+00:07:56,639 --> 00:07:57,990
+in the sparse graph this would be a a
+linear factor worse than
+
+346
+00:07:57,990 --> 00:07:58,000
+linear factor worse than
+ 
+
+347
+00:07:58,000 --> 00:08:00,070
+linear factor worse than
+this instead of a logarithmic factor
+
+348
+00:08:00,070 --> 00:08:00,080
+this instead of a logarithmic factor
+ 
+
+349
+00:08:00,080 --> 00:08:01,029
+this instead of a logarithmic factor
+again this
+
+350
+00:08:01,029 --> 00:08:01,039
+again this
+ 
+
+351
+00:08:01,039 --> 00:08:03,589
+again this
+linear to log separation we don't want
+
+352
+00:08:03,589 --> 00:08:03,599
+linear to log separation we don't want
+ 
+
+353
+00:08:03,599 --> 00:08:05,029
+linear to log separation we don't want
+to have to do
+
+354
+00:08:05,029 --> 00:08:05,039
+to have to do
+ 
+
+355
+00:08:05,039 --> 00:08:07,830
+to have to do
+this running time if we don't have to
+
+356
+00:08:07,830 --> 00:08:07,840
+this running time if we don't have to
+ 
+
+357
+00:08:07,840 --> 00:08:09,110
+this running time if we don't have to
+right
+
+358
+00:08:09,110 --> 00:08:09,120
+right
+ 
+
+359
+00:08:09,120 --> 00:08:12,230
+right
+that's the name of the game and
+
+360
+00:08:12,230 --> 00:08:12,240
+that's the name of the game and
+ 
+
+361
+00:08:12,240 --> 00:08:15,110
+that's the name of the game and
+really all we're going to do in this
+
+362
+00:08:15,110 --> 00:08:15,120
+really all we're going to do in this
+ 
+
+363
+00:08:15,120 --> 00:08:16,790
+really all we're going to do in this
+lecture
+
+364
+00:08:16,790 --> 00:08:16,800
+lecture
+ 
+
+365
+00:08:16,800 --> 00:08:20,469
+lecture
+is try to solve how we can
+
+366
+00:08:20,469 --> 00:08:20,479
+is try to solve how we can
+ 
+
+367
+00:08:20,479 --> 00:08:24,629
+is try to solve how we can
+make this running time faster
+
+368
+00:08:24,629 --> 00:08:24,639
+make this running time faster
+ 
+
+369
+00:08:24,639 --> 00:08:26,550
+make this running time faster
+by doing something a little bit more
+
+370
+00:08:26,550 --> 00:08:26,560
+by doing something a little bit more
+ 
+
+371
+00:08:26,560 --> 00:08:28,469
+by doing something a little bit more
+intelligent than
+
+372
+00:08:28,469 --> 00:08:28,479
+intelligent than
+ 
+
+373
+00:08:28,479 --> 00:08:30,070
+intelligent than
+running a single source shortest path
+
+374
+00:08:30,070 --> 00:08:30,080
+running a single source shortest path
+ 
+
+375
+00:08:30,080 --> 00:08:33,829
+running a single source shortest path
+algorithm from every vertex
+
+376
+00:08:33,829 --> 00:08:33,839
+algorithm from every vertex
+ 
+
+377
+00:08:33,839 --> 00:08:37,269
+algorithm from every vertex
+okay uh
+
+378
+00:08:37,269 --> 00:08:37,279
+okay uh
+ 
+
+379
+00:08:37,279 --> 00:08:41,589
+okay uh
+how are we going to do that well
+
+380
+00:08:41,589 --> 00:08:41,599
+how are we going to do that well
+ 
+
+381
+00:08:41,599 --> 00:08:45,509
+how are we going to do that well
+we could
+
+382
+00:08:45,509 --> 00:08:45,519
+
+ 
+
+383
+00:08:45,519 --> 00:08:48,790
+
+let's see what are we doing right
+
+384
+00:08:48,790 --> 00:08:48,800
+let's see what are we doing right
+ 
+
+385
+00:08:48,800 --> 00:08:55,990
+let's see what are we doing right
+the idea here if we had a graph
+
+386
+00:08:55,990 --> 00:08:56,000
+
+ 
+
+387
+00:08:56,000 --> 00:08:59,030
+
+uh should my graph be directed or
+
+388
+00:08:59,030 --> 00:08:59,040
+uh should my graph be directed or
+ 
+
+389
+00:08:59,040 --> 00:09:01,350
+uh should my graph be directed or
+undirected
+
+390
+00:09:01,350 --> 00:09:01,360
+undirected
+ 
+
+391
+00:09:01,360 --> 00:09:03,990
+undirected
+i'm not sure let's see if we can make a
+
+392
+00:09:03,990 --> 00:09:04,000
+i'm not sure let's see if we can make a
+ 
+
+393
+00:09:04,000 --> 00:09:05,110
+i'm not sure let's see if we can make a
+directed graph
+
+394
+00:09:05,110 --> 00:09:05,120
+directed graph
+ 
+
+395
+00:09:05,120 --> 00:09:08,470
+directed graph
+okay so here's a directed graph why do i
+
+396
+00:09:08,470 --> 00:09:08,480
+okay so here's a directed graph why do i
+ 
+
+397
+00:09:08,480 --> 00:09:10,310
+okay so here's a directed graph why do i
+not care about undirected graphs can
+
+398
+00:09:10,310 --> 00:09:10,320
+not care about undirected graphs can
+ 
+
+399
+00:09:10,320 --> 00:09:13,430
+not care about undirected graphs can
+anyone tell me
+
+400
+00:09:13,430 --> 00:09:13,440
+
+ 
+
+401
+00:09:13,440 --> 00:09:17,110
+
+yeah it's because
+
+402
+00:09:17,110 --> 00:09:17,120
+
+ 
+
+403
+00:09:17,120 --> 00:09:19,190
+
+i don't care about undirected graphs
+
+404
+00:09:19,190 --> 00:09:19,200
+i don't care about undirected graphs
+ 
+
+405
+00:09:19,200 --> 00:09:24,630
+i don't care about undirected graphs
+because if i had an undirected graph
+
+406
+00:09:24,630 --> 00:09:24,640
+
+ 
+
+407
+00:09:24,640 --> 00:09:26,230
+
+i could detect whether it had negative
+
+408
+00:09:26,230 --> 00:09:26,240
+i could detect whether it had negative
+ 
+
+409
+00:09:26,240 --> 00:09:28,310
+i could detect whether it had negative
+weight cycles
+
+410
+00:09:28,310 --> 00:09:28,320
+weight cycles
+ 
+
+411
+00:09:28,320 --> 00:09:34,230
+weight cycles
+in
+
+412
+00:09:34,230 --> 00:09:34,240
+
+ 
+
+413
+00:09:34,240 --> 00:09:37,269
+
+in constant time all right sorry in in
+
+414
+00:09:37,269 --> 00:09:37,279
+in constant time all right sorry in in
+ 
+
+415
+00:09:37,279 --> 00:09:39,750
+in constant time all right sorry in in
+linear time i could just check each edge
+
+416
+00:09:39,750 --> 00:09:39,760
+linear time i could just check each edge
+ 
+
+417
+00:09:39,760 --> 00:09:43,670
+linear time i could just check each edge
+see if it has negative weight
+
+418
+00:09:43,670 --> 00:09:43,680
+
+ 
+
+419
+00:09:43,680 --> 00:09:45,430
+
+because a negative weight edge
+
+420
+00:09:45,430 --> 00:09:45,440
+because a negative weight edge
+ 
+
+421
+00:09:45,440 --> 00:09:47,750
+because a negative weight edge
+undirected edge is a cycle of negative
+
+422
+00:09:47,750 --> 00:09:47,760
+undirected edge is a cycle of negative
+ 
+
+423
+00:09:47,760 --> 00:09:48,870
+undirected edge is a cycle of negative
+weight
+
+424
+00:09:48,870 --> 00:09:48,880
+weight
+ 
+
+425
+00:09:48,880 --> 00:09:52,230
+weight
+so i could just if it has any negative
+
+426
+00:09:52,230 --> 00:09:52,240
+so i could just if it has any negative
+ 
+
+427
+00:09:52,240 --> 00:09:53,350
+so i could just if it has any negative
+edge weights
+
+428
+00:09:53,350 --> 00:09:53,360
+edge weights
+ 
+
+429
+00:09:53,360 --> 00:09:56,550
+edge weights
+i could return in linear time
+
+430
+00:09:56,550 --> 00:09:56,560
+i could return in linear time
+ 
+
+431
+00:09:56,560 --> 00:09:59,670
+i could return in linear time
+that it does and i can abort or it has
+
+432
+00:09:59,670 --> 00:09:59,680
+that it does and i can abort or it has
+ 
+
+433
+00:09:59,680 --> 00:10:01,110
+that it does and i can abort or it has
+only positive weights and i can still
+
+434
+00:10:01,110 --> 00:10:01,120
+only positive weights and i can still
+ 
+
+435
+00:10:01,120 --> 00:10:02,310
+only positive weights and i can still
+use dijkstra
+
+436
+00:10:02,310 --> 00:10:02,320
+use dijkstra
+ 
+
+437
+00:10:02,320 --> 00:10:04,470
+use dijkstra
+so that's all good so we're only
+
+438
+00:10:04,470 --> 00:10:04,480
+so that's all good so we're only
+ 
+
+439
+00:10:04,480 --> 00:10:05,590
+so that's all good so we're only
+concerned about
+
+440
+00:10:05,590 --> 00:10:05,600
+concerned about
+ 
+
+441
+00:10:05,600 --> 00:10:07,670
+concerned about
+needing to run bellman ford on directed
+
+442
+00:10:07,670 --> 00:10:07,680
+needing to run bellman ford on directed
+ 
+
+443
+00:10:07,680 --> 00:10:09,430
+needing to run bellman ford on directed
+graphs that potentially have negative
+
+444
+00:10:09,430 --> 00:10:09,440
+graphs that potentially have negative
+ 
+
+445
+00:10:09,440 --> 00:10:10,389
+graphs that potentially have negative
+edge weight
+
+446
+00:10:10,389 --> 00:10:10,399
+edge weight
+ 
+
+447
+00:10:10,399 --> 00:10:14,470
+edge weight
+okay so here's a graph let's see
+
+448
+00:10:14,470 --> 00:10:14,480
+okay so here's a graph let's see
+ 
+
+449
+00:10:14,480 --> 00:10:18,949
+okay so here's a graph let's see
+is this a graph that i want
+
+450
+00:10:18,949 --> 00:10:18,959
+is this a graph that i want
+ 
+
+451
+00:10:18,959 --> 00:10:28,310
+is this a graph that i want
+sure let's say we've got
+
+452
+00:10:28,310 --> 00:10:28,320
+
+ 
+
+453
+00:10:28,320 --> 00:10:32,550
+
+that direction and this direction
+
+454
+00:10:32,550 --> 00:10:32,560
+that direction and this direction
+ 
+
+455
+00:10:32,560 --> 00:10:35,590
+that direction and this direction
+okay say we have a directed
+
+456
+00:10:35,590 --> 00:10:35,600
+okay say we have a directed
+ 
+
+457
+00:10:35,600 --> 00:10:38,230
+okay say we have a directed
+graph like this and let's say this is s
+
+458
+00:10:38,230 --> 00:10:38,240
+graph like this and let's say this is s
+ 
+
+459
+00:10:38,240 --> 00:10:40,389
+graph like this and let's say this is s
+this is our source
+
+460
+00:10:40,389 --> 00:10:40,399
+this is our source
+ 
+
+461
+00:10:40,399 --> 00:10:44,069
+this is our source
+okay and we have
+
+462
+00:10:44,069 --> 00:10:44,079
+okay and we have
+ 
+
+463
+00:10:44,079 --> 00:10:47,190
+okay and we have
+weights being
+
+464
+00:10:47,190 --> 00:10:47,200
+weights being
+ 
+
+465
+00:10:47,200 --> 00:10:51,269
+weights being
+2 sorry weights being
+
+466
+00:10:51,269 --> 00:10:51,279
+2 sorry weights being
+ 
+
+467
+00:10:51,279 --> 00:10:54,790
+2 sorry weights being
+4 1 1 2
+
+468
+00:10:54,790 --> 00:10:54,800
+4 1 1 2
+ 
+
+469
+00:10:54,800 --> 00:10:58,310
+4 1 1 2
+2 2 2. okay
+
+470
+00:10:58,310 --> 00:10:58,320
+2 2 2. okay
+ 
+
+471
+00:10:58,320 --> 00:11:00,949
+2 2 2. okay
+so this is an example of a graph we
+
+472
+00:11:00,949 --> 00:11:00,959
+so this is an example of a graph we
+ 
+
+473
+00:11:00,959 --> 00:11:01,910
+so this is an example of a graph we
+might want to
+
+474
+00:11:01,910 --> 00:11:01,920
+might want to
+ 
+
+475
+00:11:01,920 --> 00:11:05,750
+might want to
+run all pairs shortest paths on
+
+476
+00:11:05,750 --> 00:11:05,760
+run all pairs shortest paths on
+ 
+
+477
+00:11:05,760 --> 00:11:07,350
+run all pairs shortest paths on
+maybe we also have negative weights in
+
+478
+00:11:07,350 --> 00:11:07,360
+maybe we also have negative weights in
+ 
+
+479
+00:11:07,360 --> 00:11:09,110
+maybe we also have negative weights in
+this graph
+
+480
+00:11:09,110 --> 00:11:09,120
+this graph
+ 
+
+481
+00:11:09,120 --> 00:11:13,590
+this graph
+okay
+
+482
+00:11:13,590 --> 00:11:13,600
+
+ 
+
+483
+00:11:13,600 --> 00:11:15,190
+
+in particular this has a negative weight
+
+484
+00:11:15,190 --> 00:11:15,200
+in particular this has a negative weight
+ 
+
+485
+00:11:15,200 --> 00:11:17,110
+in particular this has a negative weight
+cycle i don't want negative weight
+
+486
+00:11:17,110 --> 00:11:17,120
+cycle i don't want negative weight
+ 
+
+487
+00:11:17,120 --> 00:11:19,829
+cycle i don't want negative weight
+cycles so i'm going to make this
+
+488
+00:11:19,829 --> 00:11:19,839
+cycles so i'm going to make this
+ 
+
+489
+00:11:19,839 --> 00:11:23,509
+cycles so i'm going to make this
+zero okay so this graph doesn't have
+
+490
+00:11:23,509 --> 00:11:23,519
+zero okay so this graph doesn't have
+ 
+
+491
+00:11:23,519 --> 00:11:24,790
+zero okay so this graph doesn't have
+negative weight cycles
+
+492
+00:11:24,790 --> 00:11:24,800
+negative weight cycles
+ 
+
+493
+00:11:24,800 --> 00:11:28,069
+negative weight cycles
+great that's
+
+494
+00:11:28,069 --> 00:11:28,079
+great that's
+ 
+
+495
+00:11:28,079 --> 00:11:30,949
+great that's
+true great all right so here's an
+
+496
+00:11:30,949 --> 00:11:30,959
+true great all right so here's an
+ 
+
+497
+00:11:30,959 --> 00:11:32,550
+true great all right so here's an
+example that we might
+
+498
+00:11:32,550 --> 00:11:32,560
+example that we might
+ 
+
+499
+00:11:32,560 --> 00:11:34,949
+example that we might
+want to compute shortest paths on
+
+500
+00:11:34,949 --> 00:11:34,959
+want to compute shortest paths on
+ 
+
+501
+00:11:34,959 --> 00:11:35,829
+want to compute shortest paths on
+there's no s
+
+502
+00:11:35,829 --> 00:11:35,839
+there's no s
+ 
+
+503
+00:11:35,839 --> 00:11:38,150
+there's no s
+in all pairs shortest paths but i'm
+
+504
+00:11:38,150 --> 00:11:38,160
+in all pairs shortest paths but i'm
+ 
+
+505
+00:11:38,160 --> 00:11:40,069
+in all pairs shortest paths but i'm
+going to be talking about
+
+506
+00:11:40,069 --> 00:11:40,079
+going to be talking about
+ 
+
+507
+00:11:40,079 --> 00:11:41,990
+going to be talking about
+a couple shortest paths from s in my
+
+508
+00:11:41,990 --> 00:11:42,000
+a couple shortest paths from s in my
+ 
+
+509
+00:11:42,000 --> 00:11:44,550
+a couple shortest paths from s in my
+next argument so i'm just labeling that
+
+510
+00:11:44,550 --> 00:11:44,560
+next argument so i'm just labeling that
+ 
+
+511
+00:11:44,560 --> 00:11:48,310
+next argument so i'm just labeling that
+uh vertex as s okay the claim
+
+512
+00:11:48,310 --> 00:11:48,320
+uh vertex as s okay the claim
+ 
+
+513
+00:11:48,320 --> 00:11:50,230
+uh vertex as s okay the claim
+the the approach we're going to do we're
+
+514
+00:11:50,230 --> 00:11:50,240
+the the approach we're going to do we're
+ 
+
+515
+00:11:50,240 --> 00:11:51,910
+the the approach we're going to do we're
+going to try to take a graph
+
+516
+00:11:51,910 --> 00:11:51,920
+going to try to take a graph
+ 
+
+517
+00:11:51,920 --> 00:11:55,110
+going to try to take a graph
+that has negative edge weights
+
+518
+00:11:55,110 --> 00:11:55,120
+that has negative edge weights
+ 
+
+519
+00:11:55,120 --> 00:11:58,710
+that has negative edge weights
+directed graph we don't know if it has
+
+520
+00:11:58,710 --> 00:11:58,720
+directed graph we don't know if it has
+ 
+
+521
+00:11:58,720 --> 00:12:01,509
+directed graph we don't know if it has
+negative cycles or not yet but we want
+
+522
+00:12:01,509 --> 00:12:01,519
+negative cycles or not yet but we want
+ 
+
+523
+00:12:01,519 --> 00:12:03,750
+negative cycles or not yet but we want
+to compute all pair shortest paths
+
+524
+00:12:03,750 --> 00:12:03,760
+to compute all pair shortest paths
+ 
+
+525
+00:12:03,760 --> 00:12:05,430
+to compute all pair shortest paths
+not in this running time but in this
+
+526
+00:12:05,430 --> 00:12:05,440
+not in this running time but in this
+ 
+
+527
+00:12:05,440 --> 00:12:07,430
+not in this running time but in this
+running time
+
+528
+00:12:07,430 --> 00:12:07,440
+running time
+ 
+
+529
+00:12:07,440 --> 00:12:10,629
+running time
+how could we do that well maybe it's
+
+530
+00:12:10,629 --> 00:12:10,639
+how could we do that well maybe it's
+ 
+
+531
+00:12:10,639 --> 00:12:12,629
+how could we do that well maybe it's
+possible that we can
+
+532
+00:12:12,629 --> 00:12:12,639
+possible that we can
+ 
+
+533
+00:12:12,639 --> 00:12:16,310
+possible that we can
+change the weight of every edge
+
+534
+00:12:16,310 --> 00:12:16,320
+change the weight of every edge
+ 
+
+535
+00:12:16,320 --> 00:12:18,470
+change the weight of every edge
+so that they're all positive but
+
+536
+00:12:18,470 --> 00:12:18,480
+so that they're all positive but
+ 
+
+537
+00:12:18,480 --> 00:12:20,230
+so that they're all positive but
+shortest paths are preserved so
+
+538
+00:12:20,230 --> 00:12:20,240
+shortest paths are preserved so
+ 
+
+539
+00:12:20,240 --> 00:12:21,350
+shortest paths are preserved so
+basically
+
+540
+00:12:21,350 --> 00:12:21,360
+basically
+ 
+
+541
+00:12:21,360 --> 00:12:24,710
+basically
+if a particular path like
+
+542
+00:12:24,710 --> 00:12:24,720
+if a particular path like
+ 
+
+543
+00:12:24,720 --> 00:12:27,990
+if a particular path like
+okay the shortest path from s to t here
+
+544
+00:12:27,990 --> 00:12:28,000
+okay the shortest path from s to t here
+ 
+
+545
+00:12:28,000 --> 00:12:31,670
+okay the shortest path from s to t here
+is one two three
+
+546
+00:12:31,670 --> 00:12:31,680
+is one two three
+ 
+
+547
+00:12:31,680 --> 00:12:34,949
+is one two three
+right i could change edge weights
+
+548
+00:12:34,949 --> 00:12:34,959
+right i could change edge weights
+ 
+
+549
+00:12:34,959 --> 00:12:37,990
+right i could change edge weights
+uh in this graph say
+
+550
+00:12:37,990 --> 00:12:38,000
+uh in this graph say
+ 
+
+551
+00:12:38,000 --> 00:12:41,829
+uh in this graph say
+for example if i changed 1 to 0 here
+
+552
+00:12:41,829 --> 00:12:41,839
+for example if i changed 1 to 0 here
+ 
+
+553
+00:12:41,839 --> 00:12:44,470
+for example if i changed 1 to 0 here
+that would still make this a shortest
+
+554
+00:12:44,470 --> 00:12:44,480
+that would still make this a shortest
+ 
+
+555
+00:12:44,480 --> 00:12:45,829
+that would still make this a shortest
+path
+
+556
+00:12:45,829 --> 00:12:45,839
+path
+ 
+
+557
+00:12:45,839 --> 00:12:48,230
+path
+right i haven't done i've reweighted the
+
+558
+00:12:48,230 --> 00:12:48,240
+right i haven't done i've reweighted the
+ 
+
+559
+00:12:48,240 --> 00:12:48,949
+right i haven't done i've reweighted the
+graph
+
+560
+00:12:48,949 --> 00:12:48,959
+graph
+ 
+
+561
+00:12:48,959 --> 00:12:50,790
+graph
+shortest paths have to be the same in
+
+562
+00:12:50,790 --> 00:12:50,800
+shortest paths have to be the same in
+ 
+
+563
+00:12:50,800 --> 00:12:54,629
+shortest paths have to be the same in
+this graph
+
+564
+00:12:54,629 --> 00:12:54,639
+
+ 
+
+565
+00:12:54,639 --> 00:12:58,550
+
+but now uh
+
+566
+00:12:58,550 --> 00:12:58,560
+but now uh
+ 
+
+567
+00:12:58,560 --> 00:13:02,230
+but now uh
+sorry yeah
+
+568
+00:13:02,230 --> 00:13:02,240
+
+ 
+
+569
+00:13:02,240 --> 00:13:05,990
+
+this is not a shortest path
+
+570
+00:13:05,990 --> 00:13:06,000
+this is not a shortest path
+ 
+
+571
+00:13:06,000 --> 00:13:09,829
+this is not a shortest path
+i'll make that minus two
+
+572
+00:13:09,829 --> 00:13:09,839
+
+ 
+
+573
+00:13:09,839 --> 00:13:14,230
+
+and then these both two and i think
+
+574
+00:13:14,230 --> 00:13:14,240
+and then these both two and i think
+ 
+
+575
+00:13:14,240 --> 00:13:17,829
+and then these both two and i think
+and this four man i really should have
+
+576
+00:13:17,829 --> 00:13:17,839
+and this four man i really should have
+ 
+
+577
+00:13:17,839 --> 00:13:20,949
+and this four man i really should have
+done my example beforehand okay
+
+578
+00:13:20,949 --> 00:13:20,959
+done my example beforehand okay
+ 
+
+579
+00:13:20,959 --> 00:13:22,310
+done my example beforehand okay
+so this still doesn't have negative
+
+580
+00:13:22,310 --> 00:13:22,320
+so this still doesn't have negative
+ 
+
+581
+00:13:22,320 --> 00:13:23,910
+so this still doesn't have negative
+weight cycles it has a negative weight
+
+582
+00:13:23,910 --> 00:13:23,920
+weight cycles it has a negative weight
+ 
+
+583
+00:13:23,920 --> 00:13:24,629
+weight cycles it has a negative weight
+edge
+
+584
+00:13:24,629 --> 00:13:24,639
+edge
+ 
+
+585
+00:13:24,639 --> 00:13:26,949
+edge
+but this path is longer than this path
+
+586
+00:13:26,949 --> 00:13:26,959
+but this path is longer than this path
+ 
+
+587
+00:13:26,959 --> 00:13:28,949
+but this path is longer than this path
+so when this was one
+
+588
+00:13:28,949 --> 00:13:28,959
+so when this was one
+ 
+
+589
+00:13:28,959 --> 00:13:32,310
+so when this was one
+this had length of three which was
+
+590
+00:13:32,310 --> 00:13:32,320
+this had length of three which was
+ 
+
+591
+00:13:32,320 --> 00:13:36,949
+this had length of three which was
+shorter than this path
+
+592
+00:13:36,949 --> 00:13:36,959
+
+ 
+
+593
+00:13:36,959 --> 00:13:40,150
+
+that is length four
+
+594
+00:13:40,150 --> 00:13:40,160
+that is length four
+ 
+
+595
+00:13:40,160 --> 00:13:43,189
+that is length four
+okay cool so this
+
+596
+00:13:43,189 --> 00:13:43,199
+okay cool so this
+ 
+
+597
+00:13:43,199 --> 00:13:46,230
+okay cool so this
+is the shortest path from s to t
+
+598
+00:13:46,230 --> 00:13:46,240
+is the shortest path from s to t
+ 
+
+599
+00:13:46,240 --> 00:13:49,030
+is the shortest path from s to t
+i could change weights in this graph for
+
+600
+00:13:49,030 --> 00:13:49,040
+i could change weights in this graph for
+ 
+
+601
+00:13:49,040 --> 00:13:50,069
+i could change weights in this graph for
+example
+
+602
+00:13:50,069 --> 00:13:50,079
+example
+ 
+
+603
+00:13:50,079 --> 00:13:53,189
+example
+changing two to three
+
+604
+00:13:53,189 --> 00:13:53,199
+changing two to three
+ 
+
+605
+00:13:53,199 --> 00:13:56,629
+changing two to three
+and one to zero that changed weights in
+
+606
+00:13:56,629 --> 00:13:56,639
+and one to zero that changed weights in
+ 
+
+607
+00:13:56,639 --> 00:13:57,670
+and one to zero that changed weights in
+my graph
+
+608
+00:13:57,670 --> 00:13:57,680
+my graph
+ 
+
+609
+00:13:57,680 --> 00:14:01,110
+my graph
+but shortest paths remain the same
+
+610
+00:14:01,110 --> 00:14:01,120
+but shortest paths remain the same
+ 
+
+611
+00:14:01,120 --> 00:14:03,189
+but shortest paths remain the same
+so maybe there's a way i could re-weight
+
+612
+00:14:03,189 --> 00:14:03,199
+so maybe there's a way i could re-weight
+ 
+
+613
+00:14:03,199 --> 00:14:04,150
+so maybe there's a way i could re-weight
+my edges
+
+614
+00:14:04,150 --> 00:14:04,160
+my edges
+ 
+
+615
+00:14:04,160 --> 00:14:05,990
+my edges
+so that shortest paths stay the same
+
+616
+00:14:05,990 --> 00:14:06,000
+so that shortest paths stay the same
+ 
+
+617
+00:14:06,000 --> 00:14:07,910
+so that shortest paths stay the same
+shortest paths are preserved
+
+618
+00:14:07,910 --> 00:14:07,920
+shortest paths are preserved
+ 
+
+619
+00:14:07,920 --> 00:14:11,509
+shortest paths are preserved
+okay
+
+620
+00:14:11,509 --> 00:14:11,519
+
+ 
+
+621
+00:14:11,519 --> 00:14:13,110
+
+so i'm going to put this back to where
+
+622
+00:14:13,110 --> 00:14:13,120
+so i'm going to put this back to where
+ 
+
+623
+00:14:13,120 --> 00:14:14,949
+so i'm going to put this back to where
+it was
+
+624
+00:14:14,949 --> 00:14:14,959
+it was
+ 
+
+625
+00:14:14,959 --> 00:14:21,189
+it was
+all right so idea
+
+626
+00:14:21,189 --> 00:14:21,199
+
+ 
+
+627
+00:14:21,199 --> 00:14:25,829
+
+make edge
+
+628
+00:14:25,829 --> 00:14:25,839
+make edge
+ 
+
+629
+00:14:25,839 --> 00:14:29,829
+make edge
+weights
+
+630
+00:14:29,829 --> 00:14:29,839
+
+ 
+
+631
+00:14:29,839 --> 00:14:33,030
+
+non-negative
+
+632
+00:14:33,030 --> 00:14:33,040
+
+ 
+
+633
+00:14:33,040 --> 00:14:39,910
+
+while preserving
+
+634
+00:14:39,910 --> 00:14:39,920
+
+ 
+
+635
+00:14:39,920 --> 00:14:43,670
+
+shortest paths okay
+
+636
+00:14:43,670 --> 00:14:43,680
+shortest paths okay
+ 
+
+637
+00:14:43,680 --> 00:14:46,230
+shortest paths okay
+in other words just re-weight the edges
+
+638
+00:14:46,230 --> 00:14:46,240
+in other words just re-weight the edges
+ 
+
+639
+00:14:46,240 --> 00:14:46,710
+in other words just re-weight the edges
+here
+
+640
+00:14:46,710 --> 00:14:46,720
+here
+ 
+
+641
+00:14:46,720 --> 00:14:50,550
+here
+so that shortest paths in g
+
+642
+00:14:50,550 --> 00:14:50,560
+so that shortest paths in g
+ 
+
+643
+00:14:50,560 --> 00:14:54,150
+so that shortest paths in g
+this is g after we rewrite we'll go to
+
+644
+00:14:54,150 --> 00:14:54,160
+this is g after we rewrite we'll go to
+ 
+
+645
+00:14:54,160 --> 00:14:55,430
+this is g after we rewrite we'll go to
+some
+
+646
+00:14:55,430 --> 00:14:55,440
+some
+ 
+
+647
+00:14:55,440 --> 00:14:57,590
+some
+graph g prime with the same
+
+648
+00:14:57,590 --> 00:14:57,600
+graph g prime with the same
+ 
+
+649
+00:14:57,600 --> 00:14:59,110
+graph g prime with the same
+combinatorial structure
+
+650
+00:14:59,110 --> 00:14:59,120
+combinatorial structure
+ 
+
+651
+00:14:59,120 --> 00:15:01,590
+combinatorial structure
+just different edge weights and we want
+
+652
+00:15:01,590 --> 00:15:01,600
+just different edge weights and we want
+ 
+
+653
+00:15:01,600 --> 00:15:02,949
+just different edge weights and we want
+shortest paths
+
+654
+00:15:02,949 --> 00:15:02,959
+shortest paths
+ 
+
+655
+00:15:02,959 --> 00:15:04,710
+shortest paths
+we want these weights to all be
+
+656
+00:15:04,710 --> 00:15:04,720
+we want these weights to all be
+ 
+
+657
+00:15:04,720 --> 00:15:06,310
+we want these weights to all be
+non-negative and we want
+
+658
+00:15:06,310 --> 00:15:06,320
+non-negative and we want
+ 
+
+659
+00:15:06,320 --> 00:15:08,069
+non-negative and we want
+shortest paths if there's a shortest
+
+660
+00:15:08,069 --> 00:15:08,079
+shortest paths if there's a shortest
+ 
+
+661
+00:15:08,079 --> 00:15:10,629
+shortest paths if there's a shortest
+path in g it continues to be a shortest
+
+662
+00:15:10,629 --> 00:15:10,639
+path in g it continues to be a shortest
+ 
+
+663
+00:15:10,639 --> 00:15:12,150
+path in g it continues to be a shortest
+path in the re-weighted graph
+
+664
+00:15:12,150 --> 00:15:12,160
+path in the re-weighted graph
+ 
+
+665
+00:15:12,160 --> 00:15:16,550
+path in the re-weighted graph
+that's the goal for today
+
+666
+00:15:16,550 --> 00:15:16,560
+
+ 
+
+667
+00:15:16,560 --> 00:15:19,350
+
+if we can do that transformation and
+
+668
+00:15:19,350 --> 00:15:19,360
+if we can do that transformation and
+ 
+
+669
+00:15:19,360 --> 00:15:21,030
+if we can do that transformation and
+this is non-negative
+
+670
+00:15:21,030 --> 00:15:21,040
+this is non-negative
+ 
+
+671
+00:15:21,040 --> 00:15:23,350
+this is non-negative
+then we're done right we're done because
+
+672
+00:15:23,350 --> 00:15:23,360
+then we're done right we're done because
+ 
+
+673
+00:15:23,360 --> 00:15:25,509
+then we're done right we're done because
+we can just run
+
+674
+00:15:25,509 --> 00:15:25,519
+we can just run
+ 
+
+675
+00:15:25,519 --> 00:15:30,150
+we can just run
+dijkstra v times on that new graph
+
+676
+00:15:30,150 --> 00:15:30,160
+
+ 
+
+677
+00:15:30,160 --> 00:15:32,870
+
+get the shortest path distances
+
+678
+00:15:32,870 --> 00:15:32,880
+get the shortest path distances
+ 
+
+679
+00:15:32,880 --> 00:15:34,870
+get the shortest path distances
+construct the shortest path tree from
+
+680
+00:15:34,870 --> 00:15:34,880
+construct the shortest path tree from
+ 
+
+681
+00:15:34,880 --> 00:15:36,310
+construct the shortest path tree from
+those distances
+
+682
+00:15:36,310 --> 00:15:36,320
+those distances
+ 
+
+683
+00:15:36,320 --> 00:15:38,949
+those distances
+and then traverse that tree in the
+
+684
+00:15:38,949 --> 00:15:38,959
+and then traverse that tree in the
+ 
+
+685
+00:15:38,959 --> 00:15:40,230
+and then traverse that tree in the
+original graph
+
+686
+00:15:40,230 --> 00:15:40,240
+original graph
+ 
+
+687
+00:15:40,240 --> 00:15:42,949
+original graph
+and compute shortest paths along that
+
+688
+00:15:42,949 --> 00:15:42,959
+and compute shortest paths along that
+ 
+
+689
+00:15:42,959 --> 00:15:43,990
+and compute shortest paths along that
+tree so that's
+
+690
+00:15:43,990 --> 00:15:44,000
+tree so that's
+ 
+
+691
+00:15:44,000 --> 00:15:54,550
+tree so that's
+that's the claim claim
+
+692
+00:15:54,550 --> 00:15:54,560
+that's the claim claim
+ 
+
+693
+00:15:54,560 --> 00:15:59,670
+that's the claim claim
+we can compute
+
+694
+00:15:59,670 --> 00:15:59,680
+
+ 
+
+695
+00:15:59,680 --> 00:16:03,509
+
+distances in
+
+696
+00:16:03,509 --> 00:16:03,519
+distances in
+ 
+
+697
+00:16:03,519 --> 00:16:07,030
+distances in
+g so we're going to restrict
+
+698
+00:16:07,030 --> 00:16:07,040
+g so we're going to restrict
+ 
+
+699
+00:16:07,040 --> 00:16:13,990
+g so we're going to restrict
+g prime to have with
+
+700
+00:16:13,990 --> 00:16:14,000
+
+ 
+
+701
+00:16:14,000 --> 00:16:23,269
+
+non-negative edge weights
+
+702
+00:16:23,269 --> 00:16:23,279
+non-negative edge weights
+ 
+
+703
+00:16:23,279 --> 00:16:25,670
+non-negative edge weights
+if we have such a g prime with
+
+704
+00:16:25,670 --> 00:16:25,680
+if we have such a g prime with
+ 
+
+705
+00:16:25,680 --> 00:16:27,509
+if we have such a g prime with
+non-negative edge weights we can compute
+
+706
+00:16:27,509 --> 00:16:27,519
+non-negative edge weights we can compute
+ 
+
+707
+00:16:27,519 --> 00:16:29,269
+non-negative edge weights we can compute
+distances in g
+
+708
+00:16:29,269 --> 00:16:29,279
+distances in g
+ 
+
+709
+00:16:29,279 --> 00:16:34,230
+distances in g
+from distances
+
+710
+00:16:34,230 --> 00:16:34,240
+
+ 
+
+711
+00:16:34,240 --> 00:16:39,110
+
+in g prime in
+
+712
+00:16:39,110 --> 00:16:39,120
+in g prime in
+ 
+
+713
+00:16:39,120 --> 00:16:42,230
+in g prime in
+v times
+
+714
+00:16:42,230 --> 00:16:42,240
+v times
+ 
+
+715
+00:16:42,240 --> 00:16:48,069
+v times
+v plus e
+
+716
+00:16:48,069 --> 00:16:48,079
+
+ 
+
+717
+00:16:48,079 --> 00:16:50,150
+
+okay which is smaller than our dijkstra
+
+718
+00:16:50,150 --> 00:16:50,160
+okay which is smaller than our dijkstra
+ 
+
+719
+00:16:50,160 --> 00:16:51,829
+okay which is smaller than our dijkstra
+running time right this is our dijkstra
+
+720
+00:16:51,829 --> 00:16:51,839
+running time right this is our dijkstra
+ 
+
+721
+00:16:51,839 --> 00:16:53,509
+running time right this is our dijkstra
+running time
+
+722
+00:16:53,509 --> 00:16:53,519
+running time
+ 
+
+723
+00:16:53,519 --> 00:16:57,030
+running time
+and this is smaller than that so
+
+724
+00:16:57,030 --> 00:16:57,040
+and this is smaller than that so
+ 
+
+725
+00:16:57,040 --> 00:16:59,990
+and this is smaller than that so
+that would be fine right what do we do
+
+726
+00:16:59,990 --> 00:17:00,000
+that would be fine right what do we do
+ 
+
+727
+00:17:00,000 --> 00:17:00,629
+that would be fine right what do we do
+we have
+
+728
+00:17:00,629 --> 00:17:00,639
+we have
+ 
+
+729
+00:17:00,639 --> 00:17:04,069
+we have
+our new graph g prime it has all
+
+730
+00:17:04,069 --> 00:17:04,079
+our new graph g prime it has all
+ 
+
+731
+00:17:04,079 --> 00:17:05,669
+our new graph g prime it has all
+positive edge weights so we
+
+732
+00:17:05,669 --> 00:17:05,679
+positive edge weights so we
+ 
+
+733
+00:17:05,679 --> 00:17:08,390
+positive edge weights so we
+run all pair shortest paths in here by
+
+734
+00:17:08,390 --> 00:17:08,400
+run all pair shortest paths in here by
+ 
+
+735
+00:17:08,400 --> 00:17:09,669
+run all pair shortest paths in here by
+just running dijkstra v
+
+736
+00:17:09,669 --> 00:17:09,679
+just running dijkstra v
+ 
+
+737
+00:17:09,679 --> 00:17:13,029
+just running dijkstra v
+times and then for each vertex
+
+738
+00:17:13,029 --> 00:17:13,039
+times and then for each vertex
+ 
+
+739
+00:17:13,039 --> 00:17:16,949
+times and then for each vertex
+s we have some shortest path tree
+
+740
+00:17:16,949 --> 00:17:16,959
+s we have some shortest path tree
+ 
+
+741
+00:17:16,959 --> 00:17:19,270
+s we have some shortest path tree
+to all the things that's connected to
+
+742
+00:17:19,270 --> 00:17:19,280
+to all the things that's connected to
+ 
+
+743
+00:17:19,280 --> 00:17:19,990
+to all the things that's connected to
+right
+
+744
+00:17:19,990 --> 00:17:20,000
+right
+ 
+
+745
+00:17:20,000 --> 00:17:24,789
+right
+we can look at that path in g
+
+746
+00:17:24,789 --> 00:17:24,799
+we can look at that path in g
+ 
+
+747
+00:17:24,799 --> 00:17:27,110
+we can look at that path in g
+this is the same combinatorial graph
+
+748
+00:17:27,110 --> 00:17:27,120
+this is the same combinatorial graph
+ 
+
+749
+00:17:27,120 --> 00:17:28,789
+this is the same combinatorial graph
+just with different edge weights
+
+750
+00:17:28,789 --> 00:17:28,799
+just with different edge weights
+ 
+
+751
+00:17:28,799 --> 00:17:31,510
+just with different edge weights
+we can look at that same tree i'm not
+
+752
+00:17:31,510 --> 00:17:31,520
+we can look at that same tree i'm not
+ 
+
+753
+00:17:31,520 --> 00:17:31,990
+we can look at that same tree i'm not
+going to
+
+754
+00:17:31,990 --> 00:17:32,000
+going to
+ 
+
+755
+00:17:32,000 --> 00:17:34,789
+going to
+be able to draw the exact same tree here
+
+756
+00:17:34,789 --> 00:17:34,799
+be able to draw the exact same tree here
+ 
+
+757
+00:17:34,799 --> 00:17:35,669
+be able to draw the exact same tree here
+okay
+
+758
+00:17:35,669 --> 00:17:35,679
+okay
+ 
+
+759
+00:17:35,679 --> 00:17:38,710
+okay
+but what i can do is i can just bfs or
+
+760
+00:17:38,710 --> 00:17:38,720
+but what i can do is i can just bfs or
+ 
+
+761
+00:17:38,720 --> 00:17:41,510
+but what i can do is i can just bfs or
+dfs along this tree
+
+762
+00:17:41,510 --> 00:17:41,520
+dfs along this tree
+ 
+
+763
+00:17:41,520 --> 00:17:43,669
+dfs along this tree
+and every time i have an edge because
+
+764
+00:17:43,669 --> 00:17:43,679
+and every time i have an edge because
+ 
+
+765
+00:17:43,679 --> 00:17:45,990
+and every time i have an edge because
+each one of these is a shortest path
+
+766
+00:17:45,990 --> 00:17:46,000
+each one of these is a shortest path
+ 
+
+767
+00:17:46,000 --> 00:17:49,270
+each one of these is a shortest path
+in this tree i can just compute
+
+768
+00:17:49,270 --> 00:17:49,280
+in this tree i can just compute
+ 
+
+769
+00:17:49,280 --> 00:17:53,430
+in this tree i can just compute
+every time i traverse an edge
+
+770
+00:17:53,430 --> 00:17:53,440
+
+ 
+
+771
+00:17:53,440 --> 00:17:55,990
+
+what its shortest path distance is in g
+
+772
+00:17:55,990 --> 00:17:56,000
+what its shortest path distance is in g
+ 
+
+773
+00:17:56,000 --> 00:17:58,150
+what its shortest path distance is in g
+in linear time for that vertex for that
+
+774
+00:17:58,150 --> 00:17:58,160
+in linear time for that vertex for that
+ 
+
+775
+00:17:58,160 --> 00:17:59,510
+in linear time for that vertex for that
+particular s
+
+776
+00:17:59,510 --> 00:17:59,520
+particular s
+ 
+
+777
+00:17:59,520 --> 00:18:03,029
+particular s
+i do that over all s's and i get this
+
+778
+00:18:03,029 --> 00:18:03,039
+i do that over all s's and i get this
+ 
+
+779
+00:18:03,039 --> 00:18:03,909
+i do that over all s's and i get this
+running time
+
+780
+00:18:03,909 --> 00:18:03,919
+running time
+ 
+
+781
+00:18:03,919 --> 00:18:06,870
+running time
+okay so that's the goal here all right
+
+782
+00:18:06,870 --> 00:18:06,880
+okay so that's the goal here all right
+ 
+
+783
+00:18:06,880 --> 00:18:10,710
+okay so that's the goal here all right
+so we first wanted to find
+
+784
+00:18:10,710 --> 00:18:10,720
+
+ 
+
+785
+00:18:10,720 --> 00:18:12,870
+
+we were wanting to make edge weights
+
+786
+00:18:12,870 --> 00:18:12,880
+we were wanting to make edge weights
+ 
+
+787
+00:18:12,880 --> 00:18:14,789
+we were wanting to make edge weights
+non-negative while preserving shortest
+
+788
+00:18:14,789 --> 00:18:14,799
+non-negative while preserving shortest
+ 
+
+789
+00:18:14,799 --> 00:18:15,430
+non-negative while preserving shortest
+paths
+
+790
+00:18:15,430 --> 00:18:15,440
+paths
+ 
+
+791
+00:18:15,440 --> 00:18:18,230
+paths
+because if we could do that we could
+
+792
+00:18:18,230 --> 00:18:18,240
+because if we could do that we could
+ 
+
+793
+00:18:18,240 --> 00:18:18,870
+because if we could do that we could
+solve our
+
+794
+00:18:18,870 --> 00:18:18,880
+solve our
+ 
+
+795
+00:18:18,880 --> 00:18:21,750
+solve our
+original all-pair shortest paths problem
+
+796
+00:18:21,750 --> 00:18:21,760
+original all-pair shortest paths problem
+ 
+
+797
+00:18:21,760 --> 00:18:22,549
+original all-pair shortest paths problem
+okay
+
+798
+00:18:22,549 --> 00:18:22,559
+okay
+ 
+
+799
+00:18:22,559 --> 00:18:29,830
+okay
+so this is the proof sketch
+
+800
+00:18:29,830 --> 00:18:29,840
+so this is the proof sketch
+ 
+
+801
+00:18:29,840 --> 00:18:35,110
+so this is the proof sketch
+but how can we do this but how
+
+802
+00:18:35,110 --> 00:18:35,120
+
+ 
+
+803
+00:18:35,120 --> 00:18:37,350
+
+it doesn't even seem like this could be
+
+804
+00:18:37,350 --> 00:18:37,360
+it doesn't even seem like this could be
+ 
+
+805
+00:18:37,360 --> 00:18:38,630
+it doesn't even seem like this could be
+possible generally
+
+806
+00:18:38,630 --> 00:18:38,640
+possible generally
+ 
+
+807
+00:18:38,640 --> 00:18:41,750
+possible generally
+right how can i just re-weight the edges
+
+808
+00:18:41,750 --> 00:18:41,760
+right how can i just re-weight the edges
+ 
+
+809
+00:18:41,760 --> 00:18:43,750
+right how can i just re-weight the edges
+and maintain that the shortest path
+
+810
+00:18:43,750 --> 00:18:43,760
+and maintain that the shortest path
+ 
+
+811
+00:18:43,760 --> 00:18:45,430
+and maintain that the shortest path
+trees are the same
+
+812
+00:18:45,430 --> 00:18:45,440
+trees are the same
+ 
+
+813
+00:18:45,440 --> 00:18:47,350
+trees are the same
+that seems like hard to do and in
+
+814
+00:18:47,350 --> 00:18:47,360
+that seems like hard to do and in
+ 
+
+815
+00:18:47,360 --> 00:18:49,430
+that seems like hard to do and in
+particular
+
+816
+00:18:49,430 --> 00:18:49,440
+particular
+ 
+
+817
+00:18:49,440 --> 00:18:51,350
+particular
+if there are there's a negative weight
+
+818
+00:18:51,350 --> 00:18:51,360
+if there are there's a negative weight
+ 
+
+819
+00:18:51,360 --> 00:18:52,630
+if there are there's a negative weight
+cycle in this graph
+
+820
+00:18:52,630 --> 00:18:52,640
+cycle in this graph
+ 
+
+821
+00:18:52,640 --> 00:18:59,190
+cycle in this graph
+it's impossible to do right so claim
+
+822
+00:18:59,190 --> 00:18:59,200
+
+ 
+
+823
+00:18:59,200 --> 00:19:03,669
+
+not possible
+
+824
+00:19:03,669 --> 00:19:03,679
+
+ 
+
+825
+00:19:03,679 --> 00:19:09,510
+
+if g contains
+
+826
+00:19:09,510 --> 00:19:09,520
+
+ 
+
+827
+00:19:09,520 --> 00:19:18,950
+
+a negative weight cycle
+
+828
+00:19:18,950 --> 00:19:18,960
+
+ 
+
+829
+00:19:18,960 --> 00:19:22,230
+
+okay the exclamation point is just
+
+830
+00:19:22,230 --> 00:19:22,240
+okay the exclamation point is just
+ 
+
+831
+00:19:22,240 --> 00:19:25,830
+okay the exclamation point is just
+my comment here
+
+832
+00:19:25,830 --> 00:19:25,840
+my comment here
+ 
+
+833
+00:19:25,840 --> 00:19:28,549
+my comment here
+so if g contains a negative weight cycle
+
+834
+00:19:28,549 --> 00:19:28,559
+so if g contains a negative weight cycle
+ 
+
+835
+00:19:28,559 --> 00:19:28,870
+so if g contains a negative weight cycle
+then
+
+836
+00:19:28,870 --> 00:19:28,880
+then
+ 
+
+837
+00:19:28,880 --> 00:19:32,470
+then
+in particular the shortest path distance
+
+838
+00:19:32,470 --> 00:19:32,480
+in particular the shortest path distance
+ 
+
+839
+00:19:32,480 --> 00:19:36,549
+in particular the shortest path distance
+or a shortest path in g
+
+840
+00:19:36,549 --> 00:19:36,559
+or a shortest path in g
+ 
+
+841
+00:19:36,559 --> 00:19:39,830
+or a shortest path in g
+right if this is g say we have a
+
+842
+00:19:39,830 --> 00:19:39,840
+right if this is g say we have a
+ 
+
+843
+00:19:39,840 --> 00:19:41,909
+right if this is g say we have a
+negative weight cycle
+
+844
+00:19:41,909 --> 00:19:41,919
+negative weight cycle
+ 
+
+845
+00:19:41,919 --> 00:19:44,950
+negative weight cycle
+directed cycle c here
+
+846
+00:19:44,950 --> 00:19:44,960
+directed cycle c here
+ 
+
+847
+00:19:44,960 --> 00:19:48,310
+directed cycle c here
+in particular the shortest path from
+
+848
+00:19:48,310 --> 00:19:48,320
+in particular the shortest path from
+ 
+
+849
+00:19:48,320 --> 00:19:51,270
+in particular the shortest path from
+this vertex on the cycle to this vertex
+
+850
+00:19:51,270 --> 00:19:51,280
+this vertex on the cycle to this vertex
+ 
+
+851
+00:19:51,280 --> 00:19:54,789
+this vertex on the cycle to this vertex
+on the cycle
+
+852
+00:19:54,789 --> 00:19:54,799
+
+ 
+
+853
+00:19:54,799 --> 00:19:58,630
+
+what is its shortest path it's infinite
+
+854
+00:19:58,630 --> 00:19:58,640
+what is its shortest path it's infinite
+ 
+
+855
+00:19:58,640 --> 00:20:00,950
+what is its shortest path it's infinite
+a shortest path is infinite around this
+
+856
+00:20:00,950 --> 00:20:00,960
+a shortest path is infinite around this
+ 
+
+857
+00:20:00,960 --> 00:20:02,390
+a shortest path is infinite around this
+cycle you just keep going around the
+
+858
+00:20:02,390 --> 00:20:02,400
+cycle you just keep going around the
+ 
+
+859
+00:20:02,400 --> 00:20:03,029
+cycle you just keep going around the
+cycle
+
+860
+00:20:03,029 --> 00:20:03,039
+cycle
+ 
+
+861
+00:20:03,039 --> 00:20:04,310
+cycle
+over and over and over again because it
+
+862
+00:20:04,310 --> 00:20:04,320
+over and over and over again because it
+ 
+
+863
+00:20:04,320 --> 00:20:06,549
+over and over and over again because it
+has negative weight right
+
+864
+00:20:06,549 --> 00:20:06,559
+has negative weight right
+ 
+
+865
+00:20:06,559 --> 00:20:11,110
+has negative weight right
+weight of c is less than
+
+866
+00:20:11,110 --> 00:20:11,120
+weight of c is less than
+ 
+
+867
+00:20:11,120 --> 00:20:12,789
+weight of c is less than
+zero strictly right that's what a
+
+868
+00:20:12,789 --> 00:20:12,799
+zero strictly right that's what a
+ 
+
+869
+00:20:12,799 --> 00:20:14,390
+zero strictly right that's what a
+negative weight cycle is
+
+870
+00:20:14,390 --> 00:20:14,400
+negative weight cycle is
+ 
+
+871
+00:20:14,400 --> 00:20:17,029
+negative weight cycle is
+okay so the shortest path a shortest
+
+872
+00:20:17,029 --> 00:20:17,039
+okay so the shortest path a shortest
+ 
+
+873
+00:20:17,039 --> 00:20:18,549
+okay so the shortest path a shortest
+path from s to t
+
+874
+00:20:18,549 --> 00:20:18,559
+path from s to t
+ 
+
+875
+00:20:18,559 --> 00:20:20,950
+path from s to t
+has infinite length and in particular is
+
+876
+00:20:20,950 --> 00:20:20,960
+has infinite length and in particular is
+ 
+
+877
+00:20:20,960 --> 00:20:23,029
+has infinite length and in particular is
+non-simple
+
+878
+00:20:23,029 --> 00:20:23,039
+non-simple
+ 
+
+879
+00:20:23,039 --> 00:20:26,710
+non-simple
+however
+
+880
+00:20:26,710 --> 00:20:26,720
+
+ 
+
+881
+00:20:26,720 --> 00:20:30,070
+
+so so
+
+882
+00:20:30,070 --> 00:20:30,080
+so so
+ 
+
+883
+00:20:30,080 --> 00:20:33,430
+so so
+shortest path from
+
+884
+00:20:33,430 --> 00:20:33,440
+
+ 
+
+885
+00:20:33,440 --> 00:20:37,830
+
+shortest path
+
+886
+00:20:37,830 --> 00:20:37,840
+shortest path
+ 
+
+887
+00:20:37,840 --> 00:20:41,029
+shortest path
+from s to t
+
+888
+00:20:41,029 --> 00:20:41,039
+from s to t
+ 
+
+889
+00:20:41,039 --> 00:20:48,549
+from s to t
+is non-simple
+
+890
+00:20:48,549 --> 00:20:48,559
+is non-simple
+ 
+
+891
+00:20:48,559 --> 00:20:52,310
+is non-simple
+but as we proved in the last lecture
+
+892
+00:20:52,310 --> 00:20:52,320
+but as we proved in the last lecture
+ 
+
+893
+00:20:52,320 --> 00:20:57,990
+but as we proved in the last lecture
+shortest paths
+
+894
+00:20:57,990 --> 00:20:58,000
+
+ 
+
+895
+00:20:58,000 --> 00:21:02,070
+
+in a graph
+
+896
+00:21:02,070 --> 00:21:02,080
+in a graph
+ 
+
+897
+00:21:02,080 --> 00:21:05,110
+in a graph
+with
+
+898
+00:21:05,110 --> 00:21:05,120
+
+ 
+
+899
+00:21:05,120 --> 00:21:09,510
+
+non-negative weights
+
+900
+00:21:09,510 --> 00:21:09,520
+
+ 
+
+901
+00:21:09,520 --> 00:21:11,909
+
+are what are simple right because
+
+902
+00:21:11,909 --> 00:21:11,919
+are what are simple right because
+ 
+
+903
+00:21:11,919 --> 00:21:19,909
+are what are simple right because
+they're exist shortest path trees
+
+904
+00:21:19,909 --> 00:21:19,919
+
+ 
+
+905
+00:21:19,919 --> 00:21:23,350
+
+so that's a contradiction so
+
+906
+00:21:23,350 --> 00:21:23,360
+so that's a contradiction so
+ 
+
+907
+00:21:23,360 --> 00:21:27,029
+so that's a contradiction so
+this is not possible okay
+
+908
+00:21:27,029 --> 00:21:27,039
+this is not possible okay
+ 
+
+909
+00:21:27,039 --> 00:21:30,230
+this is not possible okay
+so given a graph
+
+910
+00:21:30,230 --> 00:21:30,240
+so given a graph
+ 
+
+911
+00:21:30,240 --> 00:21:33,590
+so given a graph
+with negative weights but no negative
+
+912
+00:21:33,590 --> 00:21:33,600
+with negative weights but no negative
+ 
+
+913
+00:21:33,600 --> 00:21:34,310
+with negative weights but no negative
+cycle
+
+914
+00:21:34,310 --> 00:21:34,320
+cycle
+ 
+
+915
+00:21:34,320 --> 00:21:36,870
+cycle
+it's still not clear how we could find
+
+916
+00:21:36,870 --> 00:21:36,880
+it's still not clear how we could find
+ 
+
+917
+00:21:36,880 --> 00:21:39,270
+it's still not clear how we could find
+such a re-weighting of the graph
+
+918
+00:21:39,270 --> 00:21:39,280
+such a re-weighting of the graph
+ 
+
+919
+00:21:39,280 --> 00:21:42,070
+such a re-weighting of the graph
+can we do this well we're going to
+
+920
+00:21:42,070 --> 00:21:42,080
+can we do this well we're going to
+ 
+
+921
+00:21:42,080 --> 00:21:42,789
+can we do this well we're going to
+exploit
+
+922
+00:21:42,789 --> 00:21:42,799
+exploit
+ 
+
+923
+00:21:42,799 --> 00:21:46,310
+exploit
+a little idea here how can we
+
+924
+00:21:46,310 --> 00:21:46,320
+a little idea here how can we
+ 
+
+925
+00:21:46,320 --> 00:21:50,549
+a little idea here how can we
+transform the weights of a path well how
+
+926
+00:21:50,549 --> 00:21:50,559
+transform the weights of a path well how
+ 
+
+927
+00:21:50,559 --> 00:21:54,070
+transform the weights of a path well how
+what's a a silly idea i have this silly
+
+928
+00:21:54,070 --> 00:21:54,080
+what's a a silly idea i have this silly
+ 
+
+929
+00:21:54,080 --> 00:21:55,270
+what's a a silly idea i have this silly
+idea
+
+930
+00:21:55,270 --> 00:21:55,280
+idea
+ 
+
+931
+00:21:55,280 --> 00:21:57,190
+idea
+if i don't want negative edge weights in
+
+932
+00:21:57,190 --> 00:21:57,200
+if i don't want negative edge weights in
+ 
+
+933
+00:21:57,200 --> 00:21:59,430
+if i don't want negative edge weights in
+this graph uh this is messy
+
+934
+00:21:59,430 --> 00:21:59,440
+this graph uh this is messy
+ 
+
+935
+00:21:59,440 --> 00:22:01,750
+this graph uh this is messy
+in the back we got edge weights 1 minus
+
+936
+00:22:01,750 --> 00:22:01,760
+in the back we got edge weights 1 minus
+ 
+
+937
+00:22:01,760 --> 00:22:02,470
+in the back we got edge weights 1 minus
+2 0
+
+938
+00:22:02,470 --> 00:22:02,480
+2 0
+ 
+
+939
+00:22:02,480 --> 00:22:06,549
+2 0
+1 4 5 and 1.
+
+940
+00:22:06,549 --> 00:22:06,559
+1 4 5 and 1.
+ 
+
+941
+00:22:06,559 --> 00:22:08,070
+1 4 5 and 1.
+there's only one negative edge weight
+
+942
+00:22:08,070 --> 00:22:08,080
+there's only one negative edge weight
+ 
+
+943
+00:22:08,080 --> 00:22:10,230
+there's only one negative edge weight
+here
+
+944
+00:22:10,230 --> 00:22:10,240
+here
+ 
+
+945
+00:22:10,240 --> 00:22:14,230
+here
+what if i just added a large number or
+
+946
+00:22:14,230 --> 00:22:14,240
+what if i just added a large number or
+ 
+
+947
+00:22:14,240 --> 00:22:15,430
+what if i just added a large number or
+in particular
+
+948
+00:22:15,430 --> 00:22:15,440
+in particular
+ 
+
+949
+00:22:15,440 --> 00:22:19,430
+in particular
+the the negative of the smallest edge in
+
+950
+00:22:19,430 --> 00:22:19,440
+the the negative of the smallest edge in
+ 
+
+951
+00:22:19,440 --> 00:22:20,470
+the the negative of the smallest edge in
+my graph
+
+952
+00:22:20,470 --> 00:22:20,480
+my graph
+ 
+
+953
+00:22:20,480 --> 00:22:23,669
+my graph
+to every edge in my graph then i'll have
+
+954
+00:22:23,669 --> 00:22:23,679
+to every edge in my graph then i'll have
+ 
+
+955
+00:22:23,679 --> 00:22:24,470
+to every edge in my graph then i'll have
+a graph
+
+956
+00:22:24,470 --> 00:22:24,480
+a graph
+ 
+
+957
+00:22:24,480 --> 00:22:29,029
+a graph
+with non-negative weights fantastic
+
+958
+00:22:29,029 --> 00:22:29,039
+with non-negative weights fantastic
+ 
+
+959
+00:22:29,039 --> 00:22:32,230
+with non-negative weights fantastic
+why is that not a good idea
+
+960
+00:22:32,230 --> 00:22:32,240
+why is that not a good idea
+ 
+
+961
+00:22:32,240 --> 00:22:34,070
+why is that not a good idea
+well in particular if i did that to this
+
+962
+00:22:34,070 --> 00:22:34,080
+well in particular if i did that to this
+ 
+
+963
+00:22:34,080 --> 00:22:37,990
+well in particular if i did that to this
+graph if i added 2 to every edge
+
+964
+00:22:37,990 --> 00:22:38,000
+graph if i added 2 to every edge
+ 
+
+965
+00:22:38,000 --> 00:22:40,070
+graph if i added 2 to every edge
+the weight of this path which was the
+
+966
+00:22:40,070 --> 00:22:40,080
+the weight of this path which was the
+ 
+
+967
+00:22:40,080 --> 00:22:42,070
+the weight of this path which was the
+shortest path
+
+968
+00:22:42,070 --> 00:22:42,080
+shortest path
+ 
+
+969
+00:22:42,080 --> 00:22:45,750
+shortest path
+changed from weight three
+
+970
+00:22:45,750 --> 00:22:45,760
+
+ 
+
+971
+00:22:45,760 --> 00:22:49,830
+
+to weight nine because i added two for
+
+972
+00:22:49,830 --> 00:22:49,840
+to weight nine because i added two for
+ 
+
+973
+00:22:49,840 --> 00:22:50,950
+to weight nine because i added two for
+every
+
+974
+00:22:50,950 --> 00:22:50,960
+every
+ 
+
+975
+00:22:50,960 --> 00:22:54,390
+every
+edge but this path which wasn't the
+
+976
+00:22:54,390 --> 00:22:54,400
+edge but this path which wasn't the
+ 
+
+977
+00:22:54,400 --> 00:22:55,990
+edge but this path which wasn't the
+shortest path in the original graph it
+
+978
+00:22:55,990 --> 00:22:56,000
+shortest path in the original graph it
+ 
+
+979
+00:22:56,000 --> 00:22:58,630
+shortest path in the original graph it
+had weight four
+
+980
+00:22:58,630 --> 00:22:58,640
+had weight four
+ 
+
+981
+00:22:58,640 --> 00:23:01,510
+had weight four
+increased only by two now that is the
+
+982
+00:23:01,510 --> 00:23:01,520
+increased only by two now that is the
+ 
+
+983
+00:23:01,520 --> 00:23:03,750
+increased only by two now that is the
+shortest path or it's a shorter path
+
+984
+00:23:03,750 --> 00:23:03,760
+shortest path or it's a shorter path
+ 
+
+985
+00:23:03,760 --> 00:23:04,710
+shortest path or it's a shorter path
+than this one
+
+986
+00:23:04,710 --> 00:23:04,720
+than this one
+ 
+
+987
+00:23:04,720 --> 00:23:07,270
+than this one
+so this one can't be a shortest path
+
+988
+00:23:07,270 --> 00:23:07,280
+so this one can't be a shortest path
+ 
+
+989
+00:23:07,280 --> 00:23:07,990
+so this one can't be a shortest path
+right
+
+990
+00:23:07,990 --> 00:23:08,000
+right
+ 
+
+991
+00:23:08,000 --> 00:23:10,470
+right
+so that transformation sure would make
+
+992
+00:23:10,470 --> 00:23:10,480
+so that transformation sure would make
+ 
+
+993
+00:23:10,480 --> 00:23:11,590
+so that transformation sure would make
+all the edge weights
+
+994
+00:23:11,590 --> 00:23:11,600
+all the edge weights
+ 
+
+995
+00:23:11,600 --> 00:23:14,070
+all the edge weights
+non-negative but would not preserve
+
+996
+00:23:14,070 --> 00:23:14,080
+non-negative but would not preserve
+ 
+
+997
+00:23:14,080 --> 00:23:15,590
+non-negative but would not preserve
+shortest paths
+
+998
+00:23:15,590 --> 00:23:15,600
+shortest paths
+ 
+
+999
+00:23:15,600 --> 00:23:20,230
+shortest paths
+right in particular if i added
+
+1000
+00:23:20,230 --> 00:23:20,240
+right in particular if i added
+ 
+
+1001
+00:23:20,240 --> 00:23:23,350
+right in particular if i added
+the same edge weight to every edge
+
+1002
+00:23:23,350 --> 00:23:23,360
+the same edge weight to every edge
+ 
+
+1003
+00:23:23,360 --> 00:23:26,549
+the same edge weight to every edge
+i will bias toward taking paths
+
+1004
+00:23:26,549 --> 00:23:26,559
+i will bias toward taking paths
+ 
+
+1005
+00:23:26,559 --> 00:23:29,510
+i will bias toward taking paths
+that have fewer edges not just smaller
+
+1006
+00:23:29,510 --> 00:23:29,520
+that have fewer edges not just smaller
+ 
+
+1007
+00:23:29,520 --> 00:23:30,710
+that have fewer edges not just smaller
+weight
+
+1008
+00:23:30,710 --> 00:23:30,720
+weight
+ 
+
+1009
+00:23:30,720 --> 00:23:33,270
+weight
+okay so that first idea doesn't work
+
+1010
+00:23:33,270 --> 00:23:33,280
+okay so that first idea doesn't work
+ 
+
+1011
+00:23:33,280 --> 00:23:34,830
+okay so that first idea doesn't work
+right
+
+1012
+00:23:34,830 --> 00:23:34,840
+right
+ 
+
+1013
+00:23:34,840 --> 00:23:37,830
+right
+idea
+
+1014
+00:23:37,830 --> 00:23:37,840
+idea
+ 
+
+1015
+00:23:37,840 --> 00:23:41,669
+idea
+add large
+
+1016
+00:23:41,669 --> 00:23:41,679
+add large
+ 
+
+1017
+00:23:41,679 --> 00:23:45,190
+add large
+number to each
+
+1018
+00:23:45,190 --> 00:23:45,200
+number to each
+ 
+
+1019
+00:23:45,200 --> 00:23:49,029
+number to each
+edge
+
+1020
+00:23:49,029 --> 00:23:49,039
+
+ 
+
+1021
+00:23:49,039 --> 00:23:54,549
+
+this is bad uh makes
+
+1022
+00:23:54,549 --> 00:23:54,559
+
+ 
+
+1023
+00:23:54,559 --> 00:23:57,590
+
+weights
+
+1024
+00:23:57,590 --> 00:23:57,600
+
+ 
+
+1025
+00:23:57,600 --> 00:24:02,830
+
+non-negative
+
+1026
+00:24:02,830 --> 00:24:02,840
+
+ 
+
+1027
+00:24:02,840 --> 00:24:05,510
+
+but does
+
+1028
+00:24:05,510 --> 00:24:05,520
+but does
+ 
+
+1029
+00:24:05,520 --> 00:24:10,070
+but does
+not preserve
+
+1030
+00:24:10,070 --> 00:24:10,080
+
+ 
+
+1031
+00:24:10,080 --> 00:24:13,750
+
+shortest paths so this is a
+
+1032
+00:24:13,750 --> 00:24:13,760
+shortest paths so this is a
+ 
+
+1033
+00:24:13,760 --> 00:24:19,510
+shortest paths so this is a
+not a good idea bad idea
+
+1034
+00:24:19,510 --> 00:24:19,520
+not a good idea bad idea
+ 
+
+1035
+00:24:19,520 --> 00:24:22,149
+not a good idea bad idea
+is there any way you can think of to
+
+1036
+00:24:22,149 --> 00:24:22,159
+is there any way you can think of to
+ 
+
+1037
+00:24:22,159 --> 00:24:24,070
+is there any way you can think of to
+modify the edge weights in a graph
+
+1038
+00:24:24,070 --> 00:24:24,080
+modify the edge weights in a graph
+ 
+
+1039
+00:24:24,080 --> 00:24:27,269
+modify the edge weights in a graph
+in any way that will preserve shortest
+
+1040
+00:24:27,269 --> 00:24:27,279
+in any way that will preserve shortest
+ 
+
+1041
+00:24:27,279 --> 00:24:28,870
+in any way that will preserve shortest
+paths
+
+1042
+00:24:28,870 --> 00:24:28,880
+paths
+ 
+
+1043
+00:24:28,880 --> 00:24:32,230
+paths
+so here's a
+
+1044
+00:24:32,230 --> 00:24:32,240
+so here's a
+ 
+
+1045
+00:24:32,240 --> 00:24:36,630
+so here's a
+an idea for you
+
+1046
+00:24:36,630 --> 00:24:36,640
+
+ 
+
+1047
+00:24:36,640 --> 00:24:38,630
+
+which is kind of this critical step in
+
+1048
+00:24:38,630 --> 00:24:38,640
+which is kind of this critical step in
+ 
+
+1049
+00:24:38,640 --> 00:24:39,830
+which is kind of this critical step in
+johnson's and
+
+1050
+00:24:39,830 --> 00:24:39,840
+johnson's and
+ 
+
+1051
+00:24:39,840 --> 00:24:43,510
+johnson's and
+a lot of graph transformation algorithms
+
+1052
+00:24:43,510 --> 00:24:43,520
+a lot of graph transformation algorithms
+ 
+
+1053
+00:24:43,520 --> 00:24:47,269
+a lot of graph transformation algorithms
+if i have a vertex say this middle guy
+
+1054
+00:24:47,269 --> 00:24:47,279
+if i have a vertex say this middle guy
+ 
+
+1055
+00:24:47,279 --> 00:24:51,269
+if i have a vertex say this middle guy
+say v
+
+1056
+00:24:51,269 --> 00:24:51,279
+
+ 
+
+1057
+00:24:51,279 --> 00:24:55,269
+
+every path
+
+1058
+00:24:55,269 --> 00:24:55,279
+
+ 
+
+1059
+00:24:55,279 --> 00:24:59,190
+
+from v goes through an outgoing edge of
+
+1060
+00:24:59,190 --> 00:24:59,200
+from v goes through an outgoing edge of
+ 
+
+1061
+00:24:59,200 --> 00:25:00,549
+from v goes through an outgoing edge of
+v
+
+1062
+00:25:00,549 --> 00:25:00,559
+v
+ 
+
+1063
+00:25:00,559 --> 00:25:04,549
+v
+and every path going into v
+
+1064
+00:25:04,549 --> 00:25:04,559
+
+ 
+
+1065
+00:25:04,559 --> 00:25:08,470
+
+goes through an edge going into v
+
+1066
+00:25:08,470 --> 00:25:08,480
+goes through an edge going into v
+ 
+
+1067
+00:25:08,480 --> 00:25:11,510
+goes through an edge going into v
+i haven't said anything it is i've said
+
+1068
+00:25:11,510 --> 00:25:11,520
+i haven't said anything it is i've said
+ 
+
+1069
+00:25:11,520 --> 00:25:12,789
+i haven't said anything it is i've said
+very stupid things
+
+1070
+00:25:12,789 --> 00:25:12,799
+very stupid things
+ 
+
+1071
+00:25:12,799 --> 00:25:16,630
+very stupid things
+but that observation is critical here if
+
+1072
+00:25:16,630 --> 00:25:16,640
+but that observation is critical here if
+ 
+
+1073
+00:25:16,640 --> 00:25:19,830
+but that observation is critical here if
+i add a number or let me see if i got
+
+1074
+00:25:19,830 --> 00:25:19,840
+i add a number or let me see if i got
+ 
+
+1075
+00:25:19,840 --> 00:25:20,470
+i add a number or let me see if i got
+this right
+
+1076
+00:25:20,470 --> 00:25:20,480
+this right
+ 
+
+1077
+00:25:20,480 --> 00:25:24,310
+this right
+in terms of adding and subtracting
+
+1078
+00:25:24,310 --> 00:25:24,320
+in terms of adding and subtracting
+ 
+
+1079
+00:25:24,320 --> 00:25:28,070
+in terms of adding and subtracting
+if i add a number to all outgoing edges
+
+1080
+00:25:28,070 --> 00:25:28,080
+if i add a number to all outgoing edges
+ 
+
+1081
+00:25:28,080 --> 00:25:29,750
+if i add a number to all outgoing edges
+from a vertex
+
+1082
+00:25:29,750 --> 00:25:29,760
+from a vertex
+ 
+
+1083
+00:25:29,760 --> 00:25:33,510
+from a vertex
+and i subtract that same number
+
+1084
+00:25:33,510 --> 00:25:33,520
+and i subtract that same number
+ 
+
+1085
+00:25:33,520 --> 00:25:35,750
+and i subtract that same number
+from all uh from the weights of all of
+
+1086
+00:25:35,750 --> 00:25:35,760
+from all uh from the weights of all of
+ 
+
+1087
+00:25:35,760 --> 00:25:38,549
+from all uh from the weights of all of
+the incoming edges to that vertex
+
+1088
+00:25:38,549 --> 00:25:38,559
+the incoming edges to that vertex
+ 
+
+1089
+00:25:38,559 --> 00:25:41,750
+the incoming edges to that vertex
+then every path from v
+
+1090
+00:25:41,750 --> 00:25:41,760
+then every path from v
+ 
+
+1091
+00:25:41,760 --> 00:25:44,390
+then every path from v
+is changed by the same amount because
+
+1092
+00:25:44,390 --> 00:25:44,400
+is changed by the same amount because
+ 
+
+1093
+00:25:44,400 --> 00:25:45,430
+is changed by the same amount because
+every path from v
+
+1094
+00:25:45,430 --> 00:25:45,440
+every path from v
+ 
+
+1095
+00:25:45,440 --> 00:25:47,990
+every path from v
+goes through one of those outgoing edges
+
+1096
+00:25:47,990 --> 00:25:48,000
+goes through one of those outgoing edges
+ 
+
+1097
+00:25:48,000 --> 00:25:48,870
+goes through one of those outgoing edges
+and any
+
+1098
+00:25:48,870 --> 00:25:48,880
+and any
+ 
+
+1099
+00:25:48,880 --> 00:25:52,149
+and any
+path going into v has also changed by
+
+1100
+00:25:52,149 --> 00:25:52,159
+path going into v has also changed by
+ 
+
+1101
+00:25:52,159 --> 00:25:53,430
+path going into v has also changed by
+the same amount
+
+1102
+00:25:53,430 --> 00:25:53,440
+the same amount
+ 
+
+1103
+00:25:53,440 --> 00:25:57,350
+the same amount
+in particular it's changed by a negative
+
+1104
+00:25:57,350 --> 00:25:57,360
+in particular it's changed by a negative
+ 
+
+1105
+00:25:57,360 --> 00:26:01,430
+in particular it's changed by a negative
+whatever we added to the outgoing edges
+
+1106
+00:26:01,430 --> 00:26:01,440
+whatever we added to the outgoing edges
+ 
+
+1107
+00:26:01,440 --> 00:26:05,430
+whatever we added to the outgoing edges
+so such a transformation
+
+1108
+00:26:05,430 --> 00:26:05,440
+so such a transformation
+ 
+
+1109
+00:26:05,440 --> 00:26:07,190
+so such a transformation
+adding a number from all the outgoing
+
+1110
+00:26:07,190 --> 00:26:07,200
+adding a number from all the outgoing
+ 
+
+1111
+00:26:07,200 --> 00:26:09,029
+adding a number from all the outgoing
+edges from a vertex
+
+1112
+00:26:09,029 --> 00:26:09,039
+edges from a vertex
+ 
+
+1113
+00:26:09,039 --> 00:26:10,950
+edges from a vertex
+and subtracting that same number from
+
+1114
+00:26:10,950 --> 00:26:10,960
+and subtracting that same number from
+ 
+
+1115
+00:26:10,960 --> 00:26:13,029
+and subtracting that same number from
+all the incoming edges
+
+1116
+00:26:13,029 --> 00:26:13,039
+all the incoming edges
+ 
+
+1117
+00:26:13,039 --> 00:26:15,430
+all the incoming edges
+preserves shortest paths that's a claim
+
+1118
+00:26:15,430 --> 00:26:15,440
+preserves shortest paths that's a claim
+ 
+
+1119
+00:26:15,440 --> 00:26:18,630
+preserves shortest paths that's a claim
+idea
+
+1120
+00:26:18,630 --> 00:26:18,640
+
+ 
+
+1121
+00:26:18,640 --> 00:26:25,029
+
+this is a better idea
+
+1122
+00:26:25,029 --> 00:26:25,039
+this is a better idea
+ 
+
+1123
+00:26:25,039 --> 00:26:28,950
+this is a better idea
+given vertex
+
+1124
+00:26:28,950 --> 00:26:28,960
+given vertex
+ 
+
+1125
+00:26:28,960 --> 00:26:32,310
+given vertex
+v
+
+1126
+00:26:32,310 --> 00:26:32,320
+
+ 
+
+1127
+00:26:32,320 --> 00:26:35,990
+
+add i'm going to
+
+1128
+00:26:35,990 --> 00:26:36,000
+add i'm going to
+ 
+
+1129
+00:26:36,000 --> 00:26:39,269
+add i'm going to
+put this on two lines
+
+1130
+00:26:39,269 --> 00:26:39,279
+put this on two lines
+ 
+
+1131
+00:26:39,279 --> 00:26:43,350
+put this on two lines
+add weight
+
+1132
+00:26:43,350 --> 00:26:43,360
+
+ 
+
+1133
+00:26:43,360 --> 00:26:46,549
+
+h to all
+
+1134
+00:26:46,549 --> 00:26:46,559
+h to all
+ 
+
+1135
+00:26:46,559 --> 00:26:55,669
+h to all
+outgoing yeah outgoing edges
+
+1136
+00:26:55,669 --> 00:26:55,679
+
+ 
+
+1137
+00:26:55,679 --> 00:26:58,950
+
+and subtract
+
+1138
+00:26:58,950 --> 00:26:58,960
+and subtract
+ 
+
+1139
+00:26:58,960 --> 00:27:04,830
+and subtract
+weight to all incoming
+
+1140
+00:27:04,830 --> 00:27:04,840
+
+ 
+
+1141
+00:27:04,840 --> 00:27:07,190
+
+edges
+
+1142
+00:27:07,190 --> 00:27:07,200
+edges
+ 
+
+1143
+00:27:07,200 --> 00:27:15,510
+edges
+so that's the idea and the claim is
+
+1144
+00:27:15,510 --> 00:27:15,520
+
+ 
+
+1145
+00:27:15,520 --> 00:27:18,630
+
+this transformation
+
+1146
+00:27:18,630 --> 00:27:18,640
+this transformation
+ 
+
+1147
+00:27:18,640 --> 00:27:26,310
+this transformation
+you know shortest paths
+
+1148
+00:27:26,310 --> 00:27:26,320
+
+ 
+
+1149
+00:27:26,320 --> 00:27:29,710
+
+are preserved
+
+1150
+00:27:29,710 --> 00:27:29,720
+
+ 
+
+1151
+00:27:29,720 --> 00:27:32,950
+
+preserved
+
+1152
+00:27:32,950 --> 00:27:32,960
+
+ 
+
+1153
+00:27:32,960 --> 00:27:38,070
+
+under this
+
+1154
+00:27:38,070 --> 00:27:38,080
+
+ 
+
+1155
+00:27:38,080 --> 00:27:45,830
+
+transformation
+
+1156
+00:27:45,830 --> 00:27:45,840
+
+ 
+
+1157
+00:27:45,840 --> 00:27:49,190
+
+and why is that it's kind of the exact
+
+1158
+00:27:49,190 --> 00:27:49,200
+and why is that it's kind of the exact
+ 
+
+1159
+00:27:49,200 --> 00:27:51,350
+and why is that it's kind of the exact
+same argument that i had over there
+
+1160
+00:27:51,350 --> 00:27:51,360
+same argument that i had over there
+ 
+
+1161
+00:27:51,360 --> 00:27:57,990
+same argument that i had over there
+right proof
+
+1162
+00:27:57,990 --> 00:27:58,000
+
+ 
+
+1163
+00:27:58,000 --> 00:28:01,190
+
+consider any path in my graph right
+
+1164
+00:28:01,190 --> 00:28:01,200
+consider any path in my graph right
+ 
+
+1165
+00:28:01,200 --> 00:28:07,669
+consider any path in my graph right
+either
+
+1166
+00:28:07,669 --> 00:28:07,679
+
+ 
+
+1167
+00:28:07,679 --> 00:28:10,789
+
+if the path
+
+1168
+00:28:10,789 --> 00:28:10,799
+
+ 
+
+1169
+00:28:10,799 --> 00:28:12,950
+
+path could go through v many times or it
+
+1170
+00:28:12,950 --> 00:28:12,960
+path could go through v many times or it
+ 
+
+1171
+00:28:12,960 --> 00:28:14,470
+path could go through v many times or it
+could go through v net
+
+1172
+00:28:14,470 --> 00:28:14,480
+could go through v net
+ 
+
+1173
+00:28:14,480 --> 00:28:17,830
+could go through v net
+not at all if my path if i if i have a
+
+1174
+00:28:17,830 --> 00:28:17,840
+not at all if my path if i if i have a
+ 
+
+1175
+00:28:17,840 --> 00:28:18,789
+not at all if my path if i if i have a
+path
+
+1176
+00:28:18,789 --> 00:28:18,799
+path
+ 
+
+1177
+00:28:18,799 --> 00:28:23,750
+path
+in my original graph g
+
+1178
+00:28:23,750 --> 00:28:23,760
+
+ 
+
+1179
+00:28:23,760 --> 00:28:27,029
+
+then with pathway
+
+1180
+00:28:27,029 --> 00:28:27,039
+then with pathway
+ 
+
+1181
+00:28:27,039 --> 00:28:31,590
+then with pathway
+w of pi right this is my path
+
+1182
+00:28:31,590 --> 00:28:31,600
+w of pi right this is my path
+ 
+
+1183
+00:28:31,600 --> 00:28:34,630
+w of pi right this is my path
+it goes through
+
+1184
+00:28:34,630 --> 00:28:34,640
+
+ 
+
+1185
+00:28:34,640 --> 00:28:38,070
+
+uh v
+
+1186
+00:28:38,070 --> 00:28:38,080
+uh v
+ 
+
+1187
+00:28:38,080 --> 00:28:41,269
+uh v
+some number of times okay
+
+1188
+00:28:41,269 --> 00:28:41,279
+some number of times okay
+ 
+
+1189
+00:28:41,279 --> 00:28:43,430
+some number of times okay
+so i'm gonna say this is going from s to
+
+1190
+00:28:43,430 --> 00:28:43,440
+so i'm gonna say this is going from s to
+ 
+
+1191
+00:28:43,440 --> 00:28:45,590
+so i'm gonna say this is going from s to
+t
+
+1192
+00:28:45,590 --> 00:28:45,600
+t
+ 
+
+1193
+00:28:45,600 --> 00:28:49,430
+t
+if it crosses
+
+1194
+00:28:49,430 --> 00:28:49,440
+if it crosses
+ 
+
+1195
+00:28:49,440 --> 00:28:51,510
+if it crosses
+v if it never crosses v if it never it
+
+1196
+00:28:51,510 --> 00:28:51,520
+v if it never crosses v if it never it
+ 
+
+1197
+00:28:51,520 --> 00:28:53,029
+v if it never crosses v if it never it
+touches v the
+
+1198
+00:28:53,029 --> 00:28:53,039
+touches v the
+ 
+
+1199
+00:28:53,039 --> 00:28:56,230
+touches v the
+vertex that i transformed then i argue
+
+1200
+00:28:56,230 --> 00:28:56,240
+vertex that i transformed then i argue
+ 
+
+1201
+00:28:56,240 --> 00:28:58,070
+vertex that i transformed then i argue
+that the pathway is the same right
+
+1202
+00:28:58,070 --> 00:28:58,080
+that the pathway is the same right
+ 
+
+1203
+00:28:58,080 --> 00:28:59,590
+that the pathway is the same right
+because i didn't do anything to edges
+
+1204
+00:28:59,590 --> 00:28:59,600
+because i didn't do anything to edges
+ 
+
+1205
+00:28:59,600 --> 00:29:01,350
+because i didn't do anything to edges
+that are in this path
+
+1206
+00:29:01,350 --> 00:29:01,360
+that are in this path
+ 
+
+1207
+00:29:01,360 --> 00:29:04,549
+that are in this path
+alternatively this thing goes through
+
+1208
+00:29:04,549 --> 00:29:04,559
+alternatively this thing goes through
+ 
+
+1209
+00:29:04,559 --> 00:29:10,830
+alternatively this thing goes through
+v sometimes if it goes through v in the
+
+1210
+00:29:10,830 --> 00:29:10,840
+
+ 
+
+1211
+00:29:10,840 --> 00:29:12,549
+
+middle
+
+1212
+00:29:12,549 --> 00:29:12,559
+middle
+ 
+
+1213
+00:29:12,559 --> 00:29:14,789
+middle
+how has the weight of my path changed
+
+1214
+00:29:14,789 --> 00:29:14,799
+how has the weight of my path changed
+ 
+
+1215
+00:29:14,799 --> 00:29:15,830
+how has the weight of my path changed
+well it hasn't
+
+1216
+00:29:15,830 --> 00:29:15,840
+well it hasn't
+ 
+
+1217
+00:29:15,840 --> 00:29:18,789
+well it hasn't
+right because i added a number to all
+
+1218
+00:29:18,789 --> 00:29:18,799
+right because i added a number to all
+ 
+
+1219
+00:29:18,799 --> 00:29:20,710
+right because i added a number to all
+outgoing edges so there's an outgoing
+
+1220
+00:29:20,710 --> 00:29:20,720
+outgoing edges so there's an outgoing
+ 
+
+1221
+00:29:20,720 --> 00:29:21,590
+outgoing edges so there's an outgoing
+edge here
+
+1222
+00:29:21,590 --> 00:29:21,600
+edge here
+ 
+
+1223
+00:29:21,600 --> 00:29:25,190
+edge here
+with weight i've changed by way h
+
+1224
+00:29:25,190 --> 00:29:25,200
+with weight i've changed by way h
+ 
+
+1225
+00:29:25,200 --> 00:29:26,789
+with weight i've changed by way h
+and there's an incoming edge here that
+
+1226
+00:29:26,789 --> 00:29:26,799
+and there's an incoming edge here that
+ 
+
+1227
+00:29:26,799 --> 00:29:28,789
+and there's an incoming edge here that
+i've changed by weight negative h
+
+1228
+00:29:28,789 --> 00:29:28,799
+i've changed by weight negative h
+ 
+
+1229
+00:29:28,799 --> 00:29:31,350
+i've changed by weight negative h
+so these cancel out and you've got zero
+
+1230
+00:29:31,350 --> 00:29:31,360
+so these cancel out and you've got zero
+ 
+
+1231
+00:29:31,360 --> 00:29:32,230
+so these cancel out and you've got zero
+right
+
+1232
+00:29:32,230 --> 00:29:32,240
+right
+ 
+
+1233
+00:29:32,240 --> 00:29:35,830
+right
+so passing through a vertex
+
+1234
+00:29:35,830 --> 00:29:35,840
+so passing through a vertex
+ 
+
+1235
+00:29:35,840 --> 00:29:39,029
+so passing through a vertex
+doesn't change the weight of my path
+
+1236
+00:29:39,029 --> 00:29:39,039
+doesn't change the weight of my path
+ 
+
+1237
+00:29:39,039 --> 00:29:40,950
+doesn't change the weight of my path
+the only way i could change the weight
+
+1238
+00:29:40,950 --> 00:29:40,960
+the only way i could change the weight
+ 
+
+1239
+00:29:40,960 --> 00:29:42,630
+the only way i could change the weight
+of my path is if v
+
+1240
+00:29:42,630 --> 00:29:42,640
+of my path is if v
+ 
+
+1241
+00:29:42,640 --> 00:29:45,669
+of my path is if v
+is the start vertex or the n vertex
+
+1242
+00:29:45,669 --> 00:29:45,679
+is the start vertex or the n vertex
+ 
+
+1243
+00:29:45,679 --> 00:29:48,789
+is the start vertex or the n vertex
+right so it's possible that
+
+1244
+00:29:48,789 --> 00:29:48,799
+right so it's possible that
+ 
+
+1245
+00:29:48,799 --> 00:29:52,630
+right so it's possible that
+s is my vertex or t is my vertex
+
+1246
+00:29:52,630 --> 00:29:52,640
+s is my vertex or t is my vertex
+ 
+
+1247
+00:29:52,640 --> 00:29:56,230
+s is my vertex or t is my vertex
+well for any vertex for any path leaving
+
+1248
+00:29:56,230 --> 00:29:56,240
+well for any vertex for any path leaving
+ 
+
+1249
+00:29:56,240 --> 00:29:59,510
+well for any vertex for any path leaving
+v i will have increased
+
+1250
+00:29:59,510 --> 00:29:59,520
+v i will have increased
+ 
+
+1251
+00:29:59,520 --> 00:30:02,789
+v i will have increased
+the weight of that that that path
+
+1252
+00:30:02,789 --> 00:30:02,799
+the weight of that that that path
+ 
+
+1253
+00:30:02,799 --> 00:30:05,990
+the weight of that that that path
+by h right because i added away h to all
+
+1254
+00:30:05,990 --> 00:30:06,000
+by h right because i added away h to all
+ 
+
+1255
+00:30:06,000 --> 00:30:07,190
+by h right because i added away h to all
+outgoing edges
+
+1256
+00:30:07,190 --> 00:30:07,200
+outgoing edges
+ 
+
+1257
+00:30:07,200 --> 00:30:10,070
+outgoing edges
+so again while the path weight has
+
+1258
+00:30:10,070 --> 00:30:10,080
+so again while the path weight has
+ 
+
+1259
+00:30:10,080 --> 00:30:12,470
+so again while the path weight has
+changed
+
+1260
+00:30:12,470 --> 00:30:12,480
+changed
+ 
+
+1261
+00:30:12,480 --> 00:30:15,669
+changed
+since all of the paths leaving the have
+
+1262
+00:30:15,669 --> 00:30:15,679
+since all of the paths leaving the have
+ 
+
+1263
+00:30:15,679 --> 00:30:17,350
+since all of the paths leaving the have
+changed by the same amount
+
+1264
+00:30:17,350 --> 00:30:17,360
+changed by the same amount
+ 
+
+1265
+00:30:17,360 --> 00:30:19,029
+changed by the same amount
+a shortest path will still be a shortest
+
+1266
+00:30:19,029 --> 00:30:19,039
+a shortest path will still be a shortest
+ 
+
+1267
+00:30:19,039 --> 00:30:21,669
+a shortest path will still be a shortest
+path and same goes for
+
+1268
+00:30:21,669 --> 00:30:21,679
+path and same goes for
+ 
+
+1269
+00:30:21,679 --> 00:30:24,789
+path and same goes for
+t if t the n vertex is v
+
+1270
+00:30:24,789 --> 00:30:24,799
+t if t the n vertex is v
+ 
+
+1271
+00:30:24,799 --> 00:30:27,830
+t if t the n vertex is v
+i'll have subtracted h from all
+
+1272
+00:30:27,830 --> 00:30:27,840
+i'll have subtracted h from all
+ 
+
+1273
+00:30:27,840 --> 00:30:30,389
+i'll have subtracted h from all
+of my incoming edges which means that
+
+1274
+00:30:30,389 --> 00:30:30,399
+of my incoming edges which means that
+ 
+
+1275
+00:30:30,399 --> 00:30:31,430
+of my incoming edges which means that
+any
+
+1276
+00:30:31,430 --> 00:30:31,440
+any
+ 
+
+1277
+00:30:31,440 --> 00:30:33,990
+any
+path ending at t any directed path
+
+1278
+00:30:33,990 --> 00:30:34,000
+path ending at t any directed path
+ 
+
+1279
+00:30:34,000 --> 00:30:35,669
+path ending at t any directed path
+ending at t
+
+1280
+00:30:35,669 --> 00:30:35,679
+ending at t
+ 
+
+1281
+00:30:35,679 --> 00:30:38,630
+ending at t
+also changes by the same value and so
+
+1282
+00:30:38,630 --> 00:30:38,640
+also changes by the same value and so
+ 
+
+1283
+00:30:38,640 --> 00:30:42,310
+also changes by the same value and so
+shortest paths will must be preserved
+
+1284
+00:30:42,310 --> 00:30:42,320
+shortest paths will must be preserved
+ 
+
+1285
+00:30:42,320 --> 00:30:48,830
+shortest paths will must be preserved
+so shortest paths
+
+1286
+00:30:48,830 --> 00:30:48,840
+
+ 
+
+1287
+00:30:48,840 --> 00:30:50,870
+
+preserved so that's pretty cool
+
+1288
+00:30:50,870 --> 00:30:50,880
+preserved so that's pretty cool
+ 
+
+1289
+00:30:50,880 --> 00:30:53,110
+preserved so that's pretty cool
+transformation i can assign
+
+1290
+00:30:53,110 --> 00:30:53,120
+transformation i can assign
+ 
+
+1291
+00:30:53,120 --> 00:30:57,509
+transformation i can assign
+for any vertex such a transformation
+
+1292
+00:30:57,509 --> 00:30:57,519
+for any vertex such a transformation
+ 
+
+1293
+00:30:57,519 --> 00:30:59,029
+for any vertex such a transformation
+which affects all of the edges
+
+1294
+00:30:59,029 --> 00:30:59,039
+which affects all of the edges
+ 
+
+1295
+00:30:59,039 --> 00:31:00,549
+which affects all of the edges
+surrounding it right by
+
+1296
+00:31:00,549 --> 00:31:00,559
+surrounding it right by
+ 
+
+1297
+00:31:00,559 --> 00:31:03,750
+surrounding it right by
+by this h additive factor
+
+1298
+00:31:03,750 --> 00:31:03,760
+by this h additive factor
+ 
+
+1299
+00:31:03,760 --> 00:31:06,870
+by this h additive factor
+either added or subtracted so maybe and
+
+1300
+00:31:06,870 --> 00:31:06,880
+either added or subtracted so maybe and
+ 
+
+1301
+00:31:06,880 --> 00:31:08,630
+either added or subtracted so maybe and
+i can do this independently for every
+
+1302
+00:31:08,630 --> 00:31:08,640
+i can do this independently for every
+ 
+
+1303
+00:31:08,640 --> 00:31:09,750
+i can do this independently for every
+vertex right
+
+1304
+00:31:09,750 --> 00:31:09,760
+vertex right
+ 
+
+1305
+00:31:09,760 --> 00:31:12,230
+vertex right
+if shortest paths were preserved by me
+
+1306
+00:31:12,230 --> 00:31:12,240
+if shortest paths were preserved by me
+ 
+
+1307
+00:31:12,240 --> 00:31:14,070
+if shortest paths were preserved by me
+doing this to one vertex
+
+1308
+00:31:14,070 --> 00:31:14,080
+doing this to one vertex
+ 
+
+1309
+00:31:14,080 --> 00:31:17,190
+doing this to one vertex
+then if i do it to another vertex
+
+1310
+00:31:17,190 --> 00:31:17,200
+then if i do it to another vertex
+ 
+
+1311
+00:31:17,200 --> 00:31:19,509
+then if i do it to another vertex
+then shortest paths are still preserved
+
+1312
+00:31:19,509 --> 00:31:19,519
+then shortest paths are still preserved
+ 
+
+1313
+00:31:19,519 --> 00:31:20,230
+then shortest paths are still preserved
+and let's
+
+1314
+00:31:20,230 --> 00:31:20,240
+and let's
+ 
+
+1315
+00:31:20,240 --> 00:31:25,029
+and let's
+let's prove that real quick
+
+1316
+00:31:25,029 --> 00:31:25,039
+
+ 
+
+1317
+00:31:25,039 --> 00:31:29,269
+
+okay what i'm going to do is i'm
+
+1318
+00:31:29,269 --> 00:31:29,279
+okay what i'm going to do is i'm
+ 
+
+1319
+00:31:29,279 --> 00:31:30,950
+okay what i'm going to do is i'm
+going to want to do this to give me
+
+1320
+00:31:30,950 --> 00:31:30,960
+going to want to do this to give me
+ 
+
+1321
+00:31:30,960 --> 00:31:32,549
+going to want to do this to give me
+flexibility for changing all the edge
+
+1322
+00:31:32,549 --> 00:31:32,559
+flexibility for changing all the edge
+ 
+
+1323
+00:31:32,559 --> 00:31:33,830
+flexibility for changing all the edge
+weights in my graph
+
+1324
+00:31:33,830 --> 00:31:33,840
+weights in my graph
+ 
+
+1325
+00:31:33,840 --> 00:31:39,190
+weights in my graph
+to have this property i'm going to set
+
+1326
+00:31:39,190 --> 00:31:39,200
+
+ 
+
+1327
+00:31:39,200 --> 00:31:43,430
+
+or define
+
+1328
+00:31:43,430 --> 00:31:43,440
+
+ 
+
+1329
+00:31:43,440 --> 00:31:48,070
+
+a potential
+
+1330
+00:31:48,070 --> 00:31:48,080
+
+ 
+
+1331
+00:31:48,080 --> 00:31:52,950
+
+function h
+
+1332
+00:31:52,950 --> 00:31:52,960
+function h
+ 
+
+1333
+00:31:52,960 --> 00:31:58,830
+function h
+that maps vertices to you know
+
+1334
+00:31:58,830 --> 00:31:58,840
+
+ 
+
+1335
+00:31:58,840 --> 00:32:04,310
+
+integers
+
+1336
+00:32:04,310 --> 00:32:04,320
+
+ 
+
+1337
+00:32:04,320 --> 00:32:10,070
+
+so this is the potential
+
+1338
+00:32:10,070 --> 00:32:10,080
+
+ 
+
+1339
+00:32:10,080 --> 00:32:13,269
+
+h of v
+
+1340
+00:32:13,269 --> 00:32:13,279
+
+ 
+
+1341
+00:32:13,279 --> 00:32:16,310
+
+okay
+
+1342
+00:32:16,310 --> 00:32:16,320
+
+ 
+
+1343
+00:32:16,320 --> 00:32:24,070
+
+and then we're going to make a graph
+
+1344
+00:32:24,070 --> 00:32:24,080
+
+ 
+
+1345
+00:32:24,080 --> 00:32:29,350
+
+g prime
+
+1346
+00:32:29,350 --> 00:32:29,360
+g prime
+ 
+
+1347
+00:32:29,360 --> 00:32:32,470
+g prime
+based on
+
+1348
+00:32:32,470 --> 00:32:32,480
+based on
+ 
+
+1349
+00:32:32,480 --> 00:32:36,870
+based on
+above transformation
+
+1350
+00:32:36,870 --> 00:32:36,880
+above transformation
+ 
+
+1351
+00:32:36,880 --> 00:32:39,990
+above transformation
+for each
+
+1352
+00:32:39,990 --> 00:32:40,000
+for each
+ 
+
+1353
+00:32:40,000 --> 00:32:44,230
+for each
+vertex in v okay
+
+1354
+00:32:44,230 --> 00:32:44,240
+vertex in v okay
+ 
+
+1355
+00:32:44,240 --> 00:32:47,750
+vertex in v okay
+so i'm going to set a number an
+
+1356
+00:32:47,750 --> 00:32:47,760
+so i'm going to set a number an
+ 
+
+1357
+00:32:47,760 --> 00:32:50,470
+so i'm going to set a number an
+h for each vertex these are independent
+
+1358
+00:32:50,470 --> 00:32:50,480
+h for each vertex these are independent
+ 
+
+1359
+00:32:50,480 --> 00:32:52,389
+h for each vertex these are independent
+now
+
+1360
+00:32:52,389 --> 00:32:52,399
+now
+ 
+
+1361
+00:32:52,399 --> 00:32:54,870
+now
+and i'm going to add that potential to
+
+1362
+00:32:54,870 --> 00:32:54,880
+and i'm going to add that potential to
+ 
+
+1363
+00:32:54,880 --> 00:32:55,990
+and i'm going to add that potential to
+all outgoing edges
+
+1364
+00:32:55,990 --> 00:32:56,000
+all outgoing edges
+ 
+
+1365
+00:32:56,000 --> 00:32:57,590
+all outgoing edges
+and i'm going to subtract that potential
+
+1366
+00:32:57,590 --> 00:32:57,600
+and i'm going to subtract that potential
+ 
+
+1367
+00:32:57,600 --> 00:33:00,070
+and i'm going to subtract that potential
+from all incoming edges
+
+1368
+00:33:00,070 --> 00:33:00,080
+from all incoming edges
+ 
+
+1369
+00:33:00,080 --> 00:33:01,669
+from all incoming edges
+this transformation is going to preserve
+
+1370
+00:33:01,669 --> 00:33:01,679
+this transformation is going to preserve
+ 
+
+1371
+00:33:01,679 --> 00:33:03,350
+this transformation is going to preserve
+shortest paths let's
+
+1372
+00:33:03,350 --> 00:33:03,360
+shortest paths let's
+ 
+
+1373
+00:33:03,360 --> 00:33:05,350
+shortest paths let's
+let's actually be a little bit more
+
+1374
+00:33:05,350 --> 00:33:05,360
+let's actually be a little bit more
+ 
+
+1375
+00:33:05,360 --> 00:33:07,190
+let's actually be a little bit more
+rigorous that that's the case when we do
+
+1376
+00:33:07,190 --> 00:33:07,200
+rigorous that that's the case when we do
+ 
+
+1377
+00:33:07,200 --> 00:33:09,669
+rigorous that that's the case when we do
+this multiple times okay
+
+1378
+00:33:09,669 --> 00:33:09,679
+this multiple times okay
+ 
+
+1379
+00:33:09,679 --> 00:33:16,389
+this multiple times okay
+so claim
+
+1380
+00:33:16,389 --> 00:33:16,399
+
+ 
+
+1381
+00:33:16,399 --> 00:33:23,269
+
+shortest paths are still
+
+1382
+00:33:23,269 --> 00:33:23,279
+
+ 
+
+1383
+00:33:23,279 --> 00:33:29,509
+
+preserved
+
+1384
+00:33:29,509 --> 00:33:29,519
+
+ 
+
+1385
+00:33:29,519 --> 00:33:31,750
+
+all right well that's again not so
+
+1386
+00:33:31,750 --> 00:33:31,760
+all right well that's again not so
+ 
+
+1387
+00:33:31,760 --> 00:33:33,669
+all right well that's again not so
+difficult to see let's
+
+1388
+00:33:33,669 --> 00:33:33,679
+difficult to see let's
+ 
+
+1389
+00:33:33,679 --> 00:33:38,789
+difficult to see let's
+consider a path from s
+
+1390
+00:33:38,789 --> 00:33:38,799
+consider a path from s
+ 
+
+1391
+00:33:38,799 --> 00:33:42,389
+consider a path from s
+to t passes through a bunch of vertices
+
+1392
+00:33:42,389 --> 00:33:42,399
+to t passes through a bunch of vertices
+ 
+
+1393
+00:33:42,399 --> 00:33:45,669
+to t passes through a bunch of vertices
+i'm going to label these as
+
+1394
+00:33:45,669 --> 00:33:45,679
+i'm going to label these as
+ 
+
+1395
+00:33:45,679 --> 00:33:49,190
+i'm going to label these as
+v 0 to
+
+1396
+00:33:49,190 --> 00:33:49,200
+v 0 to
+ 
+
+1397
+00:33:49,200 --> 00:33:53,509
+v 0 to
+v k so that i can kind of number them
+
+1398
+00:33:53,509 --> 00:33:53,519
+v k so that i can kind of number them
+ 
+
+1399
+00:33:53,519 --> 00:33:56,950
+v k so that i can kind of number them
+all right this is v one here
+
+1400
+00:33:56,950 --> 00:33:56,960
+all right this is v one here
+ 
+
+1401
+00:33:56,960 --> 00:34:00,070
+all right this is v one here
+this is a directed path okay
+
+1402
+00:34:00,070 --> 00:34:00,080
+this is a directed path okay
+ 
+
+1403
+00:34:00,080 --> 00:34:01,669
+this is a directed path okay
+v one two three four four all the way up
+
+1404
+00:34:01,669 --> 00:34:01,679
+v one two three four four all the way up
+ 
+
+1405
+00:34:01,679 --> 00:34:03,430
+v one two three four four all the way up
+to k okay
+
+1406
+00:34:03,430 --> 00:34:03,440
+to k okay
+ 
+
+1407
+00:34:03,440 --> 00:34:06,470
+to k okay
+there are k edges in this graph
+
+1408
+00:34:06,470 --> 00:34:06,480
+there are k edges in this graph
+ 
+
+1409
+00:34:06,480 --> 00:34:09,750
+there are k edges in this graph
+right i claim to you that any path
+
+1410
+00:34:09,750 --> 00:34:09,760
+right i claim to you that any path
+ 
+
+1411
+00:34:09,760 --> 00:34:13,190
+right i claim to you that any path
+from v 0 to v k
+
+1412
+00:34:13,190 --> 00:34:13,200
+from v 0 to v k
+ 
+
+1413
+00:34:13,200 --> 00:34:16,149
+from v 0 to v k
+any shortest path from v 0 to v k
+
+1414
+00:34:16,149 --> 00:34:16,159
+any shortest path from v 0 to v k
+ 
+
+1415
+00:34:16,159 --> 00:34:17,909
+any shortest path from v 0 to v k
+remains the shortest path
+
+1416
+00:34:17,909 --> 00:34:17,919
+remains the shortest path
+ 
+
+1417
+00:34:17,919 --> 00:34:22,230
+remains the shortest path
+after i we everything in this way
+
+1418
+00:34:22,230 --> 00:34:22,240
+after i we everything in this way
+ 
+
+1419
+00:34:22,240 --> 00:34:25,349
+after i we everything in this way
+okay so let's say this is path pi
+
+1420
+00:34:25,349 --> 00:34:25,359
+okay so let's say this is path pi
+ 
+
+1421
+00:34:25,359 --> 00:34:28,869
+okay so let's say this is path pi
+and so it has weight w pi
+
+1422
+00:34:28,869 --> 00:34:28,879
+and so it has weight w pi
+ 
+
+1423
+00:34:28,879 --> 00:34:31,990
+and so it has weight w pi
+which is really just the sum
+
+1424
+00:34:31,990 --> 00:34:32,000
+which is really just the sum
+ 
+
+1425
+00:34:32,000 --> 00:34:35,109
+which is really just the sum
+of all of the edge weights from v i
+
+1426
+00:34:35,109 --> 00:34:35,119
+of all of the edge weights from v i
+ 
+
+1427
+00:34:35,119 --> 00:34:36,470
+of all of the edge weights from v i
+minus 1
+
+1428
+00:34:36,470 --> 00:34:36,480
+minus 1
+ 
+
+1429
+00:34:36,480 --> 00:34:39,909
+minus 1
+to v i for i
+
+1430
+00:34:39,909 --> 00:34:39,919
+to v i for i
+ 
+
+1431
+00:34:39,919 --> 00:34:43,510
+to v i for i
+equals 1 to k right this is poor
+
+1432
+00:34:43,510 --> 00:34:43,520
+equals 1 to k right this is poor
+ 
+
+1433
+00:34:43,520 --> 00:34:45,750
+equals 1 to k right this is poor
+notation this is the weight of the edge
+
+1434
+00:34:45,750 --> 00:34:45,760
+notation this is the weight of the edge
+ 
+
+1435
+00:34:45,760 --> 00:34:48,950
+notation this is the weight of the edge
+from the i minus 1 to i
+
+1436
+00:34:48,950 --> 00:34:48,960
+from the i minus 1 to i
+ 
+
+1437
+00:34:48,960 --> 00:34:52,950
+from the i minus 1 to i
+right and we've got my indexes from 1
+
+1438
+00:34:52,950 --> 00:34:52,960
+right and we've got my indexes from 1
+ 
+
+1439
+00:34:52,960 --> 00:34:55,589
+right and we've got my indexes from 1
+that's the first edge 2k which is the
+
+1440
+00:34:55,589 --> 00:34:55,599
+that's the first edge 2k which is the
+ 
+
+1441
+00:34:55,599 --> 00:34:56,790
+that's the first edge 2k which is the
+last edge
+
+1442
+00:34:56,790 --> 00:34:56,800
+last edge
+ 
+
+1443
+00:34:56,800 --> 00:34:59,270
+last edge
+right so that's the weight of my path
+
+1444
+00:34:59,270 --> 00:34:59,280
+right so that's the weight of my path
+ 
+
+1445
+00:34:59,280 --> 00:35:01,349
+right so that's the weight of my path
+the weight of my transformed path
+
+1446
+00:35:01,349 --> 00:35:01,359
+the weight of my transformed path
+ 
+
+1447
+00:35:01,359 --> 00:35:04,790
+the weight of my transformed path
+i'm going to do it down here it's a
+
+1448
+00:35:04,790 --> 00:35:04,800
+i'm going to do it down here it's a
+ 
+
+1449
+00:35:04,800 --> 00:35:07,109
+i'm going to do it down here it's a
+little iffy the weight of my transform
+
+1450
+00:35:07,109 --> 00:35:07,119
+little iffy the weight of my transform
+ 
+
+1451
+00:35:07,119 --> 00:35:08,950
+little iffy the weight of my transform
+path i'm going to say is the weight
+
+1452
+00:35:08,950 --> 00:35:08,960
+path i'm going to say is the weight
+ 
+
+1453
+00:35:08,960 --> 00:35:12,630
+path i'm going to say is the weight
+in this new re uh weighted graph g
+
+1454
+00:35:12,630 --> 00:35:12,640
+in this new re uh weighted graph g
+ 
+
+1455
+00:35:12,640 --> 00:35:16,310
+in this new re uh weighted graph g
+prime okay
+
+1456
+00:35:16,310 --> 00:35:16,320
+prime okay
+ 
+
+1457
+00:35:16,320 --> 00:35:18,390
+prime okay
+this weight of that same path right it's
+
+1458
+00:35:18,390 --> 00:35:18,400
+this weight of that same path right it's
+ 
+
+1459
+00:35:18,400 --> 00:35:20,390
+this weight of that same path right it's
+the same path
+
+1460
+00:35:20,390 --> 00:35:20,400
+the same path
+ 
+
+1461
+00:35:20,400 --> 00:35:24,630
+the same path
+is just going to be the sum
+
+1462
+00:35:24,630 --> 00:35:24,640
+is just going to be the sum
+ 
+
+1463
+00:35:24,640 --> 00:35:27,270
+is just going to be the sum
+of all of the re-weighted edges so i
+
+1464
+00:35:27,270 --> 00:35:27,280
+of all of the re-weighted edges so i
+ 
+
+1465
+00:35:27,280 --> 00:35:28,950
+of all of the re-weighted edges so i
+equals 1
+
+1466
+00:35:28,950 --> 00:35:28,960
+equals 1
+ 
+
+1467
+00:35:28,960 --> 00:35:33,430
+equals 1
+to k
+
+1468
+00:35:33,430 --> 00:35:33,440
+
+ 
+
+1469
+00:35:33,440 --> 00:35:36,550
+
+of my original weight of my edge
+
+1470
+00:35:36,550 --> 00:35:36,560
+of my original weight of my edge
+ 
+
+1471
+00:35:36,560 --> 00:35:39,670
+of my original weight of my edge
+so from 0 i minus 1
+
+1472
+00:35:39,670 --> 00:35:39,680
+so from 0 i minus 1
+ 
+
+1473
+00:35:39,680 --> 00:35:42,950
+so from 0 i minus 1
+to v i
+
+1474
+00:35:42,950 --> 00:35:42,960
+to v i
+ 
+
+1475
+00:35:42,960 --> 00:35:46,390
+to v i
+but what did i do this edge
+
+1476
+00:35:46,390 --> 00:35:46,400
+but what did i do this edge
+ 
+
+1477
+00:35:46,400 --> 00:35:49,589
+but what did i do this edge
+is out going from v i minus one
+
+1478
+00:35:49,589 --> 00:35:49,599
+is out going from v i minus one
+ 
+
+1479
+00:35:49,599 --> 00:35:52,790
+is out going from v i minus one
+so it's outgoing so i add that weight
+
+1480
+00:35:52,790 --> 00:35:52,800
+so it's outgoing so i add that weight
+ 
+
+1481
+00:35:52,800 --> 00:35:59,589
+so it's outgoing so i add that weight
+that that potential sorry
+
+1482
+00:35:59,589 --> 00:35:59,599
+that that potential sorry
+ 
+
+1483
+00:35:59,599 --> 00:36:02,710
+that that potential sorry
+but that edge is also incoming
+
+1484
+00:36:02,710 --> 00:36:02,720
+but that edge is also incoming
+ 
+
+1485
+00:36:02,720 --> 00:36:05,430
+but that edge is also incoming
+into v i right so when i reweighted the
+
+1486
+00:36:05,430 --> 00:36:05,440
+into v i right so when i reweighted the
+ 
+
+1487
+00:36:05,440 --> 00:36:06,069
+into v i right so when i reweighted the
+thing
+
+1488
+00:36:06,069 --> 00:36:06,079
+thing
+ 
+
+1489
+00:36:06,079 --> 00:36:11,190
+thing
+i got a subtraction of h
+
+1490
+00:36:11,190 --> 00:36:11,200
+
+ 
+
+1491
+00:36:11,200 --> 00:36:15,109
+
+v i
+
+1492
+00:36:15,109 --> 00:36:15,119
+
+ 
+
+1493
+00:36:15,119 --> 00:36:19,030
+
+okay now what happens here in the sum
+
+1494
+00:36:19,030 --> 00:36:19,040
+okay now what happens here in the sum
+ 
+
+1495
+00:36:19,040 --> 00:36:22,550
+okay now what happens here in the sum
+this term if i just took the sum
+
+1496
+00:36:22,550 --> 00:36:22,560
+this term if i just took the sum
+ 
+
+1497
+00:36:22,560 --> 00:36:24,550
+this term if i just took the sum
+over this term that's exactly my
+
+1498
+00:36:24,550 --> 00:36:24,560
+over this term that's exactly my
+ 
+
+1499
+00:36:24,560 --> 00:36:26,069
+over this term that's exactly my
+original pathway
+
+1500
+00:36:26,069 --> 00:36:26,079
+original pathway
+ 
+
+1501
+00:36:26,079 --> 00:36:31,030
+original pathway
+right so that's good
+
+1502
+00:36:31,030 --> 00:36:31,040
+
+ 
+
+1503
+00:36:31,040 --> 00:36:34,230
+
+but you'll notice that this sum
+
+1504
+00:36:34,230 --> 00:36:34,240
+but you'll notice that this sum
+ 
+
+1505
+00:36:34,240 --> 00:36:37,990
+but you'll notice that this sum
+has k terms and this sum
+
+1506
+00:36:37,990 --> 00:36:38,000
+has k terms and this sum
+ 
+
+1507
+00:36:38,000 --> 00:36:41,190
+has k terms and this sum
+has the subtraction of k other terms but
+
+1508
+00:36:41,190 --> 00:36:41,200
+has the subtraction of k other terms but
+ 
+
+1509
+00:36:41,200 --> 00:36:44,790
+has the subtraction of k other terms but
+most of these terms are equal
+
+1510
+00:36:44,790 --> 00:36:44,800
+most of these terms are equal
+ 
+
+1511
+00:36:44,800 --> 00:36:48,069
+most of these terms are equal
+right along the path all the incoming
+
+1512
+00:36:48,069 --> 00:36:48,079
+right along the path all the incoming
+ 
+
+1513
+00:36:48,079 --> 00:36:50,710
+right along the path all the incoming
+and outgoing edges
+
+1514
+00:36:50,710 --> 00:36:50,720
+and outgoing edges
+ 
+
+1515
+00:36:50,720 --> 00:36:55,990
+and outgoing edges
+cancel out right so we're left with only
+
+1516
+00:36:55,990 --> 00:36:56,000
+cancel out right so we're left with only
+ 
+
+1517
+00:36:56,000 --> 00:36:58,790
+cancel out right so we're left with only
+adding the potential at the starting
+
+1518
+00:36:58,790 --> 00:36:58,800
+adding the potential at the starting
+ 
+
+1519
+00:36:58,800 --> 00:37:00,230
+adding the potential at the starting
+vertex
+
+1520
+00:37:00,230 --> 00:37:00,240
+vertex
+ 
+
+1521
+00:37:00,240 --> 00:37:02,870
+vertex
+and subtracting the potential at the la
+
+1522
+00:37:02,870 --> 00:37:02,880
+and subtracting the potential at the la
+ 
+
+1523
+00:37:02,880 --> 00:37:04,630
+and subtracting the potential at the la
+final vertex right so we've got
+
+1524
+00:37:04,630 --> 00:37:04,640
+final vertex right so we've got
+ 
+
+1525
+00:37:04,640 --> 00:37:07,670
+final vertex right so we've got
+add h v
+
+1526
+00:37:07,670 --> 00:37:07,680
+add h v
+ 
+
+1527
+00:37:07,680 --> 00:37:11,190
+add h v
+0 minus h
+
+1528
+00:37:11,190 --> 00:37:11,200
+0 minus h
+ 
+
+1529
+00:37:11,200 --> 00:37:15,349
+0 minus h
+v k
+
+1530
+00:37:15,349 --> 00:37:15,359
+
+ 
+
+1531
+00:37:15,359 --> 00:37:18,390
+
+and why is that good well that's good
+
+1532
+00:37:18,390 --> 00:37:18,400
+and why is that good well that's good
+ 
+
+1533
+00:37:18,400 --> 00:37:19,670
+and why is that good well that's good
+because
+
+1534
+00:37:19,670 --> 00:37:19,680
+because
+ 
+
+1535
+00:37:19,680 --> 00:37:22,790
+because
+every path from v 0 to v
+
+1536
+00:37:22,790 --> 00:37:22,800
+every path from v 0 to v
+ 
+
+1537
+00:37:22,800 --> 00:37:26,390
+every path from v 0 to v
+k starts at v 0 and ends at v
+
+1538
+00:37:26,390 --> 00:37:26,400
+k starts at v 0 and ends at v
+ 
+
+1539
+00:37:26,400 --> 00:37:29,510
+k starts at v 0 and ends at v
+k that's just that's how it is that's
+
+1540
+00:37:29,510 --> 00:37:29,520
+k that's just that's how it is that's
+ 
+
+1541
+00:37:29,520 --> 00:37:31,750
+k that's just that's how it is that's
+how we've defined paths going from v 0
+
+1542
+00:37:31,750 --> 00:37:31,760
+how we've defined paths going from v 0
+ 
+
+1543
+00:37:31,760 --> 00:37:32,150
+how we've defined paths going from v 0
+to v
+
+1544
+00:37:32,150 --> 00:37:32,160
+to v
+ 
+
+1545
+00:37:32,160 --> 00:37:36,710
+to v
+k but every such path
+
+1546
+00:37:36,710 --> 00:37:36,720
+k but every such path
+ 
+
+1547
+00:37:36,720 --> 00:37:39,589
+k but every such path
+we transform the weight of that path by
+
+1548
+00:37:39,589 --> 00:37:39,599
+we transform the weight of that path by
+ 
+
+1549
+00:37:39,599 --> 00:37:40,630
+we transform the weight of that path by
+adding a con
+
+1550
+00:37:40,630 --> 00:37:40,640
+adding a con
+ 
+
+1551
+00:37:40,640 --> 00:37:42,710
+adding a con
+by adding a constant associated with the
+
+1552
+00:37:42,710 --> 00:37:42,720
+by adding a constant associated with the
+ 
+
+1553
+00:37:42,720 --> 00:37:44,310
+by adding a constant associated with the
+start and adding
+
+1554
+00:37:44,310 --> 00:37:44,320
+start and adding
+ 
+
+1555
+00:37:44,320 --> 00:37:46,790
+start and adding
+this value associated with the end and
+
+1556
+00:37:46,790 --> 00:37:46,800
+this value associated with the end and
+ 
+
+1557
+00:37:46,800 --> 00:37:48,710
+this value associated with the end and
+so every path
+
+1558
+00:37:48,710 --> 00:37:48,720
+so every path
+ 
+
+1559
+00:37:48,720 --> 00:37:51,349
+so every path
+going from v 0 to v k changes by the
+
+1560
+00:37:51,349 --> 00:37:51,359
+going from v 0 to v k changes by the
+ 
+
+1561
+00:37:51,359 --> 00:37:53,030
+going from v 0 to v k changes by the
+same amount
+
+1562
+00:37:53,030 --> 00:37:53,040
+same amount
+ 
+
+1563
+00:37:53,040 --> 00:37:57,430
+same amount
+right and so if this path p
+
+1564
+00:37:57,430 --> 00:37:57,440
+right and so if this path p
+ 
+
+1565
+00:37:57,440 --> 00:38:01,349
+right and so if this path p
+pi was shortest it's still shortest in
+
+1566
+00:38:01,349 --> 00:38:01,359
+pi was shortest it's still shortest in
+ 
+
+1567
+00:38:01,359 --> 00:38:02,630
+pi was shortest it's still shortest in
+the re-rated graph
+
+1568
+00:38:02,630 --> 00:38:02,640
+the re-rated graph
+ 
+
+1569
+00:38:02,640 --> 00:38:04,710
+the re-rated graph
+because i've just changed all paths
+
+1570
+00:38:04,710 --> 00:38:04,720
+because i've just changed all paths
+ 
+
+1571
+00:38:04,720 --> 00:38:06,390
+because i've just changed all paths
+between those two vertices by the same
+
+1572
+00:38:06,390 --> 00:38:06,400
+between those two vertices by the same
+ 
+
+1573
+00:38:06,400 --> 00:38:07,430
+between those two vertices by the same
+amount
+
+1574
+00:38:07,430 --> 00:38:07,440
+amount
+ 
+
+1575
+00:38:07,440 --> 00:38:09,589
+amount
+it's this is kind of like a telescoping
+
+1576
+00:38:09,589 --> 00:38:09,599
+it's this is kind of like a telescoping
+ 
+
+1577
+00:38:09,599 --> 00:38:11,190
+it's this is kind of like a telescoping
+argument here
+
+1578
+00:38:11,190 --> 00:38:11,200
+argument here
+ 
+
+1579
+00:38:11,200 --> 00:38:13,910
+argument here
+uh in in that kind of proof right so we
+
+1580
+00:38:13,910 --> 00:38:13,920
+uh in in that kind of proof right so we
+ 
+
+1581
+00:38:13,920 --> 00:38:15,030
+uh in in that kind of proof right so we
+have
+
+1582
+00:38:15,030 --> 00:38:15,040
+have
+ 
+
+1583
+00:38:15,040 --> 00:38:18,470
+have
+uh the weight changes right it could
+
+1584
+00:38:18,470 --> 00:38:18,480
+uh the weight changes right it could
+ 
+
+1585
+00:38:18,480 --> 00:38:19,349
+uh the weight changes right it could
+change
+
+1586
+00:38:19,349 --> 00:38:19,359
+change
+ 
+
+1587
+00:38:19,359 --> 00:38:21,750
+change
+but it changes all paths between these
+
+1588
+00:38:21,750 --> 00:38:21,760
+but it changes all paths between these
+ 
+
+1589
+00:38:21,760 --> 00:38:24,470
+but it changes all paths between these
+two vertices by the same amount
+
+1590
+00:38:24,470 --> 00:38:24,480
+two vertices by the same amount
+ 
+
+1591
+00:38:24,480 --> 00:38:25,990
+two vertices by the same amount
+which means that shortest paths are
+
+1592
+00:38:25,990 --> 00:38:26,000
+which means that shortest paths are
+ 
+
+1593
+00:38:26,000 --> 00:38:27,990
+which means that shortest paths are
+still shortest
+
+1594
+00:38:27,990 --> 00:38:28,000
+still shortest
+ 
+
+1595
+00:38:28,000 --> 00:38:31,270
+still shortest
+awesome okay
+
+1596
+00:38:31,270 --> 00:38:31,280
+awesome okay
+ 
+
+1597
+00:38:31,280 --> 00:38:35,430
+awesome okay
+so the name of the game here
+
+1598
+00:38:35,430 --> 00:38:35,440
+so the name of the game here
+ 
+
+1599
+00:38:35,440 --> 00:38:38,950
+so the name of the game here
+is now we have this really flexible tool
+
+1600
+00:38:38,950 --> 00:38:38,960
+is now we have this really flexible tool
+ 
+
+1601
+00:38:38,960 --> 00:38:42,230
+is now we have this really flexible tool
+right we have this tool where we can add
+
+1602
+00:38:42,230 --> 00:38:42,240
+right we have this tool where we can add
+ 
+
+1603
+00:38:42,240 --> 00:38:43,510
+right we have this tool where we can add
+or subtract
+
+1604
+00:38:43,510 --> 00:38:43,520
+or subtract
+ 
+
+1605
+00:38:43,520 --> 00:38:45,750
+or subtract
+weight from various edges but we have to
+
+1606
+00:38:45,750 --> 00:38:45,760
+weight from various edges but we have to
+ 
+
+1607
+00:38:45,760 --> 00:38:46,870
+weight from various edges but we have to
+do so in a kind of
+
+1608
+00:38:46,870 --> 00:38:46,880
+do so in a kind of
+ 
+
+1609
+00:38:46,880 --> 00:38:48,790
+do so in a kind of
+localized constrained way right we have
+
+1610
+00:38:48,790 --> 00:38:48,800
+localized constrained way right we have
+ 
+
+1611
+00:38:48,800 --> 00:38:50,470
+localized constrained way right we have
+to do the same thing
+
+1612
+00:38:50,470 --> 00:38:50,480
+to do the same thing
+ 
+
+1613
+00:38:50,480 --> 00:38:53,430
+to do the same thing
+around each vertex but it seems like a
+
+1614
+00:38:53,430 --> 00:38:53,440
+around each vertex but it seems like a
+ 
+
+1615
+00:38:53,440 --> 00:38:55,190
+around each vertex but it seems like a
+powerful transformation technique
+
+1616
+00:38:55,190 --> 00:38:55,200
+powerful transformation technique
+ 
+
+1617
+00:38:55,200 --> 00:38:57,510
+powerful transformation technique
+that maybe we can get this this thing
+
+1618
+00:38:57,510 --> 00:38:57,520
+that maybe we can get this this thing
+ 
+
+1619
+00:38:57,520 --> 00:38:58,550
+that maybe we can get this this thing
+that we want
+
+1620
+00:38:58,550 --> 00:38:58,560
+that we want
+ 
+
+1621
+00:38:58,560 --> 00:39:00,870
+that we want
+which is a g prime a re-weighting of the
+
+1622
+00:39:00,870 --> 00:39:00,880
+which is a g prime a re-weighting of the
+ 
+
+1623
+00:39:00,880 --> 00:39:02,150
+which is a g prime a re-weighting of the
+graph where all the edge weights are
+
+1624
+00:39:02,150 --> 00:39:02,160
+graph where all the edge weights are
+ 
+
+1625
+00:39:02,160 --> 00:39:03,589
+graph where all the edge weights are
+positive
+
+1626
+00:39:03,589 --> 00:39:03,599
+positive
+ 
+
+1627
+00:39:03,599 --> 00:39:07,030
+positive
+or non-negative
+
+1628
+00:39:07,030 --> 00:39:07,040
+
+ 
+
+1629
+00:39:07,040 --> 00:39:10,150
+
+so does there exist an
+
+1630
+00:39:10,150 --> 00:39:10,160
+so does there exist an
+ 
+
+1631
+00:39:10,160 --> 00:39:15,109
+so does there exist an
+h such that
+
+1632
+00:39:15,109 --> 00:39:15,119
+h such that
+ 
+
+1633
+00:39:15,119 --> 00:39:16,710
+h such that
+the weights are all positive what does
+
+1634
+00:39:16,710 --> 00:39:16,720
+the weights are all positive what does
+ 
+
+1635
+00:39:16,720 --> 00:39:18,150
+the weights are all positive what does
+that mean w
+
+1636
+00:39:18,150 --> 00:39:18,160
+that mean w
+ 
+
+1637
+00:39:18,160 --> 00:39:22,950
+that mean w
+prime uv
+
+1638
+00:39:22,950 --> 00:39:22,960
+
+ 
+
+1639
+00:39:22,960 --> 00:39:26,829
+
+right the weight in my new graph in g
+
+1640
+00:39:26,829 --> 00:39:26,839
+right the weight in my new graph in g
+ 
+
+1641
+00:39:26,839 --> 00:39:28,470
+right the weight in my new graph in g
+prime
+
+1642
+00:39:28,470 --> 00:39:28,480
+prime
+ 
+
+1643
+00:39:28,480 --> 00:39:34,630
+prime
+i want these modified weights
+
+1644
+00:39:34,630 --> 00:39:34,640
+
+ 
+
+1645
+00:39:34,640 --> 00:39:37,670
+
+right this modified weight of my graph i
+
+1646
+00:39:37,670 --> 00:39:37,680
+right this modified weight of my graph i
+ 
+
+1647
+00:39:37,680 --> 00:39:40,829
+right this modified weight of my graph i
+want each of these to be
+
+1648
+00:39:40,829 --> 00:39:40,839
+
+ 
+
+1649
+00:39:40,839 --> 00:39:44,630
+
+non-negative so does there exist such a
+
+1650
+00:39:44,630 --> 00:39:44,640
+non-negative so does there exist such a
+ 
+
+1651
+00:39:44,640 --> 00:39:46,230
+non-negative so does there exist such a
+thing
+
+1652
+00:39:46,230 --> 00:39:46,240
+thing
+ 
+
+1653
+00:39:46,240 --> 00:39:49,510
+thing
+huh well if i rearrange this equation a
+
+1654
+00:39:49,510 --> 00:39:49,520
+huh well if i rearrange this equation a
+ 
+
+1655
+00:39:49,520 --> 00:39:50,470
+huh well if i rearrange this equation a
+little bit
+
+1656
+00:39:50,470 --> 00:39:50,480
+little bit
+ 
+
+1657
+00:39:50,480 --> 00:39:54,550
+little bit
+this side i get something that looks
+
+1658
+00:39:54,550 --> 00:39:54,560
+this side i get something that looks
+ 
+
+1659
+00:39:54,560 --> 00:39:56,069
+this side i get something that looks
+like this
+
+1660
+00:39:56,069 --> 00:39:56,079
+like this
+ 
+
+1661
+00:39:56,079 --> 00:39:59,670
+like this
+h of v needs to be
+
+1662
+00:39:59,670 --> 00:39:59,680
+h of v needs to be
+ 
+
+1663
+00:39:59,680 --> 00:40:03,990
+h of v needs to be
+less than or equal to h of u
+
+1664
+00:40:03,990 --> 00:40:04,000
+less than or equal to h of u
+ 
+
+1665
+00:40:04,000 --> 00:40:07,510
+less than or equal to h of u
+plus the weight of some
+
+1666
+00:40:07,510 --> 00:40:07,520
+plus the weight of some
+ 
+
+1667
+00:40:07,520 --> 00:40:10,790
+plus the weight of some
+edge from u to v
+
+1668
+00:40:10,790 --> 00:40:10,800
+edge from u to v
+ 
+
+1669
+00:40:10,800 --> 00:40:16,309
+edge from u to v
+huh what does that look like
+
+1670
+00:40:16,309 --> 00:40:16,319
+huh what does that look like
+ 
+
+1671
+00:40:16,319 --> 00:40:18,710
+huh what does that look like
+that looks like almost exactly the
+
+1672
+00:40:18,710 --> 00:40:18,720
+that looks like almost exactly the
+ 
+
+1673
+00:40:18,720 --> 00:40:19,750
+that looks like almost exactly the
+definition
+
+1674
+00:40:19,750 --> 00:40:19,760
+definition
+ 
+
+1675
+00:40:19,760 --> 00:40:24,309
+definition
+of the triangle inequality right
+
+1676
+00:40:24,309 --> 00:40:24,319
+of the triangle inequality right
+ 
+
+1677
+00:40:24,319 --> 00:40:26,630
+of the triangle inequality right
+shortest path from some vertex here and
+
+1678
+00:40:26,630 --> 00:40:26,640
+shortest path from some vertex here and
+ 
+
+1679
+00:40:26,640 --> 00:40:28,710
+shortest path from some vertex here and
+the shortest path distance from the same
+
+1680
+00:40:28,710 --> 00:40:28,720
+the shortest path distance from the same
+ 
+
+1681
+00:40:28,720 --> 00:40:30,069
+the shortest path distance from the same
+vertex here
+
+1682
+00:40:30,069 --> 00:40:30,079
+vertex here
+ 
+
+1683
+00:40:30,079 --> 00:40:32,470
+vertex here
+this is just a statement of the triangle
+
+1684
+00:40:32,470 --> 00:40:32,480
+this is just a statement of the triangle
+ 
+
+1685
+00:40:32,480 --> 00:40:33,910
+this is just a statement of the triangle
+inequality
+
+1686
+00:40:33,910 --> 00:40:33,920
+inequality
+ 
+
+1687
+00:40:33,920 --> 00:40:37,349
+inequality
+right so if we can set these
+
+1688
+00:40:37,349 --> 00:40:37,359
+right so if we can set these
+ 
+
+1689
+00:40:37,359 --> 00:40:39,670
+right so if we can set these
+h's to be the shortest path distance
+
+1690
+00:40:39,670 --> 00:40:39,680
+h's to be the shortest path distance
+ 
+
+1691
+00:40:39,680 --> 00:40:40,790
+h's to be the shortest path distance
+from some vertex
+
+1692
+00:40:40,790 --> 00:40:40,800
+from some vertex
+ 
+
+1693
+00:40:40,800 --> 00:40:42,390
+from some vertex
+and those shortest path distances are
+
+1694
+00:40:42,390 --> 00:40:42,400
+and those shortest path distances are
+ 
+
+1695
+00:40:42,400 --> 00:40:46,150
+and those shortest path distances are
+finite
+
+1696
+00:40:46,150 --> 00:40:46,160
+
+ 
+
+1697
+00:40:46,160 --> 00:40:49,589
+
+and none not minus infinity
+
+1698
+00:40:49,589 --> 00:40:49,599
+and none not minus infinity
+ 
+
+1699
+00:40:49,599 --> 00:40:53,670
+and none not minus infinity
+then this thing will hold by triangle
+
+1700
+00:40:53,670 --> 00:40:53,680
+then this thing will hold by triangle
+ 
+
+1701
+00:40:53,680 --> 00:40:55,349
+then this thing will hold by triangle
+inequality and in particular
+
+1702
+00:40:55,349 --> 00:40:55,359
+inequality and in particular
+ 
+
+1703
+00:40:55,359 --> 00:40:58,230
+inequality and in particular
+if we were to re-weight the edges based
+
+1704
+00:40:58,230 --> 00:40:58,240
+if we were to re-weight the edges based
+ 
+
+1705
+00:40:58,240 --> 00:40:59,990
+if we were to re-weight the edges based
+on those values of h
+
+1706
+00:40:59,990 --> 00:41:00,000
+on those values of h
+ 
+
+1707
+00:41:00,000 --> 00:41:01,910
+on those values of h
+then we get new edge weights that are
+
+1708
+00:41:01,910 --> 00:41:01,920
+then we get new edge weights that are
+ 
+
+1709
+00:41:01,920 --> 00:41:04,630
+then we get new edge weights that are
+non-negative
+
+1710
+00:41:04,630 --> 00:41:04,640
+
+ 
+
+1711
+00:41:04,640 --> 00:41:07,670
+
+awesome okay but
+
+1712
+00:41:07,670 --> 00:41:07,680
+awesome okay but
+ 
+
+1713
+00:41:07,680 --> 00:41:10,950
+awesome okay but
+there might not be any vertex
+
+1714
+00:41:10,950 --> 00:41:10,960
+there might not be any vertex
+ 
+
+1715
+00:41:10,960 --> 00:41:13,589
+there might not be any vertex
+from which we can access which is which
+
+1716
+00:41:13,589 --> 00:41:13,599
+from which we can access which is which
+ 
+
+1717
+00:41:13,599 --> 00:41:14,950
+from which we can access which is which
+we can reach
+
+1718
+00:41:14,950 --> 00:41:14,960
+we can reach
+ 
+
+1719
+00:41:14,960 --> 00:41:17,030
+we can reach
+all vertices in the graph right in
+
+1720
+00:41:17,030 --> 00:41:17,040
+all vertices in the graph right in
+ 
+
+1721
+00:41:17,040 --> 00:41:18,230
+all vertices in the graph right in
+particular my graph
+
+1722
+00:41:18,230 --> 00:41:18,240
+particular my graph
+ 
+
+1723
+00:41:18,240 --> 00:41:24,309
+particular my graph
+might not even be connected right
+
+1724
+00:41:24,309 --> 00:41:24,319
+
+ 
+
+1725
+00:41:24,319 --> 00:41:26,710
+
+if i want this property i need all of
+
+1726
+00:41:26,710 --> 00:41:26,720
+if i want this property i need all of
+ 
+
+1727
+00:41:26,720 --> 00:41:28,870
+if i want this property i need all of
+these i don't gain any information if
+
+1728
+00:41:28,870 --> 00:41:28,880
+these i don't gain any information if
+ 
+
+1729
+00:41:28,880 --> 00:41:30,710
+these i don't gain any information if
+these things are infinite
+
+1730
+00:41:30,710 --> 00:41:30,720
+these things are infinite
+ 
+
+1731
+00:41:30,720 --> 00:41:34,870
+these things are infinite
+right i it's it exhaustively true
+
+1732
+00:41:34,870 --> 00:41:34,880
+right i it's it exhaustively true
+ 
+
+1733
+00:41:34,880 --> 00:41:37,750
+right i it's it exhaustively true
+infinity is i i don't even know how to
+
+1734
+00:41:37,750 --> 00:41:37,760
+infinity is i i don't even know how to
+ 
+
+1735
+00:41:37,760 --> 00:41:38,230
+infinity is i i don't even know how to
+compare
+
+1736
+00:41:38,230 --> 00:41:38,240
+compare
+ 
+
+1737
+00:41:38,240 --> 00:41:41,750
+compare
+infinity and infinity plus a constant i
+
+1738
+00:41:41,750 --> 00:41:41,760
+infinity and infinity plus a constant i
+ 
+
+1739
+00:41:41,760 --> 00:41:44,870
+infinity and infinity plus a constant i
+i don't know right so i need all of
+
+1740
+00:41:44,870 --> 00:41:44,880
+i don't know right so i need all of
+ 
+
+1741
+00:41:44,880 --> 00:41:46,309
+i don't know right so i need all of
+these things to be finite
+
+1742
+00:41:46,309 --> 00:41:46,319
+these things to be finite
+ 
+
+1743
+00:41:46,319 --> 00:41:49,510
+these things to be finite
+so how can i make those things finite so
+
+1744
+00:41:49,510 --> 00:41:49,520
+so how can i make those things finite so
+ 
+
+1745
+00:41:49,520 --> 00:41:50,390
+so how can i make those things finite so
+here's the next
+
+1746
+00:41:50,390 --> 00:41:50,400
+here's the next
+ 
+
+1747
+00:41:50,400 --> 00:42:00,829
+here's the next
+idea
+
+1748
+00:42:00,829 --> 00:42:00,839
+
+ 
+
+1749
+00:42:00,839 --> 00:42:04,309
+
+add
+
+1750
+00:42:04,309 --> 00:42:04,319
+
+ 
+
+1751
+00:42:04,319 --> 00:42:07,990
+
+new vertex
+
+1752
+00:42:07,990 --> 00:42:08,000
+
+ 
+
+1753
+00:42:08,000 --> 00:42:12,790
+
+s with
+
+1754
+00:42:12,790 --> 00:42:12,800
+s with
+ 
+
+1755
+00:42:12,800 --> 00:42:18,550
+s with
+zero weight edge
+
+1756
+00:42:18,550 --> 00:42:18,560
+
+ 
+
+1757
+00:42:18,560 --> 00:42:21,589
+
+to every
+
+1758
+00:42:21,589 --> 00:42:21,599
+to every
+ 
+
+1759
+00:42:21,599 --> 00:42:25,750
+to every
+vertex
+
+1760
+00:42:25,750 --> 00:42:25,760
+
+ 
+
+1761
+00:42:25,760 --> 00:42:30,150
+
+v in v right we take our original graph
+
+1762
+00:42:30,150 --> 00:42:30,160
+v in v right we take our original graph
+ 
+
+1763
+00:42:30,160 --> 00:42:32,790
+v in v right we take our original graph
+we add a new super node or auxiliary
+
+1764
+00:42:32,790 --> 00:42:32,800
+we add a new super node or auxiliary
+ 
+
+1765
+00:42:32,800 --> 00:42:33,430
+we add a new super node or auxiliary
+vertex
+
+1766
+00:42:33,430 --> 00:42:33,440
+vertex
+ 
+
+1767
+00:42:33,440 --> 00:42:35,990
+vertex
+s with a zero weight edge to every
+
+1768
+00:42:35,990 --> 00:42:36,000
+s with a zero weight edge to every
+ 
+
+1769
+00:42:36,000 --> 00:42:37,430
+s with a zero weight edge to every
+vertex in my graph right
+
+1770
+00:42:37,430 --> 00:42:37,440
+vertex in my graph right
+ 
+
+1771
+00:42:37,440 --> 00:42:39,190
+vertex in my graph right
+what does that look like this is like
+
+1772
+00:42:39,190 --> 00:42:39,200
+what does that look like this is like
+ 
+
+1773
+00:42:39,200 --> 00:42:42,150
+what does that look like this is like
+there's my original graph
+
+1774
+00:42:42,150 --> 00:42:42,160
+there's my original graph
+ 
+
+1775
+00:42:42,160 --> 00:42:45,990
+there's my original graph
+and now i have this vertex s but it has
+
+1776
+00:42:45,990 --> 00:42:46,000
+and now i have this vertex s but it has
+ 
+
+1777
+00:42:46,000 --> 00:42:49,030
+and now i have this vertex s but it has
+directed edges into all of the vertices
+
+1778
+00:42:49,030 --> 00:42:49,040
+directed edges into all of the vertices
+ 
+
+1779
+00:42:49,040 --> 00:42:52,870
+directed edges into all of the vertices
+with zero weight that's our picture
+
+1780
+00:42:52,870 --> 00:42:52,880
+with zero weight that's our picture
+ 
+
+1781
+00:42:52,880 --> 00:42:58,870
+with zero weight that's our picture
+and this new thing
+
+1782
+00:42:58,870 --> 00:42:58,880
+and this new thing
+ 
+
+1783
+00:42:58,880 --> 00:43:02,390
+and this new thing
+right i'm going to call maybe my
+
+1784
+00:43:02,390 --> 00:43:02,400
+right i'm going to call maybe my
+ 
+
+1785
+00:43:02,400 --> 00:43:07,670
+right i'm going to call maybe my
+s graph now all right
+
+1786
+00:43:07,670 --> 00:43:07,680
+
+ 
+
+1787
+00:43:07,680 --> 00:43:12,550
+
+and the claim is well now if i run
+
+1788
+00:43:12,550 --> 00:43:12,560
+and the claim is well now if i run
+ 
+
+1789
+00:43:12,560 --> 00:43:14,390
+and the claim is well now if i run
+some shortest path algorithm single
+
+1790
+00:43:14,390 --> 00:43:14,400
+some shortest path algorithm single
+ 
+
+1791
+00:43:14,400 --> 00:43:16,630
+some shortest path algorithm single
+source shortest path algorithm this time
+
+1792
+00:43:16,630 --> 00:43:16,640
+source shortest path algorithm this time
+ 
+
+1793
+00:43:16,640 --> 00:43:19,510
+source shortest path algorithm this time
+from s to compute the shortest path
+
+1794
+00:43:19,510 --> 00:43:19,520
+from s to compute the shortest path
+ 
+
+1795
+00:43:19,520 --> 00:43:24,630
+from s to compute the shortest path
+distance to all of the vertices
+
+1796
+00:43:24,630 --> 00:43:24,640
+
+ 
+
+1797
+00:43:24,640 --> 00:43:26,470
+
+the shortest path distance to each of
+
+1798
+00:43:26,470 --> 00:43:26,480
+the shortest path distance to each of
+ 
+
+1799
+00:43:26,480 --> 00:43:27,990
+the shortest path distance to each of
+the vertices
+
+1800
+00:43:27,990 --> 00:43:28,000
+the vertices
+ 
+
+1801
+00:43:28,000 --> 00:43:31,270
+the vertices
+can't be positive right
+
+1802
+00:43:31,270 --> 00:43:31,280
+can't be positive right
+ 
+
+1803
+00:43:31,280 --> 00:43:34,390
+can't be positive right
+because there's a zero weight edge so a
+
+1804
+00:43:34,390 --> 00:43:34,400
+because there's a zero weight edge so a
+ 
+
+1805
+00:43:34,400 --> 00:43:35,750
+because there's a zero weight edge so a
+minimum weight path
+
+1806
+00:43:35,750 --> 00:43:35,760
+minimum weight path
+ 
+
+1807
+00:43:35,760 --> 00:43:40,870
+minimum weight path
+is going to be no bigger than zero
+
+1808
+00:43:40,870 --> 00:43:40,880
+is going to be no bigger than zero
+ 
+
+1809
+00:43:40,880 --> 00:43:42,550
+is going to be no bigger than zero
+if it's finite then there's a finite
+
+1810
+00:43:42,550 --> 00:43:42,560
+if it's finite then there's a finite
+ 
+
+1811
+00:43:42,560 --> 00:43:43,990
+if it's finite then there's a finite
+length shortest path if it's
+
+1812
+00:43:43,990 --> 00:43:44,000
+length shortest path if it's
+ 
+
+1813
+00:43:44,000 --> 00:43:46,950
+length shortest path if it's
+minus infinity then there's a negative
+
+1814
+00:43:46,950 --> 00:43:46,960
+minus infinity then there's a negative
+ 
+
+1815
+00:43:46,960 --> 00:43:49,750
+minus infinity then there's a negative
+weight cycle in my graph and i can stop
+
+1816
+00:43:49,750 --> 00:43:49,760
+weight cycle in my graph and i can stop
+ 
+
+1817
+00:43:49,760 --> 00:43:54,390
+weight cycle in my graph and i can stop
+right okay so
+
+1818
+00:43:54,390 --> 00:43:54,400
+right okay so
+ 
+
+1819
+00:43:54,400 --> 00:43:58,069
+right okay so
+there are either two situations
+
+1820
+00:43:58,069 --> 00:43:58,079
+there are either two situations
+ 
+
+1821
+00:43:58,079 --> 00:44:01,190
+there are either two situations
+if delta
+
+1822
+00:44:01,190 --> 00:44:01,200
+if delta
+ 
+
+1823
+00:44:01,200 --> 00:44:04,950
+if delta
+sv equals minus infinity
+
+1824
+00:44:04,950 --> 00:44:04,960
+sv equals minus infinity
+ 
+
+1825
+00:44:04,960 --> 00:44:11,349
+sv equals minus infinity
+so i guess this is run
+
+1826
+00:44:11,349 --> 00:44:11,359
+
+ 
+
+1827
+00:44:11,359 --> 00:44:16,550
+
+single source shortest paths from
+
+1828
+00:44:16,550 --> 00:44:16,560
+
+ 
+
+1829
+00:44:16,560 --> 00:44:20,390
+
+s and really because this graph
+
+1830
+00:44:20,390 --> 00:44:20,400
+s and really because this graph
+ 
+
+1831
+00:44:20,400 --> 00:44:21,910
+s and really because this graph
+could contain negative edge weights and
+
+1832
+00:44:21,910 --> 00:44:21,920
+could contain negative edge weights and
+ 
+
+1833
+00:44:21,920 --> 00:44:24,069
+could contain negative edge weights and
+could contain negative cycles
+
+1834
+00:44:24,069 --> 00:44:24,079
+could contain negative cycles
+ 
+
+1835
+00:44:24,079 --> 00:44:25,829
+could contain negative cycles
+we can't really do better than running
+
+1836
+00:44:25,829 --> 00:44:25,839
+we can't really do better than running
+ 
+
+1837
+00:44:25,839 --> 00:44:27,349
+we can't really do better than running
+bellman ford here
+
+1838
+00:44:27,349 --> 00:44:27,359
+bellman ford here
+ 
+
+1839
+00:44:27,359 --> 00:44:31,109
+bellman ford here
+right from s to compute these paths if
+
+1840
+00:44:31,109 --> 00:44:31,119
+right from s to compute these paths if
+ 
+
+1841
+00:44:31,119 --> 00:44:35,349
+right from s to compute these paths if
+there exists in this new graph this gs
+
+1842
+00:44:35,349 --> 00:44:35,359
+there exists in this new graph this gs
+ 
+
+1843
+00:44:35,359 --> 00:44:38,309
+there exists in this new graph this gs
+if there exists a vertex that has
+
+1844
+00:44:38,309 --> 00:44:38,319
+if there exists a vertex that has
+ 
+
+1845
+00:44:38,319 --> 00:44:39,750
+if there exists a vertex that has
+negative
+
+1846
+00:44:39,750 --> 00:44:39,760
+negative
+ 
+
+1847
+00:44:39,760 --> 00:44:45,589
+negative
+infinite weight in the re-weighted graph
+
+1848
+00:44:45,589 --> 00:44:45,599
+
+ 
+
+1849
+00:44:45,599 --> 00:44:49,109
+
+sorry
+
+1850
+00:44:49,109 --> 00:44:49,119
+
+ 
+
+1851
+00:44:49,119 --> 00:44:51,670
+
+in the original graph g g hasn't been
+
+1852
+00:44:51,670 --> 00:44:51,680
+in the original graph g g hasn't been
+ 
+
+1853
+00:44:51,680 --> 00:44:53,430
+in the original graph g g hasn't been
+reweighted yet
+
+1854
+00:44:53,430 --> 00:44:53,440
+reweighted yet
+ 
+
+1855
+00:44:53,440 --> 00:44:55,270
+reweighted yet
+if there's a negative weight distance
+
+1856
+00:44:55,270 --> 00:44:55,280
+if there's a negative weight distance
+ 
+
+1857
+00:44:55,280 --> 00:44:57,990
+if there's a negative weight distance
+from s
+
+1858
+00:44:57,990 --> 00:44:58,000
+
+ 
+
+1859
+00:44:58,000 --> 00:45:01,270
+
+then it
+
+1860
+00:45:01,270 --> 00:45:01,280
+then it
+ 
+
+1861
+00:45:01,280 --> 00:45:07,589
+then it
+then there was a negative weight cycle
+
+1862
+00:45:07,589 --> 00:45:07,599
+
+ 
+
+1863
+00:45:07,599 --> 00:45:10,870
+
+in the original graph why is that
+
+1864
+00:45:10,870 --> 00:45:10,880
+in the original graph why is that
+ 
+
+1865
+00:45:10,880 --> 00:45:13,910
+in the original graph why is that
+well if this was set to minus infinity
+
+1866
+00:45:13,910 --> 00:45:13,920
+well if this was set to minus infinity
+ 
+
+1867
+00:45:13,920 --> 00:45:16,470
+well if this was set to minus infinity
+then there is some negative weight cycle
+
+1868
+00:45:16,470 --> 00:45:16,480
+then there is some negative weight cycle
+ 
+
+1869
+00:45:16,480 --> 00:45:17,349
+then there is some negative weight cycle
+in the graph
+
+1870
+00:45:17,349 --> 00:45:17,359
+in the graph
+ 
+
+1871
+00:45:17,359 --> 00:45:19,829
+in the graph
+right the worry is that that negative
+
+1872
+00:45:19,829 --> 00:45:19,839
+right the worry is that that negative
+ 
+
+1873
+00:45:19,839 --> 00:45:21,030
+right the worry is that that negative
+weight cycle
+
+1874
+00:45:21,030 --> 00:45:21,040
+weight cycle
+ 
+
+1875
+00:45:21,040 --> 00:45:25,349
+weight cycle
+was added to my graph by adding this
+
+1876
+00:45:25,349 --> 00:45:25,359
+was added to my graph by adding this
+ 
+
+1877
+00:45:25,359 --> 00:45:28,390
+was added to my graph by adding this
+vertex s but what do i know about vertex
+
+1878
+00:45:28,390 --> 00:45:28,400
+vertex s but what do i know about vertex
+ 
+
+1879
+00:45:28,400 --> 00:45:29,430
+vertex s but what do i know about vertex
+s
+
+1880
+00:45:29,430 --> 00:45:29,440
+s
+ 
+
+1881
+00:45:29,440 --> 00:45:31,829
+s
+it has no incoming edges right so no
+
+1882
+00:45:31,829 --> 00:45:31,839
+it has no incoming edges right so no
+ 
+
+1883
+00:45:31,839 --> 00:45:33,670
+it has no incoming edges right so no
+negative weight cycle could go through
+
+1884
+00:45:33,670 --> 00:45:33,680
+negative weight cycle could go through
+ 
+
+1885
+00:45:33,680 --> 00:45:36,870
+negative weight cycle could go through
+s right so any negative weight cycle
+
+1886
+00:45:36,870 --> 00:45:36,880
+s right so any negative weight cycle
+ 
+
+1887
+00:45:36,880 --> 00:45:39,109
+s right so any negative weight cycle
+was in the original graph and so i can
+
+1888
+00:45:39,109 --> 00:45:39,119
+was in the original graph and so i can
+ 
+
+1889
+00:45:39,119 --> 00:45:41,349
+was in the original graph and so i can
+abort
+
+1890
+00:45:41,349 --> 00:45:41,359
+abort
+ 
+
+1891
+00:45:41,359 --> 00:45:45,030
+abort
+abort yay
+
+1892
+00:45:45,030 --> 00:45:45,040
+abort yay
+ 
+
+1893
+00:45:45,040 --> 00:45:49,990
+abort yay
+otherwise
+
+1894
+00:45:49,990 --> 00:45:50,000
+
+ 
+
+1895
+00:45:50,000 --> 00:45:53,270
+
+what do i do well i know these shortest
+
+1896
+00:45:53,270 --> 00:45:53,280
+what do i do well i know these shortest
+ 
+
+1897
+00:45:53,280 --> 00:45:54,470
+what do i do well i know these shortest
+path distances
+
+1898
+00:45:54,470 --> 00:45:54,480
+path distances
+ 
+
+1899
+00:45:54,480 --> 00:45:57,910
+path distances
+here would satisfy the triangle
+
+1900
+00:45:57,910 --> 00:45:57,920
+here would satisfy the triangle
+ 
+
+1901
+00:45:57,920 --> 00:45:59,670
+here would satisfy the triangle
+inequality
+
+1902
+00:45:59,670 --> 00:45:59,680
+inequality
+ 
+
+1903
+00:45:59,680 --> 00:46:10,550
+inequality
+right so if i re-weight
+
+1904
+00:46:10,550 --> 00:46:10,560
+
+ 
+
+1905
+00:46:10,560 --> 00:46:14,790
+
+with h of v
+
+1906
+00:46:14,790 --> 00:46:14,800
+with h of v
+ 
+
+1907
+00:46:14,800 --> 00:46:18,390
+with h of v
+equal to delta s of v
+
+1908
+00:46:18,390 --> 00:46:18,400
+equal to delta s of v
+ 
+
+1909
+00:46:18,400 --> 00:46:20,870
+equal to delta s of v
+right if we set our potentials in our
+
+1910
+00:46:20,870 --> 00:46:20,880
+right if we set our potentials in our
+ 
+
+1911
+00:46:20,880 --> 00:46:22,230
+right if we set our potentials in our
+reweighted graph
+
+1912
+00:46:22,230 --> 00:46:22,240
+reweighted graph
+ 
+
+1913
+00:46:22,240 --> 00:46:25,430
+reweighted graph
+to be the shortest path distance from
+
+1914
+00:46:25,430 --> 00:46:25,440
+to be the shortest path distance from
+ 
+
+1915
+00:46:25,440 --> 00:46:26,069
+to be the shortest path distance from
+our
+
+1916
+00:46:26,069 --> 00:46:26,079
+our
+ 
+
+1917
+00:46:26,079 --> 00:46:29,190
+our
+super node s
+
+1918
+00:46:29,190 --> 00:46:29,200
+super node s
+ 
+
+1919
+00:46:29,200 --> 00:46:33,190
+super node s
+it satisfies the triangle inequality
+
+1920
+00:46:33,190 --> 00:46:33,200
+it satisfies the triangle inequality
+ 
+
+1921
+00:46:33,200 --> 00:46:36,550
+it satisfies the triangle inequality
+right and because there's no
+
+1922
+00:46:36,550 --> 00:46:36,560
+right and because there's no
+ 
+
+1923
+00:46:36,560 --> 00:46:39,750
+right and because there's no
+negative cycles all of these values are
+
+1924
+00:46:39,750 --> 00:46:39,760
+negative cycles all of these values are
+ 
+
+1925
+00:46:39,760 --> 00:46:40,870
+negative cycles all of these values are
+finite
+
+1926
+00:46:40,870 --> 00:46:40,880
+finite
+ 
+
+1927
+00:46:40,880 --> 00:46:43,270
+finite
+and then this re-weighting will lead to
+
+1928
+00:46:43,270 --> 00:46:43,280
+and then this re-weighting will lead to
+ 
+
+1929
+00:46:43,280 --> 00:46:44,550
+and then this re-weighting will lead to
+a graph
+
+1930
+00:46:44,550 --> 00:46:44,560
+a graph
+ 
+
+1931
+00:46:44,560 --> 00:46:48,710
+a graph
+with strictly or not strictly uh
+
+1932
+00:46:48,710 --> 00:46:48,720
+with strictly or not strictly uh
+ 
+
+1933
+00:46:48,720 --> 00:46:52,309
+with strictly or not strictly uh
+strictly no negative weights or uh
+
+1934
+00:46:52,309 --> 00:46:52,319
+strictly no negative weights or uh
+ 
+
+1935
+00:46:52,319 --> 00:46:56,309
+strictly no negative weights or uh
+non-negative weights okay great
+
+1936
+00:46:56,309 --> 00:46:56,319
+non-negative weights okay great
+ 
+
+1937
+00:46:56,319 --> 00:46:59,349
+non-negative weights okay great
+so that's basically it
+
+1938
+00:46:59,349 --> 00:46:59,359
+
+ 
+
+1939
+00:46:59,359 --> 00:47:01,030
+
+that's the idea behind johnson's
+
+1940
+00:47:01,030 --> 00:47:01,040
+that's the idea behind johnson's
+ 
+
+1941
+00:47:01,040 --> 00:47:08,630
+that's the idea behind johnson's
+algorithm
+
+1942
+00:47:08,630 --> 00:47:08,640
+
+ 
+
+1943
+00:47:08,640 --> 00:47:11,270
+
+it's really a reduction problem a
+
+1944
+00:47:11,270 --> 00:47:11,280
+it's really a reduction problem a
+ 
+
+1945
+00:47:11,280 --> 00:47:12,470
+it's really a reduction problem a
+reduction algorithm
+
+1946
+00:47:12,470 --> 00:47:12,480
+reduction algorithm
+ 
+
+1947
+00:47:12,480 --> 00:47:16,230
+reduction algorithm
+we're reducing from solving
+
+1948
+00:47:16,230 --> 00:47:16,240
+we're reducing from solving
+ 
+
+1949
+00:47:16,240 --> 00:47:19,270
+we're reducing from solving
+kind of signed all pair shortest paths
+
+1950
+00:47:19,270 --> 00:47:19,280
+kind of signed all pair shortest paths
+ 
+
+1951
+00:47:19,280 --> 00:47:21,349
+kind of signed all pair shortest paths
+graphs where their weights could be
+
+1952
+00:47:21,349 --> 00:47:21,359
+graphs where their weights could be
+ 
+
+1953
+00:47:21,359 --> 00:47:23,670
+graphs where their weights could be
+positive or negative
+
+1954
+00:47:23,670 --> 00:47:23,680
+positive or negative
+ 
+
+1955
+00:47:23,680 --> 00:47:27,430
+positive or negative
+and we're reducing to creating a graph
+
+1956
+00:47:27,430 --> 00:47:27,440
+and we're reducing to creating a graph
+ 
+
+1957
+00:47:27,440 --> 00:47:29,030
+and we're reducing to creating a graph
+that has the same shortest paths
+
+1958
+00:47:29,030 --> 00:47:29,040
+that has the same shortest paths
+ 
+
+1959
+00:47:29,040 --> 00:47:30,470
+that has the same shortest paths
+properties
+
+1960
+00:47:30,470 --> 00:47:30,480
+properties
+ 
+
+1961
+00:47:30,480 --> 00:47:32,390
+properties
+but only has non-negative edge weight so
+
+1962
+00:47:32,390 --> 00:47:32,400
+but only has non-negative edge weight so
+ 
+
+1963
+00:47:32,400 --> 00:47:34,950
+but only has non-negative edge weight so
+we're reducing from a signed context
+
+1964
+00:47:34,950 --> 00:47:34,960
+we're reducing from a signed context
+ 
+
+1965
+00:47:34,960 --> 00:47:38,069
+we're reducing from a signed context
+to a non-negative weight context
+
+1966
+00:47:38,069 --> 00:47:38,079
+to a non-negative weight context
+ 
+
+1967
+00:47:38,079 --> 00:47:44,710
+to a non-negative weight context
+right so johnson's algorithm
+
+1968
+00:47:44,710 --> 00:47:44,720
+
+ 
+
+1969
+00:47:44,720 --> 00:47:51,190
+
+what are the steps construct
+
+1970
+00:47:51,190 --> 00:47:51,200
+
+ 
+
+1971
+00:47:51,200 --> 00:47:55,349
+
+g s from
+
+1972
+00:47:55,349 --> 00:47:55,359
+g s from
+ 
+
+1973
+00:47:55,359 --> 00:47:59,270
+g s from
+g right
+
+1974
+00:47:59,270 --> 00:47:59,280
+g right
+ 
+
+1975
+00:47:59,280 --> 00:48:02,309
+g right
+just as up here right i make a new
+
+1976
+00:48:02,309 --> 00:48:02,319
+just as up here right i make a new
+ 
+
+1977
+00:48:02,319 --> 00:48:02,870
+just as up here right i make a new
+vertex
+
+1978
+00:48:02,870 --> 00:48:02,880
+vertex
+ 
+
+1979
+00:48:02,880 --> 00:48:05,990
+vertex
+s i put a zero weight
+
+1980
+00:48:05,990 --> 00:48:06,000
+s i put a zero weight
+ 
+
+1981
+00:48:06,000 --> 00:48:08,710
+s i put a zero weight
+directed edge from s to every vertex
+
+1982
+00:48:08,710 --> 00:48:08,720
+directed edge from s to every vertex
+ 
+
+1983
+00:48:08,720 --> 00:48:11,270
+directed edge from s to every vertex
+okay so that's the first step
+
+1984
+00:48:11,270 --> 00:48:11,280
+okay so that's the first step
+ 
+
+1985
+00:48:11,280 --> 00:48:16,790
+okay so that's the first step
+second step compute
+
+1986
+00:48:16,790 --> 00:48:16,800
+
+ 
+
+1987
+00:48:16,800 --> 00:48:20,630
+
+d s v for all
+
+1988
+00:48:20,630 --> 00:48:20,640
+d s v for all
+ 
+
+1989
+00:48:20,640 --> 00:48:24,230
+d s v for all
+v in v
+
+1990
+00:48:24,230 --> 00:48:24,240
+v in v
+ 
+
+1991
+00:48:24,240 --> 00:48:27,670
+v in v
+i e or e g
+
+1992
+00:48:27,670 --> 00:48:27,680
+i e or e g
+ 
+
+1993
+00:48:27,680 --> 00:48:30,230
+i e or e g
+i guess really it should be ie because i
+
+1994
+00:48:30,230 --> 00:48:30,240
+i guess really it should be ie because i
+ 
+
+1995
+00:48:30,240 --> 00:48:31,589
+i guess really it should be ie because i
+don't really have another option here
+
+1996
+00:48:31,589 --> 00:48:31,599
+don't really have another option here
+ 
+
+1997
+00:48:31,599 --> 00:48:32,829
+don't really have another option here
+but
+
+1998
+00:48:32,829 --> 00:48:32,839
+but
+ 
+
+1999
+00:48:32,839 --> 00:48:37,270
+but
+by bellman
+
+2000
+00:48:37,270 --> 00:48:37,280
+by bellman
+ 
+
+2001
+00:48:37,280 --> 00:48:41,430
+by bellman
+ford this is a single run of bellman
+
+2002
+00:48:41,430 --> 00:48:41,440
+ford this is a single run of bellman
+ 
+
+2003
+00:48:41,440 --> 00:48:44,069
+ford this is a single run of bellman
+ford here
+
+2004
+00:48:44,069 --> 00:48:44,079
+
+ 
+
+2005
+00:48:44,079 --> 00:48:46,870
+
+compute and then there are two
+
+2006
+00:48:46,870 --> 00:48:46,880
+compute and then there are two
+ 
+
+2007
+00:48:46,880 --> 00:48:49,109
+compute and then there are two
+possibilities
+
+2008
+00:48:49,109 --> 00:48:49,119
+possibilities
+ 
+
+2009
+00:48:49,119 --> 00:48:52,710
+possibilities
+if there exists
+
+2010
+00:48:52,710 --> 00:48:52,720
+if there exists
+ 
+
+2011
+00:48:52,720 --> 00:48:55,910
+if there exists
+a delta sv that's
+
+2012
+00:48:55,910 --> 00:48:55,920
+a delta sv that's
+ 
+
+2013
+00:48:55,920 --> 00:49:04,390
+a delta sv that's
+minus infinity
+
+2014
+00:49:04,390 --> 00:49:04,400
+
+ 
+
+2015
+00:49:04,400 --> 00:49:09,510
+
+then abort
+
+2016
+00:49:09,510 --> 00:49:09,520
+
+ 
+
+2017
+00:49:09,520 --> 00:49:14,829
+
+else
+
+2018
+00:49:14,829 --> 00:49:14,839
+
+ 
+
+2019
+00:49:14,839 --> 00:49:17,349
+
+make
+
+2020
+00:49:17,349 --> 00:49:17,359
+make
+ 
+
+2021
+00:49:17,359 --> 00:49:20,710
+make
+our we re-weight the graph
+
+2022
+00:49:20,710 --> 00:49:20,720
+our we re-weight the graph
+ 
+
+2023
+00:49:20,720 --> 00:49:23,829
+our we re-weight the graph
+according to this re-weighting scheme
+
+2024
+00:49:23,829 --> 00:49:23,839
+according to this re-weighting scheme
+ 
+
+2025
+00:49:23,839 --> 00:49:27,030
+according to this re-weighting scheme
+right
+
+2026
+00:49:27,030 --> 00:49:27,040
+
+ 
+
+2027
+00:49:27,040 --> 00:49:32,630
+
+by re-weighting
+
+2028
+00:49:32,630 --> 00:49:32,640
+
+ 
+
+2029
+00:49:32,640 --> 00:49:37,109
+
+each edge
+
+2030
+00:49:37,109 --> 00:49:37,119
+each edge
+ 
+
+2031
+00:49:37,119 --> 00:49:44,069
+each edge
+in my original graph to have weight
+
+2032
+00:49:44,069 --> 00:49:44,079
+in my original graph to have weight
+ 
+
+2033
+00:49:44,079 --> 00:49:48,069
+in my original graph to have weight
+our new weight which is our old weight
+
+2034
+00:49:48,069 --> 00:49:48,079
+our new weight which is our old weight
+ 
+
+2035
+00:49:48,079 --> 00:49:49,990
+our new weight which is our old weight
+plus our transformation now our
+
+2036
+00:49:49,990 --> 00:49:50,000
+plus our transformation now our
+ 
+
+2037
+00:49:50,000 --> 00:49:51,670
+plus our transformation now our
+transformation is now going to set
+
+2038
+00:49:51,670 --> 00:49:51,680
+transformation is now going to set
+ 
+
+2039
+00:49:51,680 --> 00:49:55,750
+transformation is now going to set
+hv to this delta sv right
+
+2040
+00:49:55,750 --> 00:49:55,760
+hv to this delta sv right
+ 
+
+2041
+00:49:55,760 --> 00:49:59,750
+hv to this delta sv right
+so i'm going to add delta
+
+2042
+00:49:59,750 --> 00:49:59,760
+so i'm going to add delta
+ 
+
+2043
+00:49:59,760 --> 00:50:03,510
+so i'm going to add delta
+s u and subtract delta
+
+2044
+00:50:03,510 --> 00:50:03,520
+s u and subtract delta
+ 
+
+2045
+00:50:03,520 --> 00:50:06,790
+s u and subtract delta
+s v that's our rewaiting scheme i'm just
+
+2046
+00:50:06,790 --> 00:50:06,800
+s v that's our rewaiting scheme i'm just
+ 
+
+2047
+00:50:06,800 --> 00:50:08,150
+s v that's our rewaiting scheme i'm just
+identifying
+
+2048
+00:50:08,150 --> 00:50:08,160
+identifying
+ 
+
+2049
+00:50:08,160 --> 00:50:11,829
+identifying
+hv with this shortest path distance here
+
+2050
+00:50:11,829 --> 00:50:11,839
+hv with this shortest path distance here
+ 
+
+2051
+00:50:11,839 --> 00:50:16,230
+hv with this shortest path distance here
+okay
+
+2052
+00:50:16,230 --> 00:50:16,240
+
+ 
+
+2053
+00:50:16,240 --> 00:50:18,150
+
+and i after i re-weighted that i can
+
+2054
+00:50:18,150 --> 00:50:18,160
+and i after i re-weighted that i can
+ 
+
+2055
+00:50:18,160 --> 00:50:20,790
+and i after i re-weighted that i can
+just
+
+2056
+00:50:20,790 --> 00:50:20,800
+
+ 
+
+2057
+00:50:20,800 --> 00:50:23,990
+
+solve
+
+2058
+00:50:23,990 --> 00:50:24,000
+
+ 
+
+2059
+00:50:24,000 --> 00:50:27,190
+
+all pairs shortest paths
+
+2060
+00:50:27,190 --> 00:50:27,200
+all pairs shortest paths
+ 
+
+2061
+00:50:27,200 --> 00:50:31,910
+all pairs shortest paths
+on g prime with
+
+2062
+00:50:31,910 --> 00:50:31,920
+on g prime with
+ 
+
+2063
+00:50:31,920 --> 00:50:36,150
+on g prime with
+dijkstra
+
+2064
+00:50:36,150 --> 00:50:36,160
+
+ 
+
+2065
+00:50:36,160 --> 00:50:43,109
+
+and then compute
+
+2066
+00:50:43,109 --> 00:50:43,119
+
+ 
+
+2067
+00:50:43,119 --> 00:50:47,030
+
+g shortest path distances
+
+2068
+00:50:47,030 --> 00:50:47,040
+g shortest path distances
+ 
+
+2069
+00:50:47,040 --> 00:50:52,829
+g shortest path distances
+from g prime shortest path
+
+2070
+00:50:52,829 --> 00:50:52,839
+
+ 
+
+2071
+00:50:52,839 --> 00:50:56,790
+
+distances
+
+2072
+00:50:56,790 --> 00:50:56,800
+
+ 
+
+2073
+00:50:56,800 --> 00:51:00,069
+
+right compute these distances from the
+
+2074
+00:51:00,069 --> 00:51:00,079
+right compute these distances from the
+ 
+
+2075
+00:51:00,079 --> 00:51:01,829
+right compute these distances from the
+other
+
+2076
+00:51:01,829 --> 00:51:01,839
+other
+ 
+
+2077
+00:51:01,839 --> 00:51:04,390
+other
+using this algorithm up here can compute
+
+2078
+00:51:04,390 --> 00:51:04,400
+using this algorithm up here can compute
+ 
+
+2079
+00:51:04,400 --> 00:51:05,270
+using this algorithm up here can compute
+distances in
+
+2080
+00:51:05,270 --> 00:51:05,280
+distances in
+ 
+
+2081
+00:51:05,280 --> 00:51:08,870
+distances in
+g from distances in g prime
+
+2082
+00:51:08,870 --> 00:51:08,880
+g from distances in g prime
+ 
+
+2083
+00:51:08,880 --> 00:51:11,990
+g from distances in g prime
+in linear time or sorry
+
+2084
+00:51:11,990 --> 00:51:12,000
+in linear time or sorry
+ 
+
+2085
+00:51:12,000 --> 00:51:15,349
+in linear time or sorry
+v times linear time linear time for
+
+2086
+00:51:15,349 --> 00:51:15,359
+v times linear time linear time for
+ 
+
+2087
+00:51:15,359 --> 00:51:19,349
+v times linear time linear time for
+each s for each vertex in my graph
+
+2088
+00:51:19,349 --> 00:51:19,359
+each s for each vertex in my graph
+ 
+
+2089
+00:51:19,359 --> 00:51:23,510
+each s for each vertex in my graph
+okay so that's the algorithm it's
+
+2090
+00:51:23,510 --> 00:51:23,520
+okay so that's the algorithm it's
+ 
+
+2091
+00:51:23,520 --> 00:51:26,710
+okay so that's the algorithm it's
+basically correctness is trivial right
+
+2092
+00:51:26,710 --> 00:51:26,720
+basically correctness is trivial right
+ 
+
+2093
+00:51:26,720 --> 00:51:29,349
+basically correctness is trivial right
+we already proved the whole part of this
+
+2094
+00:51:29,349 --> 00:51:29,359
+we already proved the whole part of this
+ 
+
+2095
+00:51:29,359 --> 00:51:30,710
+we already proved the whole part of this
+lecture the interesting part of this
+
+2096
+00:51:30,710 --> 00:51:30,720
+lecture the interesting part of this
+ 
+
+2097
+00:51:30,720 --> 00:51:31,589
+lecture the interesting part of this
+lecture
+
+2098
+00:51:31,589 --> 00:51:31,599
+lecture
+ 
+
+2099
+00:51:31,599 --> 00:51:33,190
+lecture
+was proving that if we had a
+
+2100
+00:51:33,190 --> 00:51:33,200
+was proving that if we had a
+ 
+
+2101
+00:51:33,200 --> 00:51:34,790
+was proving that if we had a
+transformation
+
+2102
+00:51:34,790 --> 00:51:34,800
+transformation
+ 
+
+2103
+00:51:34,800 --> 00:51:36,950
+transformation
+based on a potential function that
+
+2104
+00:51:36,950 --> 00:51:36,960
+based on a potential function that
+ 
+
+2105
+00:51:36,960 --> 00:51:39,430
+based on a potential function that
+changed outgoing edges
+
+2106
+00:51:39,430 --> 00:51:39,440
+changed outgoing edges
+ 
+
+2107
+00:51:39,440 --> 00:51:41,270
+changed outgoing edges
+in a symmetrically opposite way as
+
+2108
+00:51:41,270 --> 00:51:41,280
+in a symmetrically opposite way as
+ 
+
+2109
+00:51:41,280 --> 00:51:43,670
+in a symmetrically opposite way as
+incoming edges
+
+2110
+00:51:43,670 --> 00:51:43,680
+incoming edges
+ 
+
+2111
+00:51:43,680 --> 00:51:47,589
+incoming edges
+then that preserves shortest paths
+
+2112
+00:51:47,589 --> 00:51:47,599
+
+ 
+
+2113
+00:51:47,599 --> 00:51:51,270
+
+and then realizing that the triangle
+
+2114
+00:51:51,270 --> 00:51:51,280
+and then realizing that the triangle
+ 
+
+2115
+00:51:51,280 --> 00:51:54,790
+and then realizing that the triangle
+inequality
+
+2116
+00:51:54,790 --> 00:51:54,800
+
+ 
+
+2117
+00:51:54,800 --> 00:51:57,109
+
+enforces this condition that edge
+
+2118
+00:51:57,109 --> 00:51:57,119
+enforces this condition that edge
+ 
+
+2119
+00:51:57,119 --> 00:51:58,069
+enforces this condition that edge
+weights will be
+
+2120
+00:51:58,069 --> 00:51:58,079
+weights will be
+ 
+
+2121
+00:51:58,079 --> 00:52:02,829
+weights will be
+positive or non-negative under this
+
+2122
+00:52:02,829 --> 00:52:02,839
+
+ 
+
+2123
+00:52:02,839 --> 00:52:04,309
+
+re-weighting
+
+2124
+00:52:04,309 --> 00:52:04,319
+re-weighting
+ 
+
+2125
+00:52:04,319 --> 00:52:07,270
+re-weighting
+so we find shortest path distances from
+
+2126
+00:52:07,270 --> 00:52:07,280
+so we find shortest path distances from
+ 
+
+2127
+00:52:07,280 --> 00:52:09,510
+so we find shortest path distances from
+some other arbitrary vertex
+
+2128
+00:52:09,510 --> 00:52:09,520
+some other arbitrary vertex
+ 
+
+2129
+00:52:09,520 --> 00:52:12,069
+some other arbitrary vertex
+and set our potential functions to be
+
+2130
+00:52:12,069 --> 00:52:12,079
+and set our potential functions to be
+ 
+
+2131
+00:52:12,079 --> 00:52:14,230
+and set our potential functions to be
+those shortest path distance weights
+
+2132
+00:52:14,230 --> 00:52:14,240
+those shortest path distance weights
+ 
+
+2133
+00:52:14,240 --> 00:52:16,950
+those shortest path distance weights
+we do the re-weighting because that
+
+2134
+00:52:16,950 --> 00:52:16,960
+we do the re-weighting because that
+ 
+
+2135
+00:52:16,960 --> 00:52:19,190
+we do the re-weighting because that
+re-weighting preserves shortest paths
+
+2136
+00:52:19,190 --> 00:52:19,200
+re-weighting preserves shortest paths
+ 
+
+2137
+00:52:19,200 --> 00:52:21,750
+re-weighting preserves shortest paths
+which we already argued
+
+2138
+00:52:21,750 --> 00:52:21,760
+which we already argued
+ 
+
+2139
+00:52:21,760 --> 00:52:24,950
+which we already argued
+right then we can do
+
+2140
+00:52:24,950 --> 00:52:24,960
+right then we can do
+ 
+
+2141
+00:52:24,960 --> 00:52:27,190
+right then we can do
+then then this has positive edge weight
+
+2142
+00:52:27,190 --> 00:52:27,200
+then then this has positive edge weight
+ 
+
+2143
+00:52:27,200 --> 00:52:29,030
+then then this has positive edge weight
+so dijkstra applies
+
+2144
+00:52:29,030 --> 00:52:29,040
+so dijkstra applies
+ 
+
+2145
+00:52:29,040 --> 00:52:30,710
+so dijkstra applies
+and then computing this takes a small
+
+2146
+00:52:30,710 --> 00:52:30,720
+and then computing this takes a small
+ 
+
+2147
+00:52:30,720 --> 00:52:32,790
+and then computing this takes a small
+amount of time okay what is the
+
+2148
+00:52:32,790 --> 00:52:32,800
+amount of time okay what is the
+ 
+
+2149
+00:52:32,800 --> 00:52:35,510
+amount of time okay what is the
+running time of this algorithm so this
+
+2150
+00:52:35,510 --> 00:52:35,520
+running time of this algorithm so this
+ 
+
+2151
+00:52:35,520 --> 00:52:36,390
+running time of this algorithm so this
+part
+
+2152
+00:52:36,390 --> 00:52:36,400
+part
+ 
+
+2153
+00:52:36,400 --> 00:52:38,790
+part
+reconstructing this thing this takes
+
+2154
+00:52:38,790 --> 00:52:38,800
+reconstructing this thing this takes
+ 
+
+2155
+00:52:38,800 --> 00:52:39,829
+reconstructing this thing this takes
+linear time
+
+2156
+00:52:39,829 --> 00:52:39,839
+linear time
+ 
+
+2157
+00:52:39,839 --> 00:52:44,150
+linear time
+right i'm just adding
+
+2158
+00:52:44,150 --> 00:52:44,160
+
+ 
+
+2159
+00:52:44,160 --> 00:52:47,030
+
+i'm just making a new graph of the same
+
+2160
+00:52:47,030 --> 00:52:47,040
+i'm just making a new graph of the same
+ 
+
+2161
+00:52:47,040 --> 00:52:47,430
+i'm just making a new graph of the same
+size
+
+2162
+00:52:47,430 --> 00:52:47,440
+size
+ 
+
+2163
+00:52:47,440 --> 00:52:50,870
+size
+except i added v edges and one vertex
+
+2164
+00:52:50,870 --> 00:52:50,880
+except i added v edges and one vertex
+ 
+
+2165
+00:52:50,880 --> 00:52:54,630
+except i added v edges and one vertex
+okay computing doing bellman ford on
+
+2166
+00:52:54,630 --> 00:52:54,640
+okay computing doing bellman ford on
+ 
+
+2167
+00:52:54,640 --> 00:52:55,190
+okay computing doing bellman ford on
+this new
+
+2168
+00:52:55,190 --> 00:52:55,200
+this new
+ 
+
+2169
+00:52:55,200 --> 00:52:57,910
+this new
+modified graph that's just i'm doing
+
+2170
+00:52:57,910 --> 00:52:57,920
+modified graph that's just i'm doing
+ 
+
+2171
+00:52:57,920 --> 00:52:59,190
+modified graph that's just i'm doing
+that once
+
+2172
+00:52:59,190 --> 00:52:59,200
+that once
+ 
+
+2173
+00:52:59,200 --> 00:53:03,910
+that once
+that takes v times e time
+
+2174
+00:53:03,910 --> 00:53:03,920
+
+ 
+
+2175
+00:53:03,920 --> 00:53:07,510
+
+doing this check that that just take i'm
+
+2176
+00:53:07,510 --> 00:53:07,520
+doing this check that that just take i'm
+ 
+
+2177
+00:53:07,520 --> 00:53:09,109
+doing this check that that just take i'm
+looping over from my vertices that just
+
+2178
+00:53:09,109 --> 00:53:09,119
+looping over from my vertices that just
+ 
+
+2179
+00:53:09,119 --> 00:53:09,589
+looping over from my vertices that just
+takes v
+
+2180
+00:53:09,589 --> 00:53:09,599
+takes v
+ 
+
+2181
+00:53:09,599 --> 00:53:13,589
+takes v
+time otherwise
+
+2182
+00:53:13,589 --> 00:53:13,599
+
+ 
+
+2183
+00:53:13,599 --> 00:53:16,470
+
+doing this re-weighting i change the
+
+2184
+00:53:16,470 --> 00:53:16,480
+doing this re-weighting i change the
+ 
+
+2185
+00:53:16,480 --> 00:53:17,910
+doing this re-weighting i change the
+weight of every edge
+
+2186
+00:53:17,910 --> 00:53:17,920
+weight of every edge
+ 
+
+2187
+00:53:17,920 --> 00:53:23,430
+weight of every edge
+so that takes order e time
+
+2188
+00:53:23,430 --> 00:53:23,440
+
+ 
+
+2189
+00:53:23,440 --> 00:53:27,510
+
+and then solving g prime
+
+2190
+00:53:27,510 --> 00:53:27,520
+and then solving g prime
+ 
+
+2191
+00:53:27,520 --> 00:53:30,150
+and then solving g prime
+solving all pair shortest paths on the
+
+2192
+00:53:30,150 --> 00:53:30,160
+solving all pair shortest paths on the
+ 
+
+2193
+00:53:30,160 --> 00:53:31,750
+solving all pair shortest paths on the
+modified edge weight graph
+
+2194
+00:53:31,750 --> 00:53:31,760
+modified edge weight graph
+ 
+
+2195
+00:53:31,760 --> 00:53:34,870
+modified edge weight graph
+with dijkstra takes v times dijkstra
+
+2196
+00:53:34,870 --> 00:53:34,880
+with dijkstra takes v times dijkstra
+ 
+
+2197
+00:53:34,880 --> 00:53:38,390
+with dijkstra takes v times dijkstra
+right that's uh
+
+2198
+00:53:38,390 --> 00:53:38,400
+
+ 
+
+2199
+00:53:38,400 --> 00:53:40,870
+
+use a little bit more board space here
+
+2200
+00:53:40,870 --> 00:53:40,880
+use a little bit more board space here
+ 
+
+2201
+00:53:40,880 --> 00:53:42,790
+use a little bit more board space here
+that's
+
+2202
+00:53:42,790 --> 00:53:42,800
+that's
+ 
+
+2203
+00:53:42,800 --> 00:53:45,829
+that's
+v times
+
+2204
+00:53:45,829 --> 00:53:45,839
+v times
+ 
+
+2205
+00:53:45,839 --> 00:53:50,150
+v times
+v log
+
+2206
+00:53:50,150 --> 00:53:50,160
+v log
+ 
+
+2207
+00:53:50,160 --> 00:53:54,870
+v log
+v plus e
+
+2208
+00:53:54,870 --> 00:53:54,880
+
+ 
+
+2209
+00:53:54,880 --> 00:53:57,510
+
+time right which is actually the running
+
+2210
+00:53:57,510 --> 00:53:57,520
+time right which is actually the running
+ 
+
+2211
+00:53:57,520 --> 00:53:59,109
+time right which is actually the running
+time that we're looking for
+
+2212
+00:53:59,109 --> 00:53:59,119
+time that we're looking for
+ 
+
+2213
+00:53:59,119 --> 00:54:01,589
+time that we're looking for
+right i wanted to reduce to not using
+
+2214
+00:54:01,589 --> 00:54:01,599
+right i wanted to reduce to not using
+ 
+
+2215
+00:54:01,599 --> 00:54:02,790
+right i wanted to reduce to not using
+more than this time
+
+2216
+00:54:02,790 --> 00:54:02,800
+more than this time
+ 
+
+2217
+00:54:02,800 --> 00:54:04,790
+more than this time
+we used this amount of time let's make
+
+2218
+00:54:04,790 --> 00:54:04,800
+we used this amount of time let's make
+ 
+
+2219
+00:54:04,800 --> 00:54:06,390
+we used this amount of time let's make
+sure we still didn't use
+
+2220
+00:54:06,390 --> 00:54:06,400
+sure we still didn't use
+ 
+
+2221
+00:54:06,400 --> 00:54:10,069
+sure we still didn't use
+even more after that we compute
+
+2222
+00:54:10,069 --> 00:54:10,079
+even more after that we compute
+ 
+
+2223
+00:54:10,079 --> 00:54:13,829
+even more after that we compute
+these paths as proved before in
+
+2224
+00:54:13,829 --> 00:54:13,839
+these paths as proved before in
+ 
+
+2225
+00:54:13,839 --> 00:54:18,950
+these paths as proved before in
+v times v plus e
+
+2226
+00:54:18,950 --> 00:54:18,960
+v times v plus e
+ 
+
+2227
+00:54:18,960 --> 00:54:21,430
+v times v plus e
+which is smaller than that right and so
+
+2228
+00:54:21,430 --> 00:54:21,440
+which is smaller than that right and so
+ 
+
+2229
+00:54:21,440 --> 00:54:24,549
+which is smaller than that right and so
+summing up all of these running times
+
+2230
+00:54:24,549 --> 00:54:24,559
+summing up all of these running times
+ 
+
+2231
+00:54:24,559 --> 00:54:27,910
+summing up all of these running times
+this one dominates and so johnson's can
+
+2232
+00:54:27,910 --> 00:54:27,920
+this one dominates and so johnson's can
+ 
+
+2233
+00:54:27,920 --> 00:54:31,990
+this one dominates and so johnson's can
+solve signed weighted all pairs shortest
+
+2234
+00:54:31,990 --> 00:54:32,000
+solve signed weighted all pairs shortest
+ 
+
+2235
+00:54:32,000 --> 00:54:34,390
+solve signed weighted all pairs shortest
+paths
+
+2236
+00:54:34,390 --> 00:54:34,400
+paths
+ 
+
+2237
+00:54:34,400 --> 00:54:37,990
+paths
+signed all pair shortest paths not in
+
+2238
+00:54:37,990 --> 00:54:38,000
+signed all pair shortest paths not in
+ 
+
+2239
+00:54:38,000 --> 00:54:41,589
+signed all pair shortest paths not in
+v times bellman ford like we had before
+
+2240
+00:54:41,589 --> 00:54:41,599
+v times bellman ford like we had before
+ 
+
+2241
+00:54:41,599 --> 00:54:44,870
+v times bellman ford like we had before
+up here but faster
+
+2242
+00:54:44,870 --> 00:54:44,880
+up here but faster
+ 
+
+2243
+00:54:44,880 --> 00:54:48,230
+up here but faster
+in nearly linear
+
+2244
+00:54:48,230 --> 00:54:48,240
+in nearly linear
+ 
+
+2245
+00:54:48,240 --> 00:54:52,069
+in nearly linear
+for sparse graphs just without this
+
+2246
+00:54:52,069 --> 00:54:52,079
+for sparse graphs just without this
+ 
+
+2247
+00:54:52,079 --> 00:54:54,549
+for sparse graphs just without this
+log factor so we got a quite a big
+
+2248
+00:54:54,549 --> 00:54:54,559
+log factor so we got a quite a big
+ 
+
+2249
+00:54:54,559 --> 00:54:55,990
+log factor so we got a quite a big
+improvement
+
+2250
+00:54:55,990 --> 00:54:56,000
+improvement
+ 
+
+2251
+00:54:56,000 --> 00:55:00,309
+improvement
+right so that's the nice thing about
+
+2252
+00:55:00,309 --> 00:55:00,319
+right so that's the nice thing about
+ 
+
+2253
+00:55:00,319 --> 00:55:03,349
+right so that's the nice thing about
+all pair shortest paths is that
+
+2254
+00:55:03,349 --> 00:55:03,359
+all pair shortest paths is that
+ 
+
+2255
+00:55:03,359 --> 00:55:06,789
+all pair shortest paths is that
+really we don't have to incur this this
+
+2256
+00:55:06,789 --> 00:55:06,799
+really we don't have to incur this this
+ 
+
+2257
+00:55:06,799 --> 00:55:10,230
+really we don't have to incur this this
+big cost uh in the context of negative
+
+2258
+00:55:10,230 --> 00:55:10,240
+big cost uh in the context of negative
+ 
+
+2259
+00:55:10,240 --> 00:55:11,030
+big cost uh in the context of negative
+weights
+
+2260
+00:55:11,030 --> 00:55:11,040
+weights
+ 
+
+2261
+00:55:11,040 --> 00:55:13,510
+weights
+essentially we just run bellman ford
+
+2262
+00:55:13,510 --> 00:55:13,520
+essentially we just run bellman ford
+ 
+
+2263
+00:55:13,520 --> 00:55:14,069
+essentially we just run bellman ford
+once
+
+2264
+00:55:14,069 --> 00:55:14,079
+once
+ 
+
+2265
+00:55:14,079 --> 00:55:15,589
+once
+to see if there is a negative weight
+
+2266
+00:55:15,589 --> 00:55:15,599
+to see if there is a negative weight
+ 
+
+2267
+00:55:15,599 --> 00:55:17,910
+to see if there is a negative weight
+cycle in my graph if it is
+
+2268
+00:55:17,910 --> 00:55:17,920
+cycle in my graph if it is
+ 
+
+2269
+00:55:17,920 --> 00:55:21,589
+cycle in my graph if it is
+i save a lot of work by stopping early
+
+2270
+00:55:21,589 --> 00:55:21,599
+i save a lot of work by stopping early
+ 
+
+2271
+00:55:21,599 --> 00:55:24,150
+i save a lot of work by stopping early
+okay so that's johnson's that's the end
+
+2272
+00:55:24,150 --> 00:55:24,160
+okay so that's johnson's that's the end
+ 
+
+2273
+00:55:24,160 --> 00:55:24,870
+okay so that's johnson's that's the end
+of our
+
+2274
+00:55:24,870 --> 00:55:24,880
+of our
+ 
+
+2275
+00:55:24,880 --> 00:55:28,470
+of our
+graphs lectures we'll be having a review
+
+2276
+00:55:28,470 --> 00:55:28,480
+graphs lectures we'll be having a review
+ 
+
+2277
+00:55:28,480 --> 00:55:30,150
+graphs lectures we'll be having a review
+and problem session
+
+2278
+00:55:30,150 --> 00:55:30,160
+and problem session
+ 
+
+2279
+00:55:30,160 --> 00:55:32,789
+and problem session
+about how to solve problems graph
+
+2280
+00:55:32,789 --> 00:55:32,799
+about how to solve problems graph
+ 
+
+2281
+00:55:32,799 --> 00:55:33,589
+about how to solve problems graph
+problems
+
+2282
+00:55:33,589 --> 00:55:33,599
+problems
+ 
+
+2283
+00:55:33,599 --> 00:55:36,870
+problems
+using this material but we've we've
+
+2284
+00:55:36,870 --> 00:55:36,880
+using this material but we've we've
+ 
+
+2285
+00:55:36,880 --> 00:55:38,390
+using this material but we've we've
+talked about a lot of different things
+
+2286
+00:55:38,390 --> 00:55:38,400
+talked about a lot of different things
+ 
+
+2287
+00:55:38,400 --> 00:55:39,750
+talked about a lot of different things
+so far we've talked about graph
+
+2288
+00:55:39,750 --> 00:55:39,760
+so far we've talked about graph
+ 
+
+2289
+00:55:39,760 --> 00:55:40,630
+so far we've talked about graph
+reachability
+
+2290
+00:55:40,630 --> 00:55:40,640
+reachability
+ 
+
+2291
+00:55:40,640 --> 00:55:43,589
+reachability
+connected components detecting cycles
+
+2292
+00:55:43,589 --> 00:55:43,599
+connected components detecting cycles
+ 
+
+2293
+00:55:43,599 --> 00:55:45,750
+connected components detecting cycles
+detecting topological sore orders of a
+
+2294
+00:55:45,750 --> 00:55:45,760
+detecting topological sore orders of a
+ 
+
+2295
+00:55:45,760 --> 00:55:47,270
+detecting topological sore orders of a
+dag
+
+2296
+00:55:47,270 --> 00:55:47,280
+dag
+ 
+
+2297
+00:55:47,280 --> 00:55:48,470
+dag
+we've talked about finding negative
+
+2298
+00:55:48,470 --> 00:55:48,480
+we've talked about finding negative
+ 
+
+2299
+00:55:48,480 --> 00:55:50,549
+we've talked about finding negative
+weight cycles single source shortest
+
+2300
+00:55:50,549 --> 00:55:50,559
+weight cycles single source shortest
+ 
+
+2301
+00:55:50,559 --> 00:55:52,150
+weight cycles single source shortest
+path algorithms
+
+2302
+00:55:52,150 --> 00:55:52,160
+path algorithms
+ 
+
+2303
+00:55:52,160 --> 00:55:54,950
+path algorithms
+and now finally today all pair shortest
+
+2304
+00:55:54,950 --> 00:55:54,960
+and now finally today all pair shortest
+ 
+
+2305
+00:55:54,960 --> 00:55:56,150
+and now finally today all pair shortest
+path algorithms
+
+2306
+00:55:56,150 --> 00:55:56,160
+path algorithms
+ 
+
+2307
+00:55:56,160 --> 00:55:59,270
+path algorithms
+with a new algorithm that's really not
+
+2308
+00:55:59,270 --> 00:55:59,280
+with a new algorithm that's really not
+ 
+
+2309
+00:55:59,280 --> 00:56:01,670
+with a new algorithm that's really not
+a an entirely new algorithm right we
+
+2310
+00:56:01,670 --> 00:56:01,680
+a an entirely new algorithm right we
+ 
+
+2311
+00:56:01,680 --> 00:56:02,549
+a an entirely new algorithm right we
+didn't have to do
+
+2312
+00:56:02,549 --> 00:56:02,559
+didn't have to do
+ 
+
+2313
+00:56:02,559 --> 00:56:06,230
+didn't have to do
+any proof by induction here
+
+2314
+00:56:06,230 --> 00:56:06,240
+any proof by induction here
+ 
+
+2315
+00:56:06,240 --> 00:56:08,789
+any proof by induction here
+really the heavy work that's happening
+
+2316
+00:56:08,789 --> 00:56:08,799
+really the heavy work that's happening
+ 
+
+2317
+00:56:08,799 --> 00:56:10,789
+really the heavy work that's happening
+is we're reducing to using
+
+2318
+00:56:10,789 --> 00:56:10,799
+is we're reducing to using
+ 
+
+2319
+00:56:10,799 --> 00:56:13,589
+is we're reducing to using
+either dykstra or bellman ford to do the
+
+2320
+00:56:13,589 --> 00:56:13,599
+either dykstra or bellman ford to do the
+ 
+
+2321
+00:56:13,599 --> 00:56:15,190
+either dykstra or bellman ford to do the
+heavy lifting of finding
+
+2322
+00:56:15,190 --> 00:56:15,200
+heavy lifting of finding
+ 
+
+2323
+00:56:15,200 --> 00:56:18,950
+heavy lifting of finding
+single shorts shortest paths efficiently
+
+2324
+00:56:18,950 --> 00:56:18,960
+single shorts shortest paths efficiently
+ 
+
+2325
+00:56:18,960 --> 00:56:22,150
+single shorts shortest paths efficiently
+right so johnson's is really just glue
+
+2326
+00:56:22,150 --> 00:56:22,160
+right so johnson's is really just glue
+ 
+
+2327
+00:56:22,160 --> 00:56:25,750
+right so johnson's is really just glue
+to uh transform a graph in a clever way
+
+2328
+00:56:25,750 --> 00:56:25,760
+to uh transform a graph in a clever way
+ 
+
+2329
+00:56:25,760 --> 00:56:27,430
+to uh transform a graph in a clever way
+and then reducing to using some of these
+
+2330
+00:56:27,430 --> 00:56:27,440
+and then reducing to using some of these
+ 
+
+2331
+00:56:27,440 --> 00:56:28,950
+and then reducing to using some of these
+shortest paths algorithms
+
+2332
+00:56:28,950 --> 00:56:28,960
+shortest paths algorithms
+ 
+
+2333
+00:56:28,960 --> 00:56:32,710
+shortest paths algorithms
+faster okay so that's our unit on graphs
+
+2334
+00:56:32,710 --> 00:56:32,720
+faster okay so that's our unit on graphs
+ 
+
+2335
+00:56:32,720 --> 00:56:35,270
+faster okay so that's our unit on graphs
+our next lecture will start talking
+
+2336
+00:56:35,270 --> 00:56:35,280
+our next lecture will start talking
+ 
+
+2337
+00:56:35,280 --> 00:56:36,150
+our next lecture will start talking
+about a
+
+2338
+00:56:36,150 --> 00:56:36,160
+about a
+ 
+
+2339
+00:56:36,160 --> 00:56:38,950
+about a
+general form of not presenting you with
+
+2340
+00:56:38,950 --> 00:56:38,960
+general form of not presenting you with
+ 
+
+2341
+00:56:38,960 --> 00:56:39,829
+general form of not presenting you with
+an algorithm
+
+2342
+00:56:39,829 --> 00:56:39,839
+an algorithm
+ 
+
+2343
+00:56:39,839 --> 00:56:42,549
+an algorithm
+but how to design your own algorithm in
+
+2344
+00:56:42,549 --> 00:56:42,559
+but how to design your own algorithm in
+ 
+
+2345
+00:56:42,559 --> 00:56:43,990
+but how to design your own algorithm in
+the context of dynamic
+
+2346
+00:56:43,990 --> 00:56:44,000
+the context of dynamic
+ 
+
+2347
+00:56:44,000 --> 00:56:54,640
+the context of dynamic
+programming okay so see you next lecture
+

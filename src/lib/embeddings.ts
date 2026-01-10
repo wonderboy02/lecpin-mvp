@@ -1,8 +1,16 @@
 import OpenAI from 'openai';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Lazy initialization: 함수 호출 시점에만 OpenAI 클라이언트 생성
+let openai: OpenAI | null = null;
+
+function getOpenAIClient(): OpenAI {
+  if (!openai) {
+    openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+  }
+  return openai;
+}
 
 /**
  * 단일 텍스트의 임베딩을 생성합니다
@@ -11,7 +19,8 @@ const openai = new OpenAI({
  */
 export async function generateEmbedding(text: string): Promise<number[]> {
   try {
-    const response = await openai.embeddings.create({
+    const client = getOpenAIClient();
+    const response = await client.embeddings.create({
       model: 'text-embedding-3-large',
       input: text,
       encoding_format: 'float',
@@ -35,6 +44,7 @@ export async function generateEmbeddings(texts: string[]): Promise<number[][]> {
   }
 
   try {
+    const client = getOpenAIClient();
     // OpenAI API는 배치 요청을 지원하지만, 너무 많은 경우 청크로 나눔
     const BATCH_SIZE = 100;
     const embeddings: number[][] = [];
@@ -42,7 +52,7 @@ export async function generateEmbeddings(texts: string[]): Promise<number[][]> {
     for (let i = 0; i < texts.length; i += BATCH_SIZE) {
       const batch = texts.slice(i, i + BATCH_SIZE);
 
-      const response = await openai.embeddings.create({
+      const response = await client.embeddings.create({
         model: 'text-embedding-3-large',
         input: batch,
         encoding_format: 'float',

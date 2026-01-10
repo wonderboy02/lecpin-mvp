@@ -1,0 +1,11565 @@
+1
+00:00:12,799 --> 00:00:16,310
+
+good morning everybody
+
+2
+00:00:16,310 --> 00:00:16,320
+good morning everybody
+ 
+
+3
+00:00:16,320 --> 00:00:19,189
+good morning everybody
+how's everybody doing nice uh long
+
+4
+00:00:19,189 --> 00:00:19,199
+how's everybody doing nice uh long
+ 
+
+5
+00:00:19,199 --> 00:00:19,990
+how's everybody doing nice uh long
+weekend
+
+6
+00:00:19,990 --> 00:00:20,000
+weekend
+ 
+
+7
+00:00:20,000 --> 00:00:21,910
+weekend
+we just came from i'm doing well i'm
+
+8
+00:00:21,910 --> 00:00:21,920
+we just came from i'm doing well i'm
+ 
+
+9
+00:00:21,920 --> 00:00:24,150
+we just came from i'm doing well i'm
+actually getting over a little cold
+
+10
+00:00:24,150 --> 00:00:24,160
+actually getting over a little cold
+ 
+
+11
+00:00:24,160 --> 00:00:27,189
+actually getting over a little cold
+uh oh yeah unfortunately uh
+
+12
+00:00:27,189 --> 00:00:27,199
+uh oh yeah unfortunately uh
+ 
+
+13
+00:00:27,199 --> 00:00:30,150
+uh oh yeah unfortunately uh
+but after this i i don't have anything
+
+14
+00:00:30,150 --> 00:00:30,160
+but after this i i don't have anything
+ 
+
+15
+00:00:30,160 --> 00:00:31,910
+but after this i i don't have anything
+else this week so that's good
+
+16
+00:00:31,910 --> 00:00:31,920
+else this week so that's good
+ 
+
+17
+00:00:31,920 --> 00:00:35,350
+else this week so that's good
+um okay so last time
+
+18
+00:00:35,350 --> 00:00:35,360
+um okay so last time
+ 
+
+19
+00:00:35,360 --> 00:00:40,229
+um okay so last time
+last week we talked about how
+
+20
+00:00:40,229 --> 00:00:40,239
+last week we talked about how
+ 
+
+21
+00:00:40,239 --> 00:00:43,590
+last week we talked about how
+we looked at the search problem
+
+22
+00:00:43,590 --> 00:00:43,600
+we looked at the search problem
+ 
+
+23
+00:00:43,600 --> 00:00:46,150
+we looked at the search problem
+that we talked about uh earlier that
+
+24
+00:00:46,150 --> 00:00:46,160
+that we talked about uh earlier that
+ 
+
+25
+00:00:46,160 --> 00:00:48,069
+that we talked about uh earlier that
+week
+
+26
+00:00:48,069 --> 00:00:48,079
+week
+ 
+
+27
+00:00:48,079 --> 00:00:49,990
+week
+and showed that in a certain model of
+
+28
+00:00:49,990 --> 00:00:50,000
+and showed that in a certain model of
+ 
+
+29
+00:00:50,000 --> 00:00:51,110
+and showed that in a certain model of
+computation
+
+30
+00:00:51,110 --> 00:00:51,120
+computation
+ 
+
+31
+00:00:51,120 --> 00:00:55,830
+computation
+where i kind of could only compare
+
+32
+00:00:55,830 --> 00:00:55,840
+where i kind of could only compare
+ 
+
+33
+00:00:55,840 --> 00:00:58,869
+where i kind of could only compare
+two objects that i'm storing in my that
+
+34
+00:00:58,869 --> 00:00:58,879
+two objects that i'm storing in my that
+ 
+
+35
+00:00:58,879 --> 00:01:00,150
+two objects that i'm storing in my that
+i'm storing
+
+36
+00:01:00,150 --> 00:01:00,160
+i'm storing
+ 
+
+37
+00:01:00,160 --> 00:01:03,029
+i'm storing
+and get some constant number of outputs
+
+38
+00:01:03,029 --> 00:01:03,039
+and get some constant number of outputs
+ 
+
+39
+00:01:03,039 --> 00:01:04,390
+and get some constant number of outputs
+on what i could
+
+40
+00:01:04,390 --> 00:01:04,400
+on what i could
+ 
+
+41
+00:01:04,400 --> 00:01:06,310
+on what i could
+how i could identify these things like
+
+42
+00:01:06,310 --> 00:01:06,320
+how i could identify these things like
+ 
+
+43
+00:01:06,320 --> 00:01:08,230
+how i could identify these things like
+equal or less than or something like
+
+44
+00:01:08,230 --> 00:01:08,240
+equal or less than or something like
+ 
+
+45
+00:01:08,240 --> 00:01:09,510
+equal or less than or something like
+that
+
+46
+00:01:09,510 --> 00:01:09,520
+that
+ 
+
+47
+00:01:09,520 --> 00:01:11,429
+that
+then we drew a decision tree and we got
+
+48
+00:01:11,429 --> 00:01:11,439
+then we drew a decision tree and we got
+ 
+
+49
+00:01:11,439 --> 00:01:13,990
+then we drew a decision tree and we got
+this this bounds that
+
+50
+00:01:13,990 --> 00:01:14,000
+this this bounds that
+ 
+
+51
+00:01:14,000 --> 00:01:17,350
+this this bounds that
+if i had n outputs right
+
+52
+00:01:17,350 --> 00:01:17,360
+if i had n outputs right
+ 
+
+53
+00:01:17,360 --> 00:01:19,749
+if i had n outputs right
+i would require my decision tree to be
+
+54
+00:01:19,749 --> 00:01:19,759
+i would require my decision tree to be
+ 
+
+55
+00:01:19,759 --> 00:01:21,590
+i would require my decision tree to be
+at least log n height
+
+56
+00:01:21,590 --> 00:01:21,600
+at least log n height
+ 
+
+57
+00:01:21,600 --> 00:01:24,830
+at least log n height
+and so in this model i can't find the
+
+58
+00:01:24,830 --> 00:01:24,840
+and so in this model i can't find the
+ 
+
+59
+00:01:24,840 --> 00:01:26,230
+and so in this model i can't find the
+things
+
+60
+00:01:26,230 --> 00:01:26,240
+things
+ 
+
+61
+00:01:26,240 --> 00:01:29,350
+things
+in faster than log n time but luckily
+
+62
+00:01:29,350 --> 00:01:29,360
+in faster than log n time but luckily
+ 
+
+63
+00:01:29,360 --> 00:01:33,510
+in faster than log n time but luckily
+we are in a model of computation which
+
+64
+00:01:33,510 --> 00:01:33,520
+we are in a model of computation which
+ 
+
+65
+00:01:33,520 --> 00:01:35,590
+we are in a model of computation which
+has a stronger operation
+
+66
+00:01:35,590 --> 00:01:35,600
+has a stronger operation
+ 
+
+67
+00:01:35,600 --> 00:01:40,069
+has a stronger operation
+namely random accessing and if we
+
+68
+00:01:40,069 --> 00:01:40,079
+namely random accessing and if we
+ 
+
+69
+00:01:40,079 --> 00:01:42,550
+namely random accessing and if we
+stored uh the things that we're looking
+
+70
+00:01:42,550 --> 00:01:42,560
+stored uh the things that we're looking
+ 
+
+71
+00:01:42,560 --> 00:01:43,270
+stored uh the things that we're looking
+for that
+
+72
+00:01:43,270 --> 00:01:43,280
+for that
+ 
+
+73
+00:01:43,280 --> 00:01:45,990
+for that
+we have unique keys and those keys are
+
+74
+00:01:45,990 --> 00:01:46,000
+we have unique keys and those keys are
+ 
+
+75
+00:01:46,000 --> 00:01:47,590
+we have unique keys and those keys are
+integers
+
+76
+00:01:47,590 --> 00:01:47,600
+integers
+ 
+
+77
+00:01:47,600 --> 00:01:51,510
+integers
+then if i have an item with key k
+
+78
+00:01:51,510 --> 00:01:51,520
+then if i have an item with key k
+ 
+
+79
+00:01:51,520 --> 00:01:55,590
+then if i have an item with key k
+i if i store it at index k in my
+
+80
+00:01:55,590 --> 00:01:55,600
+i if i store it at index k in my
+ 
+
+81
+00:01:55,600 --> 00:01:59,109
+i if i store it at index k in my
+array then i can find it
+
+82
+00:01:59,109 --> 00:01:59,119
+array then i can find it
+ 
+
+83
+00:01:59,119 --> 00:02:02,069
+array then i can find it
+and manipulate it in constant time right
+
+84
+00:02:02,069 --> 00:02:02,079
+and manipulate it in constant time right
+ 
+
+85
+00:02:02,079 --> 00:02:04,630
+and manipulate it in constant time right
+that's pretty cool
+
+86
+00:02:04,630 --> 00:02:04,640
+that's pretty cool
+ 
+
+87
+00:02:04,640 --> 00:02:06,069
+that's pretty cool
+that's what we call the direct access
+
+88
+00:02:06,069 --> 00:02:06,079
+that's what we call the direct access
+ 
+
+89
+00:02:06,079 --> 00:02:07,749
+that's what we call the direct access
+array a direct access array really not
+
+90
+00:02:07,749 --> 00:02:07,759
+array a direct access array really not
+ 
+
+91
+00:02:07,759 --> 00:02:09,510
+array a direct access array really not
+different than a regular array
+
+92
+00:02:09,510 --> 00:02:09,520
+different than a regular array
+ 
+
+93
+00:02:09,520 --> 00:02:11,110
+different than a regular array
+except how we're using it when we're
+
+94
+00:02:11,110 --> 00:02:11,120
+except how we're using it when we're
+ 
+
+95
+00:02:11,120 --> 00:02:13,030
+except how we're using it when we're
+talking about sequences
+
+96
+00:02:13,030 --> 00:02:13,040
+talking about sequences
+ 
+
+97
+00:02:13,040 --> 00:02:15,910
+talking about sequences
+is we are giving kind of extrinsic
+
+98
+00:02:15,910 --> 00:02:15,920
+is we are giving kind of extrinsic
+ 
+
+99
+00:02:15,920 --> 00:02:17,589
+is we are giving kind of extrinsic
+semantics
+
+100
+00:02:17,589 --> 00:02:17,599
+semantics
+ 
+
+101
+00:02:17,599 --> 00:02:20,630
+semantics
+to the slots where we are storing these
+
+102
+00:02:20,630 --> 00:02:20,640
+to the slots where we are storing these
+ 
+
+103
+00:02:20,640 --> 00:02:22,630
+to the slots where we are storing these
+things basically i could put
+
+104
+00:02:22,630 --> 00:02:22,640
+things basically i could put
+ 
+
+105
+00:02:22,640 --> 00:02:26,070
+things basically i could put
+any item in any slot right
+
+106
+00:02:26,070 --> 00:02:26,080
+any item in any slot right
+ 
+
+107
+00:02:26,080 --> 00:02:28,070
+any item in any slot right
+where it was in my array had nothing to
+
+108
+00:02:28,070 --> 00:02:28,080
+where it was in my array had nothing to
+ 
+
+109
+00:02:28,080 --> 00:02:30,470
+where it was in my array had nothing to
+do with what those things were
+
+110
+00:02:30,470 --> 00:02:30,480
+do with what those things were
+ 
+
+111
+00:02:30,480 --> 00:02:33,509
+do with what those things were
+here we are imposing
+
+112
+00:02:33,509 --> 00:02:33,519
+here we are imposing
+ 
+
+113
+00:02:33,519 --> 00:02:36,150
+here we are imposing
+intrinsic semantics on my array that if
+
+114
+00:02:36,150 --> 00:02:36,160
+intrinsic semantics on my array that if
+ 
+
+115
+00:02:36,160 --> 00:02:37,589
+intrinsic semantics on my array that if
+i have an item with k
+
+116
+00:02:37,589 --> 00:02:37,599
+i have an item with k
+ 
+
+117
+00:02:37,599 --> 00:02:41,030
+i have an item with k
+k it must be at
+
+118
+00:02:41,030 --> 00:02:41,040
+k it must be at
+ 
+
+119
+00:02:41,040 --> 00:02:44,550
+k it must be at
+index k right that's that's the
+
+120
+00:02:44,550 --> 00:02:44,560
+index k right that's that's the
+ 
+
+121
+00:02:44,560 --> 00:02:46,390
+index k right that's that's the
+the thing that we're taking advantage of
+
+122
+00:02:46,390 --> 00:02:46,400
+the thing that we're taking advantage of
+ 
+
+123
+00:02:46,400 --> 00:02:48,229
+the thing that we're taking advantage of
+here and then we can use this nice
+
+124
+00:02:48,229 --> 00:02:48,239
+here and then we can use this nice
+ 
+
+125
+00:02:48,239 --> 00:02:49,350
+here and then we can use this nice
+powerful
+
+126
+00:02:49,350 --> 00:02:49,360
+powerful
+ 
+
+127
+00:02:49,360 --> 00:02:52,630
+powerful
+linear branching random access operation
+
+128
+00:02:52,630 --> 00:02:52,640
+linear branching random access operation
+ 
+
+129
+00:02:52,640 --> 00:02:54,150
+linear branching random access operation
+to find that thing in constant time
+
+130
+00:02:54,150 --> 00:02:54,160
+to find that thing in constant time
+ 
+
+131
+00:02:54,160 --> 00:02:55,750
+to find that thing in constant time
+because that's our model of computation
+
+132
+00:02:55,750 --> 00:02:55,760
+because that's our model of computation
+ 
+
+133
+00:02:55,760 --> 00:02:56,390
+because that's our model of computation
+okay
+
+134
+00:02:56,390 --> 00:02:56,400
+okay
+ 
+
+135
+00:02:56,400 --> 00:02:58,070
+okay
+then what was the problem with this
+
+136
+00:02:58,070 --> 00:02:58,080
+then what was the problem with this
+ 
+
+137
+00:02:58,080 --> 00:03:01,030
+then what was the problem with this
+direct access array
+
+138
+00:03:01,030 --> 00:03:01,040
+direct access array
+ 
+
+139
+00:03:01,040 --> 00:03:06,070
+direct access array
+anyone shouted out
+
+140
+00:03:06,070 --> 00:03:06,080
+
+ 
+
+141
+00:03:06,080 --> 00:03:09,190
+
+space right so we had to
+
+142
+00:03:09,190 --> 00:03:09,200
+space right so we had to
+ 
+
+143
+00:03:09,200 --> 00:03:11,910
+space right so we had to
+instantiate a direct access array that
+
+144
+00:03:11,910 --> 00:03:11,920
+instantiate a direct access array that
+ 
+
+145
+00:03:11,920 --> 00:03:14,390
+instantiate a direct access array that
+was the size of the space of our keys
+
+146
+00:03:14,390 --> 00:03:14,400
+was the size of the space of our keys
+ 
+
+147
+00:03:14,400 --> 00:03:18,790
+was the size of the space of our keys
+right in general my index location is
+
+148
+00:03:18,790 --> 00:03:18,800
+right in general my index location is
+ 
+
+149
+00:03:18,800 --> 00:03:20,550
+right in general my index location is
+could go from zero to some positive
+
+150
+00:03:20,550 --> 00:03:20,560
+could go from zero to some positive
+ 
+
+151
+00:03:20,560 --> 00:03:22,390
+could go from zero to some positive
+number right if i have very large
+
+152
+00:03:22,390 --> 00:03:22,400
+number right if i have very large
+ 
+
+153
+00:03:22,400 --> 00:03:24,149
+number right if i have very large
+positive numbers if i was sorting
+
+154
+00:03:24,149 --> 00:03:24,159
+positive numbers if i was sorting
+ 
+
+155
+00:03:24,159 --> 00:03:27,270
+positive numbers if i was sorting
+if i was searching among your mit ids
+
+156
+00:03:27,270 --> 00:03:27,280
+if i was searching among your mit ids
+ 
+
+157
+00:03:27,280 --> 00:03:28,949
+if i was searching among your mit ids
+i'd have to have a direct access array
+
+158
+00:03:28,949 --> 00:03:28,959
+i'd have to have a direct access array
+ 
+
+159
+00:03:28,959 --> 00:03:31,030
+i'd have to have a direct access array
+that was that spans that space of
+
+160
+00:03:31,030 --> 00:03:31,040
+that was that spans that space of
+ 
+
+161
+00:03:31,040 --> 00:03:32,949
+that was that spans that space of
+possible keys you could have
+
+162
+00:03:32,949 --> 00:03:32,959
+possible keys you could have
+ 
+
+163
+00:03:32,959 --> 00:03:34,789
+possible keys you could have
+right and that could be much larger than
+
+164
+00:03:34,789 --> 00:03:34,799
+right and that could be much larger than
+ 
+
+165
+00:03:34,799 --> 00:03:36,630
+right and that could be much larger than
+n and so
+
+166
+00:03:36,630 --> 00:03:36,640
+n and so
+ 
+
+167
+00:03:36,640 --> 00:03:39,350
+n and so
+the rest of the time we talked about how
+
+168
+00:03:39,350 --> 00:03:39,360
+the rest of the time we talked about how
+ 
+
+169
+00:03:39,360 --> 00:03:42,390
+the rest of the time we talked about how
+to fix that space problem
+
+170
+00:03:42,390 --> 00:03:42,400
+to fix that space problem
+ 
+
+171
+00:03:42,400 --> 00:03:45,030
+to fix that space problem
+we can reduce the space by taking that
+
+172
+00:03:45,030 --> 00:03:45,040
+we can reduce the space by taking that
+ 
+
+173
+00:03:45,040 --> 00:03:46,309
+we can reduce the space by taking that
+larger key space
+
+174
+00:03:46,309 --> 00:03:46,319
+larger key space
+ 
+
+175
+00:03:46,319 --> 00:03:49,190
+larger key space
+from 0 to u which could be very large
+
+176
+00:03:49,190 --> 00:03:49,200
+from 0 to u which could be very large
+ 
+
+177
+00:03:49,200 --> 00:03:51,589
+from 0 to u which could be very large
+and map it down to a small space
+
+178
+00:03:51,589 --> 00:03:51,599
+and map it down to a small space
+ 
+
+179
+00:03:51,599 --> 00:03:54,390
+and map it down to a small space
+now in general if i give you a fixed
+
+180
+00:03:54,390 --> 00:03:54,400
+now in general if i give you a fixed
+ 
+
+181
+00:03:54,400 --> 00:03:56,630
+now in general if i give you a fixed
+hash function there
+
+182
+00:03:56,630 --> 00:03:56,640
+hash function there
+ 
+
+183
+00:03:56,640 --> 00:03:59,830
+hash function there
+that's not going to be good in for all
+
+184
+00:03:59,830 --> 00:03:59,840
+that's not going to be good in for all
+ 
+
+185
+00:03:59,840 --> 00:04:01,990
+that's not going to be good in for all
+inputs if your inputs are you know very
+
+186
+00:04:01,990 --> 00:04:02,000
+inputs if your inputs are you know very
+ 
+
+187
+00:04:02,000 --> 00:04:03,190
+inputs if your inputs are you know very
+well distributed over
+
+188
+00:04:03,190 --> 00:04:03,200
+well distributed over
+ 
+
+189
+00:04:03,200 --> 00:04:06,630
+well distributed over
+over the key space then it is good but
+
+190
+00:04:06,630 --> 00:04:06,640
+over the key space then it is good but
+ 
+
+191
+00:04:06,640 --> 00:04:09,910
+over the key space then it is good but
+in general there would be hash functions
+
+192
+00:04:09,910 --> 00:04:09,920
+in general there would be hash functions
+ 
+
+193
+00:04:09,920 --> 00:04:10,309
+in general there would be hash functions
+with
+
+194
+00:04:10,309 --> 00:04:10,319
+with
+ 
+
+195
+00:04:10,319 --> 00:04:12,470
+with
+some inputs that will be bad right
+
+196
+00:04:12,470 --> 00:04:12,480
+some inputs that will be bad right
+ 
+
+197
+00:04:12,480 --> 00:04:14,630
+some inputs that will be bad right
+that's what we kind of argued
+
+198
+00:04:14,630 --> 00:04:14,640
+that's what we kind of argued
+ 
+
+199
+00:04:14,640 --> 00:04:16,469
+that's what we kind of argued
+and so for the the rest of the time
+
+200
+00:04:16,469 --> 00:04:16,479
+and so for the the rest of the time
+ 
+
+201
+00:04:16,479 --> 00:04:18,390
+and so for the the rest of the time
+there we talked about hash families
+
+202
+00:04:18,390 --> 00:04:18,400
+there we talked about hash families
+ 
+
+203
+00:04:18,400 --> 00:04:21,110
+there we talked about hash families
+choosing a hash function randomly from
+
+204
+00:04:21,110 --> 00:04:21,120
+choosing a hash function randomly from
+ 
+
+205
+00:04:21,120 --> 00:04:21,909
+choosing a hash function randomly from
+among
+
+206
+00:04:21,909 --> 00:04:21,919
+among
+ 
+
+207
+00:04:21,919 --> 00:04:25,189
+among
+a large set of hash functions which had
+
+208
+00:04:25,189 --> 00:04:25,199
+a large set of hash functions which had
+ 
+
+209
+00:04:25,199 --> 00:04:25,990
+a large set of hash functions which had
+a property
+
+210
+00:04:25,990 --> 00:04:26,000
+a property
+ 
+
+211
+00:04:26,000 --> 00:04:29,270
+a property
+that if i chose this thing randomly and
+
+212
+00:04:29,270 --> 00:04:29,280
+that if i chose this thing randomly and
+ 
+
+213
+00:04:29,280 --> 00:04:31,909
+that if i chose this thing randomly and
+you generating your input didn't know
+
+214
+00:04:31,909 --> 00:04:31,919
+you generating your input didn't know
+ 
+
+215
+00:04:31,919 --> 00:04:36,070
+you generating your input didn't know
+which random numbers i was picking
+
+216
+00:04:36,070 --> 00:04:36,080
+
+ 
+
+217
+00:04:36,080 --> 00:04:38,950
+
+the expectation over my random choice me
+
+218
+00:04:38,950 --> 00:04:38,960
+the expectation over my random choice me
+ 
+
+219
+00:04:38,960 --> 00:04:40,469
+the expectation over my random choice me
+i'm the one running the algorithm not
+
+220
+00:04:40,469 --> 00:04:40,479
+i'm the one running the algorithm not
+ 
+
+221
+00:04:40,479 --> 00:04:40,950
+i'm the one running the algorithm not
+you
+
+222
+00:04:40,950 --> 00:04:40,960
+you
+ 
+
+223
+00:04:40,960 --> 00:04:45,189
+you
+giving me the input that random choice
+
+224
+00:04:45,189 --> 00:04:45,199
+giving me the input that random choice
+ 
+
+225
+00:04:45,199 --> 00:04:47,110
+giving me the input that random choice
+my algorithm actually behaves really
+
+226
+00:04:47,110 --> 00:04:47,120
+my algorithm actually behaves really
+ 
+
+227
+00:04:47,120 --> 00:04:49,350
+my algorithm actually behaves really
+well in expectation in particular
+
+228
+00:04:49,350 --> 00:04:49,360
+well in expectation in particular
+ 
+
+229
+00:04:49,360 --> 00:04:52,150
+well in expectation in particular
+i got constant time for finding
+
+230
+00:04:52,150 --> 00:04:52,160
+i got constant time for finding
+ 
+
+231
+00:04:52,160 --> 00:04:54,310
+i got constant time for finding
+inserting and deleting
+
+232
+00:04:54,310 --> 00:04:54,320
+inserting and deleting
+ 
+
+233
+00:04:54,320 --> 00:04:57,270
+inserting and deleting
+into this data structure in expectation
+
+234
+00:04:57,270 --> 00:04:57,280
+into this data structure in expectation
+ 
+
+235
+00:04:57,280 --> 00:04:58,629
+into this data structure in expectation
+we did a little
+
+236
+00:04:58,629 --> 00:04:58,639
+we did a little
+ 
+
+237
+00:04:58,639 --> 00:05:02,390
+we did a little
+proof of of of that the chain lengths
+
+238
+00:05:02,390 --> 00:05:02,400
+proof of of of that the chain lengths
+ 
+
+239
+00:05:02,400 --> 00:05:04,310
+proof of of of that the chain lengths
+where we stored collisions in our hash
+
+240
+00:05:04,310 --> 00:05:04,320
+where we stored collisions in our hash
+ 
+
+241
+00:05:04,320 --> 00:05:06,070
+where we stored collisions in our hash
+function in our hash table
+
+242
+00:05:06,070 --> 00:05:06,080
+function in our hash table
+ 
+
+243
+00:05:06,080 --> 00:05:10,550
+function in our hash table
+sorry those wouldn't be very long
+
+244
+00:05:10,550 --> 00:05:10,560
+sorry those wouldn't be very long
+ 
+
+245
+00:05:10,560 --> 00:05:13,350
+sorry those wouldn't be very long
+and so if they were constant then i
+
+246
+00:05:13,350 --> 00:05:13,360
+and so if they were constant then i
+ 
+
+247
+00:05:13,360 --> 00:05:14,629
+and so if they were constant then i
+don't have to search
+
+248
+00:05:14,629 --> 00:05:14,639
+don't have to search
+ 
+
+249
+00:05:14,639 --> 00:05:16,469
+don't have to search
+more than a constant number of things
+
+250
+00:05:16,469 --> 00:05:16,479
+more than a constant number of things
+ 
+
+251
+00:05:16,479 --> 00:05:17,749
+more than a constant number of things
+when i go to an index
+
+252
+00:05:17,749 --> 00:05:17,759
+when i go to an index
+ 
+
+253
+00:05:17,759 --> 00:05:20,070
+when i go to an index
+a hashed index location does everyone
+
+254
+00:05:20,070 --> 00:05:20,080
+a hashed index location does everyone
+ 
+
+255
+00:05:20,080 --> 00:05:22,150
+a hashed index location does everyone
+remember what we talked about
+
+256
+00:05:22,150 --> 00:05:22,160
+remember what we talked about
+ 
+
+257
+00:05:22,160 --> 00:05:25,830
+remember what we talked about
+last week and we
+
+258
+00:05:25,830 --> 00:05:25,840
+last week and we
+ 
+
+259
+00:05:25,840 --> 00:05:28,150
+last week and we
+then uh i didn't show you this chart at
+
+260
+00:05:28,150 --> 00:05:28,160
+then uh i didn't show you this chart at
+ 
+
+261
+00:05:28,160 --> 00:05:28,950
+then uh i didn't show you this chart at
+the end
+
+262
+00:05:28,950 --> 00:05:28,960
+the end
+ 
+
+263
+00:05:28,960 --> 00:05:31,270
+the end
+but i'm showing it to you now
+
+264
+00:05:31,270 --> 00:05:31,280
+but i'm showing it to you now
+ 
+
+265
+00:05:31,280 --> 00:05:32,950
+but i'm showing it to you now
+essentially what we had was
+
+266
+00:05:32,950 --> 00:05:32,960
+essentially what we had was
+ 
+
+267
+00:05:32,960 --> 00:05:35,189
+essentially what we had was
+we have a bunch of different ways to
+
+268
+00:05:35,189 --> 00:05:35,199
+we have a bunch of different ways to
+ 
+
+269
+00:05:35,199 --> 00:05:37,510
+we have a bunch of different ways to
+deal with this set interface
+
+270
+00:05:37,510 --> 00:05:37,520
+deal with this set interface
+ 
+
+271
+00:05:37,520 --> 00:05:40,390
+deal with this set interface
+and last week we talked about the sorted
+
+272
+00:05:40,390 --> 00:05:40,400
+and last week we talked about the sorted
+ 
+
+273
+00:05:40,400 --> 00:05:42,310
+and last week we talked about the sorted
+array and then we talked about this
+
+274
+00:05:42,310 --> 00:05:42,320
+array and then we talked about this
+ 
+
+275
+00:05:42,320 --> 00:05:44,710
+array and then we talked about this
+direct access array in this hash table
+
+276
+00:05:44,710 --> 00:05:44,720
+direct access array in this hash table
+ 
+
+277
+00:05:44,720 --> 00:05:45,590
+direct access array in this hash table
+right
+
+278
+00:05:45,590 --> 00:05:45,600
+right
+ 
+
+279
+00:05:45,600 --> 00:05:50,150
+right
+which do better for these uh
+
+280
+00:05:50,150 --> 00:05:50,160
+which do better for these uh
+ 
+
+281
+00:05:50,160 --> 00:05:52,629
+which do better for these uh
+uh dictionary the find and insert and
+
+282
+00:05:52,629 --> 00:05:52,639
+uh dictionary the find and insert and
+ 
+
+283
+00:05:52,639 --> 00:05:54,950
+uh dictionary the find and insert and
+delete operations
+
+284
+00:05:54,950 --> 00:05:54,960
+delete operations
+ 
+
+285
+00:05:54,960 --> 00:05:57,830
+delete operations
+or at least better in an expected sense
+
+286
+00:05:57,830 --> 00:05:57,840
+or at least better in an expected sense
+ 
+
+287
+00:05:57,840 --> 00:05:58,629
+or at least better in an expected sense
+right
+
+288
+00:05:58,629 --> 00:05:58,639
+right
+ 
+
+289
+00:05:58,639 --> 00:06:01,350
+right
+what's the worst case performance of a
+
+290
+00:06:01,350 --> 00:06:01,360
+what's the worst case performance of a
+ 
+
+291
+00:06:01,360 --> 00:06:06,150
+what's the worst case performance of a
+hash table
+
+292
+00:06:06,150 --> 00:06:06,160
+hash table
+ 
+
+293
+00:06:06,160 --> 00:06:07,749
+hash table
+if i have to look up something in a hash
+
+294
+00:06:07,749 --> 00:06:07,759
+if i have to look up something in a hash
+ 
+
+295
+00:06:07,759 --> 00:06:10,469
+if i have to look up something in a hash
+table and i happen to choose a bad hash
+
+296
+00:06:10,469 --> 00:06:10,479
+table and i happen to choose a bad hash
+ 
+
+297
+00:06:10,479 --> 00:06:11,029
+table and i happen to choose a bad hash
+table
+
+298
+00:06:11,029 --> 00:06:11,039
+table
+ 
+
+299
+00:06:11,039 --> 00:06:14,309
+table
+hash function what's the worst case here
+
+300
+00:06:14,309 --> 00:06:14,319
+hash function what's the worst case here
+ 
+
+301
+00:06:14,319 --> 00:06:17,830
+hash function what's the worst case here
+what n right it's worse than
+
+302
+00:06:17,830 --> 00:06:17,840
+what n right it's worse than
+ 
+
+303
+00:06:17,840 --> 00:06:19,990
+what n right it's worse than
+a sorted array right because potentially
+
+304
+00:06:19,990 --> 00:06:20,000
+a sorted array right because potentially
+ 
+
+305
+00:06:20,000 --> 00:06:22,150
+a sorted array right because potentially
+i hashed everything that i was storing
+
+306
+00:06:22,150 --> 00:06:22,160
+i hashed everything that i was storing
+ 
+
+307
+00:06:22,160 --> 00:06:25,270
+i hashed everything that i was storing
+to the same index in my hash table and
+
+308
+00:06:25,270 --> 00:06:25,280
+to the same index in my hash table and
+ 
+
+309
+00:06:25,280 --> 00:06:27,029
+to the same index in my hash table and
+and to be able to distinguish between
+
+310
+00:06:27,029 --> 00:06:27,039
+and to be able to distinguish between
+ 
+
+311
+00:06:27,039 --> 00:06:28,390
+and to be able to distinguish between
+them i can't do anything more than a
+
+312
+00:06:28,390 --> 00:06:28,400
+them i can't do anything more than a
+ 
+
+313
+00:06:28,400 --> 00:06:29,749
+them i can't do anything more than a
+linear search
+
+314
+00:06:29,749 --> 00:06:29,759
+linear search
+ 
+
+315
+00:06:29,759 --> 00:06:32,870
+linear search
+right i mean i could store a
+
+316
+00:06:32,870 --> 00:06:32,880
+right i mean i could store a
+ 
+
+317
+00:06:32,880 --> 00:06:35,670
+right i mean i could store a
+another sets data structure as my chain
+
+318
+00:06:35,670 --> 00:06:35,680
+another sets data structure as my chain
+ 
+
+319
+00:06:35,680 --> 00:06:37,270
+another sets data structure as my chain
+and do better that way
+
+320
+00:06:37,270 --> 00:06:37,280
+and do better that way
+ 
+
+321
+00:06:37,280 --> 00:06:39,749
+and do better that way
+that's actually how java does it they
+
+322
+00:06:39,749 --> 00:06:39,759
+that's actually how java does it they
+ 
+
+323
+00:06:39,759 --> 00:06:40,629
+that's actually how java does it they
+store
+
+324
+00:06:40,629 --> 00:06:40,639
+store
+ 
+
+325
+00:06:40,639 --> 00:06:42,309
+store
+a data structure we're going to be
+
+326
+00:06:42,309 --> 00:06:42,319
+a data structure we're going to be
+ 
+
+327
+00:06:42,319 --> 00:06:43,749
+a data structure we're going to be
+talking about next week
+
+328
+00:06:43,749 --> 00:06:43,759
+talking about next week
+ 
+
+329
+00:06:43,759 --> 00:06:46,550
+talking about next week
+as the chains so that they can get worst
+
+330
+00:06:46,550 --> 00:06:46,560
+as the chains so that they can get worst
+ 
+
+331
+00:06:46,560 --> 00:06:48,070
+as the chains so that they can get worst
+case log n
+
+332
+00:06:48,070 --> 00:06:48,080
+case log n
+ 
+
+333
+00:06:48,080 --> 00:06:51,430
+case log n
+but in general
+
+334
+00:06:51,430 --> 00:06:51,440
+but in general
+ 
+
+335
+00:06:51,440 --> 00:06:54,309
+but in general
+that hash table is only good if we're
+
+336
+00:06:54,309 --> 00:06:54,319
+that hash table is only good if we're
+ 
+
+337
+00:06:54,319 --> 00:06:56,870
+that hash table is only good if we're
+allowing okay i want this to be expected
+
+338
+00:06:56,870 --> 00:06:56,880
+allowing okay i want this to be expected
+ 
+
+339
+00:06:56,880 --> 00:06:57,430
+allowing okay i want this to be expected
+good
+
+340
+00:06:57,430 --> 00:06:57,440
+good
+ 
+
+341
+00:06:57,440 --> 00:06:59,029
+good
+but in the worst case if i really need
+
+342
+00:06:59,029 --> 00:06:59,039
+but in the worst case if i really need
+ 
+
+343
+00:06:59,039 --> 00:07:00,950
+but in the worst case if i really need
+that operation to be worst case right
+
+344
+00:07:00,950 --> 00:07:00,960
+that operation to be worst case right
+ 
+
+345
+00:07:00,960 --> 00:07:03,589
+that operation to be worst case right
+i really can't afford linear time ever
+
+346
+00:07:03,589 --> 00:07:03,599
+i really can't afford linear time ever
+ 
+
+347
+00:07:03,599 --> 00:07:05,510
+i really can't afford linear time ever
+for an operation of that kind
+
+348
+00:07:05,510 --> 00:07:05,520
+for an operation of that kind
+ 
+
+349
+00:07:05,520 --> 00:07:06,870
+for an operation of that kind
+then i don't want to use a hash table
+
+350
+00:07:06,870 --> 00:07:06,880
+then i don't want to use a hash table
+ 
+
+351
+00:07:06,880 --> 00:07:09,189
+then i don't want to use a hash table
+and so on your pset 2
+
+352
+00:07:09,189 --> 00:07:09,199
+and so on your pset 2
+ 
+
+353
+00:07:09,199 --> 00:07:11,189
+and so on your pset 2
+everything we ask you for is worst case
+
+354
+00:07:11,189 --> 00:07:11,199
+everything we ask you for is worst case
+ 
+
+355
+00:07:11,199 --> 00:07:12,950
+everything we ask you for is worst case
+so probably you don't want to be using
+
+356
+00:07:12,950 --> 00:07:12,960
+so probably you don't want to be using
+ 
+
+357
+00:07:12,960 --> 00:07:13,909
+so probably you don't want to be using
+hash tables
+
+358
+00:07:13,909 --> 00:07:13,919
+hash tables
+ 
+
+359
+00:07:13,919 --> 00:07:18,150
+hash tables
+right okay yes
+
+360
+00:07:18,150 --> 00:07:18,160
+right okay yes
+ 
+
+361
+00:07:18,160 --> 00:07:19,670
+right okay yes
+what does the subject e mean that's
+
+362
+00:07:19,670 --> 00:07:19,680
+what does the subject e mean that's
+ 
+
+363
+00:07:19,680 --> 00:07:21,830
+what does the subject e mean that's
+great in this chart
+
+364
+00:07:21,830 --> 00:07:21,840
+great in this chart
+ 
+
+365
+00:07:21,840 --> 00:07:25,029
+great in this chart
+uh i have putting a subscript
+
+366
+00:07:25,029 --> 00:07:25,039
+uh i have putting a subscript
+ 
+
+367
+00:07:25,039 --> 00:07:28,710
+uh i have putting a subscript
+on this is an expected runtime right
+
+368
+00:07:28,710 --> 00:07:28,720
+on this is an expected runtime right
+ 
+
+369
+00:07:28,720 --> 00:07:30,950
+on this is an expected runtime right
+or an a meaning this is an amortized
+
+370
+00:07:30,950 --> 00:07:30,960
+or an a meaning this is an amortized
+ 
+
+371
+00:07:30,960 --> 00:07:32,309
+or an a meaning this is an amortized
+runtime at the end
+
+372
+00:07:32,309 --> 00:07:32,319
+runtime at the end
+ 
+
+373
+00:07:32,319 --> 00:07:34,390
+runtime at the end
+we talked about how if we had too many
+
+374
+00:07:34,390 --> 00:07:34,400
+we talked about how if we had too many
+ 
+
+375
+00:07:34,400 --> 00:07:36,469
+we talked about how if we had too many
+things in our
+
+376
+00:07:36,469 --> 00:07:36,479
+things in our
+ 
+
+377
+00:07:36,479 --> 00:07:39,670
+things in our
+hash table then as long as we didn't do
+
+378
+00:07:39,670 --> 00:07:39,680
+hash table then as long as we didn't do
+ 
+
+379
+00:07:39,680 --> 00:07:40,469
+hash table then as long as we didn't do
+it too often
+
+380
+00:07:40,469 --> 00:07:40,479
+it too often
+ 
+
+381
+00:07:40,479 --> 00:07:42,309
+it too often
+right this is a little handwave argument
+
+382
+00:07:42,309 --> 00:07:42,319
+right this is a little handwave argument
+ 
+
+383
+00:07:42,319 --> 00:07:43,909
+right this is a little handwave argument
+but the same kinds of ideas as the
+
+384
+00:07:43,909 --> 00:07:43,919
+but the same kinds of ideas as the
+ 
+
+385
+00:07:43,919 --> 00:07:45,430
+but the same kinds of ideas as the
+dynamic array
+
+386
+00:07:45,430 --> 00:07:45,440
+dynamic array
+ 
+
+387
+00:07:45,440 --> 00:07:48,550
+dynamic array
+if whenever we got a linear
+
+388
+00:07:48,550 --> 00:07:48,560
+if whenever we got a linear
+ 
+
+389
+00:07:48,560 --> 00:07:50,550
+if whenever we got a linear
+we were more than a linear factor away
+
+390
+00:07:50,550 --> 00:07:50,560
+we were more than a linear factor away
+ 
+
+391
+00:07:50,560 --> 00:07:51,749
+we were more than a linear factor away
+from where we were
+
+392
+00:07:51,749 --> 00:07:51,759
+from where we were
+ 
+
+393
+00:07:51,759 --> 00:07:55,029
+from where we were
+trying uh basically the fill factor we
+
+394
+00:07:55,029 --> 00:07:55,039
+trying uh basically the fill factor we
+ 
+
+395
+00:07:55,039 --> 00:07:56,390
+trying uh basically the fill factor we
+were trying to be
+
+396
+00:07:56,390 --> 00:07:56,400
+were trying to be
+ 
+
+397
+00:07:56,400 --> 00:07:57,909
+were trying to be
+then we could just completely rebuild
+
+398
+00:07:57,909 --> 00:07:57,919
+then we could just completely rebuild
+ 
+
+399
+00:07:57,919 --> 00:07:59,510
+then we could just completely rebuild
+the hash table with a new
+
+400
+00:07:59,510 --> 00:07:59,520
+the hash table with a new
+ 
+
+401
+00:07:59,520 --> 00:08:01,189
+the hash table with a new
+hash function randomly chosen from our
+
+402
+00:08:01,189 --> 00:08:01,199
+hash function randomly chosen from our
+ 
+
+403
+00:08:01,199 --> 00:08:03,830
+hash function randomly chosen from our
+hash table with a new size
+
+404
+00:08:03,830 --> 00:08:03,840
+hash table with a new size
+ 
+
+405
+00:08:03,840 --> 00:08:05,830
+hash table with a new size
+and we could get amortized bounce and so
+
+406
+00:08:05,830 --> 00:08:05,840
+and we could get amortized bounce and so
+ 
+
+407
+00:08:05,840 --> 00:08:07,110
+and we could get amortized bounce and so
+that's what python
+
+408
+00:08:07,110 --> 00:08:07,120
+that's what python
+ 
+
+409
+00:08:07,120 --> 00:08:09,670
+that's what python
+how python implements dictionaries or
+
+410
+00:08:09,670 --> 00:08:09,680
+how python implements dictionaries or
+ 
+
+411
+00:08:09,680 --> 00:08:10,390
+how python implements dictionaries or
+sets or
+
+412
+00:08:10,390 --> 00:08:10,400
+sets or
+ 
+
+413
+00:08:10,400 --> 00:08:12,950
+sets or
+even objects when when it's trying to
+
+414
+00:08:12,950 --> 00:08:12,960
+even objects when when it's trying to
+ 
+
+415
+00:08:12,960 --> 00:08:13,990
+even objects when when it's trying to
+map
+
+416
+00:08:13,990 --> 00:08:14,000
+map
+ 
+
+417
+00:08:14,000 --> 00:08:17,270
+map
+keys to different things uh
+
+418
+00:08:17,270 --> 00:08:17,280
+keys to different things uh
+ 
+
+419
+00:08:17,280 --> 00:08:20,309
+keys to different things uh
+so that's hash tables that's great the
+
+420
+00:08:20,309 --> 00:08:20,319
+so that's hash tables that's great the
+ 
+
+421
+00:08:20,319 --> 00:08:21,670
+so that's hash tables that's great the
+key thing here is
+
+422
+00:08:21,670 --> 00:08:21,680
+key thing here is
+ 
+
+423
+00:08:21,680 --> 00:08:25,270
+key thing here is
+well actually if your range of keys
+
+424
+00:08:25,270 --> 00:08:25,280
+well actually if your range of keys
+ 
+
+425
+00:08:25,280 --> 00:08:28,629
+well actually if your range of keys
+is small or if you as a programmer
+
+426
+00:08:28,629 --> 00:08:28,639
+is small or if you as a programmer
+ 
+
+427
+00:08:28,639 --> 00:08:30,550
+is small or if you as a programmer
+have the ability to choose the keys that
+
+428
+00:08:30,550 --> 00:08:30,560
+have the ability to choose the keys that
+ 
+
+429
+00:08:30,560 --> 00:08:32,949
+have the ability to choose the keys that
+you identify your objects with
+
+430
+00:08:32,949 --> 00:08:32,959
+you identify your objects with
+ 
+
+431
+00:08:32,959 --> 00:08:34,870
+you identify your objects with
+you can actually choose that range to be
+
+432
+00:08:34,870 --> 00:08:34,880
+you can actually choose that range to be
+ 
+
+433
+00:08:34,880 --> 00:08:36,790
+you can actually choose that range to be
+small to be linear to be
+
+434
+00:08:36,790 --> 00:08:36,800
+small to be linear to be
+ 
+
+435
+00:08:36,800 --> 00:08:39,350
+small to be linear to be
+small with respect to your items and you
+
+436
+00:08:39,350 --> 00:08:39,360
+small with respect to your items and you
+ 
+
+437
+00:08:39,360 --> 00:08:40,790
+small with respect to your items and you
+don't need a hash table you can just use
+
+438
+00:08:40,790 --> 00:08:40,800
+don't need a hash table you can just use
+ 
+
+439
+00:08:40,800 --> 00:08:42,630
+don't need a hash table you can just use
+a direct access array
+
+440
+00:08:42,630 --> 00:08:42,640
+a direct access array
+ 
+
+441
+00:08:42,640 --> 00:08:45,030
+a direct access array
+right because if you know your key space
+
+442
+00:08:45,030 --> 00:08:45,040
+right because if you know your key space
+ 
+
+443
+00:08:45,040 --> 00:08:45,990
+right because if you know your key space
+is small
+
+444
+00:08:45,990 --> 00:08:46,000
+is small
+ 
+
+445
+00:08:46,000 --> 00:08:49,190
+is small
+that's great so a lot of c
+
+446
+00:08:49,190 --> 00:08:49,200
+that's great so a lot of c
+ 
+
+447
+00:08:49,200 --> 00:08:50,790
+that's great so a lot of c
+programmers probably would like to do
+
+448
+00:08:50,790 --> 00:08:50,800
+programmers probably would like to do
+ 
+
+449
+00:08:50,800 --> 00:08:52,230
+programmers probably would like to do
+something like that because they don't
+
+450
+00:08:52,230 --> 00:08:52,240
+something like that because they don't
+ 
+
+451
+00:08:52,240 --> 00:08:53,350
+something like that because they don't
+have access to
+
+452
+00:08:53,350 --> 00:08:53,360
+have access to
+ 
+
+453
+00:08:53,360 --> 00:08:55,910
+have access to
+maybe c plus programmers would have
+
+454
+00:08:55,910 --> 00:08:55,920
+maybe c plus programmers would have
+ 
+
+455
+00:08:55,920 --> 00:08:58,630
+maybe c plus programmers would have
+access to their hash table
+
+456
+00:08:58,630 --> 00:08:58,640
+access to their hash table
+ 
+
+457
+00:08:58,640 --> 00:09:00,310
+access to their hash table
+any questions on this stuff before we
+
+458
+00:09:00,310 --> 00:09:00,320
+any questions on this stuff before we
+ 
+
+459
+00:09:00,320 --> 00:09:07,110
+any questions on this stuff before we
+move on
+
+460
+00:09:07,110 --> 00:09:07,120
+
+ 
+
+461
+00:09:07,120 --> 00:09:09,269
+
+why is it expected right when i'm
+
+462
+00:09:09,269 --> 00:09:09,279
+why is it expected right when i'm
+ 
+
+463
+00:09:09,279 --> 00:09:10,470
+why is it expected right when i'm
+building
+
+464
+00:09:10,470 --> 00:09:10,480
+building
+ 
+
+465
+00:09:10,480 --> 00:09:13,509
+building
+i could insert i'm inserting these
+
+466
+00:09:13,509 --> 00:09:13,519
+i could insert i'm inserting these
+ 
+
+467
+00:09:13,519 --> 00:09:14,230
+i could insert i'm inserting these
+things from
+
+468
+00:09:14,230 --> 00:09:14,240
+things from
+ 
+
+469
+00:09:14,240 --> 00:09:16,870
+things from
+x one by one into my hash table each of
+
+470
+00:09:16,870 --> 00:09:16,880
+x one by one into my hash table each of
+ 
+
+471
+00:09:16,880 --> 00:09:18,389
+x one by one into my hash table each of
+those insert operations
+
+472
+00:09:18,389 --> 00:09:18,399
+those insert operations
+ 
+
+473
+00:09:18,399 --> 00:09:20,870
+those insert operations
+i potentially have uh i'm looking up to
+
+474
+00:09:20,870 --> 00:09:20,880
+i potentially have uh i'm looking up to
+ 
+
+475
+00:09:20,880 --> 00:09:22,389
+i potentially have uh i'm looking up to
+see whether that
+
+476
+00:09:22,389 --> 00:09:22,399
+see whether that
+ 
+
+477
+00:09:22,399 --> 00:09:24,070
+see whether that
+an item with that key already exists in
+
+478
+00:09:24,070 --> 00:09:24,080
+an item with that key already exists in
+ 
+
+479
+00:09:24,080 --> 00:09:26,310
+an item with that key already exists in
+my hash table and so i have to
+
+480
+00:09:26,310 --> 00:09:26,320
+my hash table and so i have to
+ 
+
+481
+00:09:26,320 --> 00:09:28,870
+my hash table and so i have to
+look down a chain to see where it is
+
+482
+00:09:28,870 --> 00:09:28,880
+look down a chain to see where it is
+ 
+
+483
+00:09:28,880 --> 00:09:29,829
+look down a chain to see where it is
+however
+
+484
+00:09:29,829 --> 00:09:29,839
+however
+ 
+
+485
+00:09:29,839 --> 00:09:32,870
+however
+if i happen to know that all of my keys
+
+486
+00:09:32,870 --> 00:09:32,880
+if i happen to know that all of my keys
+ 
+
+487
+00:09:32,880 --> 00:09:34,389
+if i happen to know that all of my keys
+are unique in my input
+
+488
+00:09:34,389 --> 00:09:34,399
+are unique in my input
+ 
+
+489
+00:09:34,399 --> 00:09:35,829
+are unique in my input
+right all the items i'm trying to store
+
+490
+00:09:35,829 --> 00:09:35,839
+right all the items i'm trying to store
+ 
+
+491
+00:09:35,839 --> 00:09:37,990
+right all the items i'm trying to store
+are unique then i don't have to do that
+
+492
+00:09:37,990 --> 00:09:38,000
+are unique then i don't have to do that
+ 
+
+493
+00:09:38,000 --> 00:09:38,870
+are unique then i don't have to do that
+check and i can get
+
+494
+00:09:38,870 --> 00:09:38,880
+check and i can get
+ 
+
+495
+00:09:38,880 --> 00:09:40,949
+check and i can get
+worst case linear time is that does that
+
+496
+00:09:40,949 --> 00:09:40,959
+worst case linear time is that does that
+ 
+
+497
+00:09:40,959 --> 00:09:42,070
+worst case linear time is that does that
+make sense
+
+498
+00:09:42,070 --> 00:09:42,080
+make sense
+ 
+
+499
+00:09:42,080 --> 00:09:43,590
+make sense
+all right it's a subtlety but that's a
+
+500
+00:09:43,590 --> 00:09:43,600
+all right it's a subtlety but that's a
+ 
+
+501
+00:09:43,600 --> 00:09:45,269
+all right it's a subtlety but that's a
+great question
+
+502
+00:09:45,269 --> 00:09:45,279
+great question
+ 
+
+503
+00:09:45,279 --> 00:09:48,150
+great question
+okay so uh today instead of talking
+
+504
+00:09:48,150 --> 00:09:48,160
+okay so uh today instead of talking
+ 
+
+505
+00:09:48,160 --> 00:09:49,750
+okay so uh today instead of talking
+about searching we're talking about
+
+506
+00:09:49,750 --> 00:09:49,760
+about searching we're talking about
+ 
+
+507
+00:09:49,760 --> 00:09:50,790
+about searching we're talking about
+sorting
+
+508
+00:09:50,790 --> 00:09:50,800
+sorting
+ 
+
+509
+00:09:50,800 --> 00:09:54,389
+sorting
+okay last week we saw
+
+510
+00:09:54,389 --> 00:09:54,399
+okay last week we saw
+ 
+
+511
+00:09:54,399 --> 00:09:57,990
+okay last week we saw
+a few ways to do sort some of them were
+
+512
+00:09:57,990 --> 00:09:58,000
+a few ways to do sort some of them were
+ 
+
+513
+00:09:58,000 --> 00:09:59,829
+a few ways to do sort some of them were
+quadratic insertion sort and selection
+
+514
+00:09:59,829 --> 00:09:59,839
+quadratic insertion sort and selection
+ 
+
+515
+00:09:59,839 --> 00:10:00,310
+quadratic insertion sort and selection
+sort
+
+516
+00:10:00,310 --> 00:10:00,320
+sort
+ 
+
+517
+00:10:00,320 --> 00:10:02,389
+sort
+and then we had one that was n log n and
+
+518
+00:10:02,389 --> 00:10:02,399
+and then we had one that was n log n and
+ 
+
+519
+00:10:02,399 --> 00:10:05,190
+and then we had one that was n log n and
+this this thing and log n
+
+520
+00:10:05,190 --> 00:10:05,200
+this this thing and log n
+ 
+
+521
+00:10:05,200 --> 00:10:09,670
+this this thing and log n
+seemed pretty good but can i do better
+
+522
+00:10:09,670 --> 00:10:09,680
+seemed pretty good but can i do better
+ 
+
+523
+00:10:09,680 --> 00:10:12,790
+seemed pretty good but can i do better
+right can i do better
+
+524
+00:10:12,790 --> 00:10:12,800
+right can i do better
+ 
+
+525
+00:10:12,800 --> 00:10:14,150
+right can i do better
+well what we're going to show at the
+
+526
+00:10:14,150 --> 00:10:14,160
+well what we're going to show at the
+ 
+
+527
+00:10:14,160 --> 00:10:16,230
+well what we're going to show at the
+beginning of this class is
+
+528
+00:10:16,230 --> 00:10:16,240
+beginning of this class is
+ 
+
+529
+00:10:16,240 --> 00:10:19,509
+beginning of this class is
+in this comparison model no
+
+530
+00:10:19,509 --> 00:10:19,519
+in this comparison model no
+ 
+
+531
+00:10:19,519 --> 00:10:21,269
+in this comparison model no
+and log n is optimal and we're going to
+
+532
+00:10:21,269 --> 00:10:21,279
+and log n is optimal and we're going to
+ 
+
+533
+00:10:21,279 --> 00:10:23,110
+and log n is optimal and we're going to
+go through the exact same line of
+
+534
+00:10:23,110 --> 00:10:23,120
+go through the exact same line of
+ 
+
+535
+00:10:23,120 --> 00:10:24,310
+go through the exact same line of
+reasoning
+
+536
+00:10:24,310 --> 00:10:24,320
+reasoning
+ 
+
+537
+00:10:24,320 --> 00:10:26,550
+reasoning
+that we had last week so in the
+
+538
+00:10:26,550 --> 00:10:26,560
+that we had last week so in the
+ 
+
+539
+00:10:26,560 --> 00:10:34,710
+that we had last week so in the
+comparison model
+
+540
+00:10:34,710 --> 00:10:34,720
+
+ 
+
+541
+00:10:34,720 --> 00:10:38,230
+
+what did we use
+
+542
+00:10:38,230 --> 00:10:38,240
+
+ 
+
+543
+00:10:38,240 --> 00:10:39,350
+
+when we were trying to make this
+
+544
+00:10:39,350 --> 00:10:39,360
+when we were trying to make this
+ 
+
+545
+00:10:39,360 --> 00:10:41,509
+when we were trying to make this
+argument that any
+
+546
+00:10:41,509 --> 00:10:41,519
+argument that any
+ 
+
+547
+00:10:41,519 --> 00:10:45,269
+argument that any
+comparison model algorithm
+
+548
+00:10:45,269 --> 00:10:45,279
+comparison model algorithm
+ 
+
+549
+00:10:45,279 --> 00:10:48,310
+comparison model algorithm
+was going to take at least log n time
+
+550
+00:10:48,310 --> 00:10:48,320
+was going to take at least log n time
+ 
+
+551
+00:10:48,320 --> 00:10:50,710
+was going to take at least log n time
+what we did was we said okay i can think
+
+552
+00:10:50,710 --> 00:10:50,720
+what we did was we said okay i can think
+ 
+
+553
+00:10:50,720 --> 00:10:51,509
+what we did was we said okay i can think
+of any
+
+554
+00:10:51,509 --> 00:10:51,519
+of any
+ 
+
+555
+00:10:51,519 --> 00:10:54,230
+of any
+model in the comparison model uh any
+
+556
+00:10:54,230 --> 00:10:54,240
+model in the comparison model uh any
+ 
+
+557
+00:10:54,240 --> 00:10:55,910
+model in the comparison model uh any
+algorithm in the comparison model
+
+558
+00:10:55,910 --> 00:10:55,920
+algorithm in the comparison model
+ 
+
+559
+00:10:55,920 --> 00:10:58,949
+algorithm in the comparison model
+as kind of this
+
+560
+00:10:58,949 --> 00:10:58,959
+
+ 
+
+561
+00:10:58,959 --> 00:11:02,310
+
+some comparisons happen they branch in
+
+562
+00:11:02,310 --> 00:11:02,320
+some comparisons happen they branch in
+ 
+
+563
+00:11:02,320 --> 00:11:04,470
+some comparisons happen they branch in
+a binary sense but you could have it
+
+564
+00:11:04,470 --> 00:11:04,480
+a binary sense but you could have it
+ 
+
+565
+00:11:04,480 --> 00:11:05,750
+a binary sense but you could have it
+generalized to
+
+566
+00:11:05,750 --> 00:11:05,760
+generalized to
+ 
+
+567
+00:11:05,760 --> 00:11:07,509
+generalized to
+any constant branching factor but for
+
+568
+00:11:07,509 --> 00:11:07,519
+any constant branching factor but for
+ 
+
+569
+00:11:07,519 --> 00:11:10,310
+any constant branching factor but for
+our purposes binary is fine
+
+570
+00:11:10,310 --> 00:11:10,320
+our purposes binary is fine
+ 
+
+571
+00:11:10,320 --> 00:11:11,910
+our purposes binary is fine
+and what we said was that there were at
+
+572
+00:11:11,910 --> 00:11:11,920
+and what we said was that there were at
+ 
+
+573
+00:11:11,920 --> 00:11:13,509
+and what we said was that there were at
+least
+
+574
+00:11:13,509 --> 00:11:13,519
+least
+ 
+
+575
+00:11:13,519 --> 00:11:17,509
+least
+n output really n plus 1 but
+
+576
+00:11:17,509 --> 00:11:17,519
+n output really n plus 1 but
+ 
+
+577
+00:11:17,519 --> 00:11:20,550
+n output really n plus 1 but
+you know at least order n outputs and we
+
+578
+00:11:20,550 --> 00:11:20,560
+you know at least order n outputs and we
+ 
+
+579
+00:11:20,560 --> 00:11:22,389
+you know at least order n outputs and we
+showed that
+
+580
+00:11:22,389 --> 00:11:22,399
+showed that
+ 
+
+581
+00:11:22,399 --> 00:11:24,630
+showed that
+or we argued to you that the height of
+
+582
+00:11:24,630 --> 00:11:24,640
+or we argued to you that the height of
+ 
+
+583
+00:11:24,640 --> 00:11:28,389
+or we argued to you that the height of
+this tree had to be at least
+
+584
+00:11:28,389 --> 00:11:28,399
+this tree had to be at least
+ 
+
+585
+00:11:28,399 --> 00:11:31,829
+this tree had to be at least
+log n right
+
+586
+00:11:31,829 --> 00:11:31,839
+log n right
+ 
+
+587
+00:11:31,839 --> 00:11:34,550
+log n right
+log the number of leaves it had to be at
+
+588
+00:11:34,550 --> 00:11:34,560
+log the number of leaves it had to be at
+ 
+
+589
+00:11:34,560 --> 00:11:36,150
+log the number of leaves it had to be at
+least log the number of leaves
+
+590
+00:11:36,150 --> 00:11:36,160
+least log the number of leaves
+ 
+
+591
+00:11:36,160 --> 00:11:38,790
+least log the number of leaves
+that was the height of the decision tree
+
+592
+00:11:38,790 --> 00:11:38,800
+that was the height of the decision tree
+ 
+
+593
+00:11:38,800 --> 00:11:39,829
+that was the height of the decision tree
+and
+
+594
+00:11:39,829 --> 00:11:39,839
+and
+ 
+
+595
+00:11:39,839 --> 00:11:42,790
+and
+if this decision tree represented a
+
+596
+00:11:42,790 --> 00:11:42,800
+if this decision tree represented a
+ 
+
+597
+00:11:42,800 --> 00:11:44,069
+if this decision tree represented a
+search algorithm
+
+598
+00:11:44,069 --> 00:11:44,079
+search algorithm
+ 
+
+599
+00:11:44,079 --> 00:11:47,269
+search algorithm
+i had to walk down and perform these
+
+600
+00:11:47,269 --> 00:11:47,279
+i had to walk down and perform these
+ 
+
+601
+00:11:47,279 --> 00:11:48,870
+i had to walk down and perform these
+comparisons in order
+
+602
+00:11:48,870 --> 00:11:48,880
+comparisons in order
+ 
+
+603
+00:11:48,880 --> 00:11:50,629
+comparisons in order
+reach a leaf where i would output
+
+604
+00:11:50,629 --> 00:11:50,639
+reach a leaf where i would output
+ 
+
+605
+00:11:50,639 --> 00:11:52,790
+reach a leaf where i would output
+something so
+
+606
+00:11:52,790 --> 00:11:52,800
+something so
+ 
+
+607
+00:11:52,800 --> 00:11:57,750
+something so
+i i need if if the minimum height of any
+
+608
+00:11:57,750 --> 00:11:57,760
+i i need if if the minimum height of any
+ 
+
+609
+00:11:57,760 --> 00:12:01,430
+i i need if if the minimum height of any
+binary tree on a linear number of leaves
+
+610
+00:12:01,430 --> 00:12:01,440
+binary tree on a linear number of leaves
+ 
+
+611
+00:12:01,440 --> 00:12:04,949
+binary tree on a linear number of leaves
+is log n then any algorithm
+
+612
+00:12:04,949 --> 00:12:04,959
+is log n then any algorithm
+ 
+
+613
+00:12:04,959 --> 00:12:08,310
+is log n then any algorithm
+in the comparison model
+
+614
+00:12:08,310 --> 00:12:08,320
+in the comparison model
+ 
+
+615
+00:12:08,320 --> 00:12:10,629
+in the comparison model
+also has to take log n time because it
+
+616
+00:12:10,629 --> 00:12:10,639
+also has to take log n time because it
+ 
+
+617
+00:12:10,639 --> 00:12:12,230
+also has to take log n time because it
+has to do that many comparisons to
+
+618
+00:12:12,230 --> 00:12:12,240
+has to do that many comparisons to
+ 
+
+619
+00:12:12,240 --> 00:12:13,990
+has to do that many comparisons to
+differentiate between
+
+620
+00:12:13,990 --> 00:12:14,000
+differentiate between
+ 
+
+621
+00:12:14,000 --> 00:12:16,389
+differentiate between
+all possible outputs does that make
+
+622
+00:12:16,389 --> 00:12:16,399
+all possible outputs does that make
+ 
+
+623
+00:12:16,399 --> 00:12:18,389
+all possible outputs does that make
+sense
+
+624
+00:12:18,389 --> 00:12:18,399
+sense
+ 
+
+625
+00:12:18,399 --> 00:12:22,829
+sense
+all right so in the sort
+
+626
+00:12:22,829 --> 00:12:22,839
+
+ 
+
+627
+00:12:22,839 --> 00:12:26,470
+
+problem
+
+628
+00:12:26,470 --> 00:12:26,480
+
+ 
+
+629
+00:12:26,480 --> 00:12:31,110
+
+how many possible outputs are there
+
+630
+00:12:31,110 --> 00:12:31,120
+
+ 
+
+631
+00:12:31,120 --> 00:12:36,829
+
+what is the output of a sorting
+
+632
+00:12:36,829 --> 00:12:36,839
+
+ 
+
+633
+00:12:36,839 --> 00:12:39,509
+
+algorithm
+
+634
+00:12:39,509 --> 00:12:39,519
+algorithm
+ 
+
+635
+00:12:39,519 --> 00:12:42,870
+algorithm
+what what's up
+
+636
+00:12:42,870 --> 00:12:42,880
+what what's up
+ 
+
+637
+00:12:42,880 --> 00:12:47,030
+what what's up
+a list in particular given my input
+
+638
+00:12:47,030 --> 00:12:47,040
+a list in particular given my input
+ 
+
+639
+00:12:47,040 --> 00:12:51,030
+a list in particular given my input
+right like some set of uh items a
+
+640
+00:12:51,030 --> 00:12:51,040
+right like some set of uh items a
+ 
+
+641
+00:12:51,040 --> 00:12:54,310
+right like some set of uh items a
+that has size n
+
+642
+00:12:54,310 --> 00:12:54,320
+that has size n
+ 
+
+643
+00:12:54,320 --> 00:12:57,590
+that has size n
+right what i'm going to give you is some
+
+644
+00:12:57,590 --> 00:12:57,600
+right what i'm going to give you is some
+ 
+
+645
+00:12:57,600 --> 00:12:58,629
+right what i'm going to give you is some
+permutation
+
+646
+00:12:58,629 --> 00:12:58,639
+permutation
+ 
+
+647
+00:12:58,639 --> 00:13:02,629
+permutation
+of that list right so for each
+
+648
+00:13:02,629 --> 00:13:02,639
+of that list right so for each
+ 
+
+649
+00:13:02,639 --> 00:13:07,030
+of that list right so for each
+index say i could tell you where it goes
+
+650
+00:13:07,030 --> 00:13:07,040
+index say i could tell you where it goes
+ 
+
+651
+00:13:07,040 --> 00:13:10,310
+index say i could tell you where it goes
+right another way i could say
+
+652
+00:13:10,310 --> 00:13:10,320
+right another way i could say
+ 
+
+653
+00:13:10,320 --> 00:13:15,190
+right another way i could say
+is where does the first item go to
+
+654
+00:13:15,190 --> 00:13:15,200
+is where does the first item go to
+ 
+
+655
+00:13:15,200 --> 00:13:16,870
+is where does the first item go to
+where does the second item go to where
+
+656
+00:13:16,870 --> 00:13:16,880
+where does the second item go to where
+ 
+
+657
+00:13:16,880 --> 00:13:18,949
+where does the second item go to where
+does the third item go to blah blah blah
+
+658
+00:13:18,949 --> 00:13:18,959
+does the third item go to blah blah blah
+ 
+
+659
+00:13:18,959 --> 00:13:21,670
+does the third item go to blah blah blah
+like that right so how many different
+
+660
+00:13:21,670 --> 00:13:21,680
+like that right so how many different
+ 
+
+661
+00:13:21,680 --> 00:13:23,030
+like that right so how many different
+choices of
+
+662
+00:13:23,030 --> 00:13:23,040
+choices of
+ 
+
+663
+00:13:23,040 --> 00:13:26,230
+choices of
+a permutation are there well how many
+
+664
+00:13:26,230 --> 00:13:26,240
+a permutation are there well how many
+ 
+
+665
+00:13:26,240 --> 00:13:28,710
+a permutation are there well how many
+choices do i have for the first thing of
+
+666
+00:13:28,710 --> 00:13:28,720
+choices do i have for the first thing of
+ 
+
+667
+00:13:28,720 --> 00:13:29,430
+choices do i have for the first thing of
+where it could
+
+668
+00:13:29,430 --> 00:13:29,440
+where it could
+ 
+
+669
+00:13:29,440 --> 00:13:31,990
+where it could
+be in the final sorted array it could be
+
+670
+00:13:31,990 --> 00:13:32,000
+be in the final sorted array it could be
+ 
+
+671
+00:13:32,000 --> 00:13:33,030
+be in the final sorted array it could be
+in any of the
+
+672
+00:13:33,030 --> 00:13:33,040
+in any of the
+ 
+
+673
+00:13:33,040 --> 00:13:36,629
+in any of the
+places right so it's n
+
+674
+00:13:36,629 --> 00:13:36,639
+places right so it's n
+ 
+
+675
+00:13:36,639 --> 00:13:38,949
+places right so it's n
+how about this one the second one well
+
+676
+00:13:38,949 --> 00:13:38,959
+how about this one the second one well
+ 
+
+677
+00:13:38,959 --> 00:13:41,350
+how about this one the second one well
+it can't go to where this one went
+
+678
+00:13:41,350 --> 00:13:41,360
+it can't go to where this one went
+ 
+
+679
+00:13:41,360 --> 00:13:43,269
+it can't go to where this one went
+right but it can go anywhere else so
+
+680
+00:13:43,269 --> 00:13:43,279
+right but it can go anywhere else so
+ 
+
+681
+00:13:43,279 --> 00:13:45,110
+right but it can go anywhere else so
+it's n minus one
+
+682
+00:13:45,110 --> 00:13:45,120
+it's n minus one
+ 
+
+683
+00:13:45,120 --> 00:13:46,710
+it's n minus one
+and since these are independent choices
+
+684
+00:13:46,710 --> 00:13:46,720
+and since these are independent choices
+ 
+
+685
+00:13:46,720 --> 00:13:48,550
+and since these are independent choices
+i'm making if i multiply them all
+
+686
+00:13:48,550 --> 00:13:48,560
+i'm making if i multiply them all
+ 
+
+687
+00:13:48,560 --> 00:13:49,990
+i'm making if i multiply them all
+together i get
+
+688
+00:13:49,990 --> 00:13:50,000
+together i get
+ 
+
+689
+00:13:50,000 --> 00:13:52,230
+together i get
+n factorial permutations that are the
+
+690
+00:13:52,230 --> 00:13:52,240
+n factorial permutations that are the
+ 
+
+691
+00:13:52,240 --> 00:13:54,069
+n factorial permutations that are the
+number of possible outputs that i have
+
+692
+00:13:54,069 --> 00:13:54,079
+number of possible outputs that i have
+ 
+
+693
+00:13:54,079 --> 00:13:55,670
+number of possible outputs that i have
+to my sorting algorithm right
+
+694
+00:13:55,670 --> 00:13:55,680
+to my sorting algorithm right
+ 
+
+695
+00:13:55,680 --> 00:13:57,990
+to my sorting algorithm right
+so for me to have an output to my
+
+696
+00:13:57,990 --> 00:13:58,000
+so for me to have an output to my
+ 
+
+697
+00:13:58,000 --> 00:13:59,750
+so for me to have an output to my
+sorting algorithm be correct
+
+698
+00:13:59,750 --> 00:13:59,760
+sorting algorithm be correct
+ 
+
+699
+00:13:59,760 --> 00:14:01,990
+sorting algorithm be correct
+i need at least n factorial leaves does
+
+700
+00:14:01,990 --> 00:14:02,000
+i need at least n factorial leaves does
+ 
+
+701
+00:14:02,000 --> 00:14:03,750
+i need at least n factorial leaves does
+that make sense
+
+702
+00:14:03,750 --> 00:14:03,760
+that make sense
+ 
+
+703
+00:14:03,760 --> 00:14:07,110
+that make sense
+okay
+
+704
+00:14:07,110 --> 00:14:07,120
+
+ 
+
+705
+00:14:07,120 --> 00:14:08,949
+
+the nice thing about doing this last
+
+706
+00:14:08,949 --> 00:14:08,959
+the nice thing about doing this last
+ 
+
+707
+00:14:08,959 --> 00:14:10,150
+the nice thing about doing this last
+week
+
+708
+00:14:10,150 --> 00:14:10,160
+week
+ 
+
+709
+00:14:10,160 --> 00:14:12,870
+week
+is this is really just the number of
+
+710
+00:14:12,870 --> 00:14:12,880
+is this is really just the number of
+ 
+
+711
+00:14:12,880 --> 00:14:13,910
+is this is really just the number of
+leaves
+
+712
+00:14:13,910 --> 00:14:13,920
+leaves
+ 
+
+713
+00:14:13,920 --> 00:14:15,750
+leaves
+and this is really the number of leaves
+
+714
+00:14:15,750 --> 00:14:15,760
+and this is really the number of leaves
+ 
+
+715
+00:14:15,760 --> 00:14:18,870
+and this is really the number of leaves
+right so what's the number of leaves
+
+716
+00:14:18,870 --> 00:14:18,880
+right so what's the number of leaves
+ 
+
+717
+00:14:18,880 --> 00:14:21,910
+right so what's the number of leaves
+is theta n factorial here it's actually
+
+718
+00:14:21,910 --> 00:14:21,920
+is theta n factorial here it's actually
+ 
+
+719
+00:14:21,920 --> 00:14:22,790
+is theta n factorial here it's actually
+n factorial
+
+720
+00:14:22,790 --> 00:14:22,800
+n factorial
+ 
+
+721
+00:14:22,800 --> 00:14:25,509
+n factorial
+but i'm just going to put it there and
+
+722
+00:14:25,509 --> 00:14:25,519
+but i'm just going to put it there and
+ 
+
+723
+00:14:25,519 --> 00:14:26,150
+but i'm just going to put it there and
+here
+
+724
+00:14:26,150 --> 00:14:26,160
+here
+ 
+
+725
+00:14:26,160 --> 00:14:31,750
+here
+we get an n factorial
+
+726
+00:14:31,750 --> 00:14:31,760
+we get an n factorial
+ 
+
+727
+00:14:31,760 --> 00:14:34,949
+we get an n factorial
+i think this is i see so
+
+728
+00:14:34,949 --> 00:14:34,959
+i think this is i see so
+ 
+
+729
+00:14:34,959 --> 00:14:38,710
+i think this is i see so
+it's at least omega
+
+730
+00:14:38,710 --> 00:14:38,720
+it's at least omega
+ 
+
+731
+00:14:38,720 --> 00:14:42,230
+it's at least omega
+n factorial does that make you happier
+
+732
+00:14:42,230 --> 00:14:42,240
+n factorial does that make you happier
+ 
+
+733
+00:14:42,240 --> 00:14:46,949
+n factorial does that make you happier
+theta here thank you has to be at least
+
+734
+00:14:46,949 --> 00:14:46,959
+theta here thank you has to be at least
+ 
+
+735
+00:14:46,959 --> 00:14:50,470
+theta here thank you has to be at least
+so this was right
+
+736
+00:14:50,470 --> 00:14:50,480
+
+ 
+
+737
+00:14:50,480 --> 00:14:53,670
+
+okay so at least this many i i could
+
+738
+00:14:53,670 --> 00:14:53,680
+okay so at least this many i i could
+ 
+
+739
+00:14:53,680 --> 00:14:55,990
+okay so at least this many i i could
+there are there are algorithms that if
+
+740
+00:14:55,990 --> 00:14:56,000
+there are there are algorithms that if
+ 
+
+741
+00:14:56,000 --> 00:14:57,030
+there are there are algorithms that if
+it got
+
+742
+00:14:57,030 --> 00:14:57,040
+it got
+ 
+
+743
+00:14:57,040 --> 00:14:59,110
+it got
+to it could take two different routes to
+
+744
+00:14:59,110 --> 00:14:59,120
+to it could take two different routes to
+ 
+
+745
+00:14:59,120 --> 00:15:00,470
+to it could take two different routes to
+get to the same output
+
+746
+00:15:00,470 --> 00:15:00,480
+get to the same output
+ 
+
+747
+00:15:00,480 --> 00:15:02,870
+get to the same output
+right so this is a lower bound on the
+
+748
+00:15:02,870 --> 00:15:02,880
+right so this is a lower bound on the
+ 
+
+749
+00:15:02,880 --> 00:15:03,829
+right so this is a lower bound on the
+number of leaves
+
+750
+00:15:03,829 --> 00:15:03,839
+number of leaves
+ 
+
+751
+00:15:03,839 --> 00:15:06,550
+number of leaves
+okay so what this argument is saying is
+
+752
+00:15:06,550 --> 00:15:06,560
+okay so what this argument is saying is
+ 
+
+753
+00:15:06,560 --> 00:15:07,590
+okay so what this argument is saying is
+that
+
+754
+00:15:07,590 --> 00:15:07,600
+that
+ 
+
+755
+00:15:07,600 --> 00:15:09,670
+that
+if i just replace the number of leaves n
+
+756
+00:15:09,670 --> 00:15:09,680
+if i just replace the number of leaves n
+ 
+
+757
+00:15:09,680 --> 00:15:11,189
+if i just replace the number of leaves n
+here with n factorial
+
+758
+00:15:11,189 --> 00:15:11,199
+here with n factorial
+ 
+
+759
+00:15:11,199 --> 00:15:14,150
+here with n factorial
+i get a similar comparison sort lower
+
+760
+00:15:14,150 --> 00:15:14,160
+i get a similar comparison sort lower
+ 
+
+761
+00:15:14,160 --> 00:15:15,509
+i get a similar comparison sort lower
+bound now
+
+762
+00:15:15,509 --> 00:15:15,519
+bound now
+ 
+
+763
+00:15:15,519 --> 00:15:20,629
+bound now
+so what is log of n factorial
+
+764
+00:15:20,629 --> 00:15:20,639
+
+ 
+
+765
+00:15:20,639 --> 00:15:24,470
+
+this is familiar from p set one maybe
+
+766
+00:15:24,470 --> 00:15:24,480
+this is familiar from p set one maybe
+ 
+
+767
+00:15:24,480 --> 00:15:27,509
+this is familiar from p set one maybe
+so one thing i could do is i could put
+
+768
+00:15:27,509 --> 00:15:27,519
+so one thing i could do is i could put
+ 
+
+769
+00:15:27,519 --> 00:15:28,389
+so one thing i could do is i could put
+in sterling
+
+770
+00:15:28,389 --> 00:15:28,399
+in sterling
+ 
+
+771
+00:15:28,399 --> 00:15:32,550
+in sterling
+formula right
+
+772
+00:15:32,550 --> 00:15:32,560
+
+ 
+
+773
+00:15:32,560 --> 00:15:34,230
+
+and that'll give me something of the
+
+774
+00:15:34,230 --> 00:15:34,240
+and that'll give me something of the
+ 
+
+775
+00:15:34,240 --> 00:15:36,230
+and that'll give me something of the
+form n log n but
+
+776
+00:15:36,230 --> 00:15:36,240
+form n log n but
+ 
+
+777
+00:15:36,240 --> 00:15:39,110
+form n log n but
+what's another way i could lower bound n
+
+778
+00:15:39,110 --> 00:15:39,120
+what's another way i could lower bound n
+ 
+
+779
+00:15:39,120 --> 00:15:40,949
+what's another way i could lower bound n
+factorial
+
+780
+00:15:40,949 --> 00:15:40,959
+factorial
+ 
+
+781
+00:15:40,959 --> 00:15:45,829
+factorial
+well i have a bunch of things here
+
+782
+00:15:45,829 --> 00:15:45,839
+
+ 
+
+783
+00:15:45,839 --> 00:15:50,230
+
+that's n factorial half of these things
+
+784
+00:15:50,230 --> 00:15:50,240
+that's n factorial half of these things
+ 
+
+785
+00:15:50,240 --> 00:15:53,990
+that's n factorial half of these things
+these half and over two things
+
+786
+00:15:53,990 --> 00:15:54,000
+these half and over two things
+ 
+
+787
+00:15:54,000 --> 00:15:58,550
+these half and over two things
+are bigger than or equal to n over 2.
+
+788
+00:15:58,550 --> 00:15:58,560
+are bigger than or equal to n over 2.
+ 
+
+789
+00:15:58,560 --> 00:16:01,189
+are bigger than or equal to n over 2.
+that makes sense so i can certainly
+
+790
+00:16:01,189 --> 00:16:01,199
+that makes sense so i can certainly
+ 
+
+791
+00:16:01,199 --> 00:16:04,150
+that makes sense so i can certainly
+lower bound this thing
+
+792
+00:16:04,150 --> 00:16:04,160
+lower bound this thing
+ 
+
+793
+00:16:04,160 --> 00:16:07,189
+lower bound this thing
+by n over 2 to the n
+
+794
+00:16:07,189 --> 00:16:07,199
+by n over 2 to the n
+ 
+
+795
+00:16:07,199 --> 00:16:10,069
+by n over 2 to the n
+over 2 that's a little easier thing to
+
+796
+00:16:10,069 --> 00:16:10,079
+over 2 that's a little easier thing to
+ 
+
+797
+00:16:10,079 --> 00:16:11,509
+over 2 that's a little easier thing to
+take a log of right
+
+798
+00:16:11,509 --> 00:16:11,519
+take a log of right
+ 
+
+799
+00:16:11,519 --> 00:16:14,949
+take a log of right
+if you take a log of that that's
+
+800
+00:16:14,949 --> 00:16:14,959
+if you take a log of that that's
+ 
+
+801
+00:16:14,959 --> 00:16:17,509
+if you take a log of that that's
+asymptotically n log n so what we're
+
+802
+00:16:17,509 --> 00:16:17,519
+asymptotically n log n so what we're
+ 
+
+803
+00:16:17,519 --> 00:16:18,949
+asymptotically n log n so what we're
+getting here is
+
+804
+00:16:18,949 --> 00:16:18,959
+getting here is
+ 
+
+805
+00:16:18,959 --> 00:16:21,189
+getting here is
+any sorting algorithm here takes at
+
+806
+00:16:21,189 --> 00:16:21,199
+any sorting algorithm here takes at
+ 
+
+807
+00:16:21,199 --> 00:16:22,710
+any sorting algorithm here takes at
+least
+
+808
+00:16:22,710 --> 00:16:22,720
+least
+ 
+
+809
+00:16:22,720 --> 00:16:25,030
+least
+n log n comparisons and so merge sorts
+
+810
+00:16:25,030 --> 00:16:25,040
+n log n comparisons and so merge sorts
+ 
+
+811
+00:16:25,040 --> 00:16:26,790
+n log n comparisons and so merge sorts
+the best we can do
+
+812
+00:16:26,790 --> 00:16:26,800
+the best we can do
+ 
+
+813
+00:16:26,800 --> 00:16:30,230
+the best we can do
+okay that makes sense everybody
+
+814
+00:16:30,230 --> 00:16:30,240
+okay that makes sense everybody
+ 
+
+815
+00:16:30,240 --> 00:16:32,310
+okay that makes sense everybody
+we're just piggybacking on the analysis
+
+816
+00:16:32,310 --> 00:16:32,320
+we're just piggybacking on the analysis
+ 
+
+817
+00:16:32,320 --> 00:16:35,749
+we're just piggybacking on the analysis
+we had about decision trees
+
+818
+00:16:35,749 --> 00:16:35,759
+we had about decision trees
+ 
+
+819
+00:16:35,759 --> 00:16:38,949
+we had about decision trees
+leaves with the minimum height of
+
+820
+00:16:38,949 --> 00:16:38,959
+leaves with the minimum height of
+ 
+
+821
+00:16:38,959 --> 00:16:42,949
+leaves with the minimum height of
+any binary tree on that number of leaves
+
+822
+00:16:42,949 --> 00:16:42,959
+any binary tree on that number of leaves
+ 
+
+823
+00:16:42,959 --> 00:16:45,990
+any binary tree on that number of leaves
+and just replacing n with n factorial
+
+824
+00:16:45,990 --> 00:16:46,000
+and just replacing n with n factorial
+ 
+
+825
+00:16:46,000 --> 00:16:51,430
+and just replacing n with n factorial
+nothing super interesting here yeah
+
+826
+00:16:51,430 --> 00:16:51,440
+nothing super interesting here yeah
+ 
+
+827
+00:16:51,440 --> 00:16:54,150
+nothing super interesting here yeah
+yeah sure you can just plug in sterling
+
+828
+00:16:54,150 --> 00:16:54,160
+yeah sure you can just plug in sterling
+ 
+
+829
+00:16:54,160 --> 00:16:55,110
+yeah sure you can just plug in sterling
+formula but i
+
+830
+00:16:55,110 --> 00:16:55,120
+formula but i
+ 
+
+831
+00:16:55,120 --> 00:16:58,790
+formula but i
+i did this so i might as well clarify
+
+832
+00:16:58,790 --> 00:16:58,800
+i did this so i might as well clarify
+ 
+
+833
+00:16:58,800 --> 00:17:01,189
+i did this so i might as well clarify
+there are n terms here in the product
+
+834
+00:17:01,189 --> 00:17:01,199
+there are n terms here in the product
+ 
+
+835
+00:17:01,199 --> 00:17:03,269
+there are n terms here in the product
+right
+
+836
+00:17:03,269 --> 00:17:03,279
+right
+ 
+
+837
+00:17:03,279 --> 00:17:06,150
+right
+half of them are at least n over two
+
+838
+00:17:06,150 --> 00:17:06,160
+half of them are at least n over two
+ 
+
+839
+00:17:06,160 --> 00:17:08,230
+half of them are at least n over two
+does that make sense
+
+840
+00:17:08,230 --> 00:17:08,240
+does that make sense
+ 
+
+841
+00:17:08,240 --> 00:17:10,470
+does that make sense
+so i can replace i can lower bound this
+
+842
+00:17:10,470 --> 00:17:10,480
+so i can replace i can lower bound this
+ 
+
+843
+00:17:10,480 --> 00:17:11,669
+so i can replace i can lower bound this
+product by
+
+844
+00:17:11,669 --> 00:17:11,679
+product by
+ 
+
+845
+00:17:11,679 --> 00:17:15,029
+product by
+something smaller than half of the terms
+
+846
+00:17:15,029 --> 00:17:15,039
+something smaller than half of the terms
+ 
+
+847
+00:17:15,039 --> 00:17:17,270
+something smaller than half of the terms
+the product of that and that'll be fine
+
+848
+00:17:17,270 --> 00:17:17,280
+the product of that and that'll be fine
+ 
+
+849
+00:17:17,280 --> 00:17:18,870
+the product of that and that'll be fine
+right so i'm taking
+
+850
+00:17:18,870 --> 00:17:18,880
+right so i'm taking
+ 
+
+851
+00:17:18,880 --> 00:17:22,230
+right so i'm taking
+n over two of them and i'm multiplying
+
+852
+00:17:22,230 --> 00:17:22,240
+n over two of them and i'm multiplying
+ 
+
+853
+00:17:22,240 --> 00:17:24,870
+n over two of them and i'm multiplying
+n over two all together n over two times
+
+854
+00:17:24,870 --> 00:17:24,880
+n over two all together n over two times
+ 
+
+855
+00:17:24,880 --> 00:17:28,150
+n over two all together n over two times
+does that make sense
+
+856
+00:17:28,150 --> 00:17:28,160
+
+ 
+
+857
+00:17:28,160 --> 00:17:30,630
+
+okay it's just providing a lower bound
+
+858
+00:17:30,630 --> 00:17:30,640
+okay it's just providing a lower bound
+ 
+
+859
+00:17:30,640 --> 00:17:32,549
+okay it's just providing a lower bound
+right i just need something that's
+
+860
+00:17:32,549 --> 00:17:32,559
+right i just need something that's
+ 
+
+861
+00:17:32,559 --> 00:17:34,310
+right i just need something that's
+smaller than all of these terms
+
+862
+00:17:34,310 --> 00:17:34,320
+smaller than all of these terms
+ 
+
+863
+00:17:34,320 --> 00:17:35,830
+smaller than all of these terms
+and multiply them all together and
+
+864
+00:17:35,830 --> 00:17:35,840
+and multiply them all together and
+ 
+
+865
+00:17:35,840 --> 00:17:39,029
+and multiply them all together and
+that'll give me a lower bound
+
+866
+00:17:39,029 --> 00:17:39,039
+
+ 
+
+867
+00:17:39,039 --> 00:17:41,830
+
+okay so we can't do better than n log n
+
+868
+00:17:41,830 --> 00:17:41,840
+okay so we can't do better than n log n
+ 
+
+869
+00:17:41,840 --> 00:17:42,950
+okay so we can't do better than n log n
+in the comparison model
+
+870
+00:17:42,950 --> 00:17:42,960
+in the comparison model
+ 
+
+871
+00:17:42,960 --> 00:17:46,470
+in the comparison model
+but what we did last week was use
+
+872
+00:17:46,470 --> 00:17:46,480
+but what we did last week was use
+ 
+
+873
+00:17:46,480 --> 00:17:48,390
+but what we did last week was use
+random access and a direct access array
+
+874
+00:17:48,390 --> 00:17:48,400
+random access and a direct access array
+ 
+
+875
+00:17:48,400 --> 00:17:50,230
+random access and a direct access array
+to do better okay
+
+876
+00:17:50,230 --> 00:17:50,240
+to do better okay
+ 
+
+877
+00:17:50,240 --> 00:17:52,950
+to do better okay
+so how can anyone think of how to use
+
+878
+00:17:52,950 --> 00:17:52,960
+so how can anyone think of how to use
+ 
+
+879
+00:17:52,960 --> 00:17:54,710
+so how can anyone think of how to use
+that idea
+
+880
+00:17:54,710 --> 00:17:54,720
+that idea
+ 
+
+881
+00:17:54,720 --> 00:17:57,990
+that idea
+to sort faster and i'm going to give you
+
+882
+00:17:57,990 --> 00:17:58,000
+to sort faster and i'm going to give you
+ 
+
+883
+00:17:58,000 --> 00:18:00,150
+to sort faster and i'm going to give you
+a caveat here
+
+884
+00:18:00,150 --> 00:18:00,160
+a caveat here
+ 
+
+885
+00:18:00,160 --> 00:18:03,190
+a caveat here
+i'm going to let you assume that the
+
+886
+00:18:03,190 --> 00:18:03,200
+i'm going to let you assume that the
+ 
+
+887
+00:18:03,200 --> 00:18:05,190
+i'm going to let you assume that the
+keys of the things you're trying to sort
+
+888
+00:18:05,190 --> 00:18:05,200
+keys of the things you're trying to sort
+ 
+
+889
+00:18:05,200 --> 00:18:08,789
+keys of the things you're trying to sort
+are unique okay
+
+890
+00:18:08,789 --> 00:18:08,799
+are unique okay
+ 
+
+891
+00:18:08,799 --> 00:18:11,110
+are unique okay
+and say they're in a bound in a small
+
+892
+00:18:11,110 --> 00:18:11,120
+and say they're in a bound in a small
+ 
+
+893
+00:18:11,120 --> 00:18:13,590
+and say they're in a bound in a small
+range
+
+894
+00:18:13,590 --> 00:18:13,600
+
+ 
+
+895
+00:18:13,600 --> 00:18:16,710
+
+so how could i use a direct access array
+
+896
+00:18:16,710 --> 00:18:16,720
+so how could i use a direct access array
+ 
+
+897
+00:18:16,720 --> 00:18:26,830
+so how could i use a direct access array
+to sort faster any ideas
+
+898
+00:18:26,830 --> 00:18:26,840
+
+ 
+
+899
+00:18:26,840 --> 00:18:31,430
+
+uh-huh
+
+900
+00:18:31,430 --> 00:18:31,440
+
+ 
+
+901
+00:18:31,440 --> 00:18:33,350
+
+okay so what your colleague is saying is
+
+902
+00:18:33,350 --> 00:18:33,360
+okay so what your colleague is saying is
+ 
+
+903
+00:18:33,360 --> 00:18:34,710
+okay so what your colleague is saying is
+exactly correct it's something that i
+
+904
+00:18:34,710 --> 00:18:34,720
+exactly correct it's something that i
+ 
+
+905
+00:18:34,720 --> 00:18:35,669
+exactly correct it's something that i
+like to call direct
+
+906
+00:18:35,669 --> 00:18:35,679
+like to call direct
+ 
+
+907
+00:18:35,679 --> 00:18:39,110
+like to call direct
+access array sort we won't really call
+
+908
+00:18:39,110 --> 00:18:39,120
+access array sort we won't really call
+ 
+
+909
+00:18:39,120 --> 00:18:41,029
+access array sort we won't really call
+it that because there's something
+
+910
+00:18:41,029 --> 00:18:41,039
+it that because there's something
+ 
+
+911
+00:18:41,039 --> 00:18:43,990
+it that because there's something
+more general that we'll talk about in
+
+912
+00:18:43,990 --> 00:18:44,000
+more general that we'll talk about in
+ 
+
+913
+00:18:44,000 --> 00:18:44,870
+more general that we'll talk about in
+just a second
+
+914
+00:18:44,870 --> 00:18:44,880
+just a second
+ 
+
+915
+00:18:44,880 --> 00:18:47,270
+just a second
+but what your colleague was saying is
+
+916
+00:18:47,270 --> 00:18:47,280
+but what your colleague was saying is
+ 
+
+917
+00:18:47,280 --> 00:18:50,470
+but what your colleague was saying is
+instantiate a big direct access array
+
+918
+00:18:50,470 --> 00:18:50,480
+instantiate a big direct access array
+ 
+
+919
+00:18:50,480 --> 00:18:54,950
+instantiate a big direct access array
+direct access array sort
+
+920
+00:18:54,950 --> 00:18:54,960
+direct access array sort
+ 
+
+921
+00:18:54,960 --> 00:18:58,630
+direct access array sort
+right i'm instantiating this big
+
+922
+00:18:58,630 --> 00:18:58,640
+right i'm instantiating this big
+ 
+
+923
+00:18:58,640 --> 00:19:00,710
+right i'm instantiating this big
+direct access array of this the space of
+
+924
+00:19:00,710 --> 00:19:00,720
+direct access array of this the space of
+ 
+
+925
+00:19:00,720 --> 00:19:02,789
+direct access array of this the space of
+my keys
+
+926
+00:19:02,789 --> 00:19:02,799
+my keys
+ 
+
+927
+00:19:02,799 --> 00:19:04,630
+my keys
+right and what your colleague was saying
+
+928
+00:19:04,630 --> 00:19:04,640
+right and what your colleague was saying
+ 
+
+929
+00:19:04,640 --> 00:19:06,710
+right and what your colleague was saying
+was i take each one of the
+
+930
+00:19:06,710 --> 00:19:06,720
+was i take each one of the
+ 
+
+931
+00:19:06,720 --> 00:19:09,669
+was i take each one of the
+items in my the things that i'm trying
+
+932
+00:19:09,669 --> 00:19:09,679
+items in my the things that i'm trying
+ 
+
+933
+00:19:09,679 --> 00:19:11,830
+items in my the things that i'm trying
+to sort i look at each one of their keys
+
+934
+00:19:11,830 --> 00:19:11,840
+to sort i look at each one of their keys
+ 
+
+935
+00:19:11,840 --> 00:19:15,669
+to sort i look at each one of their keys
+and i stick it in the direct access
+
+936
+00:19:15,669 --> 00:19:15,679
+and i stick it in the direct access
+ 
+
+937
+00:19:15,679 --> 00:19:16,150
+and i stick it in the direct access
+array
+
+938
+00:19:16,150 --> 00:19:16,160
+array
+ 
+
+939
+00:19:16,160 --> 00:19:19,430
+array
+exactly where it needs to go right
+
+940
+00:19:19,430 --> 00:19:19,440
+exactly where it needs to go right
+ 
+
+941
+00:19:19,440 --> 00:19:22,470
+exactly where it needs to go right
+in constant time that's great now
+
+942
+00:19:22,470 --> 00:19:22,480
+in constant time that's great now
+ 
+
+943
+00:19:22,480 --> 00:19:24,150
+in constant time that's great now
+i gave you this caveat that all the keys
+
+944
+00:19:24,150 --> 00:19:24,160
+i gave you this caveat that all the keys
+ 
+
+945
+00:19:24,160 --> 00:19:26,070
+i gave you this caveat that all the keys
+were unique so i don't have to deal with
+
+946
+00:19:26,070 --> 00:19:26,080
+were unique so i don't have to deal with
+ 
+
+947
+00:19:26,080 --> 00:19:28,230
+were unique so i don't have to deal with
+collisions here right but then after i'm
+
+948
+00:19:28,230 --> 00:19:28,240
+collisions here right but then after i'm
+ 
+
+949
+00:19:28,240 --> 00:19:29,430
+collisions here right but then after i'm
+done with this
+
+950
+00:19:29,430 --> 00:19:29,440
+done with this
+ 
+
+951
+00:19:29,440 --> 00:19:31,430
+done with this
+all of these things are now in sorted
+
+952
+00:19:31,430 --> 00:19:31,440
+all of these things are now in sorted
+ 
+
+953
+00:19:31,440 --> 00:19:35,270
+all of these things are now in sorted
+order and what i can do is i can just
+
+954
+00:19:35,270 --> 00:19:35,280
+order and what i can do is i can just
+ 
+
+955
+00:19:35,280 --> 00:19:38,070
+order and what i can do is i can just
+walk down this list a lot of these cells
+
+956
+00:19:38,070 --> 00:19:38,080
+walk down this list a lot of these cells
+ 
+
+957
+00:19:38,080 --> 00:19:38,710
+walk down this list a lot of these cells
+are empty
+
+958
+00:19:38,710 --> 00:19:38,720
+are empty
+ 
+
+959
+00:19:38,720 --> 00:19:42,310
+are empty
+potentially right well
+
+960
+00:19:42,310 --> 00:19:42,320
+potentially right well
+ 
+
+961
+00:19:42,320 --> 00:19:44,549
+potentially right well
+some of the keys might not be there but
+
+962
+00:19:44,549 --> 00:19:44,559
+some of the keys might not be there but
+ 
+
+963
+00:19:44,559 --> 00:19:46,230
+some of the keys might not be there but
+what i can do is just walk down this
+
+964
+00:19:46,230 --> 00:19:46,240
+what i can do is just walk down this
+ 
+
+965
+00:19:46,240 --> 00:19:47,110
+what i can do is just walk down this
+list
+
+966
+00:19:47,110 --> 00:19:47,120
+list
+ 
+
+967
+00:19:47,120 --> 00:19:50,549
+list
+pick off every item that does exist
+
+968
+00:19:50,549 --> 00:19:50,559
+pick off every item that does exist
+ 
+
+969
+00:19:50,559 --> 00:19:53,590
+pick off every item that does exist
+stick them in an array i'm done right
+
+970
+00:19:53,590 --> 00:19:53,600
+stick them in an array i'm done right
+ 
+
+971
+00:19:53,600 --> 00:19:57,510
+stick them in an array i'm done right
+so what's the uh stick a key
+
+972
+00:19:57,510 --> 00:19:57,520
+so what's the uh stick a key
+ 
+
+973
+00:19:57,520 --> 00:20:02,470
+so what's the uh stick a key
+into here and then so all right
+
+974
+00:20:02,470 --> 00:20:02,480
+into here and then so all right
+ 
+
+975
+00:20:02,480 --> 00:20:08,870
+into here and then so all right
+uh make direct access array
+
+976
+00:20:08,870 --> 00:20:08,880
+
+ 
+
+977
+00:20:08,880 --> 00:20:14,470
+
+store items
+
+978
+00:20:14,470 --> 00:20:14,480
+
+ 
+
+979
+00:20:14,480 --> 00:20:18,830
+
+uh item x in
+
+980
+00:20:18,830 --> 00:20:18,840
+
+ 
+
+981
+00:20:18,840 --> 00:20:25,669
+
+index x dot key
+
+982
+00:20:25,669 --> 00:20:25,679
+
+ 
+
+983
+00:20:25,679 --> 00:20:28,210
+
+walk down
+
+984
+00:20:28,210 --> 00:20:28,220
+walk down
+ 
+
+985
+00:20:28,220 --> 00:20:29,750
+walk down
+[Music]
+
+986
+00:20:29,750 --> 00:20:29,760
+[Music]
+ 
+
+987
+00:20:29,760 --> 00:20:32,950
+[Music]
+direct access array
+
+988
+00:20:32,950 --> 00:20:32,960
+
+ 
+
+989
+00:20:32,960 --> 00:20:37,270
+
+and return
+
+990
+00:20:37,270 --> 00:20:37,280
+and return
+ 
+
+991
+00:20:37,280 --> 00:20:40,870
+and return
+items seen
+
+992
+00:20:40,870 --> 00:20:40,880
+items seen
+ 
+
+993
+00:20:40,880 --> 00:20:43,909
+items seen
+in order does that make sense to
+
+994
+00:20:43,909 --> 00:20:43,919
+in order does that make sense to
+ 
+
+995
+00:20:43,919 --> 00:20:45,350
+in order does that make sense to
+everybody
+
+996
+00:20:45,350 --> 00:20:45,360
+everybody
+ 
+
+997
+00:20:45,360 --> 00:20:53,750
+everybody
+all right how long does this step take
+
+998
+00:20:53,750 --> 00:20:53,760
+
+ 
+
+999
+00:20:53,760 --> 00:20:58,230
+
+building a direct access array order you
+
+1000
+00:20:58,230 --> 00:20:58,240
+building a direct access array order you
+ 
+
+1001
+00:20:58,240 --> 00:21:01,990
+building a direct access array order you
+okay so this is order u
+
+1002
+00:21:01,990 --> 00:21:02,000
+okay so this is order u
+ 
+
+1003
+00:21:02,000 --> 00:21:06,230
+okay so this is order u
+long does this take
+
+1004
+00:21:06,230 --> 00:21:06,240
+
+ 
+
+1005
+00:21:06,240 --> 00:21:08,390
+
+how many items do i have to insert order
+
+1006
+00:21:08,390 --> 00:21:08,400
+how many items do i have to insert order
+ 
+
+1007
+00:21:08,400 --> 00:21:11,110
+how many items do i have to insert order
+n or just n
+
+1008
+00:21:11,110 --> 00:21:11,120
+n or just n
+ 
+
+1009
+00:21:11,120 --> 00:21:12,870
+n or just n
+and how long does it take to insert each
+
+1010
+00:21:12,870 --> 00:21:12,880
+and how long does it take to insert each
+ 
+
+1011
+00:21:12,880 --> 00:21:14,149
+and how long does it take to insert each
+one of these things
+
+1012
+00:21:14,149 --> 00:21:14,159
+one of these things
+ 
+
+1013
+00:21:14,159 --> 00:21:17,590
+one of these things
+into my direct access array worst case
+
+1014
+00:21:17,590 --> 00:21:17,600
+into my direct access array worst case
+ 
+
+1015
+00:21:17,600 --> 00:21:19,669
+into my direct access array worst case
+constant time
+
+1016
+00:21:19,669 --> 00:21:19,679
+constant time
+ 
+
+1017
+00:21:19,679 --> 00:21:21,700
+constant time
+right so this is n
+
+1018
+00:21:21,700 --> 00:21:21,710
+right so this is n
+ 
+
+1019
+00:21:21,710 --> 00:21:22,870
+right so this is n
+[Music]
+
+1020
+00:21:22,870 --> 00:21:22,880
+[Music]
+ 
+
+1021
+00:21:22,880 --> 00:21:26,149
+[Music]
+times worst case constant time
+
+1022
+00:21:26,149 --> 00:21:26,159
+times worst case constant time
+ 
+
+1023
+00:21:26,159 --> 00:21:34,950
+times worst case constant time
+great how long does this last one take
+
+1024
+00:21:34,950 --> 00:21:34,960
+
+ 
+
+1025
+00:21:34,960 --> 00:21:38,310
+
+anyone of you also right because i'm
+
+1026
+00:21:38,310 --> 00:21:38,320
+anyone of you also right because i'm
+ 
+
+1027
+00:21:38,320 --> 00:21:43,350
+anyone of you also right because i'm
+walking down the entire length of you
+
+1028
+00:21:43,350 --> 00:21:43,360
+
+ 
+
+1029
+00:21:43,360 --> 00:21:47,110
+
+so this algorithm takes in total
+
+1030
+00:21:47,110 --> 00:21:47,120
+so this algorithm takes in total
+ 
+
+1031
+00:21:47,120 --> 00:21:50,710
+so this algorithm takes in total
+n plus u time
+
+1032
+00:21:50,710 --> 00:21:50,720
+n plus u time
+ 
+
+1033
+00:21:50,720 --> 00:21:54,630
+n plus u time
+this is great if u u is bigger than n
+
+1034
+00:21:54,630 --> 00:21:54,640
+this is great if u u is bigger than n
+ 
+
+1035
+00:21:54,640 --> 00:21:55,430
+this is great if u u is bigger than n
+because we assumed
+
+1036
+00:21:55,430 --> 00:21:55,440
+because we assumed
+ 
+
+1037
+00:21:55,440 --> 00:21:58,870
+because we assumed
+distinct keys right
+
+1038
+00:21:58,870 --> 00:21:58,880
+distinct keys right
+ 
+
+1039
+00:21:58,880 --> 00:22:02,470
+distinct keys right
+but if u is on the order of n
+
+1040
+00:22:02,470 --> 00:22:02,480
+but if u is on the order of n
+ 
+
+1041
+00:22:02,480 --> 00:22:03,990
+but if u is on the order of n
+then we now have a linear time sorting
+
+1042
+00:22:03,990 --> 00:22:04,000
+then we now have a linear time sorting
+ 
+
+1043
+00:22:04,000 --> 00:22:07,190
+then we now have a linear time sorting
+algorithm yes
+
+1044
+00:22:07,190 --> 00:22:07,200
+
+ 
+
+1045
+00:22:07,200 --> 00:22:10,390
+
+what's up
+
+1046
+00:22:10,390 --> 00:22:10,400
+
+ 
+
+1047
+00:22:10,400 --> 00:22:16,230
+
+i'm sorry you have to speak up
+
+1048
+00:22:16,230 --> 00:22:16,240
+
+ 
+
+1049
+00:22:16,240 --> 00:22:19,350
+
+uh how do i attach keys to my inputs
+
+1050
+00:22:19,350 --> 00:22:19,360
+uh how do i attach keys to my inputs
+ 
+
+1051
+00:22:19,360 --> 00:22:22,470
+uh how do i attach keys to my inputs
+in my so uh in for a set
+
+1052
+00:22:22,470 --> 00:22:22,480
+in my so uh in for a set
+ 
+
+1053
+00:22:22,480 --> 00:22:24,149
+in my so uh in for a set
+data structure that we've been talking
+
+1054
+00:22:24,149 --> 00:22:24,159
+data structure that we've been talking
+ 
+
+1055
+00:22:24,159 --> 00:22:26,630
+data structure that we've been talking
+about all of my items have
+
+1056
+00:22:26,630 --> 00:22:26,640
+about all of my items have
+ 
+
+1057
+00:22:26,640 --> 00:22:29,510
+about all of my items have
+keys that's just something that we
+
+1058
+00:22:29,510 --> 00:22:29,520
+keys that's just something that we
+ 
+
+1059
+00:22:29,520 --> 00:22:34,149
+keys that's just something that we
+impose on our input
+
+1060
+00:22:34,149 --> 00:22:34,159
+
+ 
+
+1061
+00:22:34,159 --> 00:22:36,310
+
+each of the keys is in this case it has
+
+1062
+00:22:36,310 --> 00:22:36,320
+each of the keys is in this case it has
+ 
+
+1063
+00:22:36,320 --> 00:22:37,750
+each of the keys is in this case it has
+to be a number
+
+1064
+00:22:37,750 --> 00:22:37,760
+to be a number
+ 
+
+1065
+00:22:37,760 --> 00:22:41,270
+to be a number
+right so it's a that's a nice
+
+1066
+00:22:41,270 --> 00:22:41,280
+right so it's a that's a nice
+ 
+
+1067
+00:22:41,280 --> 00:22:44,549
+right so it's a that's a nice
+point right we do this to uh kind of
+
+1068
+00:22:44,549 --> 00:22:44,559
+point right we do this to uh kind of
+ 
+
+1069
+00:22:44,559 --> 00:22:45,430
+point right we do this to uh kind of
+talk about
+
+1070
+00:22:45,430 --> 00:22:45,440
+talk about
+ 
+
+1071
+00:22:45,440 --> 00:22:48,470
+talk about
+sorting items generally so that
+
+1072
+00:22:48,470 --> 00:22:48,480
+sorting items generally so that
+ 
+
+1073
+00:22:48,480 --> 00:22:49,750
+sorting items generally so that
+uh we don't have to deal with
+
+1074
+00:22:49,750 --> 00:22:49,760
+uh we don't have to deal with
+ 
+
+1075
+00:22:49,760 --> 00:22:51,270
+uh we don't have to deal with
+potentially if these keys have values
+
+1076
+00:22:51,270 --> 00:22:51,280
+potentially if these keys have values
+ 
+
+1077
+00:22:51,280 --> 00:22:52,390
+potentially if these keys have values
+associated with or other stuff
+
+1078
+00:22:52,390 --> 00:22:52,400
+associated with or other stuff
+ 
+
+1079
+00:22:52,400 --> 00:22:53,190
+associated with or other stuff
+associated with
+
+1080
+00:22:53,190 --> 00:22:53,200
+associated with
+ 
+
+1081
+00:22:53,200 --> 00:22:55,110
+associated with
+put them on that item and they'll still
+
+1082
+00:22:55,110 --> 00:22:55,120
+put them on that item and they'll still
+ 
+
+1083
+00:22:55,120 --> 00:22:56,789
+put them on that item and they'll still
+be there but in general
+
+1084
+00:22:56,789 --> 00:22:56,799
+be there but in general
+ 
+
+1085
+00:22:56,799 --> 00:22:59,110
+be there but in general
+if you just wanted to sort integers you
+
+1086
+00:22:59,110 --> 00:22:59,120
+if you just wanted to sort integers you
+ 
+
+1087
+00:22:59,120 --> 00:23:00,310
+if you just wanted to sort integers you
+could say that dot
+
+1088
+00:23:00,310 --> 00:23:00,320
+could say that dot
+ 
+
+1089
+00:23:00,320 --> 00:23:04,470
+could say that dot
+key is points back to the object itself
+
+1090
+00:23:04,470 --> 00:23:04,480
+key is points back to the object itself
+ 
+
+1091
+00:23:04,480 --> 00:23:05,270
+key is points back to the object itself
+if you want to just
+
+1092
+00:23:05,270 --> 00:23:05,280
+if you want to just
+ 
+
+1093
+00:23:05,280 --> 00:23:07,029
+if you want to just
+sort some integers does that make sense
+
+1094
+00:23:07,029 --> 00:23:07,039
+sort some integers does that make sense
+ 
+
+1095
+00:23:07,039 --> 00:23:09,110
+sort some integers does that make sense
+it's a good question though
+
+1096
+00:23:09,110 --> 00:23:09,120
+it's a good question though
+ 
+
+1097
+00:23:09,120 --> 00:23:12,230
+it's a good question though
+okay so that gives us a linear time
+
+1098
+00:23:12,230 --> 00:23:12,240
+okay so that gives us a linear time
+ 
+
+1099
+00:23:12,240 --> 00:23:14,390
+okay so that gives us a linear time
+algorithm when u is small
+
+1100
+00:23:14,390 --> 00:23:14,400
+algorithm when u is small
+ 
+
+1101
+00:23:14,400 --> 00:23:16,549
+algorithm when u is small
+right and under this condition that i
+
+1102
+00:23:16,549 --> 00:23:16,559
+right and under this condition that i
+ 
+
+1103
+00:23:16,559 --> 00:23:18,870
+right and under this condition that i
+have unique keys when i want to sort
+
+1104
+00:23:18,870 --> 00:23:18,880
+have unique keys when i want to sort
+ 
+
+1105
+00:23:18,880 --> 00:23:22,230
+have unique keys when i want to sort
+right those are fairly restrictive
+
+1106
+00:23:22,230 --> 00:23:22,240
+right those are fairly restrictive
+ 
+
+1107
+00:23:22,240 --> 00:23:23,909
+right those are fairly restrictive
+so we might want to generalize this a
+
+1108
+00:23:23,909 --> 00:23:23,919
+so we might want to generalize this a
+ 
+
+1109
+00:23:23,919 --> 00:23:26,070
+so we might want to generalize this a
+little bit okay
+
+1110
+00:23:26,070 --> 00:23:26,080
+little bit okay
+ 
+
+1111
+00:23:26,080 --> 00:23:29,909
+little bit okay
+so that's direct access array sort
+
+1112
+00:23:29,909 --> 00:23:29,919
+so that's direct access array sort
+ 
+
+1113
+00:23:29,919 --> 00:23:33,590
+so that's direct access array sort
+what if we had a set of keys that was a
+
+1114
+00:23:33,590 --> 00:23:33,600
+what if we had a set of keys that was a
+ 
+
+1115
+00:23:33,600 --> 00:23:34,950
+what if we had a set of keys that was a
+little larger
+
+1116
+00:23:34,950 --> 00:23:34,960
+little larger
+ 
+
+1117
+00:23:34,960 --> 00:23:40,390
+little larger
+right instead of enforcing
+
+1118
+00:23:40,390 --> 00:23:40,400
+
+ 
+
+1119
+00:23:40,400 --> 00:23:44,230
+
+so let's say u is
+
+1120
+00:23:44,230 --> 00:23:44,240
+so let's say u is
+ 
+
+1121
+00:23:44,240 --> 00:23:51,269
+so let's say u is
+theta n implies
+
+1122
+00:23:51,269 --> 00:23:51,279
+theta n implies
+ 
+
+1123
+00:23:51,279 --> 00:23:53,909
+theta n implies
+implies linear time sorting that's great
+
+1124
+00:23:53,909 --> 00:23:53,919
+implies linear time sorting that's great
+ 
+
+1125
+00:23:53,919 --> 00:23:54,710
+implies linear time sorting that's great
+okay
+
+1126
+00:23:54,710 --> 00:23:54,720
+okay
+ 
+
+1127
+00:23:54,720 --> 00:23:57,669
+okay
+so now what happens if we expand that
+
+1128
+00:23:57,669 --> 00:23:57,679
+so now what happens if we expand that
+ 
+
+1129
+00:23:57,679 --> 00:23:59,190
+so now what happens if we expand that
+range a little bit
+
+1130
+00:23:59,190 --> 00:23:59,200
+range a little bit
+ 
+
+1131
+00:23:59,200 --> 00:24:02,710
+range a little bit
+say u is less than or equal to n squared
+
+1132
+00:24:02,710 --> 00:24:02,720
+say u is less than or equal to n squared
+ 
+
+1133
+00:24:02,720 --> 00:24:04,870
+say u is less than or equal to n squared
+maybe just less than
+
+1134
+00:24:04,870 --> 00:24:04,880
+maybe just less than
+ 
+
+1135
+00:24:04,880 --> 00:24:08,390
+maybe just less than
+okay okay this is a bigger range
+
+1136
+00:24:08,390 --> 00:24:08,400
+okay okay this is a bigger range
+ 
+
+1137
+00:24:08,400 --> 00:24:14,149
+okay okay this is a bigger range
+right and if we instantiated
+
+1138
+00:24:14,149 --> 00:24:14,159
+
+ 
+
+1139
+00:24:14,159 --> 00:24:18,310
+
+a direct access array of quadratic size
+
+1140
+00:24:18,310 --> 00:24:18,320
+a direct access array of quadratic size
+ 
+
+1141
+00:24:18,320 --> 00:24:20,070
+a direct access array of quadratic size
+we'd have a quadratic time algorithm
+
+1142
+00:24:20,070 --> 00:24:20,080
+we'd have a quadratic time algorithm
+ 
+
+1143
+00:24:20,080 --> 00:24:21,669
+we'd have a quadratic time algorithm
+this is not helpful
+
+1144
+00:24:21,669 --> 00:24:21,679
+this is not helpful
+ 
+
+1145
+00:24:21,679 --> 00:24:25,110
+this is not helpful
+right anyone
+
+1146
+00:24:25,110 --> 00:24:25,120
+right anyone
+ 
+
+1147
+00:24:25,120 --> 00:24:29,350
+right anyone
+have a way in which we could sort
+
+1148
+00:24:29,350 --> 00:24:29,360
+
+ 
+
+1149
+00:24:29,360 --> 00:24:32,390
+
+integers that are between zero and
+
+1150
+00:24:32,390 --> 00:24:32,400
+integers that are between zero and
+ 
+
+1151
+00:24:32,400 --> 00:24:35,990
+integers that are between zero and
+n squared
+
+1152
+00:24:35,990 --> 00:24:36,000
+
+ 
+
+1153
+00:24:36,000 --> 00:24:49,669
+
+maybe using the stuff that we had above
+
+1154
+00:24:49,669 --> 00:24:49,679
+
+ 
+
+1155
+00:24:49,679 --> 00:24:52,470
+
+your colleague is saying exactly the
+
+1156
+00:24:52,470 --> 00:24:52,480
+your colleague is saying exactly the
+ 
+
+1157
+00:24:52,480 --> 00:24:53,909
+your colleague is saying exactly the
+thing that i'm looking for which is
+
+1158
+00:24:53,909 --> 00:24:53,919
+thing that i'm looking for which is
+ 
+
+1159
+00:24:53,919 --> 00:24:54,870
+thing that i'm looking for which is
+great
+
+1160
+00:24:54,870 --> 00:24:54,880
+great
+ 
+
+1161
+00:24:54,880 --> 00:24:58,149
+great
+which is maybe
+
+1162
+00:24:58,149 --> 00:24:58,159
+which is maybe
+ 
+
+1163
+00:24:58,159 --> 00:25:01,190
+which is maybe
+we could break this larger number
+
+1164
+00:25:01,190 --> 00:25:01,200
+we could break this larger number
+ 
+
+1165
+00:25:01,200 --> 00:25:04,789
+we could break this larger number
+into two smaller numbers
+
+1166
+00:25:04,789 --> 00:25:04,799
+into two smaller numbers
+ 
+
+1167
+00:25:04,799 --> 00:25:08,149
+into two smaller numbers
+right any uh integer
+
+1168
+00:25:08,149 --> 00:25:08,159
+right any uh integer
+ 
+
+1169
+00:25:08,159 --> 00:25:11,190
+right any uh integer
+that is between zero and n squared can
+
+1170
+00:25:11,190 --> 00:25:11,200
+that is between zero and n squared can
+ 
+
+1171
+00:25:11,200 --> 00:25:12,830
+that is between zero and n squared can
+be written
+
+1172
+00:25:12,830 --> 00:25:12,840
+be written
+ 
+
+1173
+00:25:12,840 --> 00:25:16,390
+be written
+as a key
+
+1174
+00:25:16,390 --> 00:25:16,400
+as a key
+ 
+
+1175
+00:25:16,400 --> 00:25:19,909
+as a key
+can be some a and b where
+
+1176
+00:25:19,909 --> 00:25:19,919
+can be some a and b where
+ 
+
+1177
+00:25:19,919 --> 00:25:24,870
+can be some a and b where
+a is essentially the higher kind of
+
+1178
+00:25:24,870 --> 00:25:24,880
+a is essentially the higher kind of
+ 
+
+1179
+00:25:24,880 --> 00:25:28,310
+a is essentially the higher kind of
+n and b is kind of the lower
+
+1180
+00:25:28,310 --> 00:25:28,320
+n and b is kind of the lower
+ 
+
+1181
+00:25:28,320 --> 00:25:31,750
+n and b is kind of the lower
+n this is kind of weird okay so what do
+
+1182
+00:25:31,750 --> 00:25:31,760
+n this is kind of weird okay so what do
+ 
+
+1183
+00:25:31,760 --> 00:25:33,110
+n this is kind of weird okay so what do
+i actually mean by this
+
+1184
+00:25:33,110 --> 00:25:33,120
+i actually mean by this
+ 
+
+1185
+00:25:33,120 --> 00:25:38,470
+i actually mean by this
+i mean that let's let a be
+
+1186
+00:25:38,470 --> 00:25:38,480
+
+ 
+
+1187
+00:25:38,480 --> 00:25:41,590
+
+k when i divide it by
+
+1188
+00:25:41,590 --> 00:25:41,600
+k when i divide it by
+ 
+
+1189
+00:25:41,600 --> 00:25:45,590
+k when i divide it by
+n integer the floor right
+
+1190
+00:25:45,590 --> 00:25:45,600
+n integer the floor right
+ 
+
+1191
+00:25:45,600 --> 00:25:49,669
+n integer the floor right
+key integer to divide by n
+
+1192
+00:25:49,669 --> 00:25:49,679
+key integer to divide by n
+ 
+
+1193
+00:25:49,679 --> 00:25:52,710
+key integer to divide by n
+right and b
+
+1194
+00:25:52,710 --> 00:25:52,720
+right and b
+ 
+
+1195
+00:25:52,720 --> 00:25:56,149
+right and b
+equals k
+
+1196
+00:25:56,149 --> 00:25:56,159
+equals k
+ 
+
+1197
+00:25:56,159 --> 00:25:59,350
+equals k
+mod n so this is a number that's less
+
+1198
+00:25:59,350 --> 00:25:59,360
+mod n so this is a number that's less
+ 
+
+1199
+00:25:59,360 --> 00:25:59,669
+mod n so this is a number that's less
+than
+
+1200
+00:25:59,669 --> 00:25:59,679
+than
+ 
+
+1201
+00:25:59,679 --> 00:26:02,230
+than
+n and this is a number that's less than
+
+1202
+00:26:02,230 --> 00:26:02,240
+n and this is a number that's less than
+ 
+
+1203
+00:26:02,240 --> 00:26:02,870
+n and this is a number that's less than
+n
+
+1204
+00:26:02,870 --> 00:26:02,880
+n
+ 
+
+1205
+00:26:02,880 --> 00:26:05,190
+n
+does that make sense and actually i can
+
+1206
+00:26:05,190 --> 00:26:05,200
+does that make sense and actually i can
+ 
+
+1207
+00:26:05,200 --> 00:26:07,110
+does that make sense and actually i can
+recover k
+
+1208
+00:26:07,110 --> 00:26:07,120
+recover k
+ 
+
+1209
+00:26:07,120 --> 00:26:10,230
+recover k
+at any time by saying k equals a
+
+1210
+00:26:10,230 --> 00:26:10,240
+at any time by saying k equals a
+ 
+
+1211
+00:26:10,240 --> 00:26:14,230
+at any time by saying k equals a
+n plus b i've essentially decomposed
+
+1212
+00:26:14,230 --> 00:26:14,240
+n plus b i've essentially decomposed
+ 
+
+1213
+00:26:14,240 --> 00:26:15,350
+n plus b i've essentially decomposed
+this
+
+1214
+00:26:15,350 --> 00:26:15,360
+this
+ 
+
+1215
+00:26:15,360 --> 00:26:18,789
+this
+into a base n representation of this
+
+1216
+00:26:18,789 --> 00:26:18,799
+into a base n representation of this
+ 
+
+1217
+00:26:18,799 --> 00:26:21,269
+into a base n representation of this
+number
+
+1218
+00:26:21,269 --> 00:26:21,279
+
+ 
+
+1219
+00:26:21,279 --> 00:26:23,510
+
+and i have two digits in that number
+
+1220
+00:26:23,510 --> 00:26:23,520
+and i have two digits in that number
+ 
+
+1221
+00:26:23,520 --> 00:26:25,110
+and i have two digits in that number
+this is the
+
+1222
+00:26:25,110 --> 00:26:25,120
+this is the
+ 
+
+1223
+00:26:25,120 --> 00:26:27,750
+this is the
+kind of nth n digit and this is the ones
+
+1224
+00:26:27,750 --> 00:26:27,760
+kind of nth n digit and this is the ones
+ 
+
+1225
+00:26:27,760 --> 00:26:29,350
+kind of nth n digit and this is the ones
+digit
+
+1226
+00:26:29,350 --> 00:26:29,360
+digit
+ 
+
+1227
+00:26:29,360 --> 00:26:32,789
+digit
+does that make sense all right so
+
+1228
+00:26:32,789 --> 00:26:32,799
+does that make sense all right so
+ 
+
+1229
+00:26:32,799 --> 00:26:36,830
+does that make sense all right so
+now let's say i have this list of
+
+1230
+00:26:36,830 --> 00:26:36,840
+now let's say i have this list of
+ 
+
+1231
+00:26:36,840 --> 00:26:42,070
+now let's say i have this list of
+numbers
+
+1232
+00:26:42,070 --> 00:26:42,080
+
+ 
+
+1233
+00:26:42,080 --> 00:26:45,510
+
+um 17 3
+
+1234
+00:26:45,510 --> 00:26:45,520
+um 17 3
+ 
+
+1235
+00:26:45,520 --> 00:26:50,830
+um 17 3
+24 22
+
+1236
+00:26:50,830 --> 00:26:50,840
+
+ 
+
+1237
+00:26:50,840 --> 00:26:52,710
+
+12.
+
+1238
+00:26:52,710 --> 00:26:52,720
+12.
+ 
+
+1239
+00:26:52,720 --> 00:26:56,149
+12.
+how i could here i have
+
+1240
+00:26:56,149 --> 00:26:56,159
+how i could here i have
+ 
+
+1241
+00:26:56,159 --> 00:27:00,230
+how i could here i have
+five numbers so what's n in this case
+
+1242
+00:27:00,230 --> 00:27:00,240
+five numbers so what's n in this case
+ 
+
+1243
+00:27:00,240 --> 00:27:03,269
+five numbers so what's n in this case
+five okay not so interesting
+
+1244
+00:27:03,269 --> 00:27:03,279
+five okay not so interesting
+ 
+
+1245
+00:27:03,279 --> 00:27:06,710
+five okay not so interesting
+n is five here and i'm going to
+
+1246
+00:27:06,710 --> 00:27:06,720
+n is five here and i'm going to
+ 
+
+1247
+00:27:06,720 --> 00:27:07,590
+n is five here and i'm going to
+represent this
+
+1248
+00:27:07,590 --> 00:27:07,600
+represent this
+ 
+
+1249
+00:27:07,600 --> 00:27:11,750
+represent this
+as five pairs of numbers
+
+1250
+00:27:11,750 --> 00:27:11,760
+as five pairs of numbers
+ 
+
+1251
+00:27:11,760 --> 00:27:13,990
+as five pairs of numbers
+that are each within the bounds of zero
+
+1252
+00:27:13,990 --> 00:27:14,000
+that are each within the bounds of zero
+ 
+
+1253
+00:27:14,000 --> 00:27:14,950
+that are each within the bounds of zero
+to four
+
+1254
+00:27:14,950 --> 00:27:14,960
+to four
+ 
+
+1255
+00:27:14,960 --> 00:27:17,990
+to four
+right does that make sense so
+
+1256
+00:27:17,990 --> 00:27:18,000
+right does that make sense so
+ 
+
+1257
+00:27:18,000 --> 00:27:20,070
+right does that make sense so
+what is my a b representation of
+
+1258
+00:27:20,070 --> 00:27:20,080
+what is my a b representation of
+ 
+
+1259
+00:27:20,080 --> 00:27:24,230
+what is my a b representation of
+seventeen
+
+1260
+00:27:24,230 --> 00:27:24,240
+
+ 
+
+1261
+00:27:24,240 --> 00:27:27,350
+
+three two
+
+1262
+00:27:27,350 --> 00:27:27,360
+three two
+ 
+
+1263
+00:27:27,360 --> 00:27:32,630
+three two
+okay so yeah so there are three
+
+1264
+00:27:32,630 --> 00:27:32,640
+okay so yeah so there are three
+ 
+
+1265
+00:27:32,640 --> 00:27:36,950
+okay so yeah so there are three
+times 5 plus 2 that's good that's 17.
+
+1266
+00:27:36,950 --> 00:27:36,960
+times 5 plus 2 that's good that's 17.
+ 
+
+1267
+00:27:36,960 --> 00:27:40,149
+times 5 plus 2 that's good that's 17.
+yeah i think i your colleague did that
+
+1268
+00:27:40,149 --> 00:27:40,159
+yeah i think i your colleague did that
+ 
+
+1269
+00:27:40,159 --> 00:27:41,029
+yeah i think i your colleague did that
+right
+
+1270
+00:27:41,029 --> 00:27:41,039
+right
+ 
+
+1271
+00:27:41,039 --> 00:27:43,269
+right
+uh i have all of these written down so
+
+1272
+00:27:43,269 --> 00:27:43,279
+uh i have all of these written down so
+ 
+
+1273
+00:27:43,279 --> 00:27:53,750
+uh i have all of these written down so
+i'm just going to write it out
+
+1274
+00:27:53,750 --> 00:27:53,760
+
+ 
+
+1275
+00:27:53,760 --> 00:27:57,350
+
+and i hope i did it correctly okay
+
+1276
+00:27:57,350 --> 00:27:57,360
+and i hope i did it correctly okay
+ 
+
+1277
+00:27:57,360 --> 00:28:00,230
+and i hope i did it correctly okay
+three two zero three four four four two
+
+1278
+00:28:00,230 --> 00:28:00,240
+three two zero three four four four two
+ 
+
+1279
+00:28:00,240 --> 00:28:02,070
+three two zero three four four four two
+two two okay
+
+1280
+00:28:02,070 --> 00:28:02,080
+two two okay
+ 
+
+1281
+00:28:02,080 --> 00:28:03,990
+two two okay
+so now i have a bunch of things that i
+
+1282
+00:28:03,990 --> 00:28:04,000
+so now i have a bunch of things that i
+ 
+
+1283
+00:28:04,000 --> 00:28:08,630
+so now i have a bunch of things that i
+want to sort
+
+1284
+00:28:08,630 --> 00:28:08,640
+
+ 
+
+1285
+00:28:08,640 --> 00:28:12,310
+
+based on this function that i have right
+
+1286
+00:28:12,310 --> 00:28:12,320
+based on this function that i have right
+ 
+
+1287
+00:28:12,320 --> 00:28:14,630
+based on this function that i have right
+these are no longer just integers that i
+
+1288
+00:28:14,630 --> 00:28:14,640
+these are no longer just integers that i
+ 
+
+1289
+00:28:14,640 --> 00:28:16,789
+these are no longer just integers that i
+need to sort i need to sort by
+
+1290
+00:28:16,789 --> 00:28:16,799
+need to sort i need to sort by
+ 
+
+1291
+00:28:16,799 --> 00:28:19,830
+need to sort i need to sort by
+this transformation of this thing into a
+
+1292
+00:28:19,830 --> 00:28:19,840
+this transformation of this thing into a
+ 
+
+1293
+00:28:19,840 --> 00:28:20,310
+this transformation of this thing into a
+number
+
+1294
+00:28:20,310 --> 00:28:20,320
+number
+ 
+
+1295
+00:28:20,320 --> 00:28:23,909
+number
+does that make sense so anyone have any
+
+1296
+00:28:23,909 --> 00:28:23,919
+does that make sense so anyone have any
+ 
+
+1297
+00:28:23,919 --> 00:28:24,710
+does that make sense so anyone have any
+ideas
+
+1298
+00:28:24,710 --> 00:28:24,720
+ideas
+ 
+
+1299
+00:28:24,720 --> 00:28:28,310
+ideas
+on how we could so by the way
+
+1300
+00:28:28,310 --> 00:28:28,320
+on how we could so by the way
+ 
+
+1301
+00:28:28,320 --> 00:28:30,870
+on how we could so by the way
+these are both in uh constant time
+
+1302
+00:28:30,870 --> 00:28:30,880
+these are both in uh constant time
+ 
+
+1303
+00:28:30,880 --> 00:28:31,750
+these are both in uh constant time
+operations
+
+1304
+00:28:31,750 --> 00:28:31,760
+operations
+ 
+
+1305
+00:28:31,760 --> 00:28:34,549
+operations
+on your computer as long as it's an
+
+1306
+00:28:34,549 --> 00:28:34,559
+on your computer as long as it's an
+ 
+
+1307
+00:28:34,559 --> 00:28:35,669
+on your computer as long as it's an
+integer division
+
+1308
+00:28:35,669 --> 00:28:35,679
+integer division
+ 
+
+1309
+00:28:35,679 --> 00:28:38,950
+integer division
+right and this is mod python also has a
+
+1310
+00:28:38,950 --> 00:28:38,960
+right and this is mod python also has a
+ 
+
+1311
+00:28:38,960 --> 00:28:39,430
+right and this is mod python also has a
+nice
+
+1312
+00:28:39,430 --> 00:28:39,440
+nice
+ 
+
+1313
+00:28:39,440 --> 00:28:43,750
+nice
+thing i think in uh
+
+1314
+00:28:43,750 --> 00:28:43,760
+thing i think in uh
+ 
+
+1315
+00:28:43,760 --> 00:28:46,870
+thing i think in uh
+in its uh standard operations which is
+
+1316
+00:28:46,870 --> 00:28:46,880
+in its uh standard operations which is
+ 
+
+1317
+00:28:46,880 --> 00:28:50,230
+in its uh standard operations which is
+div mod of
+
+1318
+00:28:50,230 --> 00:28:50,240
+div mod of
+ 
+
+1319
+00:28:50,240 --> 00:28:53,830
+div mod of
+kn is that right yeah
+
+1320
+00:28:53,830 --> 00:28:53,840
+kn is that right yeah
+ 
+
+1321
+00:28:53,840 --> 00:28:58,149
+kn is that right yeah
+so if you want to use that you can
+
+1322
+00:28:58,149 --> 00:28:58,159
+so if you want to use that you can
+ 
+
+1323
+00:28:58,159 --> 00:29:00,710
+so if you want to use that you can
+okay so how do we sort these tuples
+
+1324
+00:29:00,710 --> 00:29:00,720
+okay so how do we sort these tuples
+ 
+
+1325
+00:29:00,720 --> 00:29:02,630
+okay so how do we sort these tuples
+these are tuples right
+
+1326
+00:29:02,630 --> 00:29:02,640
+these are tuples right
+ 
+
+1327
+00:29:02,640 --> 00:29:05,350
+these are tuples right
+you guys are i'm sure very familiar with
+
+1328
+00:29:05,350 --> 00:29:05,360
+you guys are i'm sure very familiar with
+ 
+
+1329
+00:29:05,360 --> 00:29:07,510
+you guys are i'm sure very familiar with
+tuples by now
+
+1330
+00:29:07,510 --> 00:29:07,520
+tuples by now
+ 
+
+1331
+00:29:07,520 --> 00:29:14,630
+tuples by now
+okay how do i sort these tuples
+
+1332
+00:29:14,630 --> 00:29:14,640
+
+ 
+
+1333
+00:29:14,640 --> 00:29:17,590
+
+what's the most important digit of this
+
+1334
+00:29:17,590 --> 00:29:17,600
+what's the most important digit of this
+ 
+
+1335
+00:29:17,600 --> 00:29:18,149
+what's the most important digit of this
+thing
+
+1336
+00:29:18,149 --> 00:29:18,159
+thing
+ 
+
+1337
+00:29:18,159 --> 00:29:21,190
+thing
+if i had to sort one of the digits and
+
+1338
+00:29:21,190 --> 00:29:21,200
+if i had to sort one of the digits and
+ 
+
+1339
+00:29:21,200 --> 00:29:24,070
+if i had to sort one of the digits and
+get something that's close to sorted
+
+1340
+00:29:24,070 --> 00:29:24,080
+get something that's close to sorted
+ 
+
+1341
+00:29:24,080 --> 00:29:25,990
+get something that's close to sorted
+what's more important the ones digit or
+
+1342
+00:29:25,990 --> 00:29:26,000
+what's more important the ones digit or
+ 
+
+1343
+00:29:26,000 --> 00:29:27,669
+what's more important the ones digit or
+the ends digit
+
+1344
+00:29:27,669 --> 00:29:27,679
+the ends digit
+ 
+
+1345
+00:29:27,679 --> 00:29:31,029
+the ends digit
+and okay we have discrepancy here
+
+1346
+00:29:31,029 --> 00:29:31,039
+and okay we have discrepancy here
+ 
+
+1347
+00:29:31,039 --> 00:29:34,149
+and okay we have discrepancy here
+who says one who says
+
+1348
+00:29:34,149 --> 00:29:34,159
+who says one who says
+ 
+
+1349
+00:29:34,159 --> 00:29:41,510
+who says one who says
+n someone who said n tell me what
+
+1350
+00:29:41,510 --> 00:29:41,520
+n someone who said n tell me what
+ 
+
+1351
+00:29:41,520 --> 00:29:47,430
+n someone who said n tell me what
+oh you all think that way for no reason
+
+1352
+00:29:47,430 --> 00:29:47,440
+
+ 
+
+1353
+00:29:47,440 --> 00:29:50,310
+
+yeah sorry this is a little confusing
+
+1354
+00:29:50,310 --> 00:29:50,320
+yeah sorry this is a little confusing
+ 
+
+1355
+00:29:50,320 --> 00:29:52,149
+yeah sorry this is a little confusing
+this is the ones digit this is the ends
+
+1356
+00:29:52,149 --> 00:29:52,159
+this is the ones digit this is the ends
+ 
+
+1357
+00:29:52,159 --> 00:29:52,950
+this is the ones digit this is the ends
+digit
+
+1358
+00:29:52,950 --> 00:29:52,960
+digit
+ 
+
+1359
+00:29:52,960 --> 00:29:54,789
+digit
+this is the ends digit this is the ones
+
+1360
+00:29:54,789 --> 00:29:54,799
+this is the ends digit this is the ones
+ 
+
+1361
+00:29:54,799 --> 00:29:56,789
+this is the ends digit this is the ones
+digit in how i'm writing this
+
+1362
+00:29:56,789 --> 00:29:56,799
+digit in how i'm writing this
+ 
+
+1363
+00:29:56,799 --> 00:30:12,470
+digit in how i'm writing this
+does that make sense yeah
+
+1364
+00:30:12,470 --> 00:30:12,480
+
+ 
+
+1365
+00:30:12,480 --> 00:30:15,029
+
+exactly yeah so what your your colleague
+
+1366
+00:30:15,029 --> 00:30:15,039
+exactly yeah so what your your colleague
+ 
+
+1367
+00:30:15,039 --> 00:30:17,909
+exactly yeah so what your your colleague
+is saying is exactly correct
+
+1368
+00:30:17,909 --> 00:30:17,919
+is saying is exactly correct
+ 
+
+1369
+00:30:17,919 --> 00:30:20,950
+is saying is exactly correct
+i could very be all i want right with
+
+1370
+00:30:20,950 --> 00:30:20,960
+i could very be all i want right with
+ 
+
+1371
+00:30:20,960 --> 00:30:23,669
+i could very be all i want right with
+the same a
+
+1372
+00:30:23,669 --> 00:30:23,679
+the same a
+ 
+
+1373
+00:30:23,679 --> 00:30:26,389
+the same a
+if i change a by one it doesn't matter
+
+1374
+00:30:26,389 --> 00:30:26,399
+if i change a by one it doesn't matter
+ 
+
+1375
+00:30:26,399 --> 00:30:26,870
+if i change a by one it doesn't matter
+what b
+
+1376
+00:30:26,870 --> 00:30:26,880
+what b
+ 
+
+1377
+00:30:26,880 --> 00:30:31,669
+what b
+is it's going to be bigger right
+
+1378
+00:30:31,669 --> 00:30:31,679
+
+ 
+
+1379
+00:30:31,679 --> 00:30:34,310
+
+does that that make sense right the the
+
+1380
+00:30:34,310 --> 00:30:34,320
+does that that make sense right the the
+ 
+
+1381
+00:30:34,320 --> 00:30:34,789
+does that that make sense right the the
+k
+
+1382
+00:30:34,789 --> 00:30:34,799
+k
+ 
+
+1383
+00:30:34,799 --> 00:30:36,789
+k
+is much more sensitive to a than it is
+
+1384
+00:30:36,789 --> 00:30:36,799
+is much more sensitive to a than it is
+ 
+
+1385
+00:30:36,799 --> 00:30:38,070
+is much more sensitive to a than it is
+to b
+
+1386
+00:30:38,070 --> 00:30:38,080
+to b
+ 
+
+1387
+00:30:38,080 --> 00:30:39,990
+to b
+right so a is more important than b does
+
+1388
+00:30:39,990 --> 00:30:40,000
+right so a is more important than b does
+ 
+
+1389
+00:30:40,000 --> 00:30:41,909
+right so a is more important than b does
+that make sense
+
+1390
+00:30:41,909 --> 00:30:41,919
+that make sense
+ 
+
+1391
+00:30:41,919 --> 00:30:45,669
+that make sense
+so if i just wanted to get some
+
+1392
+00:30:45,669 --> 00:30:45,679
+so if i just wanted to get some
+ 
+
+1393
+00:30:45,679 --> 00:30:48,310
+so if i just wanted to get some
+linear time algorithm i could just sort
+
+1394
+00:30:48,310 --> 00:30:48,320
+linear time algorithm i could just sort
+ 
+
+1395
+00:30:48,320 --> 00:30:48,950
+linear time algorithm i could just sort
+by their
+
+1396
+00:30:48,950 --> 00:30:48,960
+by their
+ 
+
+1397
+00:30:48,960 --> 00:30:52,950
+by their
+bigger digits and hope they don't
+
+1398
+00:30:52,950 --> 00:30:52,960
+bigger digits and hope they don't
+ 
+
+1399
+00:30:52,960 --> 00:30:54,950
+bigger digits and hope they don't
+don't differ very much on the smaller
+
+1400
+00:30:54,950 --> 00:30:54,960
+don't differ very much on the smaller
+ 
+
+1401
+00:30:54,960 --> 00:30:56,070
+don't differ very much on the smaller
+things i've
+
+1402
+00:30:56,070 --> 00:30:56,080
+things i've
+ 
+
+1403
+00:30:56,080 --> 00:30:57,750
+things i've
+kind of sorted these things does that
+
+1404
+00:30:57,750 --> 00:30:57,760
+kind of sorted these things does that
+ 
+
+1405
+00:30:57,760 --> 00:30:59,350
+kind of sorted these things does that
+make sense
+
+1406
+00:30:59,350 --> 00:30:59,360
+make sense
+ 
+
+1407
+00:30:59,360 --> 00:31:01,269
+make sense
+okay what if i actually want to sort
+
+1408
+00:31:01,269 --> 00:31:01,279
+okay what if i actually want to sort
+ 
+
+1409
+00:31:01,279 --> 00:31:06,149
+okay what if i actually want to sort
+these things
+
+1410
+00:31:06,149 --> 00:31:06,159
+
+ 
+
+1411
+00:31:06,159 --> 00:31:10,070
+
+any hands
+
+1412
+00:31:10,070 --> 00:31:10,080
+
+ 
+
+1413
+00:31:10,080 --> 00:31:13,509
+
+yeah i need to i need to sort on both in
+
+1414
+00:31:13,509 --> 00:31:13,519
+yeah i need to i need to sort on both in
+ 
+
+1415
+00:31:13,519 --> 00:31:15,350
+yeah i need to i need to sort on both in
+some sense
+
+1416
+00:31:15,350 --> 00:31:15,360
+some sense
+ 
+
+1417
+00:31:15,360 --> 00:31:17,669
+some sense
+in particular i like to think of what
+
+1418
+00:31:17,669 --> 00:31:17,679
+in particular i like to think of what
+ 
+
+1419
+00:31:17,679 --> 00:31:19,029
+in particular i like to think of what
+i'm going to tell you right now
+
+1420
+00:31:19,029 --> 00:31:19,039
+i'm going to tell you right now
+ 
+
+1421
+00:31:19,039 --> 00:31:21,830
+i'm going to tell you right now
+is is an algorithm that i like to call
+
+1422
+00:31:21,830 --> 00:31:21,840
+is is an algorithm that i like to call
+ 
+
+1423
+00:31:21,840 --> 00:31:23,590
+is is an algorithm that i like to call
+tuple sort
+
+1424
+00:31:23,590 --> 00:31:23,600
+tuple sort
+ 
+
+1425
+00:31:23,600 --> 00:31:25,750
+tuple sort
+but you can also think of it as like
+
+1426
+00:31:25,750 --> 00:31:25,760
+but you can also think of it as like
+ 
+
+1427
+00:31:25,760 --> 00:31:26,789
+but you can also think of it as like
+excel spreadsheet
+
+1428
+00:31:26,789 --> 00:31:26,799
+excel spreadsheet
+ 
+
+1429
+00:31:26,799 --> 00:31:29,430
+excel spreadsheet
+sort right i have an excel spreadsheet
+
+1430
+00:31:29,430 --> 00:31:29,440
+sort right i have an excel spreadsheet
+ 
+
+1431
+00:31:29,440 --> 00:31:31,110
+sort right i have an excel spreadsheet
+of a bunch of data
+
+1432
+00:31:31,110 --> 00:31:31,120
+of a bunch of data
+ 
+
+1433
+00:31:31,120 --> 00:31:33,350
+of a bunch of data
+i have a prioritization on how important
+
+1434
+00:31:33,350 --> 00:31:33,360
+i have a prioritization on how important
+ 
+
+1435
+00:31:33,360 --> 00:31:35,430
+i have a prioritization on how important
+the keys are to me the columns
+
+1436
+00:31:35,430 --> 00:31:35,440
+the keys are to me the columns
+ 
+
+1437
+00:31:35,440 --> 00:31:39,350
+the keys are to me the columns
+right and if i have a very important
+
+1438
+00:31:39,350 --> 00:31:39,360
+right and if i have a very important
+ 
+
+1439
+00:31:39,360 --> 00:31:41,509
+right and if i have a very important
+column
+
+1440
+00:31:41,509 --> 00:31:41,519
+column
+ 
+
+1441
+00:31:41,519 --> 00:31:43,830
+column
+and an order of the columns of how how
+
+1442
+00:31:43,830 --> 00:31:43,840
+and an order of the columns of how how
+ 
+
+1443
+00:31:43,840 --> 00:31:45,990
+and an order of the columns of how how
+important they are to me
+
+1444
+00:31:45,990 --> 00:31:46,000
+important they are to me
+ 
+
+1445
+00:31:46,000 --> 00:31:49,669
+important they are to me
+i can repeatedly sort on the columns
+
+1446
+00:31:49,669 --> 00:31:49,679
+i can repeatedly sort on the columns
+ 
+
+1447
+00:31:49,679 --> 00:31:51,509
+i can repeatedly sort on the columns
+until they're sorted based on my
+
+1448
+00:31:51,509 --> 00:31:51,519
+until they're sorted based on my
+ 
+
+1449
+00:31:51,519 --> 00:31:53,909
+until they're sorted based on my
+preference
+
+1450
+00:31:53,909 --> 00:31:53,919
+preference
+ 
+
+1451
+00:31:53,919 --> 00:31:57,029
+preference
+that's something that you may have done
+
+1452
+00:31:57,029 --> 00:31:57,039
+that's something that you may have done
+ 
+
+1453
+00:31:57,039 --> 00:31:58,710
+that's something that you may have done
+now if i have an ordering on the
+
+1454
+00:31:58,710 --> 00:31:58,720
+now if i have an ordering on the
+ 
+
+1455
+00:31:58,720 --> 00:32:00,230
+now if i have an ordering on the
+preferences of my columns
+
+1456
+00:32:00,230 --> 00:32:00,240
+preferences of my columns
+ 
+
+1457
+00:32:00,240 --> 00:32:04,310
+preferences of my columns
+do i start by sorting all of them
+
+1458
+00:32:04,310 --> 00:32:04,320
+do i start by sorting all of them
+ 
+
+1459
+00:32:04,320 --> 00:32:05,830
+do i start by sorting all of them
+on the most important thing or the least
+
+1460
+00:32:05,830 --> 00:32:05,840
+on the most important thing or the least
+ 
+
+1461
+00:32:05,840 --> 00:32:07,909
+on the most important thing or the least
+important thing
+
+1462
+00:32:07,909 --> 00:32:07,919
+important thing
+ 
+
+1463
+00:32:07,919 --> 00:32:12,470
+important thing
+what who says most
+
+1464
+00:32:12,470 --> 00:32:12,480
+what who says most
+ 
+
+1465
+00:32:12,480 --> 00:32:15,909
+what who says most
+who says least
+
+1466
+00:32:15,909 --> 00:32:15,919
+
+ 
+
+1467
+00:32:15,919 --> 00:32:20,630
+
+there's discrepancy here all right
+
+1468
+00:32:20,630 --> 00:32:20,640
+there's discrepancy here all right
+ 
+
+1469
+00:32:20,640 --> 00:32:24,870
+there's discrepancy here all right
+let's try it out all right tuple
+
+1470
+00:32:24,870 --> 00:32:24,880
+let's try it out all right tuple
+ 
+
+1471
+00:32:24,880 --> 00:32:28,070
+let's try it out all right tuple
+sort let's start by sorting
+
+1472
+00:32:28,070 --> 00:32:28,080
+sort let's start by sorting
+ 
+
+1473
+00:32:28,080 --> 00:32:31,750
+sort let's start by sorting
+these things by least significant first
+
+1474
+00:32:31,750 --> 00:32:31,760
+these things by least significant first
+ 
+
+1475
+00:32:31,760 --> 00:32:33,590
+these things by least significant first
+and then
+
+1476
+00:32:33,590 --> 00:32:33,600
+and then
+ 
+
+1477
+00:32:33,600 --> 00:32:35,590
+and then
+no most significant first and then least
+
+1478
+00:32:35,590 --> 00:32:35,600
+no most significant first and then least
+ 
+
+1479
+00:32:35,600 --> 00:32:36,789
+no most significant first and then least
+significant that was the first thing i
+
+1480
+00:32:36,789 --> 00:32:36,799
+significant that was the first thing i
+ 
+
+1481
+00:32:36,799 --> 00:32:38,470
+significant that was the first thing i
+asked you right
+
+1482
+00:32:38,470 --> 00:32:38,480
+asked you right
+ 
+
+1483
+00:32:38,480 --> 00:32:40,710
+asked you right
+all right so these are the most
+
+1484
+00:32:40,710 --> 00:32:40,720
+all right so these are the most
+ 
+
+1485
+00:32:40,720 --> 00:32:42,549
+all right so these are the most
+significant things the first ones and
+
+1486
+00:32:42,549 --> 00:32:42,559
+significant things the first ones and
+ 
+
+1487
+00:32:42,559 --> 00:32:44,149
+significant things the first ones and
+these are the
+
+1488
+00:32:44,149 --> 00:32:44,159
+these are the
+ 
+
+1489
+00:32:44,159 --> 00:32:46,549
+these are the
+less significant things all right
+
+1490
+00:32:46,549 --> 00:32:46,559
+less significant things all right
+ 
+
+1491
+00:32:46,559 --> 00:32:48,870
+less significant things all right
+instead of writing it as tuples
+
+1492
+00:32:48,870 --> 00:32:48,880
+instead of writing it as tuples
+ 
+
+1493
+00:32:48,880 --> 00:32:52,310
+instead of writing it as tuples
+i'm going to write them as 32 0 3
+
+1494
+00:32:52,310 --> 00:32:52,320
+i'm going to write them as 32 0 3
+ 
+
+1495
+00:32:52,320 --> 00:32:56,149
+i'm going to write them as 32 0 3
+44 42 22 is everyone cool with that
+
+1496
+00:32:56,149 --> 00:32:56,159
+44 42 22 is everyone cool with that
+ 
+
+1497
+00:32:56,159 --> 00:33:00,310
+44 42 22 is everyone cool with that
+this is just base 5 representation okay
+
+1498
+00:33:00,310 --> 00:33:00,320
+this is just base 5 representation okay
+ 
+
+1499
+00:33:00,320 --> 00:33:03,350
+this is just base 5 representation okay
+all right so let's start by sorting all
+
+1500
+00:33:03,350 --> 00:33:03,360
+all right so let's start by sorting all
+ 
+
+1501
+00:33:03,360 --> 00:33:04,549
+all right so let's start by sorting all
+of these things
+
+1502
+00:33:04,549 --> 00:33:04,559
+of these things
+ 
+
+1503
+00:33:04,559 --> 00:33:07,750
+of these things
+by the most significant thing right
+
+1504
+00:33:07,750 --> 00:33:07,760
+by the most significant thing right
+ 
+
+1505
+00:33:07,760 --> 00:33:10,149
+by the most significant thing right
+which is by this guy this guy this guy
+
+1506
+00:33:10,149 --> 00:33:10,159
+which is by this guy this guy this guy
+ 
+
+1507
+00:33:10,159 --> 00:33:11,830
+which is by this guy this guy this guy
+this guy and this guy
+
+1508
+00:33:11,830 --> 00:33:11,840
+this guy and this guy
+ 
+
+1509
+00:33:11,840 --> 00:33:15,190
+this guy and this guy
+okay so how do i do the first one is o3
+
+1510
+00:33:15,190 --> 00:33:15,200
+okay so how do i do the first one is o3
+ 
+
+1511
+00:33:15,200 --> 00:33:20,230
+okay so how do i do the first one is o3
+second one is 22 the next one is 32
+
+1512
+00:33:20,230 --> 00:33:20,240
+second one is 22 the next one is 32
+ 
+
+1513
+00:33:20,240 --> 00:33:25,909
+second one is 22 the next one is 32
+uh 42 and then 44.
+
+1514
+00:33:25,909 --> 00:33:25,919
+
+ 
+
+1515
+00:33:25,919 --> 00:33:28,950
+
+maybe 44. i don't know
+
+1516
+00:33:28,950 --> 00:33:28,960
+maybe 44. i don't know
+ 
+
+1517
+00:33:28,960 --> 00:33:31,830
+maybe 44. i don't know
+does it matter the order in which i put
+
+1518
+00:33:31,830 --> 00:33:31,840
+does it matter the order in which i put
+ 
+
+1519
+00:33:31,840 --> 00:33:33,190
+does it matter the order in which i put
+these things
+
+1520
+00:33:33,190 --> 00:33:33,200
+these things
+ 
+
+1521
+00:33:33,200 --> 00:33:34,389
+these things
+i don't know i'm just going to keep it
+
+1522
+00:33:34,389 --> 00:33:34,399
+i don't know i'm just going to keep it
+ 
+
+1523
+00:33:34,399 --> 00:33:36,470
+i don't know i'm just going to keep it
+the same order for now all right
+
+1524
+00:33:36,470 --> 00:33:36,480
+the same order for now all right
+ 
+
+1525
+00:33:36,480 --> 00:33:37,750
+the same order for now all right
+so i've sorted it by the least
+
+1526
+00:33:37,750 --> 00:33:37,760
+so i've sorted it by the least
+ 
+
+1527
+00:33:37,760 --> 00:33:40,310
+so i've sorted it by the least
+significant or the most significant
+
+1528
+00:33:40,310 --> 00:33:40,320
+significant or the most significant
+ 
+
+1529
+00:33:40,320 --> 00:33:43,830
+significant or the most significant
+sorry the leading term and now i'm going
+
+1530
+00:33:43,830 --> 00:33:43,840
+sorry the leading term and now i'm going
+ 
+
+1531
+00:33:43,840 --> 00:33:44,470
+sorry the leading term and now i'm going
+to sort
+
+1532
+00:33:44,470 --> 00:33:44,480
+to sort
+ 
+
+1533
+00:33:44,480 --> 00:33:47,669
+to sort
+by the least significant so what's the
+
+1534
+00:33:47,669 --> 00:33:47,679
+by the least significant so what's the
+ 
+
+1535
+00:33:47,679 --> 00:33:50,830
+by the least significant so what's the
+least significant here
+
+1536
+00:33:50,830 --> 00:33:50,840
+
+ 
+
+1537
+00:33:50,840 --> 00:33:53,750
+
+22 then 2 is also
+
+1538
+00:33:53,750 --> 00:33:53,760
+22 then 2 is also
+ 
+
+1539
+00:33:53,760 --> 00:33:56,950
+22 then 2 is also
+this is also 2 this is also 2
+
+1540
+00:33:56,950 --> 00:33:56,960
+this is also 2 this is also 2
+ 
+
+1541
+00:33:56,960 --> 00:34:00,389
+this is also 2 this is also 2
+this is 3 and
+
+1542
+00:34:00,389 --> 00:34:00,399
+this is 3 and
+ 
+
+1543
+00:34:00,399 --> 00:34:04,470
+this is 3 and
+sorted list voila
+
+1544
+00:34:04,470 --> 00:34:04,480
+
+ 
+
+1545
+00:34:04,480 --> 00:34:17,270
+
+why did that not work
+
+1546
+00:34:17,270 --> 00:34:17,280
+
+ 
+
+1547
+00:34:17,280 --> 00:34:19,990
+
+yeah so what happened is i did take into
+
+1548
+00:34:19,990 --> 00:34:20,000
+yeah so what happened is i did take into
+ 
+
+1549
+00:34:20,000 --> 00:34:22,629
+yeah so what happened is i did take into
+account the significant digit sort
+
+1550
+00:34:22,629 --> 00:34:22,639
+account the significant digit sort
+ 
+
+1551
+00:34:22,639 --> 00:34:25,270
+account the significant digit sort
+but when i did the less significant
+
+1552
+00:34:25,270 --> 00:34:25,280
+but when i did the less significant
+ 
+
+1553
+00:34:25,280 --> 00:34:26,069
+but when i did the less significant
+thing
+
+1554
+00:34:26,069 --> 00:34:26,079
+thing
+ 
+
+1555
+00:34:26,079 --> 00:34:28,389
+thing
+it erased all of my work from up here
+
+1556
+00:34:28,389 --> 00:34:28,399
+it erased all of my work from up here
+ 
+
+1557
+00:34:28,399 --> 00:34:31,030
+it erased all of my work from up here
+does that make sense
+
+1558
+00:34:31,030 --> 00:34:31,040
+does that make sense
+ 
+
+1559
+00:34:31,040 --> 00:34:34,869
+does that make sense
+in the case of ties we want
+
+1560
+00:34:34,869 --> 00:34:34,879
+in the case of ties we want
+ 
+
+1561
+00:34:34,879 --> 00:34:36,950
+in the case of ties we want
+the more significant thing to take
+
+1562
+00:34:36,950 --> 00:34:36,960
+the more significant thing to take
+ 
+
+1563
+00:34:36,960 --> 00:34:38,710
+the more significant thing to take
+precedence so we want to do that thing
+
+1564
+00:34:38,710 --> 00:34:38,720
+precedence so we want to do that thing
+ 
+
+1565
+00:34:38,720 --> 00:34:39,750
+precedence so we want to do that thing
+last
+
+1566
+00:34:39,750 --> 00:34:39,760
+last
+ 
+
+1567
+00:34:39,760 --> 00:34:41,909
+last
+does that make sense so the right way to
+
+1568
+00:34:41,909 --> 00:34:41,919
+does that make sense so the right way to
+ 
+
+1569
+00:34:41,919 --> 00:34:44,389
+does that make sense so the right way to
+do this
+
+1570
+00:34:44,389 --> 00:34:44,399
+
+ 
+
+1571
+00:34:44,399 --> 00:34:50,790
+
+this is uh most significant first
+
+1572
+00:34:50,790 --> 00:34:50,800
+this is uh most significant first
+ 
+
+1573
+00:34:50,800 --> 00:34:54,470
+this is uh most significant first
+add okay not good
+
+1574
+00:34:54,470 --> 00:34:54,480
+add okay not good
+ 
+
+1575
+00:34:54,480 --> 00:34:56,069
+add okay not good
+all right least significant first let's
+
+1576
+00:34:56,069 --> 00:34:56,079
+all right least significant first let's
+ 
+
+1577
+00:34:56,079 --> 00:34:57,990
+all right least significant first let's
+try that
+
+1578
+00:34:57,990 --> 00:34:58,000
+try that
+ 
+
+1579
+00:34:58,000 --> 00:35:01,349
+try that
+uh so least significant here is
+
+1580
+00:35:01,349 --> 00:35:01,359
+uh so least significant here is
+ 
+
+1581
+00:35:01,359 --> 00:35:07,870
+uh so least significant here is
+two okay so i see a uh
+
+1582
+00:35:07,870 --> 00:35:07,880
+
+ 
+
+1583
+00:35:07,880 --> 00:35:11,750
+
+32 42
+
+1584
+00:35:11,750 --> 00:35:11,760
+32 42
+ 
+
+1585
+00:35:11,760 --> 00:35:16,470
+32 42
+22 03 and then 44.
+
+1586
+00:35:16,470 --> 00:35:16,480
+22 03 and then 44.
+ 
+
+1587
+00:35:16,480 --> 00:35:19,910
+22 03 and then 44.
+okay sound good
+
+1588
+00:35:19,910 --> 00:35:19,920
+okay sound good
+ 
+
+1589
+00:35:19,920 --> 00:35:23,030
+okay sound good
+least significant first now i do
+
+1590
+00:35:23,030 --> 00:35:23,040
+least significant first now i do
+ 
+
+1591
+00:35:23,040 --> 00:35:24,630
+least significant first now i do
+most significant i sort the most
+
+1592
+00:35:24,630 --> 00:35:24,640
+most significant i sort the most
+ 
+
+1593
+00:35:24,640 --> 00:35:26,069
+most significant i sort the most
+significant thing okay so what's the
+
+1594
+00:35:26,069 --> 00:35:26,079
+significant thing okay so what's the
+ 
+
+1595
+00:35:26,079 --> 00:35:27,589
+significant thing okay so what's the
+most significant thing
+
+1596
+00:35:27,589 --> 00:35:27,599
+most significant thing
+ 
+
+1597
+00:35:27,599 --> 00:35:31,109
+most significant thing
+zero three
+
+1598
+00:35:31,109 --> 00:35:31,119
+zero three
+ 
+
+1599
+00:35:31,119 --> 00:35:36,150
+zero three
+22 32
+
+1600
+00:35:36,150 --> 00:35:36,160
+22 32
+ 
+
+1601
+00:35:36,160 --> 00:35:39,990
+22 32
+most significant 4 44 and 42.
+
+1602
+00:35:39,990 --> 00:35:40,000
+most significant 4 44 and 42.
+ 
+
+1603
+00:35:40,000 --> 00:35:44,069
+most significant 4 44 and 42.
+cool we're sorted right
+
+1604
+00:35:44,069 --> 00:35:44,079
+cool we're sorted right
+ 
+
+1605
+00:35:44,079 --> 00:35:47,109
+cool we're sorted right
+i did what you told me to do i sorted
+
+1606
+00:35:47,109 --> 00:35:47,119
+i did what you told me to do i sorted
+ 
+
+1607
+00:35:47,119 --> 00:35:50,550
+i did what you told me to do i sorted
+by the most significant thing
+
+1608
+00:35:50,550 --> 00:35:50,560
+
+ 
+
+1609
+00:35:50,560 --> 00:35:58,710
+
+what's what's the problem here
+
+1610
+00:35:58,710 --> 00:35:58,720
+what's what's the problem here
+ 
+
+1611
+00:35:58,720 --> 00:36:01,349
+what's what's the problem here
+what did i do wrong you wanted me to put
+
+1612
+00:36:01,349 --> 00:36:01,359
+what did i do wrong you wanted me to put
+ 
+
+1613
+00:36:01,359 --> 00:36:02,310
+what did i do wrong you wanted me to put
+42 here
+
+1614
+00:36:02,310 --> 00:36:02,320
+42 here
+ 
+
+1615
+00:36:02,320 --> 00:36:05,750
+42 here
+and 44 here right
+
+1616
+00:36:05,750 --> 00:36:05,760
+
+ 
+
+1617
+00:36:05,760 --> 00:36:09,270
+
+because 42 came first in the input
+
+1618
+00:36:09,270 --> 00:36:09,280
+because 42 came first in the input
+ 
+
+1619
+00:36:09,280 --> 00:36:13,990
+because 42 came first in the input
+and 44 came second right
+
+1620
+00:36:13,990 --> 00:36:14,000
+
+ 
+
+1621
+00:36:14,000 --> 00:36:17,510
+
+okay if a sorting algorithm maintains
+
+1622
+00:36:17,510 --> 00:36:17,520
+okay if a sorting algorithm maintains
+ 
+
+1623
+00:36:17,520 --> 00:36:18,870
+okay if a sorting algorithm maintains
+this property that if they have
+
+1624
+00:36:18,870 --> 00:36:18,880
+this property that if they have
+ 
+
+1625
+00:36:18,880 --> 00:36:22,870
+this property that if they have
+they are the same thing right
+
+1626
+00:36:22,870 --> 00:36:22,880
+they are the same thing right
+ 
+
+1627
+00:36:22,880 --> 00:36:27,349
+they are the same thing right
+then the output maintains their order
+
+1628
+00:36:27,349 --> 00:36:27,359
+then the output maintains their order
+ 
+
+1629
+00:36:27,359 --> 00:36:29,430
+then the output maintains their order
+from the input to the output their
+
+1630
+00:36:29,430 --> 00:36:29,440
+from the input to the output their
+ 
+
+1631
+00:36:29,440 --> 00:36:31,510
+from the input to the output their
+relative order
+
+1632
+00:36:31,510 --> 00:36:31,520
+relative order
+ 
+
+1633
+00:36:31,520 --> 00:36:33,109
+relative order
+that's what we call a stable sorting
+
+1634
+00:36:33,109 --> 00:36:33,119
+that's what we call a stable sorting
+ 
+
+1635
+00:36:33,119 --> 00:36:34,710
+that's what we call a stable sorting
+algorithm right and so
+
+1636
+00:36:34,710 --> 00:36:34,720
+algorithm right and so
+ 
+
+1637
+00:36:34,720 --> 00:36:36,310
+algorithm right and so
+if we have a stable sorting algorithm
+
+1638
+00:36:36,310 --> 00:36:36,320
+if we have a stable sorting algorithm
+ 
+
+1639
+00:36:36,320 --> 00:36:37,750
+if we have a stable sorting algorithm
+when we're doing tuple sort
+
+1640
+00:36:37,750 --> 00:36:37,760
+when we're doing tuple sort
+ 
+
+1641
+00:36:37,760 --> 00:36:40,870
+when we're doing tuple sort
+when we're sorting on different keys or
+
+1642
+00:36:40,870 --> 00:36:40,880
+when we're sorting on different keys or
+ 
+
+1643
+00:36:40,880 --> 00:36:42,069
+when we're sorting on different keys or
+columns of a set
+
+1644
+00:36:42,069 --> 00:36:42,079
+columns of a set
+ 
+
+1645
+00:36:42,079 --> 00:36:45,430
+columns of a set
+right we really want to be
+
+1646
+00:36:45,430 --> 00:36:45,440
+right we really want to be
+ 
+
+1647
+00:36:45,440 --> 00:36:48,390
+right we really want to be
+using a stable sorting algorithm does
+
+1648
+00:36:48,390 --> 00:36:48,400
+using a stable sorting algorithm does
+ 
+
+1649
+00:36:48,400 --> 00:36:50,069
+using a stable sorting algorithm does
+that make sense
+
+1650
+00:36:50,069 --> 00:36:50,079
+that make sense
+ 
+
+1651
+00:36:50,079 --> 00:36:53,109
+that make sense
+because otherwise we may mess up work we
+
+1652
+00:36:53,109 --> 00:36:53,119
+because otherwise we may mess up work we
+ 
+
+1653
+00:36:53,119 --> 00:36:55,750
+because otherwise we may mess up work we
+did before in a previous
+
+1654
+00:36:55,750 --> 00:36:55,760
+did before in a previous
+ 
+
+1655
+00:36:55,760 --> 00:36:58,550
+did before in a previous
+sort of the less significant things and
+
+1656
+00:36:58,550 --> 00:36:58,560
+sort of the less significant things and
+ 
+
+1657
+00:36:58,560 --> 00:36:59,910
+sort of the less significant things and
+so yes we want a
+
+1658
+00:36:59,910 --> 00:36:59,920
+so yes we want a
+ 
+
+1659
+00:36:59,920 --> 00:37:04,550
+so yes we want a
+stable sorting algorithm here
+
+1660
+00:37:04,550 --> 00:37:04,560
+
+ 
+
+1661
+00:37:04,560 --> 00:37:07,750
+
+because then we will end up sorting our
+
+1662
+00:37:07,750 --> 00:37:07,760
+because then we will end up sorting our
+ 
+
+1663
+00:37:07,760 --> 00:37:17,670
+because then we will end up sorting our
+thing does that make sense yes
+
+1664
+00:37:17,670 --> 00:37:17,680
+
+ 
+
+1665
+00:37:17,680 --> 00:37:21,670
+
+so what your colleague is saying
+
+1666
+00:37:21,670 --> 00:37:21,680
+so what your colleague is saying
+ 
+
+1667
+00:37:21,680 --> 00:37:24,470
+so what your colleague is saying
+let's sort by most significant then look
+
+1668
+00:37:24,470 --> 00:37:24,480
+let's sort by most significant then look
+ 
+
+1669
+00:37:24,480 --> 00:37:24,710
+let's sort by most significant then look
+at
+
+1670
+00:37:24,710 --> 00:37:24,720
+at
+ 
+
+1671
+00:37:24,720 --> 00:37:27,829
+at
+all of the things with one of those
+
+1672
+00:37:27,829 --> 00:37:27,839
+all of the things with one of those
+ 
+
+1673
+00:37:27,839 --> 00:37:32,390
+all of the things with one of those
+that that are the same and now sort that
+
+1674
+00:37:32,390 --> 00:37:32,400
+
+ 
+
+1675
+00:37:32,400 --> 00:37:34,790
+
+that's something we could do okay how
+
+1676
+00:37:34,790 --> 00:37:34,800
+that's something we could do okay how
+ 
+
+1677
+00:37:34,800 --> 00:37:39,349
+that's something we could do okay how
+long would that take well let's say
+
+1678
+00:37:39,349 --> 00:37:39,359
+
+ 
+
+1679
+00:37:39,359 --> 00:37:42,870
+
+i didn't use half of my more significant
+
+1680
+00:37:42,870 --> 00:37:42,880
+i didn't use half of my more significant
+ 
+
+1681
+00:37:42,880 --> 00:37:44,150
+i didn't use half of my more significant
+set of digits
+
+1682
+00:37:44,150 --> 00:37:44,160
+set of digits
+ 
+
+1683
+00:37:44,160 --> 00:37:48,829
+set of digits
+right say i'm only using n over two
+
+1684
+00:37:48,829 --> 00:37:48,839
+right say i'm only using n over two
+ 
+
+1685
+00:37:48,839 --> 00:37:51,109
+right say i'm only using n over two
+or that's not quite quite going to get
+
+1686
+00:37:51,109 --> 00:37:51,119
+or that's not quite quite going to get
+ 
+
+1687
+00:37:51,119 --> 00:37:58,390
+or that's not quite quite going to get
+what i want
+
+1688
+00:37:58,390 --> 00:37:58,400
+
+ 
+
+1689
+00:37:58,400 --> 00:38:01,990
+
+say say again
+
+1690
+00:38:01,990 --> 00:38:02,000
+
+ 
+
+1691
+00:38:02,000 --> 00:38:04,870
+
+yeah so what we're going to do if we
+
+1692
+00:38:04,870 --> 00:38:04,880
+yeah so what we're going to do if we
+ 
+
+1693
+00:38:04,880 --> 00:38:05,109
+yeah so what we're going to do if we
+have
+
+1694
+00:38:05,109 --> 00:38:05,119
+have
+ 
+
+1695
+00:38:05,119 --> 00:38:07,349
+have
+direct access array sort if i then go
+
+1696
+00:38:07,349 --> 00:38:07,359
+direct access array sort if i then go
+ 
+
+1697
+00:38:07,359 --> 00:38:09,270
+direct access array sort if i then go
+into each one of these digits and try to
+
+1698
+00:38:09,270 --> 00:38:09,280
+into each one of these digits and try to
+ 
+
+1699
+00:38:09,280 --> 00:38:09,829
+into each one of these digits and try to
+sort
+
+1700
+00:38:09,829 --> 00:38:09,839
+sort
+ 
+
+1701
+00:38:09,839 --> 00:38:11,510
+sort
+the things that are in there that's
+
+1702
+00:38:11,510 --> 00:38:11,520
+the things that are in there that's
+ 
+
+1703
+00:38:11,520 --> 00:38:13,030
+the things that are in there that's
+going to take time right
+
+1704
+00:38:13,030 --> 00:38:13,040
+going to take time right
+ 
+
+1705
+00:38:13,040 --> 00:38:14,550
+going to take time right
+it's going to take time for each of
+
+1706
+00:38:14,550 --> 00:38:14,560
+it's going to take time for each of
+ 
+
+1707
+00:38:14,560 --> 00:38:16,230
+it's going to take time for each of
+those digits now
+
+1708
+00:38:16,230 --> 00:38:16,240
+those digits now
+ 
+
+1709
+00:38:16,240 --> 00:38:19,589
+those digits now
+each there might be at uh a ton of
+
+1710
+00:38:19,589 --> 00:38:19,599
+each there might be at uh a ton of
+ 
+
+1711
+00:38:19,599 --> 00:38:20,390
+each there might be at uh a ton of
+collisions
+
+1712
+00:38:20,390 --> 00:38:20,400
+collisions
+ 
+
+1713
+00:38:20,400 --> 00:38:23,030
+collisions
+into one of the things and so i might
+
+1714
+00:38:23,030 --> 00:38:23,040
+into one of the things and so i might
+ 
+
+1715
+00:38:23,040 --> 00:38:23,430
+into one of the things and so i might
+take
+
+1716
+00:38:23,430 --> 00:38:23,440
+take
+ 
+
+1717
+00:38:23,440 --> 00:38:26,870
+take
+more time to sort that than linear does
+
+1718
+00:38:26,870 --> 00:38:26,880
+more time to sort that than linear does
+ 
+
+1719
+00:38:26,880 --> 00:38:28,069
+more time to sort that than linear does
+that make sense
+
+1720
+00:38:28,069 --> 00:38:28,079
+that make sense
+ 
+
+1721
+00:38:28,079 --> 00:38:30,230
+that make sense
+so i would prefer to do this tuple sort
+
+1722
+00:38:30,230 --> 00:38:30,240
+so i would prefer to do this tuple sort
+ 
+
+1723
+00:38:30,240 --> 00:38:31,829
+so i would prefer to do this tuple sort
+kind of behavior
+
+1724
+00:38:31,829 --> 00:38:31,839
+kind of behavior
+ 
+
+1725
+00:38:31,839 --> 00:38:33,990
+kind of behavior
+sorting the smaller thing sorting the
+
+1726
+00:38:33,990 --> 00:38:34,000
+sorting the smaller thing sorting the
+ 
+
+1727
+00:38:34,000 --> 00:38:34,870
+sorting the smaller thing sorting the
+bigger thing
+
+1728
+00:38:34,870 --> 00:38:34,880
+bigger thing
+ 
+
+1729
+00:38:34,880 --> 00:38:36,630
+bigger thing
+and because i only have a constant
+
+1730
+00:38:36,630 --> 00:38:36,640
+and because i only have a constant
+ 
+
+1731
+00:38:36,640 --> 00:38:38,310
+and because i only have a constant
+number of things in my tuples this is
+
+1732
+00:38:38,310 --> 00:38:38,320
+number of things in my tuples this is
+ 
+
+1733
+00:38:38,320 --> 00:38:39,910
+number of things in my tuples this is
+important
+
+1734
+00:38:39,910 --> 00:38:39,920
+important
+ 
+
+1735
+00:38:39,920 --> 00:38:41,270
+important
+because i only have two things i'm
+
+1736
+00:38:41,270 --> 00:38:41,280
+because i only have two things i'm
+ 
+
+1737
+00:38:41,280 --> 00:38:43,030
+because i only have two things i'm
+worried about here
+
+1738
+00:38:43,030 --> 00:38:43,040
+worried about here
+ 
+
+1739
+00:38:43,040 --> 00:38:45,829
+worried about here
+i only have to do two passes of a
+
+1740
+00:38:45,829 --> 00:38:45,839
+i only have to do two passes of a
+ 
+
+1741
+00:38:45,839 --> 00:38:48,710
+i only have to do two passes of a
+sorting algorithm
+
+1742
+00:38:48,710 --> 00:38:48,720
+sorting algorithm
+ 
+
+1743
+00:38:48,720 --> 00:38:52,150
+sorting algorithm
+to be able to sort these numbers however
+
+1744
+00:38:52,150 --> 00:38:52,160
+to be able to sort these numbers however
+ 
+
+1745
+00:38:52,160 --> 00:38:56,069
+to be able to sort these numbers however
+can i use direct access array sort here
+
+1746
+00:38:56,069 --> 00:38:56,079
+can i use direct access array sort here
+ 
+
+1747
+00:38:56,079 --> 00:38:58,630
+can i use direct access array sort here
+what was the initial stipulation i had
+
+1748
+00:38:58,630 --> 00:38:58,640
+what was the initial stipulation i had
+ 
+
+1749
+00:38:58,640 --> 00:39:00,150
+what was the initial stipulation i had
+on direct access array
+
+1750
+00:39:00,150 --> 00:39:00,160
+on direct access array
+ 
+
+1751
+00:39:00,160 --> 00:39:03,510
+on direct access array
+that the keys were unique that's exactly
+
+1752
+00:39:03,510 --> 00:39:03,520
+that the keys were unique that's exactly
+ 
+
+1753
+00:39:03,520 --> 00:39:04,950
+that the keys were unique that's exactly
+the opposite of what we have here
+
+1754
+00:39:04,950 --> 00:39:04,960
+the opposite of what we have here
+ 
+
+1755
+00:39:04,960 --> 00:39:10,710
+the opposite of what we have here
+we have things that could be the same
+
+1756
+00:39:10,710 --> 00:39:10,720
+
+ 
+
+1757
+00:39:10,720 --> 00:39:15,910
+
+so we give up can't do it
+
+1758
+00:39:15,910 --> 00:39:15,920
+
+ 
+
+1759
+00:39:15,920 --> 00:39:19,990
+
+what do we do instead
+
+1760
+00:39:19,990 --> 00:39:20,000
+
+ 
+
+1761
+00:39:20,000 --> 00:39:28,950
+
+we yeah
+
+1762
+00:39:28,950 --> 00:39:28,960
+we yeah
+ 
+
+1763
+00:39:28,960 --> 00:39:30,790
+we yeah
+you've already said the thing that i'm
+
+1764
+00:39:30,790 --> 00:39:30,800
+you've already said the thing that i'm
+ 
+
+1765
+00:39:30,800 --> 00:39:32,550
+you've already said the thing that i'm
+looking for so that's great
+
+1766
+00:39:32,550 --> 00:39:32,560
+looking for so that's great
+ 
+
+1767
+00:39:32,560 --> 00:39:35,030
+looking for so that's great
+your your colleague said why can't we
+
+1768
+00:39:35,030 --> 00:39:35,040
+your your colleague said why can't we
+ 
+
+1769
+00:39:35,040 --> 00:39:37,030
+your your colleague said why can't we
+just put more things
+
+1770
+00:39:37,030 --> 00:39:37,040
+just put more things
+ 
+
+1771
+00:39:37,040 --> 00:39:39,990
+just put more things
+at a key right why can't we put a list
+
+1772
+00:39:39,990 --> 00:39:40,000
+at a key right why can't we put a list
+ 
+
+1773
+00:39:40,000 --> 00:39:41,349
+at a key right why can't we put a list
+there
+
+1774
+00:39:41,349 --> 00:39:41,359
+there
+ 
+
+1775
+00:39:41,359 --> 00:39:43,030
+there
+that's exactly what we do this is called
+
+1776
+00:39:43,030 --> 00:39:43,040
+that's exactly what we do this is called
+ 
+
+1777
+00:39:43,040 --> 00:39:48,230
+that's exactly what we do this is called
+counting sort
+
+1778
+00:39:48,230 --> 00:39:48,240
+
+ 
+
+1779
+00:39:48,240 --> 00:39:49,910
+
+and what we do here is we still have
+
+1780
+00:39:49,910 --> 00:39:49,920
+and what we do here is we still have
+ 
+
+1781
+00:39:49,920 --> 00:39:52,310
+and what we do here is we still have
+this direct axis array
+
+1782
+00:39:52,310 --> 00:39:52,320
+this direct axis array
+ 
+
+1783
+00:39:52,320 --> 00:39:55,990
+this direct axis array
+a space u minus 0 to u minus one
+
+1784
+00:39:55,990 --> 00:39:56,000
+a space u minus 0 to u minus one
+ 
+
+1785
+00:39:56,000 --> 00:39:59,589
+a space u minus 0 to u minus one
+but instead of have storing one thing
+
+1786
+00:39:59,589 --> 00:39:59,599
+but instead of have storing one thing
+ 
+
+1787
+00:39:59,599 --> 00:40:01,349
+but instead of have storing one thing
+here
+
+1788
+00:40:01,349 --> 00:40:01,359
+here
+ 
+
+1789
+00:40:01,359 --> 00:40:05,270
+here
+at each key k we store
+
+1790
+00:40:05,270 --> 00:40:05,280
+at each key k we store
+ 
+
+1791
+00:40:05,280 --> 00:40:08,390
+at each key k we store
+a pointer to a chain this sounds like
+
+1792
+00:40:08,390 --> 00:40:08,400
+a pointer to a chain this sounds like
+ 
+
+1793
+00:40:08,400 --> 00:40:10,150
+a pointer to a chain this sounds like
+hashing right
+
+1794
+00:40:10,150 --> 00:40:10,160
+hashing right
+ 
+
+1795
+00:40:10,160 --> 00:40:13,270
+hashing right
+but the important thing is that i need
+
+1796
+00:40:13,270 --> 00:40:13,280
+but the important thing is that i need
+ 
+
+1797
+00:40:13,280 --> 00:40:14,950
+but the important thing is that i need
+to make sure
+
+1798
+00:40:14,950 --> 00:40:14,960
+to make sure
+ 
+
+1799
+00:40:14,960 --> 00:40:17,190
+to make sure
+as i'm inserting things in here then i'm
+
+1800
+00:40:17,190 --> 00:40:17,200
+as i'm inserting things in here then i'm
+ 
+
+1801
+00:40:17,200 --> 00:40:19,270
+as i'm inserting things in here then i'm
+maintaining the order in which they came
+
+1802
+00:40:19,270 --> 00:40:19,280
+maintaining the order in which they came
+ 
+
+1803
+00:40:19,280 --> 00:40:19,670
+maintaining the order in which they came
+in
+
+1804
+00:40:19,670 --> 00:40:19,680
+in
+ 
+
+1805
+00:40:19,680 --> 00:40:20,950
+in
+right i can't just throw them
+
+1806
+00:40:20,950 --> 00:40:20,960
+right i can't just throw them
+ 
+
+1807
+00:40:20,960 --> 00:40:22,790
+right i can't just throw them
+willy-nilly or else we have this problem
+
+1808
+00:40:22,790 --> 00:40:22,800
+willy-nilly or else we have this problem
+ 
+
+1809
+00:40:22,800 --> 00:40:24,390
+willy-nilly or else we have this problem
+up here that we had before
+
+1810
+00:40:24,390 --> 00:40:24,400
+up here that we had before
+ 
+
+1811
+00:40:24,400 --> 00:40:27,430
+up here that we had before
+right so i need what i would say is a
+
+1812
+00:40:27,430 --> 00:40:27,440
+right so i need what i would say is a
+ 
+
+1813
+00:40:27,440 --> 00:40:28,950
+right so i need what i would say is a
+sequence data structure
+
+1814
+00:40:28,950 --> 00:40:28,960
+sequence data structure
+ 
+
+1815
+00:40:28,960 --> 00:40:31,430
+sequence data structure
+right something that will maintain the
+
+1816
+00:40:31,430 --> 00:40:31,440
+right something that will maintain the
+ 
+
+1817
+00:40:31,440 --> 00:40:32,150
+right something that will maintain the
+order that i
+
+1818
+00:40:32,150 --> 00:40:32,160
+order that i
+ 
+
+1819
+00:40:32,160 --> 00:40:34,069
+order that i
+the extrinsic order that i had when i'm
+
+1820
+00:40:34,069 --> 00:40:34,079
+the extrinsic order that i had when i'm
+ 
+
+1821
+00:40:34,079 --> 00:40:37,349
+the extrinsic order that i had when i'm
+putting these things in right
+
+1822
+00:40:37,349 --> 00:40:37,359
+putting these things in right
+ 
+
+1823
+00:40:37,359 --> 00:40:40,550
+putting these things in right
+so as i have multiple things with
+
+1824
+00:40:40,550 --> 00:40:40,560
+so as i have multiple things with
+ 
+
+1825
+00:40:40,560 --> 00:40:43,750
+so as i have multiple things with
+k right
+
+1826
+00:40:43,750 --> 00:40:43,760
+k right
+ 
+
+1827
+00:40:43,760 --> 00:40:45,990
+k right
+i'm going to put them in the order i can
+
+1828
+00:40:45,990 --> 00:40:46,000
+i'm going to put them in the order i can
+ 
+
+1829
+00:40:46,000 --> 00:40:47,349
+i'm going to put them in the order i can
+basically i can put
+
+1830
+00:40:47,349 --> 00:40:47,359
+basically i can put
+ 
+
+1831
+00:40:47,359 --> 00:40:49,030
+basically i can put
+have a pointer to a dynamic ray or a
+
+1832
+00:40:49,030 --> 00:40:49,040
+have a pointer to a dynamic ray or a
+ 
+
+1833
+00:40:49,040 --> 00:40:51,589
+have a pointer to a dynamic ray or a
+linked list where i just add things to
+
+1834
+00:40:51,589 --> 00:40:51,599
+linked list where i just add things to
+ 
+
+1835
+00:40:51,599 --> 00:40:53,349
+linked list where i just add things to
+the end
+
+1836
+00:40:53,349 --> 00:40:53,359
+the end
+ 
+
+1837
+00:40:53,359 --> 00:40:55,030
+the end
+and then at the end of my algorithm when
+
+1838
+00:40:55,030 --> 00:40:55,040
+and then at the end of my algorithm when
+ 
+
+1839
+00:40:55,040 --> 00:40:57,829
+and then at the end of my algorithm when
+i read off the things
+
+1840
+00:40:57,829 --> 00:40:57,839
+i read off the things
+ 
+
+1841
+00:40:57,839 --> 00:41:00,630
+i read off the things
+i can just look at anyone that has a
+
+1842
+00:41:00,630 --> 00:41:00,640
+i can just look at anyone that has a
+ 
+
+1843
+00:41:00,640 --> 00:41:01,990
+i can just look at anyone that has a
+non-empty
+
+1844
+00:41:01,990 --> 00:41:02,000
+non-empty
+ 
+
+1845
+00:41:02,000 --> 00:41:03,910
+non-empty
+data structure under here and read them
+
+1846
+00:41:03,910 --> 00:41:03,920
+data structure under here and read them
+ 
+
+1847
+00:41:03,920 --> 00:41:06,470
+data structure under here and read them
+off in the order that they came
+
+1848
+00:41:06,470 --> 00:41:06,480
+off in the order that they came
+ 
+
+1849
+00:41:06,480 --> 00:41:10,230
+off in the order that they came
+does that make sense so for
+
+1850
+00:41:10,230 --> 00:41:10,240
+does that make sense so for
+ 
+
+1851
+00:41:10,240 --> 00:41:13,510
+does that make sense so for
+this example
+
+1852
+00:41:13,510 --> 00:41:13,520
+
+ 
+
+1853
+00:41:13,520 --> 00:41:16,630
+
+i'm just going to do this last
+
+1854
+00:41:16,630 --> 00:41:16,640
+i'm just going to do this last
+ 
+
+1855
+00:41:16,640 --> 00:41:19,670
+i'm just going to do this last
+step here from the first
+
+1856
+00:41:19,670 --> 00:41:19,680
+step here from the first
+ 
+
+1857
+00:41:19,680 --> 00:41:22,630
+step here from the first
+row to the second row i'm going to have
+
+1858
+00:41:22,630 --> 00:41:22,640
+row to the second row i'm going to have
+ 
+
+1859
+00:41:22,640 --> 00:41:23,190
+row to the second row i'm going to have
+this
+
+1860
+00:41:23,190 --> 00:41:23,200
+this
+ 
+
+1861
+00:41:23,200 --> 00:41:26,309
+this
+direct access array with 0 1
+
+1862
+00:41:26,309 --> 00:41:26,319
+direct access array with 0 1
+ 
+
+1863
+00:41:26,319 --> 00:41:30,150
+direct access array with 0 1
+2 3 4 on the slots
+
+1864
+00:41:30,150 --> 00:41:30,160
+2 3 4 on the slots
+ 
+
+1865
+00:41:30,160 --> 00:41:33,589
+2 3 4 on the slots
+right so how am i going to do this
+
+1866
+00:41:33,589 --> 00:41:33,599
+right so how am i going to do this
+ 
+
+1867
+00:41:33,599 --> 00:41:36,790
+right so how am i going to do this
+counting sort now i have
+
+1868
+00:41:36,790 --> 00:41:36,800
+counting sort now i have
+ 
+
+1869
+00:41:36,800 --> 00:41:40,390
+counting sort now i have
+32 42 22 03
+
+1870
+00:41:40,390 --> 00:41:40,400
+32 42 22 03
+ 
+
+1871
+00:41:40,400 --> 00:41:42,390
+32 42 22 03
+and 44. i'm going to take the first one
+
+1872
+00:41:42,390 --> 00:41:42,400
+and 44. i'm going to take the first one
+ 
+
+1873
+00:41:42,400 --> 00:41:45,109
+and 44. i'm going to take the first one
+32 i'm sorting by the most significant
+
+1874
+00:41:45,109 --> 00:41:45,119
+32 i'm sorting by the most significant
+ 
+
+1875
+00:41:45,119 --> 00:41:45,910
+32 i'm sorting by the most significant
+thing
+
+1876
+00:41:45,910 --> 00:41:45,920
+thing
+ 
+
+1877
+00:41:45,920 --> 00:41:51,349
+thing
+i stick it here 32
+
+1878
+00:41:51,349 --> 00:41:51,359
+i stick it here 32
+ 
+
+1879
+00:41:51,359 --> 00:41:57,190
+i stick it here 32
+and then 42 4 okay 42 sorry 42
+
+1880
+00:41:57,190 --> 00:41:57,200
+and then 42 4 okay 42 sorry 42
+ 
+
+1881
+00:41:57,200 --> 00:42:00,309
+and then 42 4 okay 42 sorry 42
+22 all right this is not so much
+
+1882
+00:42:00,309 --> 00:42:00,319
+22 all right this is not so much
+ 
+
+1883
+00:42:00,319 --> 00:42:01,829
+22 all right this is not so much
+different yet
+
+1884
+00:42:01,829 --> 00:42:01,839
+different yet
+ 
+
+1885
+00:42:01,839 --> 00:42:06,710
+different yet
+then dynamic array
+
+1886
+00:42:06,710 --> 00:42:06,720
+then dynamic array
+ 
+
+1887
+00:42:06,720 --> 00:42:08,550
+then dynamic array
+direct access array sort but when we get
+
+1888
+00:42:08,550 --> 00:42:08,560
+direct access array sort but when we get
+ 
+
+1889
+00:42:08,560 --> 00:42:11,910
+direct access array sort but when we get
+to this duplicate
+
+1890
+00:42:11,910 --> 00:42:11,920
+to this duplicate
+ 
+
+1891
+00:42:11,920 --> 00:42:15,510
+to this duplicate
+uh right 44
+
+1892
+00:42:15,510 --> 00:42:15,520
+uh right 44
+ 
+
+1893
+00:42:15,520 --> 00:42:18,710
+uh right 44
+here we now have two things in this
+
+1894
+00:42:18,710 --> 00:42:18,720
+here we now have two things in this
+ 
+
+1895
+00:42:18,720 --> 00:42:19,349
+here we now have two things in this
+thing
+
+1896
+00:42:19,349 --> 00:42:19,359
+thing
+ 
+
+1897
+00:42:19,359 --> 00:42:21,829
+thing
+and because we are keeping them in order
+
+1898
+00:42:21,829 --> 00:42:21,839
+and because we are keeping them in order
+ 
+
+1899
+00:42:21,839 --> 00:42:24,069
+and because we are keeping them in order
+in this sequence
+
+1900
+00:42:24,069 --> 00:42:24,079
+in this sequence
+ 
+
+1901
+00:42:24,079 --> 00:42:27,109
+in this sequence
+i'm appending to the end then when i go
+
+1902
+00:42:27,109 --> 00:42:27,119
+i'm appending to the end then when i go
+ 
+
+1903
+00:42:27,119 --> 00:42:31,589
+i'm appending to the end then when i go
+and read off the different things
+
+1904
+00:42:31,589 --> 00:42:31,599
+and read off the different things
+ 
+
+1905
+00:42:31,599 --> 00:42:34,069
+and read off the different things
+then i'm returning them in a stable way
+
+1906
+00:42:34,069 --> 00:42:34,079
+then i'm returning them in a stable way
+ 
+
+1907
+00:42:34,079 --> 00:42:34,870
+then i'm returning them in a stable way
+in the way
+
+1908
+00:42:34,870 --> 00:42:34,880
+in the way
+ 
+
+1909
+00:42:34,880 --> 00:42:36,950
+in the way
+that i want them to be does that make
+
+1910
+00:42:36,950 --> 00:42:36,960
+that i want them to be does that make
+ 
+
+1911
+00:42:36,960 --> 00:42:38,390
+that i want them to be does that make
+sense
+
+1912
+00:42:38,390 --> 00:42:38,400
+sense
+ 
+
+1913
+00:42:38,400 --> 00:42:40,550
+sense
+and it's not overriding the work i did
+
+1914
+00:42:40,550 --> 00:42:40,560
+and it's not overriding the work i did
+ 
+
+1915
+00:42:40,560 --> 00:42:43,990
+and it's not overriding the work i did
+on the lower significant digits
+
+1916
+00:42:43,990 --> 00:42:44,000
+on the lower significant digits
+ 
+
+1917
+00:42:44,000 --> 00:42:49,510
+on the lower significant digits
+okay so how long does this take
+
+1918
+00:42:49,510 --> 00:42:49,520
+
+ 
+
+1919
+00:42:49,520 --> 00:42:56,230
+
+this also only takes order n plus u
+
+1920
+00:42:56,230 --> 00:42:56,240
+
+ 
+
+1921
+00:42:56,240 --> 00:42:58,309
+
+because i'm instantiating this thing of
+
+1922
+00:42:58,309 --> 00:42:58,319
+because i'm instantiating this thing of
+ 
+
+1923
+00:42:58,319 --> 00:43:00,390
+because i'm instantiating this thing of
+size u
+
+1924
+00:43:00,390 --> 00:43:00,400
+size u
+ 
+
+1925
+00:43:00,400 --> 00:43:02,150
+size u
+and then how big are these data
+
+1926
+00:43:02,150 --> 00:43:02,160
+and then how big are these data
+ 
+
+1927
+00:43:02,160 --> 00:43:04,550
+and then how big are these data
+structures well maybe i'm storing one
+
+1928
+00:43:04,550 --> 00:43:04,560
+structures well maybe i'm storing one
+ 
+
+1929
+00:43:04,560 --> 00:43:07,670
+structures well maybe i'm storing one
+a constant amount for each index so
+
+1930
+00:43:07,670 --> 00:43:07,680
+a constant amount for each index so
+ 
+
+1931
+00:43:07,680 --> 00:43:08,069
+a constant amount for each index so
+that's
+
+1932
+00:43:08,069 --> 00:43:08,079
+that's
+ 
+
+1933
+00:43:08,079 --> 00:43:11,030
+that's
+a u overhead and then i'm paying one for
+
+1934
+00:43:11,030 --> 00:43:11,040
+a u overhead and then i'm paying one for
+ 
+
+1935
+00:43:11,040 --> 00:43:12,870
+a u overhead and then i'm paying one for
+every item i'm storing
+
+1936
+00:43:12,870 --> 00:43:12,880
+every item i'm storing
+ 
+
+1937
+00:43:12,880 --> 00:43:16,069
+every item i'm storing
+right these things are only
+
+1938
+00:43:16,069 --> 00:43:16,079
+right these things are only
+ 
+
+1939
+00:43:16,079 --> 00:43:19,109
+right these things are only
+the lengths the sum total of their
+
+1940
+00:43:19,109 --> 00:43:19,119
+the lengths the sum total of their
+ 
+
+1941
+00:43:19,119 --> 00:43:20,309
+the lengths the sum total of their
+lengths is n
+
+1942
+00:43:20,309 --> 00:43:20,319
+lengths is n
+ 
+
+1943
+00:43:20,319 --> 00:43:22,790
+lengths is n
+right because i'm only storing n things
+
+1944
+00:43:22,790 --> 00:43:22,800
+right because i'm only storing n things
+ 
+
+1945
+00:43:22,800 --> 00:43:24,950
+right because i'm only storing n things
+in there
+
+1946
+00:43:24,950 --> 00:43:24,960
+in there
+ 
+
+1947
+00:43:24,960 --> 00:43:29,510
+in there
+so the total amount of space the total
+
+1948
+00:43:29,510 --> 00:43:29,520
+so the total amount of space the total
+ 
+
+1949
+00:43:29,520 --> 00:43:31,109
+so the total amount of space the total
+amount of work i have to do
+
+1950
+00:43:31,109 --> 00:43:31,119
+amount of work i have to do
+ 
+
+1951
+00:43:31,119 --> 00:43:34,630
+amount of work i have to do
+is order i need to be able to append
+
+1952
+00:43:34,630 --> 00:43:34,640
+is order i need to be able to append
+ 
+
+1953
+00:43:34,640 --> 00:43:36,790
+is order i need to be able to append
+in constant time and i need to be able
+
+1954
+00:43:36,790 --> 00:43:36,800
+in constant time and i need to be able
+ 
+
+1955
+00:43:36,800 --> 00:43:38,230
+in constant time and i need to be able
+to cycle through these things
+
+1956
+00:43:38,230 --> 00:43:38,240
+to cycle through these things
+ 
+
+1957
+00:43:38,240 --> 00:43:40,710
+to cycle through these things
+iterate over them in linear time but if
+
+1958
+00:43:40,710 --> 00:43:40,720
+iterate over them in linear time but if
+ 
+
+1959
+00:43:40,720 --> 00:43:41,430
+iterate over them in linear time but if
+i have that
+
+1960
+00:43:41,430 --> 00:43:41,440
+i have that
+ 
+
+1961
+00:43:41,440 --> 00:43:54,390
+i have that
+i get n plus u yeah
+
+1962
+00:43:54,390 --> 00:43:54,400
+i get n plus u yeah
+ 
+
+1963
+00:43:54,400 --> 00:43:57,589
+i get n plus u yeah
+ah so your uh
+
+1964
+00:43:57,589 --> 00:43:57,599
+ah so your uh
+ 
+
+1965
+00:43:57,599 --> 00:43:59,349
+ah so your uh
+your colleague is saying how do i ensure
+
+1966
+00:43:59,349 --> 00:43:59,359
+your colleague is saying how do i ensure
+ 
+
+1967
+00:43:59,359 --> 00:44:01,270
+your colleague is saying how do i ensure
+that the things in these lists that
+
+1968
+00:44:01,270 --> 00:44:01,280
+that the things in these lists that
+ 
+
+1969
+00:44:01,280 --> 00:44:02,230
+that the things in these lists that
+there are they collide
+
+1970
+00:44:02,230 --> 00:44:02,240
+there are they collide
+ 
+
+1971
+00:44:02,240 --> 00:44:03,990
+there are they collide
+how do you ensure that they're sorted i
+
+1972
+00:44:03,990 --> 00:44:04,000
+how do you ensure that they're sorted i
+ 
+
+1973
+00:44:04,000 --> 00:44:05,430
+how do you ensure that they're sorted i
+don't i
+
+1974
+00:44:05,430 --> 00:44:05,440
+don't i
+ 
+
+1975
+00:44:05,440 --> 00:44:07,510
+don't i
+just ensure that they came in in the
+
+1976
+00:44:07,510 --> 00:44:07,520
+just ensure that they came in in the
+ 
+
+1977
+00:44:07,520 --> 00:44:08,470
+just ensure that they came in in the
+order that they came
+
+1978
+00:44:08,470 --> 00:44:08,480
+order that they came
+ 
+
+1979
+00:44:08,480 --> 00:44:11,670
+order that they came
+right but as long as i sorted the lower
+
+1980
+00:44:11,670 --> 00:44:11,680
+right but as long as i sorted the lower
+ 
+
+1981
+00:44:11,680 --> 00:44:13,910
+right but as long as i sorted the lower
+order digits
+
+1982
+00:44:13,910 --> 00:44:13,920
+order digits
+ 
+
+1983
+00:44:13,920 --> 00:44:17,190
+order digits
+correctly in the previous things
+
+1984
+00:44:17,190 --> 00:44:17,200
+correctly in the previous things
+ 
+
+1985
+00:44:17,200 --> 00:44:19,910
+correctly in the previous things
+then i'm assuming that their order as
+
+1986
+00:44:19,910 --> 00:44:19,920
+then i'm assuming that their order as
+ 
+
+1987
+00:44:19,920 --> 00:44:20,550
+then i'm assuming that their order as
+they come in
+
+1988
+00:44:20,550 --> 00:44:20,560
+they come in
+ 
+
+1989
+00:44:20,560 --> 00:44:22,870
+they come in
+will be sorted if they collide that's
+
+1990
+00:44:22,870 --> 00:44:22,880
+will be sorted if they collide that's
+ 
+
+1991
+00:44:22,880 --> 00:44:23,750
+will be sorted if they collide that's
+the assumption
+
+1992
+00:44:23,750 --> 00:44:23,760
+the assumption
+ 
+
+1993
+00:44:23,760 --> 00:44:27,430
+the assumption
+that's the reason why i'm doing these
+
+1994
+00:44:27,430 --> 00:44:27,440
+that's the reason why i'm doing these
+ 
+
+1995
+00:44:27,440 --> 00:44:28,950
+that's the reason why i'm doing these
+building up from the least significant
+
+1996
+00:44:28,950 --> 00:44:28,960
+building up from the least significant
+ 
+
+1997
+00:44:28,960 --> 00:44:31,190
+building up from the least significant
+to the most significant it's so that
+
+1998
+00:44:31,190 --> 00:44:31,200
+to the most significant it's so that
+ 
+
+1999
+00:44:31,200 --> 00:44:33,750
+to the most significant it's so that
+i know that when they collide the
+
+2000
+00:44:33,750 --> 00:44:33,760
+i know that when they collide the
+ 
+
+2001
+00:44:33,760 --> 00:44:36,309
+i know that when they collide the
+underlying stuff there is sorted already
+
+2002
+00:44:36,309 --> 00:44:36,319
+underlying stuff there is sorted already
+ 
+
+2003
+00:44:36,319 --> 00:44:38,870
+underlying stuff there is sorted already
+in the input does that make sense great
+
+2004
+00:44:38,870 --> 00:44:38,880
+in the input does that make sense great
+ 
+
+2005
+00:44:38,880 --> 00:44:39,670
+in the input does that make sense great
+yeah
+
+2006
+00:44:39,670 --> 00:44:39,680
+yeah
+ 
+
+2007
+00:44:39,680 --> 00:44:47,270
+yeah
+so um
+
+2008
+00:44:47,270 --> 00:44:47,280
+
+ 
+
+2009
+00:44:47,280 --> 00:44:49,190
+
+so this one is still i'm using a direct
+
+2010
+00:44:49,190 --> 00:44:49,200
+so this one is still i'm using a direct
+ 
+
+2011
+00:44:49,200 --> 00:44:51,109
+so this one is still i'm using a direct
+access array on the keys though this is
+
+2012
+00:44:51,109 --> 00:44:51,119
+access array on the keys though this is
+ 
+
+2013
+00:44:51,119 --> 00:44:52,710
+access array on the keys though this is
+n
+
+2014
+00:44:52,710 --> 00:44:52,720
+n
+ 
+
+2015
+00:44:52,720 --> 00:44:55,990
+n
+this is n because i chose uh
+
+2016
+00:44:55,990 --> 00:44:56,000
+this is n because i chose uh
+ 
+
+2017
+00:44:56,000 --> 00:44:59,109
+this is n because i chose uh
+so counting sword is general for any u i
+
+2018
+00:44:59,109 --> 00:44:59,119
+so counting sword is general for any u i
+ 
+
+2019
+00:44:59,119 --> 00:45:00,470
+so counting sword is general for any u i
+just happen to pick
+
+2020
+00:45:00,470 --> 00:45:00,480
+just happen to pick
+ 
+
+2021
+00:45:00,480 --> 00:45:04,470
+just happen to pick
+u being n in this case when i broke this
+
+2022
+00:45:04,470 --> 00:45:04,480
+u being n in this case when i broke this
+ 
+
+2023
+00:45:04,480 --> 00:45:04,790
+u being n in this case when i broke this
+thing
+
+2024
+00:45:04,790 --> 00:45:04,800
+thing
+ 
+
+2025
+00:45:04,800 --> 00:45:06,870
+thing
+up into n squared but this general
+
+2026
+00:45:06,870 --> 00:45:06,880
+up into n squared but this general
+ 
+
+2027
+00:45:06,880 --> 00:45:08,550
+up into n squared but this general
+concept is
+
+2028
+00:45:08,550 --> 00:45:08,560
+concept is
+ 
+
+2029
+00:45:08,560 --> 00:45:11,510
+concept is
+it uh it doesn't matter what i choose
+
+2030
+00:45:11,510 --> 00:45:11,520
+it uh it doesn't matter what i choose
+ 
+
+2031
+00:45:11,520 --> 00:45:11,990
+it uh it doesn't matter what i choose
+for you
+
+2032
+00:45:11,990 --> 00:45:12,000
+for you
+ 
+
+2033
+00:45:12,000 --> 00:45:15,109
+for you
+does that make sense
+
+2034
+00:45:15,109 --> 00:45:15,119
+
+ 
+
+2035
+00:45:15,119 --> 00:45:18,150
+
+okay but we will use that right now to
+
+2036
+00:45:18,150 --> 00:45:18,160
+okay but we will use that right now to
+ 
+
+2037
+00:45:18,160 --> 00:45:18,790
+okay but we will use that right now to
+sort
+
+2038
+00:45:18,790 --> 00:45:18,800
+sort
+ 
+
+2039
+00:45:18,800 --> 00:45:22,870
+sort
+larger ranges of numbers okay
+
+2040
+00:45:22,870 --> 00:45:22,880
+larger ranges of numbers okay
+ 
+
+2041
+00:45:22,880 --> 00:45:26,630
+larger ranges of numbers okay
+so the idea here this was exactly the
+
+2042
+00:45:26,630 --> 00:45:26,640
+so the idea here this was exactly the
+ 
+
+2043
+00:45:26,640 --> 00:45:29,270
+so the idea here this was exactly the
+idea we're going to combine tuple sort
+
+2044
+00:45:29,270 --> 00:45:29,280
+idea we're going to combine tuple sort
+ 
+
+2045
+00:45:29,280 --> 00:45:31,349
+idea we're going to combine tuple sort
+use counting sort as its auxiliary
+
+2046
+00:45:31,349 --> 00:45:31,359
+use counting sort as its auxiliary
+ 
+
+2047
+00:45:31,359 --> 00:45:32,710
+use counting sort as its auxiliary
+sorting stab
+
+2048
+00:45:32,710 --> 00:45:32,720
+sorting stab
+ 
+
+2049
+00:45:32,720 --> 00:45:35,750
+sorting stab
+a stable sorting algorithm right to do
+
+2050
+00:45:35,750 --> 00:45:35,760
+a stable sorting algorithm right to do
+ 
+
+2051
+00:45:35,760 --> 00:45:37,430
+a stable sorting algorithm right to do
+all its work on these digits
+
+2052
+00:45:37,430 --> 00:45:37,440
+all its work on these digits
+ 
+
+2053
+00:45:37,440 --> 00:45:40,790
+all its work on these digits
+right and so to sort
+
+2054
+00:45:40,790 --> 00:45:40,800
+right and so to sort
+ 
+
+2055
+00:45:40,800 --> 00:45:44,950
+right and so to sort
+on n squared size numbers
+
+2056
+00:45:44,950 --> 00:45:44,960
+on n squared size numbers
+ 
+
+2057
+00:45:44,960 --> 00:45:47,190
+on n squared size numbers
+i get linear time which is great right
+
+2058
+00:45:47,190 --> 00:45:47,200
+i get linear time which is great right
+ 
+
+2059
+00:45:47,200 --> 00:45:48,230
+i get linear time which is great right
+because u
+
+2060
+00:45:48,230 --> 00:45:48,240
+because u
+ 
+
+2061
+00:45:48,240 --> 00:45:53,430
+because u
+is n in this case okay
+
+2062
+00:45:53,430 --> 00:45:53,440
+
+ 
+
+2063
+00:45:53,440 --> 00:45:56,710
+
+so but can i extend that what if i had
+
+2064
+00:45:56,710 --> 00:45:56,720
+so but can i extend that what if i had
+ 
+
+2065
+00:45:56,720 --> 00:46:00,710
+so but can i extend that what if i had
+n cubed what if i had
+
+2066
+00:46:00,710 --> 00:46:00,720
+n cubed what if i had
+ 
+
+2067
+00:46:00,720 --> 00:46:04,390
+n cubed what if i had
+up to size u equals n cubed or less than
+
+2068
+00:46:04,390 --> 00:46:04,400
+up to size u equals n cubed or less than
+ 
+
+2069
+00:46:04,400 --> 00:46:06,950
+up to size u equals n cubed or less than
+n cubed how many digits would i have
+
+2070
+00:46:06,950 --> 00:46:06,960
+n cubed how many digits would i have
+ 
+
+2071
+00:46:06,960 --> 00:46:12,069
+n cubed how many digits would i have
+there
+
+2072
+00:46:12,069 --> 00:46:12,079
+
+ 
+
+2073
+00:46:12,079 --> 00:46:14,790
+
+how many size and digits would i need to
+
+2074
+00:46:14,790 --> 00:46:14,800
+how many size and digits would i need to
+ 
+
+2075
+00:46:14,800 --> 00:46:16,390
+how many size and digits would i need to
+represent
+
+2076
+00:46:16,390 --> 00:46:16,400
+represent
+ 
+
+2077
+00:46:16,400 --> 00:46:21,589
+represent
+a number of size n cubed
+
+2078
+00:46:21,589 --> 00:46:21,599
+
+ 
+
+2079
+00:46:21,599 --> 00:46:24,710
+
+any ideas
+
+2080
+00:46:24,710 --> 00:46:24,720
+
+ 
+
+2081
+00:46:24,720 --> 00:46:28,470
+
+what did we do here we divided off an n
+
+2082
+00:46:28,470 --> 00:46:28,480
+what did we do here we divided off an n
+ 
+
+2083
+00:46:28,480 --> 00:46:30,470
+what did we do here we divided off an n
+we took it and stored it we're left with
+
+2084
+00:46:30,470 --> 00:46:30,480
+we took it and stored it we're left with
+ 
+
+2085
+00:46:30,480 --> 00:46:31,829
+we took it and stored it we're left with
+something of size n
+
+2086
+00:46:31,829 --> 00:46:31,839
+something of size n
+ 
+
+2087
+00:46:31,839 --> 00:46:35,349
+something of size n
+right if i had a number of size n cubed
+
+2088
+00:46:35,349 --> 00:46:35,359
+right if i had a number of size n cubed
+ 
+
+2089
+00:46:35,359 --> 00:46:36,950
+right if i had a number of size n cubed
+i could divide off an n i'm left with
+
+2090
+00:46:36,950 --> 00:46:36,960
+i could divide off an n i'm left with
+ 
+
+2091
+00:46:36,960 --> 00:46:38,390
+i could divide off an n i'm left with
+something of n squared
+
+2092
+00:46:38,390 --> 00:46:38,400
+something of n squared
+ 
+
+2093
+00:46:38,400 --> 00:46:39,510
+something of n squared
+i don't know how to deal with something
+
+2094
+00:46:39,510 --> 00:46:39,520
+i don't know how to deal with something
+ 
+
+2095
+00:46:39,520 --> 00:46:42,390
+i don't know how to deal with something
+of n squared actually i do
+
+2096
+00:46:42,390 --> 00:46:42,400
+of n squared actually i do
+ 
+
+2097
+00:46:42,400 --> 00:46:44,150
+of n squared actually i do
+i can split it up into two size and
+
+2098
+00:46:44,150 --> 00:46:44,160
+i can split it up into two size and
+ 
+
+2099
+00:46:44,160 --> 00:46:46,069
+i can split it up into two size and
+numbers right
+
+2100
+00:46:46,069 --> 00:46:46,079
+numbers right
+ 
+
+2101
+00:46:46,079 --> 00:46:49,430
+numbers right
+so if i had numbers
+
+2102
+00:46:49,430 --> 00:46:49,440
+so if i had numbers
+ 
+
+2103
+00:46:49,440 --> 00:46:52,309
+so if i had numbers
+bound upper bounded by a cubic right and
+
+2104
+00:46:52,309 --> 00:46:52,319
+bound upper bounded by a cubic right and
+ 
+
+2105
+00:46:52,319 --> 00:46:53,109
+bound upper bounded by a cubic right and
+cubed
+
+2106
+00:46:53,109 --> 00:46:53,119
+cubed
+ 
+
+2107
+00:46:53,119 --> 00:46:55,910
+cubed
+i could split it up into three digits
+
+2108
+00:46:55,910 --> 00:46:55,920
+i could split it up into three digits
+ 
+
+2109
+00:46:55,920 --> 00:46:57,430
+i could split it up into three digits
+three is still constant
+
+2110
+00:46:57,430 --> 00:46:57,440
+three is still constant
+ 
+
+2111
+00:46:57,440 --> 00:46:59,750
+three is still constant
+right and so i could split it up into
+
+2112
+00:46:59,750 --> 00:46:59,760
+right and so i could split it up into
+ 
+
+2113
+00:46:59,760 --> 00:47:00,950
+right and so i could split it up into
+three digits
+
+2114
+00:47:00,950 --> 00:47:00,960
+three digits
+ 
+
+2115
+00:47:00,960 --> 00:47:04,630
+three digits
+tuples sort them in their increasing
+
+2116
+00:47:04,630 --> 00:47:04,640
+tuples sort them in their increasing
+ 
+
+2117
+00:47:04,640 --> 00:47:06,230
+tuples sort them in their increasing
+priority
+
+2118
+00:47:06,230 --> 00:47:06,240
+priority
+ 
+
+2119
+00:47:06,240 --> 00:47:08,790
+priority
+and sort those again i'm doing linear
+
+2120
+00:47:08,790 --> 00:47:08,800
+and sort those again i'm doing linear
+ 
+
+2121
+00:47:08,800 --> 00:47:09,430
+and sort those again i'm doing linear
+work
+
+2122
+00:47:09,430 --> 00:47:09,440
+work
+ 
+
+2123
+00:47:09,440 --> 00:47:11,510
+work
+per digit i have a constant number of
+
+2124
+00:47:11,510 --> 00:47:11,520
+per digit i have a constant number of
+ 
+
+2125
+00:47:11,520 --> 00:47:22,829
+per digit i have a constant number of
+digits so i get a linear time algorithm
+
+2126
+00:47:22,829 --> 00:47:22,839
+
+ 
+
+2127
+00:47:22,839 --> 00:47:24,950
+
+yeah yeah so
+
+2128
+00:47:24,950 --> 00:47:24,960
+yeah yeah so
+ 
+
+2129
+00:47:24,960 --> 00:47:26,870
+yeah yeah so
+it's always going to be big o of n plus
+
+2130
+00:47:26,870 --> 00:47:26,880
+it's always going to be big o of n plus
+ 
+
+2131
+00:47:26,880 --> 00:47:27,990
+it's always going to be big o of n plus
+u
+
+2132
+00:47:27,990 --> 00:47:28,000
+u
+ 
+
+2133
+00:47:28,000 --> 00:47:30,549
+u
+but because i'm bounding my digit size
+
+2134
+00:47:30,549 --> 00:47:30,559
+but because i'm bounding my digit size
+ 
+
+2135
+00:47:30,559 --> 00:47:31,030
+but because i'm bounding my digit size
+to be
+
+2136
+00:47:31,030 --> 00:47:31,040
+to be
+ 
+
+2137
+00:47:31,040 --> 00:47:34,630
+to be
+n u is n there
+
+2138
+00:47:34,630 --> 00:47:34,640
+n u is n there
+ 
+
+2139
+00:47:34,640 --> 00:47:36,069
+n u is n there
+and so i'm getting linear time does that
+
+2140
+00:47:36,069 --> 00:47:36,079
+and so i'm getting linear time does that
+ 
+
+2141
+00:47:36,079 --> 00:47:38,309
+and so i'm getting linear time does that
+make sense yeah so
+
+2142
+00:47:38,309 --> 00:47:38,319
+make sense yeah so
+ 
+
+2143
+00:47:38,319 --> 00:47:40,710
+make sense yeah so
+the idea here this is what we call radix
+
+2144
+00:47:40,710 --> 00:47:40,720
+the idea here this is what we call radix
+ 
+
+2145
+00:47:40,720 --> 00:47:41,990
+the idea here this is what we call radix
+sort
+
+2146
+00:47:41,990 --> 00:47:42,000
+sort
+ 
+
+2147
+00:47:42,000 --> 00:47:47,910
+sort
+radix sort
+
+2148
+00:47:47,910 --> 00:47:47,920
+
+ 
+
+2149
+00:47:47,920 --> 00:47:52,230
+
+break up
+
+2150
+00:47:52,230 --> 00:47:52,240
+break up
+ 
+
+2151
+00:47:52,240 --> 00:47:55,510
+break up
+integers
+
+2152
+00:47:55,510 --> 00:47:55,520
+
+ 
+
+2153
+00:47:55,520 --> 00:47:59,109
+
+uh max size
+
+2154
+00:47:59,109 --> 00:47:59,119
+uh max size
+ 
+
+2155
+00:47:59,119 --> 00:48:02,870
+uh max size
+u into
+
+2156
+00:48:02,870 --> 00:48:02,880
+u into
+ 
+
+2157
+00:48:02,880 --> 00:48:06,470
+u into
+a uh
+
+2158
+00:48:06,470 --> 00:48:06,480
+a uh
+ 
+
+2159
+00:48:06,480 --> 00:48:10,309
+a uh
+a base n
+
+2160
+00:48:10,309 --> 00:48:10,319
+a base n
+ 
+
+2161
+00:48:10,319 --> 00:48:14,309
+a base n
+tuple right
+
+2162
+00:48:14,309 --> 00:48:14,319
+tuple right
+ 
+
+2163
+00:48:14,319 --> 00:48:16,230
+tuple right
+so basically each one of my digits can
+
+2164
+00:48:16,230 --> 00:48:16,240
+so basically each one of my digits can
+ 
+
+2165
+00:48:16,240 --> 00:48:17,589
+so basically each one of my digits can
+range from zero to n
+
+2166
+00:48:17,589 --> 00:48:17,599
+range from zero to n
+ 
+
+2167
+00:48:17,599 --> 00:48:20,870
+range from zero to n
+right how many digits do i have if i
+
+2168
+00:48:20,870 --> 00:48:20,880
+right how many digits do i have if i
+ 
+
+2169
+00:48:20,880 --> 00:48:21,589
+right how many digits do i have if i
+have
+
+2170
+00:48:21,589 --> 00:48:21,599
+have
+ 
+
+2171
+00:48:21,599 --> 00:48:23,510
+have
+how many base n digits do i have if i
+
+2172
+00:48:23,510 --> 00:48:23,520
+how many base n digits do i have if i
+ 
+
+2173
+00:48:23,520 --> 00:48:28,470
+how many base n digits do i have if i
+have a number of size u
+
+2174
+00:48:28,470 --> 00:48:28,480
+
+ 
+
+2175
+00:48:28,480 --> 00:48:33,510
+
+yeah log n of u number of digits
+
+2176
+00:48:33,510 --> 00:48:33,520
+yeah log n of u number of digits
+ 
+
+2177
+00:48:33,520 --> 00:48:36,790
+yeah log n of u number of digits
+is log n of u
+
+2178
+00:48:36,790 --> 00:48:36,800
+is log n of u
+ 
+
+2179
+00:48:36,800 --> 00:48:40,549
+is log n of u
+log base n of u right so how long
+
+2180
+00:48:40,549 --> 00:48:40,559
+log base n of u right so how long
+ 
+
+2181
+00:48:40,559 --> 00:48:44,150
+log base n of u right so how long
+does ray and then
+
+2182
+00:48:44,150 --> 00:48:44,160
+does ray and then
+ 
+
+2183
+00:48:44,160 --> 00:48:48,069
+does ray and then
+tuple sort on
+
+2184
+00:48:48,069 --> 00:48:48,079
+tuple sort on
+ 
+
+2185
+00:48:48,079 --> 00:48:51,829
+tuple sort on
+digits using
+
+2186
+00:48:51,829 --> 00:48:51,839
+digits using
+ 
+
+2187
+00:48:51,839 --> 00:48:56,069
+digits using
+counting sort
+
+2188
+00:48:56,069 --> 00:48:56,079
+
+ 
+
+2189
+00:48:56,079 --> 00:48:59,829
+
+from least
+
+2190
+00:48:59,829 --> 00:48:59,839
+from least
+ 
+
+2191
+00:48:59,839 --> 00:49:03,750
+from least
+to most significant
+
+2192
+00:49:03,750 --> 00:49:03,760
+to most significant
+ 
+
+2193
+00:49:03,760 --> 00:49:07,109
+to most significant
+right that's the algorithm how long does
+
+2194
+00:49:07,109 --> 00:49:07,119
+right that's the algorithm how long does
+ 
+
+2195
+00:49:07,119 --> 00:49:10,069
+right that's the algorithm how long does
+that take
+
+2196
+00:49:10,069 --> 00:49:10,079
+
+ 
+
+2197
+00:49:10,079 --> 00:49:13,270
+
+how long does it take to sort on a digit
+
+2198
+00:49:13,270 --> 00:49:13,280
+how long does it take to sort on a digit
+ 
+
+2199
+00:49:13,280 --> 00:49:17,430
+how long does it take to sort on a digit
+that spans the key 0 to n
+
+2200
+00:49:17,430 --> 00:49:17,440
+that spans the key 0 to n
+ 
+
+2201
+00:49:17,440 --> 00:49:20,390
+that spans the key 0 to n
+linear time right order n time how many
+
+2202
+00:49:20,390 --> 00:49:20,400
+linear time right order n time how many
+ 
+
+2203
+00:49:20,400 --> 00:49:22,630
+linear time right order n time how many
+times do i have to do this
+
+2204
+00:49:22,630 --> 00:49:22,640
+times do i have to do this
+ 
+
+2205
+00:49:22,640 --> 00:49:24,870
+times do i have to do this
+tuple sort the number of digits times
+
+2206
+00:49:24,870 --> 00:49:24,880
+tuple sort the number of digits times
+ 
+
+2207
+00:49:24,880 --> 00:49:26,870
+tuple sort the number of digits times
+right
+
+2208
+00:49:26,870 --> 00:49:26,880
+right
+ 
+
+2209
+00:49:26,880 --> 00:49:29,270
+right
+so the running time of this algorithm
+
+2210
+00:49:29,270 --> 00:49:29,280
+so the running time of this algorithm
+ 
+
+2211
+00:49:29,280 --> 00:49:32,069
+so the running time of this algorithm
+first i have to
+
+2212
+00:49:32,069 --> 00:49:32,079
+
+ 
+
+2213
+00:49:32,079 --> 00:49:34,150
+
+you know i have to do this stuff break
+
+2214
+00:49:34,150 --> 00:49:34,160
+you know i have to do this stuff break
+ 
+
+2215
+00:49:34,160 --> 00:49:35,990
+you know i have to do this stuff break
+up each of the integers that takes
+
+2216
+00:49:35,990 --> 00:49:36,000
+up each of the integers that takes
+ 
+
+2217
+00:49:36,000 --> 00:49:38,150
+up each of the integers that takes
+n time right n times the number of
+
+2218
+00:49:38,150 --> 00:49:38,160
+n time right n times the number of
+ 
+
+2219
+00:49:38,160 --> 00:49:40,710
+n time right n times the number of
+digits i had to create each one of these
+
+2220
+00:49:40,710 --> 00:49:40,720
+digits i had to create each one of these
+ 
+
+2221
+00:49:40,720 --> 00:49:44,870
+digits i had to create each one of these
+uh tuples right so n
+
+2222
+00:49:44,870 --> 00:49:44,880
+uh tuples right so n
+ 
+
+2223
+00:49:44,880 --> 00:49:47,750
+uh tuples right so n
+plus n times the number of digits right
+
+2224
+00:49:47,750 --> 00:49:47,760
+plus n times the number of digits right
+ 
+
+2225
+00:49:47,760 --> 00:49:50,309
+plus n times the number of digits right
+log
+
+2226
+00:49:50,309 --> 00:49:50,319
+
+ 
+
+2227
+00:49:50,319 --> 00:49:54,150
+
+log base n of u
+
+2228
+00:49:54,150 --> 00:49:54,160
+log base n of u
+ 
+
+2229
+00:49:54,160 --> 00:49:56,549
+log base n of u
+right so here i had to loop through all
+
+2230
+00:49:56,549 --> 00:49:56,559
+right so here i had to loop through all
+ 
+
+2231
+00:49:56,559 --> 00:49:58,230
+right so here i had to loop through all
+the things
+
+2232
+00:49:58,230 --> 00:49:58,240
+the things
+ 
+
+2233
+00:49:58,240 --> 00:50:00,870
+the things
+and then here for each thing i broke it
+
+2234
+00:50:00,870 --> 00:50:00,880
+and then here for each thing i broke it
+ 
+
+2235
+00:50:00,880 --> 00:50:04,230
+and then here for each thing i broke it
+up into
+
+2236
+00:50:04,230 --> 00:50:04,240
+
+ 
+
+2237
+00:50:04,240 --> 00:50:08,950
+
+log base and view digits
+
+2238
+00:50:08,950 --> 00:50:08,960
+log base and view digits
+ 
+
+2239
+00:50:08,960 --> 00:50:11,349
+log base and view digits
+and that's how long the first thing took
+
+2240
+00:50:11,349 --> 00:50:11,359
+and that's how long the first thing took
+ 
+
+2241
+00:50:11,359 --> 00:50:12,790
+and that's how long the first thing took
+and then how long did it take me to
+
+2242
+00:50:12,790 --> 00:50:12,800
+and then how long did it take me to
+ 
+
+2243
+00:50:12,800 --> 00:50:14,870
+and then how long did it take me to
+tuple sort
+
+2244
+00:50:14,870 --> 00:50:14,880
+tuple sort
+ 
+
+2245
+00:50:14,880 --> 00:50:18,470
+tuple sort
+end time per digit so i also get this
+
+2246
+00:50:18,470 --> 00:50:18,480
+end time per digit so i also get this
+ 
+
+2247
+00:50:18,480 --> 00:50:19,270
+end time per digit so i also get this
+factor
+
+2248
+00:50:19,270 --> 00:50:19,280
+factor
+ 
+
+2249
+00:50:19,280 --> 00:50:22,309
+factor
+does that make sense
+
+2250
+00:50:22,309 --> 00:50:22,319
+
+ 
+
+2251
+00:50:22,319 --> 00:50:24,630
+
+so how long did how long is that is that
+
+2252
+00:50:24,630 --> 00:50:24,640
+so how long did how long is that is that
+ 
+
+2253
+00:50:24,640 --> 00:50:26,870
+so how long did how long is that is that
+good is that bad
+
+2254
+00:50:26,870 --> 00:50:26,880
+good is that bad
+ 
+
+2255
+00:50:26,880 --> 00:50:35,430
+good is that bad
+for what values of u is this linear time
+
+2256
+00:50:35,430 --> 00:50:35,440
+
+ 
+
+2257
+00:50:35,440 --> 00:50:38,549
+
+if u is less than
+
+2258
+00:50:38,549 --> 00:50:38,559
+if u is less than
+ 
+
+2259
+00:50:38,559 --> 00:50:43,270
+if u is less than
+n to the c for some constancy
+
+2260
+00:50:43,270 --> 00:50:43,280
+
+ 
+
+2261
+00:50:43,280 --> 00:50:45,829
+
+then this c comes out of the logarithm
+
+2262
+00:50:45,829 --> 00:50:45,839
+then this c comes out of the logarithm
+ 
+
+2263
+00:50:45,839 --> 00:50:46,549
+then this c comes out of the logarithm
+log n
+
+2264
+00:50:46,549 --> 00:50:46,559
+log n
+ 
+
+2265
+00:50:46,559 --> 00:50:49,270
+log n
+of n is one and we get a linear time
+
+2266
+00:50:49,270 --> 00:50:49,280
+of n is one and we get a linear time
+ 
+
+2267
+00:50:49,280 --> 00:50:50,069
+of n is one and we get a linear time
+algorithm
+
+2268
+00:50:50,069 --> 00:50:50,079
+algorithm
+ 
+
+2269
+00:50:50,079 --> 00:50:54,069
+algorithm
+does that make sense okay so that's
+
+2270
+00:50:54,069 --> 00:50:54,079
+does that make sense okay so that's
+ 
+
+2271
+00:50:54,079 --> 00:50:56,309
+does that make sense okay so that's
+how we can sort in linear time if our
+
+2272
+00:50:56,309 --> 00:50:56,319
+how we can sort in linear time if our
+ 
+
+2273
+00:50:56,319 --> 00:50:57,589
+how we can sort in linear time if our
+things are only
+
+2274
+00:50:57,589 --> 00:50:57,599
+things are only
+ 
+
+2275
+00:50:57,599 --> 00:51:00,790
+things are only
+polynomially large right
+
+2276
+00:51:00,790 --> 00:51:00,800
+polynomially large right
+ 
+
+2277
+00:51:00,800 --> 00:51:03,990
+polynomially large right
+so in counting sort we get n plus u
+
+2278
+00:51:03,990 --> 00:51:04,000
+so in counting sort we get n plus u
+ 
+
+2279
+00:51:04,000 --> 00:51:06,630
+so in counting sort we get n plus u
+in radix sort we get also a stable
+
+2280
+00:51:06,630 --> 00:51:06,640
+in radix sort we get also a stable
+ 
+
+2281
+00:51:06,640 --> 00:51:07,750
+in radix sort we get also a stable
+sorting algorithm
+
+2282
+00:51:07,750 --> 00:51:07,760
+sorting algorithm
+ 
+
+2283
+00:51:07,760 --> 00:51:11,349
+sorting algorithm
+where the running time is n plus n times
+
+2284
+00:51:11,349 --> 00:51:11,359
+where the running time is n plus n times
+ 
+
+2285
+00:51:11,359 --> 00:51:16,549
+where the running time is n plus n times
+log base n of u does that make sense
+
+2286
+00:51:16,549 --> 00:51:16,559
+log base n of u does that make sense
+ 
+
+2287
+00:51:16,559 --> 00:51:20,309
+log base n of u does that make sense
+and then in the situations where
+
+2288
+00:51:20,309 --> 00:51:20,319
+and then in the situations where
+ 
+
+2289
+00:51:20,319 --> 00:51:21,990
+and then in the situations where
+uh there's a typo there and counting
+
+2290
+00:51:21,990 --> 00:51:22,000
+uh there's a typo there and counting
+ 
+
+2291
+00:51:22,000 --> 00:51:25,190
+uh there's a typo there and counting
+sort that should be when u is order n
+
+2292
+00:51:25,190 --> 00:51:25,200
+sort that should be when u is order n
+ 
+
+2293
+00:51:25,200 --> 00:51:27,670
+sort that should be when u is order n
+counting sort runs in linear time and
+
+2294
+00:51:27,670 --> 00:51:27,680
+counting sort runs in linear time and
+ 
+
+2295
+00:51:27,680 --> 00:51:29,589
+counting sort runs in linear time and
+it's linear time also
+
+2296
+00:51:29,589 --> 00:51:29,599
+it's linear time also
+ 
+
+2297
+00:51:29,599 --> 00:51:31,990
+it's linear time also
+in the case of rating sort if our things
+
+2298
+00:51:31,990 --> 00:51:32,000
+in the case of rating sort if our things
+ 
+
+2299
+00:51:32,000 --> 00:51:33,109
+in the case of rating sort if our things
+are bounded
+
+2300
+00:51:33,109 --> 00:51:33,119
+are bounded
+ 
+
+2301
+00:51:33,119 --> 00:51:36,790
+are bounded
+by a polynomial in n right by n to the c
+
+2302
+00:51:36,790 --> 00:51:36,800
+by a polynomial in n right by n to the c
+ 
+
+2303
+00:51:36,800 --> 00:51:38,549
+by a polynomial in n right by n to the c
+for some constant c
+
+2304
+00:51:38,549 --> 00:51:38,559
+for some constant c
+ 
+
+2305
+00:51:38,559 --> 00:51:41,829
+for some constant c
+does that make sense all right
+
+2306
+00:51:41,829 --> 00:51:41,839
+does that make sense all right
+ 
+
+2307
+00:51:41,839 --> 00:51:45,190
+does that make sense all right
+so that's how to sort in linear time
+
+2308
+00:51:45,190 --> 00:51:45,200
+so that's how to sort in linear time
+ 
+
+2309
+00:51:45,200 --> 00:51:46,790
+so that's how to sort in linear time
+with the caveat that your numbers aren't
+
+2310
+00:51:46,790 --> 00:51:46,800
+with the caveat that your numbers aren't
+ 
+
+2311
+00:51:46,800 --> 00:51:48,790
+with the caveat that your numbers aren't
+too big okay
+
+2312
+00:51:48,790 --> 00:51:48,800
+too big okay
+ 
+
+2313
+00:51:48,800 --> 00:51:58,720
+too big okay
+see you next week
+

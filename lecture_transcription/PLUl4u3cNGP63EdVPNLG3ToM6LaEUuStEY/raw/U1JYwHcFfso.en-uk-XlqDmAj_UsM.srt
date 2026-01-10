@@ -1,0 +1,4767 @@
+1
+00:00:00,000 --> 00:00:04,472
+[SCHEET]
+[SHUTTER] [CLICK]
+
+2
+00:00:12,740 --> 00:00:15,919
+ERIC DEMAINE: Okay, welcome
+back to the land of data structures.
+
+3
+00:00:15,919 --> 00:00:21,140
+Today we continue and conclude
+our segment on binary trees.
+
+4
+00:00:21,140 --> 00:00:23,030
+So, this is the second part.
+
+5
+00:00:23,030 --> 00:00:26,179
+If you missed part one,
+go back and watch part one.
+
+6
+00:00:26,179 --> 00:00:30,649
+Last time we talked about
+binary trees in general.
+
+7
+00:00:30,649 --> 00:00:36,979
+Each node stored an
+element, as well as left
+
+8
+00:00:36,979 --> 00:00:38,570
+and right pointers
+to other nodes,
+
+9
+00:00:38,570 --> 00:00:41,420
+as well as a parent pointer
+to another node.
+
+10
+00:00:41,420 --> 00:00:43,910
+This was an example of a tree.
+
+11
+00:00:43,909 --> 00:00:45,964
+B and C are children of A.
+
+12
+00:00:45,965 --> 00:00:49,010
+A is the parent of B
+and C and also the root of the
+
+13
+00:00:49,009 --> 00:00:50,329
+entire tree.
+
+14
+00:00:50,329 --> 00:00:51,847
+We have determined the height of the node.
+
+15
+00:00:51,847 --> 00:00:53,179
+We haven't used it much yet.
+
+16
+00:00:53,179 --> 00:00:54,762
+But today we will
+use it often.
+
+17
+00:00:54,762 --> 00:00:58,460
+So remember, the height
+is drawn in red here.
+
+18
+00:00:58,460 --> 00:01:02,390
+The height of a node is the length of
+the longest descending path,
+
+19
+00:01:02,390 --> 00:01:03,230
+including edges.
+
+20
+00:01:03,229 --> 00:01:05,509
+So, B, for example,
+has a path length of 2.
+
+21
+00:01:05,510 --> 00:01:07,070
+So we write here 2.
+
+22
+00:01:07,069 --> 00:01:09,559
+You can also think
+of it as if you just
+
+23
+00:01:09,560 --> 00:01:14,600
+live in a subtree that is
+rooted in a subtree of B, B,
+
+24
+00:01:14,599 --> 00:01:17,611
+so what is the maximum
+depth of these nodes,
+
+25
+00:01:17,611 --> 00:01:19,319
+if you prefer to
+think of it that way.
+
+26
+00:01:19,319 --> 00:01:20,750
+Anyway, good.
+
+27
+00:01:20,750 --> 00:01:22,730
+Specifically,
+we have selected
+
+28
+00:01:22,730 --> 00:01:25,460
+h, the height of the
+root node, as the height of the
+
+29
+00:01:25,459 --> 00:01:27,359
+entire tree.
+
+30
+00:01:27,359 --> 00:01:29,450
+Last time we achieved that basically
+
+31
+00:01:29,450 --> 00:01:32,850
+all our operations
+were performed on the order of h times.
+
+32
+00:01:32,848 --> 00:01:37,729
+So we had subtree insertion,
+subtree deletion, subtree first
+
+33
+00:01:37,729 --> 00:01:38,270
+and last.
+
+34
+00:01:38,269 --> 00:01:40,186
+We could compute
+the predecessor and successor of a
+
+35
+00:01:40,186 --> 00:01:42,780
+node, all in about h time.
+
+36
+00:01:42,780 --> 00:01:48,170
+So while h was
+little, we were happy.
+
+37
+00:01:48,170 --> 00:01:50,509
+And remember what
+predecessor and successor mean?
+
+38
+00:01:50,509 --> 00:01:54,320
+This is about the implicit
+order in the tree, which
+
+39
+00:01:54,319 --> 00:01:57,589
+we call the traversal order,
+which is defined recursively
+
+40
+00:01:57,590 --> 00:02:02,329
+as recursively traversing the left
+subtree, then exiting the root,
+
+41
+00:02:02,329 --> 00:02:05,039
+then recursively traversing the
+right subtree.
+
+42
+00:02:05,040 --> 00:02:10,520
+So in this example, the
+traversal order is: F —
+
+43
+00:02:10,520 --> 00:02:13,130
+if you go all the way to
+the left, that was first
+
+44
+00:02:13,129 --> 00:02:14,930
+in the traversal order.
+
+45
+00:02:14,930 --> 00:02:19,430
+Then we have... okay, I'll
+make some space for myself here.
+
+46
+00:02:19,430 --> 00:02:24,140
+Then we have D,
+then we have B. Then
+
+47
+00:02:24,139 --> 00:02:26,000
+we make the right
+subtree of B, which
+
+48
+00:02:26,000 --> 00:02:30,590
+is E. Then we have
+the root, because we finished the
+
+49
+00:02:30,590 --> 00:02:32,310
+left subtree of the root.
+
+50
+00:02:32,310 --> 00:02:37,219
+So this is A. And then we have C.
+
+51
+00:02:37,219 --> 00:02:40,909
+So there is an implicit linear
+order encoded by this tree.
+
+52
+00:02:40,909 --> 00:02:42,770
+And the whole point of
+binary trees
+
+53
+00:02:42,770 --> 00:02:46,219
+is that we can efficiently
+update the tree much faster
+
+54
+00:02:46,219 --> 00:02:49,159
+than we could explicitly
+write down the order in an array
+
+55
+00:02:49,159 --> 00:02:50,129
+or something like that.
+
+56
+00:02:50,129 --> 00:02:53,478
+So binary trees allow us to do fast -
+
+57
+00:02:53,478 --> 00:02:55,519
+now, fast
+now not so fast.
+
+58
+00:02:55,520 --> 00:02:56,990
+Because everything is in order h.
+
+59
+00:02:56,990 --> 00:02:58,790
+And in the worst
+case h is linear.
+
+60
+00:02:58,789 --> 00:03:00,349
+Because we can have
+such a tree.
+
+61
+00:03:03,199 --> 00:03:05,119
+But today we're
+going to do... we're going
+
+62
+00:03:05,120 --> 00:03:07,490
+to guarantee that h is equal to log n.
+
+63
+00:03:07,490 --> 00:03:09,050
+So the goal
+today is to take
+
+64
+00:03:09,050 --> 00:03:12,080
+all these operations
+that are executed in order h times
+
+65
+00:03:12,080 --> 00:03:14,405
+and make them run the
+order log n times, simply
+
+66
+00:03:14,405 --> 00:03:16,530
+by modifying the
+data structure we've already seen.
+
+67
+00:03:16,530 --> 00:03:18,822
+So we've done a lot of the
+hard work, just a little
+
+68
+00:03:18,822 --> 00:03:21,590
+more work we need to do
+today on what's called
+
+69
+00:03:21,590 --> 00:03:25,370
+AVL trees or height balance.
+
+70
+00:03:25,370 --> 00:03:28,650
+But before we get to that, I want to
+talk a little bit more--
+
+71
+00:03:28,650 --> 00:03:30,150
+at the very end of the
+last lecture,
+
+72
+00:03:30,150 --> 00:03:32,969
+we talked about how when you have
+these subtree operations--
+
+73
+00:03:32,969 --> 00:03:36,109
+so that I can insert and
+delete in a subtree--
+
+74
+00:03:36,110 --> 00:03:38,780
+how do I actually use that to
+solve the problems that we're
+
+75
+00:03:38,780 --> 00:03:41,629
+interested in in this class, which is the
+sequence data structure and the
+
+76
+00:03:41,629 --> 00:03:42,870
+set data structure?
+
+77
+00:03:42,870 --> 00:03:47,909
+So last time we mostly talked about the
+structure of the dataset.
+
+78
+00:03:47,909 --> 00:03:50,810
+So, in general, we're going to
+define what traversal order
+
+79
+00:03:50,810 --> 00:03:53,780
+we support using a binary tree.
+
+80
+00:03:53,780 --> 00:03:58,728
+And so for a set, because
+for a set interface
+
+81
+00:03:58,728 --> 00:04:01,699
+we are interested in doing
+queries like find_next
+
+82
+00:04:01,699 --> 00:04:04,641
+and find_previous, given
+a key, if it is not there,
+
+83
+00:04:04,641 --> 00:04:06,349
+tell me the previous
+or next,
+
+84
+00:04:06,349 --> 00:04:08,719
+that is what we can
+do with binary search.
+
+85
+00:04:08,719 --> 00:04:12,169
+And so the big, cool thing
+that binary trees allow us to do is
+
+86
+00:04:12,169 --> 00:04:16,278
+if we allow the traversal order to
+always be all elements
+
+87
+00:04:16,278 --> 00:04:18,680
+stored in
+ascending key order, then we
+
+88
+00:04:18,680 --> 00:04:23,449
+actually maintain the
+order of the elements
+
+89
+00:04:23,449 --> 00:04:24,680
+in the sense of traversal order.
+
+90
+00:04:24,680 --> 00:04:27,209
+Again, we clearly don't
+keep them in order.
+
+91
+00:04:27,209 --> 00:04:29,839
+But here at the top, we
+maintain a tree that
+
+92
+00:04:29,839 --> 00:04:32,299
+represents the elements in key order.
+
+93
+00:04:32,300 --> 00:04:37,639
+So this allows us to perform a
+subtree_find operation,
+
+94
+00:04:37,639 --> 00:04:40,219
+which can be easily
+used to implement find,
+
+95
+00:04:40,220 --> 00:04:42,500
+find_previous, and so on,
+
+96
+00:04:42,500 --> 00:04:43,800
+as shown below.
+
+97
+00:04:43,800 --> 00:04:45,889
+We start from the
+root of the tree.
+
+98
+00:04:45,889 --> 00:04:48,769
+Thus, we can say that
+initially the node is equal to the root.
+
+99
+00:04:48,769 --> 00:04:52,769
+And then we can recursively
+search for key k as follows.
+
+100
+00:04:52,769 --> 00:04:56,899
+We check, okay, if
+the element at the root
+
+101
+00:04:56,899 --> 00:04:59,489
+has a key greater than k--
+
+102
+00:04:59,490 --> 00:05:00,889
+let me draw a little picture.
+
+103
+00:05:04,199 --> 00:05:08,348
+So, we're at a kind of a crossroads here.
+
+104
+00:05:08,348 --> 00:05:10,220
+This is a node.
+
+105
+00:05:10,220 --> 00:05:13,550
+And it has a left subtree
+and a right subtree.
+
+106
+00:05:13,550 --> 00:05:16,780
+And there is some
+object with some kind of key.
+
+107
+00:05:16,779 --> 00:05:20,259
+So, if the key we're looking for is
+smaller than the node element,
+
+108
+00:05:20,259 --> 00:05:23,079
+that means it's
+here, in the left subtree.
+
+109
+00:05:23,079 --> 00:05:25,509
+And so we recurse to node.left.
+
+110
+00:05:25,509 --> 00:05:27,899
+If they are equal, it
+means that this element
+
+111
+00:05:27,899 --> 00:05:29,149
+is the one we are looking for.
+
+112
+00:05:29,149 --> 00:05:30,847
+So we can just return
+it or the node,
+
+113
+00:05:30,848 --> 00:05:32,389
+depending on what
+you're looking for.
+
+114
+00:05:32,389 --> 00:05:34,689
+And if the key here is
+bigger than the key
+
+115
+00:05:34,689 --> 00:05:38,649
+we're looking for, then
+we'll turn right.
+
+116
+00:05:38,649 --> 00:05:40,569
+If you
+think about it a bit, this is
+
+117
+00:05:40,569 --> 00:05:43,599
+exactly binary
+search in an array.   Instead,
+
+118
+00:05:43,600 --> 00:05:46,120
+he just ends up
+in a tree.
+
+119
+00:05:46,120 --> 00:05:55,329
+If you think about an
+array like this,
+
+120
+00:05:55,329 --> 00:05:56,500
+what does binary search do?
+
+121
+00:05:56,500 --> 00:05:58,339
+First, look at the
+key in the middle.
+
+122
+00:05:58,339 --> 00:06:00,159
+I'm going to draw
+this as a root.
+
+123
+00:06:00,160 --> 00:06:04,060
+And then it recurses
+either on the left side,
+
+124
+00:06:04,060 --> 00:06:08,110
+which I'll draw recursively,
+or on the right side.
+
+125
+00:06:08,110 --> 00:06:10,240
+So if you
+have a perfect binary
+
+126
+00:06:10,240 --> 00:06:13,689
+tree like this, it
+simulates exactly
+
+127
+00:06:13,689 --> 00:06:15,048
+binary search on this array.
+
+128
+00:06:15,048 --> 00:06:17,589
+But we will be able to
+maintain this dynamically -
+
+129
+00:06:17,589 --> 00:06:19,689
+no longer perfectly, but close.
+
+130
+00:06:19,689 --> 00:06:23,180
+Whereas we couldn't
+keep it in order.
+
+131
+00:06:23,180 --> 00:06:27,160
+So, it's like a
+generalization of binary search
+
+132
+00:06:27,160 --> 00:06:30,670
+to work with trees
+instead of arrays.
+
+133
+00:06:30,670 --> 00:06:34,444
+And for this reason, tuned binary
+trees are called binary
+
+134
+00:06:34,444 --> 00:06:36,819
+search trees because they are a
+version of a binary search tree.
+
+135
+00:06:36,819 --> 00:06:38,449
+Therefore, there are many
+equivalent names.
+
+136
+00:06:38,449 --> 00:06:41,139
+So, a binary search tree is another
+name for a binary tree set.
+
+137
+00:06:41,139 --> 00:06:43,719
+The key thing that makes
+this algorithm work is the
+
+138
+00:06:43,720 --> 00:06:45,970
+so-called
+binary search tree property, which is that
+
+139
+00:06:45,970 --> 00:06:50,050
+all keys in the
+left subtree of a node
+
+140
+00:06:50,050 --> 00:06:54,100
+are smaller than
+the root or that node,
+
+141
+00:06:54,100 --> 00:06:57,879
+and that key is smaller than all
+keys in the right subtree.
+
+142
+00:06:57,879 --> 00:07:00,379
+And this is true recursively
+to the end.
+
+143
+00:07:00,379 --> 00:07:02,949
+Thus you prove
+that this algorithm is
+
+144
+00:07:02,949 --> 00:07:04,849
+correct by this property.
+
+145
+00:07:04,850 --> 00:07:06,170
+Why is this true?
+
+146
+00:07:06,170 --> 00:07:09,160
+Because if we can
+maintain the traversal order to be an
+
+147
+00:07:09,160 --> 00:07:12,010
+increasing
+key, then that's
+
+148
+00:07:12,009 --> 00:07:13,983
+exactly what
+traversal order means.
+
+149
+00:07:13,983 --> 00:07:16,149
+It tells you that all things
+in the left subtree
+
+150
+00:07:16,149 --> 00:07:18,069
+precede the root, which
+precedes all things
+
+151
+00:07:18,069 --> 00:07:18,944
+in the right subtree.
+
+152
+00:07:18,944 --> 00:07:23,680
+So, this property
+implies this.
+
+153
+00:07:23,680 --> 00:07:26,110
+And how do you keep things
+in ascending key order?
+
+154
+00:07:26,110 --> 00:07:27,790
+It's pretty easy.
+
+155
+00:07:27,790 --> 00:07:31,240
+If you want to insert an
+element, where does it belong?
+
+156
+00:07:31,240 --> 00:07:33,759
+Well, you do this
+search to find where it would
+
+157
+00:07:33,759 --> 00:07:35,379
+belong if it were there.
+
+158
+00:07:35,379 --> 00:07:38,259
+If it exists, you can overwrite
+the value stored with that key.
+
+159
+00:07:38,259 --> 00:07:42,392
+If not, this
+search
+
+160
+00:07:42,392 --> 00:07:43,808
+
+will fall out of the tree at some point, and this is where
+
+161
+00:07:43,810 --> 00:07:48,850
+you insert a
+new node into your tree.
+
+162
+00:07:48,850 --> 00:07:51,610
+This was described in the recitation,
+so I don't want to dwell on it.
+
+163
+00:07:51,610 --> 00:07:54,920
+What I want to focus on today
+is a different program.
+
+164
+00:07:54,920 --> 00:07:57,159
+How do we... this is for
+representing the plural, which is
+
+165
+00:07:57,159 --> 00:07:59,080
+relatively easy.
+
+166
+00:07:59,079 --> 00:08:01,959
+The challenge
+we have to address,
+
+167
+00:08:01,959 --> 00:08:03,969
+but we
+still need to work on a little more, is
+
+168
+00:08:03,970 --> 00:08:07,540
+to create binary sequence trees.
+
+169
+00:08:07,540 --> 00:08:10,787
+Let's say I have a binary
+tree, and I would like -
+
+170
+00:08:10,786 --> 00:08:12,370
+we mentioned at
+the end of last time - for the
+
+171
+00:08:12,370 --> 00:08:15,639
+traversal order of my tree to
+
+172
+00:08:15,639 --> 00:08:20,469
+be the
+order of the sequence, the order that I'm
+
+173
+00:08:20,470 --> 00:08:22,960
+trying to represent that is
+changed by operations
+
+174
+00:08:22,959 --> 00:08:26,379
+like insert_at.
+
+175
+00:08:26,379 --> 00:08:28,473
+So I would just like to
+do the same.
+
+176
+00:08:28,473 --> 00:08:30,639
+But now I have to think
+about how I do the search,
+
+177
+00:08:30,639 --> 00:08:32,649
+how I do the insert_at,
+etc.
+
+178
+00:08:32,649 --> 00:08:36,788
+And here is the algorithm for what
+I would like to work on.
+
+179
+00:08:36,788 --> 00:08:40,058
+But it wo
+n't quite work yet.
+
+180
+00:08:40,058 --> 00:08:45,699
+So, suppose I give you a
+subtree defined by a node like this.
+
+181
+00:08:45,700 --> 00:08:49,060
+So, there are all the
+descendants of this node.
+
+182
+00:08:49,059 --> 00:08:52,359
+And I would like to know what the
+order of traversal of
+
+183
+00:08:52,360 --> 00:08:55,570
+this subtree is, which
+starts here and ends here,
+
+184
+00:08:55,570 --> 00:08:58,250
+and the root would be
+somewhere in the middle.
+
+185
+00:08:58,250 --> 00:09:01,100
+Give me the ith node.
+
+186
+00:09:01,100 --> 00:09:03,430
+So if I ask that i is
+0, I want to get
+
+187
+00:09:03,429 --> 00:09:05,229
+that leftmost child.
+
+188
+00:09:05,230 --> 00:09:08,800
+If I ask for i to be equal to
+the size of the tree minus 1,
+
+189
+00:09:08,799 --> 00:09:11,379
+I want to get the
+rightmost child.
+
+190
+00:09:11,379 --> 00:09:13,835
+This was the first and
+last in the subtree
+
+191
+00:09:13,835 --> 00:09:14,710
+we were talking about.
+
+192
+00:09:14,710 --> 00:09:16,840
+But we know how to find the
+first and last.
+
+193
+00:09:16,840 --> 00:09:18,220
+Just go left or go right.
+
+194
+00:09:18,220 --> 00:09:22,180
+But we don't know how
+to find the ith node
+
+195
+00:09:22,179 --> 00:09:26,109
+because the goal right now is time h
+, not log n.
+
+196
+00:09:26,110 --> 00:09:30,399
+The idea is that
+size matters.
+
+197
+00:09:30,399 --> 00:09:34,069
+[Laughs] Sorry if
+you heard otherwise.
+
+198
+00:09:34,070 --> 00:09:36,940
+So, in particular,
+I mentioned size
+
+199
+00:09:36,940 --> 00:09:40,300
+when I was talking about the
+last node in the sequence.
+
+200
+00:09:40,299 --> 00:09:44,859
+The index of this node is equal to
+the size of the subtree minus 1.
+
+201
+00:09:44,860 --> 00:09:51,250
+So let's define
+the size of a node
+
+202
+00:09:51,250 --> 00:09:57,309
+as the number of
+nodes in its subtree--
+
+203
+00:09:57,309 --> 00:09:59,049
+we called
+it a subtree(node)--
+
+204
+00:10:06,509 --> 00:10:09,100
+including the node itself.
+
+205
+00:10:09,100 --> 00:10:11,340
+So, if I somehow
+knew the size, that
+
+206
+00:10:11,340 --> 00:10:13,590
+seems important for
+understanding indices.
+
+207
+00:10:13,590 --> 00:10:16,530
+Let's just assume
+I knew this magically
+
+208
+00:10:16,529 --> 00:10:17,279
+in constant time.
+
+209
+00:10:19,980 --> 00:10:23,200
+So I'm saying that
+the size of the left subtree--
+
+210
+00:10:23,200 --> 00:10:25,350
+so why don't I expand
+this diagram a little bit?
+
+211
+00:10:29,059 --> 00:10:31,909
+So, we have a node, just like before.
+
+212
+00:10:31,909 --> 00:10:36,120
+But we have a left subtree
+and a right subtree.
+
+213
+00:10:36,120 --> 00:10:37,700
+So this node here is node.left.
+
+214
+00:10:37,700 --> 00:10:39,080
+This node here is node.right.
+
+215
+00:10:39,080 --> 00:10:42,500
+They may not exist, but let's
+ignore these exceptional cases for now
+
+216
+00:10:42,500 --> 00:10:43,759
+.
+
+217
+00:10:43,759 --> 00:10:47,189
+Suppose we knew not
+only the size of the node,
+
+218
+00:10:47,190 --> 00:10:49,280
+but also the
+size of node.left,
+
+219
+00:10:49,279 --> 00:10:53,779
+so that's the size of the
+tree on the left.
+
+220
+00:10:53,779 --> 00:10:55,069
+I'm going to call it nL.
+
+221
+00:10:55,070 --> 00:10:59,000
+So, let's assume there
+are nL nodes here.
+
+222
+00:10:59,000 --> 00:11:03,769
+I claim that this allows me to perform the
+equivalent of binary search.
+
+223
+00:11:03,769 --> 00:11:06,439
+Because I'm looking for
+some index i.
+
+224
+00:11:06,440 --> 00:11:10,737
+And if i is less than nL, then I
+know it has to be down here.
+
+225
+00:11:10,736 --> 00:11:12,319
+For example, if i
+is 0, it
+
+226
+00:11:12,320 --> 00:11:16,490
+will be in the left subtree
+if nL is greater than 0,
+
+227
+00:11:16,490 --> 00:11:16,990
+right?
+
+228
+00:11:16,990 --> 00:11:19,190
+So this is the check.
+
+229
+00:11:19,190 --> 00:11:21,080
+If i is less than nL,
+I'm going to recurse
+
+230
+00:11:21,080 --> 00:11:25,860
+left, call subtree
+in node.left, i.
+
+231
+00:11:25,860 --> 00:11:27,830
+That's what's written here.
+
+232
+00:11:27,830 --> 00:11:31,430
+If i is equal to nL, if you think
+about it for a second-- so nL
+
+233
+00:11:31,429 --> 00:11:33,149
+is the number of nodes here.
+
+234
+00:11:33,149 --> 00:11:37,340
+This means that this
+node has index nL.
+
+235
+00:11:37,340 --> 00:11:39,500
+The index of this node is nL.
+
+236
+00:11:39,500 --> 00:11:42,769
+So if i is-- if
+the only index we're looking for
+
+237
+00:11:42,769 --> 00:11:44,779
+is that, then we
+just return that node.
+
+238
+00:11:44,779 --> 00:11:46,459
+We are finished.
+
+239
+00:11:46,460 --> 00:11:48,920
+Otherwise, i is
+greater than nL.
+
+240
+00:11:48,919 --> 00:11:50,929
+And this means that
+the node we are looking for
+
+241
+00:11:50,929 --> 00:11:54,589
+is in the correct subtree,
+because it is after the root.
+
+242
+00:11:54,590 --> 00:11:56,263
+Again, here's what it means.
+
+243
+00:11:56,263 --> 00:11:57,680
+This is what the
+order of passage means.
+
+244
+00:11:57,679 --> 00:12:00,829
+So if we define this
+as the order of the sequence,
+
+245
+00:12:00,830 --> 00:12:03,920
+then we know that all the things
+that come after this node, which
+
+246
+00:12:03,919 --> 00:12:06,120
+is the index nL, must be here.
+
+247
+00:12:06,120 --> 00:12:08,870
+Now, when we recurse here,
+our numbering system changes.
+
+248
+00:12:08,870 --> 00:12:12,320
+Because for node here is 0.
+
+249
+00:12:12,320 --> 00:12:15,060
+And then for node.right here.
+
+250
+00:12:15,059 --> 00:12:17,629
+So we need to do a little bit of
+subtraction here,
+
+251
+00:12:17,629 --> 00:12:19,309
+so when we go
+to the right, we
+
+252
+00:12:19,309 --> 00:12:22,579
+take i minus nL minus 1--
+minus nL for these guys,
+
+253
+00:12:22,580 --> 00:12:25,925
+minus 1 for the root node.
+
+254
+00:12:25,924 --> 00:12:27,799
+And that will give us the
+index that we're looking for
+
+255
+00:12:27,799 --> 00:12:30,979
+in that subtree.
+
+256
+00:12:30,980 --> 00:12:34,399
+So, what I'm saying is that this
+algorithm is basically the same
+
+257
+00:12:34,399 --> 00:12:35,600
+as this algorithm.
+
+258
+00:12:35,600 --> 00:12:39,080
+But keys are used here because
+we are dealing with a set,
+
+259
+00:12:39,080 --> 00:12:41,450
+and in sets we assume that
+elements have keys.
+
+260
+00:12:41,450 --> 00:12:43,520
+Here, objects don't
+necessarily have keys.  In
+
+261
+00:12:43,519 --> 00:12:45,809
+fact, we
+don't touch the objects at all.
+
+262
+00:12:45,809 --> 00:12:49,822
+We're just asking what is the ith
+element in my sequence, which is the
+
+263
+00:12:49,822 --> 00:12:52,490
+same as what is the
+ith element in my traversal order,
+
+264
+00:12:52,490 --> 00:12:54,560
+which is the same as
+asking what is the ith
+
+265
+00:12:54,559 --> 00:12:56,599
+node in the traversal order?
+
+266
+00:12:56,600 --> 00:12:58,310
+And this algorithm
+gives you that
+
+267
+00:12:58,309 --> 00:13:01,089
+exactly the same
+in order of h time.
+
+268
+00:13:03,547 --> 00:13:05,629
+I'm not going to show
+you all the operations now.
+
+269
+00:13:05,629 --> 00:13:11,929
+But you can use subtree_at
+to implement get_at set_at.
+
+270
+00:13:11,929 --> 00:13:15,049
+You simply find the corresponding
+node and return the element
+
+271
+00:13:15,049 --> 00:13:17,179
+or change the element.
+
+272
+00:13:17,179 --> 00:13:19,069
+Or you can use it to...
+
+273
+00:13:19,070 --> 00:13:21,950
+most importantly, you can use
+it to do insert_at delete_at.
+
+274
+00:13:21,950 --> 00:13:25,090
+This is a new thing that we have
+never been able to do before.
+
+275
+00:13:25,090 --> 00:13:25,970
+what do you do
+
+276
+00:13:25,970 --> 00:13:28,670
+Like here, if I
+try to insert an element,
+
+277
+00:13:28,669 --> 00:13:33,299
+I look for that
+element here.
+
+278
+00:13:33,299 --> 00:13:36,709
+So, for example, if I try to insert
+i, I look for i.
+
+279
+00:13:36,710 --> 00:13:43,490
+And then for insert_at i
+you need to add a new element directly
+
+280
+00:13:43,490 --> 00:13:44,990
+before that.
+
+281
+00:13:44,990 --> 00:13:47,870
+And conveniently,
+we already have...
+
+282
+00:13:47,870 --> 00:13:50,810
+I didn't mention it, but we
+have a subtree insertion.
+
+283
+00:13:50,809 --> 00:13:55,469
+We had two versions--
+before and after.
+
+284
+00:13:55,470 --> 00:13:59,269
+I think we covered after which
+I use the successor
+
+285
+00:13:59,269 --> 00:14:01,129
+before using the predecessor.
+
+286
+00:14:01,129 --> 00:14:04,279
+But we can just
+call subtree insert
+
+287
+00:14:04,279 --> 00:14:09,470
+before on that node, and
+boom, we'll add a
+
+288
+00:14:09,470 --> 00:14:12,230
+new element right before it.
+
+289
+00:14:12,230 --> 00:14:15,710
+And wonderfully, so
+magically, somehow, we
+
+290
+00:14:15,710 --> 00:14:18,080
+inserted it into the
+middle of this sequence.
+
+291
+00:14:18,080 --> 00:14:21,980
+And all indexes are updated
+because I don't store
+
+292
+00:14:21,980 --> 00:14:23,210
+indexes.
+
+293
+00:14:23,210 --> 00:14:25,730
+Instead, to search for
+the element at index i,
+
+294
+00:14:25,730 --> 00:14:28,820
+I use a search algorithm.
+
+295
+00:14:28,820 --> 00:14:31,460
+But there is a problem.
+
+296
+00:14:31,460 --> 00:14:32,300
+What's the problem? It
+
+297
+00:14:36,519 --> 00:14:39,189
+seems too
+good to be true.
+
+298
+00:14:39,190 --> 00:14:41,500
+I insert into the
+middle of this tree,
+
+299
+00:14:41,500 --> 00:14:44,350
+and then somehow
+magically I can search and still
+
+300
+00:14:44,350 --> 00:14:47,350
+find the ith element, even if
+all the indices to the right
+
+301
+00:14:47,350 --> 00:14:48,759
+of that element are incremented by 1.
+
+302
+00:14:52,580 --> 00:14:54,720
+That's almost true.
+
+303
+00:14:54,720 --> 00:14:55,220
+Respond?
+
+304
+00:14:58,019 --> 00:14:59,279
+Yes?
+
+305
+00:14:59,279 --> 00:15:00,754
+AUDIENCE: [INAUDIBLE]
+
+306
+00:15:00,754 --> 00:15:03,129
+ERIC DEMAIN: Because we
+need to update the dimensions, right.
+
+307
+00:15:03,129 --> 00:15:06,350
+I didn't say how do I calculate
+the size of the left subtree?
+
+308
+00:15:06,350 --> 00:15:07,659
+So that's the next topic.
+
+309
+00:15:11,950 --> 00:15:12,850
+We're almost done.
+
+310
+00:15:12,850 --> 00:15:14,509
+This will really work.
+
+311
+00:15:14,509 --> 00:15:16,779
+This is really great.
+
+312
+00:15:16,779 --> 00:15:18,789
+But for this to work,
+we need something
+
+313
+00:15:18,789 --> 00:15:22,836
+called
+subtree expansion,
+
+314
+00:15:22,836 --> 00:15:23,919
+which I'll talk about in general.
+
+315
+00:15:23,919 --> 00:15:25,389
+And then we'll
+apply it to the size.
+
+316
+00:15:30,370 --> 00:15:32,590
+So, the idea behind
+subtree augmentation
+
+317
+00:15:32,590 --> 00:15:37,899
+is that each node
+in our binary tree
+
+318
+00:15:37,899 --> 00:15:45,100
+can store a constant
+number of additional fields.
+
+319
+00:15:45,100 --> 00:15:46,779
+why not
+
+320
+00:15:46,779 --> 00:15:49,750
+And specifically,
+if these fields
+
+321
+00:15:49,750 --> 00:15:51,610
+belong to a certain type,
+
+322
+00:15:51,610 --> 00:15:53,259
+maybe I'll call them properties.
+
+323
+00:15:57,700 --> 00:16:10,030
+I will define
+a property of a subtree
+
+324
+00:16:10,029 --> 00:16:21,329
+as something
+that can be computed
+
+325
+00:16:21,330 --> 00:16:25,520
+from the properties of the child
+nodes.
+
+326
+00:16:28,740 --> 00:16:30,779
+So I have to say it's a
+knot.
+
+327
+00:16:37,230 --> 00:16:42,029
+So, the child elements are
+node.left and node.right.
+
+328
+00:16:42,029 --> 00:16:44,654
+You can also access a constant
+number of other things,
+
+329
+00:16:44,654 --> 00:16:47,620
+such as the node itself.
+
+330
+00:16:47,620 --> 00:16:49,139
+But the essence of the
+subtree property
+
+331
+00:16:49,139 --> 00:16:50,490
+is that it is directed downwards.
+
+332
+00:16:50,490 --> 00:16:57,360
+If I have a node here
+, and I want to
+
+333
+00:16:57,360 --> 00:17:00,750
+compute some
+property on it--
+
+334
+00:17:00,750 --> 00:17:06,000
+call it, we want to
+store P of the node--
+
+335
+00:17:06,000 --> 00:17:09,269
+and let's say we already
+know P here,
+
+336
+00:17:09,269 --> 00:17:11,910
+the property computed
+for the left subtree
+
+337
+00:17:11,910 --> 00:17:13,710
+or for the left
+node, and we already
+
+338
+00:17:13,710 --> 00:17:17,970
+know the property for the
+right node, then I would like that to be
+
+339
+00:17:17,970 --> 00:17:20,367
+
+computable in constant time.
+
+340
+00:17:26,160 --> 00:17:29,750
+So I can calculate the P of this
+node given the P of the left node
+
+341
+00:17:29,750 --> 00:17:30,869
+and the P of the right node.
+
+342
+00:17:30,869 --> 00:17:32,339
+This is a property of a subtree.
+
+343
+00:17:32,339 --> 00:17:38,339
+Now, in particular, size
+is a property of the substrate.
+
+344
+00:17:38,339 --> 00:17:39,509
+why
+
+345
+00:17:39,509 --> 00:17:43,829
+Because I can write
+this type of iteration,
+
+346
+00:17:43,829 --> 00:17:49,281
+node.size is equal to
+node.left.size--
+
+347
+00:17:49,281 --> 00:17:52,470
+that's really boring to write--
+
+348
+00:17:52,470 --> 00:17:59,579
+plus node.right.size, plus?
+
+349
+00:18:03,789 --> 00:18:05,954
+1, thank you.
+
+350
+00:18:05,954 --> 00:18:11,184
+The size of the entire
+subtree, called a node here,
+
+351
+00:18:11,184 --> 00:18:13,809
+is equal to the size of the left subtree
+plus the size of the right subtree
+
+352
+00:18:13,809 --> 00:18:17,289
+plus 1 for the node itself.
+
+353
+00:18:17,289 --> 00:18:18,865
+So, this is the update rule.
+
+354
+00:18:18,865 --> 00:18:20,529
+It takes constant time to evaluate.
+
+355
+00:18:20,529 --> 00:18:22,990
+These are two editions.
+
+356
+00:18:22,990 --> 00:18:27,250
+Sorry, my T's look
+like plus signs.
+
+357
+00:18:27,250 --> 00:18:29,390
+I'll add
+a few more pluses.
+
+358
+00:18:35,750 --> 00:18:38,029
+So, we're just summarizing
+these three things.
+
+359
+00:18:38,029 --> 00:18:40,019
+Boom, we can get node.size.
+
+360
+00:18:40,019 --> 00:18:46,980
+So I argue that as long as
+my property has this feature,
+
+361
+00:18:46,980 --> 00:18:51,680
+I can maintain it dynamically
+by changing the tree.
+
+362
+00:18:51,680 --> 00:18:53,721
+Now this is a bit of a
+preliminary reference
+
+363
+00:18:53,721 --> 00:18:55,430
+because we haven't
+said exactly how we're
+
+364
+00:18:55,430 --> 00:18:56,638
+going to change the tree yet.
+
+365
+00:18:56,637 --> 00:18:57,709
+But the question?
+
+366
+00:18:57,710 --> 00:19:01,100
+AUDIENCE: If node.size is
+recursive,
+
+367
+00:19:01,099 --> 00:19:03,289
+how does this happen
+in constant time?
+
+368
+00:19:03,289 --> 00:19:05,149
+Won't this
+happen [INAUDIBLE]??
+
+369
+00:19:05,150 --> 00:19:06,275
+ERIC DEMINE: Why is that...
+
+370
+00:19:06,275 --> 00:19:07,290
+Okay, good question.
+
+371
+00:19:07,289 --> 00:19:09,079
+
+So you can think of
+
+372
+00:19:09,079 --> 00:19:10,849
+it as recursion,
+which gives you a
+
+373
+00:19:10,849 --> 00:19:12,750
+recursive algorithm.
+
+374
+00:19:12,750 --> 00:19:14,779
+So I wrote, but I didn't
+write.
+
+375
+00:19:14,779 --> 00:19:18,139
+But I could write that
+the size of a node is equal to this-- the
+
+376
+00:19:18,140 --> 00:19:19,910
+size of node.left
+plus-- and that would
+
+377
+00:19:19,910 --> 00:19:23,029
+give you a linear-time algorithm
+for calculating the size.
+
+378
+00:19:23,029 --> 00:19:24,710
+And if you
+don't have any information,
+
+379
+00:19:24,710 --> 00:19:27,218
+you would.
+
+380
+00:19:27,218 --> 00:19:28,509
+And that would be very painful.
+
+381
+00:19:28,509 --> 00:19:30,426
+So that would make this
+algorithm very slow.
+
+382
+00:19:30,426 --> 00:19:33,859
+If I call size as a
+recursive function, that's bad.
+
+383
+00:19:33,859 --> 00:19:36,409
+Instead, I
+store the dimensions
+
+384
+00:19:36,410 --> 00:19:41,509
+on each individual node
+and pre-calculate that.
+
+385
+00:19:41,509 --> 00:19:46,220
+Actually, I'll
+define the size of the node in...
+
+386
+00:19:46,220 --> 00:19:48,440
+this is a
+mathematical definition.
+
+387
+00:19:48,440 --> 00:19:50,000
+But the algorithm
+for this function
+
+388
+00:19:50,000 --> 00:19:53,599
+will only
+return node.size.
+
+389
+00:19:53,599 --> 00:19:55,609
+So it's constant time.
+
+390
+00:19:55,609 --> 00:19:58,099
+So the challenge is that I
+have to keep these dimensions up to date
+
+391
+00:19:58,099 --> 00:20:00,469
+, no matter what
+I do with the tree.
+
+392
+00:20:00,470 --> 00:20:02,450
+And you can
+look back at the last lecture
+
+393
+00:20:02,450 --> 00:20:06,500
+and see, okay, what all the
+changes did I make to the tree?
+
+394
+00:20:06,500 --> 00:20:09,619
+We only made changes
+during insertion and deletion.
+
+395
+00:20:09,619 --> 00:20:16,939
+And I'll just tell you,
+when we were inserting and deleting,
+
+396
+00:20:16,940 --> 00:20:22,640
+what they
+ended up doing was
+
+397
+00:20:22,640 --> 00:20:29,090
+they were adding or removing
+a leaf from the tree.
+
+398
+00:20:35,049 --> 00:20:39,169
+Remember that the leaf was a
+node with no children.
+
+399
+00:20:39,170 --> 00:20:42,730
+So let's just think about it, if
+I add a new leaf to the tree--
+
+400
+00:20:42,730 --> 00:20:45,440
+here's the tree, let's say
+I add a leaf here--
+
+401
+00:20:45,440 --> 00:20:48,160
+what subtrees are going to change?
+
+402
+00:20:48,160 --> 00:20:52,570
+Well, what subtrees
+contain this node?
+
+403
+00:20:52,569 --> 00:20:54,039
+This is actually a new subtree.
+
+404
+00:20:54,039 --> 00:20:58,480
+Then it is in its parent subtree, in
+its grandparent subtree,
+
+405
+00:20:58,480 --> 00:21:00,970
+and in the general subtree.
+
+406
+00:21:00,970 --> 00:21:04,240
+In general, these nodes
+are called ancestors of
+
+407
+00:21:04,240 --> 00:21:06,250
+this node that we added.
+
+408
+00:21:06,250 --> 00:21:07,930
+And these are the ones
+that are being updated.
+
+409
+00:21:07,930 --> 00:21:10,360
+This subtree has
+not changed.
+
+410
+00:21:10,359 --> 00:21:11,559
+The size has not changed.
+
+411
+00:21:11,559 --> 00:21:13,769
+And since this is a
+property of the subtree,
+
+412
+00:21:13,769 --> 00:21:15,519
+no property of the subtree will
+change here,
+
+413
+00:21:15,519 --> 00:21:18,369
+since the subtree
+was intact.
+
+414
+00:21:18,369 --> 00:21:22,629
+So when I touch this
+guy, I just need to
+
+415
+00:21:22,630 --> 00:21:24,610
+update the
+subtree property here,
+
+416
+00:21:24,609 --> 00:21:25,990
+update the
+subtree property here,
+
+417
+00:21:25,990 --> 00:21:27,190
+update the subtree property here.
+
+418
+00:21:27,190 --> 00:21:28,356
+How many are there?
+
+419
+00:21:32,220 --> 00:21:33,730
+Yes?
+
+420
+00:21:33,730 --> 00:21:36,500
+h-- I will say the order h to be safe.
+
+421
+00:21:36,500 --> 00:21:40,089
+But I think that's exactly it.
+
+422
+00:21:40,089 --> 00:21:42,609
+Likewise, when I delete a
+leaf, the same thing happens -
+
+423
+00:21:42,609 --> 00:21:44,829
+if I delete that leaf, the
+subtrees
+
+424
+00:21:44,829 --> 00:21:46,869
+that are changed are
+its former ancestors.
+
+425
+00:21:51,430 --> 00:22:01,360
+Cool, so we're going to
+update these ancestors of order h
+
+426
+00:22:01,359 --> 00:22:13,769
+in order up the tree.
+
+427
+00:22:13,769 --> 00:22:15,950
+So what do I mean by update?
+
+428
+00:22:15,950 --> 00:22:18,740
+I mean the application of this rule.   As
+
+429
+00:22:18,740 --> 00:22:21,809
+for size, this is the rule.
+
+430
+00:22:21,809 --> 00:22:23,539
+But in general the
+subtree property
+
+431
+00:22:23,539 --> 00:22:26,250
+gives me an update rule
+that takes constant time.
+
+432
+00:22:26,250 --> 00:22:28,819
+And so I'm going to
+apply this update rule
+
+433
+00:22:28,819 --> 00:22:32,569
+to this node, which will fix
+all the properties that are
+
+434
+00:22:32,569 --> 00:22:33,559
+stored there.  There
+
+435
+00:22:33,559 --> 00:22:35,129
+may be more
+than one property.
+
+436
+00:22:35,130 --> 00:22:36,630
+And then I'll apply
+that to this node.
+
+437
+00:22:36,630 --> 00:22:40,040
+And since this is already
+correct by induction,
+
+438
+00:22:40,039 --> 00:22:42,470
+and it's already correct
+because I didn't touch this
+
+439
+00:22:42,470 --> 00:22:44,029
+subtree-- it hasn't changed--
+
+440
+00:22:44,029 --> 00:22:46,789
+then I can update
+the value at this node-- the
+
+441
+00:22:46,789 --> 00:22:49,159
+property at this
+node in constant time.
+
+442
+00:22:49,160 --> 00:22:51,200
+Then I will update this one.
+
+443
+00:22:51,200 --> 00:22:53,468
+And since this
+is already correct by induction,
+
+444
+00:22:53,468 --> 00:22:55,759
+and this is already
+correct because this subtree is
+
+445
+00:22:55,759 --> 00:22:58,879
+immutable, I can
+correctly update the property here
+
+446
+00:22:58,880 --> 00:23:00,500
+in constant time.
+
+447
+00:23:00,500 --> 00:23:03,170
+So when I
+change the order h times,
+
+448
+00:23:03,170 --> 00:23:06,200
+because I make h calls to
+this constant-time algorithm,
+
+449
+00:23:06,200 --> 00:23:11,569
+I can update a constant
+number of subtree properties.
+
+450
+00:23:11,569 --> 00:23:12,619
+This is very powerful.
+
+451
+00:23:12,619 --> 00:23:14,659
+Extending the data structure is
+extremely useful.
+
+452
+00:23:14,660 --> 00:23:16,160
+You will use it for
+your task set.
+
+453
+00:23:16,160 --> 00:23:19,080
+We will use it again today.
+
+454
+00:23:19,079 --> 00:23:22,549
+Let me give you some examples of
+subtree properties.
+
+455
+00:23:27,980 --> 00:23:35,059
+They can be-- common ones are,
+for example, the sum, or the product,
+
+456
+00:23:35,059 --> 00:23:42,289
+or the minimum, or the
+maximum, or the sum of squares,
+
+457
+00:23:42,289 --> 00:23:50,089
+or all sorts of
+things, of some characteristics of
+
+458
+00:23:50,089 --> 00:23:52,054
+each node in the subtree.
+
+459
+00:23:57,859 --> 00:24:01,309
+In fact, the size of a subtree is an
+example of such a thing.
+
+460
+00:24:01,309 --> 00:24:05,990
+This is the sum of all nodes
+in the subtree of value 1.
+
+461
+00:24:05,990 --> 00:24:08,509
+This is another way
+to count the number of nodes.
+
+462
+00:24:08,509 --> 00:24:10,460
+But can you also
+say what is the sum of the
+
+463
+00:24:10,460 --> 00:24:11,697
+keys in these nodes?
+
+464
+00:24:11,696 --> 00:24:14,029
+Or can you tell me what the
+maximum key is in these nodes?
+
+465
+00:24:14,029 --> 00:24:21,737
+Or can you tell me what the
+maximum value is at these nodes?
+
+466
+00:24:21,737 --> 00:24:22,820
+You can take any property.
+
+467
+00:24:22,819 --> 00:24:23,899
+It shouldn't be key.
+
+468
+00:24:23,900 --> 00:24:25,775
+It doesn't have to be
+anything specific.
+
+469
+00:24:25,775 --> 00:24:26,730
+This is very powerful.
+
+470
+00:24:26,730 --> 00:24:28,807
+You can take all the sums,
+products, and maintain them
+
+471
+00:24:28,807 --> 00:24:30,349
+as long as they
+face down,
+
+472
+00:24:30,349 --> 00:24:33,889
+as long as you
+only think about the subtree.
+
+473
+00:24:33,890 --> 00:24:38,860
+Some examples of things
+you can't support are
+
+474
+00:24:41,880 --> 00:24:45,345
+no node index.
+
+475
+00:24:48,480 --> 00:24:51,750
+So, if you get too
+excited about augmentation,
+
+476
+00:24:51,750 --> 00:24:54,150
+you might think, oh,
+I could do anything.
+
+477
+00:24:54,150 --> 00:24:56,850
+I needed to support
+subtree_at, or
+
+478
+00:24:56,849 --> 00:24:59,369
+let's say get_at
+globally, I wanted
+
+479
+00:24:59,369 --> 00:25:01,500
+to know what is the ith
+node in my tree?
+
+480
+00:25:01,500 --> 00:25:03,690
+Well, I'll just use a
+data structure extension
+
+481
+00:25:03,690 --> 00:25:09,240
+and store in each node
+its index from 0 to n minus 1.
+
+482
+00:25:09,240 --> 00:25:11,370
+I can't maintain
+that efficiently.
+
+483
+00:25:11,369 --> 00:25:13,889
+Because if I insert
+at the beginning of
+
+484
+00:25:13,890 --> 00:25:18,340
+my traversal order, then
+all the indices will change.
+
+485
+00:25:18,339 --> 00:25:20,909
+So, this is an example of editing.
+
+486
+00:25:20,910 --> 00:25:23,529
+So if I insert a
+new node here,
+
+487
+00:25:23,529 --> 00:25:25,649
+this guy's index
+was 0, now it's 1.
+
+488
+00:25:25,650 --> 00:25:27,780
+This guy's index
+was 1, now it's 2.
+
+489
+00:25:27,779 --> 00:25:29,430
+It was 2, now
+it's 3, and so on.
+
+490
+00:25:29,430 --> 00:25:31,380
+Each node changes its index.
+
+491
+00:25:31,380 --> 00:25:33,750
+Index is not
+a property of a subtree,
+
+492
+00:25:33,750 --> 00:25:35,279
+so we cannot support it.
+
+493
+00:25:35,279 --> 00:25:37,497
+Since it depends on all
+the nodes in the tree.
+
+494
+00:25:37,497 --> 00:25:39,330
+Or it depends on all
+the nodes on the left —
+
+495
+00:25:39,329 --> 00:25:40,899
+all the predecessors.
+
+496
+00:25:40,900 --> 00:25:43,440
+So, for example,
+this guy's index depends
+
+497
+00:25:43,440 --> 00:25:46,140
+on the number of nodes
+here on the left that aren't
+
+498
+00:25:46,140 --> 00:25:47,980
+in the subtree of this node.
+
+499
+00:25:47,980 --> 00:25:50,400
+So you
+have to be careful here.
+
+500
+00:25:50,400 --> 00:25:52,630
+Do not use global
+tree properties.
+
+501
+00:25:52,630 --> 00:25:57,760
+You can only use
+subtree properties.
+
+502
+00:25:57,759 --> 00:26:01,754
+Another example is depth.
+
+503
+00:26:01,755 --> 00:26:08,220
+Depth is annoying to maintain,
+but it's not yet clear why.
+
+504
+00:26:08,220 --> 00:26:09,779
+We'll see that in a moment.
+
+505
+00:26:14,609 --> 00:26:20,219
+The rest of today is dedicated to
+the transition from order h to the order
+
+506
+00:26:20,220 --> 00:26:23,769
+n log, which
+this slide shows us.
+
+507
+00:26:23,769 --> 00:26:26,460
+So, for now, you have to
+believe that we can perform all operations on the
+
+508
+00:26:26,460 --> 00:26:30,180
+sequence data structure
+in order h,
+
+509
+00:26:30,180 --> 00:26:33,130
+except for construction and iteration,
+which take linear time,
+
+510
+00:26:33,130 --> 00:26:36,750
+and that we can perform all
+operations in order h.   time,
+
+511
+00:26:36,750 --> 00:26:38,460
+excluding assembly and
+iteration, which take
+
+512
+00:26:38,460 --> 00:26:40,620
+n log n and n respectively.
+
+513
+00:26:40,619 --> 00:26:50,789
+And our goal
+now is to relate h to log n.
+
+514
+00:26:50,789 --> 00:26:53,670
+We know that this is possible
+at some level
+
+515
+00:26:53,670 --> 00:26:57,450
+because there are trees with
+logarithmic height.
+
+516
+00:26:57,450 --> 00:27:00,565
+This is the
+perfect tree.
+
+517
+00:27:00,565 --> 00:27:02,190
+But we also know that we
+have to be careful
+
+518
+00:27:02,190 --> 00:27:04,320
+because there are bad
+trees, like this chain.
+
+519
+00:27:07,170 --> 00:27:15,140
+So, if h is equal to log n, we call
+it a balanced binary tree.
+
+520
+00:27:19,430 --> 00:27:21,200
+There are many
+balanced binary trees in the world
+
+521
+00:27:21,200 --> 00:27:24,302
+, maybe
+a dozen or two -
+
+522
+00:27:24,301 --> 00:27:25,759
+many different
+data structures.
+
+523
+00:27:25,759 --> 00:27:26,259
+Question?
+
+524
+00:27:26,259 --> 00:27:28,825
+AUDIENCE: [INAUDIBLE]
+You said not to
+
+525
+00:27:28,825 --> 00:27:30,932
+think about things
+on a global level,
+
+526
+00:27:30,932 --> 00:27:32,432
+so we'll think about
+them [INAUDIBLE].
+
+527
+00:27:32,432 --> 00:27:34,382
+Can you explain what
+that means a little more?
+
+528
+00:27:34,382 --> 00:27:35,840
+ERIC DEMAIN: Okay,
+what does it mean for a
+
+529
+00:27:35,839 --> 00:27:40,519
+property to be local
+to a subtree, rather than global?
+
+530
+00:27:40,519 --> 00:27:43,075
+The best answer is
+this definition.
+
+531
+00:27:43,075 --> 00:27:45,200
+But this may not be the
+most intuitive definition.
+
+532
+00:27:45,200 --> 00:27:46,033
+That's what I mean.
+
+533
+00:27:46,032 --> 00:27:48,781
+Something that can be calculated
+simply by knowing information
+
+534
+00:27:48,781 --> 00:27:50,240
+about your left
+and right children,
+
+535
+00:27:50,240 --> 00:27:52,220
+here is the value of
+such a property.
+
+536
+00:27:52,220 --> 00:27:54,595
+And that's the only thing
+you're allowed to support.
+
+537
+00:27:54,595 --> 00:27:57,319
+Because it's the
+only thing
+
+538
+00:27:57,319 --> 00:28:00,500
+that's easy to update by
+going this route.
+
+539
+00:28:00,500 --> 00:28:06,049
+And the contrast is that a
+global property, like an index,
+
+540
+00:28:06,049 --> 00:28:08,000
+is global,
+specifically because I
+
+541
+00:28:08,000 --> 00:28:12,140
+can make one change, add one
+node, and all
+
+542
+00:28:12,140 --> 00:28:13,030
+the properties of the node will change.
+
+543
+00:28:13,029 --> 00:28:15,470
+So this is an extreme
+example of global.
+
+544
+00:28:15,470 --> 00:28:20,180
+We want to have this very
+specific notion of local
+
+545
+00:28:20,180 --> 00:28:23,570
+because it is something we can
+afford to enumerate.
+
+546
+00:28:23,569 --> 00:28:24,919
+I hope this clarifies things.
+
+547
+00:28:24,920 --> 00:28:27,008
+Yes?
+
+548
+00:28:27,008 --> 00:28:31,630
+AUDIENCE: Doesn't size
+work with this [INAUDIBLE]??
+
+549
+00:28:31,630 --> 00:28:33,700
+ERIC DEMINE: You're
+right, if we add...
+
+550
+00:28:33,700 --> 00:28:34,255
+oh, no.
+
+551
+00:28:34,255 --> 00:28:35,380
+Okay, let's think about it.
+
+552
+00:28:35,380 --> 00:28:37,340
+If we were to add a new
+parent to the tree,
+
+553
+00:28:37,339 --> 00:28:40,599
+
+we would never have done it.
+
+554
+00:28:40,599 --> 00:28:44,500
+But even if we did,
+which subtrees would change?
+
+555
+00:28:44,500 --> 00:28:47,740
+Only this one.
+
+556
+00:28:47,740 --> 00:28:50,410
+This node, this is a
+completely new subtree.
+
+557
+00:28:50,410 --> 00:28:52,779
+But the subtree of this node is
+completely unchanged.
+
+558
+00:28:52,779 --> 00:28:54,654
+Since subtrees
+always look down,
+
+559
+00:28:54,654 --> 00:28:58,269
+if I added a new root, I
+didn't change any subtree
+
+560
+00:28:58,269 --> 00:28:59,889
+except one.
+
+561
+00:28:59,890 --> 00:29:01,790
+So, size is a property of a subtree.
+
+562
+00:29:01,789 --> 00:29:03,490
+Now there's...
+
+563
+00:29:03,490 --> 00:29:05,509
+I mean, I could completely
+redraw the tree.
+
+564
+00:29:05,509 --> 00:29:07,509
+And this is an operation
+that requires
+
+565
+00:29:07,509 --> 00:29:08,980
+listing everything.
+
+566
+00:29:08,980 --> 00:29:11,740
+So there are limits to what
+I am allowed to do in the tree.
+
+567
+00:29:11,740 --> 00:29:13,960
+But I argue that whatever
+we do, the last class
+
+568
+00:29:13,960 --> 00:29:18,410
+and today, we can afford
+this increase.
+
+569
+00:29:18,410 --> 00:29:21,100
+So, this is a property not
+necessarily of all binary trees,
+
+570
+00:29:21,099 --> 00:29:22,599
+but of the ones
+we would cover.
+
+571
+00:29:22,599 --> 00:29:23,099
+Yes?
+
+572
+00:29:23,099 --> 00:29:24,394
+AUDIENCE: What is a mine?
+
+573
+00:29:24,394 --> 00:29:25,561
+ERIC DEMAIN: What is a minute?
+
+574
+00:29:25,561 --> 00:29:27,369
+AUDIENCE: [INAUDIBLE]
+
+575
+00:29:27,369 --> 00:29:31,359
+ERIC DEMAIN: Binary tree, yes.
+
+576
+00:29:31,359 --> 00:29:35,259
+Okay, it will make a little
+more sense
+
+577
+00:29:35,259 --> 00:29:38,099
+when I tell you what we are actually
+going to do with the trees.
+
+578
+00:29:49,059 --> 00:29:53,829
+We need a new tool for
+manipulating wood.
+
+579
+00:29:53,829 --> 00:29:56,529
+What we've done so far is we've
+done some item swapping.
+
+580
+00:29:56,529 --> 00:29:59,109
+And we added
+and removed a leaf.
+
+581
+00:29:59,109 --> 00:30:00,009
+This is not enough.
+
+582
+00:30:00,009 --> 00:30:01,990
+We'll need
+something else to
+
+583
+00:30:01,990 --> 00:30:05,319
+guarantee logarithmic height.
+
+584
+00:30:05,319 --> 00:30:07,899
+And this is something else
+called rotation.
+
+585
+00:30:12,049 --> 00:30:15,349
+What
+else is needed for this?
+
+586
+00:30:15,349 --> 00:30:18,469
+It is simply a tool to
+restore the balance of the tree.
+
+587
+00:30:18,470 --> 00:30:22,279
+Thus, this should not change the data
+represented by the tree.
+
+588
+00:30:22,279 --> 00:30:24,319
+What data
+does the tree represent?
+
+589
+00:30:24,319 --> 00:30:25,939
+The order of passage.
+
+590
+00:30:25,940 --> 00:30:27,660
+The order of circumambulation is sacred.
+
+591
+00:30:27,660 --> 00:30:28,910
+We are not allowed to touch it.
+
+592
+00:30:28,910 --> 00:30:31,250
+This is already defined in
+two different ways,
+
+593
+00:30:31,250 --> 00:30:34,410
+depending on whether
+you are using a set or a sequence.
+
+594
+00:30:34,410 --> 00:30:37,130
+So, we want to modify
+the tree in a way that doesn't
+
+595
+00:30:37,130 --> 00:30:39,380
+change the traversal order.
+
+596
+00:30:39,380 --> 00:30:41,510
+That's why we use reservations.
+
+597
+00:30:41,509 --> 00:30:43,819
+If you wrote down the
+traversal order in an array,
+
+598
+00:30:43,819 --> 00:30:45,589
+there will be exactly
+one representation of
+
+599
+00:30:45,589 --> 00:30:46,939
+that order.
+
+600
+00:30:46,940 --> 00:30:49,340
+But there are many representations in the tree
+.
+
+601
+00:30:49,339 --> 00:30:50,839
+It can be a long line.
+
+602
+00:30:50,839 --> 00:30:52,519
+It might be a balance thing.
+
+603
+00:30:52,519 --> 00:30:54,769
+They can represent
+exactly the same order at the nodes
+
+604
+00:30:54,769 --> 00:30:56,599
+if they are labeled correctly.
+
+605
+00:30:56,599 --> 00:30:59,299
+In fact, there are exponentially
+many different representations of the
+
+606
+00:30:59,299 --> 00:31:00,049
+same thing.
+
+607
+00:31:00,049 --> 00:31:04,879
+And we're going to use this, the
+same order, and define...
+
+608
+00:31:04,880 --> 00:31:06,560
+it's just something
+you need to know.
+
+609
+00:31:20,364 --> 00:31:27,819
+Let me label A, X, B,
+Y, C. You can tell I've
+
+610
+00:31:27,819 --> 00:31:31,569
+drawn this diagram
+many, many times.
+
+611
+00:31:31,569 --> 00:31:35,059
+This is a very powerful tool
+in all tree data structures,
+
+612
+00:31:35,059 --> 00:31:37,059
+which are most
+data structures.
+
+613
+00:31:37,059 --> 00:31:46,940
+And they are called right rotation
+y and left rotation x.
+
+614
+00:31:53,859 --> 00:31:55,729
+So if I have this tree,
+
+615
+00:31:55,730 --> 00:31:58,150
+I just
+put some of the subtrees
+
+616
+00:31:58,150 --> 00:31:59,410
+into little triangles.
+
+617
+00:31:59,410 --> 00:32:02,860
+If I have a node, and
+it has a left child,
+
+618
+00:32:02,859 --> 00:32:05,589
+then I'm allowed to rotate
+that edge to the right, which means take
+
+619
+00:32:05,589 --> 00:32:07,000
+that edge and move it like this--
+
+620
+00:32:07,000 --> 00:32:09,057
+90 degrees, like.
+
+621
+00:32:09,057 --> 00:32:11,349
+Or you can just think of
+it as rewriting in this way.
+
+622
+00:32:11,349 --> 00:32:14,289
+Now you can also have
+parent pointer tracking.  The
+
+623
+00:32:14,289 --> 00:32:16,720
+parent pointer is moving.
+
+624
+00:32:16,720 --> 00:32:18,610
+It used to be
+y's father.
+
+625
+00:32:18,609 --> 00:32:20,979
+Now this is the father of x.
+
+626
+00:32:20,980 --> 00:32:23,980
+So, x and y are swapped.
+
+627
+00:32:23,980 --> 00:32:27,610
+But we couldn't just
+swap these elements
+
+628
+00:32:27,609 --> 00:32:29,979
+because that
+would change the traversal order.
+
+629
+00:32:29,980 --> 00:32:32,440
+In this figure,
+x comes before y
+
+630
+00:32:32,440 --> 00:32:36,850
+because x is in the left
+subtree of y in the traversal order.
+
+631
+00:32:36,849 --> 00:32:40,000
+And now y is
+in the right subtree of x.
+
+632
+00:32:40,000 --> 00:32:41,349
+So it comes after x.
+
+633
+00:32:41,349 --> 00:32:43,599
+So in both cases
+x comes before y.
+
+634
+00:32:43,599 --> 00:32:48,609
+And indeed, in all of these
+figures, the traversal order -
+
+635
+00:32:48,609 --> 00:32:51,519
+I mean, not only for x and
+y, but also for A, B, and C, the
+
+636
+00:32:51,519 --> 00:32:53,170
+traversal order
+is sequential.
+
+637
+00:32:53,170 --> 00:33:01,975
+It's A, X, B, y, C, where
+when I write triangle,
+
+638
+00:33:01,974 --> 00:33:03,849
+I mean the recursive
+order of traversing all the
+
+639
+00:33:03,849 --> 00:33:05,577
+things in the triangle.
+
+640
+00:33:05,577 --> 00:33:07,869
+So if you just apply the
+traversal order algorithm here
+
+641
+00:33:07,869 --> 00:33:09,829
+and here, you
+will get the same output,
+
+642
+00:33:09,829 --> 00:33:12,970
+which means that these operations
+preserve traversal order.
+
+643
+00:33:18,769 --> 00:33:21,379
+Great, this is something
+we
+
+644
+00:33:21,380 --> 00:33:24,890
+can do in a tree that won't
+affect what
+
+645
+00:33:24,890 --> 00:33:26,330
+we've done so far.
+
+646
+00:33:26,329 --> 00:33:28,669
+This is a tool we
+can use to restore balance.
+
+647
+00:33:28,670 --> 00:33:34,190
+Notice how deep things are
+in the change tree.
+
+648
+00:33:34,190 --> 00:33:37,309
+Our problem with
+this linear tree
+
+649
+00:33:37,309 --> 00:33:39,200
+is that there are some
+nodes of linear depth.
+
+650
+00:33:39,200 --> 00:33:40,440
+We want to get rid of them.
+
+651
+00:33:40,440 --> 00:33:40,940
+as?
+
+652
+00:33:40,940 --> 00:33:44,029
+Well, we can take these edges
+and start rotating them upwards.
+
+653
+00:33:44,029 --> 00:33:47,849
+If you look at the depths,
+in this image,
+
+654
+00:33:47,849 --> 00:33:51,649
+A and B are deeper than
+C. And in this image,
+
+655
+00:33:51,650 --> 00:33:55,100
+B and C are deeper than
+A. So it's a trade-off.
+
+656
+00:33:55,099 --> 00:33:57,469
+This one rose.
+
+657
+00:33:57,470 --> 00:33:58,490
+This one went down.
+
+658
+00:33:58,490 --> 00:34:01,039
+This one remained
+at the same depth.
+
+659
+00:34:01,039 --> 00:34:07,129
+So hopefully if A is too
+deep and C is too shallow,
+
+660
+00:34:07,130 --> 00:34:08,934
+they can trade that way.
+
+661
+00:34:08,934 --> 00:34:11,119
+This may sound complicated,
+but there is actually a
+
+662
+00:34:11,119 --> 00:34:18,768
+fairly simple method
+called AVL trees that
+
+663
+00:34:18,768 --> 00:34:24,438
+maintains balance in a
+way called height balance.
+
+664
+00:34:34,730 --> 00:34:42,710
+This is if we take
+the height of node.left--
+
+665
+00:34:46,130 --> 00:34:47,500
+actually, I would prefer--
+
+666
+00:34:50,079 --> 00:35:03,190
+node.right, minus
+the height of node.left,
+
+667
+00:35:03,190 --> 00:35:11,050
+so this is called
+node skew.
+
+668
+00:35:11,050 --> 00:35:15,039
+I want it to always be
+minus 1, 0, or plus 1.
+
+669
+00:35:17,889 --> 00:35:21,929
+So that means
+if I have any node,
+
+670
+00:35:21,929 --> 00:35:25,371
+and I look at its left
+subtree and its right subtree,
+
+671
+00:35:25,371 --> 00:35:26,829
+I measure their
+height-- remember, this is the
+
+672
+00:35:26,829 --> 00:35:30,670
+distance down, the
+maximum distance to the leaf--
+
+673
+00:35:30,670 --> 00:35:32,137
+I measure the height of
+this tree-- the
+
+674
+00:35:32,137 --> 00:35:34,179
+maximum height-- and I
+measure the maximum height of
+
+675
+00:35:34,179 --> 00:35:39,011
+this subtree, I want them to
+be within 1 of each other.
+
+676
+00:35:39,012 --> 00:35:39,970
+Ideally, they are equal.
+
+677
+00:35:39,969 --> 00:35:41,739
+This would be an ideal case.
+
+678
+00:35:41,739 --> 00:35:44,139
+But let's say they differ by 1.
+
+679
+00:35:44,139 --> 00:35:48,219
+So maybe this is k,
+and this is k plus 1.
+
+680
+00:35:48,219 --> 00:35:51,669
+Or maybe this is k,
+and this is k minus 1.
+
+681
+00:35:51,670 --> 00:35:53,730
+In this picture, what is
+the height of this node?
+
+682
+00:35:53,730 --> 00:35:56,811
+This is good practice.
+
+683
+00:35:56,811 --> 00:35:59,559
+k plus 2, okay.
+
+684
+00:35:59,559 --> 00:36:01,779
+What is the longest path
+from this node to the leaf?
+
+685
+00:36:01,780 --> 00:36:03,460
+Well, it can go
+through this subtree.
+
+686
+00:36:03,460 --> 00:36:06,159
+And this is going to be length k
+plus 1, because it's k
+
+687
+00:36:06,159 --> 00:36:07,569
+plus 1 for this edge.
+
+688
+00:36:07,570 --> 00:36:10,450
+Or it could go over here,
+and it's k plus 1 plus 1.
+
+689
+00:36:10,449 --> 00:36:12,379
+So the biggest thing is to
+go to the right.
+
+690
+00:36:12,380 --> 00:36:14,860
+So the height... if I tell you
+the height of these subtrees,
+
+691
+00:36:14,860 --> 00:36:16,443
+we can get
+the height of this node.
+
+692
+00:36:16,443 --> 00:36:19,490
+We're going to use
+this a lot in a moment.
+
+693
+00:36:19,489 --> 00:36:21,489
+So the first statement
+is that if I can
+
+694
+00:36:21,489 --> 00:36:26,619
+maintain
+height balance, then I
+
+695
+00:36:26,619 --> 00:36:28,639
+guarantee that h is equal to log n.  In
+
+696
+00:36:28,639 --> 00:36:32,179
+other words,
+height balance implies balance.
+
+697
+00:36:32,179 --> 00:36:36,259
+So, let's
+quickly prove this.
+
+698
+00:36:36,260 --> 00:36:40,505
+And then, the interesting part
+is how do we actually prove...
+
+699
+00:36:44,690 --> 00:36:47,825
+or how do we actually
+maintain the balance property?
+
+700
+00:36:47,824 --> 00:36:49,449
+We will do
+this using rotations.
+
+701
+00:36:49,449 --> 00:36:51,489
+But how is the big question.
+
+702
+00:37:01,719 --> 00:37:07,419
+So why does
+height balance imply balance?
+
+703
+00:37:16,550 --> 00:37:21,530
+This suggests
+that all trees with balanced height
+
+704
+00:37:21,530 --> 00:37:24,810
+have logarithmic height.
+
+705
+00:37:24,809 --> 00:37:26,389
+So, I would like to
+think of
+
+706
+00:37:26,389 --> 00:37:30,889
+the least balanced
+tree with a balanced height.
+
+707
+00:37:30,889 --> 00:37:36,069
+The least balanced
+node will have an inconsistency.
+
+708
+00:37:36,070 --> 00:37:39,170
+Let's say the left
+subtree is smaller
+
+709
+00:37:39,170 --> 00:37:42,800
+than the right subtree by 1, and
+recursively to the end.
+
+710
+00:37:42,800 --> 00:37:45,650
+So at each node there is a
+gap,
+
+711
+00:37:49,521 --> 00:37:51,480
+as we call it--
+
+712
+00:37:51,480 --> 00:37:56,519
+skew 1, which
+I'm going to write--
+
+713
+00:37:56,519 --> 00:37:58,090
+I'm going to introduce
+some notation.
+
+714
+00:37:58,090 --> 00:38:00,360
+I will write a distinct
+right arrow if this arrow is
+
+715
+00:38:00,360 --> 00:38:03,164
+above the left subtree.
+
+716
+00:38:06,469 --> 00:38:08,269
+So the easiest way
+to think about it is this is
+
+717
+00:38:08,269 --> 00:38:10,119
+
+our worst case scenario.
+
+718
+00:38:10,119 --> 00:38:14,259
+This will be the least number of
+nodes for maximum depth.
+
+719
+00:38:14,260 --> 00:38:18,370
+Let's just count how many
+nodes are in this tree.
+
+720
+00:38:18,369 --> 00:38:21,309
+I'm going to write this
+as a recurrence, which
+
+721
+00:38:21,309 --> 00:38:25,659
+is the number of nodes
+in a tree of height h.
+
+722
+00:38:25,659 --> 00:38:32,679
+So if this whole tree has height
+h, as we said in this picture,
+
+723
+00:38:32,679 --> 00:38:35,750
+if I just subtract 2
+from all of these numbers,
+
+724
+00:38:35,750 --> 00:38:40,269
+then this tree has
+height h minus 2,
+
+725
+00:38:40,269 --> 00:38:44,019
+and this tree has
+height h minus 1.
+
+726
+00:38:44,019 --> 00:38:45,833
+So how many nodes are in here?
+
+727
+00:38:45,833 --> 00:38:47,750
+Well, this is the recap
+I'm going to write.
+
+728
+00:38:47,750 --> 00:38:52,059
+So this is going to be N sub h minus 2.
+
+729
+00:38:52,059 --> 00:38:55,360
+This is going to be N sub h minus 1.
+
+730
+00:38:55,360 --> 00:38:57,910
+And then I just count how many
+nodes there are in this picture.
+
+731
+00:38:57,909 --> 00:39:06,099
+This is Nh minus 1 plus Nh
+minus 2 plus 1, or this node.
+
+732
+00:39:06,099 --> 00:39:09,519
+Now you may ask,
+why Nh relapse?
+
+733
+00:39:09,519 --> 00:39:15,759
+But this is the number of nodes
+in such a worst case
+
+734
+00:39:15,760 --> 00:39:18,460
+if the
+total height of the worst case is h.
+
+735
+00:39:18,460 --> 00:39:20,349
+So you can also
+think of it as what is the
+
+736
+00:39:20,349 --> 00:39:22,089
+minimum number of
+nodes I can
+
+737
+00:39:22,090 --> 00:39:25,780
+have in an AVL tree, which is a
+height-balanced tree, which
+
+738
+00:39:25,780 --> 00:39:38,610
+has height h in a
+height-balanced tree?
+
+739
+00:39:38,610 --> 00:39:40,920
+Okay, now I just need to
+solve this repetition.  Does
+
+740
+00:39:40,920 --> 00:39:42,450
+this repetition
+look familiar?
+
+741
+00:39:48,050 --> 00:39:49,550
+It's like Fibonacci numbers.
+
+742
+00:39:49,550 --> 00:39:52,130
+If I take away the plus
+1, it will be Fibonacci.
+
+743
+00:39:52,130 --> 00:39:54,320
+And if you happen to know that the
+Fibonacci numbers grow
+
+744
+00:39:54,320 --> 00:39:56,690
+as the golden
+ratio to n,
+
+745
+00:39:56,690 --> 00:39:58,490
+then we know
+that it's exponential, which is what
+
+746
+00:39:58,489 --> 00:39:59,539
+we want.
+
+747
+00:39:59,539 --> 00:40:02,690
+Because if Nh is
+exponential in h,
+
+748
+00:40:02,690 --> 00:40:04,670
+that means h is
+logarithmic in N,
+
+749
+00:40:04,670 --> 00:40:06,617
+because log is the inverse
+of exponential.
+
+750
+00:40:06,617 --> 00:40:08,659
+But maybe you don't know
+about Fibonacci numbers.
+
+751
+00:40:08,659 --> 00:40:14,299
+And so we can easily
+show that it is exponential,
+
+752
+00:40:14,300 --> 00:40:15,960
+as shown below.
+
+753
+00:40:15,960 --> 00:40:18,260
+I want to prove that this is
+at least an exponent,
+
+754
+00:40:18,260 --> 00:40:22,830
+because that gives me that
+h is at most logarithmic.
+
+755
+00:40:22,829 --> 00:40:24,182
+Therefore, we need a lower bound.
+
+756
+00:40:24,182 --> 00:40:26,599
+So we have these two terms
+that are hard to compare:
+
+757
+00:40:26,599 --> 00:40:28,849
+Nh minus 1 and Nh minus 2.
+
+758
+00:40:28,849 --> 00:40:30,211
+It's kind of ugly.
+
+759
+00:40:30,211 --> 00:40:31,670
+But if we're allowed
+to be sloppy--
+
+760
+00:40:31,670 --> 00:40:33,460
+and we'll see if
+we're too sloppy--
+
+761
+00:40:33,460 --> 00:40:35,570
+and still get an
+exponential answer,
+
+762
+00:40:35,570 --> 00:40:40,115
+let's just make
+them equal like this.
+
+763
+00:40:44,150 --> 00:40:48,139
+So this is a true statement,
+in fact, strictly more than.
+
+764
+00:40:48,139 --> 00:40:48,679
+why
+
+765
+00:40:48,679 --> 00:40:50,419
+Because I removed the plus 1.
+
+766
+00:40:50,420 --> 00:40:52,309
+It should only make
+something smaller.
+
+767
+00:40:52,309 --> 00:40:56,599
+And I replaced Nh minus
+1 with Nh minus 2.
+
+768
+00:40:56,599 --> 00:40:58,309
+Here I'm implicitly
+using the fact,
+
+769
+00:40:58,309 --> 00:41:03,170
+obvious by induction,
+that this tree is height--
+
+770
+00:41:03,170 --> 00:41:05,269
+if I take this tree
+against this tree,
+
+771
+00:41:05,269 --> 00:41:07,849
+it has more
+nodes than this one.
+
+772
+00:41:07,849 --> 00:41:10,130
+If I am taller,
+this design
+
+773
+00:41:10,130 --> 00:41:13,250
+will build a larger
+tree, at least as big.
+
+774
+00:41:13,250 --> 00:41:15,710
+It doesn't even have to
+be strictly bigger.
+
+775
+00:41:15,710 --> 00:41:18,139
+So of course, Nh minus 1 is
+greater than or equal to
+
+776
+00:41:18,139 --> 00:41:20,059
+Nh minus 2.
+
+777
+00:41:20,059 --> 00:41:24,230
+Now this is 2 times Nh minus 2.
+
+778
+00:41:24,230 --> 00:41:25,710
+And this is easy to repeat.
+
+779
+00:41:25,710 --> 00:41:27,920
+It's just powers of 2.
+
+780
+00:41:27,920 --> 00:41:31,460
+I keep multiplying by 2
+and subtracting 2 from h.
+
+781
+00:41:31,460 --> 00:41:35,150
+So this solves
+2 to h over 2,
+
+782
+00:41:35,150 --> 00:41:37,880
+maybe with a floor or something like that.
+
+783
+00:41:37,880 --> 00:41:43,490
+But I'm using the base case here,
+which is N sub 0 is equal to 1.
+
+784
+00:41:46,186 --> 00:41:47,269
+Maybe then it's a ceiling.
+
+785
+00:41:47,269 --> 00:41:49,380
+But the thing is, it's
+exponential.
+
+786
+00:41:49,380 --> 00:41:53,809
+So this means that the height is
+always at most 2 times
+
+787
+00:41:53,809 --> 00:41:55,730
+log n.
+
+788
+00:41:55,730 --> 00:41:57,809
+This 2 corresponds to this 2.
+
+789
+00:41:57,809 --> 00:41:59,750
+If you just reverse
+this formula, this
+
+790
+00:41:59,750 --> 00:42:04,500
+number of nodes
+is at least 2
+
+791
+00:42:04,500 --> 00:42:05,599
+to h times 2.
+
+792
+00:42:05,599 --> 00:42:07,710
+So h is at most 2 log n.
+
+793
+00:42:07,710 --> 00:42:08,913
+So it's not log n.
+
+794
+00:42:08,913 --> 00:42:09,829
+That would be ideal.
+
+795
+00:42:09,829 --> 00:42:12,019
+But this is within
+a factor of 2 of log n.
+
+796
+00:42:12,019 --> 00:42:15,509
+Thus, AVL trees are
+always fairly balanced.
+
+797
+00:42:15,510 --> 00:42:17,090
+The number of levels is
+at most twice
+
+798
+00:42:17,090 --> 00:42:19,710
+the number needed to store n nodes.
+
+799
+00:42:19,710 --> 00:42:20,210
+Great.
+
+800
+00:42:23,980 --> 00:42:27,730
+We're left with the main magic--
+
+801
+00:42:27,730 --> 00:42:28,780
+not the domain magic.
+
+802
+00:42:28,780 --> 00:42:31,060
+This is different.
+
+803
+00:42:31,059 --> 00:42:34,179
+And let's see, we're going to
+use subtree addition.
+
+804
+00:42:37,550 --> 00:42:38,150
+Hold this.  The
+
+805
+00:42:45,510 --> 00:42:48,330
+big remaining problem
+is how do we
+
+806
+00:42:48,329 --> 00:42:51,239
+maintain this high balance property
+with rotations?   We
+
+807
+00:42:51,239 --> 00:42:54,189
+have all the ingredients
+.
+
+808
+00:42:54,190 --> 00:42:56,670
+We have a subtree expansion.
+
+809
+00:42:56,670 --> 00:42:57,809
+What does this allow me to do?
+
+810
+00:43:00,820 --> 00:43:02,710
+This applies to AVL trees.
+
+811
+00:43:02,710 --> 00:43:06,880
+Well, it allows me to maintain altitude.
+
+812
+00:43:06,880 --> 00:43:11,230
+I need to be able to calculate
+the height of a node.
+
+813
+00:43:11,230 --> 00:43:13,090
+This, in general,
+takes linear time
+
+814
+00:43:13,090 --> 00:43:15,173
+because I have to go through
+all the descending paths--
+
+815
+00:43:15,172 --> 00:43:16,659
+all the leaves
+in this subtree.
+
+816
+00:43:16,659 --> 00:43:20,519
+But height is
+a property of a subtree,
+
+817
+00:43:20,519 --> 00:43:27,469
+so yes, height.
+
+818
+00:43:27,469 --> 00:43:28,919
+why
+
+819
+00:43:28,920 --> 00:43:33,670
+Because-- let me
+just write it here--
+
+820
+00:43:33,670 --> 00:43:49,139
+node.height is 1 plus the
+max of node.left.height
+
+821
+00:43:49,139 --> 00:43:57,150
+and node.right.height
+and the max.
+
+822
+00:43:57,150 --> 00:44:00,389
+Let me put this in a box.
+
+823
+00:44:00,389 --> 00:44:05,549
+This equation, or I guess
+this is an assignment operation--
+
+824
+00:44:05,550 --> 00:44:08,267
+this is 1-- this is something
+
+825
+00:44:08,266 --> 00:44:10,099
+we
+do over and over again.
+
+826
+00:44:10,099 --> 00:44:11,659
+When I said what
+the height of this node was,
+
+827
+00:44:11,659 --> 00:44:12,889
+you just
+figured it out, right?
+
+828
+00:44:12,889 --> 00:44:14,494
+You took the height of the
+left subtree added
+
+829
+00:44:14,494 --> 00:44:15,994
+to the height of the
+right subtree
+
+830
+00:44:15,994 --> 00:44:19,250
+and added 1 to account for
+those edges.
+
+831
+00:44:19,250 --> 00:44:20,929
+So, this is a
+general rule of thumb for updating.
+
+832
+00:44:20,929 --> 00:44:23,539
+It matches this
+subtree property pattern.
+
+833
+00:44:23,539 --> 00:44:25,279
+If I have a
+left and right property,
+
+834
+00:44:25,280 --> 00:44:27,800
+I can calculate that for a node.
+
+835
+00:44:27,800 --> 00:44:29,570
+And this requires
+constant time.
+
+836
+00:44:29,570 --> 00:44:30,900
+And so this is a property of a subtree.
+
+837
+00:44:30,900 --> 00:44:33,387
+And this way I can maintain the height of each node through
+all the actions I take
+
+838
+00:44:33,387 --> 00:44:34,429
+.
+
+839
+00:44:34,429 --> 00:44:37,799
+By the way, every time
+I do a rotation,
+
+840
+00:44:37,800 --> 00:44:41,180
+I will also have to
+update the subtree properties.
+
+841
+00:44:41,179 --> 00:44:45,719
+When I rotate this edge, A
+doesn't change, B doesn't change,
+
+842
+00:44:45,719 --> 00:44:46,709
+C doesn't change.
+
+843
+00:44:46,710 --> 00:44:48,079
+So that's good.
+
+844
+00:44:48,079 --> 00:44:49,684
+But the subtree x changes.
+
+845
+00:44:49,684 --> 00:44:50,840
+Now he has y.
+
+846
+00:44:50,840 --> 00:44:52,320
+This didn't happen before.
+
+847
+00:44:52,320 --> 00:44:56,620
+So we'll also have to
+update the extension here
+
+848
+00:44:56,619 --> 00:44:58,969
+in y.
+
+849
+00:44:58,969 --> 00:45:03,549
+And we'll have to
+update the increment in x.
+
+850
+00:45:03,550 --> 00:45:04,940
+And eventually we will
+have to update
+
+851
+00:45:04,940 --> 00:45:10,280
+the extensions of all
+ancestors of x.
+
+852
+00:45:10,280 --> 00:45:12,660
+So, rotation
+locally changes a
+
+853
+00:45:12,659 --> 00:45:13,909
+constant number of pointers.
+
+854
+00:45:13,909 --> 00:45:18,049
+So I usually think of rotation
+as a time constant.
+
+855
+00:45:18,050 --> 00:45:20,835
+But ultimately we'll
+have to do...
+
+856
+00:45:20,835 --> 00:45:22,085
+it's a constant local time.
+
+857
+00:45:25,250 --> 00:45:35,719
+But we'll need to update the
+ancestors to
+
+858
+00:45:35,719 --> 00:45:39,161
+keep all... keep all
+our additions up to date.
+
+859
+00:45:39,161 --> 00:45:40,369
+We'll take care of that later.
+
+860
+00:45:43,380 --> 00:45:44,250
+Okay, great.
+
+861
+00:45:44,250 --> 00:45:45,916
+Now we have the height of
+all the nodes.
+
+862
+00:45:45,916 --> 00:45:50,860
+We can calculate the skew of
+all nodes, cool.
+
+863
+00:45:50,860 --> 00:45:52,570
+We have this rotation operation.
+
+864
+00:45:52,570 --> 00:45:58,320
+And we want to preserve this
+property of height balance.
+
+865
+00:45:58,320 --> 00:46:02,130
+The height of the left node-- to the left
+and right of each node--
+
+866
+00:46:02,130 --> 00:46:03,630
+is plus or minus 1, or 0.
+
+867
+00:46:06,210 --> 00:46:13,740
+Cool, so I said here
+somewhere when we--
+
+868
+00:46:13,739 --> 00:46:15,364
+so the only things
+that change the tree
+
+869
+00:46:15,364 --> 00:46:17,629
+are when we insert
+or remove a new node.
+
+870
+00:46:17,630 --> 00:46:20,210
+And the way we've
+implemented this so far is to
+
+871
+00:46:20,210 --> 00:46:21,949
+add or remove a leaf.
+
+872
+00:46:21,949 --> 00:46:24,659
+So we still have to think
+about adding or removing a
+
+873
+00:46:24,659 --> 00:46:25,159
+leaf.
+
+874
+00:46:25,159 --> 00:46:27,409
+The problem is that when
+I add a new leaf,
+
+875
+00:46:27,409 --> 00:46:31,319
+now that tree is perhaps
+taller than it was before.
+
+876
+00:46:31,320 --> 00:46:35,269
+Therefore, some nodes here may
+be unbalanced in height.
+
+877
+00:46:35,269 --> 00:46:37,219
+But since height is
+a property of a subtree,
+
+878
+00:46:37,219 --> 00:46:39,589
+the only nodes we
+need to check are
+
+879
+00:46:39,590 --> 00:46:42,329
+those at the top of that ancestor path.
+
+880
+00:46:42,329 --> 00:46:44,900
+And they are only log n,
+because now the height is log n.
+
+881
+00:46:44,900 --> 00:46:47,660
+This is what we just proved,
+as long as we have this property.
+
+882
+00:46:47,659 --> 00:46:50,449
+Right now we don't
+have that for
+
+883
+00:46:50,449 --> 00:46:51,619
+maybe these few nodes.
+
+884
+00:46:51,619 --> 00:46:53,569
+But that was long before that.
+
+885
+00:46:53,570 --> 00:46:54,470
+This is at most log n--
+
+886
+00:46:54,469 --> 00:46:58,250
+2 log n plus 1 right now,
+because we just added a node.
+
+887
+00:46:58,250 --> 00:47:00,920
+So what I want to do is
+check all these
+
+888
+00:47:00,920 --> 00:47:04,309
+ancestor nodes sequentially from bottom to top
+and find
+
+889
+00:47:04,309 --> 00:47:06,549
+the one that is unbalanced.
+
+890
+00:47:06,550 --> 00:47:15,710
+So, let's take the lowest
+non-equilibrium node.
+
+891
+00:47:21,539 --> 00:47:24,860
+I'll call it x.
+
+892
+00:47:24,860 --> 00:47:28,370
+Now, since we just inserted
+or deleted one leaf,
+
+893
+00:47:28,369 --> 00:47:32,089
+it's only out of balance
+by 1 because we just
+
+894
+00:47:32,090 --> 00:47:33,590
+changed the height -
+
+895
+00:47:33,590 --> 00:47:36,710
+one height increased by 1 and
+one height decreased by 1.
+
+896
+00:47:36,710 --> 00:47:40,730
+And before, all our skews
+were plus or minus 1 or 0.
+
+897
+00:47:40,730 --> 00:47:44,222
+So now... the bad case is that it's
+plus or minus 2.
+
+898
+00:47:44,222 --> 00:47:46,639
+If it happens to still be in
+that range for all nodes,
+
+899
+00:47:46,639 --> 00:47:47,509
+we're happy.
+
+900
+00:47:47,510 --> 00:47:51,080
+But if it's outside that range,
+it's only going to be by 1.
+
+901
+00:47:51,079 --> 00:47:58,549
+So that means the skew
+is n plus 2 or minus 2.
+
+902
+00:47:58,550 --> 00:48:01,910
+And let's say
+it's 2 by symmetry.
+
+903
+00:48:01,909 --> 00:48:06,097
+So my image is...
+
+904
+00:48:06,097 --> 00:48:10,009
+I'm going to draw a
+double arrow to the right
+
+905
+00:48:10,010 --> 00:48:18,590
+to say that this subtree is
+2 higher than this subtree.
+
+906
+00:48:18,590 --> 00:48:21,320
+Okay, that's bad, and
+we want to fix it.
+
+907
+00:48:21,320 --> 00:48:25,265
+The obvious thing to do
+is to bring this edge back.
+
+908
+00:48:25,264 --> 00:48:26,389
+Because that will make it...
+
+909
+00:48:29,030 --> 00:48:31,590
+that's too high
+and that's too low.
+
+910
+00:48:31,590 --> 00:48:33,410
+So if we rotate, this
+should decrease by 1,
+
+911
+00:48:33,409 --> 00:48:34,549
+and this should increase by 1.
+
+912
+00:48:34,550 --> 00:48:38,070
+And that works most of the time.
+
+913
+00:48:38,070 --> 00:48:45,200
+Thus, the first case is a y-skewed condition.
+
+914
+00:48:45,199 --> 00:48:45,859
+What is y?
+
+915
+00:48:45,860 --> 00:48:50,090
+I want y to be a
+correct descendant of x.
+
+916
+00:48:50,090 --> 00:48:54,260
+Since we have a positive skew,
+we know there is a correct child.
+
+917
+00:48:54,260 --> 00:48:57,120
+Now, since this was the
+lowest bad node,
+
+918
+00:48:57,119 --> 00:48:58,769
+we know that y is actually good.
+
+919
+00:48:58,769 --> 00:49:02,300
+It's either right-heavy--
+or even two subtrees
+
+920
+00:49:02,300 --> 00:49:04,820
+have the same height--
+or left-heavy.
+
+921
+00:49:04,820 --> 00:49:13,940
+Simple cases
+where the y-skew
+
+922
+00:49:13,940 --> 00:49:22,720
+is 1 or 0,
+which I'll draw.
+
+923
+00:49:29,980 --> 00:49:34,630
+So, double arrow to the right,
+let's say single arrow to the right--
+
+924
+00:49:40,429 --> 00:49:44,019
+so I'll just
+add some labels here
+
+925
+00:49:44,019 --> 00:49:48,561
+to make this
+picture consistent--
+
+926
+00:49:48,561 --> 00:49:51,210
+k plus 1, k plus 2.
+
+927
+00:49:51,210 --> 00:49:52,769
+I'm going to the top.
+
+928
+00:49:52,769 --> 00:49:56,009
+So this is an example
+where C is taller
+
+929
+00:49:56,010 --> 00:49:58,947
+than B. A and B are the
+same height.
+
+930
+00:49:58,947 --> 00:50:00,780
+And then if you calculate
+the height here,
+
+931
+00:50:00,780 --> 00:50:03,480
+it really does
+have the right slope.
+
+932
+00:50:03,480 --> 00:50:05,219
+This is a double
+right slope.
+
+933
+00:50:05,219 --> 00:50:06,849
+Because this one
+has a height of k plus 1.
+
+934
+00:50:06,849 --> 00:50:08,099
+This one has a height of k minus 1.
+
+935
+00:50:08,099 --> 00:50:08,889
+That's bad.
+
+936
+00:50:08,889 --> 00:50:11,369
+But if we do this
+proper rotation on x,
+
+937
+00:50:11,369 --> 00:50:14,099
+we get exactly what we want.
+
+938
+00:50:18,010 --> 00:50:20,940
+So I'll just copy
+the labels to A, B, C--
+
+939
+00:50:20,940 --> 00:50:23,760
+we have k minus 1,
+k minus 1, and k--
+
+940
+00:50:23,760 --> 00:50:24,630
+and then I'll recalculate.  So that
+
+941
+00:50:24,630 --> 00:50:26,400
+means this
+guy has height k,
+
+942
+00:50:26,400 --> 00:50:29,039
+this guy has height k plus 1.
+
+943
+00:50:29,039 --> 00:50:31,652
+And now all the nodes in this
+picture that I selected--
+
+944
+00:50:31,652 --> 00:50:32,819
+A, B, and C-- haven't changed.   Previously,
+
+945
+00:50:32,820 --> 00:50:34,195
+they were
+balanced in height.
+
+946
+00:50:34,195 --> 00:50:35,400
+They are still there.
+
+947
+00:50:35,400 --> 00:50:36,720
+But now x and y...
+
+948
+00:50:36,719 --> 00:50:39,029
+x wasn't
+balanced in height before, but y was.
+
+949
+00:50:39,030 --> 00:50:42,420
+Now both x and y
+are balanced in height.
+
+950
+00:50:42,420 --> 00:50:44,159
+This is the first case.
+
+951
+00:50:44,159 --> 00:50:49,389
+In the second case, the
+y skew is flat,
+
+952
+00:50:49,389 --> 00:50:54,869
+which means that
+this is k, and this is k,
+
+953
+00:50:54,869 --> 00:50:58,569
+and this is k plus 1,
+and this is k plus 2.
+
+954
+00:50:58,570 --> 00:51:00,742
+But still, all the
+nodes are balanced –
+
+955
+00:51:00,742 --> 00:51:01,409
+balanced in height.
+
+956
+00:51:01,409 --> 00:51:03,089
+They are still plus or minus 1.
+
+957
+00:51:03,090 --> 00:51:04,440
+So these are simple cases.
+
+958
+00:51:04,440 --> 00:51:07,240
+Unfortunately,
+there is a difficult case -
+
+959
+00:51:07,239 --> 00:51:08,279
+case three.
+
+960
+00:51:08,280 --> 00:51:11,280
+But there is only one, and
+it is not much more complicated.
+
+961
+00:51:16,320 --> 00:51:21,780
+So when the skewness of
+y is negative 1.
+
+962
+00:51:21,780 --> 00:51:24,750
+In this case, we need
+to look at the left child of y.
+
+963
+00:51:28,590 --> 00:51:31,829
+And to be alphabetical, I'll
+rename this to z.
+
+964
+00:51:34,469 --> 00:51:36,779
+So, this is a
+double arrow to the right again.
+
+965
+00:51:36,780 --> 00:51:39,540
+This is now a left arrow.
+
+966
+00:51:39,539 --> 00:51:41,909
+And this is the letter y.
+
+967
+00:51:41,909 --> 00:51:49,949
+And so we have potential subtrees A, B, C, and D
+hanging off
+
+968
+00:51:49,949 --> 00:51:50,549
+of them.
+
+969
+00:51:50,550 --> 00:51:54,310
+And I'm going to mark
+the height of these things.
+
+970
+00:51:54,309 --> 00:51:59,009
+This is k
+minus 1 or k minus 2.
+
+971
+00:51:59,010 --> 00:52:00,420
+This is k minus 1.
+
+972
+00:52:00,420 --> 00:52:01,769
+Now calculate the intrinsic value.
+
+973
+00:52:01,769 --> 00:52:06,690
+So this would be the height k so that
+it would be tilted to the left.
+
+974
+00:52:06,690 --> 00:52:11,519
+So this is k plus 1,
+and this is k plus 2.
+
+975
+00:52:11,519 --> 00:52:13,679
+But the problem is, this is
+2 more than this.
+
+976
+00:52:13,679 --> 00:52:17,369
+The height z is 2 higher
+than the height A. In
+
+977
+00:52:17,369 --> 00:52:18,989
+this case, if I
+do this rotation, it
+
+978
+00:52:18,989 --> 00:52:20,909
+actually makes things worse.
+
+979
+00:52:20,909 --> 00:52:26,609
+I'll just tell you
+what the right thing to do
+
+980
+00:52:26,610 --> 00:52:28,650
+is what
+you need to remember.
+
+981
+00:52:41,699 --> 00:52:43,859
+And let me draw the results.
+
+982
+00:52:43,860 --> 00:52:47,300
+You can also think of it
+as redrawing the tree in this way.
+
+983
+00:52:47,300 --> 00:52:49,940
+But from an
+analysis perspective, it's easier
+
+984
+00:52:49,940 --> 00:52:51,679
+to think of it
+as two rotations.
+
+985
+00:52:51,679 --> 00:52:52,940
+Then we can just reduce.
+
+986
+00:52:52,940 --> 00:52:54,800
+As long as we know
+how rotation works,
+
+987
+00:52:54,800 --> 00:52:56,460
+we know that
+this thing works--
+
+988
+00:52:56,460 --> 00:52:59,059
+"works," meaning it
+preserves the traversal order,
+
+989
+00:52:59,059 --> 00:53:01,159
+and we can support
+all the additions.
+
+990
+00:53:01,159 --> 00:53:04,339
+So if I copy these
+labels-- the height labels--
+
+991
+00:53:04,340 --> 00:53:05,390
+I have k minus 1.
+
+992
+00:53:05,389 --> 00:53:08,599
+I have, for these two guys,
+k minus 1 or k minus 2.
+
+993
+00:53:08,599 --> 00:53:11,099
+The largest of them is k minus 1.
+
+994
+00:53:11,099 --> 00:53:13,190
+This is k minus 1.
+
+995
+00:53:13,190 --> 00:53:15,409
+So this is going to be k.
+
+996
+00:53:15,409 --> 00:53:17,449
+This will be k.
+
+997
+00:53:17,449 --> 00:53:19,069
+This is going to be k plus 1.
+
+998
+00:53:19,070 --> 00:53:22,490
+And so, we have a
+nice, height-balanced tree
+
+999
+00:53:22,489 --> 00:53:25,759
+in all three cases
+for this one node.
+
+1000
+00:53:25,760 --> 00:53:27,020
+Now it was the lowest knot.
+
+1001
+00:53:27,019 --> 00:53:28,880
+Once we update
+this one,
+
+1002
+00:53:28,880 --> 00:53:32,090
+we may have changed the
+root height.
+
+1003
+00:53:32,090 --> 00:53:35,750
+It used to be k plus
+2, now it's k plus 1.
+
+1004
+00:53:35,750 --> 00:53:39,483
+Or sometimes we leave it the
+same, like in this case.
+
+1005
+00:53:39,483 --> 00:53:41,150
+And so now we have to
+check the parents.
+
+1006
+00:53:41,150 --> 00:53:42,740
+Maybe the father
+was out of balance.
+
+1007
+00:53:42,739 --> 00:53:44,719
+And we just keep
+moving along the node
+
+1008
+00:53:44,719 --> 00:53:47,659
+and also supporting all the
+additions along the way.
+
+1009
+00:53:47,659 --> 00:53:49,789
+We will then keep track of
+the height and size of the subtree
+
+1010
+00:53:49,789 --> 00:53:51,980
+if we desire them, or any
+other extensions.
+
+1011
+00:53:51,980 --> 00:53:54,425
+And after operations of order h,
+we will
+
+1012
+00:53:54,425 --> 00:53:56,300
+have the
+height-balanced property restored, which
+
+1013
+00:53:56,300 --> 00:53:59,280
+means that all the way through
+h is of order log n.
+
+1014
+00:53:59,280 --> 00:54:03,250
+And so all our operations are
+now magically ordered in the log n.
+

@@ -1,0 +1,5689 @@
+1
+00:00:00,000 --> 00:00:07,727
+[SQUEAK]
+[SCRATCH] [CLICK]
+
+2
+00:00:13,618 --> 00:00:14,660
+JUSTIN SOLOMON: Okay, team.
+
+3
+00:00:14,660 --> 00:00:18,600
+Let's start the day.
+
+4
+00:00:18,600 --> 00:00:21,350
+It's nice
+to see you all, guys.
+
+5
+00:00:21,350 --> 00:00:23,000
+If you don't
+remember, I'm Justin.
+
+6
+00:00:23,000 --> 00:00:26,629
+I'm the third instructor of 006,
+which you've probably forgotten about,
+
+7
+00:00:26,629 --> 00:00:29,179
+but you'll see
+me a lot more in the
+
+8
+00:00:29,179 --> 00:00:31,640
+graph theory part of our course because that's the
+part of algorithms
+
+9
+00:00:31,640 --> 00:00:32,280
+that I enjoy.
+
+10
+00:00:32,280 --> 00:00:35,672
+If I were reincarnated as a
+theoretical computer scientist,
+
+11
+00:00:35,671 --> 00:00:37,129
+I would probably
+go into this field.
+
+12
+00:00:37,130 --> 00:00:38,420
+Hello, guys.
+
+13
+00:00:38,420 --> 00:00:40,490
+good.
+
+14
+00:00:40,490 --> 00:00:43,190
+We have a visit from the PhD soon,
+
+15
+00:00:43,189 --> 00:00:46,460
+I'm
+working on my
+
+16
+00:00:46,460 --> 00:00:47,780
+camp cheerleader voice for the next few days.
+
+17
+00:00:47,780 --> 00:00:51,679
+So don't make me wake
+you all up for the day.
+
+18
+00:00:51,679 --> 00:00:53,490
+You won't like it.
+
+19
+00:00:53,490 --> 00:00:57,350
+But anyway, so at
+6.006, if you look back
+
+20
+00:00:57,350 --> 00:00:59,000
+at the course outline,
+we officially
+
+21
+00:00:59,000 --> 00:01:01,609
+start the second part of this class.  There
+
+22
+00:01:01,609 --> 00:01:04,155
+are several consequences of this fact.
+
+23
+00:01:04,155 --> 00:01:06,030
+So, if there are no
+questions about that,
+
+24
+00:01:06,030 --> 00:01:09,140
+we'll start with
+our new unit in 6.006,
+
+25
+00:01:09,140 --> 00:01:11,870
+which is graph theory.
+
+26
+00:01:11,870 --> 00:01:15,153
+If you're interested, there's
+a graph on the screen here.
+
+27
+00:01:15,153 --> 00:01:17,570
+But of course, today we will provide
+a little more information
+
+28
+00:01:17,569 --> 00:01:19,369
+during our lecture.
+
+29
+00:01:19,370 --> 00:01:24,680
+When I was studying
+to teach, which I still do,
+
+30
+00:01:24,680 --> 00:01:26,960
+my PhD actually
+told me that if you want someone to
+
+31
+00:01:26,959 --> 00:01:29,459
+learn something, you should
+write it down as much as possible.
+
+32
+00:01:29,459 --> 00:01:31,879
+And so I really lean
+towards that approach
+
+33
+00:01:31,879 --> 00:01:34,259
+today in our slides.
+
+34
+00:01:34,259 --> 00:01:36,770
+So anyway,
+today we're
+
+35
+00:01:36,769 --> 00:01:38,689
+going to have our first
+lecture on graphs,
+
+36
+00:01:38,689 --> 00:01:42,890
+which I think will be somewhat of a
+review for a lot of you guys.
+
+37
+00:01:42,890 --> 00:01:44,337
+And if not,
+that's cool too.
+
+38
+00:01:44,337 --> 00:01:45,920
+Because we're going to start
+from the beginning
+
+39
+00:01:45,920 --> 00:01:47,420
+and kind of
+build up all the concepts
+
+40
+00:01:47,420 --> 00:01:50,299
+needed to understand and
+process graphs, and hopefully
+
+41
+00:01:50,299 --> 00:01:53,560
+by the end of the lecture
+we'll have some style of
+
+42
+00:01:53,560 --> 00:01:56,060
+algorithm for computing
+the shortest path from one vertex
+
+43
+00:01:56,060 --> 00:01:58,140
+to all the others.
+
+44
+00:01:58,140 --> 00:02:01,620
+So, if we're a little bit lost in
+terminology, a graph -
+
+45
+00:02:01,620 --> 00:02:04,370
+some people call it a network,
+but sometimes that term
+
+46
+00:02:04,370 --> 00:02:06,620
+is overloaded with several
+different variations on the
+
+47
+00:02:06,620 --> 00:02:07,820
+theme -
+
+48
+00:02:07,819 --> 00:02:10,068
+is a combination of two things.
+
+49
+00:02:10,068 --> 00:02:12,650
+Here's what
+this notation in parentheses means.
+
+50
+00:02:12,650 --> 00:02:16,520
+There is a set of vertices
+and a set of edges.
+
+51
+00:02:16,520 --> 00:02:19,670
+And the edges, as you can
+see in the third point
+
+52
+00:02:19,669 --> 00:02:23,599
+on our screen here, are a
+subset of v cross v.  Now that
+
+53
+00:02:23,599 --> 00:02:25,219
+'s a fancy
+term for something
+
+54
+00:02:25,219 --> 00:02:27,257
+very, very simple.
+
+55
+00:02:27,257 --> 00:02:28,590
+Because what does that tell me?
+
+56
+00:02:28,590 --> 00:02:30,870
+This tells me about the
+edge, like in the image
+
+57
+00:02:30,870 --> 00:02:32,640
+we see here on the screen.
+
+58
+00:02:32,639 --> 00:02:36,106
+it's just what
+connects the vertices together.
+
+59
+00:02:36,106 --> 00:02:38,689
+So if I think about having a
+pair of vertices, like from
+
+60
+00:02:38,689 --> 00:02:42,335
+and to, then that's a
+subset of the cross product of
+
+61
+00:02:42,335 --> 00:02:44,010
+v and itself.
+
+62
+00:02:44,009 --> 00:02:46,501
+So, hopefully the notation in
+that third line on the screen
+
+63
+00:02:46,502 --> 00:02:47,210
+makes some sense.
+
+64
+00:02:47,210 --> 00:02:50,900
+This is just a fancy notation, since
+edges are pairs of vertices.
+
+65
+00:02:50,900 --> 00:02:52,789
+But of course, there
+
+66
+00:02:52,789 --> 00:02:57,228
+are two special cases in this notation that
+we care about in this class.
+
+67
+00:02:57,228 --> 00:02:59,389
+One is a
+directed graph, the
+
+68
+00:02:59,389 --> 00:03:01,549
+other is undirected
+
+69
+00:03:01,550 --> 00:03:03,592
+because I said them in the
+opposite order to what is
+
+70
+00:03:03,592 --> 00:03:04,930
+on the screen.
+
+71
+00:03:04,930 --> 00:03:08,355
+So in an undirected graph, I
+think we still think of an edge
+
+72
+00:03:08,353 --> 00:03:10,728
+as a pair of vertices, but
+I should actually have labeled
+
+73
+00:03:10,728 --> 00:03:12,228
+it a little
+differently-- actually,
+
+74
+00:03:12,228 --> 00:03:14,478
+maybe I'll go over this in the
+slides before they go
+
+75
+00:03:14,478 --> 00:03:15,649
+to OCW--
+
+76
+00:03:15,650 --> 00:03:20,150
+where instead of writing
+e equals w comma v,
+
+77
+00:03:20,150 --> 00:03:24,950
+I should write
+actually equals v comma w.
+
+78
+00:03:24,949 --> 00:03:27,769
+And notice that there is a slight
+difference between the notation
+
+79
+00:03:27,770 --> 00:03:30,020
+on the slide and what I
+wrote on the board, which is the
+
+80
+00:03:30,020 --> 00:03:32,480
+established notation here.
+
+81
+00:03:32,478 --> 00:03:35,049
+What's the difference between
+brackets and wavy lines
+
+82
+00:03:35,050 --> 00:03:36,579
+is that this guy is not ordered.
+
+83
+00:03:36,579 --> 00:03:38,140
+This is a set of things.
+
+84
+00:03:38,139 --> 00:03:40,959
+And what's on
+the board is orderly,
+
+85
+00:03:40,960 --> 00:03:43,030
+or rather what's on the screen.
+
+86
+00:03:43,030 --> 00:03:44,860
+And of course, in an
+undirected edge,
+
+87
+00:03:44,860 --> 00:03:46,930
+there is no such thing
+as an edge from w
+
+88
+00:03:46,930 --> 00:03:49,788
+to v that is different from an
+edge from v to w.
+
+89
+00:03:49,788 --> 00:03:50,829
+It's the same.
+
+90
+00:03:50,829 --> 00:03:51,622
+They are not directed.
+
+91
+00:03:51,622 --> 00:03:53,890
+It's simply a concept of
+connectivity.
+
+92
+00:03:53,889 --> 00:03:56,019
+Whereas in a directed
+graph, we
+
+93
+00:03:56,020 --> 00:03:58,120
+will now use this
+notation in parentheses
+
+94
+00:03:58,120 --> 00:04:01,330
+to say that
+the edge from w to v
+
+95
+00:04:01,330 --> 00:04:03,987
+is different from the
+edge from v to w.
+
+96
+00:04:03,986 --> 00:04:05,569
+This will be of
+great importance.
+
+97
+00:04:05,569 --> 00:04:09,159
+So, for example, in
+the graph on the right -
+
+98
+00:04:09,159 --> 00:04:12,469
+let's maybe redraw
+it on the board here.
+
+99
+00:04:12,469 --> 00:04:14,139
+So, we have four vertices.
+
+100
+00:04:14,139 --> 00:04:16,539
+I drew this last night and
+I hope this example
+
+101
+00:04:16,540 --> 00:04:17,260
+actually works.
+
+102
+00:04:22,028 --> 00:04:26,579
+So... can I go from the
+top right vertex
+
+103
+00:04:26,579 --> 00:04:31,550
+to the bottom left vertex
+along the edges of this graph?
+
+104
+00:04:31,550 --> 00:04:33,500
+I heard one person.
+
+105
+00:04:33,500 --> 00:04:35,838
+Three for everyone... 1, 2, 3.
+
+106
+00:04:35,838 --> 00:04:36,379
+AUDIENCE: No.
+
+107
+00:04:36,379 --> 00:04:37,463
+JUSTIN SOLOMON: No, that's right.
+
+108
+00:04:37,463 --> 00:04:38,780
+Because if I wanted to--
+
+109
+00:04:38,779 --> 00:04:41,299
+I mean, maybe I'm thinking about
+drawing this path here--
+
+110
+00:04:41,300 --> 00:04:44,270
+but of course, if I
+went from the top right corner
+
+111
+00:04:44,269 --> 00:04:45,589
+to the bottom left--
+
+112
+00:04:45,589 --> 00:04:48,549
+that would be the ugliest thing
+I've ever done, I'm sorry,
+
+113
+00:04:48,550 --> 00:04:50,300
+you might notice that the
+edges are pointing
+
+114
+00:04:50,300 --> 00:04:52,409
+up here.
+
+115
+00:04:52,409 --> 00:04:54,650
+So I would have to go against the
+flow of the water,
+
+116
+00:04:54,649 --> 00:04:57,241
+but that is not permissible
+in the case of a directed graph.
+
+117
+00:04:57,242 --> 00:04:58,700
+Of course, I
+already sense a
+
+118
+00:04:58,699 --> 00:05:01,074
+notion of a path that we have
+n't yet defined.
+
+119
+00:05:01,074 --> 00:05:02,899
+But I
+intuitively think that this is a
+
+120
+00:05:02,899 --> 00:05:06,014
+big difference between a
+directed and an undirected graph.
+
+121
+00:05:06,014 --> 00:05:08,139
+Does this distinction make
+sense to all of you,
+
+122
+00:05:08,139 --> 00:05:12,560
+or have I managed to lose
+you in four minutes or less?
+
+123
+00:05:12,560 --> 00:05:14,360
+Perfectly.
+
+124
+00:05:14,360 --> 00:05:16,651
+So I flipped things around a bit
+from the
+
+125
+00:05:16,651 --> 00:05:18,110
+course notes because I
+decided that we would
+
+126
+00:05:18,110 --> 00:05:19,776
+first define what a graph is
+before telling you
+
+127
+00:05:19,776 --> 00:05:21,689
+what the implications are.
+
+128
+00:05:21,689 --> 00:05:23,990
+But anyway,
+I think it's
+
+129
+00:05:23,990 --> 00:05:26,000
+not a big stretch of the
+imagination
+
+130
+00:05:26,000 --> 00:05:28,639
+to say that graphics are
+literally everywhere
+
+131
+00:05:28,639 --> 00:05:30,319
+in our daily lives, right?
+
+132
+00:05:30,319 --> 00:05:34,129
+Whenever we think of a
+network of things connected
+
+133
+00:05:34,129 --> 00:05:37,040
+together, the implicitly
+correct abstraction that often pops
+
+134
+00:05:37,040 --> 00:05:40,480
+into our heads
+is to think of a graph.
+
+135
+00:05:40,480 --> 00:05:42,230
+So some simple
+examples that I think
+
+136
+00:05:42,230 --> 00:05:43,730
+everyone can think of are
+
+137
+00:05:43,730 --> 00:05:45,580
+like computer networks --
+
+138
+00:05:45,579 --> 00:05:49,159
+so the nodes or vertices of
+your graph in that case
+
+139
+00:05:49,159 --> 00:05:50,960
+are maybe computers,
+and the edges are kind of like the
+
+140
+00:05:50,959 --> 00:05:53,479
+cables that
+connect them together,
+
+141
+00:05:53,480 --> 00:05:57,110
+my very rough understanding of
+how networks work --
+
+142
+00:05:57,110 --> 00:05:59,060
+or maybe in a social network
+
+143
+00:05:59,060 --> 00:06:02,209
+-- the nodes are the people
+in your social network,
+
+144
+00:06:02,209 --> 00:06:04,489
+and the edges are the
+friendships
+
+145
+00:06:04,490 --> 00:06:08,300
+, the hostility,
+or whatever.
+
+146
+00:06:08,300 --> 00:06:11,329
+In fact, I think you can think
+of a directed and an undirected
+
+147
+00:06:11,329 --> 00:06:15,219
+version of this
+particular network.
+
+148
+00:06:15,220 --> 00:06:18,110
+Regarding road networks, maybe
+I work at Google
+
+149
+00:06:18,110 --> 00:06:20,600
+and want to tell
+you the shortest route
+
+150
+00:06:20,600 --> 00:06:22,220
+between your house and MIT.
+
+151
+00:06:22,220 --> 00:06:24,500
+Of course, to
+do this and essentially
+
+152
+00:06:24,500 --> 00:06:26,839
+behind the scenes, we
+solve some version
+
+153
+00:06:26,839 --> 00:06:28,639
+of calculating
+the shortest path between two
+
+154
+00:06:28,639 --> 00:06:30,224
+vertices in the graph.
+
+155
+00:06:30,225 --> 00:06:31,850
+This is a small
+lie in the sense
+
+156
+00:06:31,850 --> 00:06:33,808
+that there
+is a lot of structure in this problem
+
+157
+00:06:33,807 --> 00:06:35,930
+that we will not
+use in this course.  A
+
+158
+00:06:35,930 --> 00:06:38,900
+road network is a very
+special type of graph,
+
+159
+00:06:38,899 --> 00:06:40,669
+and if you take an
+advanced level course, maybe
+
+160
+00:06:40,670 --> 00:06:43,490
+you'll say, okay, if I know
+a little bit more about my graph,
+
+161
+00:06:43,490 --> 00:06:46,740
+I can do better than the general
+case that we're going to talk about here.
+
+162
+00:06:46,740 --> 00:06:49,610
+But the basic algorithms that
+we'll talk about in 6.006 are
+
+163
+00:06:49,610 --> 00:06:51,073
+certainly
+relevant in this case
+
+164
+00:06:51,072 --> 00:06:52,489
+and are actually the
+building blocks
+
+165
+00:06:52,490 --> 00:06:54,620
+for what happens
+in the tools that are
+
+166
+00:06:54,620 --> 00:06:57,259
+used every day on your
+phone when you open Google Maps
+
+167
+00:06:57,259 --> 00:06:59,629
+or Ways or something.
+
+168
+00:06:59,629 --> 00:07:01,310
+And of course,
+there are many others.
+
+169
+00:07:01,310 --> 00:07:03,834
+So, for example,
+an example that might
+
+170
+00:07:03,834 --> 00:07:05,209
+be a little more
+subtle
+
+171
+00:07:05,209 --> 00:07:07,430
+would be the set of states
+and transitions of a
+
+172
+00:07:07,430 --> 00:07:08,819
+single thing.
+
+173
+00:07:08,819 --> 00:07:11,420
+So think of it like a
+Rubik's Cube.
+
+174
+00:07:11,420 --> 00:07:13,580
+So I could build a
+graph where
+
+175
+00:07:13,579 --> 00:07:15,859
+each configuration of
+my Rubik's Cube is a node,
+
+176
+00:07:15,860 --> 00:07:17,300
+as is each rotation.
+
+177
+00:07:17,300 --> 00:07:19,490
+And then the facets are like
+, can I
+
+178
+00:07:19,490 --> 00:07:21,500
+go from this
+configuration to another one
+
+179
+00:07:21,500 --> 00:07:24,170
+by making one simple
+transition, like one flip.
+
+180
+00:07:24,170 --> 00:07:26,420
+I don't really know
+the terminology in Rubik's Cube,
+
+181
+00:07:26,420 --> 00:07:29,870
+I feel like you
+know, one turn at a time.
+
+182
+00:07:29,870 --> 00:07:32,478
+Twist-- thank you.
+
+183
+00:07:32,478 --> 00:07:34,269
+And of course,
+there are many other places.
+
+184
+00:07:34,269 --> 00:07:38,250
+So, for example, in
+my day job here at MIT,
+
+185
+00:07:38,250 --> 00:07:40,129
+I usually teach
+courses in computer graphics.
+
+186
+00:07:40,129 --> 00:07:42,170
+And
+graph theory itself, although we
+
+187
+00:07:42,170 --> 00:07:45,170
+talk about it in completely different ways,
+appears in that world
+
+188
+00:07:45,170 --> 00:07:46,460
+all the time.
+
+189
+00:07:46,459 --> 00:07:48,859
+Because, of course,
+sitting behind any 3D model
+
+190
+00:07:48,860 --> 00:07:52,725
+on your computer is a
+giant network of triangles.
+
+191
+00:07:52,725 --> 00:07:54,350
+This is called a
+triangular surface--
+
+192
+00:07:54,350 --> 00:07:56,210
+like this torus that we see here.
+
+193
+00:07:56,209 --> 00:07:57,826
+And this is nothing more
+than a schedule.
+
+194
+00:07:57,826 --> 00:07:59,659
+And in fact, if you
+look at the algorithms
+
+195
+00:07:59,659 --> 00:08:01,460
+that we cover in chapter six
+eight three eight,
+
+196
+00:08:01,459 --> 00:08:05,372
+you'll see that they're roughly
+graph algorithms in disguise.
+
+197
+00:08:05,372 --> 00:08:07,789
+In fact, if you take my graduate
+course, one thing we'll do
+
+198
+00:08:07,790 --> 00:08:10,165
+is spend a lot of time
+on differential geometry.
+
+199
+00:08:10,165 --> 00:08:12,103
+And then we'll step
+back 10 feet and notice
+
+200
+00:08:12,103 --> 00:08:13,519
+that
+the algorithms we
+
+201
+00:08:13,519 --> 00:08:17,569
+use to calculate curvature
+and bending on triangular
+
+202
+00:08:17,569 --> 00:08:19,939
+meshes look
+like graph algorithms
+
+203
+00:08:19,939 --> 00:08:22,540
+and can be applied to networks in
+exactly the same way.
+
+204
+00:08:22,540 --> 00:08:25,430
+So this will be a nice
+fun discovery.
+
+205
+00:08:25,430 --> 00:08:28,939
+And of course, there's one
+last fun application.
+
+206
+00:08:28,939 --> 00:08:31,160
+I was actually absent for the
+last couple of days
+
+207
+00:08:31,160 --> 00:08:33,320
+at a conference on
+political redistricting.
+
+208
+00:08:33,320 --> 00:08:35,570
+And funny thing is,
+most of the discussions
+
+209
+00:08:35,570 --> 00:08:38,510
+at that conference
+were about graph theory.
+
+210
+00:08:38,509 --> 00:08:43,340
+The reason for this is
+a theme that
+
+211
+00:08:43,340 --> 00:08:46,642
+often appears in the world of geometry.
+If I take my state,
+
+212
+00:08:46,642 --> 00:08:48,350
+in this case I think it's the
+
+213
+00:08:48,350 --> 00:08:51,500
+precincts in a
+given state,
+
+214
+00:08:51,500 --> 00:08:53,809
+and I look at the
+adjacency relationships,
+
+215
+00:08:53,809 --> 00:08:56,569
+then maybe I'll set up a node for
+each precinct and an edge
+
+216
+00:08:56,570 --> 00:08:59,760
+every time they share a
+border.
+
+217
+00:08:59,759 --> 00:09:01,009
+Now I have a network.
+
+218
+00:09:01,009 --> 00:09:03,980
+And perhaps the region on my graph
+is like a connected part of
+
+219
+00:09:03,980 --> 00:09:06,149
+this network.
+
+220
+00:09:06,149 --> 00:09:08,779
+Either way, this is one
+of those examples where
+
+221
+00:09:08,779 --> 00:09:11,209
+graphs, networks,
+connectivity, and so on just
+
+222
+00:09:11,210 --> 00:09:12,920
+appear literally no matter
+where you go.
+
+223
+00:09:12,919 --> 00:09:14,876
+They are absolutely impossible to avoid.
+
+224
+00:09:14,876 --> 00:09:17,209
+That's why we'll
+spend a lot of time
+
+225
+00:09:17,210 --> 00:09:20,250
+on this lesson.
+
+226
+00:09:20,250 --> 00:09:23,000
+Now, you could easily
+take, I think,
+
+227
+00:09:23,000 --> 00:09:27,620
+at least three entire courses
+in graph theory here at MIT,
+
+228
+00:09:27,620 --> 00:09:30,560
+and you could easily build a
+PhD
+
+229
+00:09:30,559 --> 00:09:32,779
+just doing really simple
+graph problems.
+
+230
+00:09:32,779 --> 00:09:37,579
+Of course, in this class
+we are limited to just a few
+
+231
+00:09:37,580 --> 00:09:38,455
+lectures out of many.
+
+232
+00:09:38,455 --> 00:09:40,372
+So we will make
+a few assumptions
+
+233
+00:09:40,371 --> 00:09:43,250
+both for the problems we want
+to solve and for the graphs
+
+234
+00:09:43,250 --> 00:09:44,759
+we are interested in.
+
+235
+00:09:44,759 --> 00:09:47,210
+In particular, one
+simplifying assumption
+
+236
+00:09:47,210 --> 00:09:48,767
+that
+doesn't really affect
+
+237
+00:09:48,767 --> 00:09:50,600
+many of the algorithms
+we'll talk about here,
+
+238
+00:09:50,600 --> 00:09:52,790
+but it's worth making
+clear, is
+
+239
+00:09:52,789 --> 00:09:55,519
+that we'll be
+thinking mostly about a particular type of
+
+240
+00:09:55,519 --> 00:09:58,809
+graph, which is a
+simple graph.
+
+241
+00:09:58,809 --> 00:10:01,689
+And in fact, often, depending
+on how you define your schedule,
+
+242
+00:10:01,690 --> 00:10:03,970
+you've somehow accidentally
+made your schedule simple,
+
+243
+00:10:03,970 --> 00:10:05,200
+even if you didn't intend to.
+
+244
+00:10:05,200 --> 00:10:07,570
+So, for example, we
+wrote that our edges
+
+245
+00:10:07,570 --> 00:10:11,110
+are a subset of v intersecting v.
+This probably means that I can't
+
+246
+00:10:11,110 --> 00:10:15,460
+have multiple edges
+crossing the
+
+247
+00:10:15,460 --> 00:10:17,110
+same pair of vertices.
+
+248
+00:10:17,110 --> 00:10:22,190
+So let's look at an example of a
+complex graph.
+
+249
+00:10:22,190 --> 00:10:23,920
+Sorry, I
+didn't actually define that.  A
+
+250
+00:10:23,919 --> 00:10:27,439
+simple graph is a graph
+that has no self-cycles,
+
+251
+00:10:27,440 --> 00:10:30,210
+so it cannot go from a
+vertex to itself,
+
+252
+00:10:30,210 --> 00:10:31,860
+and each edge is distinct.
+
+253
+00:10:31,860 --> 00:10:36,610
+So, let's create the most complicated
+graph we can think of.
+
+254
+00:10:36,610 --> 00:10:40,600
+Let's say I
+have two vertices.
+
+255
+00:10:40,600 --> 00:10:42,700
+So maybe if I want to make my own...
+
+256
+00:10:42,700 --> 00:10:45,400
+so there's a graph, right,
+two vertices and one edge.
+
+257
+00:10:45,399 --> 00:10:47,049
+It's simple.
+
+258
+00:10:47,049 --> 00:10:49,419
+If I wanted to be annoying
+and make it difficult,
+
+259
+00:10:49,419 --> 00:10:53,129
+maybe I'd take that advantage and
+copy it three times just
+
+260
+00:10:53,129 --> 00:10:54,429
+for fun.
+
+261
+00:10:54,429 --> 00:10:57,089
+This violates the
+second assumption.
+
+262
+00:10:57,090 --> 00:10:59,590
+And now, even worse,
+I could break the first one
+
+263
+00:10:59,590 --> 00:11:03,050
+by adding an edge that goes
+from this vertex to itself.
+
+264
+00:11:03,049 --> 00:11:06,529
+It's not easy.
+
+265
+00:11:09,827 --> 00:11:12,370
+I don't know what you would
+actually call it-- the overall graph,
+
+266
+00:11:12,370 --> 00:11:14,929
+I think-- complex
+because it's not simple.
+
+267
+00:11:14,929 --> 00:11:19,296
+I don't know - multigraph.
+
+268
+00:11:19,297 --> 00:11:20,379
+I've always thought about it--
+
+269
+00:11:20,379 --> 00:11:22,220
+anyway, it doesn't matter.
+
+270
+00:11:22,220 --> 00:11:24,100
+But anyway,
+in this class we wo
+
+271
+00:11:24,100 --> 00:11:26,745
+n't worry about
+that particular circumstance.
+
+272
+00:11:26,745 --> 00:11:28,870
+And of course, in many
+applications of graph theory,
+
+273
+00:11:28,870 --> 00:11:31,611
+this is a perfectly reasonable
+assumption.
+
+274
+00:11:31,611 --> 00:11:33,819
+Have questions about
+the definition of a simple graph?
+
+275
+00:11:36,440 --> 00:11:39,092
+So, from now on, every time
+we think about a graph,
+
+276
+00:11:39,091 --> 00:11:40,549
+in our
+head we will
+
+277
+00:11:40,549 --> 00:11:42,259
+think that our graph is simple.   A simple graph
+
+278
+00:11:42,259 --> 00:11:44,870
+has one wonderful property
+,
+
+279
+00:11:44,870 --> 00:11:47,120
+which I wrote here in very
+large text on the screen
+
+280
+00:11:47,120 --> 00:11:52,250
+, which is that the
+edges are the big O of v squared.
+
+281
+00:11:52,250 --> 00:11:55,789
+And actually, let's
+expand this formula a little bit.
+
+282
+00:11:55,789 --> 00:11:57,860
+So, there are
+two cases: one is
+
+283
+00:11:57,860 --> 00:11:59,870
+when my graph
+is undirected, the other is
+
+284
+00:11:59,870 --> 00:12:03,779
+when my graph is directed.
+
+285
+00:12:03,779 --> 00:12:05,269
+So, if I have a directed graph...
+
+286
+00:12:12,220 --> 00:12:15,570
+okay, let's think about how many
+edges we can have.
+
+287
+00:12:15,570 --> 00:12:21,580
+So an edge is a pair a
+from vertex to a to vertex,
+
+288
+00:12:21,580 --> 00:12:23,230
+and I can never repeat that twice.
+
+289
+00:12:23,230 --> 00:12:27,190
+This is something like a
+second assumption.
+
+290
+00:12:27,190 --> 00:12:29,570
+So, specifically,
+what do we know?
+
+291
+00:12:29,570 --> 00:12:31,390
+We know that mod E--
+or rather, the number of
+
+292
+00:12:31,389 --> 00:12:36,740
+edges in our graph is an
+upper bound on what?
+
+293
+00:12:36,740 --> 00:12:40,600
+Well, I can take any
+pair of vertices-- like
+
+294
+00:12:43,957 --> 00:12:46,000
+this-- but I have to
+be a little careful
+
+295
+00:12:46,000 --> 00:12:48,250
+because my graph is directed--
+
+296
+00:12:48,250 --> 00:12:50,450
+so from and to matter here.
+
+297
+00:12:50,450 --> 00:12:52,900
+So this v select
+2 means I
+
+298
+00:12:52,899 --> 00:12:55,629
+can take any unique
+pair of vertices,
+
+299
+00:12:55,629 --> 00:12:57,939
+but I have to put
+a factor of 2 in front of it
+
+300
+00:12:57,940 --> 00:13:00,190
+to account for the fact that
+the source and target
+
+301
+00:13:00,190 --> 00:13:01,900
+can be rotated back and forth.
+
+302
+00:13:01,899 --> 00:13:03,824
+And of course, if I want
+to make a film without directing,
+
+303
+00:13:03,825 --> 00:13:05,200
+I don't need to
+worry about that.
+
+304
+00:13:10,519 --> 00:13:16,539
+We're going to get that E here is less than
+or equal to just mod v select 2.
+
+305
+00:13:16,539 --> 00:13:19,029
+So this is just a
+fancy way of saying
+
+306
+00:13:19,029 --> 00:13:21,399
+that each edge consists
+of two vertices,
+
+307
+00:13:21,399 --> 00:13:22,648
+and my edges are unique.
+
+308
+00:13:22,648 --> 00:13:24,190
+And one thing, if
+you just write down
+
+309
+00:13:24,190 --> 00:13:27,160
+the formula for our
+binomial coefficient here,
+
+310
+00:13:27,159 --> 00:13:30,439
+we'll see that both of
+these things--
+
+311
+00:13:30,440 --> 00:13:33,850
+oh, oh, yeah, sorry--
+
+312
+00:13:37,330 --> 00:13:39,920
+have the worst value mod v squared here.
+
+313
+00:13:43,370 --> 00:13:45,722
+And this is quite logical,
+because, of course, an edge
+
+314
+00:13:45,722 --> 00:13:46,639
+is a pair of vertices.
+
+315
+00:13:46,639 --> 00:13:48,470
+You kind of expect there to
+be a square there.
+
+316
+00:13:48,470 --> 00:13:48,970
+Yes?
+
+317
+00:13:48,970 --> 00:13:53,942
+AUDIENCE: [INAUDIBLE]
+
+318
+00:13:53,942 --> 00:13:55,149
+JUSTIN SOLOMON: I'm so sorry.
+
+319
+00:13:55,149 --> 00:13:56,177
+I can't hear you
+
+320
+00:13:56,177 --> 00:13:57,759
+AUDIENCE: So the 2
+comes from the fact that
+
+321
+00:13:57,759 --> 00:13:58,932
+it's from the source.
+
+322
+00:13:58,932 --> 00:14:00,139
+JUSTIN SOLOMON: Yeah, exactly.
+
+323
+00:14:00,139 --> 00:14:03,399
+So, 2 for the
+director case comes from the fact
+
+324
+00:14:03,399 --> 00:14:07,899
+that the edge from v to w
+is different from the edge from w
+
+325
+00:14:07,899 --> 00:14:11,105
+to v.  So remember that the
+binomial coefficient here
+
+326
+00:14:11,105 --> 00:14:12,730
+simply counts
+the number of ways I
+
+327
+00:14:12,730 --> 00:14:15,279
+can choose two things
+from a set of size v,
+
+328
+00:14:15,279 --> 00:14:16,929
+but it doesn't care
+about the order.
+
+329
+00:14:16,929 --> 00:14:20,759
+Yes, are there any more questions?
+
+330
+00:14:20,759 --> 00:14:21,807
+Perfectly.
+
+331
+00:14:21,807 --> 00:14:23,100
+Why does this matter?
+
+332
+00:14:23,100 --> 00:14:24,600
+These kinds of
+boundaries, I mean,
+
+333
+00:14:24,600 --> 00:14:26,470
+they might seem
+a little obvious to you,
+
+334
+00:14:26,470 --> 00:14:28,427
+but we're going to
+write down graph algorithms.
+
+335
+00:14:28,427 --> 00:14:30,480
+And now, when we analyze the
+execution time and the space
+
+336
+00:14:30,480 --> 00:14:33,368
+they take up, we now have
+two different numbers
+
+337
+00:14:33,368 --> 00:14:34,410
+that we can think about:
+
+338
+00:14:34,409 --> 00:14:37,740
+the number of vertices
+and the number of edges.
+
+339
+00:14:37,740 --> 00:14:39,240
+And so, for example,
+if I write an
+
+340
+00:14:39,240 --> 00:14:42,299
+algorithm whose running time is
+proportional to the number of
+
+341
+00:14:42,299 --> 00:14:44,939
+edges, maybe
+then in general I
+
+342
+00:14:44,940 --> 00:14:46,513
+could also think of the
+algorithm as
+
+343
+00:14:46,513 --> 00:14:48,930
+having a running time that looks
+like the number of vertices
+
+344
+00:14:48,929 --> 00:14:51,029
+squared, unless I make
+additional assumptions
+
+345
+00:14:51,029 --> 00:14:52,100
+about my graph.
+
+346
+00:14:52,100 --> 00:14:53,850
+So there is some
+connection between all
+
+347
+00:14:53,850 --> 00:14:55,470
+these different
+constants, and it's
+
+348
+00:14:55,470 --> 00:14:57,000
+useful to keep that
+in the back of your mind.
+
+349
+00:14:57,000 --> 00:14:59,417
+Sometimes you'll see a
+bunch of different expressions
+
+350
+00:14:59,417 --> 00:15:02,220
+that actually encode roughly the same
+relationship, just in
+
+351
+00:15:02,220 --> 00:15:04,129
+different languages.
+
+352
+00:15:04,129 --> 00:15:06,840
+Of course, this also means
+we can be more precise.
+
+353
+00:15:06,840 --> 00:15:10,470
+So sometimes the graph is what
+we call sparse.
+
+354
+00:15:10,470 --> 00:15:12,290
+So in my universe,
+almost all the graphs
+
+355
+00:15:12,289 --> 00:15:15,529
+I deal with in
+everyday life are extremely sparse.
+
+356
+00:15:15,529 --> 00:15:18,529
+This is a consequence of
+topology.
+
+357
+00:15:18,529 --> 00:15:20,750
+And because of
+this, an algorithm
+
+358
+00:15:20,750 --> 00:15:22,789
+that scales as the
+number of edges
+
+359
+00:15:22,789 --> 00:15:25,214
+can actually be much
+better than an algorithm
+
+360
+00:15:25,215 --> 00:15:26,840
+that scales as
+the number of vertices
+
+361
+00:15:26,840 --> 00:15:28,910
+squared, because
+in practice there are often
+
+362
+00:15:28,909 --> 00:15:32,329
+fewer edges than
+each individual possible pair.
+
+363
+00:15:32,330 --> 00:15:34,560
+That's why
+
+364
+00:15:34,559 --> 00:15:37,189
+we think
+about these numbers.
+
+365
+00:15:37,190 --> 00:15:40,550
+Okay, let's continue creating
+boring definitions here.
+
+366
+00:15:40,549 --> 00:15:42,559
+So, some others that
+we need to think about are
+
+367
+00:15:42,559 --> 00:15:46,489
+related to the topology or
+connectivity of our graph,
+
+368
+00:15:46,490 --> 00:15:49,279
+specifically thinking
+about neighbors.
+
+369
+00:15:49,279 --> 00:15:52,399
+So, in general, we consider
+pairs of vertices to be
+
+370
+00:15:52,399 --> 00:15:54,090
+neighbors of
+each other
+
+371
+00:15:54,090 --> 00:15:55,940
+if there is an edge between them.
+
+372
+00:15:55,940 --> 00:15:57,710
+We have to be
+a little careful,
+
+373
+00:15:57,710 --> 00:16:00,440
+because of course, when
+we have a directional advantage,
+
+374
+00:16:00,440 --> 00:16:02,900
+we have to be careful about
+who transmits
+
+375
+00:16:02,899 --> 00:16:05,480
+and who receives
+these neighborhood relationships.
+
+376
+00:16:05,480 --> 00:16:08,730
+So, let's draw a
+very, very simple graph.
+
+377
+00:16:08,730 --> 00:16:13,129
+So here's vertex 0, here's
+vertex 1, here's vertex 2.
+
+378
+00:16:13,129 --> 00:16:17,570
+And maybe we'll have an edge
+going up, an edge going down,
+
+379
+00:16:17,570 --> 00:16:21,470
+and then a cycle here.
+
+380
+00:16:21,470 --> 00:16:22,700
+good.
+
+381
+00:16:22,700 --> 00:16:24,980
+Now we can define many
+different concepts of
+
+382
+00:16:24,980 --> 00:16:27,289
+neighbors-- like an
+output neighbor set, an
+
+383
+00:16:27,289 --> 00:16:29,120
+input neighbor set.
+
+384
+00:16:29,120 --> 00:16:30,799
+And the basic idea is
+that we
+
+385
+00:16:30,799 --> 00:16:34,039
+want to track the edges
+coming from the vertex and the edges
+
+386
+00:16:34,039 --> 00:16:35,629
+pointing into the whole.
+
+387
+00:16:35,629 --> 00:16:37,909
+So, for example, the
+original
+
+388
+00:16:37,909 --> 00:16:42,199
+neighbor set, which we'll
+denote as Adj plus here...
+
+389
+00:16:44,899 --> 00:16:49,036
+what is the original
+neighbor set of node 0 here?
+
+390
+00:16:49,037 --> 00:16:50,870
+Well, if we look, we'll
+notice that there's
+
+391
+00:16:50,870 --> 00:16:54,230
+one edge coming out of node 0
+that points to node 2.
+
+392
+00:16:54,230 --> 00:16:57,230
+So of course, this is a
+set that
+
+393
+00:16:57,230 --> 00:16:59,389
+contains only one other node.
+
+394
+00:16:59,389 --> 00:17:05,960
+And similarly, the incoming
+neighbor set of node 0,
+
+395
+00:17:05,960 --> 00:17:09,539
+notice well that there is one
+incoming neighbor from vertex 1,
+
+396
+00:17:09,539 --> 00:17:14,180
+so this is such a set.
+
+397
+00:17:14,180 --> 00:17:16,549
+Of course, in an
+undirected graph,
+
+398
+00:17:16,549 --> 00:17:18,648
+the distinction
+between these two things
+
+399
+00:17:18,650 --> 00:17:19,323
+doesn't matter.
+
+400
+00:17:19,323 --> 00:17:20,990
+So if you look at our
+last marker point
+
+401
+00:17:20,990 --> 00:17:22,910
+here, often in the
+undirected case
+
+402
+00:17:22,910 --> 00:17:25,019
+we just drop the
+superscript "plus" or "minus"
+
+403
+00:17:25,019 --> 00:17:28,068
+because it
+supposedly doesn't matter.
+
+404
+00:17:28,068 --> 00:17:31,190
+In any case, there is one
+additional piece of terminology
+
+405
+00:17:31,190 --> 00:17:33,890
+that is quite
+important, and that is degree.
+
+406
+00:17:33,890 --> 00:17:35,780
+And this is nothing more
+than simply calculating
+
+407
+00:17:35,779 --> 00:17:37,009
+the size of this set.
+
+408
+00:17:37,009 --> 00:17:38,910
+Thus, the external degree is
+the number of edges
+
+409
+00:17:38,910 --> 00:17:40,830
+that exit from a vertex.
+
+410
+00:17:40,829 --> 00:17:44,149
+And a degree is the
+number of edges that point inward.
+
+411
+00:17:44,150 --> 00:17:47,475
+So notice, in this case
+both of these numbers are equal to 1.
+
+412
+00:17:47,474 --> 00:17:49,099
+Let's look at an example
+where this is not the case.
+
+413
+00:17:49,099 --> 00:17:53,159
+So, at node 1, notice, there are
+two edges.
+
+414
+00:17:53,160 --> 00:17:56,029
+So the outgoing degree of
+node 1 is 2.
+
+415
+00:17:56,029 --> 00:18:01,420
+There is one edge that points
+inward, so the incoming degree is 1.
+
+416
+00:18:01,420 --> 00:18:03,177
+Okay, so why are we
+going to do this so often?
+
+417
+00:18:03,176 --> 00:18:05,259
+Well, we will get
+many graph algorithms
+
+418
+00:18:05,259 --> 00:18:07,660
+that have a FOR loop
+over the neighbors of a given
+
+419
+00:18:07,660 --> 00:18:08,750
+vertex.
+
+420
+00:18:08,750 --> 00:18:12,319
+And then
+this number of steps will come into play.
+
+421
+00:18:12,319 --> 00:18:15,950
+It's worth limiting these things a bit
+.
+
+422
+00:18:15,950 --> 00:18:20,049
+So, in particular, one thing
+we can think about--
+
+423
+00:18:23,609 --> 00:18:25,839
+I'm writing too big, and I'm going to
+
+424
+00:18:25,839 --> 00:18:27,939
+run out of space here very quickly--
+
+425
+00:18:27,940 --> 00:18:29,029
+is the following.
+
+426
+00:18:29,029 --> 00:18:33,250
+So, let's look at
+all the possible nodes
+
+427
+00:18:33,250 --> 00:18:35,577
+inside my graph,
+and now let's
+
+428
+00:18:35,577 --> 00:18:36,744
+sum up all their degrees.
+
+429
+00:18:42,460 --> 00:18:43,759
+So I'm going to--
+
+430
+00:18:43,759 --> 00:18:45,890
+let's see, if I
+look at this graph, I'll
+
+431
+00:18:45,890 --> 00:18:49,940
+notice that there are three edges
+adjacent to this vertex
+
+432
+00:18:49,940 --> 00:18:52,910
+, three edges adjacent to
+that one, two edges adjacent to that one.
+
+433
+00:18:52,910 --> 00:18:54,759
+So, we summarize them all together.
+
+434
+00:18:54,759 --> 00:18:56,829
+So this is just a convenient
+connection -
+
+435
+00:18:56,829 --> 00:18:58,159
+it's summing these
+things up, because we'll
+
+436
+00:18:58,160 --> 00:19:00,620
+have algorithms that
+look like for each vertex,
+
+437
+00:19:00,619 --> 00:19:02,399
+each neighbor does something.
+
+438
+00:19:02,400 --> 00:19:04,850
+So we could roughly know
+how long
+
+439
+00:19:04,849 --> 00:19:06,919
+it would take.
+
+440
+00:19:06,920 --> 00:19:09,120
+Let's think about this.
+
+441
+00:19:09,119 --> 00:19:10,474
+So, what do we know?
+
+442
+00:19:10,474 --> 00:19:14,029
+In an undirected
+graph, each edge is
+
+443
+00:19:14,029 --> 00:19:15,379
+adjacent to two vertices.
+
+444
+00:19:18,319 --> 00:19:20,539
+So if we think
+about how we account for
+
+445
+00:19:20,539 --> 00:19:23,440
+degree, what do we know?
+
+446
+00:19:23,440 --> 00:19:25,059
+We know that an
+edge seems to
+
+447
+00:19:25,059 --> 00:19:29,470
+affect the degree of
+two different vertices.
+
+448
+00:19:29,470 --> 00:19:35,259
+So if we think about
+it carefully here,
+
+449
+00:19:35,259 --> 00:19:38,710
+we'll see that
+if our graph is undirected--
+
+450
+00:19:43,069 --> 00:19:49,019
+oh, sorry-- that's right,
+wait, I'm back again.
+
+451
+00:19:49,019 --> 00:19:53,059
+So if I have a graph with
+two vertices and one edge,
+
+452
+00:19:53,059 --> 00:19:58,500
+and it's undirected, notice
+that the number of edges
+
+453
+00:19:58,500 --> 00:19:59,670
+here is 1.
+
+454
+00:19:59,670 --> 00:20:02,580
+What is the degree sum?
+
+455
+00:20:02,579 --> 00:20:04,889
+Well, this is 1 plus 1 equals 2.
+
+456
+00:20:04,890 --> 00:20:14,990
+So, there's a 2 here
+if my graph is undirected,
+
+457
+00:20:14,990 --> 00:20:20,900
+and an E here if my graph is
+directed, if what I'm counting
+
+458
+00:20:20,900 --> 00:20:24,776
+is just the original degree.  Does
+
+459
+00:20:24,776 --> 00:20:25,789
+this make sense?
+
+460
+00:20:25,789 --> 00:20:27,831
+I think I managed to
+completely mess up that sentence,
+
+461
+00:20:27,832 --> 00:20:29,280
+so maybe let's try it again.
+
+462
+00:20:29,279 --> 00:20:32,180
+So if I just count
+the number of edges pointing
+
+463
+00:20:32,180 --> 00:20:34,250
+to each vertex,
+and I count that
+
+464
+00:20:34,250 --> 00:20:36,559
+over all
+possible vertices,
+
+465
+00:20:36,559 --> 00:20:37,889
+then there are two cases--
+
+466
+00:20:37,890 --> 00:20:40,220
+one is directed and the
+other is undirected.
+
+467
+00:20:40,220 --> 00:20:42,589
+So in the undirected
+case you get 2
+
+468
+00:20:42,589 --> 00:20:44,839
+because effectively every
+edge is both an
+
+469
+00:20:44,839 --> 00:20:46,399
+outgoing and an incoming edge.
+
+470
+00:20:46,400 --> 00:20:48,140
+Whereas you get 1
+as the coefficient
+
+471
+00:20:48,140 --> 00:20:49,070
+in the directional case.  Does
+
+472
+00:20:49,069 --> 00:20:50,210
+this make sense?
+
+473
+00:20:50,210 --> 00:20:53,029
+I'm sorry I
+ruined it for even a second.
+
+474
+00:20:53,029 --> 00:20:54,950
+Okay, great.
+
+475
+00:20:54,950 --> 00:20:58,298
+Okay, this will come in
+handy later.
+
+476
+00:20:58,298 --> 00:20:59,839
+We're thinking about
+graphs now, of course,
+
+477
+00:20:59,839 --> 00:21:01,009
+we just spent the
+last couple of weeks
+
+478
+00:21:01,009 --> 00:21:02,305
+thinking about data structures.
+
+479
+00:21:02,305 --> 00:21:04,680
+You need to think about how
+to save the schedule on your computer,
+
+480
+00:21:04,680 --> 00:21:06,720
+and there are
+many options.
+
+481
+00:21:06,720 --> 00:21:10,039
+Actually, really, one thing
+you can do is something like a pair-- just like
+
+482
+00:21:10,039 --> 00:21:12,226
+when we were
+talking about sets.
+
+483
+00:21:12,227 --> 00:21:14,060
+There are many different
+ways to store kits.
+
+484
+00:21:14,059 --> 00:21:16,339
+And one way to think
+about it is, depending
+
+485
+00:21:16,339 --> 00:21:18,859
+on how we're going to interact
+with this set, we can choose one
+
+486
+00:21:18,859 --> 00:21:21,829
+data structure or another
+to optimize
+
+487
+00:21:21,829 --> 00:21:24,589
+the types of interactions that we're going to
+have with this set
+
+488
+00:21:24,589 --> 00:21:26,359
+and make them as
+fast as possible.
+
+489
+00:21:26,359 --> 00:21:29,689
+It's exactly the
+same story for the graph.
+
+490
+00:21:29,690 --> 00:21:33,470
+So, for example,
+the stupidest representation of a graph in the world would be to
+
+491
+00:21:33,470 --> 00:21:36,529
+simply
+have a long list of edges.
+
+492
+00:21:36,529 --> 00:21:39,980
+So, for example, for
+this graph here, maybe
+
+493
+00:21:39,980 --> 00:21:44,930
+I have 0, 1, which is an
+edge, and then 0,
+
+494
+00:21:44,930 --> 00:21:50,930
+2, which is another edge, and
+then 1, 2, and then 2, 1.
+
+495
+00:21:50,930 --> 00:21:52,340
+There's a big list of edges.
+
+496
+00:21:52,339 --> 00:21:53,480
+This is truly a set.
+
+497
+00:21:53,480 --> 00:21:55,312
+I don't care about order.
+
+498
+00:21:55,311 --> 00:21:56,717
+AUDIENCE: The first one is 1, 2.
+
+499
+00:21:56,718 --> 00:21:58,259
+JUSTIN SOLOMON: 1—
+oh, you're right.
+
+500
+00:21:58,259 --> 00:21:58,859
+I'm sorry.
+
+501
+00:21:58,859 --> 00:22:00,629
+Yes, the edge is pointing up--
+
+502
+00:22:00,630 --> 00:22:01,875
+thanks Eric, or no Eric--
+
+503
+00:22:01,875 --> 00:22:02,375
+Jason.
+
+504
+00:22:05,109 --> 00:22:08,407
+Okay, let's say I
+have a graph algorithm
+
+505
+00:22:08,407 --> 00:22:09,949
+and I
+need to do something
+
+506
+00:22:09,950 --> 00:22:13,100
+like check if an
+edge from v
+
+507
+00:22:13,099 --> 00:22:14,269
+to w exists multiple times.
+
+508
+00:22:16,789 --> 00:22:19,379
+How long will it
+take in this data structure?
+
+509
+00:22:19,380 --> 00:22:22,850
+Well, if I just have an
+unordered list of edges,
+
+510
+00:22:22,849 --> 00:22:25,250
+and I want to know if
+there is an edge from v to w,
+
+511
+00:22:25,250 --> 00:22:28,605
+all I can do is write a
+FOR loop that just goes along that
+
+512
+00:22:28,605 --> 00:22:30,480
+and says, here's the
+edge I'm looking for.
+
+513
+00:22:30,480 --> 00:22:30,890
+No.  Is
+
+514
+00:22:30,890 --> 00:22:31,880
+this the advantage
+I'm looking for?
+
+515
+00:22:31,880 --> 00:22:32,645
+No.
+
+516
+00:22:32,644 --> 00:22:35,359
+Every time I
+want to find an edge,
+
+517
+00:22:35,359 --> 00:22:37,932
+it will take
+time proportional to
+
+518
+00:22:37,932 --> 00:22:39,349
+the number of
+edges in my graph,
+
+519
+00:22:39,349 --> 00:22:42,019
+which could potentially
+be up to v squared.
+
+520
+00:22:42,019 --> 00:22:44,599
+Yes, it's not such a
+great representation of
+
+521
+00:22:44,599 --> 00:22:47,351
+the graph on my computer.
+
+522
+00:22:47,352 --> 00:22:49,310
+So if we think
+about our data structure,
+
+523
+00:22:49,309 --> 00:22:52,129
+we can say, okay, so a bounded list is
+probably not the way to go.
+
+524
+00:22:52,130 --> 00:22:53,780
+Although note that the way
+we labeled
+
+525
+00:22:53,779 --> 00:22:56,750
+what a graph is
+looks like a limit list.
+
+526
+00:22:56,750 --> 00:22:59,869
+But in any case,
+the most common thing to do
+
+527
+00:22:59,869 --> 00:23:03,750
+is to create something like an
+adjacency list.
+
+528
+00:23:03,750 --> 00:23:08,359
+So the basic idea of ​​an
+adjacency list
+
+529
+00:23:08,359 --> 00:23:18,709
+is that I'm going to store a
+set that maps a vertex
+
+530
+00:23:18,710 --> 00:23:24,465
+u to everything that is adjacent to u.  In
+
+531
+00:23:24,464 --> 00:23:25,839
+other words,
+I'm just going to
+
+532
+00:23:25,839 --> 00:23:27,464
+keep track of all the
+outgoing edges
+
+533
+00:23:27,464 --> 00:23:29,829
+from each vertex.
+
+534
+00:23:29,829 --> 00:23:33,641
+And now I have to decide how
+I will store this item.
+
+535
+00:23:33,642 --> 00:23:35,100
+And often
+we will have to
+
+536
+00:23:35,099 --> 00:23:37,349
+answer questions, such as whether
+there is an edge from v
+
+537
+00:23:37,349 --> 00:23:38,521
+to w.  So
+
+538
+00:23:38,521 --> 00:23:39,480
+how could I do that?
+
+539
+00:23:39,480 --> 00:23:43,140
+First, I
+look up v, and I get a
+
+540
+00:23:43,140 --> 00:23:44,958
+list or
+set of all things
+
+541
+00:23:44,958 --> 00:23:47,250
+that are adjacent to v.  And
+I have to ask this thing.
+
+542
+00:23:47,250 --> 00:23:49,109
+And I want it to be pretty quick.
+
+543
+00:23:49,109 --> 00:23:54,990
+So maybe
+I store a set of
+
+544
+00:23:54,990 --> 00:24:00,990
+related materials as
+something like a random access array
+
+545
+00:24:00,990 --> 00:24:07,500
+or hash table for
+quick lookups.
+
+546
+00:24:14,869 --> 00:24:17,122
+So, for example, how
+long would it take--
+
+547
+00:24:17,123 --> 00:24:19,039
+I see, I'm going to
+finish the sentence here--
+
+548
+00:24:19,039 --> 00:24:20,456
+how long would it take
+me to check
+
+549
+00:24:20,457 --> 00:24:22,213
+if an edge exists in my graph?
+
+550
+00:24:22,212 --> 00:24:23,129
+Well, what would I do?
+
+551
+00:24:23,130 --> 00:24:24,680
+I would first
+pull this object out
+
+552
+00:24:24,680 --> 00:24:26,720
+and then look inside from here
+.
+
+553
+00:24:26,720 --> 00:24:28,490
+So if I stored this
+as a hash table, the
+
+554
+00:24:28,490 --> 00:24:31,099
+expected time I would
+have an order one lookup
+
+555
+00:24:31,099 --> 00:24:32,689
+because it's an
+order one, and then
+
+556
+00:24:32,690 --> 00:24:34,890
+you have another order
+one lookup.
+
+557
+00:24:34,890 --> 00:24:38,580
+So we went from v squared to
+unity with one simple trick.
+
+558
+00:24:38,579 --> 00:24:39,326
+Yes?
+
+559
+00:24:39,326 --> 00:24:42,222
+AUDIENCE: Does the
+direction matter [INAUDIBLE]
+
+560
+00:24:42,222 --> 00:24:43,889
+JUSTIN SOLOMON: That's a
+great question.
+
+561
+00:24:43,890 --> 00:24:45,307
+So, this is a design
+decision.
+
+562
+00:24:45,307 --> 00:24:48,110
+Sorry, I
+think a lot about undirected graphs in my head,
+
+563
+00:24:48,109 --> 00:24:49,817
+and I'm going to
+make this mistake a lot.
+
+564
+00:24:49,817 --> 00:24:51,259
+And I'm glad you caught me.
+
+565
+00:24:51,259 --> 00:24:52,968
+There is a perfectly
+reasonable thing
+
+566
+00:24:52,968 --> 00:24:55,670
+that could possibly be done, which is to
+keep track of the outgoing edges
+
+567
+00:24:55,670 --> 00:24:56,687
+for each vertex.
+
+568
+00:24:56,686 --> 00:24:57,769
+This is a design decision.
+
+569
+00:24:57,769 --> 00:24:59,690
+For an algorithm,
+maybe I want to
+
+570
+00:24:59,690 --> 00:25:00,972
+keep track of incoming edges.
+
+571
+00:25:00,972 --> 00:25:02,389
+Whatever it is, I just have to
+make sure
+
+572
+00:25:02,390 --> 00:25:05,580
+it aligns with what I
+want to do with my schedule later.
+
+573
+00:25:05,579 --> 00:25:06,990
+Excellent point.
+
+574
+00:25:06,990 --> 00:25:10,519
+Sorry, but we geometric people
+rarely encounter directed
+
+575
+00:25:10,519 --> 00:25:11,539
+graphs.
+
+576
+00:25:11,539 --> 00:25:13,700
+But it's important
+to remember
+
+577
+00:25:13,700 --> 00:25:16,870
+that not everyone is working on the
+same problems as me.
+
+578
+00:25:16,869 --> 00:25:20,629
+Okay, now if I wanted to be
+absolutely extreme about this-- just as a
+
+579
+00:25:20,630 --> 00:25:22,683
+third example of a
+representation
+
+580
+00:25:22,682 --> 00:25:24,099
+that can actually,
+in a sense, be
+
+581
+00:25:24,099 --> 00:25:25,724
+thought of as an
+adjacency list--
+
+582
+00:25:25,724 --> 00:25:28,339
+we need an adjacency matrix,
+where I'm now just storing a
+
+583
+00:25:28,339 --> 00:25:32,089
+giant v by v array of
+like does this exist,
+
+584
+00:25:32,089 --> 00:25:33,779
+does that edge exist.
+
+585
+00:25:33,779 --> 00:25:38,670
+Now it's very, very easy
+to check if an edge exists.
+
+586
+00:25:38,670 --> 00:25:41,045
+But now suppose I
+created a graph algorithm that would
+
+587
+00:25:41,045 --> 00:25:42,420
+have a
+FOR loop over all the
+
+588
+00:25:42,420 --> 00:25:45,470
+neighbors of some vertex.
+
+589
+00:25:45,470 --> 00:25:49,900
+So, if I wanted to go
+through all the neighbors of u,
+
+590
+00:25:49,900 --> 00:25:51,400
+I could do it in
+time proportional to the
+
+591
+00:25:51,400 --> 00:25:54,300
+number of neighbors of u.
+
+592
+00:25:54,299 --> 00:25:56,129
+But if I just have a
+big adjacency matrix,
+
+593
+00:25:56,130 --> 00:25:59,760
+just a bunch of binary values--
+like for each pair of vertices,
+
+594
+00:25:59,759 --> 00:26:02,609
+are those vertices
+adjacent-- yes or no.
+
+595
+00:26:02,609 --> 00:26:04,719
+If I want to iterate
+over all my neighbors,
+
+596
+00:26:04,720 --> 00:26:07,110
+now I have to go
+through all the vertices
+
+597
+00:26:07,109 --> 00:26:10,131
+and check if it's number
+one and then do something.
+
+598
+00:26:10,132 --> 00:26:12,090
+So it may actually
+require extra time
+
+599
+00:26:12,089 --> 00:26:13,199
+and extra space.  Does
+
+600
+00:26:13,200 --> 00:26:16,450
+this make sense?
+
+601
+00:26:16,450 --> 00:26:18,930
+So in any case, it's
+kind of a lazy graph
+
+602
+00:26:18,930 --> 00:26:19,680
+.
+
+603
+00:26:19,680 --> 00:26:22,259
+I often use it when I code
+because adjacency matrices are
+
+604
+00:26:22,259 --> 00:26:23,160
+easy to work with.
+
+605
+00:26:23,160 --> 00:26:25,407
+But this takes up a lot of
+extra space,
+
+606
+00:26:25,406 --> 00:26:27,240
+and it's not always the most efficient,
+
+607
+00:26:27,240 --> 00:26:29,460
+even if you have the space,
+because iterating over
+
+608
+00:26:29,460 --> 00:26:32,700
+neighbors can actually
+take quite a while.
+
+609
+00:26:32,700 --> 00:26:35,250
+Okay, the real goal of
+our lecture today is to
+
+610
+00:26:35,250 --> 00:26:37,980
+start introducing the
+canonical problem
+
+611
+00:26:37,980 --> 00:26:39,900
+we all worry about
+with graphs, which is
+
+612
+00:26:39,900 --> 00:26:43,383
+computing paths,
+specifically shortest paths.
+
+613
+00:26:43,383 --> 00:26:45,299
+So, the first thing we
+need to do is, of course,
+
+614
+00:26:45,299 --> 00:26:48,579
+define what a path is
+in a graph.
+
+615
+00:26:48,579 --> 00:26:51,569
+So we'll talk about
+our schedule as a road network.
+
+616
+00:26:51,569 --> 00:26:54,659
+Let's think of each
+node here as an intersection.
+
+617
+00:26:54,660 --> 00:26:56,970
+So, this is roughly
+Kendall Square.
+
+618
+00:26:56,970 --> 00:26:59,519
+Look, it's a square.
+
+619
+00:26:59,519 --> 00:27:04,049
+But anyway,
+let's say what I want to find...
+
+620
+00:27:04,049 --> 00:27:05,849
+maybe the question
+would be: is
+
+621
+00:27:05,849 --> 00:27:08,969
+there a way to get
+from vertex 1 to vertex 3?
+
+622
+00:27:08,970 --> 00:27:10,380
+And then the better
+question is, is
+
+623
+00:27:10,380 --> 00:27:12,870
+there a
+shortcut to get from vertex 1
+
+624
+00:27:12,869 --> 00:27:13,646
+to vertex 3?
+
+625
+00:27:13,646 --> 00:27:15,480
+Then, of course, the
+first thing I have to do
+
+626
+00:27:15,480 --> 00:27:16,440
+is identify my enemy.
+
+627
+00:27:16,440 --> 00:27:19,380
+I have determined what I am
+looking for, which is the path.
+
+628
+00:27:19,380 --> 00:27:23,130
+So, a path is nothing more than a
+sequence of vertices in a graph,
+
+629
+00:27:23,130 --> 00:27:26,280
+where each pair of adjacent
+vertices in that sequence
+
+630
+00:27:26,279 --> 00:27:27,559
+is an edge.
+
+631
+00:27:27,559 --> 00:27:29,309
+I think all of this is consistent
+with our intuition
+
+632
+00:27:29,309 --> 00:27:31,359
+about what a path is in a graph.
+
+633
+00:27:31,359 --> 00:27:35,369
+Here, for example,
+path p is equal to v1, v2, v3.
+
+634
+00:27:35,369 --> 00:27:38,309
+So notice that there is an
+edge from v1 to v2,
+
+635
+00:27:38,309 --> 00:27:40,019
+and also an edge from v2 to v3.
+
+636
+00:27:40,019 --> 00:27:45,599
+Therefore, it satisfies the assumptions
+stated in our definition.
+
+637
+00:27:45,599 --> 00:27:47,369
+What wouldn't be a
+path on our graph
+
+638
+00:27:47,369 --> 00:27:51,899
+would look like v1, which is v3,
+because there's no edge there.
+
+639
+00:27:51,900 --> 00:27:55,110
+So, if we're talking about
+paths, there's a
+
+640
+00:27:55,109 --> 00:27:58,406
+very natural concept,
+which is length.
+
+641
+00:27:58,406 --> 00:28:00,990
+Length, I think, can be thought of
+as the number of vertices
+
+642
+00:28:00,990 --> 00:28:03,870
+in your path minus 1,
+or the number of edges
+
+643
+00:28:03,869 --> 00:28:05,099
+that your path crosses.
+
+644
+00:28:05,099 --> 00:28:06,959
+It's the same.
+
+645
+00:28:06,960 --> 00:28:10,485
+So, for example, the
+path length p here is 2. Does
+
+646
+00:28:10,484 --> 00:28:12,359
+everyone see that?  A
+
+647
+00:28:12,359 --> 00:28:14,969
+very common coding error
+that I often encounter
+
+648
+00:28:14,970 --> 00:28:18,750
+is accidentally adding 1 to this
+number.
+
+649
+00:28:18,750 --> 00:28:21,309
+Because, of course, there are
+one more vertex than edges on your path
+
+650
+00:28:21,309 --> 00:28:23,690
+.
+
+651
+00:28:23,690 --> 00:28:25,730
+Okay, and there are
+many different ones - there
+
+652
+00:28:25,730 --> 00:28:28,511
+could potentially be
+more than one path
+
+653
+00:28:28,511 --> 00:28:29,720
+between any pair of vertices.
+
+654
+00:28:29,720 --> 00:28:33,470
+So, let's say I have an
+undirected graph that
+
+655
+00:28:33,470 --> 00:28:35,100
+looks like this.
+
+656
+00:28:35,099 --> 00:28:37,879
+So it's just a square
+plus a diagonal.   So,
+
+657
+00:28:37,880 --> 00:28:39,365
+here are the nodes.
+
+658
+00:28:42,109 --> 00:28:44,599
+So, a perfectly valid
+way to get from the bottom left corner
+
+659
+00:28:44,599 --> 00:28:47,757
+to the top right corner would be to
+go up one and then down the other,
+
+660
+00:28:47,758 --> 00:28:49,549
+but of course there is a
+more efficient way
+
+661
+00:28:49,549 --> 00:28:51,716
+to get from the bottom left corner
+to the top right,
+
+662
+00:28:51,717 --> 00:28:54,667
+which is to go diagonally.
+
+663
+00:28:54,666 --> 00:28:56,500
+So, when we talk
+about the shortest path,
+
+664
+00:28:56,500 --> 00:28:57,875
+it is nothing but the
+length of the
+
+665
+00:28:57,875 --> 00:28:59,920
+path that has
+the least number of edges
+
+666
+00:28:59,920 --> 00:29:05,289
+or vertices between any pair of
+vertices in my graph.
+
+667
+00:29:05,289 --> 00:29:06,460
+Okay, this is our enemy.
+
+668
+00:29:06,460 --> 00:29:07,501
+This is what we strive for.
+
+669
+00:29:07,501 --> 00:29:11,690
+This is the calculation of the shortest path
+between vertices in a graph.
+
+670
+00:29:11,690 --> 00:29:14,259
+And this is something
+we will
+
+671
+00:29:14,259 --> 00:29:15,134
+talk about quite a bit in this course.
+
+672
+00:29:15,134 --> 00:29:17,134
+Because, of course, it's a
+very practical matter.
+
+673
+00:29:17,134 --> 00:29:19,180
+For example, when I want to
+solve routing problems,
+
+674
+00:29:19,180 --> 00:29:20,900
+I want to move packets out
+of my network,
+
+675
+00:29:20,900 --> 00:29:23,350
+I would prefer not to do that-- well,
+unless I'm using Tor--
+
+676
+00:29:23,349 --> 00:29:27,039
+I would prefer not to have them hit
+too many computers in between.
+
+677
+00:29:27,039 --> 00:29:28,990
+Then maybe I want a
+computerized shortcut.
+
+678
+00:29:28,990 --> 00:29:33,910
+Or on the surface, maybe I
+want to move the information
+
+679
+00:29:33,910 --> 00:29:36,190
+not too far.
+
+680
+00:29:36,190 --> 00:29:38,140
+But of course, there are
+many variations
+
+681
+00:29:38,140 --> 00:29:40,990
+on this theme when we
+talk about the shortest path
+
+682
+00:29:40,990 --> 00:29:42,870
+or even the
+existence of a path.
+
+683
+00:29:42,869 --> 00:29:44,979
+So, these are the three
+types of modeling problems
+
+684
+00:29:44,980 --> 00:29:47,480
+that we can solve on a graph.
+
+685
+00:29:47,480 --> 00:29:50,089
+So the first one,
+which
+
+686
+00:29:50,089 --> 00:29:52,359
+we of course call
+one-pair reachability,
+
+687
+00:29:52,359 --> 00:29:54,309
+would be the idea that
+I take two vertices s
+
+688
+00:29:54,309 --> 00:29:58,720
+and t on my graph g,
+and I ask you if there
+
+689
+00:29:58,720 --> 00:30:01,794
+is a path between s and t.
+
+690
+00:30:01,794 --> 00:30:04,009
+So, what would be an
+extreme example
+
+691
+00:30:04,009 --> 00:30:07,670
+where this problem
+doesn't always
+
+692
+00:30:07,670 --> 00:30:09,265
+give a "yes" answer?
+
+693
+00:30:09,265 --> 00:30:11,390
+For some reason in our heads, I
+think we consider all graphs
+
+694
+00:30:11,390 --> 00:30:13,250
+to be connected.
+
+695
+00:30:13,250 --> 00:30:15,839
+But a perfectly correct graph,
+as we defined it, would
+
+696
+00:30:15,839 --> 00:30:19,712
+have 10
+vertices and no edges.
+
+697
+00:30:19,712 --> 00:30:21,379
+This function would be
+very easy to code
+
+698
+00:30:21,380 --> 00:30:23,930
+if it were the only
+graph you were ever interested in.
+
+699
+00:30:23,930 --> 00:30:26,560
+But any event, the
+existence of a path,
+
+700
+00:30:26,559 --> 00:30:28,309
+is a query
+that requires a bit of
+
+701
+00:30:28,309 --> 00:30:29,309
+algorithmic thinking.
+
+702
+00:30:29,309 --> 00:30:32,950
+We haven't figured out
+how to do it yet.
+
+703
+00:30:32,950 --> 00:30:35,450
+Now another problem we can solve is the
+shortest path.
+
+704
+00:30:35,450 --> 00:30:37,670
+Given a graph and
+two vertices, we
+
+705
+00:30:37,670 --> 00:30:41,150
+could say how far apart
+these vertices of my graph are
+
+706
+00:30:41,150 --> 00:30:43,910
+if I want to use the
+shortest distance from one
+
+707
+00:30:43,910 --> 00:30:45,650
+to the other.
+
+708
+00:30:45,650 --> 00:30:49,250
+Note that I can use the second
+problem to solve the first.
+
+709
+00:30:49,250 --> 00:30:51,200
+Because what is
+the length of the shortest
+
+710
+00:30:51,200 --> 00:30:55,600
+path between two vertices
+between which there is no path?
+
+711
+00:30:55,599 --> 00:30:57,699
+Infinity or shrugging
+is a
+
+712
+00:30:57,700 --> 00:30:58,720
+perfectly valid response.
+
+713
+00:30:58,720 --> 00:31:00,730
+Yes, that's true.
+
+714
+00:31:00,730 --> 00:31:03,759
+So, how can I implement
+accessibility code?
+
+715
+00:31:03,759 --> 00:31:05,680
+Well, I could call the
+code of my shortest path,
+
+716
+00:31:05,680 --> 00:31:07,029
+and that gives me infinity.
+
+717
+00:31:07,029 --> 00:31:08,990
+Then I return no,
+it is not available.
+
+718
+00:31:08,990 --> 00:31:12,250
+And if it doesn't give me
+infinity, I return yes.
+
+719
+00:31:12,250 --> 00:31:14,916
+So remember that the key
+idea in the algorithm class
+
+720
+00:31:14,916 --> 00:31:16,000
+is this idea of ​​reduction.
+
+721
+00:31:16,000 --> 00:31:19,190
+That I can use one
+function to solve another.
+
+722
+00:31:19,190 --> 00:31:21,259
+So in case we can
+solve the shortest path,
+
+723
+00:31:21,259 --> 00:31:23,890
+then we can definitely solve the
+reachability problem
+
+724
+00:31:23,890 --> 00:31:26,620
+by calling this part of the code.
+
+725
+00:31:26,619 --> 00:31:30,129
+And finally we can talk
+about the shortest path from a single source
+
+726
+00:31:30,130 --> 00:31:30,730
+.
+
+727
+00:31:30,730 --> 00:31:35,220
+So, notice that there
+is only one input node s here –
+
+728
+00:31:35,220 --> 00:31:37,019
+so this problem is to
+give me
+
+729
+00:31:37,019 --> 00:31:38,789
+the length of the
+shortest path from s
+
+730
+00:31:38,789 --> 00:31:42,492
+to every other
+vertex in my graph.  Does
+
+731
+00:31:42,492 --> 00:31:43,409
+this make sense?
+
+732
+00:31:43,410 --> 00:31:46,230
+Maybe I'm returning a large
+array with all the information about
+
+733
+00:31:46,230 --> 00:31:49,690
+each shortest distance.
+
+734
+00:31:49,690 --> 00:31:52,650
+So, can we solve one
+pair of shortest paths using the
+
+735
+00:31:52,650 --> 00:31:56,120
+shortest path from one source?
+
+736
+00:31:56,119 --> 00:31:57,109
+Absolutely.
+
+737
+00:31:57,109 --> 00:32:01,579
+I could take s in my
+one-pair shortest path problem,
+
+738
+00:32:01,579 --> 00:32:04,934
+calculate the shortest path from
+s to literally everything else,
+
+739
+00:32:04,934 --> 00:32:07,559
+and then throw away all that
+information except the shortest
+
+740
+00:32:07,559 --> 00:32:10,049
+path to t, and now I'm good.
+
+741
+00:32:10,049 --> 00:32:13,349
+I didn't argue that
+this is the fastest possible
+
+742
+00:32:13,349 --> 00:32:14,759
+way to solve
+the second problem,
+
+743
+00:32:14,759 --> 00:32:17,369
+but at least it shows that
+if I can solve problem three,
+
+744
+00:32:17,369 --> 00:32:19,571
+I can solve problem two.
+
+745
+00:32:19,571 --> 00:32:21,779
+If I can solve two, I
+can also solve one problem.
+
+746
+00:32:21,779 --> 00:32:24,029
+So in today's
+lecture we will only be concerned
+
+747
+00:32:24,029 --> 00:32:25,603
+with problem three.  In
+
+748
+00:32:25,603 --> 00:32:27,269
+other words, these
+things
+
+749
+00:32:27,269 --> 00:32:31,389
+are listed in
+order of increasing complexity.
+
+750
+00:32:31,390 --> 00:32:34,810
+So, to think about the problem of the
+shortest path from a single source
+
+751
+00:32:34,809 --> 00:32:37,480
+, we will create
+one additional construct.
+
+752
+00:32:37,480 --> 00:32:41,529
+And this is an idea called the
+shortest path tree.
+
+753
+00:32:41,529 --> 00:32:44,289
+I was too lazy to draw on
+PowerPoint slides at 2:00 AM yesterday,
+
+754
+00:32:44,289 --> 00:32:48,230
+and thought of
+drawing a picture on the board instead.
+
+755
+00:32:48,230 --> 00:32:52,940
+So, let's draw a graph.
+
+756
+00:32:52,940 --> 00:32:56,140
+So here we have a, b – from now on
+
+757
+00:32:56,140 --> 00:32:58,030
+I will use letters
+instead of numbers
+
+758
+00:32:58,029 --> 00:33:01,329
+to denote nodes
+because I don't want to
+
+759
+00:33:01,329 --> 00:33:03,129
+confuse the length of the
+shortest path
+
+760
+00:33:03,130 --> 00:33:06,440
+with the index of my node.
+
+761
+00:33:06,440 --> 00:33:08,320
+So here's a, b, c--
+
+762
+00:33:08,319 --> 00:33:10,319
+I'm going to match
+my notes here--
+
+763
+00:33:10,319 --> 00:33:14,724
+d, e, f.
+
+764
+00:33:17,309 --> 00:33:19,815
+Here's the graph –
+undirected again,
+
+765
+00:33:19,815 --> 00:33:22,440
+because your instructor likes to
+think about undirected graphs.
+
+766
+00:33:22,440 --> 00:33:24,231
+But I know I'll
+get feedback that I
+
+767
+00:33:24,231 --> 00:33:26,109
+shouldn't have done it later.
+
+768
+00:33:26,109 --> 00:33:27,569
+But anyway,
+let's say I
+
+769
+00:33:27,569 --> 00:33:29,819
+want to calculate the shortest
+path from a to everything
+
+770
+00:33:29,819 --> 00:33:31,534
+else, or rather the length.
+
+771
+00:33:31,535 --> 00:33:33,910
+So, first of all, without even
+talking about the algorithm,
+
+772
+00:33:33,910 --> 00:33:35,785
+I think it's pretty easy
+to guess what it is.
+
+773
+00:33:35,785 --> 00:33:39,240
+So obviously the shortest path
+from a to a has length 0.
+
+774
+00:33:39,240 --> 00:33:42,359
+The shortest length from a
+to b is 1, from a to c is 2,
+
+775
+00:33:42,359 --> 00:33:43,919
+because I can follow these guys.
+
+776
+00:33:43,920 --> 00:33:45,039
+Now it gets complicated.
+
+777
+00:33:45,039 --> 00:33:47,250
+It is branched.
+
+778
+00:33:47,250 --> 00:33:52,694
+So the next shortest path has
+length 3, and then 4 like this.
+
+779
+00:33:52,694 --> 00:33:54,569
+Does everyone agree
+with me that the numbers
+
+780
+00:33:54,569 --> 00:33:56,653
+I've decorated here are the
+lengths of the shortest
+
+781
+00:33:56,653 --> 00:33:58,589
+path from a to everything else?
+
+782
+00:34:01,519 --> 00:34:03,879
+But what didn't I do?
+
+783
+00:34:03,880 --> 00:34:06,430
+I didn't tell you how to
+actually calculate the path,
+
+784
+00:34:06,430 --> 00:34:09,730
+I just gave you the
+length of the path.
+
+785
+00:34:09,730 --> 00:34:12,340
+So I might need a piece of
+code that, in addition to determining
+
+786
+00:34:12,340 --> 00:34:15,550
+the length of the shortest path to a single source,
+
+787
+00:34:15,550 --> 00:34:19,989
+also gives me the
+shortest path to a single source.
+
+788
+00:34:19,989 --> 00:34:22,460
+So initially, when I think about
+it, I might think about,
+
+789
+00:34:22,460 --> 00:34:25,420
+well, how do I even
+write down a data structure that
+
+790
+00:34:25,420 --> 00:34:28,059
+can store all these paths.
+
+791
+00:34:28,059 --> 00:34:31,059
+Well, each path can have
+like v vertices, right.
+
+792
+00:34:31,059 --> 00:34:33,255
+Maybe
+for whatever reason,
+
+793
+00:34:33,255 --> 00:34:34,880
+my schedule has a lot of branches.
+
+794
+00:34:34,880 --> 00:34:36,730
+And all the paths are
+very long.
+
+795
+00:34:36,730 --> 00:34:38,409
+Actually, I think I need to
+consider
+
+796
+00:34:38,409 --> 00:34:40,929
+whether branching
+will make them longer or shorter.
+
+797
+00:34:40,929 --> 00:34:44,414
+But in any case, I could have a
+really boring data structure
+
+798
+00:34:44,414 --> 00:34:45,789
+that just keeps track, for
+each individual vertex, of the
+
+799
+00:34:45,789 --> 00:34:51,570
+shortest
+path from a to that vertex.
+
+800
+00:34:51,570 --> 00:34:54,210
+How big
+will this data structure be?
+
+801
+00:34:54,210 --> 00:34:56,730
+Well, if the only constraint I
+have on the length of a path is
+
+802
+00:34:56,730 --> 00:34:58,215
+that--
+
+803
+00:34:58,215 --> 00:35:02,010
+it definitely spans at most
+all the vertices in my graph--
+
+804
+00:35:02,010 --> 00:35:04,750
+then any path
+will span v spaces.
+
+805
+00:35:04,750 --> 00:35:07,699
+Thus, it will occupy v
+squared of the total space.
+
+806
+00:35:07,699 --> 00:35:08,929
+That wouldn't be so good.
+
+807
+00:35:08,929 --> 00:35:11,449
+Because in a way,
+my graph
+
+808
+00:35:11,449 --> 00:35:12,469
+now has linear information.
+
+809
+00:35:12,469 --> 00:35:13,996
+It's just the
+length of the path.
+
+810
+00:35:13,996 --> 00:35:15,829
+If I want to actually
+reconstruct this path, then I
+
+811
+00:35:15,829 --> 00:35:18,650
+first spiritually
+feel that I need much
+
+812
+00:35:18,650 --> 00:35:20,242
+more space to do so.
+
+813
+00:35:20,242 --> 00:35:21,950
+But the answer is that
+we don't actually do that.
+
+814
+00:35:21,949 --> 00:35:23,480
+We will
+only need a linear space,
+
+815
+00:35:23,480 --> 00:35:25,490
+and the idea is to
+store an object
+
+816
+00:35:25,489 --> 00:35:26,739
+called a shortest path tree.
+
+817
+00:35:26,739 --> 00:35:27,239
+Yes?
+
+818
+00:35:27,239 --> 00:35:33,822
+AUDIENCE: Just for [INAUDIBLE]
+the previous [INAUDIBLE]..
+
+819
+00:35:33,822 --> 00:35:35,989
+JUSTIN SOLOMON: So
+the question was about recursion.
+
+820
+00:35:35,989 --> 00:35:38,239
+We didn't actually
+write down any graph algorithms.
+
+821
+00:35:38,239 --> 00:35:41,104
+So we're going to put it off
+until we actually repeat.
+
+822
+00:35:41,105 --> 00:35:42,980
+And then
+we'll think more carefully.
+
+823
+00:35:42,980 --> 00:35:45,409
+Yes, but it's a perfectly
+reasonable question.
+
+824
+00:35:45,409 --> 00:35:47,809
+There are many recursive
+graph algorithms.
+
+825
+00:35:47,809 --> 00:35:50,500
+And then we'll
+
+826
+00:35:50,500 --> 00:35:51,500
+probably have to do some very careful calculations.
+
+827
+00:35:54,480 --> 00:35:57,990
+So, instead, we will
+define an object called a
+
+828
+00:35:57,989 --> 00:35:59,250
+shortest path tree.
+
+829
+00:35:59,250 --> 00:36:01,809
+And the main trick
+here is to say:
+
+830
+00:36:01,809 --> 00:36:04,549
+how did I get from a to c?
+
+831
+00:36:04,550 --> 00:36:08,990
+Well, on the shortest path there is always a vertex
+that is its predecessor
+
+832
+00:36:08,989 --> 00:36:10,289
+.
+
+833
+00:36:10,289 --> 00:36:12,960
+And the shortest path has this
+wonderful property,
+
+834
+00:36:12,960 --> 00:36:16,789
+which is that the shortest path
+from a to c, if I truncate it--
+
+835
+00:36:16,789 --> 00:36:19,989
+right, so it goes from a to b to c--
+
+836
+00:36:19,989 --> 00:36:23,139
+then the truncated path
+is also the shortest path
+
+837
+00:36:23,139 --> 00:36:24,514
+to the previous vertex.
+
+838
+00:36:24,514 --> 00:36:26,139
+So let's think about
+this for a moment,
+
+839
+00:36:26,139 --> 00:36:27,969
+because this sentence
+, as usual, was poorly
+
+840
+00:36:27,969 --> 00:36:29,529
+worded by your instructor.
+
+841
+00:36:29,530 --> 00:36:31,930
+So, let's say
+I have a shortest
+
+842
+00:36:31,929 --> 00:36:38,799
+path from a to d, which
+very clearly means a, b, c, d.
+
+843
+00:36:38,800 --> 00:36:40,539
+I think we can all agree.
+
+844
+00:36:40,539 --> 00:36:42,820
+And now I take
+this sublist.
+
+845
+00:36:42,820 --> 00:36:45,309
+I'm just looking from a to c.   Is
+
+846
+00:36:45,309 --> 00:36:47,019
+there ever a
+circumstance where
+
+847
+00:36:47,019 --> 00:36:53,269
+this is not the shortest path
+or the shortest path from a to c?
+
+848
+00:36:53,269 --> 00:36:56,750
+No, that's right, because if there
+was a shorter path
+
+849
+00:36:56,750 --> 00:36:59,929
+from a to c, I could
+connect it here
+
+850
+00:36:59,929 --> 00:37:02,635
+and find the shortest
+path from a to d.  Do
+
+851
+00:37:02,635 --> 00:37:04,670
+you see that?
+
+852
+00:37:04,670 --> 00:37:06,920
+So, based on this
+reasoning, I can just think about the one vertex that's in front of me on my shortest path, instead of typing a
+
+853
+00:37:06,920 --> 00:37:10,000
+string like this giant
+set of shortest paths,
+
+854
+00:37:10,000 --> 00:37:11,750
+sort of actually
+applying, in a sense, a
+
+855
+00:37:11,750 --> 00:37:15,289
+recursive proposition.
+
+856
+00:37:19,831 --> 00:37:21,039
+I'm going to trace back.
+
+857
+00:37:21,039 --> 00:37:22,730
+So, let's look
+at our schedule.
+
+858
+00:37:25,666 --> 00:37:27,750
+Essentially, the object
+I will be monitoring is
+
+859
+00:37:27,750 --> 00:37:30,130
+similar to its predecessor, right?
+
+860
+00:37:30,130 --> 00:37:34,210
+So what is the predecessor of
+f on the shortest path?
+
+861
+00:37:34,210 --> 00:37:35,619
+Actually it's either d or e.
+
+862
+00:37:35,619 --> 00:37:37,460
+In this case, it doesn't matter.
+
+863
+00:37:37,460 --> 00:37:42,690
+Maybe the predecessor is
+for fun, right?
+
+864
+00:37:42,690 --> 00:37:44,039
+What is the predecessor of e?
+
+865
+00:37:44,039 --> 00:37:47,159
+Obviously, the previous
+vertex on the shortest path
+
+866
+00:37:47,159 --> 00:37:49,259
+is c.
+
+867
+00:37:49,260 --> 00:37:54,540
+Similarly for d-- now we
+have b and a and a bunch of
+
+868
+00:37:54,539 --> 00:37:56,639
+arrows pointing in that direction.
+
+869
+00:37:56,639 --> 00:37:58,092
+So for each vertex,
+I'll just
+
+870
+00:37:58,092 --> 00:38:00,300
+start an arrow that points
+to the previous vertex
+
+871
+00:38:00,300 --> 00:38:01,269
+on the shortest path.
+
+872
+00:38:01,269 --> 00:38:03,480
+I'm not going to store the
+entire shortest path, just the
+
+873
+00:38:03,480 --> 00:38:06,369
+last edge.
+
+874
+00:38:06,369 --> 00:38:10,529
+So, first of all, how much
+memory does this take up?
+
+875
+00:38:10,530 --> 00:38:11,663
+This takes up v places.  Do
+
+876
+00:38:11,663 --> 00:38:12,329
+you see that?
+
+877
+00:38:12,329 --> 00:38:14,219
+Or the size of the
+vertex space.
+
+878
+00:38:14,219 --> 00:38:16,569
+Because each vertex
+only has to store one thing,
+
+879
+00:38:16,570 --> 00:38:20,642
+which is the previous
+vertex on the shortest path.
+
+880
+00:38:20,641 --> 00:38:22,849
+Now what does my algorithm
+for tracking the shortest path mean?
+
+881
+00:38:22,849 --> 00:38:23,849
+It's very simple.
+
+882
+00:38:23,849 --> 00:38:25,940
+I just start walking
+along these edges
+
+883
+00:38:25,940 --> 00:38:29,208
+until I
+get back to a.
+
+884
+00:38:29,208 --> 00:38:31,250
+This object is now called a
+shortest path tree.
+
+885
+00:38:31,250 --> 00:38:35,059
+Notice that I stole
+another word, which is tree.
+
+886
+00:38:35,059 --> 00:38:35,630
+why is that?
+
+887
+00:38:35,630 --> 00:38:38,612
+Can I ever have a
+cycle on this schedule?
+
+888
+00:38:38,612 --> 00:38:40,320
+That wouldn't really make
+sense, right?
+
+889
+00:38:40,320 --> 00:38:41,320
+These are the shortest paths.
+
+890
+00:38:41,320 --> 00:38:43,570
+You should be able to
+sort of follow the gradient back
+
+891
+00:38:43,570 --> 00:38:46,450
+to the original vertex.
+
+892
+00:38:46,449 --> 00:38:51,460
+Okay, in other words, I'm
+going to decorate my schedule with
+
+893
+00:38:51,460 --> 00:38:52,570
+one extra thing.
+
+894
+00:38:52,570 --> 00:38:55,960
+We'll call this p of v, which
+is the previous vertex
+
+895
+00:38:55,960 --> 00:39:00,590
+on the shortest path from my
+starting point to my vertex v.
+
+896
+00:39:00,590 --> 00:39:02,972
+And I think what I tried to
+prove to you today is
+
+897
+00:39:02,972 --> 00:39:04,430
+that if I have
+this information,
+
+898
+00:39:04,429 --> 00:39:06,762
+it's actually enough to
+reconstruct the shortest path.
+
+899
+00:39:06,762 --> 00:39:10,190
+I just keep taking p from
+v, and then p from p from v,
+
+900
+00:39:10,190 --> 00:39:12,230
+and then p from p from p
+from v, and so on, which
+
+901
+00:39:12,230 --> 00:39:14,329
+sounds more
+complicated than it is,
+
+902
+00:39:14,329 --> 00:39:17,009
+until I keep track of
+my original vertex.
+
+903
+00:39:17,010 --> 00:39:20,368
+And this object
+is conceptually called a shortest path tree.
+
+904
+00:39:20,367 --> 00:39:21,409
+Any questions about this?
+
+905
+00:39:23,929 --> 00:39:25,105
+Yes?
+
+906
+00:39:25,106 --> 00:39:28,045
+AUDIENCE: [INAUDIBLE]
+
+907
+00:39:28,045 --> 00:39:30,925
+JUSTIN SOLOMON: If I had an
+edge that connects a to d, fine.
+
+908
+00:39:30,925 --> 00:39:36,980
+AUDIENCE: [INAUDIBLE]
+
+909
+00:39:36,980 --> 00:39:39,679
+JUSTIN SOLOMON: Oh, okay,
+the question was,
+
+910
+00:39:39,679 --> 00:39:44,599
+let's say our colleague
+added the advantage –
+
+911
+00:39:44,599 --> 00:39:47,839
+that's a great question.
+
+912
+00:39:47,840 --> 00:39:51,410
+You know, someone was angry,
+my adversarial neural network
+
+913
+00:39:51,409 --> 00:39:53,809
+got stuck here because
+it was adversarial,
+
+914
+00:39:53,809 --> 00:39:56,579
+and it wanted my
+shortest path code to fail.
+
+915
+00:39:56,579 --> 00:40:01,250
+And now somehow the tree I
+gave you is no longer the same.
+
+916
+00:40:01,250 --> 00:40:03,440
+And my answer to that is yes.
+
+917
+00:40:03,440 --> 00:40:04,070
+Why is that?
+
+918
+00:40:04,070 --> 00:40:07,580
+Well, by adding this edge here,
+the length of my shortest path
+
+919
+00:40:07,579 --> 00:40:08,449
+has changed.
+
+920
+00:40:08,449 --> 00:40:10,926
+The shortest path
+from a to d is now 1.
+
+921
+00:40:10,927 --> 00:40:12,260
+So this tree is no longer valid.
+
+922
+00:40:12,260 --> 00:40:14,120
+I need a new Christmas tree.
+
+923
+00:40:14,119 --> 00:40:19,119
+So what would be the
+preceding p of d here?
+
+924
+00:40:19,119 --> 00:40:22,719
+Well, instead of
+being c, it would be a.
+
+925
+00:40:22,719 --> 00:40:24,230
+Yes, that is absolutely correct.
+
+926
+00:40:24,230 --> 00:40:27,579
+And in fact, this reflects a
+really nasty property of the
+
+927
+00:40:27,579 --> 00:40:31,150
+shortest path: if
+I add one edge to my graph,
+
+928
+00:40:31,150 --> 00:40:34,030
+the length of the shortest path
+to each vertex can change.
+
+929
+00:40:34,030 --> 00:40:37,330
+Well, I guess
+except for the starting vertex.
+
+930
+00:40:37,329 --> 00:40:41,139
+Yes, and it's a
+really big headache
+
+931
+00:40:41,139 --> 00:40:42,170
+in some programs.
+
+932
+00:40:42,170 --> 00:40:44,980
+So, for example,
+I'll stop talking about programs
+
+933
+00:40:44,980 --> 00:40:47,019
+and go back to math,
+
+934
+00:40:47,019 --> 00:40:48,880
+I work a lot with 3D models.
+
+935
+00:40:48,880 --> 00:40:51,730
+And there is a large dataset of
+3D models like ballerinas.
+
+936
+00:40:51,730 --> 00:40:54,105
+And ballerinas are really
+annoying because sometimes they
+
+937
+00:40:54,105 --> 00:40:55,579
+fold their arms like that
+.
+
+938
+00:40:55,579 --> 00:40:58,539
+And then suddenly the shortest
+path between your fingers
+
+939
+00:40:58,539 --> 00:41:02,769
+becomes
+like 0.
+
+940
+00:41:02,769 --> 00:41:05,860
+And so incremental algorithms
+for calculating the shortest path
+
+941
+00:41:05,860 --> 00:41:06,940
+can fail here, right.
+
+942
+00:41:06,940 --> 00:41:08,889
+Because I have to
+update like everyone else
+
+943
+00:41:08,889 --> 00:41:11,974
+if I accidentally
+glued my fingers like that.  Either way
+
+944
+00:41:11,974 --> 00:41:13,599
+, I'll let
+you think about how
+
+945
+00:41:13,599 --> 00:41:14,724
+you can solve this problem.
+
+946
+00:41:14,724 --> 00:41:17,380
+If you want to know more,
+you should take 6,838.
+
+947
+00:41:17,380 --> 00:41:18,226
+Yes?
+
+948
+00:41:18,226 --> 00:41:19,862
+AUDIENCE: [INAUDIBLE].
+
+949
+00:41:19,862 --> 00:41:21,820
+JUSTIN SOLOMON: If you
+change your source node,
+
+950
+00:41:21,820 --> 00:41:23,120
+again, change it as short as possible.
+
+951
+00:41:23,119 --> 00:41:25,309
+Yeah, this is going to be one
+of those really boring things
+
+952
+00:41:25,309 --> 00:41:26,239
+that I'm going to
+keep answering,
+
+953
+00:41:26,239 --> 00:41:28,439
+like every time I
+change something in my problem--
+
+954
+00:41:28,440 --> 00:41:30,440
+I change my source,
+I change my bounds--
+
+955
+00:41:30,440 --> 00:41:32,579
+I just have to list
+all the shortest paths.
+
+956
+00:41:32,579 --> 00:41:36,569
+Obviously,
+there are algorithms that don't do this.
+
+957
+00:41:36,570 --> 00:41:38,600
+But we wo
+n't think about them for now.
+
+958
+00:41:38,599 --> 00:41:39,710
+good.
+
+959
+00:41:39,710 --> 00:41:41,230
+So as usual, I
+talked too much
+
+960
+00:41:41,230 --> 00:41:43,219
+and left myself about
+10 minutes to work out the
+
+961
+00:41:43,219 --> 00:41:45,859
+actual algorithm that's
+interesting in the lecture,
+
+962
+00:41:46,467 --> 00:41:48,550
+although it's actually
+not that difficult,
+
+963
+00:41:48,550 --> 00:41:50,120
+so I think we'll get it,
+
+964
+00:41:50,119 --> 00:41:52,288
+i.e. how do I actually
+calculate the shortest paths?
+
+965
+00:41:52,288 --> 00:41:54,079
+Yes, and the main thing
+we're going to do
+
+966
+00:41:54,079 --> 00:41:57,387
+is kind of build
+this analogy with a tree.
+
+967
+00:41:57,387 --> 00:41:59,929
+We're going to define another
+object that I really like--
+
+968
+00:41:59,929 --> 00:42:02,304
+actually I like this from
+Jason's notes because it looks
+
+969
+00:42:02,304 --> 00:42:04,730
+like a calculation,
+and I like it--
+
+970
+00:42:04,730 --> 00:42:08,150
+and that's the idea of ​​a
+set of levels.
+
+971
+00:42:08,150 --> 00:42:11,059
+So this is a whole
+set of things L sub k.
+
+972
+00:42:11,059 --> 00:42:13,715
+And these are all the
+vertices that are within a distance k
+
+973
+00:42:13,715 --> 00:42:15,809
+from my source.
+
+974
+00:42:15,809 --> 00:42:18,619
+So, for example, if my
+source vertex in this example
+
+975
+00:42:18,619 --> 00:42:20,539
+is the vertex
+all the way to the left,
+
+976
+00:42:20,539 --> 00:42:24,230
+then L0 obviously contains that very
+vertex on the right.
+
+977
+00:42:24,230 --> 00:42:25,670
+L1 is next.
+
+978
+00:42:25,670 --> 00:42:27,079
+L2 is the third.
+
+979
+00:42:27,079 --> 00:42:30,596
+But now L3 is a set
+of three vertices
+
+980
+00:42:30,597 --> 00:42:32,680
+because they are all
+at a distance of
+
+981
+00:42:32,679 --> 00:42:34,169
+3 from the source.
+
+982
+00:42:34,170 --> 00:42:36,630
+This is what I've
+marked in pink here.
+
+983
+00:42:36,630 --> 00:42:40,230
+Okay, that's all
+this notation means.
+
+984
+00:42:40,230 --> 00:42:42,840
+Oh, I made a small mistake
+because in this class the distance is
+
+985
+00:42:42,840 --> 00:42:46,164
+delta, not
+d, but still.
+
+986
+00:42:46,164 --> 00:42:47,039
+AUDIENCE: [UNINCOMPLETE]
+
+987
+00:42:47,039 --> 00:42:48,179
+JUSTIN SOLOMON:
+Shortest distance
+
+988
+00:42:48,179 --> 00:42:49,199
+is absolutely correct.
+
+989
+00:42:49,199 --> 00:42:51,282
+So for example, I might
+have a very large distance
+
+990
+00:42:51,282 --> 00:42:52,389
+from L0 to L2, right.
+
+991
+00:42:52,389 --> 00:42:54,989
+I could just flip back and
+forth between L0 and L1,
+
+992
+00:42:54,989 --> 00:42:57,219
+maybe go to L4
+and then back.
+
+993
+00:42:57,219 --> 00:43:00,039
+But that wouldn't be very
+useful for calculations.
+
+994
+00:43:00,039 --> 00:43:01,039
+That is absolutely correct.
+
+995
+00:43:01,039 --> 00:43:02,286
+Yes?
+
+996
+00:43:02,286 --> 00:43:04,197
+AUDIENCE: [INAUDIBLE].
+
+997
+00:43:04,197 --> 00:43:05,780
+JUSTIN SOLOMON: Oh, the
+red background
+
+998
+00:43:05,780 --> 00:43:10,515
+is the set L. So for example,
+L3 contains these three vertices
+
+999
+00:43:10,514 --> 00:43:12,139
+because they are all within a
+
+1000
+00:43:12,139 --> 00:43:14,000
+distance of 3 from the left edge.   Late last night
+
+1001
+00:43:14,000 --> 00:43:17,929
+I drew
+my diagram too cleverly.
+
+1002
+00:43:17,929 --> 00:43:19,799
+I'm somewhat proud of this.
+
+1003
+00:43:19,800 --> 00:43:24,140
+Okay, so basically, if
+I wanted to calculate
+
+1004
+00:43:24,139 --> 00:43:27,349
+the length of the shortest path
+from the entire left side
+
+1005
+00:43:27,349 --> 00:43:29,589
+to all the other
+vertices, one way to
+
+1006
+00:43:29,590 --> 00:43:32,090
+do that would be to calculate
+all of these level sets and then
+
+1007
+00:43:32,090 --> 00:43:35,150
+just check which
+level set I'm on, right.
+
+1008
+00:43:35,150 --> 00:43:37,700
+So we're going to introduce an
+algorithm called
+
+1009
+00:43:37,699 --> 00:43:40,939
+Breadth-First Search
+that does roughly this.
+
+1010
+00:43:40,940 --> 00:43:42,679
+So, breadth-first search
+, as we'll
+
+1011
+00:43:42,679 --> 00:43:45,440
+introduce it today,
+would be an algorithm to compute
+
+1012
+00:43:45,440 --> 00:43:48,500
+all of these sets of levels, L
+sub i, and then from that
+
+1013
+00:43:48,500 --> 00:43:50,119
+we can construct
+the length and even the
+
+1014
+00:43:50,119 --> 00:43:52,739
+shape of the shortest path.   .
+
+1015
+00:43:52,739 --> 00:43:55,349
+And I'm going to go
+to my handwritten notes.
+
+1016
+00:43:55,349 --> 00:44:00,567
+Okay, and here's what
+our algorithm will do.
+
+1017
+00:44:00,568 --> 00:44:02,610
+I'm going to write this
+a little differently
+
+1018
+00:44:02,610 --> 00:44:07,079
+than what's in the notes and on the
+screen, but only slightly.
+
+1019
+00:44:07,079 --> 00:44:10,529
+So, first of all,
+I think we can all agree
+
+1020
+00:44:10,530 --> 00:44:12,150
+that the level set 0--
+
+1021
+00:44:12,150 --> 00:44:15,200
+oh, this-- this
+chalk is bifurcated--
+
+1022
+00:44:15,199 --> 00:44:17,399
+it contains one node.
+
+1023
+00:44:17,400 --> 00:44:19,450
+What should this node be like?
+
+1024
+00:44:19,449 --> 00:44:22,119
+The source, because the
+only thing at distance
+
+1025
+00:44:22,119 --> 00:44:24,139
+0 from the source
+is the source node.
+
+1026
+00:44:28,750 --> 00:44:33,460
+Okay, and in addition to that,
+we can initialize the distance
+
+1027
+00:44:33,460 --> 00:44:35,753
+from the source to ourselves.
+
+1028
+00:44:35,753 --> 00:44:37,420
+All three,
+what is the distance
+
+1029
+00:44:37,420 --> 00:44:38,559
+from the source to itself--
+
+1030
+00:44:38,559 --> 00:44:39,500
+1, 2, 3.
+
+1031
+00:44:39,500 --> 00:44:40,117
+AUDIENCE: 0.
+
+1032
+00:44:40,117 --> 00:44:41,200
+JUSTIN SOLOMON: Thank you.
+
+1033
+00:44:41,199 --> 00:44:43,789
+You see, you wake up
+, it's almost 11:00--
+
+1034
+00:44:43,789 --> 00:44:44,289
+12:00.
+
+1035
+00:44:44,289 --> 00:44:45,199
+What time is it? It's
+
+1036
+00:44:45,199 --> 00:44:49,210
+almost 12:00.  Okay,
+and then finally,
+
+1037
+00:44:49,210 --> 00:44:50,829
+maybe at first
+we do
+
+1038
+00:44:50,829 --> 00:44:54,099
+n't know anything about the array
+p, so we just make it empty.
+
+1039
+00:44:54,099 --> 00:44:56,545
+Since p is a source,
+it somehow doesn't matter.
+
+1040
+00:44:56,545 --> 00:44:58,420
+Because once I
+got back to the source,
+
+1041
+00:44:58,420 --> 00:45:00,402
+I finished calculating the
+shortest path.
+
+1042
+00:45:00,402 --> 00:45:02,110
+So, we'll
+write an algorithm that
+
+1043
+00:45:02,110 --> 00:45:06,309
+computes all the level sets and
+fills this array p and fills in
+
+1044
+00:45:06,309 --> 00:45:08,380
+the distances in
+one big frame.
+
+1045
+00:45:08,380 --> 00:45:11,039
+We'll call this
+breadth-first search.
+
+1046
+00:45:11,039 --> 00:45:12,079
+Okay, let's do this.
+
+1047
+00:45:15,809 --> 00:45:17,784
+So, we can use the notation here.
+
+1048
+00:45:17,784 --> 00:45:19,159
+And notice that
+basically what's
+
+1049
+00:45:19,159 --> 00:45:22,069
+happening is induction, which is that
+I'm going to compute the level
+
+1050
+00:45:22,070 --> 00:45:25,490
+1 set from the level 0 set, the
+level 2 set from the level 1 set,
+
+1051
+00:45:25,489 --> 00:45:28,559
+and so on until I've filled
+all my level sets.  Does
+
+1052
+00:45:28,559 --> 00:45:30,250
+this make sense?
+
+1053
+00:45:30,250 --> 00:45:34,079
+So, here's a slightly different
+way of saying the same thing.
+
+1054
+00:45:34,079 --> 00:45:35,579
+I'm going to use a
+WHILE loop, which
+
+1055
+00:45:35,579 --> 00:45:39,539
+I know is a little
+unkosher, but that's okay.
+
+1056
+00:45:39,539 --> 00:45:42,719
+So I'm going to initialize
+the number i to 1.
+
+1057
+00:45:42,719 --> 00:45:44,579
+This will be
+like our counter.
+
+1058
+00:45:44,579 --> 00:45:52,829
+I'm going to say UNTIL the
+previous set of levels is not
+
+1059
+00:45:52,829 --> 00:45:55,469
+empty, meaning there
+is potentially a
+
+1060
+00:45:55,469 --> 00:45:57,959
+path that goes through the
+previous set of levels
+
+1061
+00:45:57,960 --> 00:45:59,639
+to the next one.
+
+1062
+00:45:59,639 --> 00:46:02,339
+Because once one
+of my levels becomes empty,
+
+1063
+00:46:02,340 --> 00:46:04,845
+notice that as
+Li for even larger i
+
+1064
+00:46:04,844 --> 00:46:05,969
+will also be empty.  There
+
+1065
+00:46:05,969 --> 00:46:08,909
+is never a case where there
+is something that is not distance
+
+1066
+00:46:08,909 --> 00:46:12,109
+i and then distance i plus 5.
+
+1067
+00:46:12,110 --> 00:46:15,570
+Okay, so what am
+I going to do?
+
+1068
+00:46:15,570 --> 00:46:18,110
+Well, let's
+get back to our schedule.
+
+1069
+00:46:23,039 --> 00:46:26,099
+Now I know
+this guy is at distance 0.
+
+1070
+00:46:26,099 --> 00:46:28,089
+That's where I started.
+
+1071
+00:46:28,090 --> 00:46:30,998
+So now I'll look at all the
+neighbors of this peak.
+
+1072
+00:46:30,998 --> 00:46:32,789
+And I'm going to force
+their distance to be 1. Does
+
+1073
+00:46:32,789 --> 00:46:35,739
+that make sense?
+
+1074
+00:46:35,739 --> 00:46:38,849
+And so here
+this guy has a distance of 2.
+
+1075
+00:46:38,849 --> 00:46:42,299
+And eventually I'm
+going to get into trouble because maybe...
+
+1076
+00:46:42,300 --> 00:46:44,110
+well, what a
+good example here.
+
+1077
+00:46:44,110 --> 00:46:46,271
+I won't even try to draw.
+
+1078
+00:46:46,271 --> 00:46:47,730
+I might run into
+problems if I don't
+
+1079
+00:46:47,730 --> 00:46:51,670
+want to add a vertex twice
+to two different sets of levels.
+
+1080
+00:46:51,670 --> 00:46:53,970
+When I put this
+in Li, I don't
+
+1081
+00:46:53,969 --> 00:46:56,189
+want to put this in Li
+plus 5 because I already
+
+1082
+00:46:56,190 --> 00:46:58,260
+know that this is distance i.  Does
+
+1083
+00:46:58,260 --> 00:47:00,090
+this make sense?
+
+1084
+00:47:00,090 --> 00:47:01,890
+Okay, what I'm
+going to do is I'm
+
+1085
+00:47:01,889 --> 00:47:04,719
+going to repeat all the
+vertices in my previous
+
+1086
+00:47:04,719 --> 00:47:05,219
+set of levels.
+
+1087
+00:47:09,679 --> 00:47:12,259
+And now I'm
+going to look at every vertex that
+
+1088
+00:47:12,260 --> 00:47:15,512
+is adjacent to u.
+
+1089
+00:47:15,512 --> 00:47:16,470
+Because what do I know?
+
+1090
+00:47:16,469 --> 00:47:19,519
+I know that if I can get
+to you in i minus 1 steps, then
+
+1091
+00:47:19,519 --> 00:47:24,309
+how many steps would it
+take me to get to any neighbor of u?
+
+1092
+00:47:24,309 --> 00:47:26,710
+i steps, because I can
+take a path that's
+
+1093
+00:47:26,710 --> 00:47:30,369
+length i minus
+1, add one more edge,
+
+1094
+00:47:30,369 --> 00:47:32,589
+and I'll get to this new guy.
+
+1095
+00:47:32,590 --> 00:47:35,000
+So what can I do?
+
+1096
+00:47:35,000 --> 00:47:37,449
+I can iterate over
+all v that
+
+1097
+00:47:37,449 --> 00:47:42,789
+is in the neighboring set u.
+
+1098
+00:47:42,789 --> 00:47:45,309
+But I have to be
+a little careful, because what
+
+1099
+00:47:45,309 --> 00:47:46,509
+if I have the edge backwards?
+
+1100
+00:47:46,510 --> 00:47:48,610
+So, for example,
+here I have an edge
+
+1101
+00:47:48,610 --> 00:47:50,559
+to the source.
+
+1102
+00:47:50,559 --> 00:47:52,259
+I think this is...
+
+1103
+00:47:52,260 --> 00:47:54,665
+yes, this is a strong example.
+
+1104
+00:47:54,664 --> 00:47:56,039
+I wouldn't want to
+add the source
+
+1105
+00:47:56,039 --> 00:47:58,559
+to the third level set
+because I already
+
+1106
+00:47:58,559 --> 00:48:01,079
+added it in the previous one guys.
+
+1107
+00:48:01,079 --> 00:48:05,174
+So I want to get rid of
+merging all the
+
+1108
+00:48:05,175 --> 00:48:06,300
+previous level sets.  Does
+
+1109
+00:48:11,416 --> 00:48:12,405
+this make sense?  In
+
+1110
+00:48:12,405 --> 00:48:13,780
+other words,
+I only consider
+
+1111
+00:48:13,780 --> 00:48:17,950
+adjacent vertices
+that I haven't yet visited
+
+1112
+00:48:17,949 --> 00:48:21,159
+in my
+level set computing algorithm.
+
+1113
+00:48:21,159 --> 00:48:23,409
+And all I need to do is
+update my arrays, right.
+
+1114
+00:48:23,409 --> 00:48:32,230
+Specifically, I'm
+going to add vertex v to the level set i,
+
+1115
+00:48:32,230 --> 00:48:34,449
+since I haven't seen v yet.
+
+1116
+00:48:34,449 --> 00:48:43,029
+I'll set the distance
+from s to v to be i
+
+1117
+00:48:43,030 --> 00:48:46,240
+because right now I'm
+filling my level i.
+
+1118
+00:48:46,239 --> 00:48:51,819
+And finally, what is p of v?
+
+1119
+00:48:51,820 --> 00:48:54,430
+What is the previous
+vertex to v on my shortest
+
+1120
+00:48:54,429 --> 00:48:55,539
+path from the source?
+
+1121
+00:48:58,420 --> 00:48:59,680
+It's you, right.
+
+1122
+00:48:59,679 --> 00:49:01,809
+Because this is the guy
+from the previous level that
+
+1123
+00:49:01,809 --> 00:49:05,590
+I'm building
+my path from, right.
+
+1124
+00:49:05,590 --> 00:49:07,247
+I'm going to set this up for you.
+
+1125
+00:49:07,246 --> 00:49:08,829
+And then... sorry, I'm
+out of space,
+
+1126
+00:49:08,829 --> 00:49:12,989
+but I also need to increase the i.
+
+1127
+00:49:12,989 --> 00:49:15,909
+Okay, so what does
+this algorithm do?
+
+1128
+00:49:15,909 --> 00:49:17,879
+It's just creating one
+level at a time.
+
+1129
+00:49:17,880 --> 00:49:21,930
+If we go back to our image,
+so it starts by initializing L0
+
+1130
+00:49:21,929 --> 00:49:25,109
+just as the starting vertex,
+and then it looks at all the edges
+
+1131
+00:49:25,110 --> 00:49:27,210
+coming out of it--
+in this case just one--
+
+1132
+00:49:27,210 --> 00:49:29,190
+it makes that length 1--
+
+1133
+00:49:29,190 --> 00:49:30,125
+and so on.
+
+1134
+00:49:30,125 --> 00:49:31,500
+And so it's
+just a gradual
+
+1135
+00:49:31,500 --> 00:49:32,989
+build-up of all
+these sets of levels.
+
+1136
+00:49:32,989 --> 00:49:34,739
+Now there is a fairly
+simple
+
+1137
+00:49:34,739 --> 00:49:37,349
+induction proof that this
+algorithm correctly
+
+1138
+00:49:37,349 --> 00:49:40,139
+calculates L,
+p, and deltas, which is
+
+1139
+00:49:40,139 --> 00:49:43,889
+all the information we
+need to calculate the shortest
+
+1140
+00:49:43,889 --> 00:49:44,489
+path.
+
+1141
+00:49:44,489 --> 00:49:46,447
+I think you guys can do
+this during the recitation
+
+1142
+00:49:46,447 --> 00:49:49,799
+if you still need a little
+practice with inductive proof
+
+1143
+00:49:49,800 --> 00:49:51,240
+.
+
+1144
+00:49:51,239 --> 00:49:53,129
+And the last thing
+we need to check
+
+1145
+00:49:53,130 --> 00:49:55,860
+is the execution time of
+this algorithm.
+
+1146
+00:49:55,860 --> 00:49:59,800
+I'm going to squeeze it in there
+at the last second here.
+
+1147
+00:49:59,800 --> 00:50:01,539
+So let's take a look.
+
+1148
+00:50:01,539 --> 00:50:08,699
+So, first, I did something
+small... oh no, that's okay...
+
+1149
+00:50:08,699 --> 00:50:10,297
+in my algorithm,
+actually at step zero,
+
+1150
+00:50:10,297 --> 00:50:12,839
+I had to create an array
+whose size is equal to the number of
+
+1151
+00:50:12,840 --> 00:50:14,490
+vertices.
+
+1152
+00:50:14,489 --> 00:50:17,250
+Remember that in 6.006
+how long does it
+
+1153
+00:50:17,250 --> 00:50:19,853
+take to allocate memory?
+
+1154
+00:50:19,853 --> 00:50:21,769
+Yes, it takes an amount of
+time proportional to
+
+1155
+00:50:21,769 --> 00:50:24,590
+the amount of
+memory I allocate.
+
+1156
+00:50:24,590 --> 00:50:27,180
+So... Steph, I see your
+hand, but we're short on time.
+
+1157
+00:50:27,179 --> 00:50:29,210
+So we have to get to the end.
+
+1158
+00:50:29,210 --> 00:50:32,599
+We have already spent v time,
+since our array of shortest paths
+
+1159
+00:50:32,599 --> 00:50:34,730
+takes up v places.
+
+1160
+00:50:34,730 --> 00:50:39,500
+But in addition to that, we
+have this funny FOR loop
+
+1161
+00:50:39,500 --> 00:50:44,610
+where for each node I have to
+visit all of its neighbors.
+
+1162
+00:50:44,610 --> 00:50:49,079
+But first, do
+I see a double knot here?
+
+1163
+00:50:49,079 --> 00:50:52,259
+No, because I go in
+order of distance.
+
+1164
+00:50:52,260 --> 00:50:54,423
+And the second thing I
+saw was a node in one
+
+1165
+00:50:54,422 --> 00:50:55,589
+set of levels, it can't be in another.
+
+1166
+00:50:55,590 --> 00:50:58,829
+This is our basic
+design.
+
+1167
+00:50:58,829 --> 00:51:01,380
+Well, as
+you wish, you have already
+
+1168
+00:51:01,380 --> 00:51:03,059
+proven exactly the
+formula we need.
+
+1169
+00:51:03,059 --> 00:51:04,559
+And if I'm lucky,
+I won't track it down.
+
+1170
+00:51:04,559 --> 00:51:06,900
+Yes, we are here.
+
+1171
+00:51:06,900 --> 00:51:09,630
+So, if we look here,
+this is exactly the scenario
+
+1172
+00:51:09,630 --> 00:51:10,711
+we are in.
+
+1173
+00:51:10,711 --> 00:51:11,670
+Because what have we done?
+
+1174
+00:51:11,670 --> 00:51:14,622
+We iterated over all the
+nodes of our graph,
+
+1175
+00:51:14,621 --> 00:51:17,079
+and then over all the
+neighbors of those nodes.
+
+1176
+00:51:17,079 --> 00:51:18,704
+And this is the base
+computation time
+
+1177
+00:51:18,704 --> 00:51:20,949
+in our algorithm.
+
+1178
+00:51:20,949 --> 00:51:25,149
+Thus, the FOR loop, or
+more precisely the WHILE loop, in my code
+
+1179
+00:51:25,150 --> 00:51:29,510
+takes time proportional to the
+number of edges.
+
+1180
+00:51:29,510 --> 00:51:33,440
+So, what is the total running time
+for a broad search?
+
+1181
+00:51:33,440 --> 00:51:36,980
+Well, we need to
+build this array.
+
+1182
+00:51:36,980 --> 00:51:40,280
+So, at step zero
+we got v time.
+
+1183
+00:51:40,280 --> 00:51:43,340
+And then we have to repeat
+something that
+
+1184
+00:51:43,340 --> 00:51:45,120
+takes up the most edges.
+
+1185
+00:51:45,119 --> 00:51:54,813
+So, overall our algorithm takes
+mod v plus mod e time.
+
+1186
+00:51:54,813 --> 00:51:56,730
+Now notice that this...
+you may consider this
+
+1187
+00:51:56,730 --> 00:51:57,605
+redundant.
+
+1188
+00:51:57,605 --> 00:51:58,630
+By the way, I have a
+
+1189
+00:51:58,630 --> 00:52:00,059
+little
+argument with Jason.
+
+1190
+00:52:00,059 --> 00:52:02,159
+But in this class, we'll call
+it a linear time algorithm
+
+1191
+00:52:02,159 --> 00:52:04,139
+because it's linear in the
+space you
+
+1192
+00:52:04,139 --> 00:52:05,833
+use to store your graph.   Personally,
+
+1193
+00:52:05,833 --> 00:52:07,500
+I think this is
+a bit suspicious
+
+1194
+00:52:07,500 --> 00:52:10,090
+since this scale can
+scale quadratically in v,
+
+1195
+00:52:10,090 --> 00:52:12,930
+but I digress.
+
+1196
+00:52:12,929 --> 00:52:19,210
+In any case, why do we
+need both of these terms here?
+
+1197
+00:52:19,210 --> 00:52:23,740
+Notice, if I
+had no edges in my graph,
+
+1198
+00:52:23,739 --> 00:52:26,109
+this term
+would now dominate.
+
+1199
+00:52:26,110 --> 00:52:28,870
+But when I add edges to
+my graph, it
+
+1200
+00:52:28,869 --> 00:52:30,469
+can grow to v squared.
+
+1201
+00:52:30,469 --> 00:52:32,469
+So this is in some ways a more
+informative expression
+
+1202
+00:52:32,469 --> 00:52:35,002
+than just saying, well, in the
+worst case, it's v squared of time.  Does
+
+1203
+00:52:35,003 --> 00:52:35,920
+this make sense?
+
+1204
+00:52:35,920 --> 00:52:38,289
+This is a slightly better
+formula.
+
+1205
+00:52:38,289 --> 00:52:40,630
+Okay, with that we just
+creaked to the finish line.
+
+1206
+00:52:40,630 --> 00:52:43,340
+We have an algorithm for
+calculating the shortest paths.
+
+1207
+00:52:43,340 --> 00:52:46,980
+And I'll see you guys again
+on Tuesday.
+

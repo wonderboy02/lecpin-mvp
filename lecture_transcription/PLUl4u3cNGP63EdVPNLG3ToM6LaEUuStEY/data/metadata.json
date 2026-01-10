@@ -1,0 +1,326 @@
+{
+  "playlistId": "PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY",
+  "playlistTitle": "MIT 6.006 Introduction to Algorithms, Spring 2020",
+  "videos": [
+    {
+      "videoId": "ZA-tUyM_y7s",
+      "title": "1. Algorithms and Computation",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Jason Ku\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nThe goal of this introductions to algorithms class is to teach you to solve computation problems and communication that your solutions are correct and efficient. Models of computation, data structures, and algorithms are introduced.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=ZA-tUyM_y7s",
+      "duration": 2738,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 1
+    },
+    {
+      "videoId": "CHhwJjR0mZA",
+      "title": "2. Data Structures and Dynamic Arrays",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Erik Demaine\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nData structures are ways to store data with algorithms that support opperations on the data. These collection of osrted operations are interfaces. This class goes over two main interfaces: sequence and set.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=CHhwJjR0mZA",
+      "duration": 3018,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 2
+    },
+    {
+      "videoId": "IPSaG9RRc-k",
+      "title": "Introduction to Algorithms - Problem Session 1: Asymptotic Behavior of Functions and Double-ended...",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Jason Ku\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nFour examples of worked problems on the asymptotic behavior of functions and double-ended sequence operations.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=IPSaG9RRc-k",
+      "duration": 5197,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 3
+    },
+    {
+      "videoId": "oS9aPzUNG-s",
+      "title": "3. Sets and Sorting",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Justin Solomon\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nStored sets sorted by key allows for faster searching. This lecture covers how to construct a sorted array efficiently and the types of sorts.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=oS9aPzUNG-s",
+      "duration": 3176,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 4
+    },
+    {
+      "videoId": "Nu8YGneFCWE",
+      "title": "4. Hashing",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Jason Ku\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nHashing allows for faster search and dynamic operations on data structures, arrays, and sorted arrays. This lecture discusses comparison models, decision trees, and hash functions. \n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=Nu8YGneFCWE",
+      "duration": 3174,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 5
+    },
+    {
+      "videoId": "KlQiwkhLBg0",
+      "title": "Problem Session 2 (MIT 6.006 Introduction to Algorithms, Spring 2020)",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Justin Solomon\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nFour examples of worked problems are given. These fous on solving recurrences and the Master Theorem.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=KlQiwkhLBg0",
+      "duration": 5260,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 6
+    },
+    {
+      "videoId": "yndgIDO0zQQ",
+      "title": "5. Linear Sorting",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Jason Ku\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nThis builds on the lecture on improving find times and discusses how to achieve a faster sort. Direct access array sorts, tuple sorts, counting sorts, and radix sorts are discussed.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=yndgIDO0zQQ",
+      "duration": 3117,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 7
+    },
+    {
+      "videoId": "g0bXSXuLVb0",
+      "title": "Problem Session 3",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Erik Demaine\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nFive examples of worked problems are given. Topics include drawing pictures of hash tables and reductions from set (hashing bounds) to sequence.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=g0bXSXuLVb0",
+      "duration": 5188,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 8
+    },
+    {
+      "videoId": "76dhtgZt38A",
+      "title": "6. Binary Trees, Part 1",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Erik Demaine\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nThis is the first of two lectures on binary trees. This lecture discusses binary tree terminology, tree navigation, and dynamic operations. These are explored in two applications: sets and sequences.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=76dhtgZt38A",
+      "duration": 3058,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 9
+    },
+    {
+      "videoId": "U1JYwHcFfso",
+      "title": "7. Binary Trees, Part 2: AVL",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Erik Demaine\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nThis is the second lecture on binary trees. This covers subtree augmentation and sequence binary trees with subtree sizes. Rotations, erbalancing, and height augmentation are used to achieve height balance (AVL). \n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=U1JYwHcFfso",
+      "duration": 3248,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 10
+    },
+    {
+      "videoId": "MAyraVVYB64",
+      "title": "Problem Session 4",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Jason Ku\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nFive example problems are worked. Topics include sequence rotations, drawing sequence trees, binary search, and programming in Python.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=MAyraVVYB64",
+      "duration": 5387,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 11
+    },
+    {
+      "videoId": "Xnpo1atN-Iw",
+      "title": "8. Binary Heaps",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Erik Demaine\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nProf. Demaine discusses priority queue interfaces and sorting algorithms. Algorithms include, AVL sort for set AVL trees, selection sort for arrays, insertion sort for sorted arrays, and heap sort for binary heaps.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=Xnpo1atN-Iw",
+      "duration": 3051,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 12
+    },
+    {
+      "videoId": "oFVYVzlvk9c",
+      "title": "9. Breadth-First Search",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Justin Solomon\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nThis class covers graph definitions, neighbor sets and adjacencies, graph representations in data structures, and paths. It also discusses shortest paths trees and breadth-first search.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=oFVYVzlvk9c",
+      "duration": 3172,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 13
+    },
+    {
+      "videoId": "e98MPnMHLxE",
+      "title": "Quiz 1 review",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Jason Ku\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nThis session focuses on preparing for the quiz. High-level concepts are discussed and example problems are worked. Topics include the Master Theorem, data structures, and sorting.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=e98MPnMHLxE",
+      "duration": 5133,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 14
+    },
+    {
+      "videoId": "IBfWDYSffUU",
+      "title": "10. Depth-First Search",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Justin Solomon\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nThis class builds on the previous lecture of breadth-first search (BFS) by introducing depth-first search (DFS) and full-BFS and full-DFS. The lecture continues with topological sorts and cycle detection.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=IBfWDYSffUU",
+      "duration": 3143,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 15
+    },
+    {
+      "videoId": "5cF5Bgv59Sc",
+      "title": "11. Weighted Shortest Paths",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Jason Ku\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nThis lecture discusses weighted graphs and weighted paths. This prepares for the next four lectures, which are on algorithms to find shortest-path weights in weighted graphs. \n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=5cF5Bgv59Sc",
+      "duration": 3452,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 16
+    },
+    {
+      "videoId": "ZLdooNwP7Pw",
+      "title": "Problem Session 5",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Justin Solomon\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nFive example problems are worked. Topcis include graph radius, graph shematics, full breadth-first search, and full depth-first search.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=ZLdooNwP7Pw",
+      "duration": 5301,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 17
+    },
+    {
+      "videoId": "f9cVS_URPc0",
+      "title": "12. Bellman-Ford",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Jason Ku\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\n*NOTE: Problem Session 6 is unavailable.*\n\nThis lecture introduces a single source shortest path algorithm that works for general graphs. The process, correctness, and running time of the Bellman-Ford algorithm is discussed.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=f9cVS_URPc0",
+      "duration": 3460,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 18
+    },
+    {
+      "videoId": "NSHizBK9JD8",
+      "title": "13. Dijkstra",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Jason Ku\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\n*NOTE: Problem Session 6 is unavailable.*\n\nThis class discusses a fourth weighted single-source shortest path algorithm: Dijkstra's algorithms. Non-negative edge weights are introduced. There is a worked example of applying Dijkstra's algorithm.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=NSHizBK9JD8",
+      "duration": 3441,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 19
+    },
+    {
+      "videoId": "Md9QOXomxFs",
+      "title": "Problem Session 7",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Justin Solomon\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nFive example programs are worked. Topics include Dijkstra algorithm, weighted graph radius, weighted ratios, and Johnson's algorithm.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=Md9QOXomxFs",
+      "duration": 5188,
+      "uploadDate": "20231003",
+      "uploader": "MIT OpenCourseWare",
+      "position": 20
+    },
+    {
+      "videoId": "EmSmaW-ud6A",
+      "title": "14. APSP and Johnson",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Jason Ku\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nThis lecture focuses on solving any all-pairs shortest paths (APSP) in weighted graphs. Johnson's algorithm is introduced.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=EmSmaW-ud6A",
+      "duration": 3413,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 21
+    },
+    {
+      "videoId": "vCIa2h1C9UQ",
+      "title": "Quiz 2 Review",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Jason Ku\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nThis session focuses on preparing for the quiz. High-level concepts are discussed and example problems are worked. Topics include graph problems, topological sort, Bellman-Ford, and weighted graphs.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=vCIa2h1C9UQ",
+      "duration": 4955,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 22
+    },
+    {
+      "videoId": "r4-cftqTcdI",
+      "title": "15. Dynamic Programming, Part 1: SRTBOT, Fib, DAGs, Bowling",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Erik Demaine\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nThis is the first of four lectures on dynamic programing. This begins with how to solve a problem recursively and continues with three examples: Fibonacci, DAG shortest paths, and bowling.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=r4-cftqTcdI",
+      "duration": 3438,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 23
+    },
+    {
+      "videoId": "KLBCUx1is2c",
+      "title": "16. Dynamic Programming, Part 2: LCS, LIS, Coins",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Erik Demaine\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nThis is the second of four lectures on dynamic programming. This introduces multiple sequence, substring subproblems, and parent pointers. Three examples of subproblem constraints and expansion are given.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=KLBCUx1is2c",
+      "duration": 3523,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 24
+    },
+    {
+      "videoId": "UuxR0NCkg0k",
+      "title": "Problem Session 8",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Justin Solomon\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nFour example problems are worked. Topics include solving recursively, O(n)-time dynamic programming, topological order, and subproblems. \n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=UuxR0NCkg0k",
+      "duration": 5681,
+      "uploadDate": "20231003",
+      "uploader": "MIT OpenCourseWare",
+      "position": 25
+    },
+    {
+      "videoId": "TDo3r5M1LNo",
+      "title": "17. Dynamic Programming, Part 3: APSP, Parens, Piano",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Erik Demaine\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nThis is the third of four lectures on dynamic programming. This focusses on applying subproblem constraints and expansions to example problems including, Bellman-Ford SSSP, Floyd-Warshall APSP, arithmetic parenthesization, and piano/guitar fingering.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=TDo3r5M1LNo",
+      "duration": 3825,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 26
+    },
+    {
+      "videoId": "i9OAOk0CUQE",
+      "title": "18. Dynamic Programming, Part 4: Rods, Subset Sum, Pseudopolynomial",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Erik Demaine\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nThis is the fourth and final lecture on dynamic programming. This class focusses on integer subproblems and pseudopolynomial time. Two worked examples are given: rod cutting and subset sum.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=i9OAOk0CUQE",
+      "duration": 3825,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 27
+    },
+    {
+      "videoId": "JbafQJx1CIA",
+      "title": "19. Complexity",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Erik Demaine\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nThis lecture discusses computational complexity and introduces terminology: P, NP, EXP, R. These terms are applied to the concepts of hardness and completeness. The lecture ends with discussion on reductions. \n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=JbafQJx1CIA",
+      "duration": 3548,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 28
+    },
+    {
+      "videoId": "KPkOkiwAlbY",
+      "title": "Problem Session 9",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Justin Solomon\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nFive example problems are worked. Topics include acyclic algorithms, hash tables, and topological ordering.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=KPkOkiwAlbY",
+      "duration": 5128,
+      "uploadDate": "20231003",
+      "uploader": "MIT OpenCourseWare",
+      "position": 29
+    },
+    {
+      "videoId": "wEKFGdo4Sck",
+      "title": "Quiz 3 Review",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Jason Ku\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nThis session focuses on preparing for the quiz. High-level concepts are discussed and example problems are worked. Topics include the recursive framework, dynamic programming, and DAG.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=wEKFGdo4Sck",
+      "duration": 5040,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 30
+    },
+    {
+      "videoId": "2NMtS1ecb3o",
+      "title": "20. Course Review",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Jason Ku\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nThis lecture reviews the main concepts and learning goals for the course. Students should be able to solve hard computational problems, argue an algorithm is correct, argue an algorithm is good, and effectively communicate the above.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=2NMtS1ecb3o",
+      "duration": 3334,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 31
+    },
+    {
+      "videoId": "4nXw-f6NJ9s",
+      "title": "21. Algorithms—Next Steps",
+      "description": "MIT 6.006 Introduction to Algorithms, Spring 2020\nInstructor: Erik Demaine, Jason Ku, Justin Solomon\nView the complete course: https://ocw.mit.edu/6-006S20\nYouTube Playlist: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY\n\nIn this lecture, Erik Demaine, Jason Ku, and Justin Solomon talk about their own research in algorithms. This includes origami, folding designs, and applied geometry.\n\nLicense: Creative Commons BY-NC-SA\nMore information at https://ocw.mit.edu/terms\nMore courses at https://ocw.mit.edu\nSupport OCW at http://ow.ly/a1If50zVRlQ\n\nWe encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.",
+      "url": "https://www.youtube.com/watch?v=4nXw-f6NJ9s",
+      "duration": 3565,
+      "uploadDate": "20210913",
+      "uploader": "MIT OpenCourseWare",
+      "position": 32
+    }
+  ]
+}

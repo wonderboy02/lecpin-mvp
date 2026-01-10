@@ -17,7 +17,13 @@ export function getDriver(): Driver {
       );
     }
 
-    driver = neo4j.driver(uri, neo4j.auth.basic(username, password));
+    // Railway 프로덕션 환경에서는 암호화 비활성화
+    const isProduction = process.env.NODE_ENV === 'production';
+    const config = isProduction
+      ? { encrypted: false }
+      : {}; // 로컬 개발에서는 기본 설정 사용
+
+    driver = neo4j.driver(uri, neo4j.auth.basic(username, password), config);
   }
 
   return driver;

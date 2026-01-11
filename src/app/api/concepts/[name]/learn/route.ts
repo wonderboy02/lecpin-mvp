@@ -1,35 +1,34 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getSession } from '@/lib/neo4j';
+import { getSupabaseClient } from '@/lib/supabase';
 
 export async function PATCH(
   request: NextRequest,
   { params }: { params: Promise<{ name: string }> }
 ) {
-  const session = getSession();
+  const supabase = getSupabaseClient();
+
   try {
     const { name } = await params;
     const conceptName = decodeURIComponent(name);
     const { learned } = await request.json();
 
-    if (learned) {
-      // 학습 완료 표시
-      await session.run(
-        `
-        MATCH (c:Concept {name: $name})
-        SET c.is_learned = true,
-            c.learned_at = datetime()
-        `,
-        { name: conceptName }
-      );
-    } else {
-      // 학습 완료 취소
-      await session.run(
-        `
-        MATCH (c:Concept {name: $name})
-        SET c.is_learned = false
-        `,
-        { name: conceptName }
-      );
+    const updateData = learned
+      ? {
+          is_learned: true,
+          learned_at: new Date().toISOString(),
+        }
+      : {
+          is_learned: false,
+          learned_at: null,
+        };
+
+    const { error } = await supabase
+      .from('concepts')
+      .update(updateData)
+      .eq('name', conceptName);
+
+    if (error) {
+      throw error;
     }
 
     return NextResponse.json({ success: true });
@@ -42,7 +41,5 @@ export async function PATCH(
       },
       { status: 500 }
     );
-  } finally {
-    await session.close();
   }
 }

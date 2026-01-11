@@ -1,36 +1,19 @@
-import { getSession } from './neo4j';
+import { getSupabaseClient } from './supabase';
 import { ConceptNode } from './graph-ingestion';
-import neo4j from 'neo4j-driver';
 
 /**
- * Neo4j에 벡터 인덱스를 생성합니다 (3072차원)
- * 초기 설정 시 1회만 실행하면 됩니다
+ * pgvector 인덱스를 생성합니다 (1536차원)
+ * 실제로는 Supabase 마이그레이션 스크립트에서 이미 생성되지만,
+ * 호환성을 위해 함수는 유지합니다.
  */
 export async function createVectorIndex(): Promise<void> {
-  const session = getSession();
-  try {
-    await session.run(`
-      CREATE VECTOR INDEX concept_embedding IF NOT EXISTS
-      FOR (c:Concept)
-      ON c.embedding
-      OPTIONS {indexConfig: {
-        \`vector.dimensions\`: 3072,
-        \`vector.similarity_function\`: 'cosine'
-      }}
-    `);
-
-    console.log('벡터 인덱스 생성 완료');
-  } catch (error) {
-    console.error('벡터 인덱스 생성 실패:', error);
-    throw new Error('벡터 인덱스 생성 중 오류가 발생했습니다');
-  } finally {
-    await session.close();
-  }
+  console.log('pgvector 인덱스는 Supabase 스키마 생성 시 이미 설정됨');
+  // 실제로는 아무 작업도 하지 않음 (스키마에서 이미 생성됨)
 }
 
 /**
  * 벡터 유사도 기반으로 관련 개념을 검색합니다
- * @param queryEmbedding 쿼리 임베딩 벡터 (3072차원)
+ * @param queryEmbedding 쿼리 임베딩 벡터 (1536차원)
  * @param limit 반환할 최대 개념 수
  * @param learnedOnly true이면 학습한 개념만 반환
  * @returns 유사도 점수와 함께 개념 배열
@@ -40,37 +23,30 @@ export async function searchSimilarConcepts(
   limit: number = 5,
   learnedOnly: boolean = false
 ): Promise<(ConceptNode & { score: number })[]> {
-  const session = getSession();
-  try {
-    // 벡터 검색 쿼리
-    const query = `
-      CALL db.index.vector.queryNodes('concept_embedding', $limit, $embedding)
-      YIELD node, score
-      WHERE ($learnedOnly = false OR node.is_learned = true)
-      RETURN node.name as name,
-             node.description as description,
-             node.is_learned as is_learned,
-             score
-      ORDER BY score DESC
-    `;
+  const supabase = getSupabaseClient();
 
-    const result = await session.run(query, {
-      limit: neo4j.int(limit),
-      embedding: queryEmbedding,
-      learnedOnly,
+  try {
+    // pgvector cosine similarity 검색 (PostgreSQL RPC 함수 호출)
+    const { data, error } = await supabase.rpc('search_concepts', {
+      query_embedding: JSON.stringify(queryEmbedding),
+      match_count: limit,
+      learned_only: learnedOnly,
     });
 
-    return result.records.map((record) => ({
-      name: record.get('name'),
-      description: record.get('description'),
-      is_learned: record.get('is_learned') || false,
-      score: record.get('score'),
+    if (error) {
+      console.error('벡터 검색 실패:', error);
+      throw new Error(`벡터 검색 중 오류가 발생했습니다: ${error.message}`);
+    }
+
+    return (data || []).map((row: any) => ({
+      name: row.name,
+      description: row.description,
+      is_learned: row.is_learned || false,
+      score: row.similarity,
     }));
   } catch (error) {
     console.error('벡터 검색 실패:', error);
-    throw new Error('벡터 검색 중 오류가 발생했습니다');
-  } finally {
-    await session.close();
+    throw error;
   }
 }
 
@@ -78,21 +54,19 @@ export async function searchSimilarConcepts(
  * 벡터 인덱스가 존재하는지 확인합니다
  */
 export async function vectorIndexExists(): Promise<boolean> {
-  const session = getSession();
-  try {
-    const result = await session.run(`
-      SHOW INDEXES
-      YIELD name, type
-      WHERE name = 'concept_embedding' AND type = 'VECTOR'
-      RETURN count(*) as count
-    `);
+  const supabase = getSupabaseClient();
 
-    const count = result.records[0]?.get('count');
-    return count && count.toInt() > 0;
+  try {
+    const { data, error } = await supabase.rpc('check_vector_index_exists');
+
+    if (error) {
+      console.error('벡터 인덱스 확인 실패:', error);
+      return false;
+    }
+
+    return data === true;
   } catch (error) {
     console.error('벡터 인덱스 확인 실패:', error);
     return false;
-  } finally {
-    await session.close();
   }
 }

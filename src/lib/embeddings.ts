@@ -15,13 +15,13 @@ function getOpenAIClient(): OpenAI {
 /**
  * 단일 텍스트의 임베딩을 생성합니다
  * @param text 임베딩할 텍스트
- * @returns 3072차원 임베딩 벡터
+ * @returns 1536차원 임베딩 벡터
  */
 export async function generateEmbedding(text: string): Promise<number[]> {
   try {
     const client = getOpenAIClient();
     const response = await client.embeddings.create({
-      model: 'text-embedding-3-large',
+      model: 'text-embedding-3-small',
       input: text,
       encoding_format: 'float',
     });
@@ -36,7 +36,7 @@ export async function generateEmbedding(text: string): Promise<number[]> {
 /**
  * 여러 텍스트의 임베딩을 배치로 생성합니다
  * @param texts 임베딩할 텍스트 배열
- * @returns 3072차원 임베딩 벡터 배열
+ * @returns 1536차원 임베딩 벡터 배열
  */
 export async function generateEmbeddings(texts: string[]): Promise<number[][]> {
   if (texts.length === 0) {
@@ -53,7 +53,7 @@ export async function generateEmbeddings(texts: string[]): Promise<number[][]> {
       const batch = texts.slice(i, i + BATCH_SIZE);
 
       const response = await client.embeddings.create({
-        model: 'text-embedding-3-large',
+        model: 'text-embedding-3-small',
         input: batch,
         encoding_format: 'float',
       });

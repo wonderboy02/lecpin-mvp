@@ -1,23 +1,24 @@
 import { NextResponse } from 'next/server';
-import { getSession } from '@/lib/neo4j';
+import { getSupabaseClient } from '@/lib/supabase';
 
 export async function GET() {
-  const session = getSession();
-  try {
-    const result = await session.run(`
-      MATCH (c:Concept)
-      RETURN c.name as name,
-             c.description as description,
-             c.is_learned as is_learned,
-             COUNT { (c)-[:RELATED_TO]-() } as degree
-      ORDER BY degree DESC
-    `);
+  const supabase = getSupabaseClient();
 
-    const concepts = result.records.map((record) => ({
-      name: record.get('name'),
-      description: record.get('description'),
-      is_learned: record.get('is_learned') || false,
-      degree: record.get('degree').toInt(),
+  try {
+    const { data, error } = await supabase
+      .from('concepts_with_centrality')
+      .select('name, description, is_learned, degree')
+      .order('degree', { ascending: false });
+
+    if (error) {
+      throw error;
+    }
+
+    const concepts = (data || []).map((row) => ({
+      name: row.name,
+      description: row.description,
+      is_learned: row.is_learned || false,
+      degree: row.degree,
     }));
 
     return NextResponse.json({ concepts });
@@ -30,7 +31,5 @@ export async function GET() {
       },
       { status: 500 }
     );
-  } finally {
-    await session.close();
   }
 }

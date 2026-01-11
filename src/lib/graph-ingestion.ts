@@ -1,5 +1,4 @@
-import { getSession } from './neo4j';
-import neo4j from 'neo4j-driver';
+import { getSupabaseClient } from './supabase';
 
 /**
  * GraphRAG를 위한 지식 그래프 생성
@@ -21,37 +20,27 @@ export interface ConceptRelation {
  * Concept 노드를 생성하거나 업데이트합니다
  */
 export async function upsertConcept(concept: ConceptNode): Promise<void> {
-  const session = getSession();
-  try {
-    await session.run(
-      `
-      MERGE (c:Concept {name: $name})
-      SET c.description = $description,
-          c.is_learned = COALESCE($is_learned, false),
-          c.updated_at = datetime()
-      `,
+  const supabase = getSupabaseClient();
+
+  // PostgreSQL UPSERT (ON CONFLICT)
+  const { error } = await supabase
+    .from('concepts')
+    .upsert(
       {
         name: concept.name,
         description: concept.description,
         is_learned: concept.is_learned ?? false,
+        embedding: concept.embedding ? JSON.stringify(concept.embedding) : null,
+        updated_at: new Date().toISOString(),
+      },
+      {
+        onConflict: 'name', // UNIQUE 제약조건 컬럼
+        ignoreDuplicates: false, // UPDATE 수행
       }
     );
 
-    // 벡터 임베딩이 있는 경우 별도로 저장
-    if (concept.embedding) {
-      await session.run(
-        `
-        MATCH (c:Concept {name: $name})
-        SET c.embedding = $embedding
-        `,
-        {
-          name: concept.name,
-          embedding: concept.embedding,
-        }
-      );
-    }
-  } finally {
-    await session.close();
+  if (error) {
+    throw new Error(`개념 저장 실패 (${concept.name}): ${error.message}`);
   }
 }
 
@@ -59,23 +48,45 @@ export async function upsertConcept(concept: ConceptNode): Promise<void> {
  * Concept 간의 관계를 생성합니다
  */
 export async function createRelation(relation: ConceptRelation): Promise<void> {
-  const session = getSession();
-  try {
-    await session.run(
-      `
-      MATCH (a:Concept {name: $from})
-      MATCH (b:Concept {name: $to})
-      MERGE (a)-[r:RELATED_TO {type: $type}]->(b)
-      SET r.updated_at = datetime()
-      `,
-      {
-        from: relation.from,
-        to: relation.to,
-        type: relation.type,
-      }
+  const supabase = getSupabaseClient();
+
+  // 1. from/to 개념의 ID 조회
+  const { data: fromConcept, error: fromError } = await supabase
+    .from('concepts')
+    .select('id')
+    .eq('name', relation.from)
+    .single();
+
+  const { data: toConcept, error: toError } = await supabase
+    .from('concepts')
+    .select('id')
+    .eq('name', relation.to)
+    .single();
+
+  if (fromError || toError || !fromConcept || !toConcept) {
+    throw new Error(
+      `관계 생성 실패: 개념을 찾을 수 없습니다 (${relation.from} -> ${relation.to})`
     );
-  } finally {
-    await session.close();
+  }
+
+  // 2. 관계 생성 (UPSERT)
+  const { error } = await supabase.from('relations').upsert(
+    {
+      from_concept_id: fromConcept.id,
+      to_concept_id: toConcept.id,
+      relation_type: relation.type,
+      updated_at: new Date().toISOString(),
+    },
+    {
+      onConflict: 'from_concept_id,to_concept_id,relation_type',
+      ignoreDuplicates: false,
+    }
+  );
+
+  if (error) {
+    throw new Error(
+      `관계 저장 실패 (${relation.from} -> ${relation.to}): ${error.message}`
+    );
   }
 }
 
@@ -83,18 +94,18 @@ export async function createRelation(relation: ConceptRelation): Promise<void> {
  * 학습 완료 상태를 업데이트합니다
  */
 export async function markAsLearned(conceptName: string): Promise<void> {
-  const session = getSession();
-  try {
-    await session.run(
-      `
-      MATCH (c:Concept {name: $name})
-      SET c.is_learned = true,
-          c.learned_at = datetime()
-      `,
-      { name: conceptName }
-    );
-  } finally {
-    await session.close();
+  const supabase = getSupabaseClient();
+
+  const { error } = await supabase
+    .from('concepts')
+    .update({
+      is_learned: true,
+      learned_at: new Date().toISOString(),
+    })
+    .eq('name', conceptName);
+
+  if (error) {
+    throw new Error(`학습 상태 업데이트 실패 (${conceptName}): ${error.message}`);
   }
 }
 
@@ -104,57 +115,50 @@ export async function markAsLearned(conceptName: string): Promise<void> {
 export async function getHighCentralityConcepts(
   limit: number = 10
 ): Promise<ConceptNode[]> {
-  const session = getSession();
-  try {
-    const result = await session.run(
-      `
-      MATCH (c:Concept)
-      RETURN c.name as name,
-             c.description as description,
-             c.is_learned as is_learned,
-             COUNT { (c)-[:RELATED_TO]-() } as degree
-      ORDER BY degree DESC
-      LIMIT $limit
-      `,
-      { limit: neo4j.int(limit) }
-    );
+  const supabase = getSupabaseClient();
 
-    return result.records.map((record) => ({
-      name: record.get('name'),
-      description: record.get('description'),
-      is_learned: record.get('is_learned'),
-    }));
-  } finally {
-    await session.close();
+  // concepts_with_centrality 뷰 사용
+  const { data, error } = await supabase
+    .from('concepts_with_centrality')
+    .select('name, description, is_learned, degree')
+    .order('degree', { ascending: false })
+    .limit(limit);
+
+  if (error) {
+    throw new Error(`중심성 개념 조회 실패: ${error.message}`);
   }
+
+  return (data || []).map((row) => ({
+    name: row.name,
+    description: row.description,
+    is_learned: row.is_learned,
+  }));
 }
 
 /**
  * 학습 완료된 개념들만 가져옵니다
  */
 export async function getLearnedConcepts(): Promise<ConceptNode[]> {
-  const session = getSession();
-  try {
-    const result = await session.run(
-      `
-      MATCH (c:Concept {is_learned: true})
-      RETURN c.name as name,
-             c.description as description
-      `
-    );
+  const supabase = getSupabaseClient();
 
-    return result.records.map((record) => ({
-      name: record.get('name'),
-      description: record.get('description'),
-      is_learned: true,
-    }));
-  } finally {
-    await session.close();
+  const { data, error } = await supabase
+    .from('concepts')
+    .select('name, description')
+    .eq('is_learned', true);
+
+  if (error) {
+    throw new Error(`학습 개념 조회 실패: ${error.message}`);
   }
+
+  return (data || []).map((row) => ({
+    name: row.name,
+    description: row.description,
+    is_learned: true,
+  }));
 }
 
 /**
- * 강의 텍스트를 Neo4j 그래프로 변환하는 전체 파이프라인
+ * 강의 텍스트를 Supabase 그래프로 변환하는 전체 파이프라인
  * @param text 강의 텍스트
  * @returns 생성된 개념 및 관계 수
  */
@@ -196,7 +200,7 @@ export async function ingestLectureText(text: string): Promise<{
   const embeddings = await generateEmbeddings(embeddingTexts);
   console.log(`임베딩 생성 완료: ${embeddings.length}개`);
 
-  console.log('3. Neo4j에 개념 저장 시작...');
+  console.log('3. Supabase에 개념 저장 시작...');
   for (let i = 0; i < concepts.length; i++) {
     await upsertConcept({
       ...concepts[i],

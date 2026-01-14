@@ -10,6 +10,7 @@ interface UserProfile {
   name: string | null
   avatar_url: string | null
   github_username: string | null
+  preferred_language?: 'ko' | 'en'
 }
 
 export function useUser() {
@@ -17,14 +18,26 @@ export function useUser() {
   const [profile, setProfile] = useState<UserProfile | null>(null)
   const [loading, setLoading] = useState(true)
 
-  const fetchProfile = useCallback(async (userId: string) => {
+  const fetchProfile = useCallback(async (userId: string): Promise<UserProfile | null> => {
     const supabase = createClient()
     const { data } = await supabase
       .from('users')
-      .select('id, email, name, avatar_url, github_username')
+      .select('id, email, name, avatar_url, github_username, preferred_language')
       .eq('id', userId)
       .single()
-    return data
+
+    if (!data) return null
+
+    // preferred_language가 DB에 없을 수 있으므로 안전하게 처리
+    const lang = (data as { preferred_language?: string }).preferred_language
+    return {
+      id: data.id,
+      email: data.email,
+      name: data.name,
+      avatar_url: data.avatar_url,
+      github_username: data.github_username,
+      preferred_language: lang === 'en' ? 'en' : 'ko'
+    }
   }, [])
 
   useEffect(() => {

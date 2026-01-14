@@ -1,7 +1,8 @@
 import { createClient, createServiceClient } from '@/lib/supabase/server'
-import { openai, CODE_REVIEW_PROMPT } from '@/lib/openai'
+import { openai, CODE_REVIEW_PROMPT, getLanguageInstruction } from '@/lib/openai'
 import { NextResponse } from 'next/server'
 import JSZip from 'jszip'
+import type { Language } from '@/types'
 
 // GitHub 레포에서 코드 가져오기
 async function fetchGitHubCode(repoUrl: string, githubToken: string): Promise<string> {
@@ -152,7 +153,7 @@ export async function POST(request: Request) {
 
     // 요청 파싱
     const body = await request.json()
-    const { submission_id } = body
+    const { submission_id, language = 'ko' } = body as { submission_id: string; language?: Language }
 
     if (!submission_id) {
       return NextResponse.json(
@@ -246,7 +247,7 @@ export async function POST(request: Request) {
       )
     }
 
-    // OpenAI로 코드 리뷰
+    // OpenAI로 코드 리뷰 (언어 설정 반영)
     const task = submission.tasks
     const prompt = `과제 정보:
 - 제목: ${task.title}
@@ -256,10 +257,11 @@ export async function POST(request: Request) {
 제출된 코드:
 ${codeContent}`
 
+    const languageInstruction = getLanguageInstruction(language)
     const completion = await openai.chat.completions.create({
       model: 'gpt-4o',
       messages: [
-        { role: 'system', content: CODE_REVIEW_PROMPT },
+        { role: 'system', content: `${CODE_REVIEW_PROMPT}\n\n${languageInstruction}` },
         { role: 'user', content: prompt },
       ],
       response_format: { type: 'json_object' },

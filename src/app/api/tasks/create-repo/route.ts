@@ -122,6 +122,18 @@ export async function POST(request: Request) {
       .update({ github_repo_url: repoUrl })
       .eq('id', task_id)
 
+    // README 업데이트 (비동기로 실행 - 실패해도 레포 생성은 성공)
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || ''
+    fetch(`${baseUrl}/api/tasks/${task_id}/readme`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Cookie': request.headers.get('cookie') || '',
+      },
+    }).catch(err => {
+      console.error('README update failed (non-blocking):', err)
+    })
+
     return NextResponse.json({
       success: true,
       repo_url: repoUrl,

@@ -1,8 +1,16 @@
 import OpenAI from 'openai'
+import type { Language } from '@/types'
 
 export const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 })
+
+// 언어별 시스템 프롬프트 프리픽스
+export function getLanguageInstruction(language: Language = 'ko'): string {
+  return language === 'ko'
+    ? '모든 응답을 한국어로 작성해주세요.'
+    : 'Please write all responses in English.'
+}
 
 // 역량 분석 프롬프트
 export const COMPETENCY_ANALYSIS_PROMPT = `당신은 프로그래밍 교육 전문가입니다. 제공된 프로그래밍 강의 자막을 분석하여 학습자가 습득해야 할 핵심 역량을 추출해주세요.

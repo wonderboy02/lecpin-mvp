@@ -1,7 +1,8 @@
 import { createClient } from '@/lib/supabase/server'
-import { openai, COMPETENCY_ANALYSIS_PROMPT } from '@/lib/openai'
+import { openai, COMPETENCY_ANALYSIS_PROMPT, getLanguageInstruction } from '@/lib/openai'
 import { extractVideoId, getThumbnailUrl, fetchTranscript } from '@/lib/youtube'
 import { NextResponse } from 'next/server'
+import type { Language } from '@/types'
 
 export async function POST(request: Request) {
   try {
@@ -18,7 +19,7 @@ export async function POST(request: Request) {
 
     // 요청 파싱
     const body = await request.json()
-    const { youtube_url } = body
+    const { youtube_url, language = 'ko' } = body as { youtube_url: string; language?: Language }
 
     if (!youtube_url) {
       return NextResponse.json(
@@ -71,12 +72,13 @@ export async function POST(request: Request) {
         .update({ status: 'analyzing', transcript })
         .eq('id', lecture.id)
 
-      // OpenAI로 역량 분석
-      console.log(`[analyze] Sending to OpenAI (${transcript.slice(0, 15000).length} chars)...`)
+      // OpenAI로 역량 분석 (언어 설정 반영)
+      const languageInstruction = getLanguageInstruction(language)
+      console.log(`[analyze] Sending to OpenAI (${transcript.slice(0, 15000).length} chars)... Language: ${language}`)
       const completion = await openai.chat.completions.create({
         model: 'gpt-4o',
         messages: [
-          { role: 'system', content: COMPETENCY_ANALYSIS_PROMPT },
+          { role: 'system', content: `${COMPETENCY_ANALYSIS_PROMPT}\n\n${languageInstruction}` },
           { role: 'user', content: `다음 강의 자막을 분석해주세요:\n\n${transcript.slice(0, 15000)}` },
         ],
         response_format: { type: 'json_object' },

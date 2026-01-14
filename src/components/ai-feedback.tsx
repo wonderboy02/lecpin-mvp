@@ -1,8 +1,9 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { useLanguage } from "@/contexts/language-context"
 import type { Submission, Feedback, ImprovementItem, FeedbackItem } from "@/types"
 
 interface AIFeedbackProps {
@@ -18,11 +19,17 @@ export function AIFeedback({
   onFeedbackGenerated,
   onReset,
 }: AIFeedbackProps) {
+  const { language } = useLanguage()
   const [isLoading, setIsLoading] = useState(!feedback)
   const [error, setError] = useState<string | null>(null)
+  const fetchedSubmissionIdRef = useRef<string | null>(null)
 
   useEffect(() => {
+    // 이미 피드백이 있으면 실행하지 않음
     if (feedback) return
+    // 같은 submission에 대해 이미 요청했으면 실행하지 않음 (중복 요청 방지)
+    if (fetchedSubmissionIdRef.current === submission.id) return
+    fetchedSubmissionIdRef.current = submission.id
 
     const generateFeedback = async () => {
       setIsLoading(true)
@@ -32,7 +39,7 @@ export function AIFeedback({
         const response = await fetch("/api/feedback/generate", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ submission_id: submission.id }),
+          body: JSON.stringify({ submission_id: submission.id, language }),
         })
 
         const data = await response.json()
@@ -50,7 +57,7 @@ export function AIFeedback({
     }
 
     generateFeedback()
-  }, [submission.id, feedback, onFeedbackGenerated])
+  }, [submission.id, feedback, onFeedbackGenerated, language])
 
   const getSeverityLabel = (severity: string) => {
     switch (severity) {

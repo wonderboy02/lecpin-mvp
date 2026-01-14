@@ -280,6 +280,81 @@ export type Database = {
           },
         ]
       }
+      user_tasks: {
+        Row: {
+          created_at: string | null
+          current_step: string
+          feedback_id: string | null
+          id: string
+          lecture_id: string
+          status: string
+          submission_id: string | null
+          task_id: string | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          current_step?: string
+          feedback_id?: string | null
+          id?: string
+          lecture_id: string
+          status?: string
+          submission_id?: string | null
+          task_id?: string | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          current_step?: string
+          feedback_id?: string | null
+          id?: string
+          lecture_id?: string
+          status?: string
+          submission_id?: string | null
+          task_id?: string | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_tasks_feedback_id_fkey"
+            columns: ["feedback_id"]
+            isOneToOne: false
+            referencedRelation: "feedbacks"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "user_tasks_lecture_id_fkey"
+            columns: ["lecture_id"]
+            isOneToOne: false
+            referencedRelation: "lectures"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "user_tasks_submission_id_fkey"
+            columns: ["submission_id"]
+            isOneToOne: false
+            referencedRelation: "submissions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "user_tasks_task_id_fkey"
+            columns: ["task_id"]
+            isOneToOne: false
+            referencedRelation: "tasks"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "user_tasks_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       users: {
         Row: {
           avatar_url: string | null
@@ -289,6 +364,8 @@ export type Database = {
           github_username: string | null
           id: string
           name: string | null
+          onboarding_completed: boolean | null
+          preferred_language: string | null
           updated_at: string | null
         }
         Insert: {
@@ -299,6 +376,8 @@ export type Database = {
           github_username?: string | null
           id?: string
           name?: string | null
+          onboarding_completed?: boolean | null
+          preferred_language?: string | null
           updated_at?: string | null
         }
         Update: {
@@ -309,6 +388,8 @@ export type Database = {
           github_username?: string | null
           id?: string
           name?: string | null
+          onboarding_completed?: boolean | null
+          preferred_language?: string | null
           updated_at?: string | null
         }
         Relationships: []

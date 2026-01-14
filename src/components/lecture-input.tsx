@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useUser } from "@/hooks/use-user"
+import { useLanguage } from "@/contexts/language-context"
 import Link from "next/link"
 import type { LectureWithCompetencies } from "@/types"
 
@@ -15,6 +16,7 @@ interface LectureInputProps {
 
 export function LectureInput({ onAnalyzeComplete }: LectureInputProps) {
   const { isLoggedIn, loading: userLoading } = useUser()
+  const { language } = useLanguage()
   const [url, setUrl] = useState("")
   const [isAnalyzing, setIsAnalyzing] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -40,7 +42,7 @@ export function LectureInput({ onAnalyzeComplete }: LectureInputProps) {
       const response = await fetch("/api/lectures/analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ youtube_url: url }),
+        body: JSON.stringify({ youtube_url: url, language }),
       })
 
       const data = await response.json()

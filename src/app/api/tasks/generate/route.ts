@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
-import { openai, TASK_GENERATION_PROMPT } from '@/lib/openai'
+import { openai, TASK_GENERATION_PROMPT, getLanguageInstruction } from '@/lib/openai'
 import { NextResponse } from 'next/server'
+import type { Language } from '@/types'
 
 export async function POST(request: Request) {
   try {
@@ -17,7 +18,7 @@ export async function POST(request: Request) {
 
     // 요청 파싱
     const body = await request.json()
-    const { lecture_id } = body
+    const { lecture_id, language = 'ko' } = body as { lecture_id: string; language?: Language }
 
     if (!lecture_id) {
       return NextResponse.json(
@@ -74,10 +75,12 @@ ${lecture.transcript?.slice(0, 5000) || '자막 없음'}
 
 위 정보를 바탕으로 학습자가 핵심 역량을 실습할 수 있는 과제를 생성해주세요.`
 
+    // 언어 설정 반영
+    const languageInstruction = getLanguageInstruction(language)
     const completion = await openai.chat.completions.create({
       model: 'gpt-4o',
       messages: [
-        { role: 'system', content: TASK_GENERATION_PROMPT },
+        { role: 'system', content: `${TASK_GENERATION_PROMPT}\n\n${languageInstruction}` },
         { role: 'user', content: prompt },
       ],
       response_format: { type: 'json_object' },

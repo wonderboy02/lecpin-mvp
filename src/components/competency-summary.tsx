@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { useLanguage } from "@/contexts/language-context"
 import type { LectureWithCompetencies, Task } from "@/types"
 
 interface CompetencySummaryProps {
@@ -11,6 +12,7 @@ interface CompetencySummaryProps {
 }
 
 export function CompetencySummary({ lecture, onTaskGenerated }: CompetencySummaryProps) {
+  const { language } = useLanguage()
   const [isGenerating, setIsGenerating] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -22,7 +24,7 @@ export function CompetencySummary({ lecture, onTaskGenerated }: CompetencySummar
       const response = await fetch("/api/tasks/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ lecture_id: lecture.id }),
+        body: JSON.stringify({ lecture_id: lecture.id, language }),
       })
 
       const data = await response.json()

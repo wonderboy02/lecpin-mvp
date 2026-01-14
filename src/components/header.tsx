@@ -11,6 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { LanguageSelector } from "@/components/language-selector"
 import Link from "next/link"
 
 export function Header() {
@@ -21,28 +22,39 @@ export function Header() {
       <div className="container mx-auto px-4 h-14 flex items-center justify-between">
         {/* Logo */}
         <Link
-          href="/"
+          href="/dashboard"
           className="font-semibold text-lg tracking-tight text-foreground hover:opacity-70 transition-opacity"
         >
           Lecpin
         </Link>
 
         {/* Navigation & Auth */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4">
           <nav className="hidden sm:flex items-center gap-6">
             <Link
               href="/"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              Home
+              Start
             </Link>
-            <a
-              href="#how-it-works"
+            {isLoggedIn && (
+              <Link
+                href="/dashboard"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Dashboard
+              </Link>
+            )}
+            <Link
+              href="/guide"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Guide
-            </a>
+            </Link>
           </nav>
+
+          {/* Language Selector */}
+          <LanguageSelector />
 
           {!loading && (
             <>
@@ -76,21 +88,22 @@ export function Header() {
                       </div>
                     </DropdownMenuLabel>
                     <DropdownMenuSeparator />
+                    <DropdownMenuItem asChild>
+                      <Link href="/dashboard">내 학습</Link>
+                    </DropdownMenuItem>
                     {profile?.github_username && (
-                      <>
-                        <DropdownMenuItem asChild>
-                          <a
-                            href={`https://github.com/${profile.github_username}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm"
-                          >
-                            GitHub Profile
-                          </a>
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                      </>
+                      <DropdownMenuItem asChild>
+                        <a
+                          href={`https://github.com/${profile.github_username}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm"
+                        >
+                          GitHub Profile
+                        </a>
+                      </DropdownMenuItem>
                     )}
+                    <DropdownMenuSeparator />
                     <DropdownMenuItem
                       onClick={signOut}
                       className="text-sm text-destructive focus:text-destructive"

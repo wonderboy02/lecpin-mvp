@@ -29,6 +29,27 @@ export async function GET(request: Request) {
             github_username: user.user_metadata?.user_name || user.user_metadata?.preferred_username || null
           })
           .eq('id', user.id)
+
+        // 온보딩 완료 여부 확인
+        const { data: profile } = await serviceClient
+          .from('users')
+          .select('onboarding_completed')
+          .eq('id', user.id)
+          .single()
+
+        const forwardedHost = request.headers.get('x-forwarded-host')
+        const isLocalEnv = process.env.NODE_ENV === 'development'
+
+        // 온보딩 미완료 시 온보딩 페이지로 리다이렉트
+        const redirectPath = !profile?.onboarding_completed ? '/onboarding' : next
+
+        if (isLocalEnv) {
+          return NextResponse.redirect(`${origin}${redirectPath}`)
+        } else if (forwardedHost) {
+          return NextResponse.redirect(`https://${forwardedHost}${redirectPath}`)
+        } else {
+          return NextResponse.redirect(`${origin}${redirectPath}`)
+        }
       }
 
       const forwardedHost = request.headers.get('x-forwarded-host')

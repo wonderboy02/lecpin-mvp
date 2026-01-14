@@ -2,6 +2,21 @@
 // Database Types (Supabase Tables)
 // ============================================
 
+// 지원 언어
+export type Language = 'ko' | 'en'
+
+// 언어 설정 관련
+export interface LanguageConfig {
+  code: Language
+  label: string
+  flag: string
+}
+
+export const LANGUAGES: LanguageConfig[] = [
+  { code: 'ko', label: '한국어', flag: '🇰🇷' },
+  { code: 'en', label: 'English', flag: '🇺🇸' },
+]
+
 export interface User {
   id: string
   email: string
@@ -9,6 +24,8 @@ export interface User {
   avatar_url: string | null
   github_username: string | null
   github_token: string | null
+  preferred_language: Language
+  onboarding_completed: boolean
   created_at: string
   updated_at: string
 }
@@ -123,7 +140,7 @@ export interface ApiResponse<T> {
 // UI State Types
 // ============================================
 
-export type Step = 'input' | 'summary' | 'task' | 'submit' | 'feedback'
+export type Step = 'input' | 'summary' | 'task' | 'submit' | 'feedback' | 'completed'
 
 export interface AppState {
   currentStep: Step
@@ -133,4 +150,30 @@ export interface AppState {
   feedback: Feedback | null
   isLoading: boolean
   error: string | null
+}
+
+// ============================================
+// User Task Types (Dashboard)
+// ============================================
+
+export type UserTaskStatus = 'in_progress' | 'completed' | 'abandoned'
+
+export interface UserTask {
+  id: string
+  user_id: string
+  lecture_id: string
+  task_id: string | null
+  submission_id: string | null
+  feedback_id: string | null
+  current_step: Step
+  status: UserTaskStatus
+  created_at: string
+  updated_at: string
+}
+
+export interface UserTaskWithRelations extends UserTask {
+  lecture: LectureWithCompetencies
+  task?: Task
+  submission?: Submission
+  feedback?: Feedback
 }

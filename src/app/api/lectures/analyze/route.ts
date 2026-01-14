@@ -1,0 +1,151 @@
+import { createClient } from '@/lib/supabase/server'
+import { openai, COMPETENCY_ANALYSIS_PROMPT } from '@/lib/openai'
+import { extractVideoId, getThumbnailUrl, fetchTranscript } from '@/lib/youtube'
+import { NextResponse } from 'next/server'
+
+export async function POST(request: Request) {
+  try {
+    const supabase = await createClient()
+
+    // 인증 확인
+    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    if (authError || !user) {
+      return NextResponse.json(
+        { error: '로그인이 필요합니다.' },
+        { status: 401 }
+      )
+    }
+
+    // 요청 파싱
+    const body = await request.json()
+    const { youtube_url } = body
+
+    if (!youtube_url) {
+      return NextResponse.json(
+        { error: 'YouTube URL이 필요합니다.' },
+        { status: 400 }
+      )
+    }
+
+    // Video ID 추출
+    const videoId = extractVideoId(youtube_url)
+    if (!videoId) {
+      return NextResponse.json(
+        { error: '유효한 YouTube URL이 아닙니다.' },
+        { status: 400 }
+      )
+    }
+
+    // 강의 생성 (pending 상태)
+    const { data: lecture, error: insertError } = await supabase
+      .from('lectures')
+      .insert({
+        user_id: user.id,
+        title: '분석 중...',
+        youtube_url,
+        youtube_id: videoId,
+        thumbnail_url: getThumbnailUrl(videoId),
+        status: 'extracting',
+        source_type: 'youtube',
+      })
+      .select()
+      .single()
+
+    if (insertError) {
+      console.error('Lecture insert error:', insertError)
+      return NextResponse.json(
+        { error: '강의 생성에 실패했습니다.' },
+        { status: 500 }
+      )
+    }
+
+    try {
+      // 자막 추출
+      const transcript = await fetchTranscript(videoId)
+
+      // 상태 업데이트: analyzing
+      await supabase
+        .from('lectures')
+        .update({ status: 'analyzing', transcript })
+        .eq('id', lecture.id)
+
+      // OpenAI로 역량 분석
+      const completion = await openai.chat.completions.create({
+        model: 'gpt-4o',
+        messages: [
+          { role: 'system', content: COMPETENCY_ANALYSIS_PROMPT },
+          { role: 'user', content: `다음 강의 자막을 분석해주세요:\n\n${transcript.slice(0, 15000)}` },
+        ],
+        response_format: { type: 'json_object' },
+        temperature: 0.7,
+      })
+
+      const analysisResult = JSON.parse(completion.choices[0].message.content || '{}')
+
+      // 강의 정보 업데이트
+      await supabase
+        .from('lectures')
+        .update({
+          title: analysisResult.title || '제목 없음',
+          language: analysisResult.language,
+          status: 'completed',
+        })
+        .eq('id', lecture.id)
+
+      // 역량 저장
+      if (analysisResult.competencies && Array.isArray(analysisResult.competencies)) {
+        const competenciesToInsert = analysisResult.competencies.map(
+          (comp: { name: string; description: string }, index: number) => ({
+            lecture_id: lecture.id,
+            name: comp.name,
+            description: comp.description,
+            order_index: index,
+          })
+        )
+
+        await supabase.from('competencies').insert(competenciesToInsert)
+      }
+
+      // 완성된 데이터 가져오기
+      const { data: completedLecture } = await supabase
+        .from('lectures')
+        .select(`
+          *,
+          competencies (*)
+        `)
+        .eq('id', lecture.id)
+        .single()
+
+      return NextResponse.json({
+        success: true,
+        lecture: completedLecture,
+      })
+
+    } catch (processingError) {
+      // 처리 중 에러 발생 시 상태 업데이트
+      const errorMessage = processingError instanceof Error
+        ? processingError.message
+        : '알 수 없는 오류'
+
+      await supabase
+        .from('lectures')
+        .update({
+          status: 'failed',
+          error_message: errorMessage,
+        })
+        .eq('id', lecture.id)
+
+      return NextResponse.json(
+        { error: errorMessage, lecture_id: lecture.id },
+        { status: 500 }
+      )
+    }
+
+  } catch (error) {
+    console.error('Lecture analyze error:', error)
+    return NextResponse.json(
+      { error: '서버 오류가 발생했습니다.' },
+      { status: 500 }
+    )
+  }
+}

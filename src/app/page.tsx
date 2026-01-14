@@ -1,53 +1,119 @@
-'use client';
+"use client"
 
-import { useState } from 'react';
-import { TabButton } from '@/components/TabButton';
-import { IngestionPanel } from '@/components/IngestionPanel';
-import { ConceptsPanel } from '@/components/ConceptsPanel';
-import { WorkflowPanel } from '@/components/WorkflowPanel';
+import { useState } from "react"
+import { Header } from "@/components/header"
+import { LectureInput } from "@/components/lecture-input"
+import { CompetencySummary } from "@/components/competency-summary"
+import { PracticalTask } from "@/components/practical-task"
+import { SubmissionUpload } from "@/components/submission-upload"
+import { AIFeedback } from "@/components/ai-feedback"
+import { Footer } from "@/components/footer"
+import type { Step, LectureWithCompetencies, Task, Submission, Feedback } from "@/types"
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<
-    'ingestion' | 'concepts' | 'workflow'
-  >('ingestion');
+  const [currentStep, setCurrentStep] = useState<Step>("input")
+  const [lecture, setLecture] = useState<LectureWithCompetencies | null>(null)
+  const [task, setTask] = useState<Task | null>(null)
+  const [submission, setSubmission] = useState<Submission | null>(null)
+  const [feedback, setFeedback] = useState<Feedback | null>(null)
+
+  const handleAnalyzeComplete = (lectureData: LectureWithCompetencies) => {
+    setLecture(lectureData)
+    setCurrentStep("summary")
+  }
+
+  const handleTaskGenerated = (taskData: Task) => {
+    setTask(taskData)
+    setCurrentStep("task")
+  }
+
+  const handleStartTask = () => {
+    setCurrentStep("submit")
+  }
+
+  const handleSubmissionComplete = (submissionData: Submission) => {
+    setSubmission(submissionData)
+    setCurrentStep("feedback")
+  }
+
+  const handleFeedbackGenerated = (feedbackData: Feedback) => {
+    setFeedback(feedbackData)
+  }
+
+  const handleReset = () => {
+    setCurrentStep("input")
+    setLecture(null)
+    setTask(null)
+    setSubmission(null)
+    setFeedback(null)
+  }
 
   return (
-    <main className="min-h-screen p-8 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen flex flex-col bg-background">
+      <Header />
+      <main className="flex-1 container mx-auto px-4 py-8 max-w-3xl">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">K-Audit MVP</h1>
-          <p className="text-gray-600">
-            GraphRAG 기반 학습 분석 시스템 - Differential Solver
-          </p>
+          <div className="flex items-center justify-center gap-2">
+            {[
+              { key: "input", label: "강의 입력" },
+              { key: "summary", label: "역량 분석" },
+              { key: "task", label: "실습 과제" },
+              { key: "submit", label: "결과 제출" },
+              { key: "feedback", label: "AI 피드백" },
+            ].map((step, index, arr) => (
+              <div key={step.key} className="flex items-center gap-2">
+                <div
+                  className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                    currentStep === step.key
+                      ? "bg-primary text-primary-foreground"
+                      : arr.findIndex((s) => s.key === currentStep) > index
+                        ? "bg-primary/20 text-primary"
+                        : "bg-muted text-muted-foreground"
+                  }`}
+                >
+                  <span className="w-5 h-5 rounded-full bg-current/20 flex items-center justify-center text-xs">
+                    {index + 1}
+                  </span>
+                  <span className="hidden sm:inline">{step.label}</span>
+                </div>
+                {index < arr.length - 1 && <div className="w-6 h-0.5 bg-border" />}
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* 탭 네비게이션 */}
-        <div className="flex gap-2 mb-6 border-b">
-          <TabButton
-            active={activeTab === 'ingestion'}
-            onClick={() => setActiveTab('ingestion')}
-          >
-            1. 강의 입력
-          </TabButton>
-          <TabButton
-            active={activeTab === 'concepts'}
-            onClick={() => setActiveTab('concepts')}
-          >
-            2. 학습 진행
-          </TabButton>
-          <TabButton
-            active={activeTab === 'workflow'}
-            onClick={() => setActiveTab('workflow')}
-          >
-            3. 워크플로우 실행
-          </TabButton>
-        </div>
-
-        {/* 탭 컨텐츠 */}
-        {activeTab === 'ingestion' && <IngestionPanel />}
-        {activeTab === 'concepts' && <ConceptsPanel />}
-        {activeTab === 'workflow' && <WorkflowPanel />}
-      </div>
-    </main>
-  );
+        {currentStep === "input" && (
+          <LectureInput onAnalyzeComplete={handleAnalyzeComplete} />
+        )}
+        {currentStep === "summary" && lecture && (
+          <CompetencySummary
+            lecture={lecture}
+            onTaskGenerated={handleTaskGenerated}
+          />
+        )}
+        {currentStep === "task" && task && (
+          <PracticalTask
+            task={task}
+            onTaskUpdate={setTask}
+            onStart={handleStartTask}
+          />
+        )}
+        {currentStep === "submit" && task && (
+          <SubmissionUpload
+            task={task}
+            onSubmissionComplete={handleSubmissionComplete}
+          />
+        )}
+        {currentStep === "feedback" && submission && (
+          <AIFeedback
+            submission={submission}
+            feedback={feedback}
+            onFeedbackGenerated={handleFeedbackGenerated}
+            onReset={handleReset}
+          />
+        )}
+      </main>
+      <Footer />
+    </div>
+  )
 }

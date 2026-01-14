@@ -1,5 +1,5 @@
 import OpenAI from 'openai'
-import type { Language, Feedback } from '@/types'
+import type { Language } from '@/types'
 
 export const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -10,21 +10,19 @@ export const CODE_REVIEW_MODEL = 'gpt-5.1-codex-max' // 코드 리뷰 전용 (Re
 export const GENERAL_MODEL = 'gpt-4o' // 일반 작업용 (Chat Completions API)
 
 // 코드 길이에 따른 reasoning effort 결정
-function getReasoningEffort(codeLength: number): 'medium' | 'high' | 'xhigh' {
-  if (codeLength < 5000) return 'medium'
-  if (codeLength < 20000) return 'high'
-  return 'xhigh'
+// SDK v4.104.0 기준: 'low' | 'medium' | 'high' 지원
+function getReasoningEffort(codeLength: number): 'medium' | 'high' {
+  if (codeLength < 10000) return 'medium'
+  return 'high'
 }
 
-// 코드 리뷰 결과 타입 (Feedback에서 id, submission_id, created_at 제외)
-export type CodeReviewResult = Omit<Feedback, 'id' | 'submission_id' | 'created_at'>
-
 // Responses API를 사용한 코드 리뷰 함수
+// 반환 타입은 JSON.parse 결과이므로 supabase Json 타입과 호환됨
 export async function reviewCodeWithCodex(params: {
   code: string
   taskInfo: string
   language: Language
-}): Promise<CodeReviewResult> {
+}) {
   const { code, taskInfo, language } = params
   const effort = getReasoningEffort(code.length)
   const languageInstruction = getLanguageInstruction(language)
@@ -45,7 +43,7 @@ ${code}`
     reasoning: { effort },
   })
 
-  // output_text에서 JSON 파싱
+  // output_text에서 JSON 파싱 (any 타입으로 반환되어 supabase와 호환)
   const parsed = JSON.parse(result.output_text)
 
   return {

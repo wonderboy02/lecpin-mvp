@@ -199,7 +199,7 @@ export async function POST(request: Request) {
     // 제출 상태 업데이트
     await supabase
       .from('submissions')
-      .update({ status: 'reviewing' })
+      .update({ status: 'reviewing' } as never)
       .eq('id', submission_id)
 
     // 코드 가져오기
@@ -295,7 +295,7 @@ ${codeContent}`
     // 제출 상태 업데이트
     await supabase
       .from('submissions')
-      .update({ status: 'completed' })
+      .update({ status: 'completed' } as never)
       .eq('id', submission_id)
 
     return NextResponse.json({

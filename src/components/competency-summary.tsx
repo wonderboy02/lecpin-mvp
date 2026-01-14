@@ -3,8 +3,6 @@
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Brain, Target, ArrowRight, Code2, Loader2, AlertCircle } from "lucide-react"
 import type { LectureWithCompetencies, Task } from "@/types"
 
 interface CompetencySummaryProps {
@@ -43,33 +41,33 @@ export function CompetencySummary({ lecture, onTaskGenerated }: CompetencySummar
 
   return (
     <div className="space-y-6">
-      {/* Lecture Info Card */}
-      <Card className="shadow-sm border-border">
-        <CardContent className="p-6">
-          <div className="flex items-start gap-4">
+      {/* Lecture Info */}
+      <Card className="border-border/60 shadow-subtle">
+        <CardContent className="p-6 sm:p-8">
+          <div className="flex items-start gap-5">
             {lecture.thumbnail_url ? (
               <img
                 src={lecture.thumbnail_url}
                 alt={lecture.title}
-                className="w-24 h-16 rounded-lg object-cover flex-shrink-0"
+                className="w-28 h-20 rounded object-cover flex-shrink-0"
               />
             ) : (
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Brain className="w-6 h-6 text-primary" />
-              </div>
+              <div className="w-28 h-20 rounded bg-muted flex-shrink-0" />
             )}
             <div className="flex-1 min-w-0">
-              <Badge variant="secondary" className="mb-2">
+              <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-2">
                 분석 완료
-              </Badge>
-              <h2 className="text-lg font-semibold text-foreground mb-1">{lecture.title}</h2>
-              <div className="flex items-center gap-4 text-sm text-muted-foreground flex-wrap">
+              </p>
+              <h2 className="text-lg font-semibold text-foreground leading-tight mb-2">
+                {lecture.title}
+              </h2>
+              <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <span>YouTube</span>
                 {lecture.language && (
-                  <span className="flex items-center gap-1">
-                    <Code2 className="w-4 h-4" />
-                    {lecture.language}
-                  </span>
+                  <>
+                    <span className="text-border">|</span>
+                    <span>{lecture.language}</span>
+                  </>
                 )}
               </div>
             </div>
@@ -78,27 +76,33 @@ export function CompetencySummary({ lecture, onTaskGenerated }: CompetencySummar
       </Card>
 
       {/* Core Competencies */}
-      <Card className="shadow-sm border-primary/20 bg-secondary/30">
-        <CardContent className="p-6">
-          <div className="flex items-center gap-2 mb-4">
-            <Target className="w-5 h-5 text-primary" />
-            <h3 className="font-semibold text-foreground">핵심 개발 역량</h3>
+      <Card className="border-border/60 shadow-subtle">
+        <CardContent className="p-6 sm:p-8">
+          <div className="mb-6">
+            <h3 className="text-lg font-semibold text-foreground mb-1">
+              핵심 개발 역량
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              이 강의를 통해 습득할 수 있는 역량입니다
+            </p>
           </div>
-          <p className="text-sm text-muted-foreground mb-4">
-            이 강의를 통해 습득할 수 있는 핵심 개발 역량입니다
-          </p>
+
           <div className="space-y-4">
             {lecture.competencies.map((competency, index) => (
               <div
                 key={competency.id}
-                className="flex gap-3 p-3 rounded-lg bg-background/60 border border-border/50"
+                className="flex gap-4 p-4 rounded-md bg-secondary/50 border border-border/40"
               >
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary text-sm font-medium flex items-center justify-center">
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-foreground text-background text-sm font-medium flex items-center justify-center">
                   {index + 1}
                 </span>
-                <div>
-                  <h4 className="font-medium text-foreground text-sm">{competency.name}</h4>
-                  <p className="text-sm text-muted-foreground mt-0.5">{competency.description}</p>
+                <div className="flex-1">
+                  <h4 className="font-medium text-foreground mb-1">
+                    {competency.name}
+                  </h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {competency.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -106,28 +110,26 @@ export function CompetencySummary({ lecture, onTaskGenerated }: CompetencySummar
         </CardContent>
       </Card>
 
+      {/* Error Message */}
       {error && (
-        <div className="flex items-center gap-2 p-3 text-sm text-red-600 bg-red-50 dark:bg-red-950/20 rounded-lg">
-          <AlertCircle className="w-4 h-4 shrink-0" />
-          <span>{error}</span>
+        <div className="p-4 text-sm text-destructive bg-destructive/5 rounded-md border border-destructive/10">
+          {error}
         </div>
       )}
 
+      {/* Generate Task Button */}
       <Button
         onClick={handleGenerateTask}
         disabled={isGenerating}
-        className="w-full h-11 text-base font-medium gap-2"
+        className="w-full h-12 text-base font-medium"
       >
         {isGenerating ? (
-          <>
-            <Loader2 className="w-4 h-4 animate-spin" />
+          <span className="flex items-center gap-3">
+            <span className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
             과제 생성 중...
-          </>
+          </span>
         ) : (
-          <>
-            코딩 실습 과제 생성하기
-            <ArrowRight className="w-4 h-4" />
-          </>
+          "코딩 실습 과제 생성하기"
         )}
       </Button>
 

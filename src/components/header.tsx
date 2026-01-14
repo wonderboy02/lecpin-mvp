@@ -1,6 +1,5 @@
 'use client'
 
-import { Zap, LogOut, Github } from "lucide-react"
 import { useUser } from "@/hooks/use-user"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -18,27 +17,30 @@ export function Header() {
   const { user, profile, loading, signOut, isLoggedIn } = useUser()
 
   return (
-    <header className="border-b border-border bg-card">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <Zap className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="font-bold text-lg text-foreground">Lecpin</span>
-          </Link>
-        </div>
+    <header className="border-b border-border/60 bg-background/80 backdrop-blur-sm sticky top-0 z-50">
+      <div className="container mx-auto px-4 h-14 flex items-center justify-between">
+        {/* Logo */}
+        <Link
+          href="/"
+          className="font-semibold text-lg tracking-tight text-foreground hover:opacity-70 transition-opacity"
+        >
+          Lecpin
+        </Link>
 
-        <div className="flex items-center gap-4">
+        {/* Navigation & Auth */}
+        <div className="flex items-center gap-6">
           <nav className="hidden sm:flex items-center gap-6">
-            <Link href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-              홈
+            <Link
+              href="/"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Home
             </Link>
             <a
               href="#how-it-works"
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              이용 방법
+              Guide
             </a>
           </nav>
 
@@ -47,13 +49,16 @@ export function Header() {
               {isLoggedIn ? (
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="relative h-9 w-9 rounded-full">
-                      <Avatar className="h-9 w-9">
+                    <Button
+                      variant="ghost"
+                      className="relative h-8 w-8 rounded-full p-0 hover:bg-muted"
+                    >
+                      <Avatar className="h-8 w-8">
                         <AvatarImage
                           src={profile?.avatar_url || user?.user_metadata?.avatar_url}
                           alt={profile?.name || '사용자'}
                         />
-                        <AvatarFallback>
+                        <AvatarFallback className="text-xs font-medium bg-muted text-muted-foreground">
                           {(profile?.name || profile?.email || 'U').charAt(0).toUpperCase()}
                         </AvatarFallback>
                       </Avatar>
@@ -72,31 +77,36 @@ export function Header() {
                     </DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     {profile?.github_username && (
-                      <DropdownMenuItem asChild>
-                        <a
-                          href={`https://github.com/${profile.github_username}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center"
-                        >
-                          <Github className="mr-2 h-4 w-4" />
-                          GitHub 프로필
-                        </a>
-                      </DropdownMenuItem>
+                      <>
+                        <DropdownMenuItem asChild>
+                          <a
+                            href={`https://github.com/${profile.github_username}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm"
+                          >
+                            GitHub Profile
+                          </a>
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                      </>
                     )}
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={signOut} className="text-red-600">
-                      <LogOut className="mr-2 h-4 w-4" />
-                      로그아웃
+                    <DropdownMenuItem
+                      onClick={signOut}
+                      className="text-sm text-destructive focus:text-destructive"
+                    >
+                      Sign Out
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               ) : (
-                <Button asChild variant="outline" size="sm">
-                  <Link href="/login">
-                    <Github className="mr-2 h-4 w-4" />
-                    로그인
-                  </Link>
+                <Button
+                  asChild
+                  variant="ghost"
+                  size="sm"
+                  className="text-sm font-normal h-8 px-3"
+                >
+                  <Link href="/login">Sign In</Link>
                 </Button>
               )}
             </>

@@ -1,16 +1,11 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, JetBrains_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _inter = Inter({ subsets: ["latin"] })
-const _jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] })
-
 export const metadata: Metadata = {
-  title: "AI 실습 코치 | 패스트캠퍼스",
-  description: "강의를 보고 바로 실습하세요. AI가 맞춤 코딩 과제를 생성하고 시니어 개발자처럼 피드백합니다.",
-    generator: 'v0.app'
+  title: "Lecpin | AI \uc2e4\uc2b5 \ucf54\uce58",
+  description: "\uac15\uc758\ub97c \ubcf4\uace0 \ubc14\ub85c \uc2e4\uc2b5\ud558\uc138\uc694. AI\uac00 \ub9de\ucda4 \ucf54\ub529 \uacfc\uc81c\ub97c \uc0dd\uc131\ud558\uace0 \uc2dc\ub2c8\uc5b4 \uac1c\ubc1c\uc790\ucc98\ub7fc \ud53c\ub4dc\ubc31\ud569\ub2c8\ub2e4.",
 }
 
 export default function RootLayout({
@@ -20,7 +15,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`font-sans antialiased`}>
+      <head>
+        {/* Pretendard Variable - Modern Korean Typography */}
+        <link
+          rel="stylesheet"
+          as="style"
+          crossOrigin="anonymous"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        />
+        {/* JetBrains Mono for code */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="font-sans antialiased">
         {children}
         <Analytics />
       </body>

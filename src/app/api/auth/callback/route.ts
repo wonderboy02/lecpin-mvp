@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { createServiceClient } from '@/lib/supabase/server'
 import { NextResponse } from 'next/server'
+import type { TablesUpdate } from '@/lib/supabase/database'
 
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url)
@@ -22,12 +23,14 @@ export async function GET(request: Request) {
         // Service client로 github_token 저장 (RLS 우회)
         const serviceClient = createServiceClient()
 
+        const updateData: TablesUpdate<'users'> = {
+          github_token: providerToken,
+          github_username: user.user_metadata?.user_name || user.user_metadata?.preferred_username || null
+        }
+
         await serviceClient
           .from('users')
-          .update({
-            github_token: providerToken,
-            github_username: user.user_metadata?.user_name || user.user_metadata?.preferred_username
-          })
+          .update(updateData as never)
           .eq('id', user.id)
       }
 

@@ -3,23 +3,6 @@
 import { useEffect, useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import {
-  Award,
-  ThumbsUp,
-  AlertTriangle,
-  TrendingUp,
-  Star,
-  RotateCcw,
-  CheckCircle2,
-  Code2,
-  Zap,
-  Shield,
-  FileCode,
-  Bug,
-  Loader2,
-  AlertCircle,
-} from "lucide-react"
 import type { Submission, Feedback, ImprovementItem, FeedbackItem } from "@/types"
 
 interface AIFeedbackProps {
@@ -69,21 +52,6 @@ export function AIFeedback({
     generateFeedback()
   }, [submission.id, feedback, onFeedbackGenerated])
 
-  const getSeverityColor = (severity: string) => {
-    switch (severity) {
-      case "critical":
-        return "text-red-600 bg-red-500/10"
-      case "major":
-        return "text-red-500 bg-red-500/10"
-      case "minor":
-        return "text-amber-500 bg-amber-500/10"
-      case "suggestion":
-        return "text-blue-500 bg-blue-500/10"
-      default:
-        return "text-muted-foreground bg-muted"
-    }
-  }
-
   const getSeverityLabel = (severity: string) => {
     switch (severity) {
       case "critical":
@@ -101,15 +69,15 @@ export function AIFeedback({
 
   if (isLoading) {
     return (
-      <Card className="shadow-sm border-border">
+      <Card className="border-border/60 shadow-subtle">
         <CardContent className="p-12 flex flex-col items-center justify-center text-center space-y-4">
-          <Loader2 className="w-12 h-12 animate-spin text-primary" />
+          <div className="w-10 h-10 border-2 border-foreground/20 border-t-foreground rounded-full animate-spin" />
           <div className="space-y-2">
-            <h3 className="font-semibold text-lg">AI가 코드를 분석하고 있습니다</h3>
+            <h3 className="font-semibold text-lg text-foreground">
+              AI가 코드를 분석하고 있습니다
+            </h3>
             <p className="text-sm text-muted-foreground">
               코드 품질, 구조, 베스트 프랙티스를 검토하고 있습니다.
-              <br />
-              잠시만 기다려주세요...
             </p>
           </div>
         </CardContent>
@@ -119,15 +87,18 @@ export function AIFeedback({
 
   if (error) {
     return (
-      <Card className="shadow-sm border-border">
+      <Card className="border-border/60 shadow-subtle">
         <CardContent className="p-12 flex flex-col items-center justify-center text-center space-y-4">
-          <AlertCircle className="w-12 h-12 text-red-500" />
+          <div className="w-12 h-12 rounded-full bg-destructive/10 flex items-center justify-center">
+            <span className="text-destructive text-xl">!</span>
+          </div>
           <div className="space-y-2">
-            <h3 className="font-semibold text-lg">피드백 생성에 실패했습니다</h3>
+            <h3 className="font-semibold text-lg text-foreground">
+              피드백 생성에 실패했습니다
+            </h3>
             <p className="text-sm text-muted-foreground">{error}</p>
           </div>
           <Button onClick={onReset} variant="outline">
-            <RotateCcw className="w-4 h-4 mr-2" />
             처음으로 돌아가기
           </Button>
         </CardContent>
@@ -148,128 +119,83 @@ export function AIFeedback({
 
   return (
     <div className="space-y-6">
-      {/* Overall Score Card */}
-      <Card className="shadow-sm border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/30">
-        <CardContent className="p-6">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-4">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                <Award className="w-8 h-8 text-primary" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground mb-1">코드 리뷰 점수</p>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-4xl font-bold text-foreground">{feedback.overall_score}</span>
-                  <span className="text-lg text-muted-foreground">/ 100</span>
-                </div>
+      {/* Overall Score */}
+      <Card className="border-border/60 shadow-subtle">
+        <CardContent className="p-6 sm:p-8">
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <p className="text-sm text-muted-foreground mb-1">코드 리뷰 점수</p>
+              <div className="flex items-baseline gap-2">
+                <span className="text-4xl font-semibold text-foreground tracking-tight">
+                  {feedback.overall_score}
+                </span>
+                <span className="text-lg text-muted-foreground">/ 100</span>
               </div>
             </div>
-            <Badge className="px-4 py-2 text-base bg-primary text-primary-foreground">
-              <Star className="w-4 h-4 mr-1" />
+            <div className="px-4 py-2 rounded bg-foreground text-background text-sm font-medium">
               {feedback.grade}
-            </Badge>
+            </div>
           </div>
-          <p className="text-muted-foreground">{feedback.summary}</p>
+          <p className="text-muted-foreground leading-relaxed">{feedback.summary}</p>
         </CardContent>
       </Card>
 
       {/* Code Quality Metrics */}
-      <Card className="shadow-sm border-border">
-        <CardContent className="p-6">
-          <div className="flex items-center gap-2 mb-4">
-            <Code2 className="w-5 h-5 text-primary" />
-            <h3 className="font-semibold text-foreground">코드 품질 지표</h3>
-          </div>
+      <Card className="border-border/60 shadow-subtle">
+        <CardContent className="p-6 sm:p-8">
+          <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-5">
+            코드 품질 지표
+          </h3>
           <div className="grid grid-cols-2 gap-4">
-            <div className="p-3 rounded-lg bg-muted/30">
-              <div className="flex items-center gap-2 mb-2">
-                <FileCode className="w-4 h-4 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">가독성</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-primary rounded-full"
-                    style={{ width: `${codeQuality.readability}%` }}
-                  />
+            {[
+              { label: "가독성", value: codeQuality.readability },
+              { label: "유지보수성", value: codeQuality.maintainability },
+              { label: "정확성", value: codeQuality.correctness },
+              { label: "베스트 프랙티스", value: codeQuality.best_practices },
+            ].map((metric) => (
+              <div key={metric.label} className="p-4 rounded-md bg-secondary/50 border border-border/40">
+                <p className="text-sm text-muted-foreground mb-2">{metric.label}</p>
+                <div className="flex items-center gap-3">
+                  <div className="flex-1 h-1.5 bg-muted rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-foreground rounded-full transition-all duration-500"
+                      style={{ width: `${metric.value}%` }}
+                    />
+                  </div>
+                  <span className="text-sm font-medium text-foreground w-8 text-right">
+                    {metric.value}
+                  </span>
                 </div>
-                <span className="text-sm font-medium">{codeQuality.readability}</span>
               </div>
-            </div>
-            <div className="p-3 rounded-lg bg-muted/30">
-              <div className="flex items-center gap-2 mb-2">
-                <Shield className="w-4 h-4 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">유지보수성</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-primary rounded-full"
-                    style={{ width: `${codeQuality.maintainability}%` }}
-                  />
-                </div>
-                <span className="text-sm font-medium">{codeQuality.maintainability}</span>
-              </div>
-            </div>
-            <div className="p-3 rounded-lg bg-muted/30">
-              <div className="flex items-center gap-2 mb-2">
-                <CheckCircle2 className="w-4 h-4 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">정확성</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-primary rounded-full"
-                    style={{ width: `${codeQuality.correctness}%` }}
-                  />
-                </div>
-                <span className="text-sm font-medium">{codeQuality.correctness}</span>
-              </div>
-            </div>
-            <div className="p-3 rounded-lg bg-muted/30">
-              <div className="flex items-center gap-2 mb-2">
-                <Zap className="w-4 h-4 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">베스트 프랙티스</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-primary rounded-full"
-                    style={{ width: `${codeQuality.best_practices}%` }}
-                  />
-                </div>
-                <span className="text-sm font-medium">{codeQuality.best_practices}</span>
-              </div>
-            </div>
+            ))}
           </div>
         </CardContent>
       </Card>
 
       {/* Strengths */}
       {strengths.length > 0 && (
-        <Card className="shadow-sm border-border">
-          <CardContent className="p-6 space-y-4">
-            <div className="flex items-center gap-2">
-              <ThumbsUp className="w-5 h-5 text-primary" />
-              <h3 className="font-semibold text-foreground">잘한 점</h3>
-            </div>
+        <Card className="border-border/60 shadow-subtle">
+          <CardContent className="p-6 sm:p-8">
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-5">
+              잘한 점
+            </h3>
             <div className="space-y-4">
               {strengths.map((item, index) => (
-                <div key={index} className="p-4 rounded-lg bg-primary/5 border border-primary/10">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1 flex-wrap">
-                        <h4 className="font-medium text-foreground">{item.title}</h4>
-                        {item.file && (
-                          <code className="text-xs bg-muted px-1.5 py-0.5 rounded text-muted-foreground">
-                            {item.file}
-                          </code>
-                        )}
-                      </div>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{item.detail}</p>
-                    </div>
+                <div
+                  key={index}
+                  className="p-4 rounded-md bg-secondary/30 border border-border/40"
+                >
+                  <div className="flex items-center gap-2 mb-2 flex-wrap">
+                    <h4 className="font-medium text-foreground">{item.title}</h4>
+                    {item.file && (
+                      <code className="text-xs bg-muted px-1.5 py-0.5 rounded text-muted-foreground">
+                        {item.file}
+                      </code>
+                    )}
                   </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {item.detail}
+                  </p>
                 </div>
               ))}
             </div>
@@ -279,40 +205,39 @@ export function AIFeedback({
 
       {/* Improvements */}
       {improvements.length > 0 && (
-        <Card className="shadow-sm border-border">
-          <CardContent className="p-6 space-y-4">
-            <div className="flex items-center gap-2">
-              <Bug className="w-5 h-5 text-amber-500" />
-              <h3 className="font-semibold text-foreground">개선 포인트</h3>
-            </div>
+        <Card className="border-border/60 shadow-subtle">
+          <CardContent className="p-6 sm:p-8">
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-5">
+              개선 포인트
+            </h3>
             <div className="space-y-4">
               {improvements.map((item, index) => (
-                <div key={index} className="p-4 rounded-lg bg-muted/30 border border-border">
-                  <div className="flex items-start gap-3">
-                    <AlertTriangle className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1 flex-wrap">
-                        <h4 className="font-medium text-foreground">{item.title}</h4>
-                        <Badge variant="outline" className={`text-xs ${getSeverityColor(item.severity)}`}>
-                          {getSeverityLabel(item.severity)}
-                        </Badge>
-                        {item.file && (
-                          <code className="text-xs bg-muted px-1.5 py-0.5 rounded text-muted-foreground">
-                            {item.file}
-                          </code>
-                        )}
-                      </div>
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">{item.detail}</p>
-                      {item.suggestion && (
-                        <div className="bg-background rounded-lg border border-border overflow-hidden">
-                          <div className="px-3 py-1.5 bg-muted/50 border-b border-border">
-                            <span className="text-xs font-medium text-muted-foreground">제안</span>
-                          </div>
-                          <p className="p-3 text-sm text-foreground">{item.suggestion}</p>
-                        </div>
-                      )}
-                    </div>
+                <div
+                  key={index}
+                  className="p-4 rounded-md bg-muted/30 border border-border/40"
+                >
+                  <div className="flex items-center gap-2 mb-2 flex-wrap">
+                    <h4 className="font-medium text-foreground">{item.title}</h4>
+                    <span className="text-xs px-2 py-0.5 rounded bg-muted text-muted-foreground">
+                      {getSeverityLabel(item.severity)}
+                    </span>
+                    {item.file && (
+                      <code className="text-xs bg-muted px-1.5 py-0.5 rounded text-muted-foreground">
+                        {item.file}
+                      </code>
+                    )}
                   </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                    {item.detail}
+                  </p>
+                  {item.suggestion && (
+                    <div className="rounded-md border border-border/40 overflow-hidden">
+                      <div className="px-3 py-1.5 bg-muted/50 border-b border-border/40">
+                        <span className="text-xs font-medium text-muted-foreground">제안</span>
+                      </div>
+                      <p className="p-3 text-sm text-foreground">{item.suggestion}</p>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -322,28 +247,32 @@ export function AIFeedback({
 
       {/* Next Steps */}
       {feedback.next_steps && feedback.next_steps.length > 0 && (
-        <Card className="shadow-sm border-border">
-          <CardContent className="p-6 space-y-4">
-            <div className="flex items-center gap-2">
-              <TrendingUp className="w-5 h-5 text-primary" />
-              <h3 className="font-semibold text-foreground">다음 학습 추천</h3>
-            </div>
-            <ul className="space-y-2">
+        <Card className="border-border/60 shadow-subtle">
+          <CardContent className="p-6 sm:p-8">
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-5">
+              다음 학습 추천
+            </h3>
+            <ol className="space-y-3">
               {feedback.next_steps.map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-medium flex items-center justify-center">
+                <li key={index} className="flex gap-4">
+                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-foreground text-background text-sm font-medium flex items-center justify-center">
                     {index + 1}
                   </span>
-                  <span className="text-muted-foreground leading-relaxed">{item}</span>
+                  <span className="text-muted-foreground leading-relaxed pt-0.5">
+                    {item}
+                  </span>
                 </li>
               ))}
-            </ul>
+            </ol>
           </CardContent>
         </Card>
       )}
 
-      <Button onClick={onReset} variant="outline" className="w-full h-11 text-base font-medium gap-2 bg-transparent">
-        <RotateCcw className="w-4 h-4" />
+      <Button
+        onClick={onReset}
+        variant="outline"
+        className="w-full h-12 text-base font-medium"
+      >
         새로운 강의로 실습하기
       </Button>
     </div>

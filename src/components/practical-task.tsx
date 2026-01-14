@@ -3,20 +3,6 @@
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import {
-  Target,
-  Lightbulb,
-  ListChecks,
-  CheckCircle2,
-  Clock,
-  ArrowRight,
-  Code2,
-  Github,
-  Loader2,
-  ExternalLink,
-  AlertCircle,
-} from "lucide-react"
 import type { Task, TaskStep } from "@/types"
 
 interface PracticalTaskProps {
@@ -52,7 +38,6 @@ export function PracticalTask({ task, onTaskUpdate, onStart }: PracticalTaskProp
         throw new Error(data.error || "레포지토리 생성에 실패했습니다.")
       }
 
-      // 과제 정보 업데이트
       onTaskUpdate({ ...task, github_repo_url: data.repo_url })
     } catch (err) {
       setRepoError(err instanceof Error ? err.message : "레포지토리 생성 중 오류가 발생했습니다.")
@@ -63,57 +48,42 @@ export function PracticalTask({ task, onTaskUpdate, onStart }: PracticalTaskProp
 
   return (
     <div className="space-y-6">
-      <Card className="shadow-md border-primary/20 bg-secondary/30">
-        <CardContent className="p-6 space-y-6">
-          <div className="flex items-center justify-center">
-            <Badge variant="secondary" className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary border-0">
+      <Card className="border-border/60 shadow-subtle">
+        <CardContent className="p-6 sm:p-8 space-y-8">
+          {/* Header */}
+          <div className="text-center pb-6 border-b border-border/40">
+            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-3">
               AI 생성 코딩 과제
-            </Badge>
-          </div>
-
-          {/* Task Title & Meta */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 text-primary">
-              <Target className="w-5 h-5" />
-              <h3 className="font-semibold text-foreground">코딩 미션</h3>
-            </div>
-            <p className="text-lg font-medium text-foreground pl-7">{task.title}</p>
-            <div className="flex gap-2 pl-7 flex-wrap">
-              <Badge variant="outline" className="gap-1">
-                <Clock className="w-3 h-3" />
-                {task.estimated_time}
-              </Badge>
-              <Badge variant="outline">{difficultyLabels[task.difficulty] || task.difficulty}</Badge>
+            </p>
+            <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">
+              {task.title}
+            </h2>
+            <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground flex-wrap">
+              <span>{task.estimated_time}</span>
+              <span className="text-border">|</span>
+              <span>{difficultyLabels[task.difficulty] || task.difficulty}</span>
               {task.tech_stack?.map((tech) => (
-                <Badge key={tech} variant="secondary" className="gap-1">
-                  <Code2 className="w-3 h-3" />
+                <span key={tech} className="px-2 py-0.5 rounded bg-secondary text-secondary-foreground text-xs">
                   {tech}
-                </Badge>
+                </span>
               ))}
             </div>
           </div>
 
-          {/* GitHub Repo */}
-          <div className="p-4 rounded-lg bg-muted/50 border border-border/50">
-            <div className="flex items-center gap-2 mb-3">
-              <Github className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-foreground">실습 저장소</span>
-            </div>
-
+          {/* GitHub Repository */}
+          <div className="p-5 rounded-md bg-secondary/50 border border-border/40">
+            <p className="text-sm font-medium text-foreground mb-3">실습 저장소</p>
             {task.github_repo_url ? (
-              <div className="flex items-center gap-2">
-                <a
-                  href={task.github_repo_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm text-primary hover:underline"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  {task.github_repo_url.replace("https://github.com/", "")}
-                </a>
-              </div>
+              <a
+                href={task.github_repo_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-foreground underline underline-offset-4 decoration-border hover:decoration-foreground transition-colors"
+              >
+                {task.github_repo_url.replace("https://github.com/", "")}
+              </a>
             ) : (
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <p className="text-sm text-muted-foreground">
                   GitHub 저장소를 생성하여 실습을 시작하세요.
                 </p>
@@ -122,96 +92,94 @@ export function PracticalTask({ task, onTaskUpdate, onStart }: PracticalTaskProp
                   size="sm"
                   onClick={handleCreateRepo}
                   disabled={isCreatingRepo}
-                  className="gap-2"
+                  className="h-9"
                 >
                   {isCreatingRepo ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
+                    <span className="flex items-center gap-2">
+                      <span className="w-3 h-3 border-2 border-foreground/30 border-t-foreground rounded-full animate-spin" />
                       생성 중...
-                    </>
+                    </span>
                   ) : (
-                    <>
-                      <Github className="w-4 h-4" />
-                      GitHub 저장소 생성
-                    </>
+                    "GitHub 저장소 생성"
                   )}
                 </Button>
                 {repoError && (
-                  <p className="text-sm text-red-500 flex items-center gap-1">
-                    <AlertCircle className="w-3 h-3" />
-                    {repoError}
-                  </p>
+                  <p className="text-sm text-destructive">{repoError}</p>
                 )}
               </div>
             )}
           </div>
 
-          {/* Why this matters */}
-          <div className="space-y-2">
-            <div className="flex items-center gap-2 text-primary">
-              <Lightbulb className="w-5 h-5" />
-              <h3 className="font-semibold text-foreground">왜 이 과제인가요?</h3>
-            </div>
-            <p className="text-muted-foreground pl-7 leading-relaxed">{task.reason}</p>
-          </div>
+          {/* Why This Task */}
+          <section>
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3">
+              왜 이 과제인가요?
+            </h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {task.reason}
+            </p>
+          </section>
 
           {/* Task Description */}
-          <div className="space-y-2">
-            <div className="flex items-center gap-2 text-primary">
-              <Target className="w-5 h-5" />
-              <h3 className="font-semibold text-foreground">과제 설명</h3>
-            </div>
-            <p className="text-muted-foreground pl-7 leading-relaxed">{task.description}</p>
-          </div>
+          <section>
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3">
+              과제 설명
+            </h3>
+            <p className="text-muted-foreground leading-relaxed">
+              {task.description}
+            </p>
+          </section>
 
-          {/* Step-by-step guide */}
+          {/* Step by Step Guide */}
           {task.steps && task.steps.length > 0 && (
-            <div className="space-y-3">
-              <div className="flex items-center gap-2 text-primary">
-                <ListChecks className="w-5 h-5" />
-                <h3 className="font-semibold text-foreground">단계별 가이드</h3>
-              </div>
-              <ol className="space-y-3 pl-7">
+            <section>
+              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-4">
+                단계별 가이드
+              </h3>
+              <ol className="space-y-4">
                 {(task.steps as TaskStep[]).map((step, index) => (
-                  <li key={index} className="flex gap-3">
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary text-sm font-medium flex items-center justify-center">
+                  <li key={index} className="flex gap-4">
+                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-foreground text-background text-sm font-medium flex items-center justify-center">
                       {step.order || index + 1}
                     </span>
-                    <div>
+                    <div className="flex-1 pt-0.5">
                       {step.title && (
                         <span className="font-medium text-foreground">{step.title}: </span>
                       )}
-                      <span className="text-muted-foreground leading-relaxed">{step.content}</span>
+                      <span className="text-muted-foreground leading-relaxed">
+                        {step.content}
+                      </span>
                     </div>
                   </li>
                 ))}
               </ol>
-            </div>
+            </section>
           )}
 
           {/* Success Criteria */}
           {task.success_criteria && task.success_criteria.length > 0 && (
-            <div className="space-y-3">
-              <div className="flex items-center gap-2 text-primary">
-                <CheckCircle2 className="w-5 h-5" />
-                <h3 className="font-semibold text-foreground">코드 리뷰 기준</h3>
-              </div>
-              <ul className="space-y-2 pl-7">
+            <section>
+              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-4">
+                코드 리뷰 기준
+              </h3>
+              <ul className="space-y-2">
                 {task.success_criteria.map((item, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-foreground mt-2 flex-shrink-0" />
                     <span className="text-muted-foreground">{item}</span>
                   </li>
                 ))}
               </ul>
-            </div>
+            </section>
           )}
         </CardContent>
       </Card>
 
-      <Button onClick={onStart} className="w-full h-11 text-base font-medium gap-2">
+      <Button
+        onClick={onStart}
+        className="w-full h-12 text-base font-medium"
+      >
         코드 제출하러 가기
-        <ArrowRight className="w-4 h-4" />
       </Button>
     </div>
   )

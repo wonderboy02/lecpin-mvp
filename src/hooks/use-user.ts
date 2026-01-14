@@ -2,7 +2,7 @@
 
 import { createClient } from '@/lib/supabase/client'
 import { User } from '@supabase/supabase-js'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 
 interface UserProfile {
   id: string
@@ -17,55 +17,46 @@ export function useUser() {
   const [profile, setProfile] = useState<UserProfile | null>(null)
   const [loading, setLoading] = useState(true)
 
+  const fetchProfile = useCallback(async (userId: string) => {
+    const supabase = createClient()
+    const { data } = await supabase
+      .from('users')
+      .select('id, email, name, avatar_url, github_username')
+      .eq('id', userId)
+      .single()
+    return data
+  }, [])
+
   useEffect(() => {
     const supabase = createClient()
 
-    // 현재 세션 가져오기
-    const getUser = async () => {
-      const { data: { user } } = await supabase.auth.getUser()
-      setUser(user)
-
-      if (user) {
-        // 프로필 정보 가져오기
-        const { data: profileData } = await supabase
-          .from('users')
-          .select('id, email, name, avatar_url, github_username')
-          .eq('id', user.id)
-          .single()
-
-        setProfile(profileData)
-      }
-
-      setLoading(false)
-    }
-
-    getUser()
-
-    // Auth 상태 변경 리스너
+    // onAuthStateChange가 즉시 INITIAL_SESSION 이벤트를 발생시킴
+    // 이것이 초기 상태를 설정하는 유일한 방법
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
-        setUser(session?.user ?? null)
+        // 현재 유저 설정
+        const currentUser = session?.user ?? null
+        setUser(currentUser)
 
-        if (session?.user) {
-          const { data: profileData } = await supabase
-            .from('users')
-            .select('id, email, name, avatar_url, github_username')
-            .eq('id', session.user.id)
-            .single()
-
-          setProfile(profileData)
+        if (currentUser) {
+          // 프로필은 별도로 fetch (onAuthStateChange 콜백 내에서 직접 Supabase 호출 피하기)
+          // setTimeout을 사용해 콜백 외부에서 실행
+          setTimeout(async () => {
+            const profileData = await fetchProfile(currentUser.id)
+            setProfile(profileData)
+            setLoading(false)
+          }, 0)
         } else {
           setProfile(null)
+          setLoading(false)
         }
-
-        setLoading(false)
       }
     )
 
     return () => {
       subscription.unsubscribe()
     }
-  }, [])
+  }, [fetchProfile])
 
   const signOut = async () => {
     const supabase = createClient()

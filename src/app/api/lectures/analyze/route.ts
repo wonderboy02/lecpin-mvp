@@ -62,6 +62,8 @@ export async function POST(request: Request) {
     try {
       // 자막 추출
       const transcript = await fetchTranscript(videoId)
+      console.log(`[analyze] Transcript length: ${transcript.length} chars`)
+      console.log(`[analyze] Transcript preview: ${transcript.slice(0, 500)}...`)
 
       // 상태 업데이트: analyzing
       await supabase
@@ -70,6 +72,7 @@ export async function POST(request: Request) {
         .eq('id', lecture.id)
 
       // OpenAI로 역량 분석
+      console.log(`[analyze] Sending to OpenAI (${transcript.slice(0, 15000).length} chars)...`)
       const completion = await openai.chat.completions.create({
         model: 'gpt-4o',
         messages: [
@@ -80,7 +83,10 @@ export async function POST(request: Request) {
         temperature: 0.7,
       })
 
-      const analysisResult = JSON.parse(completion.choices[0].message.content || '{}')
+      const rawResponse = completion.choices[0].message.content || '{}'
+      console.log(`[analyze] OpenAI raw response: ${rawResponse}`)
+      const analysisResult = JSON.parse(rawResponse)
+      console.log(`[analyze] Parsed result:`, JSON.stringify(analysisResult, null, 2))
 
       // 강의 정보 업데이트
       await supabase
@@ -93,6 +99,7 @@ export async function POST(request: Request) {
         .eq('id', lecture.id)
 
       // 역량 저장
+      console.log(`[analyze] Competencies from result:`, analysisResult.competencies)
       if (analysisResult.competencies && Array.isArray(analysisResult.competencies)) {
         const competenciesToInsert = analysisResult.competencies.map(
           (comp: { name: string; description: string }, index: number) => ({
@@ -103,7 +110,15 @@ export async function POST(request: Request) {
           })
         )
 
-        await supabase.from('competencies').insert(competenciesToInsert)
+        console.log(`[analyze] Inserting ${competenciesToInsert.length} competencies:`, competenciesToInsert)
+        const { error: compError } = await supabase.from('competencies').insert(competenciesToInsert)
+        if (compError) {
+          console.error(`[analyze] Failed to insert competencies:`, compError)
+        } else {
+          console.log(`[analyze] Successfully inserted ${competenciesToInsert.length} competencies`)
+        }
+      } else {
+        console.warn(`[analyze] No competencies found in result`)
       }
 
       // 완성된 데이터 가져오기

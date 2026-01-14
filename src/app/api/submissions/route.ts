@@ -17,7 +17,7 @@ export async function POST(request: Request) {
 
     // 요청 파싱
     const body = await request.json()
-    const { task_id, github_repo_url, description } = body
+    const { task_id, github_repo_url: providedUrl, description } = body
 
     if (!task_id) {
       return NextResponse.json(
@@ -26,17 +26,10 @@ export async function POST(request: Request) {
       )
     }
 
-    if (!github_repo_url) {
-      return NextResponse.json(
-        { error: 'GitHub 레포지토리 URL이 필요합니다.' },
-        { status: 400 }
-      )
-    }
-
-    // 과제 확인
+    // 과제 확인 (github_repo_url도 함께 조회)
     const { data: task, error: taskError } = await supabase
       .from('tasks')
-      .select('id')
+      .select('id, github_repo_url')
       .eq('id', task_id)
       .single()
 
@@ -44,6 +37,16 @@ export async function POST(request: Request) {
       return NextResponse.json(
         { error: '과제를 찾을 수 없습니다.' },
         { status: 404 }
+      )
+    }
+
+    // GitHub URL 결정: 제공된 URL이 있으면 사용, 없으면 task의 URL 사용
+    const github_repo_url = providedUrl || task.github_repo_url
+
+    if (!github_repo_url) {
+      return NextResponse.json(
+        { error: '연결된 GitHub 저장소가 없습니다. 먼저 저장소를 생성해주세요.' },
+        { status: 400 }
       )
     }
 

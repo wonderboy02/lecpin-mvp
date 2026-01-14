@@ -16,8 +16,9 @@ interface SubmissionUploadProps {
 }
 
 export function SubmissionUpload({ task, onSubmissionComplete }: SubmissionUploadProps) {
+  const hasLinkedRepo = !!task.github_repo_url
   const [submitType, setSubmitType] = useState<"github" | "upload">("github")
-  const [githubUrl, setGithubUrl] = useState(task.github_repo_url || "")
+  const [githubUrl, setGithubUrl] = useState("")
   const [file, setFile] = useState<File | null>(null)
   const [description, setDescription] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -48,7 +49,8 @@ export function SubmissionUpload({ task, onSubmissionComplete }: SubmissionUploa
       let response: Response
 
       if (submitType === "github") {
-        if (!githubUrl) {
+        // 연결된 레포가 없고 URL도 입력 안 했으면 에러
+        if (!hasLinkedRepo && !githubUrl) {
           throw new Error("GitHub 저장소 URL을 입력해주세요.")
         }
 
@@ -57,7 +59,8 @@ export function SubmissionUpload({ task, onSubmissionComplete }: SubmissionUploa
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             task_id: task.id,
-            github_repo_url: githubUrl,
+            // 연결된 레포가 있으면 URL 생략 (서버에서 자동 사용)
+            ...(hasLinkedRepo ? {} : { github_repo_url: githubUrl }),
             description,
           }),
         })
@@ -93,7 +96,8 @@ export function SubmissionUpload({ task, onSubmissionComplete }: SubmissionUploa
     }
   }
 
-  const isSubmitDisabled = submitType === "github" ? !githubUrl : !file
+  // 연결된 레포가 있으면 URL 입력 없이 제출 가능
+  const isSubmitDisabled = submitType === "github" ? (!hasLinkedRepo && !githubUrl) : !file
 
   return (
     <Card className="border-border/60 shadow-subtle">
@@ -120,26 +124,50 @@ export function SubmissionUpload({ task, onSubmissionComplete }: SubmissionUploa
             </TabsList>
 
             <TabsContent value="github" className="space-y-4 mt-6">
-              <div className="space-y-3">
-                <Label htmlFor="github-url" className="text-sm font-medium">
-                  GitHub 저장소 URL
-                </Label>
-                <Input
-                  id="github-url"
-                  type="url"
-                  placeholder="https://github.com/username/repository"
-                  value={githubUrl}
-                  onChange={(e) => {
-                    setGithubUrl(e.target.value)
-                    setError(null)
-                  }}
-                  className="h-11"
-                  disabled={isSubmitting}
-                />
-                <p className="text-xs text-muted-foreground">
-                  실습 코드가 있는 GitHub 저장소 URL을 입력해주세요
-                </p>
-              </div>
+              {hasLinkedRepo ? (
+                <div className="space-y-3">
+                  <div className="p-4 rounded-md bg-secondary/50 border border-border/40">
+                    <div className="flex items-center gap-2 mb-2">
+                      <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm font-medium text-foreground">연결된 저장소</span>
+                    </div>
+                    <a
+                      href={task.github_repo_url!}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-primary hover:underline break-all"
+                    >
+                      {task.github_repo_url}
+                    </a>
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    저장소에 코드를 푸시한 후 제출 버튼을 눌러주세요
+                  </p>
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  <Label htmlFor="github-url" className="text-sm font-medium">
+                    GitHub 저장소 URL
+                  </Label>
+                  <Input
+                    id="github-url"
+                    type="url"
+                    placeholder="https://github.com/username/repository"
+                    value={githubUrl}
+                    onChange={(e) => {
+                      setGithubUrl(e.target.value)
+                      setError(null)
+                    }}
+                    className="h-11"
+                    disabled={isSubmitting}
+                  />
+                  <p className="text-xs text-muted-foreground">
+                    실습 코드가 있는 GitHub 저장소 URL을 입력해주세요
+                  </p>
+                </div>
+              )}
             </TabsContent>
 
             <TabsContent value="upload" className="space-y-4 mt-6">

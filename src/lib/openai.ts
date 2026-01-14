@@ -5,6 +5,9 @@ export const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 })
 
+// 코드 리뷰용 모델 (코딩 특화)
+export const CODE_REVIEW_MODEL = 'gpt-4o' // TODO: gpt-5-codex 출시 후 변경
+
 // 언어별 시스템 프롬프트 프리픽스
 export function getLanguageInstruction(language: Language = 'ko'): string {
   return language === 'ko'
@@ -64,7 +67,14 @@ export const TASK_GENERATION_PROMPT = `당신은 프로그래밍 교육 과제 �
 - 각 단계는 명확하고 실행 가능해야 함
 - 성공 기준은 3~5개
 - 학습자 수준에 맞는 난이도 설정
-- JSON 외 다른 텍스트 출력 금지`
+- JSON 외 다른 텍스트 출력 금지
+
+중요 - 코드 범위 제한:
+- 과제는 핵심 파일 3~5개 이내로 완성할 수 있어야 함
+- 불필요하게 많은 파일을 만들도록 유도하지 말 것
+- 프레임워크 보일러플레이트 제외, 실제 작성해야 할 코드는 총 300줄 이내 권장
+- 하나의 핵심 기능에 집중하는 과제 설계
+- 복잡한 프로젝트 구조보다 학습 목표에 맞는 최소한의 구현을 요구할 것`
 
 // 코드 리뷰 프롬프트
 export const CODE_REVIEW_PROMPT = `당신은 시니어 소프트웨어 엔지니어이자 멘토입니다. 제출된 코드를 리뷰하고 건설적인 피드백을 제공해주세요.

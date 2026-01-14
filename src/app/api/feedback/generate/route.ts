@@ -1,5 +1,5 @@
 import { createClient, createServiceClient } from '@/lib/supabase/server'
-import { openai, CODE_REVIEW_PROMPT, getLanguageInstruction } from '@/lib/openai'
+import { openai, CODE_REVIEW_PROMPT, CODE_REVIEW_MODEL, getLanguageInstruction } from '@/lib/openai'
 import { NextResponse } from 'next/server'
 import JSZip from 'jszip'
 import type { Language } from '@/types'
@@ -259,7 +259,7 @@ ${codeContent}`
 
     const languageInstruction = getLanguageInstruction(language)
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4o',
+      model: CODE_REVIEW_MODEL,
       messages: [
         { role: 'system', content: `${CODE_REVIEW_PROMPT}\n\n${languageInstruction}` },
         { role: 'user', content: prompt },

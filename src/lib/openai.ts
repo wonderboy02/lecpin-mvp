@@ -1,12 +1,68 @@
 import OpenAI from 'openai'
-import type { Language } from '@/types'
+import type { Language, Feedback } from '@/types'
 
 export const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 })
 
-// 코드 리뷰용 모델 (코딩 특화)
-export const CODE_REVIEW_MODEL = 'gpt-4o' // TODO: gpt-5-codex 출시 후 변경
+// 모델 상수
+export const CODE_REVIEW_MODEL = 'gpt-5.1-codex-max' // 코드 리뷰 전용 (Responses API)
+export const GENERAL_MODEL = 'gpt-4o' // 일반 작업용 (Chat Completions API)
+
+// 코드 길이에 따른 reasoning effort 결정
+function getReasoningEffort(codeLength: number): 'medium' | 'high' | 'xhigh' {
+  if (codeLength < 5000) return 'medium'
+  if (codeLength < 20000) return 'high'
+  return 'xhigh'
+}
+
+// 코드 리뷰 결과 타입 (Feedback에서 id, submission_id, created_at 제외)
+export type CodeReviewResult = Omit<Feedback, 'id' | 'submission_id' | 'created_at'>
+
+// Responses API를 사용한 코드 리뷰 함수
+export async function reviewCodeWithCodex(params: {
+  code: string
+  taskInfo: string
+  language: Language
+}): Promise<CodeReviewResult> {
+  const { code, taskInfo, language } = params
+  const effort = getReasoningEffort(code.length)
+  const languageInstruction = getLanguageInstruction(language)
+
+  const input = `${CODE_REVIEW_PROMPT}
+
+${languageInstruction}
+
+${taskInfo}
+
+제출된 코드:
+${code}`
+
+  // Responses API 호출
+  const result = await openai.responses.create({
+    model: CODE_REVIEW_MODEL,
+    input,
+    reasoning: { effort },
+  })
+
+  // output_text에서 JSON 파싱
+  const parsed = JSON.parse(result.output_text)
+
+  return {
+    overall_score: parsed.overall_score || 70,
+    grade: parsed.grade || 'Fair',
+    summary: parsed.summary || '코드 리뷰가 완료되었습니다.',
+    code_quality: parsed.code_quality || {
+      readability: 70,
+      maintainability: 70,
+      correctness: 70,
+      best_practices: 70,
+    },
+    strengths: parsed.strengths || [],
+    improvements: parsed.improvements || [],
+    next_steps: parsed.next_steps || [],
+  }
+}
 
 // 언어별 시스템 프롬프트 프리픽스
 export function getLanguageInstruction(language: Language = 'ko'): string {

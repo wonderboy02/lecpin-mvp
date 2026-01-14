@@ -1,5 +1,5 @@
 import { createClient, createServiceClient } from '@/lib/supabase/server'
-import { openai, CODE_REVIEW_PROMPT, CODE_REVIEW_MODEL, getLanguageInstruction } from '@/lib/openai'
+import { reviewCodeWithCodex } from '@/lib/openai'
 import { NextResponse } from 'next/server'
 import JSZip from 'jszip'
 import type { Language } from '@/types'
@@ -247,28 +247,18 @@ export async function POST(request: Request) {
       )
     }
 
-    // OpenAI로 코드 리뷰 (언어 설정 반영)
+    // Codex로 코드 리뷰 (Responses API 사용)
     const task = submission.tasks
-    const prompt = `과제 정보:
+    const taskInfo = `과제 정보:
 - 제목: ${task.title}
 - 설명: ${task.description}
-- 성공 기준: ${task.success_criteria?.join(', ') || '없음'}
+- 성공 기준: ${task.success_criteria?.join(', ') || '없음'}`
 
-제출된 코드:
-${codeContent}`
-
-    const languageInstruction = getLanguageInstruction(language)
-    const completion = await openai.chat.completions.create({
-      model: CODE_REVIEW_MODEL,
-      messages: [
-        { role: 'system', content: `${CODE_REVIEW_PROMPT}\n\n${languageInstruction}` },
-        { role: 'user', content: prompt },
-      ],
-      response_format: { type: 'json_object' },
-      temperature: 0.7,
+    const reviewResult = await reviewCodeWithCodex({
+      code: codeContent,
+      taskInfo,
+      language,
     })
-
-    const reviewResult = JSON.parse(completion.choices[0].message.content || '{}')
 
     // 피드백 저장
     const { data: feedback, error: feedbackError } = await supabase

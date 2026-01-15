@@ -11,6 +11,7 @@
  * - Footer
  */
 
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
@@ -21,13 +22,13 @@ export default function HomeMockup() {
       {/* Header */}
       <header className="border-b border-border">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="/design-system" className="font-serif text-xl font-semibold tracking-tight">
+          <Link href="/design-system" className="font-serif text-xl font-semibold tracking-tight">
             LECPIN
-          </a>
+          </Link>
           <nav className="flex items-center gap-6">
-            <a href="/design-system/dashboard" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link href="/design-system/dashboard" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               내 학습
-            </a>
+            </Link>
             <Button variant="outline" size="sm">로그인</Button>
           </nav>
         </div>

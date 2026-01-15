@@ -52,10 +52,10 @@ export function PracticalTask({ task, onTaskUpdate, onStart }: PracticalTaskProp
         <CardContent className="p-6 sm:p-8 space-y-8">
           {/* Header */}
           <div className="text-center pb-6 border-b border-border/40">
-            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-3">
+            <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-3">
               AI 생성 코딩 과제
             </p>
-            <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">
+            <h2 className="font-serif text-xl sm:text-2xl font-semibold text-foreground mb-4">
               {task.title}
             </h2>
             <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground flex-wrap">
@@ -112,7 +112,7 @@ export function PracticalTask({ task, onTaskUpdate, onStart }: PracticalTaskProp
 
           {/* Why This Task */}
           <section>
-            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3">
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-widest mb-3">
               왜 이 과제인가요?
             </h3>
             <p className="text-muted-foreground leading-relaxed">
@@ -122,7 +122,7 @@ export function PracticalTask({ task, onTaskUpdate, onStart }: PracticalTaskProp
 
           {/* Task Description */}
           <section>
-            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3">
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-widest mb-3">
               과제 설명
             </h3>
             <p className="text-muted-foreground leading-relaxed">
@@ -133,7 +133,7 @@ export function PracticalTask({ task, onTaskUpdate, onStart }: PracticalTaskProp
           {/* Step by Step Guide */}
           {task.steps && task.steps.length > 0 && (
             <section>
-              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-4">
+              <h3 className="text-sm font-semibold text-foreground uppercase tracking-widest mb-4">
                 단계별 가이드
               </h3>
               <ol className="space-y-4">
@@ -159,7 +159,7 @@ export function PracticalTask({ task, onTaskUpdate, onStart }: PracticalTaskProp
           {/* Success Criteria */}
           {task.success_criteria && task.success_criteria.length > 0 && (
             <section>
-              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-4">
+              <h3 className="text-sm font-semibold text-foreground uppercase tracking-widest mb-4">
                 코드 리뷰 기준
               </h3>
               <ul className="space-y-2">

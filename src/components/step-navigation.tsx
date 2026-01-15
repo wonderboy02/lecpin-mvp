@@ -1,7 +1,6 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Check } from "lucide-react"
 import type { Step } from "@/types"
 
 const steps: { key: Step; label: string }[] = [
@@ -59,55 +58,45 @@ export function StepNavigation({
   }
 
   return (
-    <nav className="space-y-4 mb-8" aria-label="Progress">
+    <nav className="mb-10" aria-label="Progress">
       {/* Step Indicators */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center">
         {steps.map((step, index) => {
           const isActive = currentStep === step.key
           const stepCompleted = isStepCompleted(step.key)
           const isClickable = isStepClickable(step.key)
+          const isLast = index === steps.length - 1
 
           return (
-            <div key={step.key} className="flex items-center">
+            <div key={step.key} className="flex items-center flex-1">
               <button
                 onClick={() => isClickable && onStepClick(step.key)}
                 disabled={!isClickable}
                 className={`
-                  flex flex-col items-center transition-all duration-300
-                  ${isClickable ? 'cursor-pointer' : 'cursor-not-allowed'}
+                  flex flex-col items-center flex-1 transition-all
+                  ${isClickable ? 'cursor-pointer' : 'cursor-default'}
                 `}
               >
                 {/* Step Circle */}
                 <div
                   className={`
-                    w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium
-                    transition-all duration-300 mb-2
+                    w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium mb-2
                     ${isActive
                       ? 'bg-foreground text-background'
                       : stepCompleted
-                        ? 'bg-green-500 text-white'
+                        ? 'bg-foreground/20 text-foreground'
                         : 'bg-muted text-muted-foreground'
                     }
-                    ${isClickable && !isActive ? 'hover:bg-muted-foreground/20' : ''}
                   `}
                 >
-                  {stepCompleted && !isActive ? (
-                    <Check className="w-4 h-4" />
-                  ) : (
-                    index + 1
-                  )}
+                  {stepCompleted && !isActive ? '✓' : index + 1}
                 </div>
 
                 {/* Step Label */}
                 <span
                   className={`
-                    text-xs font-medium tracking-wide transition-colors duration-300
-                    ${isActive
-                      ? 'text-foreground'
-                      : stepCompleted
-                        ? 'text-muted-foreground'
-                        : 'text-muted-foreground/50'
-                    }
+                    text-xs font-medium
+                    ${isActive ? 'text-foreground' : 'text-muted-foreground'}
                   `}
                 >
                   {step.label}
@@ -115,12 +104,11 @@ export function StepNavigation({
               </button>
 
               {/* Connector Line */}
-              {index < steps.length - 1 && (
+              {!isLast && (
                 <div
                   className={`
-                    hidden sm:block w-12 lg:w-20 h-px mx-3
-                    transition-colors duration-300
-                    ${stepCompleted ? 'bg-green-500/50' : 'bg-border'}
+                    h-px flex-1 mx-2
+                    ${stepCompleted ? 'bg-foreground/30' : 'bg-border'}
                   `}
                 />
               )}
@@ -131,8 +119,8 @@ export function StepNavigation({
 
       {/* Completion Badge */}
       {isCompleted && (
-        <div className="text-center">
-          <span className="text-sm text-green-600 dark:text-green-400 font-medium">
+        <div className="text-center mt-4">
+          <span className="px-3 py-1 text-xs font-medium rounded-sm bg-foreground text-background">
             과제 완료
           </span>
         </div>
@@ -140,16 +128,14 @@ export function StepNavigation({
 
       {/* Navigation Buttons */}
       {showNavButtons && !isCompleted && (
-        <div className="flex items-center justify-between pt-4">
+        <div className="flex items-center justify-between pt-6">
           <Button
             variant="ghost"
             size="sm"
             onClick={handlePrevious}
             disabled={currentIndex === 0}
-            className="gap-2"
           >
-            <ChevronLeft className="w-4 h-4" />
-            이전
+            &larr; 이전
           </Button>
 
           <Button
@@ -157,10 +143,8 @@ export function StepNavigation({
             size="sm"
             onClick={handleNext}
             disabled={currentIndex === steps.length - 1 || !isStepCompleted(currentStep)}
-            className="gap-2"
           >
-            다음
-            <ChevronRight className="w-4 h-4" />
+            다음 &rarr;
           </Button>
         </div>
       )}

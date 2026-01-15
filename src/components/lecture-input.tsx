@@ -70,12 +70,12 @@ export function LectureInput({ onAnalyzeComplete }: LectureInputProps) {
   }
 
   return (
-    <Card className="border-border/60 shadow-subtle">
+    <Card className="border-border/60">
       <CardContent className="p-8 sm:p-10">
         {/* Header */}
         <div className="text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-foreground mb-3">
-            강의를 실습으로
+          <h2 className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-foreground mb-3">
+            강의 분석 시작하기
           </h2>
           <p className="text-muted-foreground max-w-md mx-auto leading-relaxed">
             YouTube 강의 URL을 입력하면 AI가 핵심 역량을 분석하고
@@ -86,13 +86,20 @@ export function LectureInput({ onAnalyzeComplete }: LectureInputProps) {
         {!isLoggedIn ? (
           /* Login Required State */
           <div className="text-center py-8">
-            <div className="mb-6">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-muted mb-4">
-                <span className="text-2xl font-light text-muted-foreground">?</span>
+            <div className="mb-8">
+              <div className="aspect-video max-w-xs mx-auto bg-muted rounded-sm mb-6 relative overflow-hidden">
+                {/*
+                  권장 이미지: 로그인 유도 이미지
+                  - 깔끔한 빈 데스크 또는 시작하는 느낌
+                  - GitHub 로고가 살짝 보여도 좋음
+                */}
               </div>
-              <h3 className="font-medium text-foreground mb-2">로그인이 필요합니다</h3>
+              <h3 className="font-serif text-xl font-semibold text-foreground mb-2">
+                로그인이 필요합니다
+              </h3>
               <p className="text-sm text-muted-foreground">
-                강의 분석 및 실습 과제를 생성하려면 GitHub로 로그인해주세요.
+                강의 분석 및 실습 과제를 생성하려면<br />
+                GitHub로 로그인해주세요.
               </p>
             </div>
             <Button asChild className="h-11 px-8">
@@ -103,8 +110,8 @@ export function LectureInput({ onAnalyzeComplete }: LectureInputProps) {
           /* URL Input Form */
           <div className="space-y-6">
             <div className="space-y-3">
-              <Label htmlFor="youtube-url" className="text-sm font-medium">
-                YouTube URL
+              <Label htmlFor="youtube-url" className="text-xs font-medium tracking-wide uppercase text-muted-foreground">
+                강의 URL
               </Label>
               <Input
                 id="youtube-url"

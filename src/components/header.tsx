@@ -18,38 +18,38 @@ export function Header() {
   const { user, profile, loading, signOut, isLoggedIn } = useUser()
 
   return (
-    <header className="border-b border-border/60 bg-background/80 backdrop-blur-sm sticky top-0 z-50">
-      <div className="container mx-auto px-4 h-14 flex items-center justify-between">
+    <header className="border-b border-border bg-background sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link
-          href="/dashboard"
-          className="font-semibold text-lg tracking-tight text-foreground hover:opacity-70 transition-opacity"
+          href="/"
+          className="font-serif text-xl font-semibold tracking-tight text-foreground hover:opacity-70 transition-opacity"
         >
-          Lecpin
+          LECPIN
         </Link>
 
         {/* Navigation & Auth */}
-        <div className="flex items-center gap-4">
-          <nav className="hidden sm:flex items-center gap-6">
+        <div className="flex items-center gap-6">
+          <nav className="hidden sm:flex items-center gap-8">
             <Link
               href="/"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              Start
+              시작하기
             </Link>
             {isLoggedIn && (
               <Link
                 href="/dashboard"
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                Dashboard
+                내 학습
               </Link>
             )}
             <Link
               href="/guide"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              Guide
+              가이드
             </Link>
           </nav>
 

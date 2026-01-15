@@ -1,6 +1,8 @@
 import { createClient } from '@/lib/supabase/server'
 import { translateToProjectName } from '@/lib/openai'
+import { updateRepoReadme } from '@/lib/github'
 import { NextResponse } from 'next/server'
+import { Task } from '@/types'
 
 export async function POST(request: Request) {
   try {
@@ -127,17 +129,17 @@ export async function POST(request: Request) {
       .update({ github_repo_url: repoUrl })
       .eq('id', task_id)
 
-    // README 업데이트 (비동기로 실행 - 실패해도 레포 생성은 성공)
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || ''
-    fetch(`${baseUrl}/api/tasks/${task_id}/readme`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        'Cookie': request.headers.get('cookie') || '',
-      },
-    }).catch(err => {
-      console.error('README update failed (non-blocking):', err)
+    // README 업데이트 (직접 실행)
+    const readmeResult = await updateRepoReadme({
+      repoUrl,
+      githubToken: profile.github_token,
+      task: task as unknown as Task,
     })
+
+    if (!readmeResult.success) {
+      console.error('README update failed:', readmeResult.error)
+      // README 실패해도 레포 생성은 성공으로 처리
+    }
 
     return NextResponse.json({
       success: true,

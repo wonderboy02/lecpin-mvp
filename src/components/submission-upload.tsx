@@ -104,7 +104,7 @@ export function SubmissionUpload({ task, onSubmissionComplete }: SubmissionUploa
       <CardContent className="p-6 sm:p-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-2">
+          <h2 className="font-serif text-xl sm:text-2xl font-semibold text-foreground mb-2">
             코드 제출
           </h2>
           <p className="text-muted-foreground">
@@ -127,17 +127,14 @@ export function SubmissionUpload({ task, onSubmissionComplete }: SubmissionUploa
               {hasLinkedRepo ? (
                 <div className="space-y-3">
                   <div className="p-4 rounded-md bg-secondary/50 border border-border/40">
-                    <div className="flex items-center gap-2 mb-2">
-                      <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm font-medium text-foreground">연결된 저장소</span>
-                    </div>
+                    <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-2">
+                      연결된 저장소
+                    </p>
                     <a
                       href={task.github_repo_url!}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-primary hover:underline break-all"
+                      className="text-sm text-foreground underline underline-offset-4 decoration-border hover:decoration-foreground transition-colors break-all"
                     >
                       {task.github_repo_url}
                     </a>

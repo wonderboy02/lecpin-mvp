@@ -57,10 +57,10 @@ export function CompetencySummary({ lecture, onTaskGenerated }: CompetencySummar
               <div className="w-28 h-20 rounded bg-muted flex-shrink-0" />
             )}
             <div className="flex-1 min-w-0">
-              <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-2">
+              <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-2">
                 분석 완료
               </p>
-              <h2 className="text-lg font-semibold text-foreground leading-tight mb-2">
+              <h2 className="font-serif text-lg font-semibold text-foreground leading-tight mb-2">
                 {lecture.title}
               </h2>
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
@@ -81,7 +81,7 @@ export function CompetencySummary({ lecture, onTaskGenerated }: CompetencySummar
       <Card className="border-border/60 shadow-subtle">
         <CardContent className="p-6 sm:p-8">
           <div className="mb-6">
-            <h3 className="text-lg font-semibold text-foreground mb-1">
+            <h3 className="font-serif text-lg font-semibold text-foreground mb-1">
               핵심 개발 역량
             </h3>
             <p className="text-sm text-muted-foreground">

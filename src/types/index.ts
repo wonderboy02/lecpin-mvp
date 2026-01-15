@@ -90,8 +90,13 @@ export interface Submission {
   file_path: string | null
   description: string | null
   status: 'pending' | 'reviewing' | 'completed' | 'failed'
+  attempt_number: number
   created_at: string
   updated_at: string
+}
+
+export interface SubmissionWithFeedback extends Submission {
+  feedback: Feedback | null
 }
 
 export interface Feedback {

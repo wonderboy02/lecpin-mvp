@@ -9,11 +9,70 @@ export const openai = new OpenAI({
 export const CODE_REVIEW_MODEL = 'gpt-5.1-codex-max' // 코드 리뷰 전용 (Responses API)
 export const GENERAL_MODEL = 'gpt-4o' // 일반 작업용 (Chat Completions API)
 
+// 과제 제목을 영어 프로젝트명으로 변환
+export async function translateToProjectName(title: string): Promise<string> {
+  try {
+    const response = await openai.chat.completions.create({
+      model: GENERAL_MODEL,
+      messages: [
+        {
+          role: 'system',
+          content: `You are a project naming expert. Convert the given title to a short, clean English project name suitable for a GitHub repository.
+
+Rules:
+- Output ONLY the project name, nothing else
+- Use lowercase letters and hyphens only
+- Maximum 25 characters
+- Make it concise but descriptive
+- If already in English, just clean it up
+- Examples:
+  - "알고리즘 기초 실습" → "algorithm-basics"
+  - "React Todo App 만들기" → "react-todo-app"
+  - "Week 1 과제" → "week1-assignment"`,
+        },
+        {
+          role: 'user',
+          content: title,
+        },
+      ],
+      max_tokens: 50,
+      temperature: 0.3,
+    })
+
+    const projectName = response.choices[0]?.message?.content?.trim() || ''
+
+    // 결과 정리: 소문자, 영문/숫자/하이픈만 허용, 연속 하이픈 제거
+    return projectName
+      .toLowerCase()
+      .replace(/[^a-z0-9-]/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '')
+      .slice(0, 25)
+  } catch (error) {
+    console.error('Project name translation error:', error)
+    // 실패 시 fallback: 영문/숫자만 추출
+    return title
+      .toLowerCase()
+      .replace(/[^a-z0-9]/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '')
+      .slice(0, 25) || 'project'
+  }
+}
+
 // 코드 길이에 따른 reasoning effort 결정
 // SDK v4.104.0 기준: 'low' | 'medium' | 'high' 지원
 function getReasoningEffort(codeLength: number): 'medium' | 'high' {
   if (codeLength < 10000) return 'medium'
   return 'high'
+}
+
+// 이전 피드백 타입
+interface PreviousFeedback {
+  attemptNumber: number
+  overallScore: number
+  summary: string
+  improvements: Array<{ title: string; detail: string }>
 }
 
 // Responses API를 사용한 코드 리뷰 함수
@@ -22,17 +81,38 @@ export async function reviewCodeWithCodex(params: {
   code: string
   taskInfo: string
   language: Language
+  previousFeedbacks?: PreviousFeedback[]
 }) {
-  const { code, taskInfo, language } = params
+  const { code, taskInfo, language, previousFeedbacks = [] } = params
   const effort = getReasoningEffort(code.length)
   const languageInstruction = getLanguageInstruction(language)
+
+  // 이전 피드백이 있으면 컨텍스트로 추가
+  let previousFeedbackContext = ''
+  if (previousFeedbacks.length > 0) {
+    const feedbackSummaries = previousFeedbacks.map(f =>
+      `- ${f.attemptNumber}차 시도: ${f.overallScore}점
+  요약: ${f.summary}
+  주요 개선점: ${f.improvements.slice(0, 3).map(i => i.title).join(', ')}`
+    ).join('\n')
+
+    previousFeedbackContext = `
+이전 시도 히스토리:
+${feedbackSummaries}
+
+위 이전 피드백을 참고하여:
+1. 이전에 지적한 개선점이 수정되었는지 확인하고 언급
+2. 새로 발생한 문제점도 함께 지적
+3. 점수 변화의 이유를 summary에 포함
+`
+  }
 
   const input = `${CODE_REVIEW_PROMPT}
 
 ${languageInstruction}
 
 ${taskInfo}
-
+${previousFeedbackContext}
 제출된 코드:
 ${code}`
 

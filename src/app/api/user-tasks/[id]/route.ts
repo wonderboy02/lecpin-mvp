@@ -34,7 +34,27 @@ export async function GET(request: Request, { params }: RouteParams) {
       return NextResponse.json({ error: '과제를 찾을 수 없습니다.' }, { status: 404 })
     }
 
-    return NextResponse.json({ userTask: data })
+    // 해당 task에 대한 전체 제출 이력 조회
+    let submissionHistory: unknown[] = []
+    if (data.task_id) {
+      const { data: submissions } = await supabase
+        .from('submissions')
+        .select(`
+          *,
+          feedback:feedbacks(*)
+        `)
+        .eq('task_id', data.task_id)
+        .eq('user_id', user.id)
+        .order('attempt_number', { ascending: false })
+
+      submissionHistory = submissions || []
+    }
+
+    return NextResponse.json({
+      userTask: data,
+      submissionHistory,
+      totalAttempts: submissionHistory.length,
+    })
 
   } catch (error) {
     console.error('Get user task error:', error)

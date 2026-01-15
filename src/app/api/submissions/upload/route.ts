@@ -85,51 +85,20 @@ export async function POST(request: Request) {
       )
     }
 
-    // 이미 제출이 있는지 확인
-    const { data: existingSubmission } = await supabase
+    // 기존 제출 횟수 조회 (attempt_number 계산용)
+    const { data: existingSubmissions } = await supabase
       .from('submissions')
-      .select('id, file_path')
+      .select('attempt_number')
       .eq('task_id', task_id)
       .eq('user_id', user.id)
-      .single()
+      .order('attempt_number', { ascending: false })
+      .limit(1)
 
-    if (existingSubmission) {
-      // 기존 파일 삭제
-      if (existingSubmission.file_path) {
-        await supabase.storage
-          .from('submissions')
-          .remove([existingSubmission.file_path])
-      }
+    const nextAttemptNumber = existingSubmissions && existingSubmissions.length > 0
+      ? existingSubmissions[0].attempt_number + 1
+      : 1
 
-      // 기존 제출 업데이트
-      const { data: submission, error: updateError } = await supabase
-        .from('submissions')
-        .update({
-          file_path: filePath,
-          description,
-          submission_type: 'upload',
-          status: 'pending',
-        })
-        .eq('id', existingSubmission.id)
-        .select()
-        .single()
-
-      if (updateError) {
-        console.error('Submission update error:', updateError)
-        return NextResponse.json(
-          { error: '제출 업데이트에 실패했습니다.' },
-          { status: 500 }
-        )
-      }
-
-      return NextResponse.json({
-        success: true,
-        submission,
-        message: '제출이 업데이트되었습니다.',
-      })
-    }
-
-    // 새 제출 생성
+    // 새 제출 생성 (항상 새로운 submission 생성)
     const { data: submission, error: insertError } = await supabase
       .from('submissions')
       .insert({
@@ -139,6 +108,7 @@ export async function POST(request: Request) {
         description,
         submission_type: 'upload',
         status: 'pending',
+        attempt_number: nextAttemptNumber,
       })
       .select()
       .single()

@@ -182,7 +182,7 @@ export async function POST(request: Request) {
       )
     }
 
-    // 이미 피드백이 있는지 확인
+    // 이미 피드백이 있는지 확인 (같은 submission에 대한 중복 요청 방지)
     const { data: existingFeedback } = await supabase
       .from('feedbacks')
       .select('*')
@@ -193,6 +193,7 @@ export async function POST(request: Request) {
       return NextResponse.json({
         success: true,
         feedback: existingFeedback,
+        attemptNumber: submission.attempt_number,
         message: '이미 생성된 피드백이 있습니다.',
       })
     }
@@ -254,10 +255,41 @@ export async function POST(request: Request) {
 - 설명: ${task.description}
 - 성공 기준: ${task.success_criteria?.join(', ') || '없음'}`
 
+    // 이전 피드백 조회 (같은 task의 이전 시도들)
+    const { data: previousSubmissions } = await supabase
+      .from('submissions')
+      .select(`
+        attempt_number,
+        feedbacks (
+          overall_score,
+          summary,
+          improvements
+        )
+      `)
+      .eq('task_id', submission.task_id)
+      .eq('user_id', user.id)
+      .lt('attempt_number', submission.attempt_number)
+      .order('attempt_number', { ascending: false })
+      .limit(3) // 최근 3개까지만 참조
+
+    // 이전 피드백 포맷팅
+    const previousFeedbacks = (previousSubmissions || [])
+      .filter(s => s.feedbacks && s.feedbacks.length > 0)
+      .map(s => {
+        const fb = s.feedbacks[0] as { overall_score: number; summary: string; improvements: unknown[] }
+        return {
+          attemptNumber: s.attempt_number,
+          overallScore: fb.overall_score,
+          summary: fb.summary,
+          improvements: (fb.improvements || []) as Array<{ title: string; detail: string }>,
+        }
+      })
+
     const reviewResult = await reviewCodeWithCodex({
       code: codeContent,
       taskInfo,
       language,
+      previousFeedbacks,
     })
 
     // 피드백 저장
@@ -293,6 +325,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       success: true,
       feedback,
+      attemptNumber: submission.attempt_number,
     })
 
   } catch (error) {

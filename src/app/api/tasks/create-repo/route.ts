@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase/server'
+import { translateToProjectName } from '@/lib/openai'
 import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
@@ -73,8 +74,12 @@ export async function POST(request: Request) {
       )
     }
 
-    // 레포 이름 생성
-    const finalRepoName = repo_name || `lecpin-${task.title.toLowerCase().replace(/[^a-z0-9]/g, '-').slice(0, 30)}-${Date.now()}`
+    // 레포 이름 생성: lecpin-{username}-{projectname}
+    let finalRepoName = repo_name
+    if (!finalRepoName) {
+      const projectName = await translateToProjectName(task.title)
+      finalRepoName = `lecpin-${profile.github_username}-${projectName}`
+    }
 
     // GitHub API로 템플릿에서 레포 생성
     const response = await fetch(

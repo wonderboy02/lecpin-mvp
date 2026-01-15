@@ -11,7 +11,7 @@ import { PracticalTask } from "@/components/practical-task"
 import { SubmissionUpload } from "@/components/submission-upload"
 import { AIFeedback } from "@/components/ai-feedback"
 import { Button } from "@/components/ui/button"
-import type { UserTaskWithRelations, Step, Task, Submission, Feedback, LectureWithCompetencies } from "@/types"
+import type { UserTaskWithRelations, Step, Task, Submission, Feedback, LectureWithCompetencies, SubmissionWithFeedback } from "@/types"
 
 export default function TaskDetailPage() {
   const router = useRouter()
@@ -19,6 +19,7 @@ export default function TaskDetailPage() {
   const { isLoggedIn, loading: authLoading } = useUser()
 
   const [userTask, setUserTask] = useState<UserTaskWithRelations | null>(null)
+  const [submissionHistory, setSubmissionHistory] = useState<SubmissionWithFeedback[]>([])
   const [loading, setLoading] = useState(true)
 
   const userTaskId = params.id as string
@@ -30,6 +31,10 @@ export default function TaskDetailPage() {
       const data = await res.json()
       if (data.userTask) {
         setUserTask(data.userTask)
+        // submission history도 저장
+        if (data.submissionHistory) {
+          setSubmissionHistory(data.submissionHistory)
+        }
       } else {
         router.push('/dashboard')
       }
@@ -84,11 +89,24 @@ export default function TaskDetailPage() {
 
   const handleSubmissionComplete = (submission: Submission) => {
     setUserTask(prev => prev ? { ...prev, submission, submission_id: submission.id } : null)
+    // history에 새 submission 추가 (피드백은 아직 없음)
+    setSubmissionHistory(prev => [{ ...submission, feedback: null }, ...prev])
     updateStep('feedback', { submission_id: submission.id })
+  }
+
+  // 재제출 핸들러
+  const handleResubmit = () => {
+    updateStep('submit')
   }
 
   const handleFeedbackGenerated = (feedback: Feedback) => {
     setUserTask(prev => prev ? { ...prev, feedback, feedback_id: feedback.id } : null)
+    // history에서 해당 submission의 feedback 업데이트
+    setSubmissionHistory(prev =>
+      prev.map(s =>
+        s.id === feedback.submission_id ? { ...s, feedback } : s
+      )
+    )
     updateStep('completed', { feedback_id: feedback.id, status: 'completed' })
   }
 
@@ -178,7 +196,9 @@ export default function TaskDetailPage() {
             <AIFeedback
               submission={submission}
               feedback={feedback || null}
+              submissionHistory={submissionHistory}
               onFeedbackGenerated={handleFeedbackGenerated}
+              onResubmit={handleResubmit}
               onReset={handleReset}
             />
           )}

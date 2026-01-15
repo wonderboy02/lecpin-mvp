@@ -4,19 +4,23 @@ import { useEffect, useState, useRef } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/language-context"
-import type { Submission, Feedback, ImprovementItem, FeedbackItem } from "@/types"
+import type { Submission, Feedback, ImprovementItem, FeedbackItem, SubmissionWithFeedback } from "@/types"
 
 interface AIFeedbackProps {
   submission: Submission
   feedback: Feedback | null
+  submissionHistory?: SubmissionWithFeedback[]
   onFeedbackGenerated: (feedback: Feedback) => void
+  onResubmit?: () => void
   onReset: () => void
 }
 
 export function AIFeedback({
   submission,
   feedback,
+  submissionHistory = [],
   onFeedbackGenerated,
+  onResubmit,
   onReset,
 }: AIFeedbackProps) {
   const { language } = useLanguage()
@@ -124,8 +128,30 @@ export function AIFeedback({
     best_practices: 0,
   }
 
+  // 이전 시도와 점수 비교
+  const previousAttempt = submissionHistory.find(
+    s => s.attempt_number === submission.attempt_number - 1 && s.feedback
+  )
+  const scoreDiff = previousAttempt?.feedback
+    ? feedback.overall_score - previousAttempt.feedback.overall_score
+    : null
+
   return (
     <div className="space-y-6">
+      {/* Attempt Info */}
+      {submission.attempt_number > 1 && (
+        <div className="flex items-center justify-between px-4 py-3 rounded-md bg-secondary/50 border border-border/40">
+          <span className="text-sm font-medium text-foreground">
+            {submission.attempt_number}차 시도
+          </span>
+          {scoreDiff !== null && (
+            <span className={`text-sm font-medium ${scoreDiff > 0 ? 'text-green-600' : scoreDiff < 0 ? 'text-red-500' : 'text-muted-foreground'}`}>
+              {scoreDiff > 0 ? `+${scoreDiff}` : scoreDiff}점 {scoreDiff > 0 ? '향상' : scoreDiff < 0 ? '하락' : '유지'}
+            </span>
+          )}
+        </div>
+      )}
+
       {/* Overall Score */}
       <Card className="border-border/60 shadow-subtle">
         <CardContent className="p-6 sm:p-8">
@@ -275,13 +301,24 @@ export function AIFeedback({
         </Card>
       )}
 
-      <Button
-        onClick={onReset}
-        variant="outline"
-        className="w-full h-12 text-base font-medium"
-      >
-        새로운 강의로 실습하기
-      </Button>
+      {/* Action Buttons */}
+      <div className="flex flex-col gap-3">
+        {onResubmit && (
+          <Button
+            onClick={onResubmit}
+            className="w-full h-12 text-base font-medium"
+          >
+            코드 수정 후 재제출하기
+          </Button>
+        )}
+        <Button
+          onClick={onReset}
+          variant="outline"
+          className="w-full h-12 text-base font-medium"
+        >
+          새로운 강의로 실습하기
+        </Button>
+      </div>
     </div>
   )
 }

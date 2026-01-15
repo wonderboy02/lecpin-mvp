@@ -169,6 +169,7 @@ export type Database = {
       }
       submissions: {
         Row: {
+          attempt_number: number
           created_at: string | null
           description: string | null
           file_path: string
@@ -181,6 +182,7 @@ export type Database = {
           user_id: string
         }
         Insert: {
+          attempt_number?: number
           created_at?: string | null
           description?: string | null
           file_path: string
@@ -193,6 +195,7 @@ export type Database = {
           user_id: string
         }
         Update: {
+          attempt_number?: number
           created_at?: string | null
           description?: string | null
           file_path?: string

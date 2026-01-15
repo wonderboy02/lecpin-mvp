@@ -7,6 +7,7 @@ import { LectureInput } from "@/components/lecture-input"
 import { Footer } from "@/components/footer"
 import { useUser } from "@/hooks/use-user"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import type { LectureWithCompetencies } from "@/types"
 
 export default function Home() {
@@ -23,7 +24,6 @@ export default function Home() {
     try {
       setIsCreating(true)
 
-      // user_task 생성
       const res = await fetch('/api/user-tasks', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -32,7 +32,6 @@ export default function Home() {
       const data = await res.json()
 
       if (data.userTask) {
-        // 대시보드 상세 페이지로 이동
         router.push(`/dashboard/${data.userTask.id}`)
       } else {
         console.error('Failed to create user task:', data.error)
@@ -48,7 +47,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
       <main className="flex-1">
-        {/* Hero Section */}
+        {/* Hero Section - 2 Column */}
         <section className="py-16 md:py-24">
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -59,38 +58,47 @@ export default function Home() {
                 </p>
                 <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight leading-tight mb-6">
                   강의를 실습으로<br />
-                  바꿔보세요
+                  실습을 성장으로
                 </h1>
                 <p className="text-lg text-muted-foreground mb-8 max-w-md leading-relaxed">
-                  YouTube 강의 URL을 입력하면 AI가 핵심 역량을 분석하고
-                  맞춤형 실습 과제를 생성합니다.
+                  YouTube 강의 URL을 입력하면 AI가 맞춤형 실습 과제를 설계하고,
+                  시니어 개발자 수준의 코드 리뷰를 제공합니다.
                 </p>
 
-                {/* Quick Access - Logged In User */}
-                {isLoggedIn && (
-                  <Button
-                    variant="outline"
-                    onClick={() => router.push('/dashboard')}
-                    className="group"
-                  >
-                    <span>내 학습 대시보드</span>
-                    <span className="ml-2 group-hover:translate-x-0.5 transition-transform">&rarr;</span>
-                  </Button>
-                )}
+                <div className="flex flex-col sm:flex-row gap-3">
+                  {isLoggedIn ? (
+                    <>
+                      <Button
+                        size="lg"
+                        className="h-12 px-8"
+                        onClick={() => router.push('/dashboard')}
+                      >
+                        내 학습 대시보드
+                      </Button>
+                      <Button asChild variant="outline" size="lg" className="h-12 px-8">
+                        <Link href="#start">새 강의 시작하기</Link>
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <Button asChild size="lg" className="h-12 px-8">
+                        <Link href="/login">GitHub로 시작하기</Link>
+                      </Button>
+                      <Button asChild variant="outline" size="lg" className="h-12 px-8">
+                        <Link href="/guide">이용 가이드</Link>
+                      </Button>
+                    </>
+                  )}
+                </div>
               </div>
 
               {/* Right: Hero Image */}
-              <div className="aspect-[4/3] bg-muted rounded-sm animate-fade-in animate-delay-100 relative overflow-hidden">
-                {/*
-                  권장 이미지: 노트북에서 강의를 보는 장면
-                  - 화면에 YouTube 또는 강의 영상이 보이는 모습
-                  - 옆에 노트와 펜이 있는 구도
-                  - 자연광이 들어오는 데스크 환경
-                  - 학습하는 분위기 전달
-
-                  검색 키워드: "online learning laptop", "studying with laptop notes"
-                  추천 소스: Unsplash, Pexels
-                */}
+              <div className="aspect-[4/3] bg-muted rounded-sm animate-fade-in animate-delay-100 relative overflow-hidden hidden lg:block">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <p className="font-serif text-8xl text-muted-foreground/10">L</p>
+                  </div>
+                </div>
                 <div className="absolute bottom-4 left-4 text-xs text-muted-foreground/50">
                   Hero Image
                 </div>
@@ -99,104 +107,280 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Lecture Input Section */}
+        {/* Problem Section */}
         <section className="py-16 border-t border-border">
-          <div className="max-w-2xl mx-auto px-6">
-            <div className="animate-fade-in">
-              {isCreating ? (
-                <div className="flex flex-col items-center justify-center py-16">
-                  <div className="w-6 h-6 border-2 border-foreground/20 border-t-foreground rounded-full animate-spin mb-4" />
-                  <p className="text-muted-foreground">과제 세션을 생성하는 중...</p>
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="max-w-2xl">
+              <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-4">
+                문제
+              </p>
+              <h2 className="font-serif text-2xl md:text-3xl font-semibold tracking-tight mb-4">
+                강의는 많이 들었는데,<br />
+                만들어본 건 없지 않나요?
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                수십 시간의 강의를 완강해도 막상 코드를 작성하려면 막막합니다.
+                &lsquo;이해했다&rsquo;와 &lsquo;할 수 있다&rsquo;는 다른 문제니까요.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Solution / Value Props Section */}
+        <section className="py-16 border-t border-border bg-muted/30">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="mb-12">
+              <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-4">
+                해결책
+              </p>
+              <h2 className="font-serif text-2xl md:text-3xl font-semibold tracking-tight">
+                LECPIN이 강의와 실습 사이를<br />
+                연결합니다
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+              <div className="animate-fade-in">
+                <div className="w-10 h-10 rounded-full bg-foreground text-background flex items-center justify-center text-sm font-medium mb-6">
+                  01
                 </div>
-              ) : (
-                <LectureInput onAnalyzeComplete={handleAnalyzeComplete} />
-              )}
+                <h3 className="font-serif text-xl font-semibold mb-3">
+                  강의 맞춤형 실습 과제
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  AI가 강의 내용을 분석해 핵심 역량을 추출하고,
+                  그에 딱 맞는 실습 과제를 설계합니다.
+                  더 이상 &lsquo;뭘 만들어볼까&rsquo; 고민할 필요 없습니다.
+                </p>
+              </div>
+
+              <div className="animate-fade-in animate-delay-100">
+                <div className="w-10 h-10 rounded-full bg-foreground text-background flex items-center justify-center text-sm font-medium mb-6">
+                  02
+                </div>
+                <h3 className="font-serif text-xl font-semibold mb-3">
+                  시니어 수준 코드 리뷰
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  혼자 공부하면 피드백을 받기 어렵습니다.
+                  AI가 코드 품질, 모범 사례, 개선점을
+                  시니어 개발자처럼 상세히 리뷰해드립니다.
+                </p>
+              </div>
+
+              <div className="animate-fade-in animate-delay-200">
+                <div className="w-10 h-10 rounded-full bg-foreground text-background flex items-center justify-center text-sm font-medium mb-6">
+                  03
+                </div>
+                <h3 className="font-serif text-xl font-semibold mb-3">
+                  GitHub에 쌓이는 기록
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  모든 실습은 여러분의 GitHub 저장소에 남습니다.
+                  강의를 들을 때마다 포트폴리오가 쌓이고,
+                  성장의 흔적이 기록됩니다.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
         {/* How It Works Section */}
-        <section className="py-16 border-t border-border bg-muted/30">
+        <section className="py-16 border-t border-border">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-12">
               <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-3">
                 이용 방법
               </p>
-              <h2 className="font-serif text-3xl font-semibold tracking-tight">
+              <h2 className="font-serif text-2xl md:text-3xl font-semibold tracking-tight">
                 3단계로 완성하는 실습
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Step 1 */}
-              <div className="text-center animate-fade-in animate-delay-100">
+              <div className="text-center animate-fade-in">
                 <div className="aspect-[4/3] bg-muted rounded-sm mb-6 relative overflow-hidden mx-auto max-w-xs">
-                  {/*
-                    권장 이미지: YouTube 강의 화면
-                    - 모니터에 강의 영상이 재생되는 모습
-                    - 코딩 관련 강의 내용이 살짝 보이는 정도
-
-                    검색 키워드: "youtube tutorial screen", "online course monitor"
-                  */}
-                  <div className="absolute bottom-3 left-3 text-xs text-muted-foreground/50">
-                    Step 1 Image
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="font-serif text-6xl text-muted-foreground/20">1</span>
                   </div>
                 </div>
-                <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">
-                  Step 01
-                </p>
-                <h3 className="font-serif text-xl font-semibold mb-2">강의 입력</h3>
+                <h3 className="font-serif text-lg font-semibold mb-2">강의 입력</h3>
                 <p className="text-sm text-muted-foreground">
                   YouTube URL을 입력하면<br />AI가 내용을 분석합니다
                 </p>
               </div>
 
-              {/* Step 2 */}
-              <div className="text-center animate-fade-in animate-delay-200">
+              <div className="text-center animate-fade-in animate-delay-100">
                 <div className="aspect-[4/3] bg-muted rounded-sm mb-6 relative overflow-hidden mx-auto max-w-xs">
-                  {/*
-                    권장 이미지: 분석 결과 / 구조화된 정보
-                    - 화이트보드에 그린 다이어그램
-                    - 노트에 정리된 마인드맵
-
-                    검색 키워드: "whiteboard planning", "structured notes"
-                  */}
-                  <div className="absolute bottom-3 left-3 text-xs text-muted-foreground/50">
-                    Step 2 Image
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="font-serif text-6xl text-muted-foreground/20">2</span>
                   </div>
                 </div>
-                <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">
-                  Step 02
-                </p>
-                <h3 className="font-serif text-xl font-semibold mb-2">과제 생성</h3>
+                <h3 className="font-serif text-lg font-semibold mb-2">과제 수행</h3>
                 <p className="text-sm text-muted-foreground">
-                  핵심 역량 기반<br />맞춤형 과제가 생성됩니다
+                  생성된 GitHub 저장소에서<br />과제를 완료합니다
                 </p>
               </div>
 
-              {/* Step 3 */}
-              <div className="text-center animate-fade-in animate-delay-300">
+              <div className="text-center animate-fade-in animate-delay-200">
                 <div className="aspect-[4/3] bg-muted rounded-sm mb-6 relative overflow-hidden mx-auto max-w-xs">
-                  {/*
-                    권장 이미지: 코드 리뷰 / 피드백
-                    - 코드 에디터에서 리뷰하는 모습
-                    - pair programming 느낌
-
-                    검색 키워드: "code review screen", "developer feedback"
-                  */}
-                  <div className="absolute bottom-3 left-3 text-xs text-muted-foreground/50">
-                    Step 3 Image
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="font-serif text-6xl text-muted-foreground/20">3</span>
                   </div>
                 </div>
-                <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">
-                  Step 03
-                </p>
-                <h3 className="font-serif text-xl font-semibold mb-2">AI 피드백</h3>
+                <h3 className="font-serif text-lg font-semibold mb-2">AI 피드백</h3>
                 <p className="text-sm text-muted-foreground">
-                  시니어 개발자 수준의<br />코드 리뷰를 받습니다
+                  코드 제출 후 즉시<br />상세한 리뷰를 받습니다
                 </p>
               </div>
             </div>
+
+            <div className="text-center mt-10">
+              <Button asChild variant="outline" size="sm">
+                <Link href="/guide">자세한 이용 방법 보기 &rarr;</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Start Section - 로그인 유저와 비로그인 유저 구분 */}
+        <section id="start" className="py-24 bg-foreground text-background">
+          <div className="max-w-6xl mx-auto px-6">
+            {isLoggedIn ? (
+              // 로그인된 유저: URL 입력 폼
+              <div className="max-w-2xl mx-auto">
+                <div className="text-center mb-10">
+                  <p className="text-xs font-medium tracking-widest uppercase text-background/60 mb-3">
+                    새 실습 시작
+                  </p>
+                  <h2 className="font-serif text-2xl md:text-3xl font-semibold tracking-tight text-background">
+                    어떤 강의를 실습해볼까요?
+                  </h2>
+                </div>
+                <div className="animate-fade-in">
+                  {isCreating ? (
+                    <div className="flex flex-col items-center justify-center py-16">
+                      <div className="w-6 h-6 border-2 border-background/20 border-t-background rounded-full animate-spin mb-4" />
+                      <p className="text-background/70">과제 세션을 생성하는 중...</p>
+                    </div>
+                  ) : (
+                    <div className="bg-background rounded-sm p-6">
+                      <LectureInput onAnalyzeComplete={handleAnalyzeComplete} />
+                    </div>
+                  )}
+                </div>
+              </div>
+            ) : (
+              // 비로그인 유저: 로그인 CTA
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="order-2 lg:order-1">
+                  {/* 실제 UI 프리뷰 */}
+                  <div className="relative">
+                    {/* 메인 카드 */}
+                    <div className="bg-background text-foreground rounded-sm shadow-2xl overflow-hidden">
+                      {/* 브라우저 상단 바 */}
+                      <div className="bg-muted/50 px-4 py-3 flex items-center gap-2 border-b border-border/50">
+                        <div className="flex gap-1.5">
+                          <div className="w-3 h-3 rounded-full bg-red-400/60" />
+                          <div className="w-3 h-3 rounded-full bg-yellow-400/60" />
+                          <div className="w-3 h-3 rounded-full bg-green-400/60" />
+                        </div>
+                        <div className="flex-1 mx-4">
+                          <div className="bg-background/80 rounded-sm px-3 py-1 text-xs text-muted-foreground max-w-[200px]">
+                            lecpin.com
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* 컨텐츠 */}
+                      <div className="p-6 space-y-4">
+                        <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground">
+                          강의 입력
+                        </p>
+                        <div className="space-y-3">
+                          <div className="h-10 bg-muted rounded-sm border border-border flex items-center px-3">
+                            <span className="text-sm text-muted-foreground">https://youtube.com/watch?v=...</span>
+                          </div>
+                          <div className="h-11 bg-foreground rounded-sm flex items-center justify-center">
+                            <span className="text-sm font-medium text-background">분석 시작</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 데코레이션 요소 */}
+                    <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-background/20 rounded-sm -z-10" />
+                    <div className="absolute -bottom-8 -right-8 w-full h-full border border-background/10 rounded-sm -z-20" />
+                  </div>
+                </div>
+
+                <div className="order-1 lg:order-2">
+                  <p className="text-xs font-medium tracking-widest uppercase text-background/60 mb-4">
+                    시작하기
+                  </p>
+                  <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-background">
+                    첫 번째 실습을<br />
+                    시작해보세요
+                  </h2>
+                  <p className="text-background/70 leading-relaxed mb-8 max-w-md">
+                    GitHub 계정으로 로그인하면 바로 강의 URL을 입력하고
+                    맞춤형 실습 과제를 받아볼 수 있습니다.
+                  </p>
+                  <Button
+                    asChild
+                    size="lg"
+                    className="h-12 px-8 bg-background text-foreground hover:bg-background/90"
+                  >
+                    <Link href="/login">GitHub로 로그인하고 시작하기</Link>
+                  </Button>
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Trust Section */}
+        <section className="py-16 border-t border-border bg-muted/30">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <div>
+                <p className="font-serif text-3xl font-semibold text-foreground mb-2">GPT-4o</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-wider">AI 모델</p>
+              </div>
+              <div>
+                <p className="font-serif text-3xl font-semibold text-foreground mb-2">100점</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-wider">코드 리뷰 점수제</p>
+              </div>
+              <div>
+                <p className="font-serif text-3xl font-semibold text-foreground mb-2">GitHub</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-wider">저장소 자동 생성</p>
+              </div>
+              <div>
+                <p className="font-serif text-3xl font-semibold text-foreground mb-2">무제한</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-wider">재시도 가능</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section className="py-20 border-t border-border">
+          <div className="max-w-2xl mx-auto px-6 text-center">
+            <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-4">
+              시작할 준비가 되셨나요?
+            </p>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+              다음 강의부터는<br />
+              직접 만들어보세요
+            </h2>
+            <p className="text-lg text-muted-foreground mb-10">
+              듣기만 하는 학습은 이제 그만.
+            </p>
+            <Button asChild size="lg" className="h-12 px-8">
+              <Link href={isLoggedIn ? "#start" : "/login"}>
+                {isLoggedIn ? "새 강의 시작하기" : "무료로 시작하기"}
+              </Link>
+            </Button>
           </div>
         </section>
       </main>

@@ -92,7 +92,11 @@ export async function PATCH(request: Request, { params }: RouteParams) {
     if (current_step) updateData.current_step = current_step
     if (status) updateData.status = status
     if (task_id) updateData.task_id = task_id
-    if (submission_id) updateData.submission_id = submission_id
+    if (submission_id) {
+      updateData.submission_id = submission_id
+      // 새 submission이면 feedback_id를 초기화 (재제출 시 이전 피드백 제거)
+      updateData.feedback_id = null
+    }
     if (feedback_id) updateData.feedback_id = feedback_id
 
     const { data: updated, error: updateError } = await supabase

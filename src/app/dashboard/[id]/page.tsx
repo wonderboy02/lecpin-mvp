@@ -10,7 +10,6 @@ import { CompetencySummary } from "@/components/competency-summary"
 import { PracticalTask } from "@/components/practical-task"
 import { SubmissionUpload } from "@/components/submission-upload"
 import { AIFeedback } from "@/components/ai-feedback"
-import { Button } from "@/components/ui/button"
 import type { UserTaskWithRelations, Step, Task, Submission, Feedback, LectureWithCompetencies, SubmissionWithFeedback } from "@/types"
 
 export default function TaskDetailPage() {
@@ -88,7 +87,14 @@ export default function TaskDetailPage() {
   }
 
   const handleSubmissionComplete = (submission: Submission) => {
-    setUserTask(prev => prev ? { ...prev, submission, submission_id: submission.id } : null)
+    // 새 submission으로 업데이트하고, 이전 feedback은 null로 초기화
+    setUserTask(prev => prev ? {
+      ...prev,
+      submission,
+      submission_id: submission.id,
+      feedback: undefined,  // 이전 피드백 제거
+      feedback_id: null,
+    } : null)
     // history에 새 submission 추가 (피드백은 아직 없음)
     setSubmissionHistory(prev => [{ ...submission, feedback: null }, ...prev])
     updateStep('feedback', { submission_id: submission.id })
@@ -154,54 +160,66 @@ export default function TaskDetailPage() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
-      <main className="flex-1 container mx-auto px-4 py-12 max-w-2xl">
-        {/* 대시보드로 돌아가기 */}
-        <Button
-          variant="ghost"
-          className="mb-6 -ml-2"
-          onClick={() => router.push('/dashboard')}
-        >
-          &larr; 대시보드로 돌아가기
-        </Button>
+      <main className="flex-1">
+        <div className="max-w-3xl mx-auto px-6 py-12">
+          {/* Back Button */}
+          <button
+            onClick={() => router.push('/dashboard')}
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8 group"
+          >
+            <span className="group-hover:-translate-x-0.5 transition-transform">&larr;</span>
+            <span>대시보드로 돌아가기</span>
+          </button>
 
-        {/* StepNavigation 컴포넌트 */}
-        <StepNavigation
-          currentStep={current_step}
-          completedSteps={completedSteps}
-          onStepClick={handleStepClick}
-        />
+          {/* Lecture Title */}
+          <div className="mb-8">
+            <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">
+              학습 중
+            </p>
+            <h1 className="font-serif text-2xl font-semibold tracking-tight">
+              {lecture.title}
+            </h1>
+          </div>
 
-        {/* 단계별 컨텐츠 */}
-        <div className="animate-fade-in mt-8">
-          {current_step === 'summary' && lecture && (
-            <CompetencySummary
-              lecture={lectureWithCompetencies}
-              onTaskGenerated={handleTaskGenerated}
-            />
-          )}
-          {current_step === 'task' && task && (
-            <PracticalTask
-              task={task}
-              onTaskUpdate={(t) => setUserTask(prev => prev ? { ...prev, task: t } : null)}
-              onStart={handleStartTask}
-            />
-          )}
-          {current_step === 'submit' && task && (
-            <SubmissionUpload
-              task={task}
-              onSubmissionComplete={handleSubmissionComplete}
-            />
-          )}
-          {(current_step === 'feedback' || current_step === 'completed') && submission && (
-            <AIFeedback
-              submission={submission}
-              feedback={feedback || null}
-              submissionHistory={submissionHistory}
-              onFeedbackGenerated={handleFeedbackGenerated}
-              onResubmit={handleResubmit}
-              onReset={handleReset}
-            />
-          )}
+          {/* StepNavigation 컴포넌트 */}
+          <StepNavigation
+            currentStep={current_step}
+            completedSteps={completedSteps}
+            onStepClick={handleStepClick}
+          />
+
+          {/* 단계별 컨텐츠 */}
+          <div className="animate-fade-in">
+            {current_step === 'summary' && lecture && (
+              <CompetencySummary
+                lecture={lectureWithCompetencies}
+                onTaskGenerated={handleTaskGenerated}
+              />
+            )}
+            {current_step === 'task' && task && (
+              <PracticalTask
+                task={task}
+                onTaskUpdate={(t) => setUserTask(prev => prev ? { ...prev, task: t } : null)}
+                onStart={handleStartTask}
+              />
+            )}
+            {current_step === 'submit' && task && (
+              <SubmissionUpload
+                task={task}
+                onSubmissionComplete={handleSubmissionComplete}
+              />
+            )}
+            {(current_step === 'feedback' || current_step === 'completed') && submission && (
+              <AIFeedback
+                submission={submission}
+                feedback={feedback || null}
+                submissionHistory={submissionHistory}
+                onFeedbackGenerated={handleFeedbackGenerated}
+                onResubmit={handleResubmit}
+                onReset={handleReset}
+              />
+            )}
+          </div>
         </div>
       </main>
       <Footer />

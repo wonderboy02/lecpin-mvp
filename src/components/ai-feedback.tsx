@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/language-context"
@@ -26,16 +26,19 @@ export function AIFeedback({
   const { language } = useLanguage()
   const [isLoading, setIsLoading] = useState(!feedback)
   const [error, setError] = useState<string | null>(null)
-  const fetchedSubmissionIdRef = useRef<string | null>(null)
+  const [generatingForSubmission, setGeneratingForSubmission] = useState<string | null>(null)
 
   useEffect(() => {
     // 이미 피드백이 있으면 실행하지 않음
-    if (feedback) return
-    // 같은 submission에 대해 이미 요청했으면 실행하지 않음 (중복 요청 방지)
-    if (fetchedSubmissionIdRef.current === submission.id) return
-    fetchedSubmissionIdRef.current = submission.id
+    if (feedback) {
+      setIsLoading(false)
+      return
+    }
+    // 현재 이 submission에 대해 이미 생성 중이면 실행하지 않음
+    if (generatingForSubmission === submission.id) return
 
     const generateFeedback = async () => {
+      setGeneratingForSubmission(submission.id)
       setIsLoading(true)
       setError(null)
 
@@ -55,13 +58,14 @@ export function AIFeedback({
         onFeedbackGenerated(data.feedback)
       } catch (err) {
         setError(err instanceof Error ? err.message : "피드백 생성 중 오류가 발생했습니다.")
+        setGeneratingForSubmission(null) // 에러 시 다시 시도 가능하도록
       } finally {
         setIsLoading(false)
       }
     }
 
     generateFeedback()
-  }, [submission.id, feedback, onFeedbackGenerated, language])
+  }, [submission.id, feedback, onFeedbackGenerated, language, generatingForSubmission])
 
   const getSeverityLabel = (severity: string) => {
     switch (severity) {
@@ -84,7 +88,7 @@ export function AIFeedback({
         <CardContent className="p-12 flex flex-col items-center justify-center text-center space-y-4">
           <div className="w-10 h-10 border-2 border-foreground/20 border-t-foreground rounded-full animate-spin" />
           <div className="space-y-2">
-            <h3 className="font-semibold text-lg text-foreground">
+            <h3 className="font-serif font-semibold text-lg text-foreground">
               AI가 코드를 분석하고 있습니다
             </h3>
             <p className="text-sm text-muted-foreground">
@@ -104,7 +108,7 @@ export function AIFeedback({
             <span className="text-destructive text-xl">!</span>
           </div>
           <div className="space-y-2">
-            <h3 className="font-semibold text-lg text-foreground">
+            <h3 className="font-serif font-semibold text-lg text-foreground">
               피드백 생성에 실패했습니다
             </h3>
             <p className="text-sm text-muted-foreground">{error}</p>
@@ -176,7 +180,7 @@ export function AIFeedback({
       {/* Code Quality Metrics */}
       <Card className="border-border/60 shadow-subtle">
         <CardContent className="p-6 sm:p-8">
-          <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-5">
+          <h3 className="text-sm font-semibold text-foreground uppercase tracking-widest mb-5">
             코드 품질 지표
           </h3>
           <div className="grid grid-cols-2 gap-4">
@@ -209,7 +213,7 @@ export function AIFeedback({
       {strengths.length > 0 && (
         <Card className="border-border/60 shadow-subtle">
           <CardContent className="p-6 sm:p-8">
-            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-5">
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-widest mb-5">
               잘한 점
             </h3>
             <div className="space-y-4">
@@ -240,7 +244,7 @@ export function AIFeedback({
       {improvements.length > 0 && (
         <Card className="border-border/60 shadow-subtle">
           <CardContent className="p-6 sm:p-8">
-            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-5">
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-widest mb-5">
               개선 포인트
             </h3>
             <div className="space-y-4">
@@ -282,7 +286,7 @@ export function AIFeedback({
       {feedback.next_steps && feedback.next_steps.length > 0 && (
         <Card className="border-border/60 shadow-subtle">
           <CardContent className="p-6 sm:p-8">
-            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-5">
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-widest mb-5">
               다음 학습 추천
             </h3>
             <ol className="space-y-3">

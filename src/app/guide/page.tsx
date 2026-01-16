@@ -156,11 +156,46 @@ export default function GuidePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {steps.map((step, index) => (
+            {/* 첫 번째 줄: Step 1-3 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 divide-x-0 md:divide-x divide-border">
+              {steps.slice(0, 3).map((step, index) => (
                 <div
                   key={step.number}
-                  className={`animate-fade-in animate-delay-${(index + 1) * 100}`}
+                  className={`animate-fade-in animate-delay-${(index + 1) * 100} md:px-8 first:pl-0 last:pr-0`}
+                >
+                  <div className="aspect-[4/3] bg-muted rounded-sm mb-6 relative overflow-hidden">
+                    <picture>
+                      <source srcSet={step.image} type="image/webp" />
+                      <img
+                        src={step.fallback}
+                        alt={step.title}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
+                  <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">
+                    Step {step.number}
+                  </p>
+                  <h3 className="font-serif text-xl font-semibold mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* 가로 구분선 */}
+            <div className="h-px bg-border my-12" />
+
+            {/* 두 번째 줄: Step 4-6 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 divide-x-0 md:divide-x divide-border">
+              {steps.slice(3, 6).map((step, index) => (
+                <div
+                  key={step.number}
+                  className={`animate-fade-in animate-delay-${(index + 4) * 100} md:px-8 first:pl-0 last:pr-0`}
                 >
                   <div className="aspect-[4/3] bg-muted rounded-sm mb-6 relative overflow-hidden">
                     <picture>

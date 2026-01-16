@@ -1,49 +1,11 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { Header } from '@/components/header';
-import { LectureInput } from '@/components/lecture-input';
 import { Footer } from '@/components/footer';
-import { useUser } from '@/hooks/use-user';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import type { LectureWithCompetencies } from '@/types';
 
 export default function Home() {
-  const router = useRouter();
-  const { isLoggedIn } = useUser();
-  const [isCreating, setIsCreating] = useState(false);
-
-  const handleAnalyzeComplete = async (
-    lectureData: LectureWithCompetencies
-  ) => {
-    if (!isLoggedIn) {
-      router.push('/login');
-      return;
-    }
-
-    try {
-      setIsCreating(true);
-
-      const res = await fetch('/api/user-tasks', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ lecture_id: lectureData.id }),
-      });
-      const data = await res.json();
-
-      if (data.userTask) {
-        router.push(`/dashboard/${data.userTask.id}`);
-      } else {
-        console.error('Failed to create user task:', data.error);
-        setIsCreating(false);
-      }
-    } catch (error) {
-      console.error('Create user task error:', error);
-      setIsCreating(false);
-    }
-  };
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -69,39 +31,17 @@ export default function Home() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  {isLoggedIn ? (
-                    <>
-                      <Button
-                        size="lg"
-                        className="h-12 px-8"
-                        onClick={() => router.push('/dashboard')}
-                      >
-                        내 학습 대시보드
-                      </Button>
-                      <Button
-                        asChild
-                        variant="outline"
-                        size="lg"
-                        className="h-12 px-8"
-                      >
-                        <Link href="#start">새 강의 시작하기</Link>
-                      </Button>
-                    </>
-                  ) : (
-                    <>
-                      <Button asChild size="lg" className="h-12 px-8">
-                        <Link href="/login">GitHub로 시작하기</Link>
-                      </Button>
-                      <Button
-                        asChild
-                        variant="outline"
-                        size="lg"
-                        className="h-12 px-8"
-                      >
-                        <Link href="/guide">이용 가이드</Link>
-                      </Button>
-                    </>
-                  )}
+                  <Button asChild size="lg" className="h-12 px-8">
+                    <Link href="/login">GitHub로 시작하기</Link>
+                  </Button>
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="h-12 px-8"
+                  >
+                    <Link href="/guide">이용 가이드</Link>
+                  </Button>
                 </div>
               </div>
 
@@ -277,106 +217,77 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Start Section - 로그인 유저와 비로그인 유저 구분 */}
+        {/* Start Section */}
         <section id="start" className="py-24 bg-foreground text-background">
           <div className="max-w-6xl mx-auto px-6">
-            {isLoggedIn ? (
-              // 로그인된 유저: URL 입력 폼
-              <div className="max-w-2xl mx-auto">
-                <div className="text-center mb-10">
-                  <p className="text-xs font-medium tracking-widest uppercase text-background/60 mb-3">
-                    새 실습 시작
-                  </p>
-                  <h2 className="font-serif text-2xl md:text-3xl font-semibold tracking-tight text-background">
-                    어떤 강의를 실습해볼까요?
-                  </h2>
-                </div>
-                <div className="animate-fade-in">
-                  {isCreating ? (
-                    <div className="flex flex-col items-center justify-center py-16">
-                      <div className="w-6 h-6 border-2 border-background/20 border-t-background rounded-full animate-spin mb-4" />
-                      <p className="text-background/70">
-                        과제 세션을 생성하는 중...
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div className="order-2 lg:order-1">
+                {/* 실제 UI 프리뷰 */}
+                <div className="relative">
+                  {/* 메인 카드 */}
+                  <div className="bg-background text-foreground rounded-sm shadow-2xl overflow-hidden">
+                    {/* 브라우저 상단 바 */}
+                    <div className="bg-muted/50 px-4 py-3 flex items-center gap-2 border-b border-border/50">
+                      <div className="flex gap-1.5">
+                        <div className="w-3 h-3 rounded-full bg-red-400/60" />
+                        <div className="w-3 h-3 rounded-full bg-yellow-400/60" />
+                        <div className="w-3 h-3 rounded-full bg-green-400/60" />
+                      </div>
+                      <div className="flex-1 mx-4">
+                        <div className="bg-background/80 rounded-sm px-3 py-1 text-xs text-muted-foreground max-w-[200px]">
+                          lecpin.com
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 컨텐츠 */}
+                    <div className="p-6 space-y-4">
+                      <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground">
+                        강의 입력
                       </p>
-                    </div>
-                  ) : (
-                    <div className="bg-background rounded-sm p-6">
-                      <LectureInput onAnalyzeComplete={handleAnalyzeComplete} />
-                    </div>
-                  )}
-                </div>
-              </div>
-            ) : (
-              // 비로그인 유저: 로그인 CTA
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div className="order-2 lg:order-1">
-                  {/* 실제 UI 프리뷰 */}
-                  <div className="relative">
-                    {/* 메인 카드 */}
-                    <div className="bg-background text-foreground rounded-sm shadow-2xl overflow-hidden">
-                      {/* 브라우저 상단 바 */}
-                      <div className="bg-muted/50 px-4 py-3 flex items-center gap-2 border-b border-border/50">
-                        <div className="flex gap-1.5">
-                          <div className="w-3 h-3 rounded-full bg-red-400/60" />
-                          <div className="w-3 h-3 rounded-full bg-yellow-400/60" />
-                          <div className="w-3 h-3 rounded-full bg-green-400/60" />
+                      <div className="space-y-3">
+                        <div className="h-10 bg-muted rounded-sm border border-border flex items-center px-3">
+                          <span className="text-sm text-muted-foreground">
+                            https://youtube.com/watch?v=...
+                          </span>
                         </div>
-                        <div className="flex-1 mx-4">
-                          <div className="bg-background/80 rounded-sm px-3 py-1 text-xs text-muted-foreground max-w-[200px]">
-                            lecpin.com
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* 컨텐츠 */}
-                      <div className="p-6 space-y-4">
-                        <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground">
-                          강의 입력
-                        </p>
-                        <div className="space-y-3">
-                          <div className="h-10 bg-muted rounded-sm border border-border flex items-center px-3">
-                            <span className="text-sm text-muted-foreground">
-                              https://youtube.com/watch?v=...
-                            </span>
-                          </div>
-                          <div className="h-11 bg-foreground rounded-sm flex items-center justify-center">
-                            <span className="text-sm font-medium text-background">
-                              분석 시작
-                            </span>
-                          </div>
+                        <div className="h-11 bg-foreground rounded-sm flex items-center justify-center">
+                          <span className="text-sm font-medium text-background">
+                            분석 시작
+                          </span>
                         </div>
                       </div>
                     </div>
-
-                    {/* 데코레이션 요소 */}
-                    <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-background/20 rounded-sm -z-10" />
-                    <div className="absolute -bottom-8 -right-8 w-full h-full border border-background/10 rounded-sm -z-20" />
                   </div>
-                </div>
 
-                <div className="order-1 lg:order-2">
-                  <p className="text-xs font-medium tracking-widest uppercase text-background/60 mb-4">
-                    시작하기
-                  </p>
-                  <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-background">
-                    첫 번째 실습을
-                    <br />
-                    시작해보세요
-                  </h2>
-                  <p className="text-background/70 leading-relaxed mb-8 max-w-md">
-                    GitHub 계정으로 로그인하면 바로 강의 URL을 입력하고 맞춤형
-                    실습 과제를 받아볼 수 있습니다.
-                  </p>
-                  <Button
-                    asChild
-                    size="lg"
-                    className="h-12 px-8 bg-background text-foreground hover:bg-background/90"
-                  >
-                    <Link href="/login">GitHub로 로그인하고 시작하기</Link>
-                  </Button>
+                  {/* 데코레이션 요소 */}
+                  <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-background/20 rounded-sm -z-10" />
+                  <div className="absolute -bottom-8 -right-8 w-full h-full border border-background/10 rounded-sm -z-20" />
                 </div>
               </div>
-            )}
+
+              <div className="order-1 lg:order-2">
+                <p className="text-xs font-medium tracking-widest uppercase text-background/60 mb-4">
+                  시작하기
+                </p>
+                <h2 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-background">
+                  첫 번째 실습을
+                  <br />
+                  시작해보세요
+                </h2>
+                <p className="text-background/70 leading-relaxed mb-8 max-w-md">
+                  GitHub 계정으로 로그인하면 바로 강의 URL을 입력하고 맞춤형
+                  실습 과제를 받아볼 수 있습니다.
+                </p>
+                <Button
+                  asChild
+                  size="lg"
+                  className="h-12 px-8 bg-background text-foreground hover:bg-background/90"
+                >
+                  <Link href="/login">GitHub로 로그인하고 시작하기</Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -435,9 +346,7 @@ export default function Home() {
               듣기만 하는 학습은 이제 그만.
             </p>
             <Button asChild size="lg" className="h-12 px-8">
-              <Link href={isLoggedIn ? '#start' : '/login'}>
-                {isLoggedIn ? '새 강의 시작하기' : '무료로 시작하기'}
-              </Link>
+              <Link href="/login">무료로 시작하기</Link>
             </Button>
           </div>
         </section>

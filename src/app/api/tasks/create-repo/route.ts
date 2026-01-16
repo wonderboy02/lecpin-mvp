@@ -77,50 +77,75 @@ export async function POST(request: Request) {
     }
 
     // 레포 이름 생성: lecpin-{username}-{projectname}
-    let finalRepoName = repo_name
-    if (!finalRepoName) {
+    let baseRepoName = repo_name
+    if (!baseRepoName) {
       const projectName = await translateToProjectName(task.title)
-      finalRepoName = `lecpin-${profile.github_username}-${projectName}`
+      baseRepoName = `lecpin-${profile.github_username}-${projectName}`
     }
 
-    // GitHub API로 템플릿에서 레포 생성
-    const response = await fetch(
-      `https://api.github.com/repos/${templateOwner}/${templateRepo}/generate`,
-      {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${profile.github_token}`,
-          'Accept': 'application/vnd.github+json',
-          'X-GitHub-Api-Version': '2022-11-28',
-        },
-        body: JSON.stringify({
-          owner: profile.github_username,
-          name: finalRepoName,
-          description: `Lecpin 실습 과제: ${task.title}`,
-          private: false,
-          include_all_branches: false,
-        }),
+    // GitHub API로 템플릿에서 레포 생성 (중복 시 자동 넘버링)
+    let repoData = null
+    let finalRepoName = baseRepoName
+    const MAX_ATTEMPTS = 5
+
+    for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+      // 2번째 시도부터 숫자 추가
+      if (attempt > 1) {
+        finalRepoName = `${baseRepoName}-${attempt}`
       }
-    )
 
-    if (!response.ok) {
+      const response = await fetch(
+        `https://api.github.com/repos/${templateOwner}/${templateRepo}/generate`,
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${profile.github_token}`,
+            'Accept': 'application/vnd.github+json',
+            'X-GitHub-Api-Version': '2022-11-28',
+          },
+          body: JSON.stringify({
+            owner: profile.github_username,
+            name: finalRepoName,
+            description: `Lecpin 실습 과제: ${task.title}`,
+            private: false,
+            include_all_branches: false,
+          }),
+        }
+      )
+
+      if (response.ok) {
+        repoData = await response.json()
+        break // 성공하면 루프 종료
+      }
+
       const errorData = await response.json()
-      console.error('GitHub API error:', errorData)
+      console.error(`GitHub API error (attempt ${attempt}):`, errorData)
 
-      if (response.status === 422) {
+      // 422 에러(중복)가 아닌 경우 즉시 반환
+      if (response.status !== 422) {
         return NextResponse.json(
-          { error: '같은 이름의 레포지토리가 이미 존재합니다.' },
+          { error: 'GitHub 레포 생성에 실패했습니다.' },
+          { status: 500 }
+        )
+      }
+
+      // 422 에러(중복)이고 마지막 시도인 경우
+      if (attempt === MAX_ATTEMPTS) {
+        return NextResponse.json(
+          { error: '레포지토리 이름 중복으로 생성에 실패했습니다. 다른 이름을 시도해주세요.' },
           { status: 422 }
         )
       }
 
+      // 422 에러이고 아직 시도 횟수가 남았으면 다음 루프로 계속
+    }
+
+    if (!repoData) {
       return NextResponse.json(
-        { error: 'GitHub 레포 생성에 실패했습니다.' },
+        { error: '레포지토리 생성에 실패했습니다.' },
         { status: 500 }
       )
     }
-
-    const repoData = await response.json()
     const repoUrl = repoData.html_url
 
     // 과제에 레포 URL 저장

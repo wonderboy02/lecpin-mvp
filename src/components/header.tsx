@@ -31,18 +31,19 @@ export function Header() {
         {/* Navigation & Auth */}
         <div className="flex items-center gap-6">
           <nav className="hidden sm:flex items-center gap-8">
-            <Link
-              href="/"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              시작하기
-            </Link>
-            {isLoggedIn && (
+            {isLoggedIn ? (
               <Link
                 href="/dashboard"
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 내 학습
+              </Link>
+            ) : (
+              <Link
+                href="/"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                시작하기
               </Link>
             )}
             <Link

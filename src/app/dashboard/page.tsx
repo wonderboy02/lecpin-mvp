@@ -8,7 +8,8 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import type { UserTaskWithRelations, Step } from "@/types"
+import { LectureInput } from "@/components/lecture-input"
+import type { UserTaskWithRelations, Step, LectureWithCompetencies } from "@/types"
 
 const stepLabels: Record<Step, string> = {
   input: '강의 입력',
@@ -25,6 +26,7 @@ export default function DashboardPage() {
   const [allTasks, setAllTasks] = useState<UserTaskWithRelations[]>([])
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState<'in_progress' | 'completed' | 'all'>('in_progress')
+  const [isCreating, setIsCreating] = useState(false)
 
   useEffect(() => {
     if (!authLoading && !isLoggedIn) {
@@ -65,8 +67,27 @@ export default function DashboardPage() {
   const completedCount = allTasks.filter(t => t.status === 'completed').length
   const totalCount = allTasks.length
 
-  const handleNewTask = () => {
-    router.push('/')
+  const handleAnalyzeComplete = async (lectureData: LectureWithCompetencies) => {
+    try {
+      setIsCreating(true)
+
+      const res = await fetch('/api/user-tasks', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ lecture_id: lectureData.id }),
+      })
+      const data = await res.json()
+
+      if (data.userTask) {
+        router.push(`/dashboard/${data.userTask.id}`)
+      } else {
+        console.error('Failed to create user task:', data.error)
+        setIsCreating(false)
+      }
+    } catch (error) {
+      console.error('Create user task error:', error)
+      setIsCreating(false)
+    }
   }
 
   const handleTaskClick = (taskId: string) => {
@@ -109,18 +130,29 @@ export default function DashboardPage() {
       <main className="flex-1">
         <div className="max-w-4xl mx-auto px-6 py-12">
           {/* Page Header */}
-          <div className="flex items-start justify-between mb-10">
-            <div>
-              <h1 className="font-serif text-3xl font-semibold tracking-tight mb-2">
-                내 학습
-              </h1>
-              <p className="text-muted-foreground">
-                진행 중인 실습 과제를 관리하세요
-              </p>
-            </div>
-            <Button onClick={handleNewTask}>
-              새 강의 시작
-            </Button>
+          <div className="mb-10">
+            <h1 className="font-serif text-3xl font-semibold tracking-tight mb-2">
+              내 학습
+            </h1>
+            <p className="text-muted-foreground">
+              새 강의를 입력하거나 진행 중인 실습 과제를 관리하세요
+            </p>
+          </div>
+
+          {/* Lecture Input Section */}
+          <div className="mb-12">
+            {isCreating ? (
+              <Card className="border-border/60">
+                <CardContent className="flex flex-col items-center justify-center py-16">
+                  <div className="w-6 h-6 border-2 border-foreground/20 border-t-foreground rounded-full animate-spin mb-4" />
+                  <p className="text-muted-foreground">
+                    과제 세션을 생성하는 중...
+                  </p>
+                </CardContent>
+              </Card>
+            ) : (
+              <LectureInput onAnalyzeComplete={handleAnalyzeComplete} />
+            )}
           </div>
 
           {/* Stats Overview */}
@@ -195,12 +227,10 @@ export default function DashboardPage() {
                         - 시작을 기다리는 느낌
                       */}
                     </div>
-                    <p className="text-muted-foreground mb-6">
-                      {filter === 'in_progress' ? '진행 중인 과제가 없습니다' : '과제가 없습니다'}
+                    <p className="text-muted-foreground">
+                      {filter === 'in_progress' ? '진행 중인 과제가 없습니다.' : '과제가 없습니다.'}<br />
+                      상단에서 새 강의를 입력해보세요.
                     </p>
-                    <Button variant="outline" onClick={handleNewTask}>
-                      새 강의로 시작하기
-                    </Button>
                   </CardContent>
                 </Card>
               ) : (

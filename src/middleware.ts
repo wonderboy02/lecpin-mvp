@@ -47,10 +47,17 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(url)
   }
 
-  // 이미 로그인된 사용자가 /login 접근 시 홈으로 리다이렉트
+  // 이미 로그인된 사용자가 /login 접근 시 대시보드로 리다이렉트
   if (request.nextUrl.pathname === '/login' && user) {
     const url = request.nextUrl.clone()
-    url.pathname = '/'
+    url.pathname = '/dashboard'
+    return NextResponse.redirect(url)
+  }
+
+  // 로그인된 사용자가 / (랜딩) 접근 시 대시보드로 리다이렉트
+  if (request.nextUrl.pathname === '/' && user) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/dashboard'
     return NextResponse.redirect(url)
   }
 

@@ -45,18 +45,18 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Right: Hero Image */}
+              {/* Right: Hero Video */}
               <div className="aspect-[4/3] bg-muted rounded-sm animate-fade-in animate-delay-100 relative overflow-hidden hidden lg:block">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <p className="font-serif text-8xl text-muted-foreground/10">
-                      L
-                    </p>
-                  </div>
-                </div>
-                <div className="absolute bottom-4 left-4 text-xs text-muted-foreground/50">
-                  Hero Image
-                </div>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                >
+                  <source src="/hero-main.webm" type="video/webm" />
+                  <source src="/hero-main-optimized.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>
@@ -156,11 +156,15 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center animate-fade-in">
                 <div className="aspect-[4/3] bg-muted rounded-sm mb-6 relative overflow-hidden mx-auto max-w-xs">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="font-serif text-6xl text-muted-foreground/20">
-                      1
-                    </span>
-                  </div>
+                  <picture>
+                    <source srcSet="/guide/step1.webp" type="image/webp" />
+                    <img
+                      src="/guide/step1.jpg"
+                      alt="강의 입력"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
                 <h3 className="font-serif text-lg font-semibold mb-2">
                   강의 입력
@@ -174,11 +178,15 @@ export default function Home() {
 
               <div className="text-center animate-fade-in animate-delay-100">
                 <div className="aspect-[4/3] bg-muted rounded-sm mb-6 relative overflow-hidden mx-auto max-w-xs">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="font-serif text-6xl text-muted-foreground/20">
-                      2
-                    </span>
-                  </div>
+                  <picture>
+                    <source srcSet="/guide/step3.webp" type="image/webp" />
+                    <img
+                      src="/guide/step3.jpg"
+                      alt="과제 수행"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
                 <h3 className="font-serif text-lg font-semibold mb-2">
                   과제 수행
@@ -192,11 +200,15 @@ export default function Home() {
 
               <div className="text-center animate-fade-in animate-delay-200">
                 <div className="aspect-[4/3] bg-muted rounded-sm mb-6 relative overflow-hidden mx-auto max-w-xs">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="font-serif text-6xl text-muted-foreground/20">
-                      3
-                    </span>
-                  </div>
+                  <picture>
+                    <source srcSet="/guide/step6.webp" type="image/webp" />
+                    <img
+                      src="/guide/step6.jpg"
+                      alt="AI 피드백"
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
                 <h3 className="font-serif text-lg font-semibold mb-2">
                   AI 피드백

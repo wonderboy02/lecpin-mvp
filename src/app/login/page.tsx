@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button';
 import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 function LoginContent() {
   const searchParams = useSearchParams();
@@ -52,17 +53,14 @@ function LoginContent() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left: Image */}
             <div className="aspect-[4/3] bg-muted rounded-sm relative overflow-hidden hidden lg:block">
-              {/*
-                권장 이미지: 로그인/시작하는 느낌의 이미지
-                - 노트북 앞에서 준비하는 모습
-                - 커피와 함께 아침에 작업 시작하는 장면
-                - 밝은 자연광이 들어오는 데스크
-
-                검색 키워드: "developer morning coffee", "starting work laptop", "workspace morning light"
-              */}
-              <div className="absolute bottom-4 left-4 text-xs text-muted-foreground/60">
-                Login Image (4:3)
-              </div>
+              <Image
+                src="/images/hero-login.jpg"
+                alt="커피와 함께 작업을 시작하는 데스크 환경"
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 1024px) 0vw, 50vw"
+              />
             </div>
 
             {/* Right: Login Form */}

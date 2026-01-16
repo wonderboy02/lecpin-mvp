@@ -220,13 +220,6 @@ export default function DashboardPage() {
               ) : tasks.length === 0 ? (
                 <Card className="border-border/60">
                   <CardContent className="py-16 text-center">
-                    <div className="aspect-video max-w-xs mx-auto bg-muted rounded-sm mb-6 relative overflow-hidden">
-                      {/*
-                        권장 이미지: 빈 상태 표현
-                        - 깔끔한 빈 노트북 데스크
-                        - 시작을 기다리는 느낌
-                      */}
-                    </div>
                     <p className="text-muted-foreground">
                       {filter === 'in_progress' ? '진행 중인 과제가 없습니다.' : '과제가 없습니다.'}<br />
                       상단에서 새 강의를 입력해보세요.

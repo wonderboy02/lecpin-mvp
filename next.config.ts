@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   output: 'standalone', // Railway 배포용
   images: {
-    unoptimized: true,
+    unoptimized: true, // Railway 등 non-Vercel 환경용
   },
   experimental: {
     serverActions: {

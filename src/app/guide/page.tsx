@@ -15,6 +15,7 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const steps = [
   {
@@ -22,39 +23,45 @@ const steps = [
     title: '강의 영상 입력',
     description:
       '학습하고 싶은 YouTube 강의 URL을 입력하세요. AI가 강의 내용을 분석합니다.',
-    imageNote: 'YouTube 강의 화면이 보이는 모니터 - 코딩 관련 강의 내용',
+    image: '/guide/step1.webp',
+    fallback: '/guide/step1.jpg',
   },
   {
     number: '02',
     title: '역량 분석',
     description: 'AI가 강의에서 배울 수 있는 핵심 역량을 추출하고 요약합니다.',
-    imageNote: '화이트보드에 그린 다이어그램 또는 노트에 정리된 마인드맵',
+    image: '/guide/step2.webp',
+    fallback: '/guide/step2.jpg',
   },
   {
     number: '03',
     title: '실습 과제 생성',
     description: '분석된 역량을 기반으로 맞춤형 실습 과제가 자동 생성됩니다.',
-    imageNote: '코드 에디터 화면 - 깔끔한 코드가 보이는 다크 테마',
+    image: '/guide/step3.webp',
+    fallback: '/guide/step3.jpg',
   },
   {
     number: '04',
     title: 'GitHub 레포 생성',
     description:
       '클릭 한 번으로 과제용 GitHub 저장소가 생성됩니다. README에 과제 내용이 포함됩니다.',
-    imageNote: 'GitHub 저장소 화면 또는 터미널에서 git 명령어 실행 장면',
+    image: '/guide/step4.webp',
+    fallback: '/guide/step4.jpg',
   },
   {
     number: '05',
     title: '코드 작성 & 제출',
     description: '과제를 완료하고 코드를 푸시한 후 제출 버튼을 누르세요.',
-    imageNote: '키보드 타이핑하는 손 또는 코드를 작성하는 집중하는 모습',
+    image: '/guide/step5.webp',
+    fallback: '/guide/step5.png',
   },
   {
     number: '06',
     title: 'AI 코드 리뷰',
     description:
       '시니어 개발자 수준의 AI가 코드를 분석하고 상세한 피드백을 제공합니다.',
-    imageNote: '코드 리뷰 화면 - 코드에 코멘트가 달린 모습',
+    image: '/guide/step6.webp',
+    fallback: '/guide/step6.jpg',
   },
 ];
 
@@ -111,19 +118,18 @@ export default function GuidePage() {
                 </Button>
               </div>
 
-              {/* Right: Hero Image */}
+              {/* Right: Hero Video */}
               <div className="aspect-[4/3] bg-muted rounded-sm animate-fade-in animate-delay-100 relative overflow-hidden">
-                {/*
-                  권장 이미지: 학습하는 개발자의 모습
-                  - 노트북 앞에서 집중하는 장면
-                  - 화면에는 코드나 강의가 살짝 보이는 정도
-                  - 자연광이 들어오는 깔끔한 데스크 환경
-
-                  검색 키워드: "developer learning laptop", "studying programming"
-                */}
-                <div className="absolute bottom-4 left-4 text-xs text-muted-foreground/60">
-                  Hero Image (4:3)
-                </div>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                >
+                  <source src="/hero-main.webm" type="video/webm" />
+                  <source src="/hero-main-optimized.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>
@@ -157,14 +163,15 @@ export default function GuidePage() {
                   className={`animate-fade-in animate-delay-${(index + 1) * 100}`}
                 >
                   <div className="aspect-[4/3] bg-muted rounded-sm mb-6 relative overflow-hidden">
-                    {/*
-                      권장 이미지: {step.imageNote}
-                      - Unsplash, Pexels에서 검색
-                      - 따뜻한 톤, 자연스러운 라이팅
-                    */}
-                    <div className="absolute bottom-3 left-3 text-xs text-muted-foreground/60">
-                      Step {step.number} Image
-                    </div>
+                    <picture>
+                      <source srcSet={step.image} type="image/webp" />
+                      <img
+                        src={step.fallback}
+                        alt={step.title}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </picture>
                   </div>
                   <p className="text-xs font-medium tracking-widest uppercase text-muted-foreground mb-2">
                     Step {step.number}

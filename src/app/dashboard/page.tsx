@@ -5,8 +5,8 @@ import { useRouter } from "next/navigation"
 import { useUser } from "@/hooks/use-user"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import Image from "next/image"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { LectureInput } from "@/components/lecture-input"
 import type { UserTaskWithRelations, Step, LectureWithCompetencies } from "@/types"
@@ -237,17 +237,19 @@ export default function DashboardPage() {
                       <CardContent className="p-0">
                         <div className="flex">
                           {/* Thumbnail */}
-                          <div className="w-40 h-32 bg-muted shrink-0 relative hidden sm:block">
+                          <div className="w-40 h-32 bg-muted shrink-0 relative hidden sm:block border border-border/40">
                             {/*
                               권장 이미지: 강의 썸네일
                               - YouTube 썸네일이 있으면 사용
                               - 없으면 기본 placeholder
                             */}
                             {task.lecture?.thumbnail_url ? (
-                              <img
+                              <Image
                                 src={task.lecture.thumbnail_url}
-                                alt=""
-                                className="w-full h-full object-cover"
+                                alt={task.lecture.title || "Lecture thumbnail"}
+                                fill
+                                className="object-cover"
+                                sizes="160px"
                               />
                             ) : (
                               <div className="absolute inset-0 flex items-center justify-center text-xs text-muted-foreground/50">

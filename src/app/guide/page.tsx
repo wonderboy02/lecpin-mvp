@@ -15,7 +15,6 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const steps = [
   {
@@ -119,7 +118,7 @@ export default function GuidePage() {
               </div>
 
               {/* Right: Hero Video */}
-              <div className="aspect-[4/3] bg-muted rounded-sm animate-fade-in animate-delay-100 relative overflow-hidden">
+              <div className="aspect-[4/2.9] bg-muted rounded-sm border border-border/40 animate-fade-in animate-delay-100 relative overflow-hidden">
                 <video
                   autoPlay
                   loop
@@ -163,7 +162,7 @@ export default function GuidePage() {
                   key={step.number}
                   className={`animate-fade-in animate-delay-${(index + 1) * 100} md:px-8 first:pl-0 last:pr-0`}
                 >
-                  <div className="aspect-[4/3] bg-muted rounded-sm mb-6 relative overflow-hidden">
+                  <div className="aspect-[4/2.9] bg-muted rounded-sm border border-border/40 mb-6 relative overflow-hidden">
                     <picture>
                       <source srcSet={step.image} type="image/webp" />
                       <img
@@ -197,7 +196,7 @@ export default function GuidePage() {
                   key={step.number}
                   className={`animate-fade-in animate-delay-${(index + 4) * 100} md:px-8 first:pl-0 last:pr-0`}
                 >
-                  <div className="aspect-[4/3] bg-muted rounded-sm mb-6 relative overflow-hidden">
+                  <div className="aspect-[4/2.9] bg-muted rounded-sm border border-border/40 mb-6 relative overflow-hidden">
                     <picture>
                       <source srcSet={step.image} type="image/webp" />
                       <img

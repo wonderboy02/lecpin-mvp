@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 export default function Home() {
-
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
@@ -46,7 +45,7 @@ export default function Home() {
               </div>
 
               {/* Right: Hero Video */}
-              <div className="aspect-[4/3] bg-muted rounded-sm animate-fade-in animate-delay-100 relative overflow-hidden hidden lg:block">
+              <div className="aspect-[4/2.9] bg-muted rounded-sm animate-fade-in animate-delay-100 relative overflow-hidden hidden lg:block border border-border/40">
                 <video
                   autoPlay
                   loop
@@ -153,9 +152,9 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center animate-fade-in">
-                <div className="aspect-[4/3] bg-muted rounded-sm mb-6 relative overflow-hidden mx-auto max-w-xs">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 md:divide-x md:divide-border">
+              <div className="text-center animate-fade-in md:px-8">
+                <div className="aspect-[4/2.9] bg-muted rounded-sm mb-6 relative overflow-hidden mx-auto max-w-xs border border-border/40">
                   <picture>
                     <source srcSet="/guide/step1.webp" type="image/webp" />
                     <img
@@ -176,8 +175,8 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="text-center animate-fade-in animate-delay-100">
-                <div className="aspect-[4/3] bg-muted rounded-sm mb-6 relative overflow-hidden mx-auto max-w-xs">
+              <div className="text-center animate-fade-in animate-delay-100 md:px-8">
+                <div className="aspect-[4/2.9] bg-muted rounded-sm mb-6 relative overflow-hidden mx-auto max-w-xs border border-border/40">
                   <picture>
                     <source srcSet="/guide/step3.webp" type="image/webp" />
                     <img
@@ -198,8 +197,8 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="text-center animate-fade-in animate-delay-200">
-                <div className="aspect-[4/3] bg-muted rounded-sm mb-6 relative overflow-hidden mx-auto max-w-xs">
+              <div className="text-center animate-fade-in animate-delay-200 md:px-8">
+                <div className="aspect-[4/2.9] bg-muted rounded-sm mb-6 relative overflow-hidden mx-auto max-w-xs border border-border/40">
                   <picture>
                     <source srcSet="/guide/step6.webp" type="image/webp" />
                     <img
@@ -309,7 +308,7 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
                 <p className="font-serif text-3xl font-semibold text-foreground mb-2">
-                  codex
+                  GPT-5.2-Codex
                 </p>
                 <p className="text-xs text-muted-foreground uppercase tracking-wider">
                   AI 모델

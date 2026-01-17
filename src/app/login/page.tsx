@@ -52,9 +52,9 @@ function LoginContent() {
         <div className="max-w-6xl mx-auto px-6 py-16 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left: Image */}
-            <div className="aspect-[4/3] bg-muted rounded-sm relative overflow-hidden hidden lg:block">
+            <div className="aspect-[4/2.9] bg-muted rounded-sm relative overflow-hidden hidden lg:block border border-border/40">
               <Image
-                src="/images/hero-login.jpg"
+                src="/guide/hero-login.jpeg"
                 alt="커피와 함께 작업을 시작하는 데스크 환경"
                 fill
                 className="object-cover"

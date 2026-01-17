@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/language-context"
+import Image from "next/image"
 import type { LectureWithCompetencies, Task } from "@/types"
 
 interface CompetencySummaryProps {
@@ -48,11 +49,15 @@ export function CompetencySummary({ lecture, onTaskGenerated }: CompetencySummar
         <CardContent className="p-6 sm:p-8">
           <div className="flex items-start gap-5">
             {lecture.thumbnail_url ? (
-              <img
-                src={lecture.thumbnail_url}
-                alt={lecture.title}
-                className="w-28 h-20 rounded object-cover flex-shrink-0"
-              />
+              <div className="w-28 h-20 rounded relative flex-shrink-0">
+                <Image
+                  src={lecture.thumbnail_url}
+                  alt={lecture.title}
+                  fill
+                  className="rounded object-cover"
+                  sizes="112px"
+                />
+              </div>
             ) : (
               <div className="w-28 h-20 rounded bg-muted flex-shrink-0" />
             )}
